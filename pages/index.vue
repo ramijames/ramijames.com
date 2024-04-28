@@ -1,7 +1,6 @@
 <template>
   <section class="home">
     <section class="core">
-      <!-- <nuxt-link to="/build">Things I'm building</nuxt-link> -->
       <div class="cube">
         <div class="top"></div>
         <div class="right"></div>
@@ -10,25 +9,30 @@
         <div class="front"></div>
         <div class="back"></div>
       </div>
-      <!-- <nuxt-link to="/thoughts">Things I'm thinking</nuxt-link> -->
+      <pre class="text">
+      <strong>Owner</strong> = <span class="tint-yellow"> {
+          name: <span class="tint-blue">'Rami James'</span>,
+          strength: <span class="tint-blue">'product development & design'</span>
+      }</span></pre>
     </section>
-    <p>Hi, I'm <strong>Rami</strong>, a <strong>developer</strong> and <strong>designer</strong> based in <strong>Boston</strong> and <strong>Israel</strong>.</p>
-    <section class="sections">
-      <div class="building">
-        <nuxt-link to="/build" class="main-links">Things I'm building</nuxt-link>
-        <div class="single-product">
-          <p><strong>CrispTools.dev</strong></p>
-          <p><small>A collection of useful tools for designers and developers.</small></p>
-          <p>
-            <a class="button-link" href="https://crisptools.dev/">Live</a>
-            <a class="button-link" href="https://github.com/ramijames/CrispTools">Github</a>
-          </p>
+    <section class="content">
+      <section class="sections">
+        <div class="building">
+          <nuxt-link to="/build" class="main-links">Things I'm building →</nuxt-link>
+          <div class="single-product">
+            <p><strong>CrispTools.dev</strong></p>
+            <p><small>A collection of useful tools for designers and developers.</small></p>
+            <p>
+              <a class="button-link" href="https://crisptools.dev/">Live</a>
+              <a class="button-link" href="https://github.com/ramijames/CrispTools">Github</a>
+            </p>
+          </div>
+          <p>Random-sandwich.com</p>
         </div>
-        <p>Random-sandwich.com</p>
-      </div>
-      <div class="thinking">
-        <nuxt-link to="/thoughts" class="main-links">Things I'm thinking</nuxt-link>
-      </div>
+        <div class="thinking">
+          <nuxt-link to="/thoughts" class="main-links">Things I'm thinking →</nuxt-link>
+        </div>
+      </section>
     </section>
     <ThemeSwitcher />
   </section>
@@ -59,31 +63,70 @@ export default {
 
 .home {
   display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   height: 100vh;
+  width:100vw;
 }
 
 .core {
   display: flex;
   align-items: center;
-  height:200px;
+  justify-content: center;
+  height:100%;
+  background-color: black;
+  width:50%;
+  overflow: hidden;
+  position: relative;
+}
+
+    .dark .core {
+      background-color: white;
+    }
+
+.core .text {
+  color:white;
+  font-size:1dvw;
+  font-family: 'IBM Plex Mono';
+  position: absolute;
+  top:2rem;
+  left:2rem;
+  right:2rem;
+}
+
+    .tint-yellow {
+      color:rgb(253, 255, 211);
+    }
+
+    .tint-blue {
+      color:rgb(169, 204, 247);
+    }
+
+    .dark .core .text {
+      color:black;
+    }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  align-content: start;
+  padding: 0 2rem;
+  width:50%;
+
 }
 
 .sections {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  margin:2rem 0;
   width: 100%;
   max-width:1200px;
 }
 
   .building {
-    padding:0 2rem;
-    border-right:2px solid black;
     width:50%;
+    padding:2rem;
   }
 
       .single-product {
@@ -113,8 +156,8 @@ export default {
       }
 
   .thinking {
-    padding:0 2rem;
     width:50%;
+    padding:2rem;
   }
 
 a.main-links {
@@ -123,76 +166,98 @@ a.main-links {
   color: #333;
   font-size: 1.5rem;
   font-family: 'IBM Plex Mono';
-  text-transform: uppercase;
+  font-weight: bold;
   display: flex;
   align-items: center;
   margin:0 0 1rem;
 }
 
+    .dark a.main-links {
+      color:white;
+    }
+
 .cube {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-animation: spin 30s infinite ease-out;
-  animation: spin 30s infinite ease-out;
+  animation: spin 90s infinite ease-out;
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 100vw;
+  height: 100vw;
   margin: 0 4rem;
+  scale:0.2;
+  top:30%;
+  left:20%
 }
 
 .cube div {
-   width: 100px;
-   height: 100px;
-   line-height: 100px;
+   width: 200vw;
+   height: 200vw;
+   line-height: 100vw;
    text-align: center;
-   box-shadow: inset 0px 0px 0px 2px rgba(0,0,0);
+   box-shadow: inset 0px 0px 0px 40px rgb(255, 255, 255, 0.7);
    background: transparent;
    display: block;
    position: absolute;
 }
 
+    .dark .cube div {
+      box-shadow: inset 0px 0px 0px 40px rgb(0, 0, 0, 0.7);
+    }
+
 .cube div.top {
+  box-shadow: inset 0px 0px 0px 40px rgb(255, 255, 255);
   -webkit-transform: rotateX(90deg); 
   transform: rotateX(90deg); 
-  margin-top: -50px;
+  margin-top: -100vw;
 }
 
 .cube div.right {
+  box-shadow: inset 0px 0px 0px 40px rgb(255, 255, 255, 0.5);
   -webkit-transform: rotateY(90deg); 
   transform: rotateY(90deg); 
-  margin-left: 50px;
+  margin-left: 100vw;
+  opacity: 0.6;
 }
 
 .cube div.bottom {
   -webkit-transform: rotateX(-90deg); 
   transform: rotateX(-90deg); 
-  margin-top: 50px;
+  margin-top: 100vw;
+  opacity: 0.4;
 }
 
 .cube div.left {
   -webkit-transform: rotateY(-90deg); 
-  margin-left: -50px;
+  margin-left: -100vw;
   transform: rotateY(-90deg); 
+  opacity: 0.6;
 }
 
 .cube div.front {
-  -webkit-transform: translateZ(50px);
-  transform: translateZ(50px);
+  box-shadow: inset 0px 0px 0px 40px rgb(255, 255, 255, 0.3);
+  -webkit-transform: translateZ(100vw);
+  transform: translateZ(100vw);
+  opacity: 0.6;
 }
 
 .cube div.back {
-  -webkit-transform: translateZ(-50px) rotateX(180deg);
-  transform: translateZ(-50px) rotateX(180deg);
+  -webkit-transform: translateZ(-100vw) rotateX(180deg);
+  transform: translateZ(-100vw) rotateX(180deg);
+  opacity: 0.6;
 }
 
 @keyframes spin {
   0% {
-    -webkit-transform: rotateX(-20deg) rotateY(20deg);
-    transform: rotateX(-20deg) rotateY(20deg);
+    -webkit-transform: rotateX(-60deg) rotateY(0deg);
+    transform: rotateX(-60deg) rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateX(-60deg) rotateY(180deg);
+    transform: rotateX(-60deg) rotateY(180deg);
   }
   100% {
-    -webkit-transform: rotateX(-20deg) rotateY(740deg);
-    transform: rotateX(-20deg) rotateY(740deg);
+    -webkit-transform: rotateX(-60deg) rotateY(360deg);
+    transform: rotateX(-60deg) rotateY(360deg);
   }
 }
 
