@@ -64,7 +64,7 @@
    height: 100px;
    line-height: 100px;
    text-align: center;
-   box-shadow: inset 0px 0px 0px 2px rgba(0,0,0);
+   box-shadow: inset 0px 0px 0px 3px rgba(0,0,0);
    background: transparent;
    display: block;
    position: absolute;
