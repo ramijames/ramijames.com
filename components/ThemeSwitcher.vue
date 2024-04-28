@@ -45,9 +45,6 @@ img {
   cursor: pointer;
   width: 28px;
   height: 28px;
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
   border-radius: 20px;
   padding: .3rem;
 }
