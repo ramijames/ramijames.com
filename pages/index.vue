@@ -12,7 +12,8 @@
       <pre class="text">
       <strong>Owner</strong> = <span class="tint-yellow"> {
           name: <span class="tint-blue">'Rami James'</span>,
-          strength: <span class="tint-blue">'product development & design'</span>
+          strength: <span class="tint-blue">'product development & design'</span>,
+          available: <span class="tint-green">true</span>
       }</span></pre>
     </section>
     <section class="content">
@@ -27,7 +28,14 @@
               <a class="button-link" href="https://github.com/ramijames/CrispTools">Github</a>
             </p>
           </div>
-          <p>Random-sandwich.com</p>
+          <div class="single-product">
+            <p><strong>Random-sandwich.com</strong></p>
+            <p><small>A community of sandwich lovers who are coming together to find the weirdest, most unique sandwiches of all time.</small></p>
+            <p>
+              <a class="button-link" href="https://crisptools.dev/">Live</a>
+              <a class="button-link" href="https://github.com/ramijames/CrispTools">Github</a>
+            </p>
+          </div>
         </div>
         <div class="thinking">
           <nuxt-link to="/thoughts" class="main-links">Things I'm thinking →</nuxt-link>
@@ -77,21 +85,22 @@ export default {
   background-color: black;
   width:50%;
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
 }
-
-    .dark .core {
-      background-color: white;
-    }
 
 .core .text {
   color:white;
-  font-size:1dvw;
+  font-size:1.4dvw;
   font-family: 'IBM Plex Mono';
   position: absolute;
   top:2rem;
-  left:2rem;
+  left:0rem;
   right:2rem;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.8), 0 5px 6px rgba(0,0,0,0.3),  0 8px 12px rgba(91, 29, 216, 0.2);
 }
 
     .tint-yellow {
@@ -102,8 +111,8 @@ export default {
       color:rgb(169, 204, 247);
     }
 
-    .dark .core .text {
-      color:black;
+    .tint-green {
+      color:rgb(132, 213, 97);
     }
 
 .content {
@@ -114,7 +123,8 @@ export default {
   align-content: start;
   padding: 0 2rem;
   width:50%;
-
+  position: fixed;
+  left: 50%;
 }
 
 .sections {
@@ -179,7 +189,7 @@ a.main-links {
 .cube {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  animation: spin 90s infinite ease-out;
+  animation: spin 90s infinite;
   position: relative;
   width: 100vw;
   height: 100vw;
@@ -190,60 +200,52 @@ a.main-links {
 }
 
 .cube div {
-   width: 200vw;
-   height: 200vw;
-   line-height: 100vw;
-   text-align: center;
-   box-shadow: inset 0px 0px 0px 40px rgb(255, 255, 255, 0.7);
-   background: transparent;
-   display: block;
-   position: absolute;
+  width: 200vw;
+  height: 200vw;
+  line-height: 100vw;
+  text-align: center;
+  border:20px solid white;
+  border-radius: 10px;
+  box-shadow: inset 0px 40px 100px rgba(255, 247, 0, 0.4), 0px 40px 800px rgba(255, 241, 184, 1), inset 0px 120px 1800px rgba(168, 156, 255, 1);
+  display: block;
+  scale:.99;
+  position: absolute;
+  background: rgb(255,255,255);
+  background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgba(187, 164, 255, 0.482) 20%, rgba(0, 0, 0, 0.341) 100%);
 }
 
-    .dark .cube div {
-      box-shadow: inset 0px 0px 0px 40px rgb(0, 0, 0, 0.7);
-    }
-
 .cube div.top {
-  box-shadow: inset 0px 0px 0px 40px rgb(255, 255, 255);
   -webkit-transform: rotateX(90deg); 
   transform: rotateX(90deg); 
   margin-top: -100vw;
 }
 
 .cube div.right {
-  box-shadow: inset 0px 0px 0px 40px rgb(255, 255, 255, 0.5);
   -webkit-transform: rotateY(90deg); 
   transform: rotateY(90deg); 
   margin-left: 100vw;
-  opacity: 0.6;
 }
 
 .cube div.bottom {
   -webkit-transform: rotateX(-90deg); 
   transform: rotateX(-90deg); 
   margin-top: 100vw;
-  opacity: 0.4;
 }
 
 .cube div.left {
   -webkit-transform: rotateY(-90deg); 
   margin-left: -100vw;
   transform: rotateY(-90deg); 
-  opacity: 0.6;
 }
 
 .cube div.front {
-  box-shadow: inset 0px 0px 0px 40px rgb(255, 255, 255, 0.3);
   -webkit-transform: translateZ(100vw);
   transform: translateZ(100vw);
-  opacity: 0.6;
 }
 
 .cube div.back {
   -webkit-transform: translateZ(-100vw) rotateX(180deg);
   transform: translateZ(-100vw) rotateX(180deg);
-  opacity: 0.6;
 }
 
 @keyframes spin {
