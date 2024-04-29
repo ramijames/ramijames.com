@@ -45,8 +45,6 @@ img {
   cursor: pointer;
   width: 28px;
   height: 28px;
-  border-radius: 20px;
-  padding: .3rem;
 }
 
 </style>

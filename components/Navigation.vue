@@ -1,8 +1,16 @@
 <template>
   <nav class="main-nav">
-    <nuxt-link to="/">Home</nuxt-link>
+    <section class="extras">
+      <nuxt-link to="/">
+        <img 
+          :src="`/home-${currentTheme}.svg`" 
+          alt="home" 
+        />
+      </nuxt-link>
+      <ThemeSwitcher />
+    </section>
     <section class="core">
-      <nuxt-link to="/build">Things I'm building</nuxt-link>
+      <nuxt-link to="/products">Products</nuxt-link>
       <div class="cube">
         <div class="top"></div>
         <div class="right"></div>
@@ -11,11 +19,48 @@
         <div class="front"></div>
         <div class="back"></div>
       </div>
-      <nuxt-link to="/thoughts">Things I'm thinking</nuxt-link>
+      <nuxt-link to="/thoughts">Thoughts</nuxt-link>
     </section>
-    <ThemeSwitcher />
+    <section class="extras">
+      <img 
+          :src="`/mail-${currentTheme}.svg`" 
+          alt="home" 
+        />
+      <img 
+          :src="`/twitter-${currentTheme}.svg`" 
+          alt="home" 
+        />
+    </section>
   </nav>
 </template>
+
+<script>
+import { useThemeStore } from '~/store/theme'
+import { watch, onMounted, computed } from 'vue'
+
+export default {
+  setup() {
+    const themeStore = useThemeStore()
+
+    onMounted(() => {
+      watch(
+        () => themeStore.currentTheme,
+        (newTheme, oldTheme) => {
+          if (typeof document !== 'undefined') {
+            document.body.classList.remove(`${oldTheme}`)
+            document.body.classList.add(`${newTheme}`)
+          }
+        },
+        { immediate: true }
+      )
+    })
+
+    return {
+      currentTheme: computed(() => themeStore.currentTheme)
+    }
+  },
+}
+</script>
 
 <style scoped>
 
@@ -23,17 +68,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem;
-  width: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin:2rem auto;
 }
 
 .main-nav a {
-  margin: 0 10px;
   text-decoration: none;
-  color: #333;
-  font-size: 1.5rem;
+  color: #000;
+  font-size: 1rem;
   font-family: 'IBM Plex Mono';
-  text-transform: uppercase;
+  font-weight: bold;
   display: flex;
   align-items: center;
 }
@@ -41,6 +86,12 @@
   .dark .main-nav a {
     color: white;
   }
+
+.extras {
+  display:flex;
+  flex-direction: row;
+  gap:.3rem;
+}
 
 .router-link-active, 
 .router-link-exact-active {
@@ -68,9 +119,10 @@
    line-height: 100px;
    text-align: center;
    box-shadow: inset 0px 0px 0px 3px rgba(0,0,0);
-   background: transparent;
    display: block;
    position: absolute;
+   background-size: cover;
+   background-color: white;
 }
 
     .dark .cube div {
@@ -80,11 +132,13 @@
 .cube div.top {
   transform: rotateX(90deg); 
   margin-top: -50px;
+  background-image: url('/circle-light.svg');
 }
 
 .cube div.right {
   transform: rotateY(90deg); 
   margin-left: 50px;
+  background-image: url('/side-light.svg');
 }
 
 .cube div.bottom { 
@@ -95,14 +149,17 @@
 .cube div.left {
   margin-left: -50px;
   transform: rotateY(-90deg); 
+  background-image: url('/side-light.svg');
 }
 
 .cube div.front {
   transform: translateZ(50px);
+  background-image: url('/face-light.svg');
 }
 
 .cube div.back {
-  transform: translateZ(-50px) rotateX(180deg);
+  transform: translateZ(-50px) rotateX(0deg);
+  background-image: url('/side-light.svg');
 }
 
 @keyframes spin {

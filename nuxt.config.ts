@@ -4,7 +4,11 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   components: true,
-  modules: ['@nuxtjs/google-fonts', '@pinia/nuxt'],
+  modules: [
+    '@nuxtjs/google-fonts', 
+    '@pinia/nuxt', 
+    '@nuxt/content'
+  ],
   googleFonts: {
     families: {
       'IBM Plex Mono': [400, 500, 700],

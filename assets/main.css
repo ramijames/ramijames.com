@@ -1,3 +1,7 @@
+* {
+  transition: all 0.16s ease-in-out;
+}
+
 body.light {
   color: #f0f0f0;
   color: #000000;
@@ -6,4 +10,45 @@ body.light {
 body.dark {
   background-color: #000000;
   color: #ffffff;
+}
+
+/* Articles */ 
+
+.single-article {
+  margin: 0 auto 8rem;
+  max-width: 800px;
+}
+
+.single-article h1,
+.single-article h2,
+.single-article h3,
+.single-article h4{
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.single-article h2,
+.single-article h3,
+.single-article h4 {
+  margin-top: 4rem;
+}
+
+.single-article p {
+  line-height: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+.single-article ul {
+  margin: 2rem;
+}
+
+.single-article ul li {
+  margin-bottom: 0.5rem;
+}
+
+img.in-article {
+  width: 100%;
+  height: auto;
+  margin:2rem 0;
 }
