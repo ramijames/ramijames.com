@@ -68,9 +68,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   max-width: 1200px;
-  margin:2rem auto;
+  margin:1rem auto;
+  padding: 0 1rem;
 }
 
 .main-nav a {
@@ -83,6 +83,13 @@ export default {
   align-items: center;
 }
 
+    @media screen and (max-width: 768px) {
+      .main-nav a {
+        font-size: .8rem;
+        margin:0 0.5rem;
+      }
+    }
+
   .dark .main-nav a {
     color: white;
   }
@@ -92,6 +99,12 @@ export default {
   flex-direction: row;
   gap:.3rem;
 }
+
+    @media screen and (max-width: 768px) {
+      .extras {
+        gap:.15rem;
+      }
+    }
 
 .router-link-active, 
 .router-link-exact-active {
@@ -113,6 +126,12 @@ export default {
   margin: 0 2rem;
 }
 
+    @media screen and (max-width: 768px) {
+      .cube {
+        display:none;
+      }
+    }
+
 .cube div {
    width: 100px;
    height: 100px;
@@ -125,9 +144,6 @@ export default {
    background-color: white;
 }
 
-    .dark .cube div {
-      box-shadow: inset 0px 0px 0px 3px rgba(255,255,255);
-    }
 
 .cube div.top {
   transform: rotateX(90deg); 
@@ -136,7 +152,7 @@ export default {
 }
 
 .cube div.right {
-  transform: rotateY(90deg); 
+  transform: rotateY(-90deg); 
   margin-left: 50px;
   background-image: url('/side-light.svg');
 }
@@ -158,8 +174,8 @@ export default {
 }
 
 .cube div.back {
-  transform: translateZ(-50px) rotateX(0deg);
-  background-image: url('/side-light.svg');
+  transform: translateZ(-50px) rotateX(0deg) rotateY(180deg);
+  background-image: url('/logo-light.svg');
 }
 
 @keyframes spin {

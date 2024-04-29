@@ -3,7 +3,10 @@ export default defineNuxtConfig({
     '~/assets/main.css'
   ],
   devtools: { enabled: true },
-  components: true,
+  components: {
+    global: true,
+    dirs: ['~/components'],
+  },
   modules: [
     '@nuxtjs/google-fonts', 
     '@pinia/nuxt', 

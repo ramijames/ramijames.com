@@ -1,5 +1,6 @@
 <template>
   <img
+    class="theme-switcher"
     @click="toggleTheme"
     :src="`/${currentTheme}.svg`"
     :alt="`${currentTheme} theme`"
@@ -40,6 +41,10 @@ export default {
 </script>
 
 <style scoped>
+
+.theme-switcher {
+  z-index: 1;
+}
 
 img {
   cursor: pointer;

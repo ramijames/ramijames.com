@@ -29,6 +29,15 @@ export default {
   padding: 2rem;
 }
 
+    @media screen and (max-width: 768px) {
+      .articles {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0rem;
+      }
+    }
+
 .single-article {
   display:flex;
   flex-direction: column;

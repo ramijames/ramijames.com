@@ -1,8 +1,13 @@
 <svg width="156" height="156" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_6_72)">
-<circle cx="54" cy="67" r="12" stroke="black" stroke-width="5" stroke-linecap="round"/>
-<circle cx="102" cy="67" r="12" stroke="black" stroke-width="5" stroke-linecap="round"/>
-<path d="M-0.5 101H156" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<circle cx="47" cy="59" r="8" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<circle cx="47" cy="59" r="16" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<circle cx="109" cy="59" r="8" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<circle cx="109" cy="59" r="16" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path d="M101 88C101.552 88 102.002 88.4491 101.98 89.0009C101.455 101.792 90.9196 112 78 112C65.0804 112 54.5452 101.792 54.0205 89.0009C53.9979 88.4491 54.446 88 54.9983 88C66.4402 88 83.6655 88 101 88Z" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path d="M63 106.5C67.8333 103.167 80.7 98.5 93.5 106.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path d="M158 20L118.409 20C118.304 20 118.199 19.9833 118.099 19.9505L97.4614 13.2012C85.1415 9.17207 71.8585 9.17207 59.5386 13.2012L38.9015 19.9505C38.8011 19.9833 38.6962 20 38.5906 20L-1 20" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path d="M-1 135L38.5906 135C38.6962 135 38.8011 135.017 38.9015 135.05L59.5386 141.799C71.8585 145.828 85.1415 145.828 97.4614 141.799L118.099 135.05C118.199 135.017 118.304 135 118.409 135L158 135" stroke="black" stroke-width="5" stroke-linecap="round"/>
 </g>
 <defs>
 <clipPath id="clip0_6_72">

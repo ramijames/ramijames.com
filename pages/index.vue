@@ -1,34 +1,38 @@
 <template>
   <section class="home">
     <section class="core">
-      <pre class="text">
-        <strong>Owner</strong> = <span class="tint-yellow"> {
-            name: <span class="tint-blue">"Rami James"</span>,
-            strength: <span class="tint-blue">"product development & design"</span>,
-            available: <span class="tint-green">true</span>
-        }</span>
-
-        <strong>Links</strong> = <span class="tint-yellow"> [
-            <a class="main-links tint-blue" href="/products">"Products",</a>
-            <a class="main-links tint-blue" href="/thoughts">"Thoughts"</a>
-        ]</span>
-      </pre>
-      <div class="cube">
-        <div class="top"></div>
-        <div class="right"></div>
-        <div class="bottom"></div>
-        <div class="left"></div>
-        <div class="front"></div>
-        <div class="back"></div>
+      <ThemeSwitcher />
+      <div class="text">
+        <h1 class="title">Rami James</h1>
+        <h3 class="sub-title">Product Development & Design</h3>
+        <p><nuxt-link class="main-links" to="/products">Products in Development</nuxt-link></p>
+        <p><nuxt-link class="main-links" to="/thoughts">Thoughts on Software</nuxt-link></p>
+      </div>
+      <div class="nav-extras">
+        <img 
+          :src="`/mail-${currentTheme}.svg`" 
+          alt="home" 
+        />
+        <img 
+          :src="`/twitter-${currentTheme}.svg`" 
+          alt="home" 
+        />
       </div>
     </section>
-    
-    <ThemeSwitcher />
+    <div class="cube">
+      <div class="top"></div>
+      <div class="right"></div>
+      <div class="bottom"></div>
+      <div class="left"></div>
+      <div class="front"></div>
+      <div class="back"></div>
+    </div>
   </section>
 </template>
 
 <script>
-
+import { useThemeStore } from '~/store/theme'
+import { watch, onMounted, computed } from 'vue'
 import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
 
 export default {
@@ -37,9 +41,24 @@ export default {
     definePageMeta({
       layout: 'home'
     })
+
+    const themeStore = useThemeStore()
+
+    onMounted(() => {
+      watch(
+        () => themeStore.currentTheme,
+        (newTheme, oldTheme) => {
+          if (typeof document !== 'undefined') {
+            document.body.classList.remove(`${oldTheme}`)
+            document.body.classList.add(`${newTheme}`)
+          }
+        },
+        { immediate: true }
+      )
+    })
     
     return {
-      theme: 'light'
+      currentTheme: computed(() => themeStore.currentTheme)
     }
   },
   components: {
@@ -60,37 +79,47 @@ export default {
 
 .core {
   display: flex;
-  align-items: center;
-  justify-content: start;
-  height:100%;
-  background-color: black;
-  width:100%;
-  overflow: hidden;
-  position: fixed;
-  background-size: 40px 40px;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding:4rem;
+  position: absolute;
+  bottom:0;
+  top:0;
+  left:0;
 }
 
+    @media screen and (max-width: 768px) {
+      .core {
+        padding-top:4rem;
+        align-items: flex-start;
+      }
+    }
+
     .core .text {
-      color:white;
+      color:black;
       font-size:2.4dvw;
       font-family: 'IBM Plex Mono';
-      text-shadow: 0 2px 2px rgba(0,0,0,0.8), 0 5px 6px rgba(0,0,0,0.3),  0 8px 12px rgba(91, 29, 216, 0.2);
       z-index:1;
     }
 
-        .tint-yellow {
-          color:rgb(253, 255, 211);
+        .dark .core .text {
+          color:white;
         }
 
-        .tint-blue {
-          color:rgb(169, 204, 247);
+        .core .text .title {
+          font-size:4dvw;
         }
 
-        .tint-green {
-          color:rgb(132, 213, 97);
+        .core .text .sub-title {
+          font-size:2dvw;
+          margin-bottom:2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+          .core .text {
+            font-size:4dvw;
+          }
         }
 
 .content {
@@ -147,12 +176,13 @@ export default {
     padding:2rem;
   }
 
-a.main-links {
+.main-links {
   text-decoration: underline;
   font-family: 'IBM Plex Mono';
+  color:white;
 }
 
-    .dark a.main-links {
+    .dark .main-links {
       color:white;
     }
 
@@ -168,18 +198,36 @@ a.main-links {
   right:100px;
 }
 
+    @media screen and (max-width: 768px) {
+      .cube {
+        scale:0.005;
+        top:500px;
+      }
+    }
+
 .cube div {
   width: 400px;
   height: 400px;
   text-align: center;
-  border:2px solid rgba(255,255,255, 0.8);
+  border:2px solid rgba(0,0,0);
   border-radius: 2px;
-  box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 0px 0px 20px rgba(99, 252, 148, 0.832), 0px 100px 100px rgba(221, 255, 255, 0.3), inset 0px 0px 20px rgba(99, 252, 148, 0.832);
   display: block;
   position: absolute;
-  background: rgba(255, 255, 255, 0.13);
-  background: linear-gradient(45deg, rgb(255, 255, 255, 0.4) 4%, rgba(187, 164, 255, 0.282) 20%, rgba(0, 0, 0, 0.341) 100%);
+  background: transparent;
 }
+
+    .dark .cube div {
+      width: 400px;
+      height: 400px;
+      text-align: center;
+      border:2px solid rgba(255,255,255, 0.8);
+      border-radius: 2px;
+      box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 0px 0px 20px rgba(99, 252, 148, 0.832), 0px 100px 100px rgba(221, 255, 255, 0.3), inset 0px 0px 20px rgba(99, 252, 148, 0.832);
+      display: block;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.13);
+      background: linear-gradient(45deg, rgb(255, 255, 255, 0.4) 4%, rgba(187, 164, 255, 0.282) 20%, rgba(0, 0, 0, 0.341) 100%);
+    }
 
 .cube div.top {
   -webkit-transform: rotateX(90deg); 
