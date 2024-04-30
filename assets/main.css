@@ -2,6 +2,67 @@
   transition: all 0.16s ease-in-out;
 }
 
+/* Reset */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html, 
+body {
+ margin: 0;
+ padding: 0;
+ font-family: 'Libre Baskerville', sans-serif;
+}
+
+
+
+/* Typography */
+
+h1 { 
+ font-size: 3.051rem; 
+ font-family: 'Libre Baskerville';
+}
+
+h2 { 
+ font-size: 2.441rem; 
+ font-family: 'Libre Baskerville';
+}
+
+h3 { 
+ font-size: 1.953rem; 
+ font-family: 'Libre Baskerville';
+}
+
+h4 { 
+ font-size: 1.562rem; 
+ font-family: 'Libre Baskerville';
+}
+
+h5 { 
+ font-size: 1.25rem; 
+ font-family: 'Libre Baskerville';
+}
+
+p { 
+ font-size: 1rem; 
+ font-family: 'Libre Baskerville';
+}
+
+small { 
+ font-size: 0.8rem; 
+ font-family: 'Open Sans', sans-serif;
+}
+
+/* Layout */
+
+.container {
+ max-width: 1200px;
+ margin: 2rem auto;
+ padding: 0 20px;
+}
+
 body.light {
   color: #f0f0f0;
   color: #000000;
@@ -15,16 +76,34 @@ body.dark {
 /* Articles */ 
 
 .single-article {
-  margin: 0 auto 8rem;
+  margin: 0 auto 2rem;
   display:flex;
   flex-direction: row;
 }
 
     .article-extras {
-      width:25%;
+      width:340px;
       display:flex;
       flex-direction: column;
-      padding-right: 4rem;
+      margin-right: 4rem;
+      position: fixed;
+      height:100%
+    }
+
+        @media screen and (max-width: 768px) {
+          .article-extras {
+            width:100%;
+            position: relative;
+            height: auto;
+          }
+        }
+
+    .article-extras .posts {
+      border-top: 1px solid #0000001d;
+    }
+
+    .dark .article-extras .posts {
+      border-top: 1px solid #ffffff1d;
     }
 
     @media screen and (max-width: 768px) {
@@ -49,15 +128,28 @@ body.dark {
     }
 
     .content {
-      width:75%;
+      width:65%;
+      margin-left:380px;
     }
 
-    @media screen and (max-width: 768px) {
-      .content {
-        width:100%;
+      @media screen and (max-width: 768px) {
+        .content {
+          width:100%;
+          margin:0;
+        }
       }
-    
+
+    .content img {
+      margin:0 0 2rem 0;
+      width: 100%;
     }
+
+
+
+.single-article h1 {
+  line-height: 2.8rem;
+  font-size: 2.441rem; 
+}
 
 .single-article h1,
 .single-article h2,
@@ -74,9 +166,10 @@ body.dark {
 }
 
 .single-article p {
-  line-height: 2rem;
-  font-family: 'Open Sans', sans-serif;
+  line-height: 2.4rem;
+  font-family: 'Libre Baskerville', sans-serif;
   margin-bottom: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .single-article p img {
@@ -96,4 +189,16 @@ img.in-article {
   width: 100%;
   height: auto;
   margin:2rem 0;
+}
+
+.single-article h4 {
+  margin: 1.5rem 0 0.5rem !important;
+}
+
+.single-article a {
+  color: #ff53f1;
+}
+
+.dark .single-article a {
+  color: #53ff9b;
 }

@@ -24,7 +24,7 @@ export default {
 
 .articles {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   padding: 2rem;
 }
@@ -67,11 +67,11 @@ export default {
 .articles a {
   text-decoration: none;
   color: #000;
-  font-family: 'IBM Plex Mono';
+  font-family: 'Libre Baskerville';
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1rem;
+  font-size: 2rem;
   text-align: center;
 }
 

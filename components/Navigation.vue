@@ -22,14 +22,14 @@
       <nuxt-link to="/thoughts">Thoughts</nuxt-link>
     </section>
     <section class="extras">
-      <img 
+      <a href="mailto:rami@ramijames.com"><img 
           :src="`/mail-${currentTheme}.svg`" 
-          alt="home" 
-        />
-      <img 
+          alt="Send Rami an email" 
+        /></a>
+      <a href="https://twitter.com/ramijames"><img 
           :src="`/twitter-${currentTheme}.svg`" 
-          alt="home" 
-        />
+          alt="Check out Rami's Twitter" 
+        /></a>
     </section>
   </nav>
 </template>
@@ -77,11 +77,17 @@ export default {
   text-decoration: none;
   color: #000;
   font-size: 1rem;
-  font-family: 'IBM Plex Mono';
+  font-family: 'Libre Baskerville';
   font-weight: bold;
   display: flex;
   align-items: center;
+  padding:0.2rem 0.5rem;
 }
+
+.main-nav a:hover,
+.main-nav img:hover {
+  scale:1.1;
+} 
 
     @media screen and (max-width: 768px) {
       .main-nav a {
@@ -108,8 +114,17 @@ export default {
 
 .router-link-active, 
 .router-link-exact-active {
-  text-decoration: underline !important;
+  background:black;
+  color:white !important;
+  border-radius: .2rem;
 }
+
+    .dark .router-link-active, 
+    .dark .router-link-exact-active {
+      background:white;
+      color:black !important;
+      border-radius: .2rem;
+    }
 
 .core {
   display: flex;
@@ -143,6 +158,25 @@ export default {
    background-size: cover;
    background-color: white;
 }
+
+    .dark .cube div {
+      border:2px solid rgba(255,255,255, 0.8);
+      border-radius: 2px;
+      box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 0px 0px 20px rgba(99, 252, 148, 0.832), 0px 10px 20px rgba(221, 255, 255, 0.3), inset 0px 0px 10px rgba(99, 252, 148, 0.832);
+      display: block;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.13);
+      background: linear-gradient(45deg, rgb(255, 255, 255, 0.4) 4%, rgba(187, 164, 255, 0.282) 40%, rgba(0, 0, 0, 0.341) 100%);
+    }
+
+    .dark .cube div.top,
+    .dark .cube div.right,
+    .dark .cube div.bottom,
+    .dark .cube div.left,
+    .dark .cube div.front,
+    .dark .cube div.back {
+      background: linear-gradient(45deg, rgb(255, 255, 255, 0.4) 4%, rgba(187, 164, 255, 0.282) 40%, rgba(0, 0, 0, 0.341) 100%);
+    }
 
 
 .cube div.top {

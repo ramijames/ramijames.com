@@ -14,8 +14,8 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      'IBM Plex Mono': [400, 500, 700],
-      'Open Sans': [400, 600, 700]
+      'Open Sans': [400, 600, 700],
+      'Libre Baskerville': [400, 700]
     }
   }
 })

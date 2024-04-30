@@ -27,21 +27,14 @@ export default {
 }
 
 .single-post {
-  padding: 1rem 0;
-  border-bottom: 1px solid #0000001d;
+  padding: 1rem 0 0;
   text-decoration: none;
   font-size:1rem;
   color:#000;
 }
 
-    .single-post:last-child,
-    .dark .single-post:last-child {
-      border-bottom: none;
-    }
-
     .dark .single-post {
       color: #fff;
-      border-bottom: 1px solid #ffffff1d;
     }
 
 </style>
