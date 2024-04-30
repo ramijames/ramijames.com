@@ -5,8 +5,10 @@
       <div class="text">
         <h1 class="title">Rami James</h1>
         <h3 class="sub-title">Product Development & Design</h3>
-        <p><nuxt-link class="main-links" to="/products">Products in Development</nuxt-link></p>
-        <p><nuxt-link class="main-links" to="/thoughts">Thoughts on Software</nuxt-link></p>
+        <section class="buttons">
+          <nuxt-link class="main-links" to="/products">See Products</nuxt-link>
+          <nuxt-link class="main-links" to="/thoughts">Read Thoughts</nuxt-link>
+        </section>
       </div>
       <div class="nav-extras">
         <img 
@@ -103,7 +105,20 @@ export default {
   bottom:0;
   top:0;
   left:0;
+  z-index: 2;
 }
+
+    .dark .core::after {
+      z-index: 3;
+      content:'';
+      width:100%;
+      height: 100vh;
+      position: absolute;
+      top:0;
+      left: 0;
+      bottom:0;
+      background: linear-gradient(90deg, rgba(0,0,0, .2) 0%, rgba(0,0,0, .4) 60%, rgba(110, 92, 131, 0) 100%);
+    }
 
     @media screen and (max-width: 768px) {
       .core {
@@ -116,11 +131,12 @@ export default {
       color:black;
       font-size:2.4dvw;
       font-family: 'Libre Baskerville';
-      z-index:1;
+      z-index:4;
     }
 
         .dark .core .text {
           color:white;
+          text-shadow: 0px 2px 2px rgba(0,0,0,0.24);
         }
 
         .core .text .title {
@@ -133,8 +149,13 @@ export default {
         }
 
         @media screen and (max-width: 768px) {
-          .core .text {
+          .core .text .title {
+            font-size:8dvw;
+          }
+
+          .core .text .sub-title {
             font-size:4dvw;
+            margin-bottom:2rem;
           }
         }
 
@@ -192,15 +213,42 @@ export default {
     padding:2rem;
   }
 
+.buttons {
+  display: flex;
+  gap:2rem;
+}
+
 .main-links {
-  text-decoration: underline;
   font-family: 'Libre Baskerville';
   color:black;
-  font-size: 1.5dvw;
+  text-decoration: none;
+  font-size: 1dvw;
+  margin-bottom:1rem;
+  display:inline-block;
+  padding:.5rem 1rem;
+  border:2px solid black;
+  border-radius: 4px;
 }
+
+    .main-links:hover {
+      background:black;
+      color:white;
+    }
 
     .dark .main-links {
       color:white;
+      border:2px solid white;
+    }
+
+    .dark .main-links:hover {
+      background:white;
+      color:black;
+    }
+
+    @media screen and (max-width: 768px) {
+      .main-links {
+        font-size: 3dvw;
+      }
     }
 
 .cube {

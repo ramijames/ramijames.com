@@ -73,7 +73,7 @@ export default {
   padding: 0 1rem;
 }
 
-.main-nav a {
+.core a {
   text-decoration: none;
   color: #000;
   font-size: 1rem;
@@ -82,12 +82,18 @@ export default {
   display: flex;
   align-items: center;
   padding:0.2rem 0.5rem;
+  border-radius: 4px;
 }
 
-.main-nav a:hover,
-.main-nav img:hover {
-  scale:1.1;
-} 
+    .core a:hover {
+      background: black;
+      color:white;
+    }
+
+    .dark .core a:hover {
+      background: white;
+      color:black;
+    }
 
     @media screen and (max-width: 768px) {
       .main-nav a {
@@ -114,15 +120,15 @@ export default {
 
 .router-link-active, 
 .router-link-exact-active {
-  background:black;
-  color:white !important;
+  background:white;
+  border:2px solid black;
   border-radius: .2rem;
 }
 
     .dark .router-link-active, 
     .dark .router-link-exact-active {
-      background:white;
-      color:black !important;
+      border:2px solid white;
+      background:black;
       border-radius: .2rem;
     }
 
