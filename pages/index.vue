@@ -11,14 +11,14 @@
         </section>
       </div>
       <div class="nav-extras">
-        <img 
+        <a href="mailto:rami@ramijames.com"><img 
           :src="`/mail-${currentTheme}.svg`" 
-          alt="home" 
-        />
-        <img 
+          alt="Send Rami an email" 
+        /></a>
+      <a href="https://twitter.com/ramijames"><img 
           :src="`/twitter-${currentTheme}.svg`" 
-          alt="home" 
-        />
+          alt="Check out Rami's Twitter" 
+        /></a>
       </div>
     </section>
     <div class="cube">
@@ -118,6 +118,7 @@ export default {
       left: 0;
       bottom:0;
       background: linear-gradient(90deg, rgba(0,0,0, .2) 0%, rgba(0,0,0, .4) 60%, rgba(110, 92, 131, 0) 100%);
+      pointer-events: none;
     }
 
     @media screen and (max-width: 768px) {

@@ -1,6 +1,6 @@
 <template>
   <nav class="main-nav">
-    <section class="extras">
+    <section class="extras left">
       <nuxt-link to="/">
         <img 
           :src="`/home-${currentTheme}.svg`" 
@@ -21,7 +21,7 @@
       </div>
       <nuxt-link to="/thoughts">Thoughts</nuxt-link>
     </section>
-    <section class="extras">
+    <section class="extras right">
       <a href="mailto:rami@ramijames.com"><img 
           :src="`/mail-${currentTheme}.svg`" 
           alt="Send Rami an email" 
@@ -65,71 +65,183 @@ export default {
 <style scoped>
 
 .main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   max-width: 1200px;
   margin:1rem auto;
   padding: 0 1rem;
+  position: relative;
 }
 
-.core a {
-  text-decoration: none;
-  color: #000;
-  font-size: 1rem;
-  font-family: 'Libre Baskerville';
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  padding:0.2rem 0.5rem;
-  border-radius: 4px;
-}
+@media screen and (max-width: 768px) {
+  .main-nav {
+    width:100%;
+    top:0px;
+    height:66px;
+    position:relative;
+    margin:0;
+    padding:0;
+    text-align: center;
+  }
 
-    .core a:hover {
-      background: black;
-      color:white;
-    }
-
-    .dark .core a:hover {
-      background: white;
-      color:black;
-    }
-
-    @media screen and (max-width: 768px) {
       .main-nav a {
+        width:50%;
         font-size: .8rem;
-        margin:0 0.5rem;
+        margin:0;
+        padding: 0;
+        text-align: center;
+        justify-content: center;
       }
+}
+
+.core {
+  display:flex;
+  justify-content: center;
+  width: 100%;
+}
+
+    .core a {
+      text-decoration: none;
+      color: #000;
+      font-size: 1rem;
+      font-family: 'Libre Baskerville';
+      font-weight: bold;
+      display: flex;
+      align-items: center;
     }
 
-  .dark .main-nav a {
+        .core a:hover {
+          border-color: black;
+          color:black;
+        }
+
+        .dark .core a:hover {
+          border-color: white;
+          color:white;
+        }
+
+      @media screen and (max-width: 768px) {
+        .core {
+          width:100%;
+          position:fixed;
+          background-color: white;
+          bottom:0;
+          height:54px;
+        }
+
+        .dark .core {
+          background-color: black;
+        }
+
+        .core a {
+          width:50%;
+          font-size: .8rem;
+          margin:0;
+          padding: 0;
+          text-align: center;
+          justify-content: center;
+        }
+
+        .core a:hover {
+          background-color: transparent;
+        }
+
+        .dark .core a:hover {
+          background-color: transparent;
+          color: white;
+        }
+      }
+
+  .main-nav a,
+  .theme-switcher {
+    color: black;
+    display:flex;
+    justify-content: center;
+    height:100%;
+    border: bottom 2px solid transparent;
+  }
+  
+  .dark .main-nav a,
+  .dark .theme-switcher {
     color: white;
+    display:flex;
+    justify-content: center;
   }
 
 .extras {
   display:flex;
   flex-direction: row;
   gap:.3rem;
+  height:100px;
+  justify-content: center;
 }
 
+    .extras.left {
+      position:absolute;
+      left:2rem;
+      top:0;
+      display:flex;
+      justify-content: flex-start;
+    }
+
+    .extras.right {
+      position:absolute;
+      right:2rem;
+      top:0;
+      display:flex;
+      justify-content: flex-end;
+    }
+
     @media screen and (max-width: 768px) {
-      .extras {
-        gap:.15rem;
+      .extras.left {
+        position:absolute;
+        left:0;
+        width:50%;
+        display:flex;
+        justify-content: flex-start;
+      }
+
+      .extras.right {
+        position:absolute;
+        right:0;
+        width:50%;
+        display:flex;
+        justify-content: flex-end;
+      }
+
+      .extras a, .extras .theme-switcher {
+        width:50%;
+        height:34px;
+        padding:1rem;
+        display: flex;
+        justify-content: center;
       }
     }
 
 .router-link-active, 
 .router-link-exact-active {
-  background:white;
-  border:2px solid black;
-  border-radius: .2rem;
+  border-bottom:2px solid black;
 }
 
     .dark .router-link-active, 
     .dark .router-link-exact-active {
-      border:2px solid white;
-      background:black;
-      border-radius: .2rem;
+      border-bottom:2px solid white;
+    }
+
+    @media screen and (max-width: 768px) {
+      .router-link-active, 
+      .router-link-exact-active {
+        background:white;
+        border:none;
+        border-bottom:2px solid black;
+        border-radius: 0rem;
+      }
+
+          .dark .router-link-active, 
+          .dark .router-link-exact-active {
+            border:none;
+            border-bottom:2px solid white;
+            background:black;
+            border-radius: 0rem;
+          }
     }
 
 .core {
