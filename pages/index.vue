@@ -216,7 +216,7 @@ export default {
 
 .buttons {
   display: flex;
-  gap:2rem;
+  gap:1rem;
 }
 
 .main-links {
