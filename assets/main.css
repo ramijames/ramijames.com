@@ -84,9 +84,13 @@ body.dark {
       display:flex;
       flex-direction: column;
       margin-right: 4rem;
-      position: fixed;
+      position: relative;
       height:100%
     }
+
+        .article-extras.pinned {
+          top:40px;
+        }
 
         @media screen and (max-width: 768px) {
           .article-extras {
@@ -95,10 +99,6 @@ body.dark {
             height: auto;
           }
         }
-
-    .dark .article-extras .posts {
-      border-top: 1px solid #ffffff1d;
-    }
 
         .article-extras .posts a {
           font-size:0.8rem;
@@ -153,8 +153,7 @@ body.dark {
     }
 
     .content {
-      width:65%;
-      margin-left:380px;
+      width:calc(100% - 340px);
     }
 
       @media screen and (max-width: 768px) {

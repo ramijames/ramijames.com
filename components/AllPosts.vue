@@ -1,5 +1,5 @@
 <template>
-  <main class="posts">
+  <main class="posts" :class="{ 'sticky-top': pinned }">
     <div id="mc_embed_shell">
       <div id="mc_embed_signup">
           <form action="https://doodledapp.us12.list-manage.com/subscribe/post?u=f081fdb86b92e439e4994e8d6&amp;id=6210f0527f&amp;f_id=00eb4ae0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
@@ -42,11 +42,19 @@ import articles from '~/assets/articles.json'
 export default {
   data() {
     return {
-      articles: []
+      articles: [],
+      pinned: false
     }
   },
-  created() {
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
     this.articles = this.getRandomArticles(articles, 5)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     getRandomArticles(arr, n) {
@@ -61,12 +69,40 @@ export default {
           taken[x] = --len in taken ? taken[len] : len
       }
       return result
+    },
+    handleScroll() {
+      this.pinned = window.scrollY > 300
     }
   }
 }
 </script>
 
 <style>
+
+.sticky-top {
+  position: fixed;
+  top: 40px;
+  z-index: 100;
+  background: white;
+  width: 321px;
+}
+
+    .dark .sticky-top {
+      position: fixed;
+      top: 40px;
+      z-index: 100;
+      background: black;
+      width: 321px;
+    }
+
+    .sticky-top .mc-field-group input.email {
+      border:2px solid #ff53f1;
+    }
+    
+    .dark .sticky-top .mc-field-group input.email {
+      border:2px solid #53ff9b;
+      box-shadow: inset 0px 0px 4px rgba(255, 247, 0, 0.1), 0px 0px 8px rgba(99, 252, 148, 0.832), 0px 0px 12px rgba(221, 255, 255, 0.3), inset 0px 0px 8px rgba(99, 252, 148, 0.832);
+    }
 
 .posts {
   display: flex;
@@ -104,10 +140,20 @@ export default {
       border:2px solid black;
     }
 
+    .mc-field-group input.email:focus-visible {
+      border:2px solid #ff53f1;
+      outline: none;
+    }
+
     .dark .mc-field-group input.email {
       border:2px solid white;
       color:white;
       background-color: black;
+    }
+
+    .dark .mc-field-group input.email:focus-visible {
+      border:2px solid #53ff9b;
+      outline: none;
     }
 
 .mc-field-group input.button {

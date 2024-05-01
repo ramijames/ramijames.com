@@ -176,7 +176,7 @@ export default {
 
     .extras.left {
       position:absolute;
-      left:2rem;
+      left:1rem;
       top:0;
       display:flex;
       justify-content: flex-start;
@@ -184,7 +184,7 @@ export default {
 
     .extras.right {
       position:absolute;
-      right:2rem;
+      right:1rem;
       top:0;
       display:flex;
       justify-content: flex-end;
