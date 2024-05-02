@@ -1,7 +1,7 @@
 <template>
   <section class="home">
     <section class="core">
-      <ThemeSwitcher />
+      <section class="dark-side"><ThemeSwitcher /> <span v-if="currentTheme !== 'dark'">Come to the dark side</span></section>
       <div class="text">
         <h1 class="title">Take your product into the future</h1>
         <h3 class="sub-title">This is the portfolio site of <nuxt-link to="/about">Rami James</nuxt-link>, a veteran founder, startup specialist, and published writer.</h3>
@@ -94,6 +94,33 @@ export default {
   height: 100vh;
   width:100vw;
 }
+
+.dark-side {
+  display:flex;
+  flex-direction: row;
+  font-size:.6rem;
+  text-transform: uppercase;
+  align-items: center;
+  gap:1rem;
+}
+
+.dark-side span {
+  opacity: 0.4;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    margin-left:0.5rem;
+  }
+  50% {
+    margin-left:0rem;
+  }
+  100% {
+    margin-left:0.5rem;
+  }
+}
+
 
 .core {
   display: flex;
