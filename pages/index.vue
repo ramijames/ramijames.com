@@ -260,7 +260,7 @@ export default {
   height: 200px;
   scale:1;
   top:300px;
-  right:0px;
+  right:100px;
 }
 
     @media screen and (max-width: 768px) {
@@ -304,28 +304,33 @@ export default {
   -webkit-transform: rotateY(90deg); 
   transform: rotateY(90deg); 
   margin-left: 200px;
+  opacity: 0.6;
 }
 
 .cube div.bottom {
   -webkit-transform: rotateX(-90deg); 
   transform: rotateX(-90deg); 
   margin-top: 200px;
+  opacity: 0.2;
 }
 
 .cube div.left {
   -webkit-transform: rotateY(-90deg); 
   margin-left: -200px;
   transform: rotateY(-90deg); 
+  opacity: 0.6;
 }
 
 .cube div.front {
   -webkit-transform: translateZ(200px);
   transform: translateZ(200px);
+  opacity: 0.6;
 }
 
 .cube div.back {
   -webkit-transform: translateZ(-200px) rotateX(180deg);
   transform: translateZ(-200px) rotateX(180deg);
+  opacity: 0.6;
 }
 
 @keyframes spin {
@@ -355,7 +360,7 @@ export default {
   height: 200px;
   scale:.7;
   top:0px;
-  right:0px;
+  right:100px;
 }
 
     .slivers div {

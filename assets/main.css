@@ -94,7 +94,7 @@ body.dark {
 
 button, .button {
   background: linear-gradient(white, white) padding-box,
-  linear-gradient(to bottom, rgb(144, 144, 144), black) border-box;
+              linear-gradient(to bottom, rgb(144, 144, 144), black) border-box;
   border: 2px solid transparent;
   color:black;
   padding: 0.5rem 1rem;

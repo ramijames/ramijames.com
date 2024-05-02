@@ -277,13 +277,13 @@ export default {
 }
 
     .dark .cube div {
-      border:2px solid rgba(255,255,255, 0.8);
-      border-radius: 2px;
-      box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 0px 0px 20px rgba(99, 252, 148, 0.832), 0px 10px 20px rgba(221, 255, 255, 0.3), inset 0px 0px 10px rgba(99, 252, 148, 0.832);
+      border:2px solid rgba(255,255,255, 1);
+      border-radius: 4px;
+      /* box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 0px 0px 20px rgba(99, 252, 148, 0.832), 0px 10px 20px rgba(221, 255, 255, 0.3), inset 0px 0px 10px rgba(99, 252, 148, 0.832); */
       display: block;
       position: absolute;
       background: rgba(255, 255, 255, 0.13);
-      background: linear-gradient(45deg, rgb(255, 255, 255, 0.4) 4%, rgba(187, 164, 255, 0.282) 40%, rgba(0, 0, 0, 0.341) 100%);
+      /* background: linear-gradient(45deg, rgb(255, 255, 255, 0.4) 4%, rgba(187, 164, 255, 0.282) 40%, rgba(0, 0, 0, 0.341) 100%); */
     }
 
     .dark .cube div.top,
