@@ -93,21 +93,6 @@ body.dark {
 /* Standard elements */
 
 button, .button {
-  background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)) padding-box,
-  linear-gradient(to bottom, rgb(42, 42, 42), black) border-box;
-  border-radius: 4px;
-  border: 2px solid transparent;
-  color:white;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  margin-top:-4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  font-family: 'Montserrat', sans-serif;
-}
-
-button:hover, .button:hover {
   background: linear-gradient(white, white) padding-box,
   linear-gradient(to bottom, rgb(144, 144, 144), black) border-box;
   border: 2px solid transparent;
@@ -118,6 +103,20 @@ button:hover, .button:hover {
   position: relative;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   transition: all 0.28s ease-in-out;
+  border-radius: 4px;
+}
+
+button:hover, .button:hover {
+  background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)) padding-box,
+  linear-gradient(to bottom, rgb(42, 42, 42), black) border-box;
+  border: 2px solid transparent;
+  color:white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  font-family: 'Montserrat', sans-serif;
 }
 
     button.small, .button.small {

@@ -46,18 +46,17 @@ export default {
 
 .single-article img {
   width: 100%;
-  border: 2px solid rgba(0,0,0,0);
-  padding:.3rem;
   height: auto;
-  border-radius: .3rem;
+  border: 2px solid black;
+  border-radius: 4px;
 }
 
     .dark .single-article img {
-      border: 2px solid rgba(255,255,255,0.1);
+      border: 2px solid rgba(255, 255, 255, 0.1);
     }
 
     .single-article:hover img {
-      border: 2px solid rgba(0,0,0,1);
+      border: 2px solid rgb(255, 255, 255);
     }
 
     .dark .single-article:hover img {
