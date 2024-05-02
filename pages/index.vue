@@ -3,11 +3,11 @@
     <section class="core">
       <ThemeSwitcher />
       <div class="text">
-        <h1 class="title">Rami James</h1>
-        <h3 class="sub-title">Product Development & Design</h3>
+        <h1 class="title">Take your product into the future</h1>
+        <h3 class="sub-title">This is the portfolio site of <nuxt-link to="/about">Rami James</nuxt-link>, a veteran founder, startup specialist, and published writer.</h3>
         <section class="buttons">
-          <nuxt-link class="main-links" to="/products">See Products</nuxt-link>
-          <nuxt-link class="main-links" to="/thoughts">Read Thoughts</nuxt-link>
+          <nuxt-link class="main-links button" to="/products">See Products</nuxt-link>
+          <nuxt-link class="main-links button" to="/thoughts">Read Thoughts</nuxt-link>
         </section>
       </div>
       <div class="nav-extras">
@@ -130,8 +130,6 @@ export default {
 
     .core .text {
       color:black;
-      font-size:2.4dvw;
-      font-family: 'Libre Baskerville';
       z-index:4;
     }
 
@@ -142,11 +140,14 @@ export default {
 
         .core .text .title {
           font-size:4dvw;
+          max-width:50%;
         }
 
         .core .text .sub-title {
-          font-size:2dvw;
+          font-size:1.7dvw;
           margin-bottom:2rem;
+          font-weight: 300;
+          max-width:50%;
         }
 
         @media screen and (max-width: 768px) {
@@ -220,37 +221,8 @@ export default {
 }
 
 .main-links {
-  font-family: 'Libre Baskerville';
-  color:black;
-  text-decoration: none;
-  font-size: 1dvw;
-  margin-bottom:1rem;
-  display:inline-block;
-  padding:.5rem 1rem;
-  border:2px solid black;
-  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
 }
-
-    .main-links:hover {
-      background:black;
-      color:white;
-    }
-
-    .dark .main-links {
-      color:white;
-      border:2px solid white;
-    }
-
-    .dark .main-links:hover {
-      background:white;
-      color:black;
-    }
-
-    @media screen and (max-width: 768px) {
-      .main-links {
-        font-size: 3dvw;
-      }
-    }
 
 .cube {
   -webkit-transform-style: preserve-3d;
@@ -261,7 +233,7 @@ export default {
   height: 200px;
   scale:1;
   top:300px;
-  right:100px;
+  right:0px;
 }
 
     @media screen and (max-width: 768px) {
@@ -333,17 +305,17 @@ export default {
   0% {
     -webkit-transform: rotateX(-60deg) rotateY(0deg);
     transform: rotateX(-60deg) rotateY(0deg);
-    scale:2;
+    scale:1.6;
   }
   50% {
     -webkit-transform: rotateX(-60deg) rotateY(180deg);
     transform: rotateX(-60deg) rotateY(180deg);
-    scale:1;
+    scale:.7;
   }
   100% {
     -webkit-transform: rotateX(-60deg) rotateY(360deg);
     transform: rotateX(-60deg) rotateY(360deg);
-    scale:2;
+    scale:1.6;
   }
 }
 
@@ -354,9 +326,9 @@ export default {
   position: fixed;
   width: 200px;
   height: 200px;
-  scale:1;
-  top:300px;
-  right:400px;
+  scale:.7;
+  top:0px;
+  right:0px;
 }
 
     .slivers div {

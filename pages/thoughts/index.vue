@@ -67,7 +67,6 @@ export default {
 .articles a {
   text-decoration: none;
   color: #000;
-  font-family: 'Libre Baskerville';
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -102,8 +102,7 @@ export default {
       text-decoration: none;
       color: #000;
       font-size: 1rem;
-      font-family: 'Libre Baskerville';
-      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
       display: flex;
       align-items: center;
     }

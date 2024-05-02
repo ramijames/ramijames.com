@@ -23,8 +23,8 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Open Sans': [400, 600, 700],
-      'Libre Baskerville': [400, 700]
+      'Montserrat': [400, 600, 700],
+      'Open Sans': [400, 600, 700]
     }
   }
 })

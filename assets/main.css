@@ -13,39 +13,58 @@ html,
 body {
  margin: 0;
  padding: 0;
- font-family: 'Libre Baskerville', sans-serif;
+ font-family: 'Open Sans', sans-serif;
 }
 
 /* Typography */
 
+a {
+  color:black;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+    .dark a {
+      color:white;
+    }
+
 h1 { 
  font-size: 3.051rem; 
- font-family: 'Libre Baskerville';
+ font-family: 'Montserrat', sans-serif;
 }
 
 h2 { 
  font-size: 2.441rem; 
- font-family: 'Libre Baskerville';
+ font-family: 'Montserrat', sans-serif;
+ margin-top:4rem;
+ margin-bottom:1rem;
 }
 
 h3 { 
  font-size: 1.953rem; 
- font-family: 'Libre Baskerville';
+ font-family: 'Montserrat', sans-serif;
+ margin-top:2rem;
+ margin-bottom:1rem;
 }
 
 h4 { 
  font-size: 1.562rem; 
- font-family: 'Libre Baskerville';
+ font-family: 'Montserrat', sans-serif;
+ margin-top:2rem;
+ margin-bottom:1rem;
 }
 
 h5 { 
  font-size: 1.25rem; 
- font-family: 'Libre Baskerville';
+ font-family: 'Montserrat', sans-serif;
+ margin-top:2rem;
+ margin-bottom:1rem;
 }
 
 p { 
  font-size: 1rem; 
- font-family: 'Libre Baskerville';
+ font-family: 'Open Sans', sans-serif;
+ margin-bottom:1rem;
 }
 
 small { 
@@ -70,6 +89,75 @@ body.dark {
   background-color: #000000;
   color: #ffffff;
 }
+
+/* Standard elements */
+
+button, .button {
+  background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)) padding-box,
+  linear-gradient(to bottom, rgb(42, 42, 42), black) border-box;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  color:white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  margin-top:-4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  font-family: 'Montserrat', sans-serif;
+}
+
+button:hover, .button:hover {
+  background: linear-gradient(white, white) padding-box,
+  linear-gradient(to bottom, rgb(144, 144, 144), black) border-box;
+  border: 2px solid transparent;
+  color:black;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.28s ease-in-out;
+}
+
+    button.small, .button.small {
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+    }
+
+.dark button, .dark .button {
+  box-shadow: inset 0px 4px 10px rgba(131, 36, 190, 0.1), 
+              0px 0px 10px rgba(123, 38, 130, 0.832), 
+              0px 0px 20px rgba(221, 255, 255, 0.4), 
+              inset 0px 0px 13px 4px rgba(144, 57, 173, 0.832);
+  background: linear-gradient(0deg, rgba(26, 26, 26, 1) 4%, rgba(71, 63, 94, 0.8) 100%) padding-box,
+              linear-gradient(to bottom, rgb(255, 255, 255), rgb(215, 124, 220)) border-box;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  color:white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  margin-top:-4px;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.28s ease-in-out;
+}
+
+    .dark button:hover, .dark .button:hover {
+      box-shadow: inset 0px 4px 18px rgba(131, 36, 190, 0.6), 0px 0px 18px rgba(123, 38, 130, 0.832), 0px 0px 30px rgba(221, 255, 255, 0.4), inset 0px 0px 13px 4px rgba(144, 57, 173, 0.832);
+      background: linear-gradient(0deg, rgba(131, 36, 190, 1) 4%, rgba(71, 63, 94, 0.8) 100%) padding-box,
+                  linear-gradient(to bottom, rgb(255, 255, 255), rgb(244, 198, 247)) border-box;
+      border-radius: 4px;
+      border: 2px solid transparent;
+      color:white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      margin-top:-4px;
+      font-family: 'Montserrat', sans-serif;
+    }
 
 /* Articles */ 
 
@@ -189,7 +277,7 @@ body.dark {
 
 .single-article p {
   line-height: 2.4rem;
-  font-family: 'Libre Baskerville', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
 }
