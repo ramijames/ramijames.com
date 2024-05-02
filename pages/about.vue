@@ -5,6 +5,7 @@
         <img class="portrait" src="/rami_big.png" alt="Rami James">
       </section> -->
       <section class="right">
+        <img class="" src="/interface-images.jpg" alt="Interface work">
         <h4>Introduction</h4>
         <p>I've been actively building online products since 1996. My roles within organizations have ranged from designer, product leader, developer, technical writer, head of developer relations, up to senior management.</p>
         <p>My preference is to work with small, fast-moving teams who build innovative and interesting functionality.</p>
@@ -278,8 +279,12 @@ section.right {
         .job-subtitle {
           font-size:0.8rem;
           font-weight: bold;
+          margin-top:2rem;
           margin-bottom: 1rem;
           margin-left:2rem;
+          border-bottom: 2px solid rgba(0, 0, 0, 0.144);
+          padding-bottom: .5rem;
+          max-width: 480px;
         }
 
         .job-duration {
