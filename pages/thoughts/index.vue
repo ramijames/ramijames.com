@@ -60,6 +60,7 @@ export default {
       box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
               0 8px 6px rgba(0,0,0,0.06),
               0 12px 12px rgba(0,0,0,0.06);
+      mix-blend-mode: lighten;
     }
 
     .single-article:hover img {

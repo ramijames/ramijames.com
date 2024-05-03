@@ -7,7 +7,7 @@
     </section>
     <section class="products">
       <section class="product-bar">
-        <div><input v-model="products"></div>
+        <div><input v-model="products" placeholder="Filter by name"></div>
         <div class="filters">
           <button class="small">All</button>
           <button class="small">Current</button>
@@ -78,7 +78,19 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      padding:1rem 0;
+      padding:1rem;
+      margin-bottom: 1rem;
+      position: -webkit-sticky;
+      position: sticky;
+      top:120px;
+      backdrop-filter: blur(10px);
+      background-color: #ffffff24;
+      border-radius: 8px;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
+              0 8px 6px rgba(0,0,0,0.06),
+              0 12px 12px rgba(0,0,0,0.06);
+      z-index: 200;
     }
 
         .product-bar .filters {
@@ -86,11 +98,30 @@
           gap: 0.5rem;
         }
 
+        .dark .product-bar {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding:1rem;
+          margin-bottom: 1rem;
+          position: -webkit-sticky;
+          position: sticky;
+          top:120px;
+          backdrop-filter: blur(10px);
+          background-color: #160b1da7;
+          border-radius: 8px;
+          border:1px solid rgba(255,255,255,0.1);
+          box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
+                  0 8px 6px rgba(0,0,0,0.06),
+                  0 12px 12px rgba(0,0,0,0.06);
+        }
+
     .explanation {
       max-width: 500px;
       position: -webkit-sticky;
       position: sticky;
       top:120px;
+      
     }
 
     .explanation h1 {
@@ -117,7 +148,7 @@
   border-radius: .3rem;
   box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
               0 8px 6px rgba(0,0,0,0.06),
-              0 12px 24px rgba(0,0,0,0.16);
+              0 6px 12px rgba(0,0,0,0.06);
   overflow: hidden;
   text-decoration: none;
   margin-bottom:2rem;
@@ -130,17 +161,17 @@
       display:flex;
       flex-direction: column;
       justify-content: flex-end;
-      height:200px;
+      height:100px;
       padding: 2rem;
       color:white;
-      backdrop-filter: blur(30px);
-      background: linear-gradient(0deg, rgba(255, 255, 255, 1) 30%, rgb(255,255,255, 0) 100%);
+      backdrop-filter: blur(5px);
       mask-image: linear-gradient(0deg, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
     }
 
         .product-title {
           font-size: 3rem;
-          color:black;
+          color:white;
+          text-shadow: 0 4px 8px rgba(0,0,0,0.24), 0 2px 1px rgba(0,0,0,.4);
           margin:0 0 .2rem;
           font-family: 'Montserrat', sans-serif;
           line-height: 3rem;
@@ -149,7 +180,8 @@
         .product-description {
           font-size: 1rem;
           opacity: 0.5;
-          color:black;
+          color:white;
+          text-shadow: 0 4px 8px rgba(0,0,0,0.24), 0 2px 1px rgba(0,0,0,.4);
           font-weight: normal;
           text-decoration: none;
           font-family: 'Open Sans', sans-serif;
@@ -160,7 +192,7 @@
     }
 
         .crisp-tools .product-panel {
-          background: linear-gradient(0deg, #D5E7FD 30%, rgb(255,255,255, 0) 100%);
+          background: linear-gradient(0deg, #69798db6 0%, rgb(255,255,255, 0) 100%);
         }
 
     .random-sandwich {
@@ -168,7 +200,7 @@
     }
 
         .random-sandwich .product-panel {
-          background: linear-gradient(0deg, #CCA32E 30%, rgb(255,255,255, 0) 100%);
+          background: linear-gradient(0deg, #745c19ad 0%, rgb(255,255,255, 0) 100%);
         }
 
 .button-links {

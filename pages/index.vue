@@ -96,12 +96,10 @@ export default {
     }
 
     .core .text {
-      color:black;
       z-index:4;
     }
 
         .dark .core .text {
-          color:white;
           text-shadow: 0px 1px 1px rgba(0,0,0,0.24);
         }
 

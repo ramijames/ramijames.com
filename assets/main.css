@@ -1,5 +1,5 @@
 * {
-  transition: all 0.08s ease-in-out;
+  transition: all 0.08s;
 }
 
 /* Reset */
@@ -19,13 +19,13 @@ body {
 /* Typography */
 
 a {
-  color:black;
+  color:#382e48;
   text-decoration: underline;
   font-weight: bold;
 }
 
     .dark a {
-      color:white;
+      color:#ffd586;
     }
 
 h1 { 
@@ -108,7 +108,24 @@ input {
   border-radius: 4px;
   border: 1px solid #00000024;
   font-size: 1rem;
+  background: transparent;
+  color:#000000;
 }
+
+    input:focus-visible {
+      border: 1px solid #000000;
+      outline-style: none;
+    }
+
+    .dark input {
+      border: 1px solid #ffffff24;
+      color:#ffffff
+    }
+
+    .dark input:focus-visible {
+      border: 1px solid #ffffff;
+      outline-style: none;
+    }
 
 button, .button {
   background: linear-gradient(white, white) padding-box,
@@ -143,8 +160,8 @@ button:hover, .button:hover {
     }
 
 .dark button, .dark .button {
-  background: linear-gradient(#4d3365, #180d25) padding-box, 
-              linear-gradient(to bottom, rgb(255, 255, 255), rgb(159, 159, 159)) border-box;
+  background: linear-gradient(#2b1d39, #1b1124) padding-box, 
+              linear-gradient(to bottom, #4d3365, #4d3365) border-box;
   border: 1px solid transparent;
   color:white;
 }
@@ -266,6 +283,7 @@ button:hover, .button:hover {
 
     .dark .content img {
       border: 1px solid #ffffff24;
+      mix-blend-mode: lighten;
     }
 
 .single-article h1 {
@@ -318,9 +336,9 @@ img.in-article {
 }
 
 .single-article a {
-  color: #000000;
+  color: #382e48;
 }
 
 .dark .single-article a {
-  color: #ffffff;
+  color: #ffd586;
 }
