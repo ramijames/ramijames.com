@@ -1,5 +1,5 @@
 <template>
-  <main class="posts" :class="{ 'sticky-top': pinned }">
+  <main class="posts" :class=" { 'sticky-top': pinned }">
     <div id="mc_embed_shell">
       <div id="mc_embed_signup">
           <form action="https://doodledapp.us12.list-manage.com/subscribe/post?u=f081fdb86b92e439e4994e8d6&amp;id=6210f0527f&amp;f_id=00eb4ae0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
@@ -94,17 +94,17 @@ export default {
     }
 
     .sticky-top .mc-field-group input.email {
-      border:1px solid #ff53f1;
+      border:1px solid #00000024;
     }
     
     .dark .sticky-top .mc-field-group input.email {
-      border:1px solid #53ff9b;
-      box-shadow: inset 0px 0px 4px rgba(255, 247, 0, 0.1), 0px 0px 8px rgba(99, 252, 148, 0.832), 0px 0px 11px rgba(221, 255, 255, 0.3), inset 0px 0px 8px rgba(99, 252, 148, 0.832);
+      border:1px solid #ffffff24;
     }
 
 .posts {
   display: flex;
   flex-direction: column;
+  transition: all 1s ease-in-out;
 }
 
 .single-post {
@@ -150,7 +150,7 @@ export default {
     }
 
     .dark .mc-field-group input.email:focus-visible {
-      border:1px solid #53ff9b;
+      border:1px solid #ffffff;
       outline: none;
     }
 

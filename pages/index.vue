@@ -62,15 +62,12 @@ export default {
   width:100vw;
 }
 
-
-
-
 .core {
   display: flex;
   align-items: start;
   justify-content: center;
   flex-direction: column;
-  padding:4rem 8rem;
+  padding:4rem 12rem;
   position: absolute;
   bottom:0;
   top:0;

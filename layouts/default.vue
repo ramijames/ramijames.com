@@ -1,12 +1,8 @@
 <template>
   <main class="default-layout">
-    <!-- <Mainbar /> -->
     <section class="default-main">
       <Navbar />
-      <div class="container">
-        <NuxtPage />
-      </div>
-      
+      <NuxtPage />
     </section>
   </main>
 </template>

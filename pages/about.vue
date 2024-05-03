@@ -236,17 +236,17 @@ section.right {
         .single-job::before {
           content: '';
           position: absolute;
-          left: -39px;
+          left: -37px;
           top:0rem;
-          width: 8px;
-          height: 8px;
+          width: 7px;
+          height: 7px;
           background-color: white;
-          border:1px solid black;
+          border:1px solid #190d28;
           border-radius: 50%;
         }
 
             .dark .single-job::before {
-              background-color: black;
+              background-color: #190d28;
               border:1px solid white;
             }
 
@@ -259,14 +259,14 @@ section.right {
           height: 0px;
           border-style: solid;
           border-width: 0 8px 10px 8px;
-          border-color: transparent transparent #000000 transparent;
+          border-color: transparent transparent #190d28 transparent;
           transform: rotate(0deg);
           border-radius: 0;
         }
 
             .dark .single-job.triangle::before {
               border-color: transparent transparent #FFFFFF transparent;
-              background-color: black;
+              background-color: #190d28;
             }
 
         .job-title {

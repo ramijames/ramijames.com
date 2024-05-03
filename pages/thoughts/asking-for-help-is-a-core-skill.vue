@@ -1,5 +1,5 @@
 <template>
-  <main class="single-article">
+  <main class="single-article container">
     <section class="article-extras">
       <h1>Asking for help is a core developer skill</h1>
       <aside class="article-meta">By Rami James</aside>

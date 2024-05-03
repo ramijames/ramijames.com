@@ -1,5 +1,5 @@
 <template>
-  <main class="single-article">
+  <main class="single-article container">
     <section class="article-extras">
       <h1>The Work Structure Spectrum</h1>
       <aside class="article-meta">By Rami James</aside>

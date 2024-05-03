@@ -1,5 +1,5 @@
 <template>
-  <main class="articles">
+  <main class="articles container">
     <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug" class="single-article">
       <img :src="article.image" :alt="article.title" />
       <span class="title">{{ article.title }}</span>
@@ -50,10 +50,16 @@ export default {
   padding:.3rem;
   height: auto;
   border-radius: .3rem;
+  box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
+              0 8px 6px rgba(0,0,0,0.06),
+              0 12px 12px rgba(0,0,0,0.06);
 }
 
     .dark .single-article img {
       border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
+              0 8px 6px rgba(0,0,0,0.06),
+              0 12px 12px rgba(0,0,0,0.06);
     }
 
     .single-article:hover img {
