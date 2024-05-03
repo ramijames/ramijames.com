@@ -46,22 +46,22 @@ export default {
 
 .single-article img {
   width: 100%;
-  border: 2px solid rgba(0,0,0,0);
+  border: 1px solid rgba(0,0,0,0);
   padding:.3rem;
   height: auto;
   border-radius: .3rem;
 }
 
     .dark .single-article img {
-      border: 2px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
     .single-article:hover img {
-      border: 2px solid rgba(0,0,0,1);
+      border: 1px solid rgba(0,0,0,1);
     }
 
     .dark .single-article:hover img {
-      border: 2px solid rgba(255,255,255,1);
+      border: 1px solid rgba(255,255,255,1);
     }
 
 .articles a {
@@ -80,7 +80,8 @@ export default {
 
 .articles .title {
   margin: 1rem 0 0.5rem;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 1.5rem;
 }
 
 .articles .date {

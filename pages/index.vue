@@ -1,24 +1,14 @@
 <template>
   <section class="home">
+    <Navbar />
     <section class="core">
-      <section class="dark-side"><ThemeSwitcher /> <span v-if="currentTheme !== 'dark'">Come to the dark side</span></section>
       <div class="text">
-        <h1 class="title">Take your product into the future</h1>
+        <h1 class="title">Let's take your product into the future together</h1>
         <h3 class="sub-title">This is the portfolio site of <nuxt-link to="/about">Rami James</nuxt-link>, a veteran founder, startup specialist, and published writer.</h3>
         <section class="buttons">
           <nuxt-link class="main-links button" to="/products">See Products</nuxt-link>
           <nuxt-link class="main-links button" to="/thoughts">Read Thoughts</nuxt-link>
         </section>
-      </div>
-      <div class="nav-extras">
-        <a href="mailto:rami@ramijames.com"><img 
-          :src="`/mail-${currentTheme}.svg`" 
-          alt="Send Rami an email" 
-        /></a>
-      <a href="https://twitter.com/ramijames"><img 
-          :src="`/twitter-${currentTheme}.svg`" 
-          alt="Check out Rami's Twitter" 
-        /></a>
       </div>
     </section>
     <div class="cube">
@@ -49,9 +39,6 @@
 </template>
 
 <script>
-import { useThemeStore } from '~/store/theme'
-import { watch, onMounted, computed } from 'vue'
-import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
 
 export default {
   setup() {
@@ -60,29 +47,9 @@ export default {
       layout: 'home'
     })
 
-    const themeStore = useThemeStore()
-
-    onMounted(() => {
-      watch(
-        () => themeStore.currentTheme,
-        (newTheme, oldTheme) => {
-          if (typeof document !== 'undefined') {
-            document.body.classList.remove(`${oldTheme}`)
-            document.body.classList.add(`${newTheme}`)
-          }
-        },
-        { immediate: true }
-      )
-    })
-    
-    return {
-      currentTheme: computed(() => themeStore.currentTheme)
-    }
-  },
-  components: {
-    ThemeSwitcher
   }
 }
+
 </script>
 
 <style scoped>
@@ -95,39 +62,15 @@ export default {
   width:100vw;
 }
 
-.dark-side {
-  display:flex;
-  flex-direction: row;
-  font-size:.6rem;
-  text-transform: uppercase;
-  align-items: center;
-  gap:1rem;
-}
 
-.dark-side span {
-  opacity: 0.4;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    margin-left:0.5rem;
-  }
-  50% {
-    margin-left:0rem;
-  }
-  100% {
-    margin-left:0.5rem;
-  }
-}
 
 
 .core {
   display: flex;
   align-items: start;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-  padding:4rem;
+  padding:4rem 8rem;
   position: absolute;
   bottom:0;
   top:0;
@@ -162,12 +105,13 @@ export default {
 
         .dark .core .text {
           color:white;
-          text-shadow: 0px 2px 2px rgba(0,0,0,0.24);
+          text-shadow: 0px 1px 1px rgba(0,0,0,0.24);
         }
 
         .core .text .title {
           font-size:4dvw;
           max-width:50%;
+          font-weight: normal;
         }
 
         .core .text .sub-title {
@@ -274,8 +218,8 @@ export default {
   width: 400px;
   height: 400px;
   text-align: center;
-  border:2px solid rgba(0,0,0);
-  border-radius: 2px;
+  border:1px solid rgba(0,0,0);
+  border-radius: 1px;
   display: block;
   position: absolute;
   background: transparent;
@@ -285,8 +229,8 @@ export default {
       width: 400px;
       height: 400px;
       text-align: center;
-      border:2px solid rgba(248, 168, 255, 0.8);
-      border-radius: 2px;
+      border:1px solid rgba(248, 168, 255, 0.8);
+      border-radius: 1px;
       box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 0px 0px 20px rgba(211, 99, 252, 0.832), 0px 100px 100px rgba(240, 221, 255, 0.3), inset 0px 0px 20px rgba(99, 252, 148, 0.832);
       display: block;
       position: absolute;
@@ -367,8 +311,8 @@ export default {
       width: 400px;
       height: 400px;
       text-align: center;
-      border:2px solid rgba(0,0,0);
-      border-radius: 2px;
+      border:1px solid rgba(0,0,0);
+      border-radius: 1px;
       display: block;
       position: absolute;
       background: transparent;
@@ -378,8 +322,8 @@ export default {
       width: 400px;
       height: 400px;
       text-align: center;
-      border:2px solid rgba(255,255,255, 0.8);
-      border-radius: 2px;
+      border:1px solid rgba(255,255,255, 0.8);
+      border-radius: 1px;
       box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 0px 0px 20px rgba(99, 252, 148, 0.832), 0px 100px 100px rgba(221, 255, 255, 0.3), inset 0px 0px 20px rgba(99, 252, 148, 0.832);
       display: block;
       position: absolute;

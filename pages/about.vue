@@ -216,12 +216,12 @@ section.right {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border-left:2px solid black;
+  border-left:1px solid black;
   margin:2rem 0;
 }
 
     .dark .jobs {
-      border-left:2px solid white;
+      border-left:1px solid white;
     }
 
     .single-job {
@@ -241,13 +241,13 @@ section.right {
           width: 8px;
           height: 8px;
           background-color: white;
-          border:2px solid black;
+          border:1px solid black;
           border-radius: 50%;
         }
 
             .dark .single-job::before {
               background-color: black;
-              border:2px solid white;
+              border:1px solid white;
             }
 
         .single-job.triangle::before {
@@ -282,7 +282,7 @@ section.right {
           margin-top:2rem;
           margin-bottom: 1rem;
           margin-left:2rem;
-          border-bottom: 2px solid rgba(0, 0, 0, 0.144);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.144);
           padding-bottom: .5rem;
           max-width: 480px;
         }
@@ -309,22 +309,22 @@ section.right {
           cursor: pointer;
           text-decoration: none;
           padding:0.15rem .45rem;
-          border:2px solid #0000001b;
+          border:1px solid #0000001b;
           border-radius: 4px;
           margin-left:2rem;
         }
 
             .dark .tiny-show-more {
               color: #FFFFFF;
-              border:2px solid #FFFFFF1b;
+              border:1px solid #FFFFFF1b;
             }
 
         .tiny-show-more:hover {
-          border:2px solid #000000FF;
+          border:1px solid #000000FF;
         }
 
             .dark .tiny-show-more:hover {
-              border:2px solid #FFFFFFFF;
+              border:1px solid #FFFFFFFF;
             }
 
 

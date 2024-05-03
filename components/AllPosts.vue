@@ -21,7 +21,7 @@
             <!-- <div class="optionalParent">
               <div class="clear foot">
                 <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                  <p style="margin: 0px auto;"><a href="http://eepurl.com/iPabqQ" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+                  <p style="margin: 0px auto;"><a href="http://eepurl.com/iPabqQ" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 1px 0px; justify-content: center; align-items: center;"></span></a></p>
               </div>
             </div> -->
           </div>
@@ -81,27 +81,25 @@ export default {
 
 .sticky-top {
   position: fixed;
-  top: 40px;
+  top: 120px;
   z-index: 100;
-  background: white;
   width: 321px;
 }
 
     .dark .sticky-top {
       position: fixed;
-      top: 40px;
+      top: 120px;
       z-index: 100;
-      background: black;
       width: 321px;
     }
 
     .sticky-top .mc-field-group input.email {
-      border:2px solid #ff53f1;
+      border:1px solid #ff53f1;
     }
     
     .dark .sticky-top .mc-field-group input.email {
-      border:2px solid #53ff9b;
-      box-shadow: inset 0px 0px 4px rgba(255, 247, 0, 0.1), 0px 0px 8px rgba(99, 252, 148, 0.832), 0px 0px 12px rgba(221, 255, 255, 0.3), inset 0px 0px 8px rgba(99, 252, 148, 0.832);
+      border:1px solid #53ff9b;
+      box-shadow: inset 0px 0px 4px rgba(255, 247, 0, 0.1), 0px 0px 8px rgba(99, 252, 148, 0.832), 0px 0px 11px rgba(221, 255, 255, 0.3), inset 0px 0px 8px rgba(99, 252, 148, 0.832);
     }
 
 .posts {
@@ -130,48 +128,38 @@ export default {
   width:calc(100% - 1rem - 4px);
   padding:.6rem 0.5rem;
   margin:0 0 1rem;
-  border:2px solid #0000001b;
+  border:1px solid #0000001b;
   color:black;
   background-color: white;
   border-radius: 8px;
 }
 
     .mc-field-group input.email:hover {
-      border:2px solid black;
+      border:1px solid black;
     }
 
     .mc-field-group input.email:focus-visible {
-      border:2px solid #ff53f1;
+      border:1px solid #ff53f1;
       outline: none;
     }
 
     .dark .mc-field-group input.email {
-      border:2px solid white;
+      border:1px solid white;
       color:white;
       background-color: black;
     }
 
     .dark .mc-field-group input.email:focus-visible {
-      border:2px solid #53ff9b;
+      border:1px solid #53ff9b;
       outline: none;
     }
 
 .mc-field-group input.button {
   padding:0.2rem 0.5rem;
-  color:white;
-  background-color: #ff53f1;
-  border:2px solid #ff53f1;
-  border-radius: 4px;
   position: absolute;
-  right: 0.4rem;
+  right: 0.6rem;
   top:.4rem;
 }
-
-    .dark .mc-field-group input.button {
-      background-color: #53ff9b;
-      border:2px solid #53ff9b;
-      color:black;
-    }
 
 
 </style>

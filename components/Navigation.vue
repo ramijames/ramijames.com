@@ -1,27 +1,24 @@
 <template>
   <nav class="main-nav">
-    <section class="extras left">
-      <nuxt-link to="/">
-        <img 
-          :src="`/home-${currentTheme}.svg`" 
-          alt="home" 
-        />
-      </nuxt-link>
+    <!-- <section class="extras left">
+      
       <ThemeSwitcher />
-    </section>
+    </section> -->
     <section class="core">
+      <nuxt-link to="/">Home</nuxt-link>
       <nuxt-link to="/products">Products</nuxt-link>
-      <div class="cube">
+      <!-- <div class="cube">
         <div class="top"></div>
         <div class="right"></div>
         <div class="bottom"></div>
         <div class="left"></div>
         <div class="front"></div>
         <div class="back"></div>
-      </div>
+      </div> -->
       <nuxt-link to="/thoughts">Thoughts</nuxt-link>
+      <nuxt-link to="/about">About</nuxt-link>
     </section>
-    <section class="extras right">
+    <!-- <section class="extras right">
       <a href="mailto:rami@ramijames.com"><img 
           :src="`/mail-${currentTheme}.svg`" 
           alt="Send Rami an email" 
@@ -30,7 +27,7 @@
           :src="`/twitter-${currentTheme}.svg`" 
           alt="Check out Rami's Twitter" 
         /></a>
-    </section>
+    </section> -->
   </nav>
 </template>
 
@@ -65,10 +62,9 @@ export default {
 <style scoped>
 
 .main-nav {
-  max-width: 1200px;
-  margin:1rem auto;
-  padding: 0 1rem;
   position: relative;
+  width:100%;
+  border-bottom: 1px solid black;
 }
 
 @media screen and (max-width: 768px) {
@@ -94,8 +90,11 @@ export default {
 
 .core {
   display:flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
+  gap:2rem;
+  height:48px;
+  align-items: center;
 }
 
     .core a {
@@ -105,6 +104,7 @@ export default {
       font-family: 'Montserrat', sans-serif;
       display: flex;
       align-items: center;
+      width:25%;
     }
 
         .core a:hover {
@@ -155,7 +155,7 @@ export default {
     display:flex;
     justify-content: center;
     height:100%;
-    border: bottom 2px solid transparent;
+    border: bottom 1px solid transparent;
   }
   
   .dark .main-nav a,
@@ -217,12 +217,12 @@ export default {
 
 .router-link-active, 
 .router-link-exact-active {
-  border-bottom:2px solid black;
+  border-bottom:1px solid black;
 }
 
     .dark .router-link-active, 
     .dark .router-link-exact-active {
-      border-bottom:2px solid white;
+      border-bottom:1px solid white;
     }
 
     @media screen and (max-width: 768px) {
@@ -230,14 +230,14 @@ export default {
       .router-link-exact-active {
         background:white;
         border:none;
-        border-bottom:2px solid black;
+        border-bottom:1px solid black;
         border-radius: 0rem;
       }
 
           .dark .router-link-active, 
           .dark .router-link-exact-active {
             border:none;
-            border-bottom:2px solid white;
+            border-bottom:1px solid white;
             background:black;
             border-radius: 0rem;
           }
@@ -277,7 +277,7 @@ export default {
 }
 
     .dark .cube div {
-      border:2px solid rgba(255,255,255, 1);
+      border:1px solid rgba(255,255,255, 1);
       border-radius: 4px;
       /* box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 0px 0px 20px rgba(99, 252, 148, 0.832), 0px 10px 20px rgba(221, 255, 255, 0.3), inset 0px 0px 10px rgba(99, 252, 148, 0.832); */
       display: block;
