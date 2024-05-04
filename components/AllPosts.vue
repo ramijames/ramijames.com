@@ -146,7 +146,7 @@ export default {
     .dark .mc-field-group input.email {
       border:1px solid white;
       color:white;
-      background-color: black;
+      background-color: transparent;
     }
 
     .dark .mc-field-group input.email:focus-visible {

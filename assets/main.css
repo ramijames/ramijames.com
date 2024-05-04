@@ -115,6 +115,7 @@ input {
     input:focus-visible {
       border: 1px solid #000000;
       outline-style: none;
+      background-color: #ffffffc8;
     }
 
     .dark input {
@@ -125,6 +126,7 @@ input {
     .dark input:focus-visible {
       border: 1px solid #ffffff;
       outline-style: none;
+      background-color: #000000c8;
     }
 
 button, .button {
