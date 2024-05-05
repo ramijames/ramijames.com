@@ -202,6 +202,7 @@ export default {
   font-size: .6rem;
   color:white;
   text-decoration: none;
+  z-index: 210;
 }
 
 .cube {

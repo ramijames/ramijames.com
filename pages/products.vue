@@ -1,31 +1,35 @@
 <template>
   <main class="products-main">
     <section class="explanation">
-      <h1>Endless fascination with the process of building digital products</h1>
+      <h1>I document my endless fascination with the process of building digital products</h1>
+      <h4>Each product has its own story and reason for being. Here, you can read some of mine.</h4>
       <p>I like to build in public, with a short iteration cycle and direct feedback from users. Each product shifts and changes as it achieves either market fit or contribution to the dustbin of history.</p>
-      <p>Each product has its own story and reason for being. In truth, we are all just along for the ride.</p>
     </section>
     <section class="products">
       <section class="product-bar">
-        <div><input v-model="products" placeholder="Filter by name"></div>
+        <!-- <div><input v-model="products.title" placeholder="Filter by name"></div> -->
         <div class="filters">
           <button class="small">All</button>
           <button class="small">Current</button>
           <button class="small">Past</button>
         </div>
       </section>
-      <nuxt-link to="/products/crisptools" class="single-product crisp-tools">
-        <div class="product-panel">
-          <p class="product-title">Crisp Tools</p>
-          <p class="product-description">A collection of useful tools for designers and developers</p>
-        </div>
-      </nuxt-link>
-      <nuxt-link to="/products/random-sandwich" class="single-product random-sandwich">
-        <div class="product-panel">
-          <p class="product-title">Random Sandwich</p>
-          <p class="product-description">A social network based around randomly generated objects</p>
-        </div>
-      </nuxt-link>
+      <section class="stories">
+        <nuxt-link class="single-story" v-for="product in products" :key="title" :to="product.slug">
+          <div class="book">
+            <div class="cover">
+              <div class="color" :style="{ backgroundColor: product.color }"></div>
+              <div class="single-image">
+                <img :src="product.image" alt="Product Image">
+              </div>
+            </div>
+            <div class="pages"></div>
+          </div>
+          <div class="intro">The story of</div>
+          <div class="single-title">{{ product.title }}</div>
+          <div class="single-description">{{ product.description }}</div>
+        </nuxt-link>
+      </section>
 
     </section>
     <!-- 
@@ -43,26 +47,62 @@
         - A link to the Github repo
     
     -->
-    <!-- <h1>Current Products</h1>
-    <p>I like to build in public, with a short iteration cycle and feedback from users.</p>
-    <div class="single-product">
-      <p><strong>CrispTools.dev</strong></p>
-      <p><small>A collection of useful tools for designers and developers.</small></p>
-      <section class="button-links">
-        <a class="button small" href="https://crisptools.dev/">Live</a>
-        <a class="button small" href="https://github.com/ramijames/CrispTools">Github</a>
-      </section>
-    </div>
-    <div class="single-product">
-      <p><strong>Random-sandwich.com</strong></p>
-      <p><small>A community of sandwich lovers who are coming together to find the weirdest, most unique sandwiches of all time.</small></p>
-      <section class="button-links">
-        <a class="button small" href="https://crisptools.dev/">Live</a>
-        <a class="button small" href="https://github.com/ramijames/CrispTools">Github</a>
-      </section>
-    </div> -->
   </main>
 </template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      products: [
+          {
+            title: 'Crisp Tools',
+            description: 'A collection of useful tools for designers and developers',
+            image: '/crisptools.jpg',
+            status: 'current',
+            slug: '/products/crisptools',
+            color: '#D5E7FD'
+          },
+          {
+            title: 'Random Sandwich',
+            description: 'A social network based around randomly generated objects',
+            image: '/randomsandwich.jpg',
+            status: 'current',
+            slug: '/products/crisptools',
+            color: '#CCA32E'
+          },
+          {
+            title: 'Doodledapp',
+            description: 'No-code smart contract development and deployment',
+            image: '/doodledapp.jpg',
+            status: 'past',
+            slug: '/products/doodledapp',
+            color: '#3E74FF'
+          },
+          {
+            title: 'Ultra',
+            description: 'Tokenized gaming platform',
+            image: '/ultra.jpg',
+            status: 'past',
+            slug: '/products/ultra',
+            color: '#2E2667'
+          },
+          {
+            title: 'Scatter',
+            description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
+            image: '/scatter.jpg',
+            status: 'past',
+            slug: '/products/scatter',
+            color: '#01A1F3'
+          }
+        ]
+    }
+  }
+
+}
+
+</script>
 
 <style scoped>
 
@@ -74,22 +114,35 @@
   padding:0 8rem;
 }
 
+    @media screen and (max-width: 1000px) {
+      .products-main {
+        flex-direction: column;
+        padding:0 2rem;
+      }
+    }
+
+    .products {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border:1px solid rgba(0,0,0,0.1);
+    }
+
+        .dark .products {
+          border-radius: 8px;
+          border:1px solid rgba(255,255,255,0.1);
+        }
+
     .product-bar {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       padding:1rem;
-      margin-bottom: 1rem;
       position: -webkit-sticky;
       position: sticky;
       top:120px;
-      backdrop-filter: blur(10px);
-      background-color: #ffffffae;
-      border-radius: 8px;
-      border:1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
-              0 8px 6px rgba(0,0,0,0.06),
-              0 12px 12px rgba(0,0,0,0.06);
       z-index: 200;
     }
 
@@ -98,46 +151,204 @@
           gap: 0.5rem;
         }
 
-        .dark .product-bar {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          padding:1rem;
-          margin-bottom: 1rem;
-          position: -webkit-sticky;
-          position: sticky;
-          top:120px;
-          backdrop-filter: blur(10px);
-          background-color: #160b1da7;
-          border-radius: 8px;
-          border:1px solid rgba(255,255,255,0.1);
-          box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
-                  0 8px 6px rgba(0,0,0,0.06),
-                  0 12px 12px rgba(0,0,0,0.06);
-        }
-
     .explanation {
       max-width: 500px;
       position: -webkit-sticky;
       position: sticky;
       top:120px;
-      
+    }
+
+    @media screen and (max-width: 1000px) {
+      .explanation {
+        width: 100%;
+        max-width: 100%;
+        padding:0rem;
+        position: relative;
+        top:0;
+      }
     }
 
     .explanation h1 {
       opacity: 0.15;
     }
 
-    .products {
+.stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap:2rem;
+  padding:1rem 4rem 8rem;
+}
+
+    .single-story {
       display: flex;
       flex-direction: column;
-      width: 100%;
-      height: auto;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
     }
 
-        .dark .products {
-          border: 1px solid rgba(255,255,255,0);
+        .book {
+          position: relative;
+          margin-bottom: 1rem;
+          border-radius: 2px 0 0 2px;
+          box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
+                      0 18px 26px rgba(34, 17, 84, 0.16);
         }
+
+            .single-story:hover .book {
+              transform:  rotateX(5deg)
+                          scale(1.05)
+                          rotate(-5deg);
+              transition: all 0.35s ease-in-out;
+              box-shadow: 0 8px 6px rgba(0,0,0,0.24), 
+                      0 28px 36px rgba(34, 17, 84, 0.10);
+            }
+
+            .book::after {
+              content: '';
+              position: absolute;
+              top:0;
+              left:0;
+              width:20px;
+              height:100%;
+              background: linear-gradient(-90deg, #181818 0%, rgb(26, 26, 26) 100%);
+              border-radius: 2px 0 0 2px;
+              z-index: 12;
+              border-right: 2px solid rgba(255, 255, 255, 0.224);
+            }
+
+            .cover {
+              width:200px;
+              height:250px;
+              border-radius: 4px 12px 12px 4px;
+              box-shadow: 1px 2px 2px rgba(0,0,0,0.44);
+              z-index: 10;
+              position: relative;    
+              background:black;
+              background-image: url('/composition-bg.jpg');
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              /* border:1px solid rgba(0,0,0,0.1); */
+              box-shadow: inset 0 0 6px 4px rgba(255, 255, 255, 0.1);
+              overflow: hidden;
+            }
+
+                .color {
+                  width:200px;
+                  height:250px;
+                  border-radius: 4px 12px 12px 4px;
+                  mix-blend-mode: screen;
+                  z-index: 11;
+                  position: absolute; 
+                  opacity: 0.4;
+                }
+
+                .single-image {
+                  width:calc(60% + 20px);
+                  margin:0 auto;
+                  height:100px;
+                  top:20px;
+                  left:10px;
+                  position: relative;
+                  z-index: 11;
+                  border-radius: 4px;
+                  border:2px solid rgba(255,255,255,1);
+                  outline: 2px solid rgb(255, 255, 255);
+                  outline-offset: 3px;
+                }
+
+                    .single-image img {
+                      height: 100%;
+                      width:100%;
+                      object-fit: fill;
+                    }
+
+            .pages {
+              position: absolute;
+              top:2px;
+              left:8px;
+              rotate:1deg;
+              width:98%;
+              height:99%;
+              border-radius: 2px 8px 8px 2px;
+              background: linear-gradient(90deg, #ffffffb6 0%, rgba(255, 255, 255, 1) 100%);
+              box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
+                      0 8px 6px rgba(0,0,0,0.06),
+                      0 12px 12px rgba(0,0,0,0.06);
+              z-index: 9;
+            }
+
+                .single-story:hover .pages {
+                  transform: translate(5px);
+                  transition: transform 0.35s ease-in-out;
+                }
+
+                .single-story:hover .pages::after {
+                  transform: translate(5px) rotate(3deg);
+                  transition: transform 0.35s ease-in-out;
+                }
+
+                .single-story:hover .pages::before {
+                  transform: translate(8px) rotate(-3deg);
+                  transition: transform 0.35s ease-in-out;
+                }
+
+            .pages::after {
+              content: '';
+              position: absolute;
+              top:1px;
+              left:5px;
+              rotate:-1deg;
+              width:98%;
+              height:99%;
+              border-radius: 2px 8px 8px 2px;
+              background: linear-gradient(90deg, #ffffffb6 0%, rgba(255, 255, 255, 1) 100%);
+              box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
+                      0 8px 6px rgba(0,0,0,0.06),
+                      0 12px 12px rgba(0,0,0,0.06);
+              z-index: 8;
+            }
+
+            .pages::before {
+              content: '';
+              position: absolute;
+              top:1px;
+              left:5px;
+              rotate:-1deg;
+              width:98%;
+              height:99%;
+              border-radius: 2px 8px 8px 2px;
+              background: linear-gradient(90deg, #ffffffb6 0%, rgba(255, 255, 255, 1) 100%);
+              box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
+                      0 8px 6px rgba(0,0,0,0.06),
+                      0 12px 12px rgba(0,0,0,0.06);
+              z-index: 8;
+            }
+
+    .intro {
+      font-size: .8rem;
+      opacity: 0.5;
+      margin-top:0.5rem;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      text-decoration: none;
+    }
+
+    .single-title {
+      font-size: 1.25rem;
+      margin-bottom:0.5rem;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .single-description {
+      font-size: .8rem;
+      opacity: 0.5;
+      margin:0 2rem 2rem;
+      text-align: center;
+      text-decoration: none;
+    }
 
 .single-product {
   height:400px;
