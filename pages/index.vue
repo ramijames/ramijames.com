@@ -36,6 +36,9 @@
       <div class="fourteen"></div>
     </div>
   </section>
+  <section class="home-footer">
+    <a href="https://github.com/ramijames/ramijames.com">This website's code is available here</a>
+  </section>
 </template>
 
 <script>
@@ -188,6 +191,17 @@ export default {
 
 .main-links {
   font-family: 'Montserrat', sans-serif;
+}
+
+.home-footer {
+  position:fixed;
+  bottom:2rem;
+  left:2rem;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: .6rem;
+  color:white;
+  text-decoration: none;
 }
 
 .cube {
