@@ -275,9 +275,10 @@ button:hover, .button:hover {
 
     .content img {
       margin:0 0 2rem 0;
-      width: 100%;
+      width: calc(100% - 8px);
       border: 1px solid #00000024;
       border-radius: .3rem;
+      padding:4px;
       box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
                   0 8px 6px rgba(0,0,0,0.06),
                   0 12px 12px rgba(0,0,0,0.06);

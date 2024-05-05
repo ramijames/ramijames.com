@@ -7,7 +7,7 @@
       <section class="right">
         <img class="" src="/interface-images.jpg" alt="Interface work">
         <h4>Introduction</h4>
-        <p>I've been actively building online products since 1996. My roles within organizations have ranged from designer, product leader, developer, technical writer, head of developer relations, up to senior management.</p>
+        <p>Rami James has been actively building online products since 1996. My roles within organizations have ranged from designer, product leader, developer, technical writer, head of developer relations, up to senior management.</p>
         <p>My preference is to work with small, fast-moving teams who build innovative and interesting functionality.</p>
         <p><strong>Interested in working together?</strong></p>
         <p>I'm always eager to learn about new teams and products.</p>
