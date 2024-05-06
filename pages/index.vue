@@ -1,6 +1,6 @@
 <template>
+  <Navbar />
   <section class="home">
-    <Navbar />
     <section class="core">
       <div class="text">
         <h1 class="title">Let's take your product into the future together</h1>
@@ -78,6 +78,13 @@ export default {
   z-index: 2;
 }
 
+    @media screen and (max-width: 768px) {
+      .core {
+        padding:4rem 2rem;
+      }
+      
+    }
+
     .dark .core::after {
       z-index: 3;
       content:'';
@@ -99,7 +106,7 @@ export default {
     }
 
     .core .text {
-      z-index:4;
+      z-index:4000;
     }
 
         .dark .core .text {
@@ -122,11 +129,23 @@ export default {
         @media screen and (max-width: 768px) {
           .core .text .title {
             font-size:8dvw;
+            max-width:100%;
+            text-shadow: 0 0 20px white, 0 0px 10px white, 0 0 5px white, 0 0 2px white;
+          }
+
+          .dark .core .text .title {
+            text-shadow: 0 0 20px #1D1038, 0 0px 10px #1D1038, 0 0 5px #1D1038, 0 0 2px #1D1038;
           }
 
           .core .text .sub-title {
             font-size:4dvw;
             margin-bottom:2rem;
+            max-width:100%;
+            text-shadow: 0 0 20px white, 0 0px 10px white, 0 0 5px white, 0 0 2px white;
+          }
+
+          .dark .core .text .sub-title {
+            text-shadow: 0 0 20px #1D1038, 0 0px 10px #1D1038, 0 0 5px #1D1038, 0 0 2px #1D1038;
           }
         }
 
@@ -215,6 +234,7 @@ export default {
   scale:1;
   top:300px;
   right:100px;
+  z-index: 1;
 }
 
     @media screen and (max-width: 768px) {

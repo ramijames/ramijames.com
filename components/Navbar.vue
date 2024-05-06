@@ -28,10 +28,12 @@
   </nav>
   <nav class="mobile-nav-bar">
     <section class="menu-switch">
-      <svg class="logo" width="30" height="30" viewBox="0 0 116 114" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="path" d="M40.5 3.49999C17 -0.500011 27.5 23 39.5 48.5C51.5 74 69.5 101.5 64.5 108C59.5 114.5 42 112 51.5 91C61 70 116 20 112.5 11C109 2 70 -1 68 11C66 23 100.5 89.5 94.5 95C88.5 100.5 66.5 94.5 73 78.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
-        <path class="path" d="M18 28.5C55 14.5 56 3 58.5 4.5C61 6 41.5 40 3 64" stroke="black" stroke-width="5" stroke-linecap="round"/>
-      </svg>
+      <nuxt-link to="/" @click="closeMenu">
+        <svg class="logo" width="30" height="30" viewBox="0 0 116 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="path" d="M40.5 3.49999C17 -0.500011 27.5 23 39.5 48.5C51.5 74 69.5 101.5 64.5 108C59.5 114.5 42 112 51.5 91C61 70 116 20 112.5 11C109 2 70 -1 68 11C66 23 100.5 89.5 94.5 95C88.5 100.5 66.5 94.5 73 78.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
+          <path class="path" d="M18 28.5C55 14.5 56 3 58.5 4.5C61 6 41.5 40 3 64" stroke="black" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </nuxt-link>
       <img :src="`/menu-${currentTheme}.svg`" alt="Open menu" @click="openMenu" />
     </section>
   </nav>
@@ -106,7 +108,7 @@ export default {
 <style scoped>
 
 .logo {
-  animation: logo .6s ease-out;
+  animation: svgline .6s ease-out;
 }
 
     .dark .logo {
@@ -129,7 +131,7 @@ export default {
   }
 }
 
-@keyframes logo {
+@keyframes svgline {
   0% {
     /* transform: scale(0.8); */
     -webkit-transform: translateY(-20px) rotateX(120deg);
@@ -271,6 +273,13 @@ export default {
       text-shadow: 0px 1px 1px rgba(255,255,255,0.24);
     }
 
+        @media screen and (max-width: 1440px) {
+          .main-nav .links {
+            gap:2rem;
+            width: auto;
+          }
+        }
+
         .dark .main-nav .links {
           text-shadow: 0px 2px 2px rgba(0,0,0,0.75);
         }
@@ -290,6 +299,12 @@ export default {
 
             .dark .main-nav .dot {
               background-color: white;
+            }
+
+            @media screen and (max-width: 1440px) {
+              .main-nav .dot {
+                display: none;
+              }
             }
     
         .main-nav .links a {
@@ -330,6 +345,10 @@ export default {
 
 /* Don't show mobile by default */
 .mobile-nav-bar {
+  display: none;
+}
+
+.mobile-nav-panel {
   display: none;
 }
 

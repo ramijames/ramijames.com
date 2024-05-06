@@ -1,11 +1,13 @@
 <template>
-  <main class="articles container">
-    <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug" class="single-article">
-      <img :src="article.image" :alt="article.title" />
-      <span class="title">{{ article.title }}</span>
-      <span class="date">{{ article.date }}</span>
-    </nuxt-link>
-  </main>
+  <section class="thoughts-main">
+    <main class="articles container">
+      <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug" class="single-article">
+        <img :src="article.image" :alt="article.title" />
+        <span class="title">{{ article.title }}</span>
+        <span class="date">{{ article.date }}</span>
+      </nuxt-link>
+    </main>
+  </section>
 </template>
 
 <script>
@@ -21,6 +23,14 @@ export default {
 </script>
 
 <style scoped>
+
+.thoughts-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 2rem;
+}
 
 .articles {
   display: grid;

@@ -128,6 +128,7 @@ export default {
       height: auto;
       border-radius: 8px;
       border:1px solid rgba(0,0,0,0.1);
+      margin-bottom:4rem;
     }
 
         .dark .products {
@@ -142,7 +143,7 @@ export default {
       padding:1rem;
       position: -webkit-sticky;
       position: sticky;
-      top:120px;
+      top:80px;
       z-index: 200;
     }
 
@@ -172,12 +173,28 @@ export default {
       opacity: 0.15;
     }
 
+    @media screen and (max-width: 1000px) {
+      .explanation h1 {
+        font-size: 2rem;
+      }
+      
+    }
+
 .stories {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap:2rem;
   padding:1rem 4rem 8rem;
 }
+
+    @media screen and (max-width: 1000px) {
+      .stories {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:2rem;
+        padding:2rem;
+      }
+    }
 
     .single-story {
       display: flex;
