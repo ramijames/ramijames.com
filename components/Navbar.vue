@@ -26,16 +26,49 @@
       <a href="https://twitter.com/ramijames"><img :src="`/twitter-${currentTheme}.svg`" alt="Check out Rami's Twitter" /></a>
     </section>
   </nav>
+  <nav class="mobile-nav-bar">
+    <section class="menu-switch">
+      <svg class="logo" width="30" height="30" viewBox="0 0 116 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="path" d="M40.5 3.49999C17 -0.500011 27.5 23 39.5 48.5C51.5 74 69.5 101.5 64.5 108C59.5 114.5 42 112 51.5 91C61 70 116 20 112.5 11C109 2 70 -1 68 11C66 23 100.5 89.5 94.5 95C88.5 100.5 66.5 94.5 73 78.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
+        <path class="path" d="M18 28.5C55 14.5 56 3 58.5 4.5C61 6 41.5 40 3 64" stroke="black" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <img :src="`/menu-${currentTheme}.svg`" alt="Open menu" @click="openMenu" />
+    </section>
+  </nav>
+  <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
+    <section class="mobile-nav-panel-header">
+      <div class="close">
+        <ThemeSwitcher />
+        <img :src="`/close-${currentTheme}.svg`" alt="Close menu" @click="closeMenu" />
+      </div>
+    </section>
+    <section class="mobile-nav-panel-links">
+      <nuxt-link to="/" @click="closeMenu">Home</nuxt-link>
+      <nuxt-link to="/products" @click="closeMenu">Products</nuxt-link>
+      <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
+      <nuxt-link to="/about" @click="closeMenu">About</nuxt-link>
+    </section>
+    <section class="mobile-nav-panel-contact">
+      <a href="https://github.com/ramijames"><img :src="`/github-${currentTheme}.svg`" alt="Github" /></a>
+      <a href="https://www.linkedin.com/in/rami-james/"><img :src="`/linkedin-${currentTheme}.svg`" alt="LinkedIn" /></a>
+      <a href="mailto:rami@ramijames.com"><img :src="`/mail-${currentTheme}.svg`" alt="Send Rami an email" /></a>
+      <a href="https://twitter.com/ramijames"><img :src="`/twitter-${currentTheme}.svg`" alt="Check out Rami's Twitter" /></a>
+    </section>
+  </section>
 </template>
 
 <script>
 import { useThemeStore } from '~/store/theme'
-import { watch, onMounted, computed } from 'vue'
+import { reactive, computed, onMounted, watch } from 'vue';
 import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
 
 export default {
   setup() {
-    const themeStore = useThemeStore()
+    const themeStore = useThemeStore();
+
+    const state = reactive({
+      mobileMenuOpen: false,
+    });
 
     onMounted(() => {
       watch(
@@ -50,10 +83,23 @@ export default {
       )
     })
 
+    const openMenu = () => {
+      state.mobileMenuOpen = true;
+      console.log(state.mobileMenuOpen);
+    };
+
+    const closeMenu = () => {
+      state.mobileMenuOpen = false;
+      console.log(state.mobileMenuOpen);
+    };
+
     return {
-      currentTheme: computed(() => themeStore.currentTheme)
+      currentTheme: computed(() => themeStore.currentTheme),
+      openMenu,
+      closeMenu,
+      ...toRefs(state),
     }
-  },
+  }
 }
 </script>
 
@@ -137,6 +183,12 @@ export default {
   mask-image: linear-gradient(180deg, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
 }
 
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+      }
+    }
+
     .main-nav::after {
       content:'';
       width:100%;
@@ -183,6 +235,12 @@ export default {
           opacity: 0;
         }
 
+            @media (max-width: 768px) {
+              .vader {
+                display: none;
+              }
+            }
+
             .dark .vader {
               color: white;
             }
@@ -196,6 +254,8 @@ export default {
       align-items: center;
       gap:0.5rem;
     }
+
+
 
     .main-nav .links {
       max-width:1000px;
@@ -268,4 +328,104 @@ export default {
               color: white;
             }
 
+/* Don't show mobile by default */
+.mobile-nav-bar {
+  display: none;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px){
+
+  .menu-switch {
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .mobile-nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding:2rem;
+    width:calc(100% - 4rem);
+    z-index: 1000;
+    position:sticky;
+    top:0;
+    backdrop-filter: blur(3px);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 80%, rgb(255,255,255, 0) 100%);
+    mask-image: linear-gradient(180deg, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  }
+
+      .dark .mobile-nav-bar {
+        background:black;
+      }
+
+  .mobile-nav-panel {
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 100;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    padding:2rem;
+  }
+
+      .dark .mobile-nav-panel {
+        background: black;
+      }
+
+      .mobile-nav-panel.open {
+        display: flex;
+      }
+
+      .mobile-nav-panel-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .mobile-nav-panel-header .close {
+        display:flex;
+        flex-direction: row;
+        gap:1rem;
+        width:100%;
+        justify-content: flex-end;
+      }
+
+      .mobile-nav-panel-links {
+        display:flex;
+        flex-direction: column;
+        width:100%;
+        height:100%;
+        justify-content: center;
+        gap:1rem;
+      }
+
+          .mobile-nav-panel-links a {
+            font-size:2rem;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            color:black;
+            font-weight: normal;
+          }
+
+          .dark .mobile-nav-panel-links a {
+            color:white;
+          }
+  .mobile-nav-panel-contact {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+  }
+}
 </style>

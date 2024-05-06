@@ -34,7 +34,7 @@ export default {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
-        padding: 0rem;
+        padding: 2rem;
       }
     }
 
