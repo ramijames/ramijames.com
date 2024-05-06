@@ -5,11 +5,10 @@
       <h4>Each product has its own story and reason for being. Here, you can read some of mine.</h4>
       <p>I like to build in public, with a short iteration cycle and direct feedback from users. Each product shifts and changes as it achieves either market fit or contribution to the dustbin of history.</p>
     </section>
-    <section class="products">
+    <section class="content">
       <section class="product-bar">
-        <!-- <div><input v-model="products.title" placeholder="Filter by name"></div> -->
         <div class="filters">
-          <button class="small">All</button>
+          <button class="small selected">All</button>
           <button class="small">Current</button>
           <button class="small">Past</button>
         </div>
@@ -30,23 +29,7 @@
           <div class="single-description">{{ product.description }}</div>
         </nuxt-link>
       </section>
-
     </section>
-    <!-- 
-      I want to be able to see:
-        - An brief explanation of what my process is like
-        - A list of products that I'm currently working on
-        - A list of products that I've worked on in the past
-        - For each product there should be an enticing preview which links to a product page
-
-      Each product page should have:
-        - Product title
-        - Product pitch in one sentence, 10 words or less
-        - A verbose description of the product
-        - A link to the live product
-        - A link to the Github repo
-    
-    -->
   </main>
 </template>
 
@@ -109,9 +92,9 @@ export default {
 .products-main {
   display: flex;
   flex-direction: row;
-  align-items: start;
   gap: 2rem;
   padding:0 8rem;
+  margin-top: 8rem;
 }
 
     @media screen and (max-width: 1000px) {
@@ -120,21 +103,6 @@ export default {
         padding:0 2rem;
       }
     }
-
-    .products {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      border:1px solid rgba(0,0,0,0.1);
-      margin-bottom:4rem;
-    }
-
-        .dark .products {
-          border-radius: 8px;
-          border:1px solid rgba(255,255,255,0.1);
-        }
 
     .product-bar {
       display: flex;
@@ -151,34 +119,6 @@ export default {
           display: flex;
           gap: 0.5rem;
         }
-
-    .explanation {
-      max-width: 500px;
-      position: -webkit-sticky;
-      position: sticky;
-      top:120px;
-    }
-
-    @media screen and (max-width: 1000px) {
-      .explanation {
-        width: 100%;
-        max-width: 100%;
-        padding:0rem;
-        position: relative;
-        top:0;
-      }
-    }
-
-    .explanation h1 {
-      opacity: 0.15;
-    }
-
-    @media screen and (max-width: 1000px) {
-      .explanation h1 {
-        font-size: 2rem;
-      }
-      
-    }
 
 .stories {
   display: grid;
@@ -365,6 +305,12 @@ export default {
       margin:0 2rem 2rem;
       text-align: center;
       text-decoration: none;
+    }
+
+    .dark .single-description,
+    .dark .single-title,
+    .dark .intro {
+      color: #fff;
     }
 
 .single-product {

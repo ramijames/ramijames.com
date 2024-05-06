@@ -286,7 +286,7 @@ button:hover, .button:hover {
 
     .dark .content img {
       border: 1px solid #ffffff24;
-      mix-blend-mode: lighten;
+      /* mix-blend-mode: lighten; */
     }
 
 .single-article h1 {
@@ -345,3 +345,47 @@ img.in-article {
 .dark .single-article a {
   color: #ffd586;
 }
+
+/* Dual panel content */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom:4rem;
+}
+
+    .dark .content {
+      border-radius: 8px;
+    }
+
+    .explanation {
+      max-width: 500px;
+      position: -webkit-sticky;
+      position: sticky;
+      top:120px;
+      padding-right:2rem;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .explanation {
+        width: 100%;
+        max-width: 100%;
+        padding:0rem;
+        position: relative;
+        top:0;
+      }
+    }
+
+    .explanation h4,
+    .explanation p {
+      opacity: 0.8;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .explanation h1 {
+        font-size: 2rem;
+      } 
+    }

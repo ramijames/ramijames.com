@@ -177,8 +177,7 @@ export default {
   width:100%;
   backdrop-filter: blur(3px);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.612) 30%, rgb(255,255,255, 0) 100%);
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -257,7 +256,11 @@ export default {
       gap:0.5rem;
     }
 
-
+    @media (max-width: 1000px) {
+      .contact {
+        gap:0;
+      }
+    }
 
     .main-nav .links {
       max-width:1000px;
@@ -360,6 +363,7 @@ export default {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    cursor: pointer;
   }
 
   .mobile-nav-bar {
@@ -372,12 +376,12 @@ export default {
     position:sticky;
     top:0;
     backdrop-filter: blur(3px);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 80%, rgb(255,255,255, 0) 100%);
-    mask-image: linear-gradient(180deg, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 30%, rgb(255,255,255, 0) 100%);
+    mask-image: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
   }
 
       .dark .mobile-nav-bar {
-        background:black;
+        background:#160B1D;
       }
 
   .mobile-nav-panel {
@@ -387,17 +391,19 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    background: white;
+    background: rgba(255, 255, 255, 0.41);
     z-index: 100;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     z-index: 10000;
     padding:2rem;
+    backdrop-filter: blur(12px);
+    animation: fade 0.24s ease-in-out;
   }
 
       .dark .mobile-nav-panel {
-        background: black;
+        background: #160b1d90;
       }
 
       .mobile-nav-panel.open {
@@ -418,6 +424,7 @@ export default {
         gap:1rem;
         width:100%;
         justify-content: flex-end;
+        cursor: pointer;
       }
 
       .mobile-nav-panel-links {
@@ -437,6 +444,22 @@ export default {
             font-weight: normal;
           }
 
+          .mobile-nav-panel-links a:nth-child(1) {
+            animation: enter 0.1s ease-in-out;
+          }
+
+          .mobile-nav-panel-links a:nth-child(2) {
+            animation: enter 0.2s ease-in-out;
+          }
+
+          .mobile-nav-panel-links a:nth-child(3) {
+            animation: enter 0.3s ease-in-out;
+          }
+
+          .mobile-nav-panel-links a:nth-child(4) {
+            animation: enter 0.4s ease-in-out;
+          }
+
           .dark .mobile-nav-panel-links a {
             color:white;
           }
@@ -447,4 +470,23 @@ export default {
     width:100%;
   }
 }
+
+@keyframes enter {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 </style>
