@@ -1,11 +1,11 @@
 <template>
-  <main class="products-main">
+  <main class="general-main">
     <section class="explanation">
       <h1>I document my endless fascination with the process of building digital products</h1>
       <h4>Each product has its own story and reason for being. Here, you can read some of mine.</h4>
       <p>I like to build in public, with a short iteration cycle and direct feedback from users. Each product shifts and changes as it achieves either market fit or contribution to the dustbin of history.</p>
     </section>
-    <section class="content">
+    <section class="general-content">
       <section class="product-bar">
         <div class="filters">
           <button class="small selected">All</button>
@@ -44,7 +44,7 @@ export default {
             description: 'A collection of useful tools for designers and developers',
             image: '/crisptools.jpg',
             status: 'current',
-            slug: '/products/crisptools',
+            slug: '/products/crisp-tools',
             color: '#D5E7FD'
           },
           {
@@ -89,21 +89,6 @@ export default {
 
 <style scoped>
 
-.products-main {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  padding:0 8rem;
-  margin-top: 8rem;
-}
-
-    @media screen and (max-width: 1000px) {
-      .products-main {
-        flex-direction: column;
-        padding:0 2rem;
-      }
-    }
-
     .product-bar {
       display: flex;
       flex-direction: row;
@@ -122,7 +107,7 @@ export default {
 
 .stories {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap:2rem;
   padding:1rem 4rem 8rem;
 }

@@ -1,107 +1,102 @@
 <template>
-  <section class="about-main">
-    <main class="story-mode">
-      <section class="content">
-        <!-- <section class="left">
-          <img class="portrait" src="/rami_big.png" alt="Rami James">
-        </section> -->
-        <section class="right">
-          <img class="" src="/interface-images.jpg" alt="Interface work">
-          <h4>Introduction</h4>
-          <p>Rami James has been actively building online products since 1996. My roles within organizations have ranged from designer, product leader, developer, technical writer, head of developer relations, up to senior management.</p>
-          <p>My preference is to work with small, fast-moving teams who build innovative and interesting functionality.</p>
-          <p><strong>Interested in working together?</strong></p>
-          <p>I'm always eager to learn about new teams and products.</p>
-          <br>
-          <p><a class="button" href="mailto:rami@ramijames.com">Start a conversation</a></p>
-          <br>
-
-          <h4>Work History</h4>
-          <section class="jobs">
-            <section class="single-job triangle">
-              <p class="job-title">Consulting Specialist</p>
-              <p class="job-duration">1996 - Present</p>
-              <p class="job-descriptions">As a self-employed consultant, I have been providing my clientele with direct access to high-quality designs and implementations for decades.</p>
-            </section>
-            <section class="single-job">
-              <p class="job-title">Ultra</p>
-              <p class="job-duration">2020 - 2023</p>
-              <p class="job-subtitle">Head of Developer Relations and Strategy</p>
-              <ul class="job-descriptions">
-                <li v-for="(description, index) in ultraDevReldescriptions" :key="index" v-show="index < 3 || showMore[0]">
-                  {{ description }}
-                </li>
-              </ul>
-              <p><a class="tiny-show-more" href="#" @click.prevent="showMore[0] = !showMore[0]">{{ showMore[0] ? 'Hide' : 'Show more' }}</a></p>
-              <p class="job-subtitle">Technical Project Manager</p>
-              <ul class="job-descriptions">
-                <li v-for="(description, index) in ultraTechdescriptions" :key="index" v-show="index < 3 || showMore[1]">
-                  {{ description }}
-                </li>
-              </ul>
-              <p><a class="tiny-show-more" href="#" @click.prevent="showMore[1] = !showMore[1]">{{ showMore[1] ? 'Hide' : 'Show more' }}</a></p>
-            </section>
-            <section class="single-job">
-              <p class="job-title">FIO</p>
-              <p class="job-duration">2020 - 2021</p>
-              <p class="job-subtitle">Board Member</p>
-              <ul class="job-descriptions">
-                <li>As a board member I helped make tough decisions to define strategy for FIO as they tried to expand the reach of their technology</li>
-              </ul>
-            </section>
-            <section class="single-job">
-              <p class="job-title">Scatter</p>
-              <p class="job-duration">2018 - 2020</p>
-              <p class="job-subtitle">COO</p>
-              <ul class="job-descriptions">
-                <li v-for="(description, index) in scatterCoodescription" :key="index" v-show="index < 3 || showMore[3]">
-                  {{ description }}
-                </li>
-              </ul>
-              <p><a class="tiny-show-more" href="#" @click.prevent="showMore[3] = !showMore[3]">{{ showMore[3] ? 'Hide' : 'Show more' }}</a></p>
-              <p class="job-subtitle">Head of Product</p>
-              <ul class="job-descriptions">
-                <li v-for="(description, index) in scatterProductdescriptions" :key="index" v-show="index < 3 || showMore[4]">
-                  {{ description }}
-                </li>
-              </ul>
-              <p><a class="tiny-show-more" href="#" @click.prevent="showMore[4] = !showMore[4]">{{ showMore[4] ? 'Hide' : 'Show more' }}</a></p>
-            </section>
-            <section class="single-job">
-              <p class="job-title">Qmarkets</p>
-              <p class="job-duration">2015 - 2019</p>
-              <p class="job-subtitle">Senior User Experience Designer and Developer</p>
-              <ul class="job-descriptions">
-                <li v-for="(description, index) in qmarketsdescription" :key="index" v-show="index < 3 || showMore[5]">
-                  {{ description }}
-                </li>
-              </ul>
-              <p><a class="tiny-show-more" href="#" @click.prevent="showMore[5] = !showMore[5]">{{ showMore[5] ? 'Hide' : 'Show more' }}</a></p>  
-            </section>
-            <section class="single-job">
-              <p class="job-title">Inkod-Hypera</p>
-              <p class="job-duration">2005 - 2007</p>
-              <p class="job-subtitle">Designer</p>
-              <ul class="job-descriptions">
-                <li v-for="(description, index) in inkodHyperadescription" :key="index" v-show="index < 3 || showMore[6]">
-                  {{ description }}
-                </li>
-              </ul>
-            </section>
-            <section class="single-job">
-              <p class="job-title">Spiral Solutions</p>
-              <p class="job-duration">2001 - 2005</p>
-              <p class="job-subtitle">Designer</p>
-              <ul class="job-descriptions">
-                <li v-for="(description, index) in spiralSolutionsDescription" :key="index" v-show="index < 3 || showMore[7]">
-                  {{ description }}
-                </li>
-              </ul>
-            </section>
-          </section>
+  <section class="general-main">
+    <section class="explanation">
+      <h1>Hello!</h1>
+        <h4>My name is Rami James and I have been actively building online products since 1996.</h4>
+        <p>My roles within organizations have ranged from designer, product leader, developer, technical writer, head of developer relations, up to senior management.</p>
+        <p>I like to work with small, fast-moving teams who build innovative and interesting functionality.</p>
+        <h4>Interested in working together?</h4>
+        <p>I'm always eager to learn about new teams and products.</p>
+        <br>
+        <p><a class="button" href="mailto:rami@ramijames.com">Start a conversation</a></p>
+        <br>
+    </section>
+    <section class="general-content">
+      <img class="" src="/interface-images.jpg" alt="Interface work">
+      <!-- <h4>Work History</h4> -->
+      <section class="jobs">
+        <section class="single-job triangle">
+          <p class="job-title">Consulting Specialist</p>
+          <p class="job-duration">1996 - Present</p>
+          <p class="job-descriptions">As a self-employed consultant, I have been providing my clientele with direct access to high-quality designs and implementations for decades.</p>
+        </section>
+        <section class="single-job">
+          <p class="job-title">Ultra</p>
+          <p class="job-duration">2020 - 2023</p>
+          <p class="job-subtitle">Head of Developer Relations and Strategy</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in ultraDevReldescriptions" :key="index" v-show="index < 3 || showMore[0]">
+              {{ description }}
+            </li>
+          </ul>
+          <p><a class="tiny-show-more" href="#" @click.prevent="showMore[0] = !showMore[0]">{{ showMore[0] ? 'Hide' : 'Show more' }}</a></p>
+          <p class="job-subtitle">Technical Project Manager</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in ultraTechdescriptions" :key="index" v-show="index < 3 || showMore[1]">
+              {{ description }}
+            </li>
+          </ul>
+          <p><a class="tiny-show-more" href="#" @click.prevent="showMore[1] = !showMore[1]">{{ showMore[1] ? 'Hide' : 'Show more' }}</a></p>
+        </section>
+        <section class="single-job">
+          <p class="job-title">FIO</p>
+          <p class="job-duration">2020 - 2021</p>
+          <p class="job-subtitle">Board Member</p>
+          <ul class="job-descriptions">
+            <li>As a board member I helped make tough decisions to define strategy for FIO as they tried to expand the reach of their technology</li>
+          </ul>
+        </section>
+        <section class="single-job">
+          <p class="job-title">Scatter</p>
+          <p class="job-duration">2018 - 2020</p>
+          <p class="job-subtitle">COO</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in scatterCoodescription" :key="index" v-show="index < 3 || showMore[3]">
+              {{ description }}
+            </li>
+          </ul>
+          <p><a class="tiny-show-more" href="#" @click.prevent="showMore[3] = !showMore[3]">{{ showMore[3] ? 'Hide' : 'Show more' }}</a></p>
+          <p class="job-subtitle">Head of Product</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in scatterProductdescriptions" :key="index" v-show="index < 3 || showMore[4]">
+              {{ description }}
+            </li>
+          </ul>
+          <p><a class="tiny-show-more" href="#" @click.prevent="showMore[4] = !showMore[4]">{{ showMore[4] ? 'Hide' : 'Show more' }}</a></p>
+        </section>
+        <section class="single-job">
+          <p class="job-title">Qmarkets</p>
+          <p class="job-duration">2015 - 2019</p>
+          <p class="job-subtitle">Senior User Experience Designer and Developer</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in qmarketsdescription" :key="index" v-show="index < 3 || showMore[5]">
+              {{ description }}
+            </li>
+          </ul>
+          <p><a class="tiny-show-more" href="#" @click.prevent="showMore[5] = !showMore[5]">{{ showMore[5] ? 'Hide' : 'Show more' }}</a></p>  
+        </section>
+        <section class="single-job">
+          <p class="job-title">Inkod-Hypera</p>
+          <p class="job-duration">2005 - 2007</p>
+          <p class="job-subtitle">Designer</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in inkodHyperadescription" :key="index" v-show="index < 3 || showMore[6]">
+              {{ description }}
+            </li>
+          </ul>
+        </section>
+        <section class="single-job">
+          <p class="job-title">Spiral Solutions</p>
+          <p class="job-duration">2001 - 2005</p>
+          <p class="job-subtitle">Designer</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in spiralSolutionsDescription" :key="index" v-show="index < 3 || showMore[7]">
+              {{ description }}
+            </li>
+          </ul>
         </section>
       </section>
-    </main>
+    </section>
   </section>
 </template>
 
@@ -174,10 +169,10 @@ export default {
 
 .about-main {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0 2rem;
+  flex-direction: row;
+  gap: 2rem;
+  padding:0 8rem;
+  margin-top: 8rem;
 }
 
 .story-mode {
@@ -185,22 +180,6 @@ export default {
   display:flex;
   flex-direction: column;
   gap:4rem;
-}
-
-section.content {
-  display:flex;
-  flex-direction: row;
-  gap:4rem;
-  width: 100%;
-}
-
-section.left {
-  width:35%;
-}
-
-section.right {
-  width:65%;
-  margin:0 auto
 }
 
     section.right h4:first-of-type {
@@ -227,7 +206,7 @@ section.right {
   flex-direction: column;
   gap: 1rem;
   border-left:1px solid black;
-  margin:2rem 0;
+  margin:2rem 0 0 1rem;
 }
 
     .dark .jobs {
@@ -287,14 +266,12 @@ section.right {
         }
 
         .job-subtitle {
-          font-size:0.8rem;
           font-weight: bold;
           margin-top:2rem;
           margin-bottom: 1rem;
           margin-left:2rem;
           border-bottom: 1px solid rgba(0, 0, 0, 0.144);
           padding-bottom: .5rem;
-          max-width: 480px;
         }
 
         .job-duration {
@@ -304,9 +281,8 @@ section.right {
 
         .job-descriptions,
         .job-descriptions li {
-          font-size: 0.7rem;
           margin-left:2rem;
-          max-width: 480px;
+          margin-bottom: 1rem;
         }
 
         .job-descriptions li {
@@ -314,7 +290,6 @@ section.right {
         }
 
         .tiny-show-more {
-          font-size: 0.6rem;
           color: #000000;
           cursor: pointer;
           text-decoration: none;
@@ -322,6 +297,7 @@ section.right {
           border:1px solid #0000001b;
           border-radius: 4px;
           margin-left:2rem;
+          margin-top:1rem;
         }
 
             .dark .tiny-show-more {

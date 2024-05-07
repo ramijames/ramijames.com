@@ -236,7 +236,7 @@ export default {
           opacity: 0;
         }
 
-            @media (max-width: 768px) {
+            @media (max-width: 1200px) {
               .vader {
                 display: none;
               }
