@@ -101,6 +101,10 @@ hr {
   border:1px solid #000000;
 }
 
+    .dark hr {
+      border:1px solid #ffffff;
+    }
+
 /* Layout */
 
 .container {
@@ -110,8 +114,8 @@ hr {
 }
 
 body.light {
-  color: #f0f0f0;
-  color: #000000;
+  color: #160B1D;
+  background-color: #f6f3f7;
 }
 
 body.dark {
@@ -494,7 +498,7 @@ img.in-article {
     }
 
     .product-content-bg.crisp-bg {
-      background: linear-gradient(130deg, #FF9E67 0%, #A566AF 20%, #F636B5 40%);
+      background: linear-gradient(130deg, #ff9f67 0%, #A566AF 20%);
     }
 
     .product-content-bg h2,
