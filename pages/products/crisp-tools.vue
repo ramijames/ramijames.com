@@ -4,7 +4,9 @@
       <img src="/products/crisp-tools/crisp-logo-white.svg" alt="Crisp Tools Logo" class="product-logo">
       <h1 class="hyper-bold">Crisp Tools</h1>
       <h4 class="centered">A simple, useful set of tools for designers and developers to work faster and be happier</h4>
-      <img src="/products/crisp-tools/crisp-tools-home.png" alt="Crisp Tools Logo" class="product-image">
+      <div class="main-product-image">
+        <img src="/products/crisp-tools/crisp-tools-home.png" alt="Crisp Tools Logo">
+      </div>
       <section class="product-bar">
         <section class="links">
           <a href="https://crisptools.dev" target="_blank">Github Repo</a>
@@ -36,9 +38,9 @@
     <section class="product-content">
       <h2>Brand</h2>
       <p class="centered">The Crisptools brand concept is intended to be simple and clean. The logo is a "crisp", or potato chip. Small, bite-sized bits that taste good on their own.</p>
-      <img src="/products/crisp-tools/crisp-logo-brand.svg" alt="Crisp Tools Logo" class="product-image">
+      <img src="/products/crisp-tools/crisp-logo-brand.svg" alt="Crisp Tools Logo" class="single-product-image">
       <p class="centered">The associated iconography is customized to reflect the simple, bright nature of the brand. Icons are fun, clear, and easy to understand.</p>
-      <img src="/products/crisp-tools/crisp-icons-brand.svg" alt="Crisp Tools Icons" class="product-image">
+      <img src="/products/crisp-tools/crisp-icons-brand.svg" alt="Crisp Tools Icons" class="single-product-image">
 
       <hr>
 
@@ -46,12 +48,12 @@
       <p>The interface design is intended to be simple and clean. The color palette is bright and fun, with a focus on usability and clarity.</p>
     </section>
     <section class="product-images">
-      <img src="/products/crisp-tools/crisp-tools-home.png" alt="Crisp Tools Home" class="product-image">
-      <img src="/products/crisp-tools/crisp-tools-palette.png" alt="Crisp Tools Color" class="product-image">
-      <img src="/products/crisp-tools/crisp-tools-darken.png" alt="Crisp Tools Image" class="product-image">
-      <img src="/products/crisp-tools/crisp-tools-textanalysis.png" alt="Crisp Tools Text" class="product-image">
-      <img src="/products/crisp-tools/crisp-tools-lorem-ipsum.png" alt="Crisp Tools Text" class="product-image">
-      <img src="/products/crisp-tools/crisp-tools-typescale.png" alt="Crisp Tools Text" class="product-image">
+      <img src="/products/crisp-tools/crisp-tools-home.png" alt="Crisp Tools Home" class="single-product-image">
+      <img src="/products/crisp-tools/crisp-tools-palette.png" alt="Crisp Tools Color" class="single-product-image">
+      <img src="/products/crisp-tools/crisp-tools-darken.png" alt="Crisp Tools Image" class="single-product-image">
+      <img src="/products/crisp-tools/crisp-tools-textanalysis.png" alt="Crisp Tools Text" class="single-product-image">
+      <img src="/products/crisp-tools/crisp-tools-lorem-ipsum.png" alt="Crisp Tools Text" class="single-product-image">
+      <img src="/products/crisp-tools/crisp-tools-typescale.png" alt="Crisp Tools Text" class="single-product-image">
     </section>
   </main>
 </template>
