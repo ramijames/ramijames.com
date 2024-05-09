@@ -118,6 +118,7 @@ hr {
 body.light {
   color: #160B1D;
   background-color: #f6f3f7;
+  overflow-x: hidden;
 }
 
 body.dark {
@@ -128,6 +129,7 @@ body.dark {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Standard elements */
