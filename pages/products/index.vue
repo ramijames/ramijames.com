@@ -2,7 +2,7 @@
   <main class="general-main">
     <section class="explanation">
       <h1>I document my endless fascination with the process of building digital products</h1>
-      <h4>Each product has its own story and reason for being. Here, you can read some of mine.</h4>
+      <h4>Each product has its own story and reason for being.</h4>
       <p>I like to build in public, with a short iteration cycle and direct feedback from users. Each product shifts and changes as it achieves either market fit or contribution to the dustbin of history.</p>
     </section>
     <section class="general-content">

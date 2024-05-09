@@ -1,0 +1,10 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 64H56.5" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24 16H56.5" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 24V56" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64 24V56" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M60 71H68C69.6546 71 71 69.6546 71 68V60C71 58.3454 69.6546 57 68 57H60C58.3454 57 57 58.3454 57 60V68C57 69.6546 58.3454 71 60 71Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
+<path d="M12 71H20C21.6546 71 23 69.6546 23 68V60C23 58.3454 21.6546 57 20 57H12C10.3454 57 9 58.3454 9 60V68C9 69.6546 10.3454 71 12 71Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
+<path d="M60 23H68C69.6546 23 71 21.6546 71 20V12C71 10.3454 69.6546 9 68 9H60C58.3454 9 57 10.3454 57 12V20C57 21.6546 58.3454 23 60 23Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
+<path d="M12 23H20C21.6546 23 23 21.6546 23 20V12C23 10.3454 21.6546 9 20 9H12C10.3454 9 9 10.3454 9 12V20C9 21.6546 10.3454 23 12 23Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
+</svg>

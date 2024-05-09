@@ -302,16 +302,18 @@ button:hover, .button:hover {
     .content img {
       margin:0 0 2rem 0;
       width: calc(100% - 20px);
-      border: 1px solid #00000024;
+      border: 1px solid #00000010;
       border-radius: .3rem;
       padding:10px;
-      box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
-                  0 8px 6px rgba(0,0,0,0.06),
+      box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
                   0 12px 12px rgba(0,0,0,0.06);
+      background-color: rgba(255, 255, 255, 0.385);
     }
 
     .dark .content img {
       border: 1px solid #ffffff24;
+      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
 .single-article h1 {
@@ -424,17 +426,19 @@ img.in-article {
 
         .general-content img {
           margin:0 0 2rem 0;
-          width: calc(100% - 8px);
-          border: 1px solid #00000024;
+          width: calc(100% - 20px);
+          border: 1px solid #00000010;
           border-radius: .3rem;
-          padding:4px;
-          box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
-                      0 8px 6px rgba(0,0,0,0.06),
+          padding:10px;
+          box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
                       0 12px 12px rgba(0,0,0,0.06);
+          background-color: rgba(255, 255, 255, 0.385);
         }
     
         .dark .general-content img {
           border: 1px solid #ffffff24;
+          box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+          background-color: rgba(255, 255, 255, 0.05);
         }
 
     .explanation {
@@ -554,9 +558,12 @@ img.in-article {
     }
 
 .main-product-image {
-  width:100%;
+  width:calc(100% - 20px);
   height:auto;
   position: relative;
+  background-color: white;
+  padding:10px;
+  border-radius: 10px;
 }
 
     .main-product-image img {
@@ -600,10 +607,13 @@ img.in-article {
     padding:10px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
                 0 12px 12px rgba(0,0,0,0.06);
+    background-color: rgba(255, 255, 255, 0.385);
 }
 
     .dark .single-product-image {
       border: 1px solid #ffffff24;
+      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
 .product-images {
@@ -626,3 +636,51 @@ img.in-article {
       }
       
     }
+
+.story-time {
+  margin:0 8rem;
+}
+
+    @media screen and (max-width: 768px) {
+      .story-time {
+        margin:0rem;
+      }
+    }
+
+.story-time p {
+  font-size:0.8rem;
+  opacity: 0.6;
+}
+
+.features {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+    .single-feature {
+      display:flex;
+      flex-direction:row;
+      margin:2rem 0;
+    }
+
+        .single-feature img {
+          width:40px;
+          height:40px;
+          margin-right:1rem;
+        }
+
+        .dark .single-feature img {
+          filter: invert(1);
+        }
+
+        .single-feature p {
+          opacity: 1;
+          font-size:1rem;
+          margin:0 0 0.5rem;
+        }
+
+        .single-feature li {
+          opacity: 0.6;
+          font-size:0.7rem;
+          margin:0;
+        }
