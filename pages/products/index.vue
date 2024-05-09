@@ -52,7 +52,7 @@ export default {
             description: 'A social network based around randomly generated objects',
             image: '/randomsandwich.jpg',
             status: 'current',
-            slug: '/products/crisptools',
+            slug: '/products/random-sandwich',
             color: '#CCA32E'
           },
           {
@@ -204,6 +204,9 @@ export default {
                       height: 100%;
                       width:100%;
                       object-fit: fill;
+                      border: 0;
+                      padding: 0;
+                      border-radius: 2px;
                     }
 
             .pages {
