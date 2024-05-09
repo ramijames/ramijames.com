@@ -77,7 +77,7 @@ export default {
             image: '/scatter.jpg',
             status: 'past',
             slug: '/products/scatter',
-            color: '#01A1F3'
+            color: '#0899FE'
           }
         ]
     }

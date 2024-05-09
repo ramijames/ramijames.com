@@ -41,6 +41,7 @@ h1 {
       font-weight: normal;
       margin:0;
       line-height: 5dvw;
+      z-index: 11;
     }
 
 h2 { 
@@ -576,7 +577,15 @@ img.in-article {
   border-radius: 10px;
 }
 
-    .main-product-image img,
+    .main-product-image img {
+      width: 100%;
+      border-radius: .3rem;
+      position: relative;
+      z-index: 9;
+      border:0;
+      box-shadow: 0 0 20px #ff9f671f, 0 0 80px #f636b615;
+    }
+
     .main-product-image video {
       width: calc(100% - 20px);
       border-radius: .3rem;
@@ -607,8 +616,35 @@ img.in-article {
       opacity: 0.15;
     }
 
+    .dark .main-product-image::before {
+      position: absolute;
+      content: '';
+      top:-520px;
+      left:80%;
+      z-index: 1;
+      background:red;
+      width:200px;
+      height:800px;
+      rotate:20deg;
+      filter:blur(40px);
+      background: linear-gradient(130deg, #FF9E67 0%, #A566AF 20%, #F636B5 40%);
+      opacity: 0.35;
+    }
+
     .main-product-image.sammitch::after {
       background: linear-gradient(130deg, #3E9C13 0%, #A566AF 20%, #7844AA 40%);
+    }
+
+    .dark .main-product-image.sammitch::before {
+      background: linear-gradient(130deg, #3E9C13 0%, #A566AF 20%, #7844AA 40%);
+    }
+
+    .main-product-image.scatter::after {
+      background: linear-gradient(130deg, #a5daff31 0%, #0899FE 60%);
+    }
+
+    .dark .main-product-image.scatter::before {
+      background: linear-gradient(130deg, #a5daff31 0%, #0899FE 60%);
     }
 
     .dark .main-product-image::after {
@@ -638,6 +674,10 @@ img.in-article {
   gap:2rem;
   padding:1rem 0
 }
+
+    .product-images .single-feature-image {
+      justify-self: center;
+    }
 
     @media screen and (max-width: 1200px) {
       .product-images {
@@ -718,7 +758,6 @@ img.in-article {
     .single-feature-image {
       display:flex;
       flex-direction:row;
-      margin:2rem auto;
     }
 
     .single-feature-image img {
