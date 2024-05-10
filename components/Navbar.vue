@@ -175,8 +175,8 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   width:100%;
-  backdrop-filter: blur(3px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.612) 30%, rgb(255,255,255, 0) 100%);
+  backdrop-filter: blur(10px);
+  /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.612) 30%, rgb(255,255,255, 0) 100%); */
   position: fixed;
   top: 0;
   left: 0;
@@ -199,17 +199,17 @@ export default {
       left: 0;
       bottom:0;
       z-index: -1;
-      backdrop-filter: blur(15px);
-      background: linear-gradient(180deg, rgba(255, 255, 255, .7) 60%, rgb(255,255,255, 0) 100%);
+      backdrop-filter: blur(35px);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .2) 60%, rgb(255,255,255, 0) 100%);
       mask-image: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
     }
 
     .dark .main-nav {
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.612) 30%, rgb(0,0,0, 0) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 30%, rgb(0,0,0, 0) 100%);
     }
 
     .dark .main-nav::after {
-      background: linear-gradient(180deg, rgba(0, 0, 0, .7) 60%, rgb(0,0,0, 0) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, .2) 60%, rgb(0,0,0, 0) 100%);
     }
 
     .dark-side {

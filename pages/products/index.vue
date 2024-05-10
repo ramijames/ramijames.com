@@ -167,7 +167,7 @@ export default {
               z-index: 10;
               position: relative;    
               background:black;
-              background-image: url('/composition-bg.jpg');
+              /* background-image: url('/composition-bg.jpg'); */
               background-size: cover;
               background-position: center;
               background-repeat: no-repeat;
@@ -195,9 +195,7 @@ export default {
                   position: relative;
                   z-index: 11;
                   border-radius: 4px;
-                  border:2px solid rgba(255,255,255,1);
-                  outline: 2px solid rgb(255, 255, 255);
-                  outline-offset: 3px;
+                  border:4px solid rgba(255,255,255,0.2);
                 }
 
                     .single-image img {
