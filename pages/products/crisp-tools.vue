@@ -4,7 +4,7 @@
       <img src="/products/crisp-tools/crisp-logo-white.svg" alt="Crisp Tools Logo" class="product-logo">
       <h1 class="hyper-bold">Crisp Tools</h1>
       <h4 class="centered">A simple, useful set of tools for designers and developers to work faster and be happier</h4>
-      <div class="main-product-image">
+      <div class="main-product-image" ref="image">
         <img src="/products/crisp-tools/crisp-tools-home.png" alt="Crisp Tools Logo">
       </div>
       <section class="product-bar">
@@ -182,3 +182,25 @@
     </section>
   </main>
 </template>
+
+<script setup>
+
+import { onMounted, onUnmounted, ref } from 'vue';
+
+let image = ref(null);
+
+onMounted(() => {
+  const handleScroll = () => {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const rotationAngle = Math.max(0, 20 - scrollPosition / 20);
+    image.value.style.transform = `rotate3d(1, 0, 0, ${rotationAngle}deg)`;
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+  });
+});
+
+</script>

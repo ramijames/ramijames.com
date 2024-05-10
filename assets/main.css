@@ -525,6 +525,8 @@ img.in-article {
   width: 100%;
   max-width: 1000px;
   margin:0 auto;
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
     .product-logo {
@@ -577,6 +579,8 @@ img.in-article {
   background-color: white;
   padding:10px;
   border-radius: 10px;
+  transform: rotate3d(1, 0, 0, 20deg);
+  margin-bottom:2rem;
 }
 
     .main-product-image img {
@@ -589,7 +593,8 @@ img.in-article {
     }
 
     .main-product-image video {
-      width: calc(100% - 20px);
+      width: 100%;
+      height: auto;
       border-radius: .3rem;
       position: relative;
       z-index: 9;
@@ -621,14 +626,14 @@ img.in-article {
     .dark .main-product-image::before {
       position: absolute;
       content: '';
-      top:-520px;
+      top:-900px;
       left:80%;
       z-index: 1;
       background:red;
       width:200px;
       height:800px;
       rotate:20deg;
-      filter:blur(40px);
+      filter:blur(80px);
       background: linear-gradient(130deg, #FF9E67 0%, #A566AF 20%, #F636B5 40%);
       opacity: 0.35;
     }
@@ -647,6 +652,14 @@ img.in-article {
 
     .dark .main-product-image.scatter::before {
       background: linear-gradient(130deg, #a5daff31 0%, #0899FE 60%);
+    }
+
+    .main-product-image.doodledapp::after {
+      background: linear-gradient(130deg, #4431CD 0%, #22C154 60%);
+    }
+
+    .dark .main-product-image.doodledapp::before {
+      background: linear-gradient(130deg, #3e75ff2f 0%, #3E74FF 60%);
     }
 
     .dark .main-product-image::after {
@@ -696,7 +709,7 @@ img.in-article {
     }
 
 .story-time {
-  margin:0 8rem;
+  margin:0 6rem;
 }
 
     @media screen and (max-width: 768px) {
@@ -705,9 +718,16 @@ img.in-article {
       }
     }
 
-.story-time p {
-  font-size:0.8rem;
-  opacity: 0.6;
+.story-time p,
+.story-time li {
+  font-size:0.9rem;
+  opacity: 0.8;
+  line-height: 1.65rem;
+  margin: 0 4rem 2rem;
+}
+
+.story-time ul {
+  margin:2rem 1rem;
 }
 
 .story-time .codehighlight {

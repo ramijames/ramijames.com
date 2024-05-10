@@ -6,8 +6,8 @@
       <h4 class="centered">Create surprisingly delicious things</h4>
       
       
-      <div class="main-product-image sammitch">
-        <video id="sampleMovie" width="640" height="360" preload autoplay loop class="main-product-image sammitch">
+      <div class="main-product-image sammitch" ref="image">
+        <video id="sampleMovie" width="640" height="360" preload autoplay loop>
           <source src="/products/random-sandwich/random-sandwiches.webm" />
         </video>
       </div>
@@ -74,3 +74,25 @@
     </section>
   </main>
 </template>
+
+<script setup>
+
+import { onMounted, onUnmounted, ref } from 'vue';
+
+let image = ref(null);
+
+onMounted(() => {
+  const handleScroll = () => {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const rotationAngle = Math.max(0, 20 - scrollPosition / 20);
+    image.value.style.transform = `rotate3d(1, 0, 0, ${rotationAngle}deg)`;
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+  });
+});
+
+</script>
