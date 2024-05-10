@@ -65,6 +65,12 @@ export default {
   width:100vw;
 }
 
+    @media screen and (max-width: 768px) {
+      .home {
+        margin:0;
+      }
+    }
+
 .core {
   display: flex;
   align-items: start;
@@ -82,7 +88,6 @@ export default {
       .core {
         padding:4rem 2rem;
       }
-      
     }
 
     .dark .core::after {
@@ -102,6 +107,7 @@ export default {
       .core {
         padding-top:4rem;
         align-items: flex-start;
+        position:fixed;
       }
     }
 
@@ -239,8 +245,7 @@ export default {
 
     @media screen and (max-width: 768px) {
       .cube {
-        scale:0.005;
-        top:500px;
+        opacity: 0.2;
       }
     }
 
@@ -336,6 +341,12 @@ export default {
   top:0px;
   right:100px;
 }
+
+    @media screen and (max-width: 768px) {
+      .slivers {
+        opacity: 0.2;
+      }
+    }
 
     .slivers div {
       width: 400px;
