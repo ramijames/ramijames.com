@@ -14,7 +14,7 @@
         </div>
       </section> -->
       <section class="stories">
-        <nuxt-link class="single-story" v-for="product in products" :key="title" :to="product.slug">
+        <nuxt-link class="single-story" v-for="product in products" :key="product.title" :to="product.slug">
           <div class="book">
             <div class="cover">
               <div class="color" :style="{ backgroundColor: product.color }"></div>

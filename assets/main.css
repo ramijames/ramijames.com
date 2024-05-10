@@ -572,6 +572,18 @@ img.in-article {
       border:1px solid rgba(255,255,255,0.06);
     }
 
+    @media screen and (max-width: 768px) {
+      .product-bar {
+        flex-direction: column;
+        margin:2rem auto;
+        border: 0;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+    }
+
 .main-product-image {
   width:calc(100% - 20px);
   height:auto;
@@ -734,6 +746,12 @@ img.in-article {
   margin: 0 8rem 2rem;
 }
 
+    @media screen and (max-width: 768px) {
+      .story-time p {
+        margin: 0 0 2rem;
+      }
+    }
+
 .story-time li {
   font-size:0.9rem;
   opacity: 0.8;
@@ -763,6 +781,13 @@ img.in-article {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+    @media screen and (max-width: 768px) {
+      .features {
+        display:grid;
+        grid-template-columns: 1fr;
+      }
+    }
 
     .single-feature {
       display:flex;
