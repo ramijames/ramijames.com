@@ -34,7 +34,10 @@
           <path class="path" d="M18 28.5C55 14.5 56 3 58.5 4.5C61 6 41.5 40 3 64" stroke="black" stroke-width="5" stroke-linecap="round"/>
         </svg>
       </nuxt-link>
-      <img :src="`/menu-${currentTheme}.svg`" alt="Open menu" @click="openMenu" />
+      <section class="menu-right">
+        <ThemeSwitcher />
+        <img width="28" height="28" :src="`/menu-${currentTheme}.svg`" alt="Open menu" @click="openMenu" />
+      </section>
     </section>
   </nav>
   <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
@@ -364,6 +367,12 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     cursor: pointer;
+  }
+
+  .menu-right {
+    display:flex;
+    flex-direction: row;
+    gap:1rem;
   }
 
   .mobile-nav-bar {
