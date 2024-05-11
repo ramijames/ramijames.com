@@ -10,7 +10,7 @@
             // height: '200px',
             // backgroundColor: color,
             borderWidth: borderWidth + 'px',
-            animation: animationStyle + ' ' + (index + 1) * 3 + 's' + ' infinite',
+            animation: animationStyle + ' ' + (index + 1) * 18 + 's' + ' infinite',
             // top: index * 10 + 'px',
           }"
           class="element"
@@ -48,7 +48,7 @@ export default {
 
 <style>
 .animBox {
-  perspective: 600em;
+  perspective: 100em;
   position:absolute;
   right:0;
   top:0;
@@ -64,28 +64,30 @@ export default {
   pointer-events: none; /* Can't click on it */
 }
 
-.rotateGroup {
-  transform-style: preserve-3d;
-  transform: translateX(130px) rotate3d(2.5,1.75,6,90deg);
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    .rotateGroup {
+      transform-style: preserve-3d;
+      transform: translateX(-700px) rotate3d(2.5,3.75,3,90deg);
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: rotateGroupRotator 30s infinite;
+    }
 
-.element {
-  position: absolute;
-  border-style: solid;
-  border-color: black;
-  transform-style: preserve-3d;
-  width:400px;
-  height:400px;
-  border-radius: 50%;
-  /* scale: 0.1; */
-  transform:  translateY(0)
-              rotate3d(1, 0, 0, 90deg);
-  animation-iteration-count: 1;
-}
+    .element {
+      position: absolute;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0);
+      transform-style: preserve-3d;
+      width:400px;
+      height:400px;
+      border-radius: 50%;
+      /* scale: 0.1; */
+      transform:  translateY(0)
+                  rotate3d(1, 0, 0, 90deg);
+      animation-iteration-count: 1;
+      box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 0px 0px 20px rgba(211, 99, 252, 0.132), 0px 100px 100px rgba(240, 221, 255, 0.1), inset 0px 0px 20px rgba(99, 252, 148, 0.232);
+    }
 
 @keyframes defaultWoosh {
 
@@ -106,24 +108,24 @@ export default {
                 rotate3d(1, 0, 0, 0deg);
   }
 
-  20% {
+  10% {
     width:800px;
     height:800px;
     transform:  translateZ(0px)
                 rotate3d(1, 0, 0, 0deg);
   }
 
-  40% {
+  50% {
     width:800px;
     height:800px;
-    transform:  translateZ(1200px)
+    transform:  translateZ(1800px)
                 rotate3d(1, 0, 0, 0deg);
   }
 
-  60% {
+  90% {
     width:80px;
     height:80px;
-    transform:  translateZ(1200px)
+    transform:  translateZ(1800px)
                 rotate3d(1, 0, 0, 0deg);
   }
 
@@ -134,6 +136,18 @@ export default {
                 rotate3d(1, 0, 0, 0deg);
   }
   
+}
+
+@keyframes rotateGroupRotator {
+  0% {
+    transform: translateX(-700px) rotate3d(2.5,3.75,0,90deg);
+  }
+  50% {
+    transform: translateX(-700px) rotate3d(2.5,3.75,10,90deg);
+  }
+  100% {
+    transform: translateX(-700px) rotate3d(2.5,3.75,0,90deg);
+  }
 }
 
 </style>

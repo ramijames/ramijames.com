@@ -1,7 +1,7 @@
 <template>
   <main class="hero-for-the-zero">
     <section class=""></section>
-    <Woosh :numberOfElements="numberOfElements" :size="40" color="#ff9900" :borderWidth="4" animationStyle="defaultWoosh" />
+    <Woosh :numberOfElements="numberOfElements" :size="40" color="#ff9900" :borderWidth="100" animationStyle="defaultWoosh" />
     <section class="animPanel">
       <!-- A panel to control the props that are input into the Woosh component -->
       <label for="numberOfElements">Number of Elements</label>
@@ -59,6 +59,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow:hidden;
 }
 
 
