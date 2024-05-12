@@ -1,12 +1,11 @@
-* {
-  transition: all 0.08s;
-}
-
 /* Reset */
 
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.08s;
 }
 
 html, 
@@ -42,30 +41,6 @@ h1 {
       margin:0;
       line-height: 5dvw;
       z-index: 11;
-    }
-
-    h1.home-bold {
-      text-align: center;
-      font-size:6dvw;
-      font-weight: bold;
-      margin:0;
-      line-height: 5dvw;
-      z-index: 200;
-      text-wrap: nowrap;
-      animation: wipeText 1.5s cubic-bezier(0.36, 0, 0.66, -0.56);
-    }
-
-    @keyframes wipeText {
-      0% {
-        transform: translateX(-10%);
-        overflow: hidden;
-        width: 0px;
-      }
-      100% {
-        transform: translateX(0%);
-        overflow: visible;
-        width: 100%;
-      }
     }
 
     @media screen and (max-width: 768px) {
@@ -139,15 +114,38 @@ hr {
       border:1px solid #ffffff;
     }
 
-/* Layout */
+strong.underline {
+  position: relative;
 
-.container {
-  max-width: 1200px;
-  margin: 8rem auto;
-  padding: 0 20px;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.4rem;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    z-index: -1;
+    -webkit-mask-image: url('/underline.svg');
+    mask-image: url('/underline.svg');
+    animation: animatedBackground 5s cubic-bezier(0.36, 0, 0.66, -0.56);
+    background-image: linear-gradient(90deg, rgb(161, 49, 231), #d81515, #7523e1, rgb(161, 49, 231)) !important;
+  }
 }
 
-html,
+p > strong {
+  font-weight: 400;  
+
+  &::after {
+    bottom: -0.2rem;
+    height: 0.5rem;
+    left: -0.25rem;
+    right: -0.25rem;
+  }
+}
+
+/* Layout */
+
+body,
 body.light {
   color: #160B1D;
   background-color: #f6f3f7;
@@ -191,58 +189,6 @@ input {
       border: 1px solid #ffffff;
       outline-style: none;
       background-color: #000000c8;
-    }
-
-button, .button {
-  background: linear-gradient(white, white) padding-box,
-              linear-gradient(to bottom, rgb(224, 224, 224), rgb(124, 124, 124)) border-box;
-  border: 1px solid transparent;
-  color:black;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  box-shadow: 0 2px 1px rgba(0,0,0,0.24), 
-              0 8px 6px rgba(0,0,0,0.06),
-              0 12px 12px rgba(0,0,0,0.06);
-  transition: all 0.28s ease-in-out;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  transition: all 0.18s ease-in-out;
-}
-
-button:hover, .button:hover {
-  background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)) padding-box,
-  linear-gradient(to bottom, rgb(42, 42, 42), black) border-box;
-  border: 1px solid transparent;
-  color:white;
-}
-
-    button.small, .button.small,
-    .dark button.small, .dark .button.small {
-      padding: 0.3rem 0.8rem !important;
-      font-size: 0.8rem;
-    }
-
-.dark button, .dark .button {
-  background: linear-gradient(#2b1d39, #1b1124) padding-box, 
-              linear-gradient(to bottom, #4d3365, #4d3365) border-box;
-  border: 1px solid transparent;
-  color:white;
-}
-
-    .dark button:hover, .dark .button:hover {
-      background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) padding-box,
-                  linear-gradient(to bottom, rgb(255, 255, 255), rgb(159, 159, 159)) border-box;
-      border: 1px solid transparent;
-      color:black;
-      border-radius: 4px;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-      font-family: 'Montserrat', sans-serif;
     }
 
 /* Articles */ 
@@ -304,7 +250,7 @@ button:hover, .button:hover {
           background-color:white;
         }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       .single-article {
         flex-direction: column;
         margin:0 auto 2rem;
@@ -329,7 +275,7 @@ button:hover, .button:hover {
       width:calc(100% - 340px);
     }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1000px) {
         .content {
           width:100%;
           margin:0;
@@ -412,6 +358,7 @@ img.in-article {
 
 /* Dual panel content */
 
+.container,
 .general-main {
   display: flex;
   flex-direction: row;
@@ -422,6 +369,7 @@ img.in-article {
 }
 
     @media screen and (max-width: 1400px) {
+      .container,
       .general-main {
         padding:0 2rem;
         width:calc(100% - 4rem);
@@ -430,6 +378,7 @@ img.in-article {
     }
 
     @media screen and (max-width: 1000px) {
+      .container,
       .general-main {
         flex-direction: column;
         padding:0 2rem;
@@ -437,6 +386,7 @@ img.in-article {
     }
 
     @media screen and (max-width: 768px) {
+      .container,
       .general-main {
         margin: 4rem auto;
       }

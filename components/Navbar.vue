@@ -380,7 +380,7 @@ export default {
     flex-direction: row;
     justify-content: flex-end;
     padding:2rem;
-    width:calc(100% - 4rem);
+    width:100%;
     z-index: 1000;
     position:sticky;
     top:0;

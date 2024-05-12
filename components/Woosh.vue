@@ -54,7 +54,7 @@ export default {
   top:0;
   bottom:0;
   left:0;
-  z-index: 10;
+  z-index: -1;
   height: 100vh;
   width: 100vw;
   display:flex;
@@ -81,12 +81,14 @@ export default {
       transform-style: preserve-3d;
       width:400px;
       height:400px;
-      border-radius: 50%;
-      /* scale: 0.1; */
+      border-radius: 20%;
       transform:  translateY(0)
                   rotate3d(1, 0, 0, 90deg);
       animation-iteration-count: 1;
-      box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 0px 0px 20px rgba(211, 99, 252, 0.132), 0px 100px 100px rgba(240, 221, 255, 0.1), inset 0px 0px 20px rgba(99, 252, 148, 0.232);
+      box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 
+                  0px 0px 20px rgba(211, 99, 252, 0.132), 
+                  0px 100px 100px rgba(240, 221, 255, 0.1), 
+                  inset 0px 0px 20px rgba(252, 99, 201, 0.232);
     }
 
 @keyframes defaultWoosh {

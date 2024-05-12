@@ -2,23 +2,38 @@
   <main class="hero-for-the-zero">
     <section class="hero-text">
       <h1 class="home-bold">Fast-track your project</h1>
-      <h4>Subscription access for startups to one of the world's best UI/UX experts</h4>
-      <nuxt-link to="/subscribe" class="button">Subscribe</nuxt-link>
+      <h5 class="home-bold">Subscription access for <strong class="underline">startups</strong> to top-tier expertise</h5>
+      
+      <section class="hero-talents">
+        <div>
+          <h5>Product Expertise</h5>
+          <p>Ensure that your team builds the right things for the right reasons.</p>
+        </div>
+        <div>
+          <h5>Premium Design</h5>
+          <p>Makes your application or website stand out from the competition.</p>
+        </div>
+        <div>
+          <h5>Vue/Nuxt Dev</h5>
+          <p>Implementing high-quality, accessible, and responsive front-ends.</p>
+        </div>
+      </section>
+      
+      <Button text="Subscribe" type="default" class="home-button" />
     </section>
     <Woosh :numberOfElements="numberOfElements" :size="40" color="#ff9900" :borderWidth="10" animationStyle="defaultWoosh" />
-    <section class="animPanel">
-      <!-- A panel to control the props that are input into the Woosh component -->
+    <!-- <section class="animPanel">
       <label for="numberOfElements">Number of Elements</label>
       <input type="number" id="numberOfElements" name="numberOfElements" min="1" max="100" v-model="numberOfElements" />
-      <!-- <label for="size">Size</label> -->
-      <!-- <input type="range" id="size" name="size" min="1" max="100" v-model="size" />
+      <label for="size">Size</label>
+      <input type="range" id="size" name="size" min="1" max="100" v-model="size" />
       <label for="color">Color</label>
       <input type="color" id="color" name="color" v-model="color" />
       <label for="borderWidth">Border Width</label>
       <input type="range" id="borderWidth" name="borderWidth" min="1" max="100" v-model="borderWidth" />
       <label for="animationStyle">Animation Style</label>
-      <input type="text" id="animationStyle" name="animationStyle" v-model="animationStyle" /> -->
-    </section>
+      <input type="text" id="animationStyle" name="animationStyle" v-model="animationStyle" />
+    </section> -->
   </main>
   <section class="services-sell">
     other stuff
@@ -28,6 +43,7 @@
 <script>
 
 import Woosh from './Woosh.vue'
+import Button from './Button.vue'
 
 export default {
   data(){
@@ -54,7 +70,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 .hero-for-the-zero {
   position: relative;
@@ -67,7 +83,86 @@ export default {
 }
 
     .hero-text {
-      text-align:center;      
+      text-align:center;    
+    }
+
+    h1.home-bold {
+      text-align: center;
+      font-size:6dvw;
+      font-weight: bold;
+      margin:0;
+      line-height: 7dvw;
+      z-index: 200;
+      animation: animatedBackground 5s ease-in-out infinite;
+      animation: fadeIn 0.5s ease-in-out;
+      animation-delay: 0s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      background-image: linear-gradient(90deg, rgb(161, 49, 231), #d81515, #7523e1, rgb(161, 49, 231)) !important;
+      background-size: 300% !important;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+    }
+
+        @media screen and (max-width: 768px) {
+          h1.home-bold {
+            font-size: 4rem;
+            line-height: 3.5rem;
+            padding:0 0 1rem;
+          }
+          
+        }
+
+        @keyframes animatedBackground {
+          0% {
+            background-position:0 50%;
+          }
+          50% {
+            background-position:50% 50%;
+          }
+          100% {
+            background-position:0 50%;
+          }
+        }
+
+    h5.home-bold {
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      font-weight: bold;
+      animation: fadeIn 0.5s ease-in-out;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      opacity: 0;
+      max-width:800px;
+      margin: 1rem auto 4rem;
+    }
+
+        @media (max-width: 768px) {
+          h5.home-bold {
+            font-size: 1rem;
+            margin: 1rem 2rem 2rem;
+            line-height: 2rem;
+          }
+        }
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+    .home-button {
+      animation: fadeIn 0.5s ease-in-out;
+      animation-delay: 1.5s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      opacity: 0;
     }
 
     .animPanel {
@@ -85,6 +180,51 @@ export default {
     .dark .animPanel {
       background-color: #15071d6e;
       box-shadow: 0 18px 32px 0 rgba(54, 11, 47, 0.28);
+    }
+
+    .hero-talents {
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width:900px;
+      margin:0 auto 4rem;
+      backdrop-filter: blur(10px);
+      border:1px solid rgba(161, 49, 231,0.2);
+      border-radius: 0.3rem;
+      animation: fadeIn 0.5s ease-in-out;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      opacity: 0;
+
+      & > div {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+
+        &:nth-child(1) {
+          border-right:1px solid rgba(161, 49, 231,0.2);
+        }
+
+        &:nth-child(2) {
+          border-right:1px solid rgba(161, 49, 231,0.2);
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+
+        h5 {
+          margin: 0 0 0.5rem 0;
+          font-weight:bold;
+        }
+
+        p {
+          margin: 0;
+          font-size: 0.8rem;
+        }
+      }
     }
 
 .services-sell {
