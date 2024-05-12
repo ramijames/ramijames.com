@@ -44,6 +44,30 @@ h1 {
       z-index: 11;
     }
 
+    h1.home-bold {
+      text-align: center;
+      font-size:6dvw;
+      font-weight: bold;
+      margin:0;
+      line-height: 5dvw;
+      z-index: 200;
+      text-wrap: nowrap;
+      animation: wipeText 1.5s cubic-bezier(0.36, 0, 0.66, -0.56);
+    }
+
+    @keyframes wipeText {
+      0% {
+        transform: translateX(-10%);
+        overflow: hidden;
+        width: 0px;
+      }
+      100% {
+        transform: translateX(0%);
+        overflow: visible;
+        width: 100%;
+      }
+    }
+
     @media screen and (max-width: 768px) {
       h1.hyper-bold {
         font-size:12vw;
@@ -123,6 +147,7 @@ hr {
   padding: 0 20px;
 }
 
+html,
 body.light {
   color: #160B1D;
   background-color: #f6f3f7;
