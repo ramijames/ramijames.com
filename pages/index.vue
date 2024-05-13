@@ -28,9 +28,7 @@
 <template>
   <main>
     <Hero />
-    <!-- <About />
-    <Writing />
-    <Products /> -->
+    <HowItWorks />
   </main>
 </template>
 
@@ -38,6 +36,7 @@
 
 import { ref, reactive, watch, onMounted } from 'vue'
 import Hero from '/components/Hero.vue'
+import HowItWorks from '/components/HowItWorks.vue'
 
 export default {
   data(){
@@ -46,7 +45,8 @@ export default {
     }
   },
   components: {
-    Hero
+    Hero,
+    HowItWorks
   },
   setup() {
     return {

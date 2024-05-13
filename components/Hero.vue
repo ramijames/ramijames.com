@@ -1,5 +1,6 @@
 <template>
   <main class="hero-for-the-zero">
+    <component :is="selectedBgComponent" />
     <section class="hero-text">
       <h1 class="home-bold">Fast-track your project</h1>
       <h5 class="home-bold">Subscription access for <strong class="underline">startups</strong> to top-tier expertise</h5>
@@ -21,28 +22,22 @@
       
       <Button text="Subscribe" type="default" class="home-button" />
     </section>
-    <Woosh :numberOfElements="numberOfElements" :size="40" color="#ff9900" :borderWidth="10" animationStyle="defaultWoosh" />
-    <!-- <section class="animPanel">
-      <label for="numberOfElements">Number of Elements</label>
-      <input type="number" id="numberOfElements" name="numberOfElements" min="1" max="100" v-model="numberOfElements" />
-      <label for="size">Size</label>
-      <input type="range" id="size" name="size" min="1" max="100" v-model="size" />
-      <label for="color">Color</label>
-      <input type="color" id="color" name="color" v-model="color" />
-      <label for="borderWidth">Border Width</label>
-      <input type="range" id="borderWidth" name="borderWidth" min="1" max="100" v-model="borderWidth" />
-      <label for="animationStyle">Animation Style</label>
-      <input type="text" id="animationStyle" name="animationStyle" v-model="animationStyle" />
-    </section> -->
+    <section class="bgSelect">
+      <label for="bgSelector">Background select</label>
+      <select v-model="selectedBgComponent" name="bgSelector">
+        <option name="woosh">Woosh</option>
+        <option name="cubes">Cubes</option>
+        <option name="slivers">Slivers</option>
+      </select>
+    </section>
   </main>
-  <section class="services-sell">
-    other stuff
-  </section>
 </template>
 
 <script>
 
 import Woosh from './Woosh.vue'
+import Cubes from './Cubes'
+import Slivers from './Slivers'
 import Button from './Button.vue'
 
 export default {
@@ -53,7 +48,8 @@ export default {
       size: 40,
       color: '#ff9900',
       borderWidth: 10,
-      animationStyle: 'defaultWoosh'
+      animationStyle: 'defaultWoosh',
+      selectedBgComponent: 'Woosh'
     }
   },
   setup() {
@@ -64,7 +60,10 @@ export default {
     }
   },
   components: {
-    Woosh
+    Woosh,
+    Cubes,
+    Slivers,
+    Button
   }
 }
 
@@ -235,6 +234,44 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
+}
+
+.bgSelect {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(161, 49, 231, 0.1);
+  border-radius: 0.3rem;
+  animation: fadeIn-30b0ac3d 0.5s ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  opacity: 0;
+
+  label {
+    font-size:0.6rem;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    line-height: 32px;
+    margin-right:1rem;
+  }
+
+  select {
+    height:32px;
+    width:120px;
+    border: 1px solid rgba(161, 49, 231, 0.4);
+    padding:0 0.5rem;
+    border-radius: 0.15rem;
+    font-size:0.6rem;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
 }
 
 </style>

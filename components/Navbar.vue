@@ -9,10 +9,15 @@
       <div class="dot anim-3"></div>
       <nuxt-link class="anim-1" to="/products">Products</nuxt-link>
       <div class="dot anim-3"></div>
-      <svg class="logo" width="60" height="60" viewBox="0 0 116 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- <svg class="logo" width="60" height="60" viewBox="0 0 116 114" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path class="path" d="M40.5 3.49999C17 -0.500011 27.5 23 39.5 48.5C51.5 74 69.5 101.5 64.5 108C59.5 114.5 42 112 51.5 91C61 70 116 20 112.5 11C109 2 70 -1 68 11C66 23 100.5 89.5 94.5 95C88.5 100.5 66.5 94.5 73 78.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
         <path class="path" d="M18 28.5C55 14.5 56 3 58.5 4.5C61 6 41.5 40 3 64" stroke="black" stroke-width="5" stroke-linecap="round"/>
+      </svg> -->
+      <svg class="logo" width="44" height="44" viewBox="0 0 119 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="path" d="M39.5 5.49999C16 1.49999 26.5 25 38.5 50.5C50.5 76 68.5 103.5 63.5 110C58.5 116.5 41 114 50.5 93C60 72 117 22 113.5 13C110 4 71 1 69 13C67 25 99.5 91.5 93.5 97C87.5 102.5 69 98.5 75.5 82.5" stroke="black" stroke-width="10" stroke-linecap="round"/>
+        <path class="path" d="M5.5 38C42.5 24 53.5 13 56 14.5C58.5 16 62.5 41 23 69.5" stroke="black" stroke-width="10" stroke-linecap="round"/>
       </svg>
+
 
       <div class="dot anim-3"></div>
       <nuxt-link class="anim-1" to="/thoughts">Thoughts</nuxt-link>
@@ -29,10 +34,15 @@
   <nav class="mobile-nav-bar">
     <section class="menu-switch">
       <nuxt-link to="/" @click="closeMenu">
-        <svg class="logo" width="30" height="30" viewBox="0 0 116 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- <svg class="logo" width="30" height="30" viewBox="0 0 116 114" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path class="path" d="M40.5 3.49999C17 -0.500011 27.5 23 39.5 48.5C51.5 74 69.5 101.5 64.5 108C59.5 114.5 42 112 51.5 91C61 70 116 20 112.5 11C109 2 70 -1 68 11C66 23 100.5 89.5 94.5 95C88.5 100.5 66.5 94.5 73 78.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
           <path class="path" d="M18 28.5C55 14.5 56 3 58.5 4.5C61 6 41.5 40 3 64" stroke="black" stroke-width="5" stroke-linecap="round"/>
+        </svg> -->
+        <svg class="logo" width="44" height="44" viewBox="0 0 119 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="path" d="M39.5 5.49999C16 1.49999 26.5 25 38.5 50.5C50.5 76 68.5 103.5 63.5 110C58.5 116.5 41 114 50.5 93C60 72 117 22 113.5 13C110 4 71 1 69 13C67 25 99.5 91.5 93.5 97C87.5 102.5 69 98.5 75.5 82.5" stroke="black" stroke-width="10" stroke-linecap="round"/>
+          <path class="path" d="M5.5 38C42.5 24 53.5 13 56 14.5C58.5 16 62.5 41 23 69.5" stroke="black" stroke-width="10" stroke-linecap="round"/>
         </svg>
+
       </nuxt-link>
       <section class="menu-right">
         <ThemeSwitcher />
@@ -113,6 +123,10 @@ export default {
 .logo {
   animation: svgline .6s ease-out;
 }
+
+    .logo path {
+      stroke: black;
+    }
 
     .dark .logo {
       filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.75));
@@ -317,7 +331,7 @@ export default {
           color: black;
           text-decoration: none;
           text-transform: uppercase;
-          letter-spacing: .2rem;
+          /* letter-spacing: .2rem; */
           font-family: 'Montserrat', sans-serif;
           font-weight: 600;
           font-size: .6rem;
@@ -331,6 +345,9 @@ export default {
             .main-nav .links a.router-link-active, 
             .main-nav .links a.router-link-exact-active {
               opacity: 1;
+              color: rgb(161, 49, 231);
+              font-weight: bold;
+              border-bottom: 2px solid rgba(161, 49, 231, 0.3);
             }
 
             .anim-1 {

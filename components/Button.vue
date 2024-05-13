@@ -127,7 +127,7 @@ export default {
 
 .button {
   position:relative;
-  padding:1rem 2rem;
+  padding:2rem 4rem;
   display:inline-block;
   outline:none;
   background-color:#f6f3f7;
@@ -144,6 +144,9 @@ export default {
   mix-blend-mode: multiply;
   perspective: 100em;
   transform-style: preserve-3d;
+  font-size:1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
   
   &:after {
     transform-style: preserve-3d;
@@ -159,7 +162,7 @@ export default {
     background: #d81515;
     z-index: -1;
     transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-    mix-blend-mode: multiply;
+    mix-blend-mode: screen;
   }
 
   &:before {
@@ -176,7 +179,7 @@ export default {
     background: #7523e1;
     z-index: -1;
     transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-    mix-blend-mode: multiply;
+    mix-blend-mode: overlay;
   }
 }
 

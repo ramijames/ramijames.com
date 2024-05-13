@@ -117,7 +117,7 @@ export default {
 }
 
 .mc-field-group input.email {
-  width:calc(100% - 1rem - 4px);
+  width: 100%;
   padding:.6rem 0.5rem;
   margin:0 0 1rem;
   border:1px solid #0000001b;

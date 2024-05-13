@@ -272,7 +272,7 @@ input {
     }
 
     .content {
-      width:calc(100% - 340px);
+      width: 100%;
     }
 
       @media screen and (max-width: 1000px) {
@@ -284,7 +284,7 @@ input {
 
     .content img {
       margin:0 0 2rem 0;
-      width: calc(100% - 20px);
+      width: 100%;
       border: 1px solid #00000010;
       border-radius: .3rem;
       padding:10px;
@@ -372,7 +372,7 @@ img.in-article {
       .container,
       .general-main {
         padding:0 2rem;
-        width:calc(100% - 4rem);
+        width: 100%;
         max-width: 1120px;
       }
     }
@@ -413,7 +413,7 @@ img.in-article {
 
         .general-content img {
           margin:0 0 2rem 0;
-          width: calc(100% - 20px);
+          width: 100%;
           border: 1px solid #00000010;
           border-radius: .3rem;
           padding:10px;
@@ -461,14 +461,14 @@ img.in-article {
 .product-main {
   display:flex;
   flex-direction: column;
-  width:calc(100% - 4rem);
+  width: 100%;
   margin: 8rem 2rem;
 }
 
     @media screen and (max-width: 768px) {
       .product-main {
         margin: 4rem auto;
-        width:calc(100% - 4rem);
+        width: 100%;
       }
     }
 
@@ -545,7 +545,7 @@ img.in-article {
   border-radius: 8px;
   padding:1rem;
   margin:2rem auto 6rem;
-  width: calc(100% - 2rem);
+  width: 100%;
   display:flex;
   flex-direction: row;
   justify-content: space-between;
@@ -568,7 +568,7 @@ img.in-article {
     }
 
 .main-product-image {
-  width:calc(100% - 20px);
+  width: 100%;
   height:auto;
   position: relative;
   background-color: white;
@@ -672,7 +672,7 @@ img.in-article {
 
 .single-product-image {
     margin:0 0 2rem 0;
-    width: calc(100% - 8px);
+    width: 100%;
     border: 1px solid #00000010;
     border-radius: .3rem;
     padding:10px;

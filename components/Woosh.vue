@@ -5,13 +5,8 @@
         v-for="(element, index) in numberOfElements"
           :key="element"
           :style="{
-            // width: size + '%',
-            // height: size + '%',
-            // height: '200px',
-            // backgroundColor: color,
-            borderWidth: borderWidth + 'px',
+            borderWidth: '4px',
             animation: animationStyle + ' ' + (index + 1) * 18 + 's' + ' infinite',
-            // top: index * 10 + 'px',
           }"
           class="element"
       ></div>
@@ -24,23 +19,13 @@ export default {
   props: {
     numberOfElements: {
       type: Number,
-      required: true
-    },
-    size: {
-      type: Number,
-      required: true
-    },
-    color: {
-      type: String,
-      required: true
-    },
-    borderWidth: {
-      type: Number,
-      required: true
+      required: false,
+      default: 6
     },
     animationStyle: {
       type: String,
-      required: true
+      required: false,
+      default: 'defaultWoosh'
     }
   }
 }

@@ -11,30 +11,7 @@
         </section>
       </div>
     </section>
-    <div class="cube">
-      <div class="top"></div>
-      <div class="right"></div>
-      <div class="bottom"></div>
-      <div class="left"></div>
-      <div class="front"></div>
-      <div class="back"></div>
-    </div>
-    <div class="slivers">
-      <div class="one"></div>
-      <div class="two"></div>
-      <div class="three"></div>
-      <div class="four"></div>
-      <div class="five"></div>
-      <div class="six"></div>
-      <div class="seven"></div>
-      <div class="eight"></div>
-      <div class="nine"></div>
-      <div class="ten"></div>
-      <div class="eleven"></div>
-      <div class="twelve"></div>
-      <div class="thirteen"></div>
-      <div class="fourteen"></div>
-    </div>
+    
   </section>
   <section class="home-footer">
     <a href="https://github.com/ramijames/ramijames.com">This website's code is available here</a>
