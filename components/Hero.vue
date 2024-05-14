@@ -79,7 +79,7 @@ export default {
   justify-content: center;
   align-items: center;
   overflow:hidden;
-  box-shadow: inset 0 -50px 100px rgba(161, 49, 231, 0.2);
+  box-shadow: inset 0 -50px 100px rgba(161, 49, 231, 0.1);
 
   @media screen and (max-width: 768px) {
     top:-113px;

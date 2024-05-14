@@ -189,19 +189,15 @@
   width: calc(50% - 8rem);
   z-index: 2;
   margin:0 4rem;
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(8px);
   border-radius: 0.6rem;
   padding:2rem;
-  background: linear-gradient(180deg, rgba(161, 49, 231, 0.2) 30%, rgba(161, 49, 231, 0.2) 100%);
+  background: linear-gradient(150deg, rgba(161, 49, 231, 0.8) 30%, rgba(161, 49, 231, 0.3) 60%);
 
   img {
     width:100%;
   }
 }
-
-    .dark .how-it-illustration {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 30%, rgb(255,255,255, 0.05) 100%);
-    }
 
 
 </style>
