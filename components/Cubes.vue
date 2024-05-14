@@ -26,12 +26,6 @@
   z-index: 0;
 }
 
-    @media screen and (max-width: 768px) {
-      .cube {
-        opacity: 0.2;
-      }
-    }
-
 .cube div {
   width: 400px;
   height: 400px;

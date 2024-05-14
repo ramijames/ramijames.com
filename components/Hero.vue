@@ -20,7 +20,7 @@
         </div>
       </section>
       
-      <Button text="Subscribe" type="default" class="home-button" />
+      <Button text="Get Started" type="default" class="home-button" />
     </section>
     <section class="bgSelect">
       <label for="bgSelector">Background select</label>
@@ -79,6 +79,12 @@ export default {
   justify-content: center;
   align-items: center;
   overflow:hidden;
+  box-shadow: inset 0 -50px 100px rgba(161, 49, 231, 0.2);
+
+  @media screen and (max-width: 768px) {
+    top:-113px;
+    padding:0 2rem;
+  }
 }
 
     .hero-text {
@@ -187,13 +193,16 @@ export default {
       max-width:900px;
       margin:0 auto 4rem;
       backdrop-filter: blur(10px);
-      border:1px solid rgba(161, 49, 231,0.2);
       border-radius: 0.3rem;
       animation: fadeIn 0.5s ease-in-out;
       animation-delay: 1s;
       animation-fill-mode: forwards;
       animation-iteration-count: 1;
       opacity: 0;
+
+      @media screen and (max-width: 768px) {
+        display: none;   
+      }
 
       & > div {
         display:flex;
@@ -202,11 +211,11 @@ export default {
         padding: 2rem;
 
         &:nth-child(1) {
-          border-right:1px solid rgba(161, 49, 231,0.2);
+          border-right:1px solid rgba(161, 49, 231,0.05);
         }
 
         &:nth-child(2) {
-          border-right:1px solid rgba(161, 49, 231,0.2);
+          border-right:1px solid rgba(161, 49, 231,0.05);
         }
 
         img {
@@ -240,37 +249,43 @@ export default {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  padding: 1rem;
   z-index: 1000;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(161, 49, 231, 0.1);
   border-radius: 0.3rem;
   animation: fadeIn-30b0ac3d 0.5s ease-in-out;
   animation-delay: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   opacity: 0;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   label {
-    font-size:0.6rem;
+    font-size:0.5rem;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    letter-spacing: 0.1rem;
     line-height: 32px;
-    margin-right:1rem;
   }
 
   select {
     height:32px;
     width:120px;
-    border: 1px solid rgba(161, 49, 231, 0.4);
+    border: 2px solid rgba(161, 49, 231, 0.4);
+    background: transparent;
     padding:0 0.5rem;
     border-radius: 0.15rem;
     font-size:0.6rem;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+  }
+}
+
+.dark .bgSelect {
+  select {
+    color:white;
   }
 }
 

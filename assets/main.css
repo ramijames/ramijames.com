@@ -285,18 +285,14 @@ input {
     .content img {
       margin:0 0 2rem 0;
       width: 100%;
-      border: 1px solid #00000010;
+      border: 1px solid transparent;
       border-radius: .3rem;
       padding:10px;
-      box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
-                  0 12px 12px rgba(0,0,0,0.06);
-      background-color: rgba(255, 255, 255, 0.385);
+      background-color: rgba(255, 255, 255, 0.65);
     }
 
     .dark .content img {
-      border: 1px solid #ffffff24;
-      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(0,0,0, 0.65);
     }
 
 .single-article h1 {
@@ -368,6 +364,10 @@ img.in-article {
   margin: 8rem auto;
 }
 
+    .general-main.white {
+      background-color: white;
+    }
+
     @media screen and (max-width: 1400px) {
       .container,
       .general-main {
@@ -414,18 +414,14 @@ img.in-article {
         .general-content img {
           margin:0 0 2rem 0;
           width: 100%;
-          border: 1px solid #00000010;
+          border: 1px solid transparent;
           border-radius: .3rem;
           padding:10px;
-          box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
-                      0 12px 12px rgba(0,0,0,0.06);
-          background-color: rgba(255, 255, 255, 0.385);
+          background-color: rgba(255, 255, 255, 0.65);
         }
     
         .dark .general-content img {
-          border: 1px solid #ffffff24;
-          box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
-          background-color: rgba(255, 255, 255, 0.05);
+          background-color: rgba(0,0,0, 0.65);
         }
 
     .explanation {
@@ -461,14 +457,14 @@ img.in-article {
 .product-main {
   display:flex;
   flex-direction: column;
-  width: 100%;
+  width: calc(100% - 4rem);
   margin: 8rem 2rem;
 }
 
     @media screen and (max-width: 768px) {
       .product-main {
         margin: 4rem auto;
-        width: 100%;
+        width: calc(100% - 4rem);
       }
     }
 
@@ -673,18 +669,14 @@ img.in-article {
 .single-product-image {
     margin:0 0 2rem 0;
     width: 100%;
-    border: 1px solid #00000010;
+    border: 1px solid transparent;
     border-radius: .3rem;
     padding:10px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
-                0 12px 12px rgba(0,0,0,0.06);
-    background-color: rgba(255, 255, 255, 0.385);
+    background-color: rgba(255, 255, 255, 0.65);
 }
 
     .dark .single-product-image {
-      border: 1px solid #ffffff24;
-      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(0,0,0, 0.65);
     }
 
 .product-images {

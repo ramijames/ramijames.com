@@ -52,12 +52,6 @@
   z-index: 0;
 }
 
-    @media screen and (max-width: 768px) {
-      .slivers {
-        opacity: 0.2;
-      }
-    }
-
     .slivers div {
       width: 400px;
       height: 400px;
