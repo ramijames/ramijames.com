@@ -48,6 +48,11 @@ export default {
   font-size:1.25rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+
+  @media screen and (max-width: 768px) {
+    padding:1rem 2rem;
+    font-size:1rem;
+  }
   
   &:after {
     transform-style: preserve-3d;
@@ -64,6 +69,10 @@ export default {
     z-index: -1;
     transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
     mix-blend-mode: screen;
+
+    @media screen and (max-width: 768px) {
+      transform: rotate(6deg);
+    }
   }
 
   &:before {
@@ -81,6 +90,10 @@ export default {
     z-index: -1;
     transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
     mix-blend-mode: overlay;
+
+    @media screen and (max-width: 768px) {
+      transform: rotate(-6deg);
+    }
   }
 }
 

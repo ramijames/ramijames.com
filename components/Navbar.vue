@@ -217,8 +217,8 @@ export default {
       bottom:0;
       z-index: -1;
       backdrop-filter: blur(35px);
-      background: linear-gradient(180deg, rgba(255, 255, 255, .2) 60%, rgb(255,255,255, 0) 100%);
-      mask-image: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 1) 60%, rgb(255,255,255, 0) 100%);
+      mask-image: linear-gradient(180deg, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
     }
 
     .dark .main-nav {
@@ -290,7 +290,6 @@ export default {
       height:80px;
       gap:4rem;
       margin:0 auto;
-      text-shadow: 0px 1px 1px rgba(255,255,255,0.24);
     }
 
         @media screen and (max-width: 1440px) {

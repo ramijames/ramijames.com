@@ -148,8 +148,8 @@ export default {
         @media (max-width: 768px) {
           h5.home-bold {
             font-size: 1rem;
-            margin: 1rem 2rem 2rem;
-            line-height: 2rem;
+            margin: 1rem 0rem 2rem;
+            line-height: 1.5rem;
           }
         }
 

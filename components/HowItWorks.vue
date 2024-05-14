@@ -1,5 +1,5 @@
 <template>
-  <section id="how-it-works">
+  <section id="how-it-works" ref="howItWorks">
     <section class="general-main">
       <section class="how-it-intro">
         <div class="box-super-title">
@@ -55,6 +55,37 @@
   </section>
 </template>
 
+<script>
+
+export default {
+  data() {
+    return {
+      previousBodyClass: ''
+    };
+  },
+  mounted() {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.previousBodyClass = document.body.className;
+          document.body.classList.add('dark');
+        } else {
+          document.body.className = this.previousBodyClass;
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.8
+      }
+    );
+
+    observer.observe(this.$refs.howItWorks);
+  }
+}
+
+</script>
+
 <style scoped lang="scss">
 
 #how-it-works {
@@ -64,44 +95,43 @@
   flex-direction: column;
   margin:0;
   background-color: white;
-  background-image: linear-gradient(45deg, #ffffff 40%, #F5F1F6 100%);
-  box-shadow: inset 0 0 100px rgba(255,255,255,1);
+  background-image: linear-gradient(125deg, rgb(108, 27, 159) 10%, rgb(44, 13, 63) 25%);
+  box-shadow: inset 0 0 100px rgba(161, 49, 231, 0.65);
   position:relative;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding:0rem;
+  }
 }
 
     #how-it-works::after {
       position: absolute;
-      right:0;
-      bottom:0;
+      right:30dvw;
+      bottom:-25dvw;
       content:'';
-      width:30dvw;
+      width:100dvw;
       height:30dvw;
-      // filter: blur(200px);
-      background-color: #E700EC;
-      transform: translateX(50%) translateY(-20%) skewX(45%);
-      opacity: 0.1;
-      border-radius: 0.3rem;
+      filter: blur(400px);
+      background-color: #d81515;
+      transform: translateX(50%) translateY(-20%);
+      opacity: 0.35;
+      border-radius: 50%;
     }
 
     #how-it-works::before {
       position: absolute;
-      right:-10dvw;
+      right:-30dvw;
       top:-40px;
       content:'';
       width:40dvw;
-      height:40dvw;
-      // filter: blur(100px);
+      height:80dvw;
+      filter: blur(600px);
       background-color: #8C00EC;
-      transform: translateX(10%) translateY(-20%) skewX(45%);
-      opacity: 0.02;
+      transform: translateX(10%) translateY(-20%) rotate(25deg);
+      opacity: 0.8;
       border-radius: 0.1rem;
-    }
-
-    .dark #how-it-works {
-      background-color: rgba(161, 49, 231, 0.179);
-      background-image: linear-gradient(45deg, rgba(161, 49, 231, 0.2) 40%, rgba(161, 49, 231, 0.3) 100%);
-      box-shadow: inset 0 50px 100px rgba(161, 49, 231, 1);
     }
 
 .box-super-title {
@@ -109,6 +139,7 @@
   flex-direction: row;
   align-items: center;
   gap:1rem;
+  color:white;
 
   svg {
     width:24px;
@@ -126,17 +157,28 @@
 .box-main-sell {
   h2 {
     margin: 1rem 2rem 1rem 0;
+    color:white;
   }
 }
 
 .box-convince-me {
   p {
     margin: 1rem 2rem 1rem 0;
+    color:rgba(255, 255, 255, 0.65);
+    font-size:0.8rem;
   }
 }
 
 .how-it-intro {
   width:65%;
+
+  @media screen and (max-width: 1400px) {
+    width:50%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width:100%;
+  }
 }
 
 .process-outline {
@@ -176,6 +218,8 @@
 
     .step-description {
       margin:0;
+      color:rgba(255, 255, 255, 0.65);
+      font-size:0.8rem;
     }
   }
 }
@@ -190,9 +234,19 @@
   z-index: 2;
   margin:0 4rem;
   backdrop-filter: blur(8px);
-  border-radius: 0.6rem;
+  border-radius: 1.2rem;
   padding:2rem;
-  background: linear-gradient(150deg, rgba(161, 49, 231, 0.8) 30%, rgba(161, 49, 231, 0.3) 60%);
+  background: linear-gradient(150deg, rgba(250, 246, 252, 0.03) 30%, rgba(234, 215, 245, 0.1) 60%);
+  border:1px solid rgba(255, 255, 255, 0.08);
+  
+  @media screen and (max-width: 1400px) {
+    width:50%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width:100%;
+    margin:2rem 0;
+  }
 
   img {
     width:100%;
