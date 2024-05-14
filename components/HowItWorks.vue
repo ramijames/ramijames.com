@@ -100,6 +100,11 @@ export default {
   position:relative;
   overflow: hidden;
 
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    padding:4rem;
+  }
+  
   @media screen and (max-width: 768px) {
     flex-direction: column;
     padding:0rem;
@@ -233,18 +238,22 @@ export default {
   width: calc(50% - 8rem);
   z-index: 2;
   margin:0 4rem;
-  backdrop-filter: blur(8px);
+  padding:0 2rem;
+  // backdrop-filter: blur(8px);
   border-radius: 1.2rem;
-  padding:2rem;
-  background: linear-gradient(150deg, rgba(250, 246, 252, 0.03) 30%, rgba(234, 215, 245, 0.1) 60%);
-  border:1px solid rgba(255, 255, 255, 0.08);
+  // background: linear-gradient(150deg, rgba(250, 246, 252, 0.03) 30%, rgba(234, 215, 245, 0.1) 60%);
+  // border:1px solid rgba(255, 255, 255, 0.08);
+  mix-blend-mode: plus-lighter;
   
   @media screen and (max-width: 1400px) {
     width:50%;
+    padding:0;
+    margin:0;
   }
 
   @media screen and (max-width: 1000px) {
     width:100%;
+    padding:0;
     margin:2rem 0;
   }
 
