@@ -255,15 +255,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin:4rem;
+  margin:0 4rem;
   padding:0 2rem;
   position:relative;
   perspective: 100em;
 
+  &::after {
+    position:absolute;
+    width:100%;
+    height:60%;
+    background-color: #8C00EC;
+    filter:blur(120px);
+    content:'';
+    bottom:0;
+    right:-20%;
+    opacity: 0.05;
+  }
+
   .layer-bubbles {
     width:100%;
     height:100%;
-    position: absolute;
+    position: relative;
     transform: translate3d(0, 0, 100px) rotate3d(3, -3, 0, 30deg);
     z-index: 2;
 
@@ -283,10 +295,11 @@
       }
 
       &.manager {
-        background: linear-gradient(35deg, #41cd0e2f, #41cd0ea5);
+        background: linear-gradient(35deg, #41cd0e17 50%, #41cd0e97);
         border:1px solid #40CD0E;
         top:4rem;
         animation-delay:1s;
+        box-shadow: 10px 10px 0px rgba(0,0,0,0.05), inset 0 0 6px #41cd0e97, 2px 2px 0px #40CD0E;
 
         .arrow {
           right:-1.5rem;
@@ -296,11 +309,12 @@
       }
 
       &.pm {
-        background: linear-gradient(35deg, #c87bff3d, #c87bffb9);
+        background: linear-gradient(35deg, #c87bff18 50%, #c87bff9d);
         border:1px solid #C97BFF;
         top:16rem;
         right:0;
         animation-delay:4s;
+        box-shadow: 10px 10px 0px rgba(0,0,0,0.05), inset 0 0 6px #c87bff9d, 2px 2px 0px #C97BFF;
 
         .arrow {
           left:-1.5rem;
@@ -309,10 +323,11 @@
       }
 
       &.dev {
-        background: linear-gradient(35deg, #e800ec39, #e800ecb8);
+        background: linear-gradient(35deg, #e800ec1d 50%, #e800ec9a);
         border:1px solid #E700EC;
         top:28rem;
         animation-delay:8s;
+        box-shadow: 10px 10px 0px rgba(0,0,0,0.05), inset 0 0 6px #e800ec9a, 2px 2px 0px #E700EC;
 
         .arrow {
           right:-1.5rem;
@@ -334,7 +349,7 @@
   .layer-ui {
     width:100%;
     height:100%;
-    position: absolute;
+    position: relative;
     transform: translate3d(0, 0, -100px) rotate3d(3, -3, 0, 30deg);
     z-index: 1;
     perspective: 100em;
@@ -351,6 +366,7 @@
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-delay:0.4s;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.05), inset 0 0 6px rgba(108, 27, 159, 0.2), 2px 2px 0px rgba(108, 27, 159, 0.206);
   }
 
   .fake-bar {
@@ -385,6 +401,7 @@
       animation-fill-mode: forwards;
       animation-iteration-count: infinite;
       animation-delay:1.2s;
+      box-shadow: 10px 10px 0px rgba(0,0,0,0.05), inset 0 0 6px rgba(108, 27, 159, 0.2), 2px 2px 0px rgba(108, 27, 159, 0.206);
     }
 
     .line {
@@ -396,6 +413,7 @@
       animation: pulse 2s ease-in-out;
       animation-fill-mode: forwards;
       animation-iteration-count: infinite;
+      box-shadow: 10px 10px 0px rgba(0,0,0,0.05), inset 0 0 6px rgba(108, 27, 159, 0.2), 2px 2px 0px rgba(108, 27, 159, 0.206);
 
       &:nth-child(1) {
         width:70%;
@@ -445,15 +463,15 @@
   }
   
   @media screen and (max-width: 1400px) {
-    width:50%;
+    width:40%;
     padding:0;
-    margin:0;
+    margin:0 10%;
   }
 
   @media screen and (max-width: 1000px) {
-    width:100%;
+    width:70%;
     padding:0;
-    margin:2rem 0;
+    margin:2rem 15%;
   }
 
   img {
@@ -465,8 +483,12 @@
   .fake-image,
   .fake-description .header,
   .fake-description .line {
-    background: linear-gradient(rgb(44, 13, 63), rgb(44, 13, 63)) padding-box,
+    background: linear-gradient(rgb(82, 28, 115), rgb(44, 13, 63)) padding-box,
                 linear-gradient(to bottom, rgb(177, 87, 233), rgb(108, 27, 159)) border-box;
+  }
+
+  &::after {
+    opacity: 0.25;
   }
 }
 

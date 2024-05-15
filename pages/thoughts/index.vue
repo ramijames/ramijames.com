@@ -1,7 +1,7 @@
 <template>
   <main class="general-main">
     <section class="explanation">
-      <h1>Writing is thinking</h1>
+      <h1 class="thoughts-bold">Writing is thinking</h1>
       <h4>I find writing a wonderful tool to hone ideas and develop concepts.</h4>
       <p>Topics covered are software development, agile processes, teams working together, my family, and of course, design.</p>
     </section>
@@ -37,6 +37,44 @@ export default {
   gap: 2rem;
 }
 
+h1.thoughts-bold {
+  text-align: left;
+  font-weight: bold;
+  margin:0;
+  padding:0 0 0.5rem;
+  z-index: 200;
+  animation: animatedBackground 5s ease-in-out infinite;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  background-image: linear-gradient(90deg, rgb(161, 49, 231), #d81515, #7523e1, rgb(161, 49, 231)) !important;
+  background-size: 300% !important;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+    @media screen and (max-width: 768px) {
+      h1.thoughts-bold {
+        font-size: 4rem;
+        line-height: 3.5rem;
+        padding:0 0 1rem;
+      }
+      
+    }
+
+    @keyframes animatedBackground {
+      0% {
+        background-position:0 50%;
+      }
+      50% {
+        background-position:50% 50%;
+      }
+      100% {
+        background-position:0 50%;
+      }
+    }
+
     @media screen and (max-width: 1400px) {
       .articles {
         display: grid;
@@ -57,11 +95,7 @@ export default {
 }
 
     .single-article:hover img {
-      border: 1px solid rgba(0,0,0,1);
-    }
-
-    .dark .single-article:hover img {
-      border: 1px solid rgba(255,255,255,1);
+      border: 1px solid #A131E7;
     }
 
 .articles a {

@@ -1,7 +1,7 @@
 <template>
   <section class="general-main">
     <section class="explanation">
-      <h1>Hello!</h1>
+      <h1 class="about-bold">Hello!</h1>
         <h4>My name is Rami James and I have been actively building online products since 1996.</h4>
         <p>My roles within organizations have ranged from designer, product leader, developer, technical writer, head of developer relations, up to senior management.</p>
         <p>I like to work with small, fast-moving teams who build innovative and interesting functionality.</p>
@@ -175,6 +175,45 @@ export default {
   margin-top: 8rem;
 }
 
+h1.about-bold {
+  text-align: left;
+  font-size:4dvw;
+  font-weight: bold;
+  margin:0;
+  line-height: 4dvw;
+  z-index: 200;
+  animation: animatedBackground 5s ease-in-out infinite;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  background-image: linear-gradient(90deg, rgb(161, 49, 231), #d81515, #7523e1, rgb(161, 49, 231)) !important;
+  background-size: 300% !important;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+    @media screen and (max-width: 768px) {
+      h1.about-bold {
+        font-size: 4rem;
+        line-height: 3.5rem;
+        padding:0 0 1rem;
+      }
+      
+    }
+
+    @keyframes animatedBackground {
+      0% {
+        background-position:0 50%;
+      }
+      50% {
+        background-position:50% 50%;
+      }
+      100% {
+        background-position:0 50%;
+      }
+    }
+
 .story-mode {
   margin:0 auto;
   display:flex;
@@ -205,13 +244,9 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border-left:1px solid black;
+  border-left:2px solid #A131E7;
   margin:2rem 0 0 1rem;
 }
-
-    .dark .jobs {
-      border-left:1px solid white;
-    }
 
     .single-job {
       margin: 0 0 2rem 2rem;
@@ -225,18 +260,17 @@ export default {
         .single-job::before {
           content: '';
           position: absolute;
-          left: -37px;
+          left: -38px;
           top:0rem;
-          width: 7px;
-          height: 7px;
+          width: 6px;
+          height: 6px;
           background-color: white;
-          border:1px solid #190d28;
+          border:2px solid #A131E7;
           border-radius: 50%;
         }
 
             .dark .single-job::before {
               background-color: #190d28;
-              border:1px solid white;
             }
 
         .single-job.triangle::before {
@@ -248,13 +282,13 @@ export default {
           height: 0px;
           border-style: solid;
           border-width: 0 8px 10px 8px;
-          border-color: transparent transparent #190d28 transparent;
+          border-color: #f6f3f7 #f6f3f7 #A131E7 #f6f3f7;
           transform: rotate(0deg);
           border-radius: 0;
         }
 
             .dark .single-job.triangle::before {
-              border-color: transparent transparent #FFFFFF transparent;
+              border-color: transparent transparent #A131E7 transparent;
               background-color: #190d28;
             }
 

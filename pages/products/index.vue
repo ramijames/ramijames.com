@@ -1,7 +1,7 @@
 <template>
   <main class="general-main">
     <section class="explanation">
-      <h1>Every product has its story</h1>
+      <h1 class="products-bold">Every product has its story</h1>
       <h4>I like to build in public, with a short iteration cycle and direct feedback from users.</h4>
       <p>Each product shifts and changes as it achieves either market fit or contribution to the dustbin of history.</p>
     </section>
@@ -88,6 +88,44 @@ export default {
 </script>
 
 <style scoped>
+
+h1.products-bold {
+  text-align: left;
+  font-weight: bold;
+  margin:0;
+  padding:0 0 0.5rem;
+  z-index: 200;
+  animation: animatedBackground 5s ease-in-out infinite;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  background-image: linear-gradient(90deg, rgb(161, 49, 231), #d81515, #7523e1, rgb(161, 49, 231)) !important;
+  background-size: 300% !important;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+    @media screen and (max-width: 768px) {
+      h1.thoughts-bold {
+        font-size: 4rem;
+        line-height: 3.5rem;
+        padding:0 0 1rem;
+      }
+      
+    }
+
+    @keyframes animatedBackground {
+      0% {
+        background-position:0 50%;
+      }
+      50% {
+        background-position:50% 50%;
+      }
+      100% {
+        background-position:0 50%;
+      }
+    }
 
     .product-bar {
       display: flex;
