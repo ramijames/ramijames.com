@@ -49,7 +49,57 @@
         </section>
       </section>
       <section class="how-it-illustration">
-        <img src="/how-it-illustrates.svg" alt="Clients love it!">
+        <section class="layer-bubbles">
+          <div class="bubble manager">
+            <div class="title">Manager</div>
+            <div class="says">This looks great, but can we make it pop more?</div>
+            <div class="arrow">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.7846 7.5H17.6237C14.5178 7.5 12 4.98217 12 1.87628C12 0.616827 10.3138 0.198029 9.72452 1.31112L0.941165 17.9019C0.711746 18.3353 1.1783 18.8056 1.61347 18.5796L18.366 9.88118C19.5382 9.27253 19.1054 7.5 17.7846 7.5Z" fill="black" stroke="white"/>
+              </svg>
+            </div>
+          </div>
+          <div class="bubble dev">
+            <div class="title">Developer</div>
+            <div class="says">How responsive will this be?</div>
+            <div class="arrow">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.7846 7.5H17.6237C14.5178 7.5 12 4.98217 12 1.87628C12 0.616827 10.3138 0.198029 9.72452 1.31112L0.941165 17.9019C0.711746 18.3353 1.1783 18.8056 1.61347 18.5796L18.366 9.88118C19.5382 9.27253 19.1054 7.5 17.7846 7.5Z" fill="black" stroke="white"/>
+              </svg>
+            </div>
+          </div>
+          <div class="bubble pm">
+            <div class="title">Project Manager</div>
+            <div class="says">I love how much text fits in here now.</div>
+            <div class="arrow">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.7846 7.5H17.6237C14.5178 7.5 12 4.98217 12 1.87628C12 0.616827 10.3138 0.198029 9.72452 1.31112L0.941165 17.9019C0.711746 18.3353 1.1783 18.8056 1.61347 18.5796L18.366 9.88118C19.5382 9.27253 19.1054 7.5 17.7846 7.5Z" fill="black" stroke="white"/>
+              </svg>
+            </div>
+          </div>
+        </section>
+        <section class="layer-ui">
+          <div class="fake-image"></div>
+          <div class="fake-bar">
+            <div class="fake-icons">
+              <svg width="61" height="21" viewBox="0 0 61 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M49.6756 1.84517L49.9929 2.10171L50.3078 1.84232C50.625 1.58111 50.9662 1.35741 51.3301 1.17158C52.3108 0.67071 53.1606 0.500088 54.5521 0.500017C57.9148 0.515175 60.5 3.48059 60.5 7.42902C60.5 10.4069 58.9107 13.3462 55.809 16.257C54.1792 17.7865 52.0993 19.2974 50.6287 20.092L50.2377 20.3033C50.0894 20.3834 49.9106 20.3834 49.7623 20.3033L49.3713 20.092C47.9007 19.2974 45.8208 17.7865 44.191 16.257C41.0893 13.3462 39.5 10.4069 39.5 7.42902C39.5 3.43462 42.0606 0.5 45.4545 0.5C46.7896 0.5 47.6881 0.685724 48.6925 1.20407C49.0422 1.38456 49.3704 1.59842 49.6756 1.84517Z" stroke="#6C1B9F"/>
+                <path d="M17.6841 17.646L20.6887 20.036C21.0163 20.2966 21.5 20.0633 21.5 19.6447V1.11374C21.5 0.948977 21.4353 0.792194 21.3221 0.677559C21.2091 0.563134 21.0571 0.5 20.9 0.5H1.1C0.942886 0.5 0.790936 0.563135 0.677923 0.677559C0.564703 0.792194 0.5 0.948977 0.5 1.11374V16.7061C0.5 16.8709 0.564703 17.0277 0.677923 17.1423C0.790936 17.2567 0.942886 17.3199 1.1 17.3199H16.7503C17.0895 17.3199 17.4186 17.4348 17.6841 17.646Z" stroke="#6C1B9F"/>
+              </svg>
+            </div>
+          </div>
+          <div class="fake-description">
+            <div class="header"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </section>
       </section>
     </section>
   </section>
@@ -57,32 +107,32 @@
 
 <script>
 
-export default {
-  data() {
-    return {
-      previousBodyClass: ''
-    };
-  },
-  mounted() {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          this.previousBodyClass = document.body.className;
-          document.body.classList.add('dark');
-        } else {
-          document.body.className = this.previousBodyClass;
-        }
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.8
-      }
-    );
+// export default {
+//   data() {
+//     return {
+//       previousBodyClass: ''
+//     };
+//   },
+//   mounted() {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (entry.isIntersecting) {
+//           this.previousBodyClass = document.body.className;
+//           document.body.classList.add('dark');
+//         } else {
+//           document.body.className = this.previousBodyClass;
+//         }
+//       },
+//       {
+//         root: null,
+//         rootMargin: '0px',
+//         threshold: 0.8
+//       }
+//     );
 
-    observer.observe(this.$refs.howItWorks);
-  }
-}
+//     observer.observe(this.$refs.howItWorks);
+//   }
+// }
 
 </script>
 
@@ -95,8 +145,6 @@ export default {
   flex-direction: column;
   margin:0;
   background-color: white;
-  background-image: linear-gradient(125deg, rgb(108, 27, 159) 10%, rgb(44, 13, 63) 25%);
-  box-shadow: inset 0 0 100px rgba(161, 49, 231, 0.65);
   position:relative;
   overflow: hidden;
 
@@ -111,32 +159,8 @@ export default {
   }
 }
 
-    #how-it-works::after {
-      position: absolute;
-      right:30dvw;
-      bottom:-25dvw;
-      content:'';
-      width:100dvw;
-      height:30dvw;
-      filter: blur(400px);
-      background-color: #d81515;
-      transform: translateX(50%) translateY(-20%);
-      opacity: 0.35;
-      border-radius: 50%;
-    }
-
-    #how-it-works::before {
-      position: absolute;
-      right:-30dvw;
-      top:-40px;
-      content:'';
-      width:40dvw;
-      height:80dvw;
-      filter: blur(600px);
-      background-color: #8C00EC;
-      transform: translateX(10%) translateY(-20%) rotate(25deg);
-      opacity: 0.8;
-      border-radius: 0.1rem;
+    .dark #how-it-works {
+      background-image: linear-gradient(125deg, rgb(44, 13, 63) 10%, rgb(44, 13, 63) 25%);
     }
 
 .box-super-title {
@@ -144,7 +168,6 @@ export default {
   flex-direction: row;
   align-items: center;
   gap:1rem;
-  color:white;
 
   svg {
     width:24px;
@@ -162,14 +185,12 @@ export default {
 .box-main-sell {
   h2 {
     margin: 1rem 2rem 1rem 0;
-    color:white;
   }
 }
 
 .box-convince-me {
   p {
     margin: 1rem 2rem 1rem 0;
-    color:rgba(255, 255, 255, 0.65);
     font-size:0.8rem;
   }
 }
@@ -223,7 +244,6 @@ export default {
 
     .step-description {
       margin:0;
-      color:rgba(255, 255, 255, 0.65);
       font-size:0.8rem;
     }
   }
@@ -235,15 +255,194 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: calc(50% - 8rem);
-  z-index: 2;
-  margin:0 4rem;
+  margin:4rem;
   padding:0 2rem;
-  // backdrop-filter: blur(8px);
-  border-radius: 1.2rem;
-  // background: linear-gradient(150deg, rgba(250, 246, 252, 0.03) 30%, rgba(234, 215, 245, 0.1) 60%);
-  // border:1px solid rgba(255, 255, 255, 0.08);
-  mix-blend-mode: plus-lighter;
+  position:relative;
+  perspective: 100em;
+
+  .layer-bubbles {
+    width:100%;
+    height:100%;
+    position: absolute;
+    transform: translate3d(0, 0, 100px) rotate3d(3, -3, 0, 30deg);
+    z-index: 2;
+
+    .bubble {
+      width:50%;
+      padding:1rem;
+      border-radius: 0.3rem;
+      backdrop-filter: blur(4px);
+      position:absolute;
+      animation: circle 22s ease-in-out;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
+
+      .arrow {
+        position:absolute;
+      }
+
+      &.manager {
+        background: linear-gradient(35deg, #41cd0e2f, #41cd0ea5);
+        border:1px solid #40CD0E;
+        top:4rem;
+        animation-delay:1s;
+
+        .arrow {
+          right:-1.5rem;
+          top:-1.5rem;
+          transform: rotate(180deg);
+        }
+      }
+
+      &.pm {
+        background: linear-gradient(35deg, #c87bff3d, #c87bffb9);
+        border:1px solid #C97BFF;
+        top:16rem;
+        right:0;
+        animation-delay:4s;
+
+        .arrow {
+          left:-1.5rem;
+          bottom:-1.5rem;
+        }
+      }
+
+      &.dev {
+        background: linear-gradient(35deg, #e800ec39, #e800ecb8);
+        border:1px solid #E700EC;
+        top:28rem;
+        animation-delay:8s;
+
+        .arrow {
+          right:-1.5rem;
+          top:-1.5rem;
+          transform: rotate(-180deg);
+        }
+      }
+
+      .title {
+        font-size:0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        opacity: 0.6;
+        margin-bottom:0.5rem;
+      }
+    }
+  }
+
+  .layer-ui {
+    width:100%;
+    height:100%;
+    position: absolute;
+    transform: translate3d(0, 0, -100px) rotate3d(3, -3, 0, 30deg);
+    z-index: 1;
+    perspective: 100em;
+  }
+
+  .fake-image {
+    width:100%;
+    height:300px;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(to bottom, rgb(177, 87, 233), rgb(108, 27, 159)) border-box;
+    border: 1px solid transparent;
+    border-radius: 0.6rem;
+    animation: pulse 2s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-delay:0.4s;
+  }
+
+  .fake-bar {
+    padding:1rem;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+    animation: pulse 2s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-delay:0.8s;
+  }
+
+  .fake-description {
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    gap:0.5rem;
+    margin:2rem 0 0 0;
+    perspective: 100em;
+
+    .header {
+      height:20px;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(to bottom, rgb(108, 27, 159), rgb(108, 27, 159)) border-box;
+      border: 1px solid transparent;
+      border-radius: 0.6rem;
+      width:50%;
+      margin-bottom:1rem;
+      animation: pulse 2s ease-in-out;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-delay:1.2s;
+    }
+
+    .line {
+      height:10px;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(to bottom, rgb(108, 27, 159), rgb(108, 27, 159)) border-box;
+      border: 1px solid transparent;
+      border-radius: 0.6rem;
+      animation: pulse 2s ease-in-out;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+
+      &:nth-child(1) {
+        width:70%;
+        animation-delay:1.4s;
+      }
+
+      &:nth-child(2) {
+        width:70%;
+        animation-delay:1.8s;
+      }
+
+      &:nth-child(3) {
+        width:70%;
+        animation-delay:2.2s;
+      }
+
+      &:nth-child(4) {
+        width:70%;
+        animation-delay:2.6s;
+      }
+
+      &:nth-child(5) {
+        width:80%;
+        animation-delay:3.2s;
+      }
+
+      &:nth-child(6) {
+        width:70%;
+        animation-delay:3.6s;
+      }
+
+      &:nth-child(7) {
+        width:70%;
+        animation-delay:4s;
+      }
+
+      &:nth-child(8) {
+        width:70%;
+        animation-delay:4.4s;
+      }
+
+      &:nth-child(9) {
+        width:80%;
+        animation-delay:4.8s;
+      }
+    }
+  }
   
   @media screen and (max-width: 1400px) {
     width:50%;
@@ -262,5 +461,43 @@ export default {
   }
 }
 
+.dark .how-it-illustration {
+  .fake-image,
+  .fake-description .header,
+  .fake-description .line {
+    background: linear-gradient(rgb(44, 13, 63), rgb(44, 13, 63)) padding-box,
+                linear-gradient(to bottom, rgb(177, 87, 233), rgb(108, 27, 159)) border-box;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate3d(0, 0, 0px);
+  }
+  50% {
+    transform: translate3d(0, 0, 40px);
+  }
+  100% {
+    transform: translate3d(0, 0, 0px);
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: translate3d(0, 0, 0px);
+  }
+  25% {
+    transform: translate3d(80px, 0, 0px);
+  }
+  50% {
+    transform: translate3d(80px, 80px, 0px);
+  }
+  75% {
+    transform: translate3d(0, 80px, 0px);
+  }
+  100% {
+    transform: translate3d(0, 0, 0px);
+  }
+}
 
 </style>

@@ -5,7 +5,7 @@
       <h1 class="home-bold">Fast-track your project</h1>
       <h5 class="home-bold">Subscription access for <strong class="underline">startups</strong> to top-tier expertise</h5>
       
-      <section class="hero-talents">
+      <!-- <section class="hero-talents">
         <div>
           <h5>Product Expertise</h5>
           <p>Ensure that your team builds the right things for the right reasons.</p>
@@ -18,7 +18,7 @@
           <h5>Vue/Nuxt Dev</h5>
           <p>Implementing high-quality, accessible, and responsive front-ends.</p>
         </div>
-      </section>
+      </section> -->
       
       <Button text="Get Started" type="default" class="home-button" />
     </section>
@@ -79,7 +79,6 @@ export default {
   justify-content: center;
   align-items: center;
   overflow:hidden;
-  box-shadow: inset 0 -50px 100px rgba(161, 49, 231, 0.1);
 
   @media screen and (max-width: 768px) {
     top:-113px;
@@ -192,13 +191,15 @@ export default {
       grid-template-columns: 1fr 1fr 1fr;
       max-width:900px;
       margin:0 auto 4rem;
-      backdrop-filter: blur(10px);
-      border-radius: 0.3rem;
+      border-radius: 0.6rem;
       animation: fadeIn 0.5s ease-in-out;
       animation-delay: 1s;
       animation-fill-mode: forwards;
       animation-iteration-count: 1;
       opacity: 0;
+      background: linear-gradient(#f6f3f7, #f6f3f7) padding-box,
+                  linear-gradient(to bottom, rgb(177, 87, 233), rgb(108, 27, 159)) border-box;
+      border: 2px solid transparent;
 
       @media screen and (max-width: 768px) {
         display: none;   
@@ -234,6 +235,13 @@ export default {
         }
       }
     }
+
+.dark .hero-for-the-zero {
+  .hero-talents {
+    background: linear-gradient(rgb(44, 13, 63), rgb(44, 13, 63)) padding-box,
+                  linear-gradient(to bottom, rgb(177, 87, 233), rgb(108, 27, 159)) border-box;
+  }
+}
 
 .services-sell {
   position: relative;

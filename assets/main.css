@@ -153,8 +153,7 @@ body.light {
 }
 
 body.dark {
-  background-color: #160B1D;
-  background: linear-gradient(180deg, #160B1D 0%, #1D1038 100%);
+  background-color: rgb(34, 9, 50);
   color: #ffffff;
   background-position: center;
   background-repeat: no-repeat;
