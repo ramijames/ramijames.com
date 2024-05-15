@@ -29,6 +29,7 @@
   <main>
     <Hero />
     <HowItWorks />
+    <AmazingWork />
   </main>
 </template>
 
@@ -37,6 +38,7 @@
 import { ref, reactive, watch, onMounted } from 'vue'
 import Hero from '/components/Hero.vue'
 import HowItWorks from '/components/HowItWorks.vue'
+import AmazingWork from '/components/AmazingWork.vue'
 
 export default {
   data(){
@@ -46,7 +48,8 @@ export default {
   },
   components: {
     Hero,
-    HowItWorks
+    HowItWorks,
+    AmazingWork
   },
   setup() {
     return {

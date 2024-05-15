@@ -167,11 +167,11 @@ export default {
               z-index: 10;
               position: relative;    
               background:black;
-              /* background-image: url('/composition-bg.jpg'); */
+              background-image: url('/composition-bg.jpg');
               background-size: cover;
               background-position: center;
               background-repeat: no-repeat;
-              /* border:1px solid rgba(0,0,0,0.1); */
+              border:1px solid rgba(0,0,0,0.1);
               box-shadow: inset 0 0 6px 4px rgba(255, 255, 255, 0.1);
               overflow: hidden;
             }

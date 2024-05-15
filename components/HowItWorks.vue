@@ -9,7 +9,7 @@
         <span>How it works</span>
       </div>
       <div class="box-main-sell">
-        <h2>Let's ensure your success</h2>
+        <h2>Ensure your success</h2>
       </div>
       <div class="box-convince-me">
         <p>I know that you want is to have a clear idea of what you are spending and getting in return, so the process is set up to prioritize your visibility and set predetermined costs.</p>
@@ -103,45 +103,16 @@
   </section>
 </template>
 
-<script>
-
-// export default {
-//   data() {
-//     return {
-//       previousBodyClass: ''
-//     };
-//   },
-//   mounted() {
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (entry.isIntersecting) {
-//           this.previousBodyClass = document.body.className;
-//           document.body.classList.add('dark');
-//         } else {
-//           document.body.className = this.previousBodyClass;
-//         }
-//       },
-//       {
-//         root: null,
-//         rootMargin: '0px',
-//         threshold: 0.8
-//       }
-//     );
-
-//     observer.observe(this.$refs.howItWorks);
-//   }
-// }
-
-</script>
-
 <style scoped lang="scss">
 
 #how-it-works {
   padding:4rem 8rem;
   display: flex;
   flex-direction: row;
-  margin:0 auto 8rem;
-  background-color: white;
+  margin:0 auto;
+  background: linear-gradient(white, white) padding-box,
+                linear-gradient(to bottom, rgb(250, 241, 255), rgb(230, 210, 243)) border-box;
+  border: 1px solid transparent;
   position:relative;
   overflow: hidden;
   border-radius: 1.2rem;
@@ -160,9 +131,9 @@
   }
 }
 
-    .dark #how-it-works {
-      background-image: linear-gradient(125deg, rgb(44, 13, 63) 10%, rgb(44, 13, 63) 25%);
-    }
+.dark #how-it-works {
+  background-image: linear-gradient(125deg, rgb(44, 13, 63) 10%, rgb(44, 13, 63) 25%);
+}
 
 .box-super-title {
   display:flex;
@@ -220,7 +191,7 @@
       width:100px;
       height:100px;
       border-radius: 0.3rem;
-      background-color: rgb(34, 9, 50);
+      background-color: #0A00F1;
     }
 
     .step-title {
@@ -261,7 +232,7 @@
     width:100%;
     height:100%;
     position: relative;
-    transform: translate3d(0, 100px, 100px) rotate3d(3, -3, 0, 30deg);
+    transform: translate3d(0, 0px, -100px) rotate3d(3, -3, 0, 30deg);
     z-index: 2;
 
     .bubble {
@@ -335,10 +306,14 @@
     width:100%;
     height:100%;
     position: relative;
-    transform: translate3d(0, 0, -100px) rotate3d(3, -3, 0, 30deg);
+    transform: translate3d(0, -50px, -150px) rotate3d(3, -3, 0, 30deg);
     z-index: 1;
     perspective: 100em;
-    filter:blur(4px);
+    opacity:0.4;
+  }
+
+  .dark .layer-ui {
+    opacity: 1;
   }
 
   .fake-image {

@@ -47,7 +47,7 @@ export default {
   justify-content:center;
   align-content: center;
   align-items: center;
-  pointer-events: none; /* Can't click on it */
+  pointer-events: none;
 }
 
     .rotateGroup {
@@ -58,6 +58,11 @@ export default {
       justify-content: center;
       align-items: center;
       animation: rotateGroupRotator 30s infinite;
+      opacity: 0.1;
+    }
+
+    .dark .rotateGroup {
+      opacity: 0.5;
     }
 
     .element {
