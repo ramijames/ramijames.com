@@ -1,14 +1,15 @@
 <template>
   <section class="general-main">
     <section class="explanation">
-      <h1 class="about-bold">Hello!</h1>
+      <h1 class="general-bold">Hello!</h1>
         <h4>My name is Rami James and I have been actively building online products since 1996.</h4>
         <p>My roles within organizations have ranged from designer, product leader, developer, technical writer, head of developer relations, up to senior management.</p>
         <p>I like to work with small, fast-moving teams who build innovative and interesting functionality.</p>
         <h4>Interested in working together?</h4>
         <p>I'm always eager to learn about new teams and products.</p>
         <br>
-        <p><a class="button" href="mailto:rami@ramijames.com">Start a conversation</a></p>
+        <!-- <p><a class="button" href="mailto:rami@ramijames.com">Start a conversation</a></p> -->
+        <Button to="mailto:rami@ramijames.com" text="Start a conversation" type="default" />
         <br>
     </section>
     <section class="general-content">
@@ -101,6 +102,8 @@
 </template>
 
 <script>
+import Button from '/components/Button';
+
 export default {
   data() {
     return {
@@ -160,6 +163,9 @@ export default {
         'During the tail end of my tenure, I was the lead designer and guided strategy while art directing the junior designers.'
       ]
     }
+  },
+  components: {
+    Button
   }
 }
 

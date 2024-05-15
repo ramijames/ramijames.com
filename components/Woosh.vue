@@ -20,7 +20,7 @@ export default {
     numberOfElements: {
       type: Number,
       required: false,
-      default: 6
+      default: 8
     },
     animationStyle: {
       type: String,
@@ -32,9 +32,10 @@ export default {
 </script>
 
 <style>
+
 .animBox {
   perspective: 100em;
-  position:absolute;
+  position:fixed;
   right:0;
   top:0;
   bottom:0;
@@ -70,10 +71,10 @@ export default {
       transform:  translateY(0)
                   rotate3d(1, 0, 0, 90deg);
       animation-iteration-count: 1;
-      box-shadow: inset 0px 4px 10px rgba(255, 247, 0, 0.1), 
-                  0px 0px 20px rgba(211, 99, 252, 0.132), 
-                  0px 100px 100px rgba(240, 221, 255, 0.1), 
-                  inset 0px 0px 20px rgba(252, 99, 201, 0.232);
+      box-shadow: inset 0px 4px 10px #0800f115, 
+                  0px 0px 20px #0800f115, 
+                  0px 100px 100px #0800f10c, 
+                  inset 0px 0px 60px #0800f13d;
     }
 
 @keyframes defaultWoosh {

@@ -2,9 +2,10 @@
   <main class="hero-for-the-zero">
     <component :is="selectedBgComponent" />
     <section class="hero-text">
-      <h1 class="home-bold">Fast-track your project</h1>
-      <h5 class="home-bold">Subscription access for <strong class="underline">startups</strong> to top-tier expertise</h5>
-      
+      <h1 class="general-bold">Together we can fast-track your project</h1>
+      <!-- <h5 class="home-bold">Subscription access for <strong class="underline">startups</strong> to top-tier expertise</h5> -->
+      <p>People reach out to me when they need top-tier quality design and front-end work done exceptionally fast.</p>
+
       <!-- <section class="hero-talents">
         <div>
           <h5>Product Expertise</h5>
@@ -20,16 +21,16 @@
         </div>
       </section> -->
       
-      <Button text="Get Started" type="default" class="home-button" />
+      <Button text="Book a discovery call" type="default" class="home-button" />
     </section>
-    <section class="bgSelect">
+    <!-- <section class="bgSelect">
       <label for="bgSelector">Background select</label>
       <select v-model="selectedBgComponent" name="bgSelector">
         <option name="woosh">Woosh</option>
         <option name="cubes">Cubes</option>
         <option name="slivers">Slivers</option>
       </select>
-    </section>
+    </section> -->
   </main>
 </template>
 
@@ -39,6 +40,7 @@ import Woosh from './Woosh.vue'
 import Cubes from './Cubes'
 import Slivers from './Slivers'
 import Button from './Button.vue'
+import HowItWorks from './HowItWorks.vue'
 
 export default {
   data(){
@@ -73,7 +75,7 @@ export default {
 
 .hero-for-the-zero {
   position: relative;
-  height: 100vh;
+  padding:12rem 2rem;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -88,78 +90,8 @@ export default {
 
     .hero-text {
       text-align:center;    
+      max-width: 600px;
     }
-
-    h1.home-bold {
-      text-align: center;
-      font-size:6dvw;
-      font-weight: bold;
-      margin:0;
-      line-height: 7dvw;
-      z-index: 200;
-      animation: animatedBackground 5s ease-in-out infinite;
-      animation: fadeIn 0.5s ease-in-out;
-      animation-delay: 0s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: 1;
-      background-image: linear-gradient(90deg, rgb(161, 49, 231), #d81515, #7523e1, rgb(161, 49, 231)) !important;
-      background-size: 300% !important;
-      background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      opacity: 0;
-    }
-
-        @media screen and (max-width: 768px) {
-          h1.home-bold {
-            font-size: 4rem;
-            line-height: 3.5rem;
-            padding:0 0 1rem;
-          }
-          
-        }
-
-        @keyframes animatedBackground {
-          0% {
-            background-position:0 50%;
-          }
-          50% {
-            background-position:50% 50%;
-          }
-          100% {
-            background-position:0 50%;
-          }
-        }
-
-    h5.home-bold {
-      text-transform: uppercase;
-      letter-spacing: .1rem;
-      font-weight: bold;
-      animation: fadeIn 0.5s ease-in-out;
-      animation-delay: 0.5s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: 1;
-      opacity: 0;
-      max-width:800px;
-      margin: 1rem auto 4rem;
-    }
-
-        @media (max-width: 768px) {
-          h5.home-bold {
-            font-size: 1rem;
-            margin: 1rem 0rem 2rem;
-            line-height: 1.5rem;
-          }
-        }
-
-        @keyframes fadeIn {
-          0% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
 
     .home-button {
       animation: fadeIn 0.5s ease-in-out;
