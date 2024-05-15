@@ -7,7 +7,7 @@
     <section class="links">
       <nuxt-link class="anim-2" to="/">Home</nuxt-link>
       <div class="dot anim-3"></div>
-      <nuxt-link class="anim-1" to="/products">Products</nuxt-link>
+      <nuxt-link class="anim-1" to="/products">Showcase</nuxt-link>
       <div class="dot anim-3"></div>
       <!-- <svg class="logo" width="60" height="60" viewBox="0 0 116 114" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path class="path" d="M40.5 3.49999C17 -0.500011 27.5 23 39.5 48.5C51.5 74 69.5 101.5 64.5 108C59.5 114.5 42 112 51.5 91C61 70 116 20 112.5 11C109 2 70 -1 68 11C66 23 100.5 89.5 94.5 95C88.5 100.5 66.5 94.5 73 78.5" stroke="black" stroke-width="5" stroke-linecap="round"/>

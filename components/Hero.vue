@@ -1,7 +1,7 @@
 <template>
   <main class="hero-for-the-zero">
     <component :is="selectedBgComponent" />
-    <section class="hero-text">
+    <section class="hero-text" ref="heroText">
       <h1 class="general-bold">Together we can fast-track your project</h1>
       <!-- <h5 class="home-bold">Subscription access for <strong class="underline">startups</strong> to top-tier expertise</h5> -->
       <p>People reach out to me when they need top-tier quality design and front-end work done exceptionally fast.</p>
@@ -36,6 +36,8 @@
 
 <script>
 
+import { onMounted, onUnmounted, ref } from 'vue';
+
 import Woosh from './Woosh.vue'
 import Cubes from './Cubes'
 import Slivers from './Slivers'
@@ -56,7 +58,27 @@ export default {
   },
   setup() {
     
-    
+    let heroText = ref(null);
+
+    const handleScroll = () => {
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const scale = Math.max(0, 1 - scrollPosition / windowHeight);
+      const opacity = Math.max(0, 1 - scrollPosition / (windowHeight / 2));
+
+      heroText.value.style.transform = `scale(${scale})`;
+      heroText.value.style.opacity = opacity;
+    };
+
+    onMounted(() => {
+      heroText = ref(document.querySelector('.hero-text'));
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+
     return {
       
     }
@@ -91,6 +113,7 @@ export default {
     .hero-text {
       text-align:center;    
       max-width: 600px;
+      transform: rotate3d(1, 0, 0, 20deg);
     }
 
     .home-button {
