@@ -28,6 +28,18 @@
       </aside>
     </section>
 
+    <section class="product-content">
+      <h2>Interface Design</h2>
+      <p class="centered">A mobile-first approach to following the progress of remote investments.</p>
+    </section>
+    <section class="product-images five-across">
+      <img src="/products/food-for-future/fff-global-short.png" alt="" class="single-product-image">
+      <img src="/products/food-for-future/fff-farms-explore.png" alt="" class="single-product-image">
+      <img src="/products/food-for-future/fff-farms-single.png" alt="" class="single-product-image">
+      <img src="/products/food-for-future/fff-field-single.png" alt="" class="single-product-image">
+      <img src="/products/food-for-future/fff-menu-open.png" alt="" class="single-product-image">
+    </section>
+
   </main>
 </template>
 

@@ -743,6 +743,10 @@ img.in-article {
   padding:1rem 0
 }
 
+    .product-images.five-across {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
     .product-images .single-feature-image {
       justify-self: center;
     }
