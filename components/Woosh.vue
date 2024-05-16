@@ -48,6 +48,7 @@ export default {
   align-content: center;
   align-items: center;
   pointer-events: none;
+  background: radial-gradient(ellipse at bottom, rgba(224, 224, 255, 0.482) 0%, rgba(255, 255, 255, 0) 60%);
 }
 
     .animBox::before {
@@ -60,7 +61,7 @@ export default {
       height:800px;
       rotate:-20deg;
       filter:blur(80px);
-      background: linear-gradient(130deg, rgb(197, 195, 255) 0%, #bebbff00 80%);
+      background: linear-gradient(130deg, rgb(255, 255, 255) 40%, #bebbff00 80%);
       opacity: 0.35;
     }
 
@@ -74,7 +75,7 @@ export default {
       height:800px;
       rotate:20deg;
       filter:blur(80px);
-      background: linear-gradient(130deg, rgb(197, 195, 255) 0%, #bebbff00 80%);
+      background: linear-gradient(130deg, rgb(255, 255, 255) 40%, #bebbff00 80%);
       opacity: 0.35;
     }
 
@@ -108,6 +109,38 @@ export default {
                   0px 0px 20px #0800f115, 
                   0px 100px 100px #0800f10c, 
                   inset 0px 0px 60px #0800f13d;
+    }
+
+.dark .animBox {
+  background: radial-gradient(ellipse at bottom, rgb(87, 24, 127) 0%, rgba(44, 13, 63, 0) 60%);
+}
+
+    .dark .animBox::before {
+      position: absolute;
+      content: '';
+      top:0;
+      left:20%;
+      z-index: 1;
+      width:200px;
+      height:800px;
+      rotate:-20deg;
+      filter:blur(80px);
+      background: linear-gradient(130deg, rgb(87, 24, 127) 40%, #bebbff00 80%);
+      opacity: 0.35;
+    }
+
+    .dark .animBox::after {
+      position: absolute;
+      content: '';
+      top:0;
+      right:20%;
+      z-index: 1;
+      width:200px;
+      height:800px;
+      rotate:20deg;
+      filter:blur(80px);
+      background: linear-gradient(130deg, rgb(87, 24, 127) 40%, #bebbff00 80%);
+      opacity: 0.35;
     }
 
 @keyframes defaultWoosh {

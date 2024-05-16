@@ -40,6 +40,14 @@ export default {
     return {
       products: [
           {
+            title: 'Food For Future',
+            description: 'Decentralized data for funding farmers',
+            image: '/foodforfuture.jpg',
+            status: 'past',
+            slug: '/products/food-for-future',
+            color: '#9446BD'
+          },
+          {
             title: 'Doodledapp',
             description: 'No-code smart contract development and deployment',
             image: '/doodledapp.jpg',

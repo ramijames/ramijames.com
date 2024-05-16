@@ -710,6 +710,14 @@ img.in-article {
       background: linear-gradient(130deg, #886ae231 0%, #896AE2 60%);
     }
 
+    .main-product-image.fff::after {
+      background: linear-gradient(130deg, #9446BD 0%, #9446BD 60%);
+    }
+
+    .dark .main-product-image.fff::before {
+      background: linear-gradient(130deg, #9346bd5e 0%, #9446BD 60%);
+    }
+
     .dark .main-product-image::after {
       opacity: 1;
     }

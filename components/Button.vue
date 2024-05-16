@@ -1,10 +1,9 @@
 <template>
-  <div class="button" :class="type">
+  <nuxt-link class="button" :class="type" :to="link">
     <div class="button__content">
       <div class="button__text">{{ text }}</div>
     </div>
-    <!-- <div class="front">{{ text }}</div> -->
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -19,6 +18,10 @@ export default {
     text: {
       type: String,
       default: 'Button'
+    },
+    link: {
+      type: String,
+      default: ''
     }
   }
 }
@@ -42,7 +45,9 @@ export default {
   mix-blend-mode: multiply;
   perspective: 100em;
   transform-style: preserve-3d;
+  text-decoration: none;
   
+
   &:after {
     transform-style: preserve-3d;
     transform-origin: top;

@@ -22,7 +22,7 @@
           </section>
           <section>
             <h4 class="step-title discuss-title">Discuss</h4>
-            <p class="step-description">Every project starts with a discussion that helps me understand what your needs are and what you are building.</p>
+            <p class="step-description">Every project <nuxt-link to="#booking">starts with a discussion</nuxt-link> that helps me understand what your needs are and what you are building.</p>
           </section>
         </div>
 
@@ -42,7 +42,7 @@
           </section>
           <section>
             <h4 class="step-title build-title">Build</h4>
-            <p class="step-description">Together we will iterate through a design process that will help you define your product ensure that it fits your business' needs and the market's desire.</p>
+            <p class="step-description">Together we will iterate through process that will help you define your product to ensure that it fits your business' needs and the market's desires. Then, we get to work!</p>
           </section>
         </div>
       </section>
@@ -132,7 +132,7 @@
 }
 
 .dark #how-it-works {
-  background-image: linear-gradient(125deg, rgb(44, 13, 63) 10%, rgb(44, 13, 63) 25%);
+  background-image: linear-gradient(125deg, rgb(76, 18, 112) 10%, rgb(57, 17, 82) 25%);
 }
 
 .box-super-title {

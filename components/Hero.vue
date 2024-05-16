@@ -4,7 +4,7 @@
     <section class="hero-text" ref="heroText">
       <h1 class="general-bold">Together, we can fast-track your project</h1>
       <p>People reach out to me when they need top-tier design and front-end work done exceptionally fast.</p>
-      <Button text="Book a discovery call" type="default" class="home-button" />
+      <Button text="Book a discovery call" type="default" class="home-button" link="#booking" />
     </section>
     <!-- <section class="bgSelect">
       <label for="bgSelector">Background select</label>
