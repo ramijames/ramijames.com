@@ -40,22 +40,6 @@ export default {
     return {
       products: [
           {
-            title: 'Crisp Tools',
-            description: 'A collection of useful tools for designers and developers',
-            image: '/crisptools.jpg',
-            status: 'current',
-            slug: '/products/crisp-tools',
-            color: '#D5E7FD'
-          },
-          {
-            title: 'Random Sandwich',
-            description: 'A social network based around randomly generated objects',
-            image: '/randomsandwich.jpg',
-            status: 'current',
-            slug: '/products/random-sandwich',
-            color: '#CCA32E'
-          },
-          {
             title: 'Doodledapp',
             description: 'No-code smart contract development and deployment',
             image: '/doodledapp.jpg',
@@ -78,7 +62,22 @@ export default {
             status: 'past',
             slug: '/products/scatter',
             color: '#0899FE'
-          }
+          },          {
+            title: 'Crisp Tools',
+            description: 'A collection of useful tools for designers and developers',
+            image: '/crisptools.jpg',
+            status: 'current',
+            slug: '/products/crisp-tools',
+            color: '#D5E7FD'
+          },
+          {
+            title: 'Random Sandwich',
+            description: 'A social network based around randomly generated objects',
+            image: '/randomsandwich.jpg',
+            status: 'current',
+            slug: '/products/random-sandwich',
+            color: '#CCA32E'
+          },
         ]
     }
   }

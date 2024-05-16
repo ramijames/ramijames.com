@@ -186,12 +186,27 @@
     flex-direction: row;
     gap:2rem;
 
+    .step-image {
+      background-color: #0A00F1;
+      border-radius: 0.3rem;
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      width:100%;
+      flex-direction: column;
+    }
+
     img,
     svg {
       width:100px;
       height:100px;
-      border-radius: 0.3rem;
-      background-color: #0A00F1;
+
+      @media screen and (max-width: 768px) {
+        margin:0 auto;
+      }
     }
 
     .step-title {
@@ -215,6 +230,30 @@
   padding:0 2rem;
   position:relative;
   perspective: 100em;
+
+  @media screen and (max-width: 1400px) {
+    width:40%;
+    padding:0;
+    margin:0 10%;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width:50%;
+    padding:0;
+    margin:2rem 25%;
+    position: relative;
+  }
+
+  @media screen and (max-width: 768px) {
+    width:80%;
+    padding:0;
+    margin:2rem 10% 4rem;
+    position: relative;
+  }
+
+  img {
+    width:100%;
+  }
 
   &::after {
     position:absolute;
@@ -421,23 +460,6 @@
         animation-delay:4.8s;
       }
     }
-  }
-  
-  @media screen and (max-width: 1400px) {
-    width:40%;
-    padding:0;
-    margin:0 10%;
-  }
-
-  @media screen and (max-width: 1200px) {
-    width:50%;
-    padding:0;
-    margin:2rem 25%;
-    position: relative;
-  }
-
-  img {
-    width:100%;
   }
 }
 

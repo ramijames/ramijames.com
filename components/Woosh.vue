@@ -50,6 +50,34 @@ export default {
   pointer-events: none;
 }
 
+    .animBox::before {
+      position: absolute;
+      content: '';
+      top:0;
+      left:20%;
+      z-index: 1;
+      width:200px;
+      height:800px;
+      rotate:-20deg;
+      filter:blur(80px);
+      background: linear-gradient(130deg, rgb(197, 195, 255) 0%, #bebbff00 80%);
+      opacity: 0.35;
+    }
+
+    .animBox::after {
+      position: absolute;
+      content: '';
+      top:0;
+      right:20%;
+      z-index: 1;
+      width:200px;
+      height:800px;
+      rotate:20deg;
+      filter:blur(80px);
+      background: linear-gradient(130deg, rgb(197, 195, 255) 0%, #bebbff00 80%);
+      opacity: 0.35;
+    }
+
     .rotateGroup {
       transform-style: preserve-3d;
       transform: translateX(-700px) rotate3d(2.5,3.75,3,90deg);
