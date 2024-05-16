@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt', 
     '@nuxt/content',
     "nuxt-newsletter",
+    "nuxt-calendly"
   ],
   newsletter: {    
     mailchimp: {      
