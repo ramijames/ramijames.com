@@ -43,7 +43,7 @@
 }
 
 #work-list {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.75);
   border:1px solid rgba($white,.8);
   border-right:0;
   backdrop-filter: blur(20px);

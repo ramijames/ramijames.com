@@ -181,6 +181,15 @@ p > strong {
       border-bottom: 1px solid rgba(255,255,255,.6);
     }
 
+.tiny-sub-title {
+  font-size: 1.25rem; 
+  font-family: 'Bitter', sans-serif;
+  margin-top:2rem;
+  margin-bottom:1rem;
+  font-weight:normal;
+  opacity: 0.5;
+}
+
 /* Layout */
 
 body,

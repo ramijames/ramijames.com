@@ -3,18 +3,17 @@
     <component :is="selectedBgComponent" />
     <section class="hero-text" ref="heroText">
       <h1 class="hyper-bold">Turn your vision into an exceptional interface</h1>
-      <p>Together, we can fast-track your project.</p>
+      <p class="tiny-sub-title">Together, we can fast-track your project.</p>
       <Button text="Book a discovery call" type="default" class="home-button" link="#booking" />
     </section>
-    <!-- <section class="bgSelect">
-      <label for="bgSelector">Background select</label>
-      <select v-model="selectedBgComponent" name="bgSelector">
-        <option name="woosh">Woosh</option>
-        <option name="cubes">Cubes</option>
-        <option name="slivers">Slivers</option>
-      </select>
-    </section> -->
   </main>
+  <section class="social-proof">
+    <p class="tiny-sub-title">Over the years, I’ve worked with these great people</p>
+    <div class="social-images">
+      <img v-for="(image, index) in socialImages" :key="index" :src="image" />
+      <img v-for="(image, index) in socialImages" :key="index" :src="image" />
+    </div>
+  </section>
 </template>
 
 <script>
@@ -22,8 +21,6 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 
 import Woosh from './Woosh.vue'
-import Cubes from './Cubes'
-import Slivers from './Slivers'
 import Button from './Button.vue'
 
 export default {
@@ -35,7 +32,18 @@ export default {
       color: '#ff9900',
       borderWidth: 10,
       animationStyle: 'defaultWoosh',
-      selectedBgComponent: 'Woosh'
+      selectedBgComponent: 'Woosh',
+      socialImages: [
+        '/social-proof/5ive.png',
+        '/social-proof/ibm.png',
+        '/social-proof/qmarkets.png',
+        '/social-proof/spiral.png',
+        '/social-proof/tangiblee.png',
+        '/social-proof/telos.png',
+        '/social-proof/ultra.png',
+        '/social-proof/wix.png',
+        '/social-proof/wpt.png',
+      ]
     }
   },
   setup() {
@@ -67,8 +75,6 @@ export default {
   },
   components: {
     Woosh,
-    Cubes,
-    Slivers,
     Button
   }
 }
@@ -76,6 +82,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+@import './assets/variables';
 
 .hero-for-the-zero {
   position: relative;
@@ -181,6 +189,31 @@ export default {
   select {
     color:white;
   }
+}
+
+.social-proof {
+  max-width: 800px;
+  margin:0 auto;
+  width:100%;
+  padding:2rem 0;
+  text-align: center;
+  mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+  mix-blend-mode: multiply;
+}
+
+    .social-images {
+      display:flex;
+      gap: $spacing-md;
+      animation: scrollLeft 90s linear infinite;
+
+      img {
+        width: 50px;
+      }
+    }
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 </style>

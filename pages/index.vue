@@ -31,6 +31,7 @@
     <Showcase />
     <Whofor />
     <Blocks />
+    <Plans />
     <!-- <HowItWorks /> -->
     <!-- <AmazingWork /> -->
     <!-- <Booking /> -->
@@ -44,6 +45,7 @@ import Hero from '/components/Hero.vue'
 import Showcase from '/components/Showcase.vue'
 import Whofor from '/components/Whofor.vue'
 import Blocks from '/components/Blocks.vue'
+import Plans from '/components/Plans.vue'
 // import HowItWorks from '/components/HowItWorks.vue'
 // import AmazingWork from '/components/AmazingWork.vue'
 // import Booking from '/components/Booking.vue'
@@ -61,7 +63,8 @@ export default {
     // Booking,
     Showcase,
     Whofor,
-    Blocks
+    Blocks,
+    Plans
   },
   setup() {
     return {
