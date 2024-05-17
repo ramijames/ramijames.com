@@ -28,9 +28,12 @@
 <template>
   <main>
     <Hero />
-    <HowItWorks />
-    <AmazingWork />
-    <Booking />
+    <Showcase />
+    <Whofor />
+    <Blocks />
+    <!-- <HowItWorks /> -->
+    <!-- <AmazingWork /> -->
+    <!-- <Booking /> -->
   </main>
 </template>
 
@@ -38,9 +41,12 @@
 
 import { ref, reactive, watch, onMounted } from 'vue'
 import Hero from '/components/Hero.vue'
-import HowItWorks from '/components/HowItWorks.vue'
-import AmazingWork from '/components/AmazingWork.vue'
-import Booking from '/components/Booking.vue'
+import Showcase from '/components/Showcase.vue'
+import Whofor from '/components/Whofor.vue'
+import Blocks from '/components/Blocks.vue'
+// import HowItWorks from '/components/HowItWorks.vue'
+// import AmazingWork from '/components/AmazingWork.vue'
+// import Booking from '/components/Booking.vue'
 
 export default {
   data(){
@@ -50,9 +56,12 @@ export default {
   },
   components: {
     Hero,
-    HowItWorks,
-    AmazingWork,
-    Booking
+    // HowItWorks,
+    // AmazingWork,
+    // Booking,
+    Showcase,
+    Whofor,
+    Blocks
   },
   setup() {
     return {

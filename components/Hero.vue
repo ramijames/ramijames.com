@@ -2,8 +2,8 @@
   <main class="hero-for-the-zero">
     <component :is="selectedBgComponent" />
     <section class="hero-text" ref="heroText">
-      <h1 class="general-bold">Together, we can fast-track your project</h1>
-      <p>People reach out to me when they need top-tier design and front-end work done exceptionally fast.</p>
+      <h1 class="hyper-bold">Turn your vision into an exceptional interface</h1>
+      <p>Together, we can fast-track your project.</p>
       <Button text="Book a discovery call" type="default" class="home-button" link="#booking" />
     </section>
     <!-- <section class="bgSelect">
@@ -94,8 +94,7 @@ export default {
 
     .hero-text {
       text-align:center;    
-      max-width: 520px;
-      transform: rotate3d(1, 0, 0, 20deg);
+      max-width: 800px;
 
       h1 {
         animation: fadeIn 0.5s ease-in-out;

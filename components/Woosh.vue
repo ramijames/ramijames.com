@@ -87,11 +87,11 @@ export default {
       justify-content: center;
       align-items: center;
       animation: rotateGroupRotator 30s infinite;
-      opacity: 0.1;
+      opacity: 0.4;
     }
 
     .dark .rotateGroup {
-      opacity: 0.5;
+      opacity: 0.8;
     }
 
     .element {

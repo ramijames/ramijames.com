@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   css: [
-    '~/assets/main.css'
+    '~/assets/main.scss'
   ],
   devtools: { enabled: true },
   components: {
@@ -24,8 +24,8 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Montserrat': [400, 600, 700],
-      'Open Sans': [400, 600, 700]
+      'Bitter': [400, 600, 700],
+      'Noto Sans': [400, 600, 700]
     }
   }
 })
