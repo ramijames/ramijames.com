@@ -31,7 +31,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
+@import './assets/variables';
 
 .animBox {
   perspective: 100em;
@@ -46,10 +48,12 @@ export default {
   align-items: center;
   pointer-events: none;
   z-index: 0;
+  background: radial-gradient(ellipse at bottom, rgba($blue, 0.2) 0%, rgba($white, 0) 60%);
+  overflow: hidden;
 }
     .rotateGroup {
       transform-style: preserve-3d;
-      transform: translateX(-700px) rotate3d(2.5,3.75,3,90deg);
+      transform: translateX(-400px) rotate3d(2.5,3.75,3,90deg);
       display:flex;
       flex-direction: column;
       justify-content: center;
@@ -134,13 +138,13 @@ export default {
 
 @keyframes rotateGroupRotator {
   0% {
-    transform: translateX(-700px) rotate3d(2.5,3.75,0,90deg);
+    transform: translateX(-300px) rotate3d(2.5,3.75,0,90deg);
   }
   50% {
-    transform: translateX(-700px) rotate3d(2.5,3.75,10,90deg);
+    transform: translateX(-300px) rotate3d(2.5,3.75,10,90deg);
   }
   100% {
-    transform: translateX(-700px) rotate3d(2.5,3.75,0,90deg);
+    transform: translateX(-300px) rotate3d(2.5,3.75,0,90deg);
   }
 }
 

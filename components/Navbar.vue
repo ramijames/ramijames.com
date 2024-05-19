@@ -166,14 +166,14 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.41);
+  background: rgba(255, 255, 255, 0.8);
   z-index: 100;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   z-index: 10000;
   padding: $spacing-lg;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(80px);
   animation: fade 0.24s ease-in-out;
 }
 
@@ -208,37 +208,48 @@ export default {
     }
 
         .mobile-nav-panel-links a {
-          font-size:2rem;
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: $spacing-sm;
+          color: $black;
+          font-size: $font-size-xl;
+          font-weight:bold;
+          text-transform: uppercase;
           text-decoration: none;
-          font-family: 'Montserrat', sans-serif;
-          color:black;
-          font-weight: normal;
+          color: $blue;
         }
 
         .mobile-nav-panel-links a:nth-child(1) {
-          animation: enter 0.1s ease-in-out;
-        }
-
-        .mobile-nav-panel-links a:nth-child(2) {
           animation: enter 0.2s ease-in-out;
         }
 
-        .mobile-nav-panel-links a:nth-child(3) {
-          animation: enter 0.3s ease-in-out;
-        }
-
-        .mobile-nav-panel-links a:nth-child(4) {
+        .mobile-nav-panel-links a:nth-child(2) {
           animation: enter 0.4s ease-in-out;
         }
 
-        .dark .mobile-nav-panel-links a {
-          color:white;
+        .mobile-nav-panel-links a:nth-child(3) {
+          animation: enter 0.6s ease-in-out;
         }
+
+        .mobile-nav-panel-links a:nth-child(4) {
+          animation: enter 0.8s ease-in-out;
+        }
+
+        .dark .mobile-nav-panel-links a {
+          color: $blue-light;
+        }
+        
 .mobile-nav-panel-contact {
   display:flex;
   flex-direction: row;
   justify-content: space-between;
   width:100%;
+}
+
+.dark .mobile-nav-panel {
+  background: rgba(0, 0, 0, 0.8);
+
 }
 
 @keyframes enter {

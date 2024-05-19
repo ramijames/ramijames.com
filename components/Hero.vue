@@ -1,12 +1,14 @@
 <template>
   <main id="hero-for-the-zero">
     <section class="intro">
+      <Woosh />
+      <div class="small">I create</div>
       <div>PRODUCTS,</div>
       <div>EXPERIENCES,</div>
-      <div>& DESIGNS</div>
+      <div>& <span class="designs">DESIGNS</span></div>
     </section>
     <section class="links">
-      <Woosh />
+      <div class="small">With these services</div>
       <nuxt-link to="/services/product-concept"><span class="number">01</span> <span class="title">Product concept</span></nuxt-link>
       <nuxt-link to="/services/ux-ui"><span class="number">02</span> <span class="title">UX & UI</span></nuxt-link>
       <nuxt-link to="/services/implementation"><span class="number">03</span> <span class="title">Implementation</span></nuxt-link>
@@ -45,6 +47,10 @@ export default {
   flex-direction: row;
   background-color: $white;
 
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+  }
+
   .intro {
     display:flex;
     flex-direction: column;
@@ -57,6 +63,26 @@ export default {
     font-size: $font-size-xxl;
     font-weight:bold;
     text-transform: uppercase;
+    z-index: 2;
+
+    @media screen and (max-width: 768px){
+      width:100vw;
+      height:45vh;
+      font-size: 6dvw;
+      margin-top:10vh;
+    }
+
+    .small {
+      font-size: $font-size-md;
+      color: $gray-md;
+    }
+
+    .designs {
+      font-style: italic;
+      font-weight: 900;
+      color: $blue;
+      padding: 0 0.5rem;
+    }
   }
 
   .links {
@@ -74,6 +100,17 @@ export default {
     position: relative;
     overflow: hidden;
 
+    @media screen and (max-width: 768px){
+      width:100vw;
+      height:45vh;
+      font-size: 6dvw;
+    }
+
+    .small {
+      font-size: $font-size-md;
+      color: rgba($white, 0.5);
+    }
+
     a {
       text-decoration: none;
       color: $white;
@@ -87,10 +124,21 @@ export default {
       span.title {
         position: relative;
 
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          transition: all 0.3s ease-in-out;
+          background-color: rgba($white, 0.3);
+        }
+
         &::after {
           content: '';
           position: absolute;
-          bottom: -5px;
+          bottom: -2px;
           left: 0;
           width: 0;
           height: 3px;
@@ -102,14 +150,8 @@ export default {
 }
 
 #hero-for-the-zero a:hover span.title::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: rgba($white, 0.5);
-  transition: width 0.3s;
+  background-color: rgba($white, 1);
+  width:100%;
 }
 
 .dark #hero-for-the-zero {
@@ -117,6 +159,10 @@ export default {
 
   .intro {
     color: $white;
+  }
+
+  .designs {
+    color: $blue-light;
   }
 }
 

@@ -216,7 +216,7 @@ export default {
       left: 0;
       bottom:0;
       z-index: -1;
-      backdrop-filter: blur(35px);
+      backdrop-filter: blur(50px);
       background: linear-gradient(180deg, rgba(255, 255, 255, 1) 60%, rgb(255,255,255, 0) 100%);
       mask-image: linear-gradient(180deg, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
     }
