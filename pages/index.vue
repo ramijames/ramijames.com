@@ -24,5 +24,16 @@ export default {
   }
 }
 
-
 </script>
+
+<style scoped lang="scss">
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width:100vw;
+  }
+
+</style>

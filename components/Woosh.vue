@@ -35,50 +35,18 @@ export default {
 
 .animBox {
   perspective: 100em;
-  position:fixed;
+  position:absolute;
   right:0;
   top:0;
   bottom:0;
   left:0;
-  z-index: -1;
-  height: 100vh;
-  width: 100vw;
   display:flex;
   justify-content:center;
   align-content: center;
   align-items: center;
   pointer-events: none;
-  background: radial-gradient(ellipse at bottom, rgba(224, 224, 255, 0.482) 0%, rgba(255, 255, 255, 0) 60%);
+  z-index: 0;
 }
-
-    .animBox::before {
-      position: absolute;
-      content: '';
-      top:0;
-      left:20%;
-      z-index: 1;
-      width:200px;
-      height:800px;
-      rotate:-20deg;
-      filter:blur(80px);
-      background: linear-gradient(130deg, rgb(255, 255, 255) 40%, #bebbff00 80%);
-      opacity: 0.35;
-    }
-
-    .animBox::after {
-      position: absolute;
-      content: '';
-      top:0;
-      right:20%;
-      z-index: 1;
-      width:200px;
-      height:800px;
-      rotate:20deg;
-      filter:blur(80px);
-      background: linear-gradient(130deg, rgb(255, 255, 255) 40%, #bebbff00 80%);
-      opacity: 0.35;
-    }
-
     .rotateGroup {
       transform-style: preserve-3d;
       transform: translateX(-700px) rotate3d(2.5,3.75,3,90deg);
@@ -114,34 +82,6 @@ export default {
 .dark .animBox {
   background: radial-gradient(ellipse at bottom, rgb(87, 24, 127) 0%, rgba(44, 13, 63, 0) 60%);
 }
-
-    .dark .animBox::before {
-      position: absolute;
-      content: '';
-      top:0;
-      left:20%;
-      z-index: 1;
-      width:200px;
-      height:800px;
-      rotate:-20deg;
-      filter:blur(80px);
-      background: linear-gradient(130deg, rgb(87, 24, 127) 40%, #bebbff00 80%);
-      opacity: 0.35;
-    }
-
-    .dark .animBox::after {
-      position: absolute;
-      content: '';
-      top:0;
-      right:20%;
-      z-index: 1;
-      width:200px;
-      height:800px;
-      rotate:20deg;
-      filter:blur(80px);
-      background: linear-gradient(130deg, rgb(87, 24, 127) 40%, #bebbff00 80%);
-      opacity: 0.35;
-    }
 
 @keyframes defaultWoosh {
 

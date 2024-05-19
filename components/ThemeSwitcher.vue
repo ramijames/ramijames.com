@@ -4,6 +4,7 @@
     @click="toggleTheme"
     :src="`/${currentTheme}.svg`"
     :alt="`${currentTheme} theme`"
+    width="40"
   />
 </template>
 
@@ -48,8 +49,8 @@ export default {
 
 img {
   cursor: pointer;
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
 }
 
 </style>

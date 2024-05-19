@@ -24,8 +24,8 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Bitter': [400, 600, 700],
-      'Noto Sans': [400, 600, 700]
+      'Noto Sans': [400, 600, 700],
+      'Roboto Condensed': [400, 600, 700],
     }
   }
 })
