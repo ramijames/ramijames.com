@@ -137,24 +137,6 @@ hr {
       border:1px solid #ffffff;
     }
 
-strong.underline {
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -0.4rem;
-    left: 0;
-    right: 0;
-    height: 0.5rem;
-    z-index: -1;
-    -webkit-mask-image: url('/underline.svg');
-    mask-image: url('/underline.svg');
-    animation: animatedBackground 5s cubic-bezier(0.36, 0, 0.66, -0.56);
-    background-image: linear-gradient(90deg, rgb(161, 49, 231), #d81515, #7523e1, rgb(161, 49, 231)) !important;
-  }
-}
-
 p > strong {
   font-weight: 400;  
 
