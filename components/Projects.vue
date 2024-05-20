@@ -143,6 +143,14 @@ export default {
     position: sticky;
     top:0;
 
+    @media screen and (max-width: 768px){
+      width:100vw;
+      height:calc($spacing-xl + 30vh);
+      font-size: 6dvw;
+      // padding-top: calc($spacing-xl + 2rem);
+      position: relative;
+    }
+
     .together {
       color: $blue;
     }
@@ -157,12 +165,22 @@ export default {
     text-transform: uppercase;
     z-index: 2;
 
+    @media screen and (max-width: 768px){
+      width:100vw;
+      padding: $spacing-sm;
+      font-size: $font-size-md;
+    }
+
     .works {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap; 
       gap: $spacing-md; 
       position: relative;
+
+      @media screen and (max-width: 768px){
+        gap: $spacing-sm;
+      }
 
       .single-work {
         height:50vh;
@@ -187,6 +205,11 @@ export default {
         
         @media screen and (max-width: 1200px){
           height:25vh;
+        }
+
+        @media screen and (max-width: 768px){
+          width: 100%;
+          border-radius: $br-sm;
         }
       }
     }

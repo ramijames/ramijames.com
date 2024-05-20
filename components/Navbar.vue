@@ -77,14 +77,6 @@ export default {
 
 @import './assets/variables';
 
-.logo-holder {
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%);
-  top: $spacing-lg;
-  z-index: 200px;
-}
-
 .path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
