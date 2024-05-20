@@ -301,14 +301,6 @@ export default {
   }
 }
 
-// .animate-in {
-//   animation: fadeIn 1s ease-in forwards;
-// }
-
-// .animate-out {
-//   animation: fadeOut 1s ease-out forwards;
-// }
-
 @keyframes fadeIn {
   0% { 
     opacity: 0; 

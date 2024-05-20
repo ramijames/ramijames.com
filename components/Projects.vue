@@ -1,5 +1,5 @@
 <template>
-  <section id="projects">
+  <section id="projects" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
       <div>I MAKE INTERFACES</div>
       <div>FOR THE FUTURE,</div>
@@ -7,20 +7,18 @@
     </section>
     <section class="portfolio" ref="portfolio">
       <section class="works">
-        <nuxt-link class="single-work" v-for="product in products" :key="product.title" :to="product.slug" :style="{ backgroundColor: product.color, backgroundImage: `url(${product.image})` }">
+        <nuxt-link 
+          class="single-work" 
+          v-for="(product, index) in products" 
+          :key="product.title" 
+          :to="product.slug" 
+          :style="{ 
+            animationDelay: index * 0.4 + 's', 
+            backgroundColor: product.color, 
+            backgroundImage: `url(${product.image})` 
+          }"
+        >
           {{ product.title }}
-          <!-- <div class="book">
-            <div class="cover">
-              <div class="color" :style="{ backgroundColor: product.color }"></div>
-              <div class="single-image">
-                <img :src="product.image" alt="Product Image">
-              </div>
-            </div>
-            <div class="pages"></div>
-          </div>
-          <div class="intro">The story of</div>
-          <div class="single-title">{{ product.title }}</div>
-          <div class="single-description">{{ product.description }}</div> -->
         </nuxt-link>
       </section>
     </section>
@@ -36,7 +34,7 @@ export default {
         {
           title: 'Food For Future',
           description: 'Decentralized data for funding farmers',
-          image: '/foodforfuture.jpg',
+          image: '/fff.jpg',
           status: 'past',
           slug: '/products/food-for-future',
           color: '#9446BD'
@@ -60,7 +58,7 @@ export default {
         {
           title: 'Scatter',
           description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
-          image: '/scatter.png',
+          image: '/scatter.jpg',
           status: 'past',
           slug: '/products/scatter',
           color: '#0899FE'
@@ -68,7 +66,7 @@ export default {
         {
           title: 'Crisp Tools',
           description: 'A collection of useful tools for designers and developers',
-          image: '/crisptools.jpg',
+          image: '/crisp-tools.jpg',
           status: 'current',
           slug: '/products/crisp-tools',
           color: '#D5E7FD'
@@ -76,7 +74,7 @@ export default {
         {
           title: 'Random Sandwich',
           description: 'A social network based around randomly generated objects',
-          image: '/randomsandwich.jpg',
+          image: '/random-sandwich.jpg',
           status: 'current',
           slug: '/products/random-sandwich',
           color: '#CCA32E'
@@ -89,25 +87,27 @@ export default {
       
     }
   },
-  methods: {
-  handleScroll() {
-    const talkToMeTop = this.$refs.talkToMe.getBoundingClientRect().top;
-    const portfolioBottom = this.$refs.portfolio.getBoundingClientRect().bottom;
-
-    if (talkToMeTop <= window.innerHeight * 0.2 && portfolioBottom >= window.innerHeight * 0.2) {
-      this.$refs.talkToMe.style.position = 'fixed';
-      this.$refs.talkToMe.style.top = '20vh';
-    } else {
-      this.$refs.talkToMe.style.position = 'static';
-    }
-  },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-},
+    const options = {
+      root: null, // viewport
+      rootMargin: '0px',
+      threshold: 0.1 // adjust as needed
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          entry.target.classList.remove('animate-out');
+        } else {
+          entry.target.classList.remove('animate-in');
+          entry.target.classList.add('animate-out');
+        }
+      });
+    }, options);
+
+    observer.observe(this.$refs.projects);
+  }
 
 }
 
@@ -131,13 +131,13 @@ export default {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    gap: $spacing-lg;
+    gap: $spacing-xs;
     width:50vw;
     height:100vh;
     padding: $spacing-lg;
     color:$black;
-    font-size: $font-size-xl;
-    font-weight:normal;
+    font-size: $font-size-xxl;
+    font-weight:bold;
     text-transform: uppercase;
     z-index: 2;
     position: sticky;
@@ -152,7 +152,7 @@ export default {
     width:50vw;
     padding: $spacing-lg;
     background: $black;
-    font-size: $font-size-md;
+    font-size: $font-size-xl;
     font-weight:bold;
     text-transform: uppercase;
     z-index: 2;
@@ -162,6 +162,7 @@ export default {
       flex-direction: row;
       flex-wrap: wrap; 
       gap: $spacing-md; 
+      position: relative;
 
       .single-work {
         height:50vh;
@@ -174,6 +175,19 @@ export default {
         text-decoration: none;
         background-size: cover;
         color:$white !important;
+        transition: all 0.3s ease-in-out;
+        border-radius: $br-lg;
+        opacity: 0;
+        scale:0.8; 
+        position: relative;
+
+        @media screen and (max-width: 1400px){
+          height:30vh;
+        }
+        
+        @media screen and (max-width: 1200px){
+          height:25vh;
+        }
       }
     }
   }
@@ -194,6 +208,42 @@ export default {
   .portfolio {
     background: $black;
   }
+}
+
+.animate-in {
+  .portfolio {
+    .works {
+      .single-work {
+        animation: projectIn 1s forwards;
+      }
+    }
+  }
+}
+
+@keyframes projectIn {
+  0% { 
+    opacity: 0; 
+    scale:0.8; 
+  }
+
+  100% { 
+    opacity: 1; 
+    scale:1; 
+  }
+
+}
+
+@keyframes projectOut {
+  0% { 
+    opacity: 1;
+    scale:1; 
+  }
+
+  100% { 
+    opacity: 0; 
+    scale:0.8; 
+  }
+
 }
 
 </style>
