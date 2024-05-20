@@ -3,9 +3,9 @@
     <section class="intro" ref="intro">
       <Woosh class="desktop-only" />
       <div class="small">I create</div>
-      <div class="products">PRODUCTS,</div>
-      <div class="experiences">EXPERIENCES,</div>
-      <div class="designs">& <span class="designs">DESIGNS</span></div>
+      <div class="products">UNIQUE</div>
+      <div class="experiences">PRODUCT</div>
+      <div class="designs"><span class="designs">EXPERIENCES</span></div>
     </section>
     <section class="links">
       <div class="small" ref="linksSubtitle">services</div>
@@ -92,7 +92,7 @@ export default {
     padding: $spacing-lg;
     color: $black;
     font-size: $font-size-xxl;
-    font-weight:bold;
+    font-weight:black;
     text-transform: uppercase;
     z-index: 2;
 
@@ -117,7 +117,7 @@ export default {
     }
 
     .designs {
-      color: $blue;
+      color: $blue-light;
       opacity: 0;
     }
   }
@@ -166,6 +166,7 @@ export default {
       text-decoration: none;
       color: $white;
       display:inline;
+      font-weight: normal;
 
       span.number {
         margin-right: $spacing-sm;

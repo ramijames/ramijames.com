@@ -229,7 +229,7 @@ export default {
         }
 
         .dark .mobile-nav-panel-links a {
-          color: $blue-light;
+          color: $white;
         }
         
 .mobile-nav-panel-contact {

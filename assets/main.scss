@@ -208,7 +208,13 @@ input {
       flex-direction: column;
       margin-right: 4rem;
       position: relative;
-      height:100%
+      height: 70vh;
+      overflow-y: auto;
+
+      @media screen and (max-width: 1000px) {
+        height: auto;
+        
+      }
     }
 
         .article-extras h1 {
@@ -238,18 +244,6 @@ input {
           margin-left:0px;
           padding-top:$spacing-xs;
           position: relative;
-        }
-
-        .dark .article-extras .posts a::before {
-          content: '';
-          display: block;
-          width:6px;
-          height: 6px;
-          border-radius: 100%;
-          position: absolute;
-          left:0px;
-          top:20px;
-          background-color:white;
         }
 
     @media screen and (max-width: 1000px) {
@@ -350,14 +344,6 @@ img.in-article {
 
 .single-article h4 {
   margin: $spacing-sm 0 $spacing-xs !important;
-}
-
-.single-article a {
-  color: #382e48;
-}
-
-.dark .single-article a {
-  color: $blue-light;
 }
 
 /* Dual panel content */

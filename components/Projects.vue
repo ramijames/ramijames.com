@@ -13,12 +13,13 @@
           :key="product.title" 
           :to="product.slug" 
           :style="{ 
-            animationDelay: index * 0.4 + 's', 
+            animationDelay: index * 0.2 + 's', 
             backgroundColor: product.color, 
-            backgroundImage: `url(${product.image})` 
+            backgroundImage: `url(${product.bg})` 
           }"
         >
-          {{ product.title }}
+          <span>{{ product.title }}</span>
+          <img :src="product.image" alt="Product Image" />
         </nuxt-link>
       </section>
     </section>
@@ -34,7 +35,8 @@ export default {
         {
           title: 'Food For Future',
           description: 'Decentralized data for funding farmers',
-          image: '/fff.jpg',
+          image: '/fff.png',
+          bg: '/fff-bg.jpg',
           status: 'past',
           slug: '/products/food-for-future',
           color: '#9446BD'
@@ -42,7 +44,8 @@ export default {
         {
           title: 'Doodledapp',
           description: 'No-code smart contract development and deployment',
-          image: '/doodledapp.jpg',
+          image: '/doodledapp.png',
+          bg: '/doodledapp-bg.jpg',
           status: 'past',
           slug: '/products/doodledapp',
           color: '#3E74FF'
@@ -50,7 +53,8 @@ export default {
         {
           title: 'Ultra',
           description: 'Tokenized gaming platform',
-          image: '/ultra.jpg',
+          image: '/ultra.png',
+          bg: '/ultra-bg.jpg',
           status: 'past',
           slug: '/products/ultra',
           color: '#2E2667'
@@ -58,7 +62,8 @@ export default {
         {
           title: 'Scatter',
           description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
-          image: '/scatter.jpg',
+          image: '/scatter.png',
+          bg: '/scatter-bg.jpg',
           status: 'past',
           slug: '/products/scatter',
           color: '#0899FE'
@@ -66,7 +71,8 @@ export default {
         {
           title: 'Crisp Tools',
           description: 'A collection of useful tools for designers and developers',
-          image: '/crisp-tools.jpg',
+          image: '/crisp-tools.png',
+          bg: '/crisp-tools-bg.jpg',
           status: 'current',
           slug: '/products/crisp-tools',
           color: '#D5E7FD'
@@ -74,7 +80,8 @@ export default {
         {
           title: 'Random Sandwich',
           description: 'A social network based around randomly generated objects',
-          image: '/random-sandwich.jpg',
+          image: '/random-sandwich.png',
+          bg: '/random-sandwich-bg.jpg',
           status: 'current',
           slug: '/products/random-sandwich',
           color: '#CCA32E'
@@ -186,7 +193,6 @@ export default {
         height:50vh;
         width:calc(100% - $spacing-md /2);
         background: $white;
-        padding: $spacing-md;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -198,6 +204,7 @@ export default {
         opacity: 0;
         scale:0.8; 
         position: relative;
+        overflow: hidden;
 
         @media screen and (max-width: 1400px){
           height:40vh;
@@ -210,6 +217,27 @@ export default {
         @media screen and (max-width: 768px){
           width: 100%;
           border-radius: $br-sm;
+        }
+
+        span {
+          position:absolute;
+          bottom: $spacing-md;
+          left: $spacing-md;
+        }
+
+        img {
+          position:absolute;
+          right: -4rem;
+          width: 100%;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          box-shadow: inset 0 0 0 1000px rgba($black, 0.2);
+
+          img {
+            right: 0;
+          }
         }
       }
     }

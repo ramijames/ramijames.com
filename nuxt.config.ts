@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Roboto Condensed': [400, 600, 700, 900],
+      'Archivo Black': true,
       'Roboto': [400, 600, 700, 900],
     }
   }
