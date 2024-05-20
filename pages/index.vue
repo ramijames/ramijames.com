@@ -1,12 +1,14 @@
 <template>
   <main>
     <Hero />
+    <Projects />
   </main>
 </template>
 
 <script>
 
 import Hero from '/components/Hero.vue'
+import Projects from '/components/Projects.vue'
 
 export default {
   data(){
@@ -15,7 +17,8 @@ export default {
     }
   },
   components: {
-    Hero
+    Hero,
+    Projects
   },
   setup() {
     return {
@@ -29,11 +32,9 @@ export default {
 <style scoped lang="scss">
   main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width:100vw;
   }
 
 </style>

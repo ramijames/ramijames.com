@@ -48,8 +48,7 @@ export default {
   align-items: center;
   pointer-events: none;
   z-index: 0;
-  background: radial-gradient(ellipse at bottom, rgba($blue, 0.2) 0%, rgba($white, 0) 60%);
-  overflow: hidden;
+  background: radial-gradient(ellipse at top, rgba($blue, 0.2) 0%, rgba($white, 0) 60%);
 }
     .rotateGroup {
       transform-style: preserve-3d;
@@ -62,9 +61,9 @@ export default {
       opacity: 0.4;
     }
 
-    .dark .rotateGroup {
-      opacity: 0.8;
-    }
+    // .dark .rotateGroup {
+    //   opacity: 0.8;
+    // }
 
     .element {
       position: absolute;
@@ -82,10 +81,6 @@ export default {
                   0px 100px 100px #0800f10c, 
                   inset 0px 0px 60px #0800f13d;
     }
-
-.dark .animBox {
-  background: radial-gradient(ellipse at bottom, rgb(87, 24, 127) 0%, rgba(44, 13, 63, 0) 60%);
-}
 
 @keyframes defaultWoosh {
 
