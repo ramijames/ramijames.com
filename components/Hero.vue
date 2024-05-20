@@ -122,7 +122,7 @@ export default {
     width:50vw;
     height:100vh;
     padding: $spacing-lg;
-    background: linear-gradient(20deg, $black 40%, $blue 100%);
+    background: $black;
     font-size: $font-size-xxl;
     font-weight:bold;
     text-transform: uppercase;
@@ -208,8 +208,32 @@ export default {
     color: $white;
   }
 
-  .designs {
-    color: $blue-light;
+  .links {
+    background: $white;
+
+    .small {
+      color: $gray-md;
+    }
+
+    a {
+      color: $black;
+
+      span.number {
+        opacity: 0.5;
+      }
+
+      span.title::before {
+        background-color: rgba($black, 0.3);
+      }
+
+      span.title::after {
+        background-color: rgba($black, 1);
+      }
+    }
+
+    .designs {
+      color: $blue-light;
+    }
   }
 }
 

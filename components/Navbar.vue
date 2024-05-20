@@ -77,21 +77,13 @@ export default {
 
 @import './assets/variables';
 
-.logo {
-  animation: svgline .6s ease-out;
+.logo-holder {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  top: $spacing-lg;
+  z-index: 200px;
 }
-
-    .logo path {
-      stroke: black;
-    }
-
-    .dark .logo {
-      filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.75));
-    }
-
-    .dark .logo path {
-      stroke: white;
-    }
 
 .path {
   stroke-dasharray: 1000;
@@ -139,6 +131,7 @@ export default {
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: $spacing-sm;
   cursor: pointer;
 }
 
@@ -151,7 +144,7 @@ export default {
 .mobile-nav-bar {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: $spacing-lg;
   width:100%;
   z-index: 1000;

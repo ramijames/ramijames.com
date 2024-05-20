@@ -1,18 +1,12 @@
 <template>
-  <main class="general-main">
+  <Projects />
+  <!-- <main class="general-main">
     <section class="explanation">
       <h1 class="general-bold">Every product has its story</h1>
       <h4>I like to build in public, with a short iteration cycle and direct feedback from users.</h4>
       <p>Each product shifts and changes as it achieves either market fit or contribution to the dustbin of history.</p>
     </section>
     <section class="general-content">
-      <!-- <section class="product-bar">
-        <div class="filters">
-          <button class="small selected">All</button>
-          <button class="small">Current</button>
-          <button class="small">Past</button>
-        </div>
-      </section> -->
       <section class="stories">
         <nuxt-link class="single-story" v-for="product in products" :key="product.title" :to="product.slug">
           <div class="book">
@@ -30,10 +24,12 @@
         </nuxt-link>
       </section>
     </section>
-  </main>
+  </main> -->
 </template>
 
 <script>
+
+import Projects from '~/components/Projects.vue'
 
 export default {
   data() {

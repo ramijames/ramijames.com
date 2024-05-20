@@ -44,7 +44,7 @@ h1 {
       line-height: 4.12rem;
       margin:0 0 2rem;
       padding:0;
-      color:$blue;
+      color:$black;
 
       @media screen and (max-width: 768px) {
         font-size: 3.051rem; 
@@ -54,7 +54,7 @@ h1 {
     }
 
     .dark h1.hyper-bold {
-      color:$blue-light;
+      color:$white;
     }
 
     h1.general-bold {
@@ -257,19 +257,11 @@ input {
           font-weight: bold;
           margin:0 0 2rem;
           z-index: 200;
-          animation: animatedBackground 5s ease-in-out infinite;
-          animation: fadeIn 0.5s ease-in-out;
-          animation-delay: 0s;
-          animation-fill-mode: forwards;
-          animation-iteration-count: 1;
-          background-image: linear-gradient(120deg, #0A00F1 0%, rgb(84, 38, 107) 30%);
-          background-clip: text;
-          color: transparent;
-          -webkit-text-fill-color: transparent;
+          color: $black;
         }
 
         .dark .article-extras h1 {
-          background-image: linear-gradient(120deg, #6f6afb 0%, rgb(255,255,255) 30%);
+          color: $white;
         }
 
         .article-extras.pinned {
@@ -420,7 +412,7 @@ img.in-article {
 }
 
 .dark .single-article a {
-  color: #ffd586;
+  color: $blue-light;
 }
 
 /* Dual panel content */

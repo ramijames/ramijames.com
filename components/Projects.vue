@@ -206,7 +206,7 @@ export default {
   }
 
   .portfolio {
-    background: $black;
+    background: $white;
   }
 }
 
