@@ -1,7 +1,7 @@
 <template>
   <main id="hero-for-the-zero" ref="animatorHero">
     <section class="intro" ref="intro">
-      <!-- <Woosh /> -->
+      <Woosh class="desktop-only" />
       <div class="small">I create</div>
       <div class="products">PRODUCTS,</div>
       <div class="experiences">EXPERIENCES,</div>
@@ -62,6 +62,14 @@ export default {
 <style scoped lang="scss">
 
 @import './assets/variables';
+
+.desktop-only {
+  display: block;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
 
 #hero-for-the-zero {
   display:flex;
