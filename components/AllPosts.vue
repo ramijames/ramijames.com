@@ -21,7 +21,7 @@
       </div>
       </div>
   
-    <h4>Random Thoughts</h4>
+    <h4>Other articles by Rami James</h4>
     <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug" class="single-post">
       <span class="title">{{ article.title }}</span>
     </nuxt-link>
@@ -66,49 +66,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
-.sticky-top {
-  position: fixed;
-  top: 120px;
-  z-index: 100;
-  width: 321px;
-}
-
-    .dark .sticky-top {
-      position: fixed;
-      top: 120px;
-      z-index: 100;
-      width: 321px;
-    }
-
-    .sticky-top .mc-field-group input.email {
-      border:1px solid #00000024;
-    }
-    
-    .dark .sticky-top .mc-field-group input.email {
-      border:1px solid #ffffff24;
-    }
+@import './assets/variables';
 
 .posts {
   display: flex;
   flex-direction: column;
   transition: all 1s ease-in-out;
   position: sticky;
-  top:80px;
+  top: calc($spacing-xl + 2rem);
   z-index: 210;
 }
-
-.single-post {
-  padding: 1rem 0 0;
-  text-decoration: none;
-  font-size:1rem;
-  color:#000;
-}
-
-    .dark .single-post {
-      color: #fff;
-    }
 
 .mc-field-group {
   width:100%;

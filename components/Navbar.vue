@@ -150,6 +150,10 @@ export default {
   z-index: 1000;
   position:fixed;
   top:0;
+
+  @media screen and (max-width: 768px) {
+    padding: $spacing-md;
+  }
 }
 
 .mobile-nav-panel {

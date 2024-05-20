@@ -29,7 +29,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+@import './assets/variables';
 
 .articles {
   display: grid;
@@ -54,7 +56,6 @@ export default {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
-        padding: 2rem;
       }
     }
 
@@ -69,7 +70,7 @@ export default {
 }
 
     .single-article:hover img {
-      border: 1px solid #A131E7;
+      background-color: $white;
     }
 
 .articles a {

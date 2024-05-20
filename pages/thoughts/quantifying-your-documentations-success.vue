@@ -2,7 +2,6 @@
   <main class="single-article container">
     <section class="article-extras">
       <h1>Are your docs good?</h1>
-      <aside class="article-meta">By Rami James</aside>
       <AllPosts />
     </section>
     <section class="content">
