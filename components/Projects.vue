@@ -3,7 +3,7 @@
     <section class="talk-to-me" ref="talkToMe">
       <div>I MAKE INTERFACES</div>
       <div>FOR THE FUTURE,</div>
-      <div class="together">WITH YOU.</div>
+      <div class="together">WITH YOU IN MIND.</div>
     </section>
     <section class="portfolio" ref="portfolio">
       <section class="works">
@@ -65,22 +65,22 @@ export default {
           slug: '/products/scatter',
           color: '#0899FE'
         },          
-        // {
-        //   title: 'Crisp Tools',
-        //   description: 'A collection of useful tools for designers and developers',
-        //   image: '/crisptools.jpg',
-        //   status: 'current',
-        //   slug: '/products/crisp-tools',
-        //   color: '#D5E7FD'
-        // },
-        // {
-        //   title: 'Random Sandwich',
-        //   description: 'A social network based around randomly generated objects',
-        //   image: '/randomsandwich.jpg',
-        //   status: 'current',
-        //   slug: '/products/random-sandwich',
-        //   color: '#CCA32E'
-        // },
+        {
+          title: 'Crisp Tools',
+          description: 'A collection of useful tools for designers and developers',
+          image: '/crisptools.jpg',
+          status: 'current',
+          slug: '/products/crisp-tools',
+          color: '#D5E7FD'
+        },
+        {
+          title: 'Random Sandwich',
+          description: 'A social network based around randomly generated objects',
+          image: '/randomsandwich.jpg',
+          status: 'current',
+          slug: '/products/random-sandwich',
+          color: '#CCA32E'
+        },
       ]
     }
   },
@@ -120,7 +120,6 @@ export default {
 #projects {
   display: flex;
   flex-direction: row;
-  height: 100vh;
   width:100vw;
   background: $white;
 
@@ -132,15 +131,17 @@ export default {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    gap: $spacing-sm;
+    gap: $spacing-lg;
     width:50vw;
     height:100vh;
     padding: $spacing-lg;
     color:$black;
-    font-size: $font-size-xxl;
-    font-weight:bold;
+    font-size: $font-size-xl;
+    font-weight:normal;
     text-transform: uppercase;
     z-index: 2;
+    position: sticky;
+    top:0;
 
     .together {
       color: $blue;
@@ -163,8 +164,8 @@ export default {
       gap: $spacing-md; 
 
       .single-work {
-        height:30vh;
-        width:calc(50% - $spacing-md /2);
+        height:50vh;
+        width:calc(100% - $spacing-md /2);
         background: $white;
         padding: $spacing-md;
         display: flex;
@@ -181,18 +182,17 @@ export default {
 
 .dark #projects {
   background: $black;
-  background: radial-gradient(ellipse at top, rgba($blue, 0.2) 0%, rgba($white, 0) 60%);
 
   .talk-to-me {
-    color:$blue-light;
+    color:$white;
+
     .together {
-      color: $white;
+      color: $blue-light;
     }
   }
 
   .portfolio {
     background: $black;
-    background: radial-gradient(ellipse at 0% 0%, rgba($blue, .3) 0%, rgba($white, 0) 60%);
   }
 }
 

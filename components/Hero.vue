@@ -8,10 +8,10 @@
       <div class="designs">& <span class="designs">DESIGNS</span></div>
     </section>
     <section class="links">
-      <div class="small" ref="linksSubtitle">With these services</div>
-      <nuxt-link to="/services/product-concept" ref="linksOne"><span class="number">01</span> <span class="title">Product concept</span></nuxt-link>
-      <nuxt-link to="/services/ux-ui" ref="linksTwo"><span class="number">02</span> <span class="title">UX & UI</span></nuxt-link>
-      <nuxt-link to="/services/implementation" ref="linksThree"><span class="number">03</span> <span class="title">Implementation</span></nuxt-link>
+      <div class="small" ref="linksSubtitle">I provide these services</div>
+      <nuxt-link class="linkOne" to="/services/product-concept" ref="linksOne"><span class="number">01</span> <span class="title">Product concept</span></nuxt-link>
+      <nuxt-link class="linkTwo" to="/services/ux-ui" ref="linksTwo"><span class="number">02</span> <span class="title">UX & UI</span></nuxt-link>
+      <nuxt-link class="linkThree" to="/services/implementation" ref="linksThree"><span class="number">03</span> <span class="title">Implementation</span></nuxt-link>
     </section>
   </main>
 </template>
@@ -38,7 +38,7 @@ export default {
     const options = {
       root: null, // viewport
       rootMargin: '0px',
-      threshold: 0.5 // adjust as needed
+      threshold: 0.7 // adjust as needed
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -122,7 +122,7 @@ export default {
     width:50vw;
     height:100vh;
     padding: $spacing-lg;
-    background: linear-gradient(-20deg, $black 40%, $blue 100%);
+    background: linear-gradient(20deg, $black 40%, $blue 100%);
     font-size: $font-size-xxl;
     font-weight:bold;
     text-transform: uppercase;
@@ -139,6 +139,19 @@ export default {
     .small {
       font-size: $font-size-md;
       color: rgba($white, 0.5);
+      opacity: 0;
+    }
+
+    .linkOne {
+      opacity: 0;
+    }
+
+    .linkTwo {
+      opacity: 0;
+    }
+
+    .linkThree {
+      opacity: 0;
     }
 
     a {
@@ -177,6 +190,10 @@ export default {
       }
     }
   }
+}
+
+#hero-for-the-zero a:hover {
+  transform: translateX(10px);
 }
 
 #hero-for-the-zero a:hover span.title::after {
@@ -220,22 +237,66 @@ export default {
   .intro {
     .small {
       opacity: 1;
-      animation: fadeOut 1s ease-in forwards;
+      animation: fadeOut 0.25s ease-in forwards;
     }
 
     .products {
       opacity: 1;
-      animation: fadeOut 1s ease-in forwards 0.5s;
+      animation: fadeOut 0.25s ease-in forwards;
     }
 
     .experiences {
       opacity: 1;
-      animation: fadeOut 1s ease-in forwards 1s;
+      animation: fadeOut 0.25s ease-in forwards;
     }
 
     .designs {
       opacity: 1;
-      animation: fadeOut 1s ease-in forwards 1.5s;
+      animation: fadeOut 0.25s ease-in forwards;
+    }
+  }
+}
+
+.animate-in {
+  .links {
+    .small {
+      animation: fadeIn 0.5s ease-in forwards;
+    }
+
+    .linkOne {
+      animation: fadeIn 0.5s ease-in forwards 0.25s;
+    }
+
+    .linkTwo {
+      animation: fadeIn 0.5s ease-in forwards 0.5s;
+    }
+
+    .linkThree {
+      animation: fadeIn 0.5s ease-in forwards .75s;
+    }
+  }
+}
+
+.animate-out {
+  .links {
+    .small {
+      opacity: 1;
+      animation: fadeOut 0.25s ease-in forwards;
+    }
+
+    .linkOne {
+      opacity: 1;
+      animation: fadeOut 0.25s ease-in forwards;
+    }
+
+    .linkTwo {
+      opacity: 1;
+      animation: fadeOut 0.25s ease-in forwards;
+    }
+
+    .linkThree {
+      opacity: 1;
+      animation: fadeOut 0.25s ease-in forwards;
     }
   }
 }
@@ -251,12 +312,12 @@ export default {
 @keyframes fadeIn {
   0% { 
     opacity: 0; 
-    transform: translateY(-10px);
+    transform: translateX(-10px);
   }
 
   100% { 
     opacity: 1; 
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
 }
@@ -264,12 +325,12 @@ export default {
 @keyframes fadeOut {
   0% { 
     opacity: 1; 
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
   100% { 
     opacity: 0; 
-    transform: translateY(10px);
+    transform: translateX(10px);
   }
 
 }
