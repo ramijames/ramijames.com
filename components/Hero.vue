@@ -167,6 +167,7 @@ export default {
       color: $white;
       display:inline;
       font-weight: normal;
+      transition: all 0.3s ease-in-out;
 
       span.number {
         margin-right: $spacing-sm;
@@ -183,7 +184,7 @@ export default {
           left: 0;
           width: 100%;
           height: 3px;
-          transition: all 0.3s ease-in-out;
+          transition: all 0.9s ease-in-out;
           background-color: rgba($white, 0.3);
         }
 
@@ -194,7 +195,8 @@ export default {
           left: 0;
           width: 0;
           height: 3px;
-          transition: width 0.3s;
+          transition: width 0.9s;
+          background-color: rgba($blue, 1);
         }
       }
     }
@@ -202,11 +204,11 @@ export default {
 }
 
 #hero-for-the-zero a:hover {
-  transform: translateX(10px);
+  color: $blue;
 }
 
 #hero-for-the-zero a:hover span.title::after {
-  background-color: rgba($white, 1);
+  background-color: rgba($blue, 1);
   width:100%;
 }
 
