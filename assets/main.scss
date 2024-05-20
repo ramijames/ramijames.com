@@ -42,7 +42,7 @@ h1 {
       text-align: center;
       font-size: 4.12rem; 
       line-height: 4.12rem;
-      margin:0 0 2rem;
+      margin:0;
       padding:0;
       color:$black;
 
@@ -523,7 +523,7 @@ img.in-article {
     .product-content h3,
     .product-content h4 {
       text-align: center;
-      margin:4rem auto 2rem;
+      margin:$spacing-md auto;
       max-width:600px;
     }
 

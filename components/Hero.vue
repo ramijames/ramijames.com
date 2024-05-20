@@ -1,7 +1,7 @@
 <template>
   <main id="hero-for-the-zero" ref="animatorHero">
     <section class="intro" ref="intro">
-      <Woosh />
+      <!-- <Woosh /> -->
       <div class="small">I create</div>
       <div class="products">PRODUCTS,</div>
       <div class="experiences">EXPERIENCES,</div>
@@ -38,7 +38,7 @@ export default {
     const options = {
       root: null, // viewport
       rootMargin: '0px',
-      threshold: 0.7 // adjust as needed
+      threshold: 0.2 // adjust as needed
     };
 
     const observer = new IntersectionObserver((entries, observer) => {

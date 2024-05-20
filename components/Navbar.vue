@@ -202,11 +202,14 @@ export default {
           justify-content: center;
           gap: $spacing-sm;
           color: $black;
-          font-size: $font-size-xl;
+          font-size: $font-size-xxl;
           font-weight:bold;
           text-transform: uppercase;
           text-decoration: none;
-          color: $blue;
+
+          @media screen and (max-width: 768px){
+            font-size: $font-size-md;
+          }
         }
 
         .mobile-nav-panel-links a:nth-child(1) {

@@ -167,7 +167,7 @@ export default {
 
     @media screen and (max-width: 768px){
       width:100vw;
-      padding: $spacing-sm;
+      padding: $spacing-md;
       font-size: $font-size-md;
     }
 
@@ -179,7 +179,7 @@ export default {
       position: relative;
 
       @media screen and (max-width: 768px){
-        gap: $spacing-sm;
+        gap: $spacing-md;
       }
 
       .single-work {
@@ -200,11 +200,11 @@ export default {
         position: relative;
 
         @media screen and (max-width: 1400px){
-          height:30vh;
+          height:40vh;
         }
         
         @media screen and (max-width: 1200px){
-          height:25vh;
+          height:35vh;
         }
 
         @media screen and (max-width: 768px){
