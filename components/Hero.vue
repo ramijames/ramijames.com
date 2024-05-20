@@ -8,7 +8,7 @@
       <div class="designs">& <span class="designs">DESIGNS</span></div>
     </section>
     <section class="links">
-      <div class="small" ref="linksSubtitle">I provide these services</div>
+      <div class="small" ref="linksSubtitle">services</div>
       <nuxt-link class="linkOne" to="/services/product-concept" ref="linksOne"><span class="number">01</span> <span class="title">Product concept</span></nuxt-link>
       <nuxt-link class="linkTwo" to="/services/ux-ui" ref="linksTwo"><span class="number">02</span> <span class="title">UX & UI</span></nuxt-link>
       <nuxt-link class="linkThree" to="/services/implementation" ref="linksThree"><span class="number">03</span> <span class="title">Implementation</span></nuxt-link>
