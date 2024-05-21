@@ -141,7 +141,8 @@ export default {
     padding: $spacing-lg;
     color:$black;
     font-size: $font-size-xxl;
-    font-weight:bold;
+    font-family: $font-family-secondary;
+    font-weight:normal;
     z-index: 2;
     position: sticky;
     top:0;
@@ -235,8 +236,9 @@ export default {
           position:absolute;
           right: -4rem;
           height: 100%;
-          transition: all 6s ease-in-out;
+          transition: all 4s ease-out;
           z-index: -1;
+          filter: drop-shadow(0 0 0.75rem rgba($white, 0));
         }
 
         &:hover {
@@ -245,6 +247,7 @@ export default {
           img {
             right: -4rem;
             transform: rotate3d(66, -101, 10, 35deg) scale(1.1);
+            filter: drop-shadow(0 0 2rem rgba($white, 1));
           }
         }
       }

@@ -63,6 +63,13 @@ export default {
     font-weight: bold;
   }
 
+  &.sidebar {
+    font-size: $font-size-sm;
+    padding: $spacing-xs;
+    border-radius: $br-sm;
+    font-weight: bold;
+  }
+
   &.light {
     font-size: $font-size-sm;
     padding: 0 $spacing-sm;

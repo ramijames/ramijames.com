@@ -60,7 +60,7 @@ h1 {
     h1.home-bold {
       font-size: 8dvw; 
       line-height: 8dvw;
-      color:$white;
+      color:$black;
 
       @media screen and (max-width: 768px) {
         font-size: 3.051rem; 
@@ -224,11 +224,12 @@ input {
       flex-direction: column;
       margin-right: 4rem;
       position: relative;
-      height: 70vh;
+      height: 80vh;
       overflow-y: auto;
       position: -webkit-sticky;
       position: sticky;
       top: calc($spacing-xl + 2rem);
+      padding-right: 2rem;
 
       @media screen and (max-width: 1000px) {
         height: auto;
@@ -260,8 +261,10 @@ input {
 
         .article-extras .posts a {
           margin-left:0px;
-          padding-top:$spacing-xs;
+          padding-top:$spacing-sm;
           position: relative;
+          font-family: $font-family-secondary, sans-serif;
+          text-decoration: none;
         }
 
     @media screen and (max-width: 1000px) {

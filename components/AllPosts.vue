@@ -20,7 +20,9 @@
       </form>
       </div>
       </div>
-  
+    
+    <Seeking />
+
     <h4>Similar articles</h4>
     <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug" class="single-post">
       <span class="title">{{ article.title }}</span>
@@ -30,6 +32,8 @@
 
 <script>
 import articles from '~/assets/articles.json'
+import Seeking from './Seeking.vue'
+import Button from './Button.vue'
 
 export default {
   data() {
@@ -40,7 +44,7 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
-    this.articles = this.getRandomArticles(articles, 5)
+    this.articles = this.getRandomArticles(articles, 3)
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll)
@@ -62,6 +66,10 @@ export default {
       }
       return result
     }
+  },
+  components: {
+    Button,
+    Seeking
   }
 }
 </script>

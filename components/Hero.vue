@@ -2,9 +2,9 @@
   <main id="hero-for-the-zero" ref="animatorHero">
     <section class="intro" ref="intro">
       <Woosh class="desktop-only" />
-      <div class="products">Early stage</div>
-      <div class="blue">Product partner</div>
-      <div class="convince">Go from vision → polished product in a matter of weeks.</div>
+      <div class="products">I am your early stage
+      <span class="blue">product partner</span></div>
+      <div class="convince">With my help, you can go from vision to polished product in a matter of weeks.</div>
       <Button text="Get to work today" size="default" />
     </section>
     <section class="links">
@@ -114,9 +114,10 @@ export default {
 
     .convince {
       font-family: $font-family-secondary;
-      font-size: $font-size-md;
+      font-size: $font-size-xl;
+      font-weight:normal;
       text-transform: none;
-      margin-bottom: $spacing-md;
+      margin: $spacing-md 0;
     }
 
     .products {

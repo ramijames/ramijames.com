@@ -31,7 +31,7 @@
 #services {
   display: flex;
   flex-direction: column;
-  background: $blue linear-gradient(120deg, $black 0%, $blue 30%);
+  background: $white;
 
   @media screen and (max-width: 768px){
     flex-direction: column;
@@ -44,9 +44,10 @@
     width:100vw;
     height:100vh;
     padding: 0 $spacing-xxl;
-    color:$white;
+    color:$black;
     font-size: $font-size-xxl;
-    font-weight:bold;
+    font-family: $font-family-secondary;
+    font-weight:normal;
     z-index: 2;
 
     @media screen and (max-width: 768px){
@@ -55,7 +56,8 @@
     }
 
     div {
-      border-left: 4px solid $white;
+      border-left: 4px solid $blue;
+      color: $blue;
       padding-left: $spacing-md;
     }
 
@@ -70,10 +72,11 @@
 
   .services {
     width:100vw;
-    background: $black;
-    color: $white;
-    font-size: $font-size-xl;
-    font-weight:bold;
+    background: $white;
+    color: $black;
+    font-size: $font-size-xxl;
+    font-family: $font-family-secondary;
+    font-weight:normal;
     z-index: 2;
     border-left: 4px solid $blue;
 

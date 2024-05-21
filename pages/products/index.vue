@@ -1,10 +1,12 @@
 <template>
   <Projects />
+  <Footer />
 </template>
 
 <script>
 
 import Projects from '~/components/Projects.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   data() {
@@ -59,6 +61,9 @@ export default {
           },
         ]
     }
+  },
+  components: {
+    Footer
   }
 
 }
