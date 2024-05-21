@@ -1,13 +1,5 @@
 <template>
   <div class="theme-switcher-box">
-    <!-- <img
-      class="theme-switcher"
-      @click="toggleTheme"
-      :src="`/${currentTheme}.svg`"
-      :alt="`${currentTheme} theme`"
-      width="40"
-      :class="{ clicked: isClicked }"
-    /> -->
     <div class="theme-switcher-sun"
       @click="toggleTheme"
       :class="`${currentTheme}`"
@@ -22,14 +14,9 @@ import { useThemeStore } from '~/store/theme';
 export default {
   setup() {
     const themeStore = useThemeStore();
-    const isClicked = ref(false);
 
     function toggleTheme() {
       themeStore.toggleTheme();
-      isClicked.value = true;
-      setTimeout(() => {
-        isClicked.value = false;
-      }, 350); // length of the animation
     }
 
     onMounted(() => {
@@ -47,8 +34,7 @@ export default {
 
     return {
       toggleTheme,
-      currentTheme: computed(() => themeStore.currentTheme),
-      isClicked
+      currentTheme: computed(() => themeStore.currentTheme)
     };
   },
 };
@@ -64,36 +50,6 @@ export default {
   z-index: 10000;
   position: fixed;
   padding: $spacing-md $spacing-md;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 2px;
-    height: 18px;
-    backdrop-filter: blur(4px);
-    background: rgba($white, 0.8);
-
-    @media screen and (max-width: 768px){
-      background: rgba($blue, 0.8);
-    }
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20px;
-    height: 2px;
-    backdrop-filter: blur(4px);
-    background: rgba($white, 0.8);
-
-    @media screen and (max-width: 768px){
-      background: rgba($blue, 0.8);
-    }
-  }
 }
 
 .dark .theme-switcher-box {
@@ -159,15 +115,6 @@ img {
       box-shadow: inset 0 0 8px rgba($white, 0.2);
     }
   }
-}
-
-.clicked {
-  animation: spin 0.35s linear;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 </style>

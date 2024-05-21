@@ -50,28 +50,6 @@ export default {
   font-weight: bold;
   padding: $spacing-md $spacing-md;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    width: 2px;
-    height: 18px;
-    backdrop-filter: blur(4px);
-    background: rgba($blue, 1);
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0px;
-    width: 20px;
-    height: 2px;
-    backdrop-filter: blur(4px);
-    background: rgba($blue, 1);
-  }
-
   .location {
     display:flex;
     flex-direction: row;

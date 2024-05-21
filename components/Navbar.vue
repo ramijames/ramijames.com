@@ -1,17 +1,15 @@
 <template>
   <nav class="mobile-nav-bar">
     <div class="menu-switch">
-      <img :src="`/menu-${currentTheme}.svg`" alt="Open menu" @click="openMenu" />
+      <div 
+        class="menu"
+        :class="`${mobileMenuOpen}`"
+        @click="toggleMenu"
+      ></div>
     </div>
     <ThemeSwitcher />
   </nav>
   <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
-    <section class="mobile-nav-panel-header">
-      <div class="close">
-        <img :src="`/close-${currentTheme}.svg`" width="40" alt="Close menu" @click="closeMenu" />
-        <ThemeSwitcher />
-      </div>
-    </section>
     <section class="mobile-nav-panel-links">
       <nuxt-link to="/" @click="closeMenu">Home</nuxt-link>
       <nuxt-link to="/products" @click="closeMenu">Products</nuxt-link>
@@ -61,10 +59,17 @@ export default {
       state.mobileMenuOpen = false;
     };
 
+    const toggleMenu = () => {
+      state.mobileMenuOpen = !state.mobileMenuOpen;
+      console.log('click');
+    };
+
     return {
       currentTheme: computed(() => themeStore.currentTheme),
       openMenu,
       closeMenu,
+      toggleMenu,
+      mobileMenuOpen: computed(() => state.mobileMenuOpen),
       ...toRefs(state),
     }
   }
@@ -74,42 +79,6 @@ export default {
 <style scoped lang="scss">
 
 @import './assets/variables';
-
-.path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 2s linear forwards;
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes svgline {
-  0% {
-    /* transform: scale(0.8); */
-    -webkit-transform: translateY(-20px) rotateX(120deg);
-    transform: translateY(-20px) rotateX(120deg);
-  }
-  100% {
-    transform: scale(1);
-    -webkit-transform: translateY(0px) rotateX(0deg);
-    transform: translateY(0px) rotateX(0deg);
-  }
-}
-
-@keyframes headerelements {
-  0% {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: auto;
-  }
-}
 
 /* Don't show nav-panel by default */
 .mobile-nav-panel {
@@ -124,31 +93,63 @@ export default {
   top: $p-desktop;
   z-index: 10000;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 0;
-    width: 2px;
-    height: 18px;
-    backdrop-filter: blur(4px);
-    background: rgba($blue, 1);
-  }
+  .menu {
+    width: 40px;
+    height: 40px;
+    position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0px;
-    width: 20px;
-    height: 2px;
-    backdrop-filter: blur(4px);
-    background: rgba($blue, 1);
+    &::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      backdrop-filter: blur(4px);
+      background: rgba($black, 0.8);
+      transform-origin: center;
+      transition: all 0.24s ease-in-out;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      backdrop-filter: blur(4px);
+      background: rgba($black, 0.8);
+      transform-origin: center;
+      transition: all 0.24s ease-in-out;
+    }
+
+    &.true {
+      &::before {
+        top: 20px;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 20px;
+        transform: rotate(-45deg);
+      }
+    }
   }
 
   img {
     width: 40px;
     height: 40px;
+  }
+}
+
+.dark .menu {
+  &::before {
+    background: rgba($white, 0.8);
+  }
+
+  &::after {
+    background: rgba($white, 0.8);
   }
 }
 
@@ -166,11 +167,10 @@ export default {
   right: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.8);
-  z-index: 10000;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  z-index: 10000;
+  z-index: 9999;
   padding: $spacing-lg;
   backdrop-filter: blur(80px);
   animation: fade 0.24s ease-in-out;
