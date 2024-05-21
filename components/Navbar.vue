@@ -1,11 +1,9 @@
 <template>
   <nav class="mobile-nav-bar">
-    <section class="menu-switch">
-      <section class="menu-right">
-        <img width="40" height="40" :src="`/menu-${currentTheme}.svg`" alt="Open menu" @click="openMenu" />
-        <ThemeSwitcher />
-      </section>
-    </section>
+    <div class="menu-switch">
+      <img :src="`/menu-${currentTheme}.svg`" alt="Open menu" @click="openMenu" />
+    </div>
+    <ThemeSwitcher />
   </nav>
   <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
     <section class="mobile-nav-panel-header">
@@ -119,33 +117,27 @@ export default {
 }
 
 .menu-switch {
-  width:100%;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: $spacing-sm;
   cursor: pointer;
+  padding: $spacing-xs $spacing-sm;
+  // backdrop-filter: blur(8px);
+  // background: rgba($white, 0.8);
+  border-left: 2px solid rgba($blue, 0.2);
+  border-top: 2px solid rgba($blue, 0.2);
+  position:fixed;
+  left: calc($spacing-lg - $spacing-xs * 2);
+  top: calc($spacing-lg - $spacing-xs * 2);
+  z-index: 10000;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .menu-right {
   display:flex;
   flex-direction: row;
   gap:1rem;
-}
-
-.mobile-nav-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: $spacing-lg;
-  width:100%;
-  z-index: 1000;
-  position:fixed;
-  top:0;
-
-  @media screen and (max-width: 768px) {
-    padding: $spacing-md;
-  }
 }
 
 .mobile-nav-panel {
@@ -156,7 +148,7 @@ export default {
   right: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.8);
-  z-index: 100;
+  z-index: 10000;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;

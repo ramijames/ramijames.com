@@ -1,6 +1,7 @@
 <template>
   <main>
     <Hero />
+    <Map />
     <Projects />
     <Arrow />
   </main>
@@ -11,6 +12,7 @@
 import Hero from '/components/Hero.vue'
 import Projects from '/components/Projects.vue'
 import Arrow from '/components/Arrow.vue'
+import Map from '/components/Map.vue'
 
 export default {
   data(){
@@ -21,7 +23,8 @@ export default {
   components: {
     Hero,
     Projects,
-    Arrow
+    Arrow,
+    Map
   },
   setup() {
     return {

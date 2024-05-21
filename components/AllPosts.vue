@@ -21,7 +21,7 @@
       </div>
       </div>
   
-    <h4>Other articles by Rami James</h4>
+    <h4>Similar articles</h4>
     <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug" class="single-post">
       <span class="title">{{ article.title }}</span>
     </nuxt-link>

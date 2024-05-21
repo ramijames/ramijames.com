@@ -98,7 +98,7 @@ export default {
 
     @media screen and (max-width: 768px){
       width:100vw;
-      height:45vh;
+      height:100vh;
       font-size: 6dvw;
       margin-top:10vh;
     }
@@ -140,7 +140,7 @@ export default {
 
     @media screen and (max-width: 768px){
       width:100vw;
-      height:45vh;
+      height:100vh;
       font-size: 6dvw;
     }
 

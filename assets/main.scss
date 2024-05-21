@@ -210,10 +210,12 @@ input {
       position: relative;
       height: 70vh;
       overflow-y: auto;
+      position: -webkit-sticky;
+      position: sticky;
+      top: calc($spacing-xl + 2rem);
 
       @media screen and (max-width: 1000px) {
         height: auto;
-        
       }
     }
 

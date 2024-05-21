@@ -1,12 +1,14 @@
 <template>
-  <img
-    class="theme-switcher"
-    @click="toggleTheme"
-    :src="`/${currentTheme}.svg`"
-    :alt="`${currentTheme} theme`"
-    width="40"
-    :class="{ clicked: isClicked }"
-  />
+  <div class="theme-switcher-box">
+    <img
+      class="theme-switcher"
+      @click="toggleTheme"
+      :src="`/${currentTheme}.svg`"
+      :alt="`${currentTheme} theme`"
+      width="40"
+      :class="{ clicked: isClicked }"
+    />
+  </div>
 </template>
 
 <script>
@@ -48,10 +50,24 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+@import './assets/variables';
+
+.theme-switcher-box {
+  right: calc($spacing-lg - $spacing-xs * 2);
+  top: calc($spacing-lg - $spacing-xs * 2);
+  z-index: 10000;
+  // backdrop-filter: blur(8px);
+  // background: rgba($black, 0.8);
+  border-right: 2px solid rgba($blue, 0.8);
+  border-top: 2px solid rgba($blue, 0.8);
+  position: fixed;
+  padding: $spacing-sm $spacing-sm;
+}
 
 .theme-switcher {
-  z-index: 1;
+
 }
 
 img {
