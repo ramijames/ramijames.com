@@ -48,7 +48,7 @@ export default {
   align-items: center;
   pointer-events: none;
   z-index: 0;
-  background: radial-gradient(ellipse at top, rgba($blue, 0.2) 0%, rgba($white, 0) 60%);
+  background: radial-gradient(ellipse at top right, rgba($blue, 0.2) 0%, rgba($white, 0) 60%);
 }
     .rotateGroup {
       transform-style: preserve-3d;

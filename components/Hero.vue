@@ -152,8 +152,9 @@ export default {
     position: relative;
     overflow: hidden;
     z-index: 10;
-    border-left: 2px solid $blue-light;
+    border-left: 4px solid $blue;
     align-items: flex-start;
+    background: $black radial-gradient(ellipse at top left, rgba($blue, 0.2) 0%, rgba($black, 100) 50%);
 
     @media screen and (max-width: 768px){
       width:100vw;
@@ -201,7 +202,7 @@ export default {
           bottom: -2px;
           left: 0;
           width: 100%;
-          height: 3px;
+          height: 4px;
           transition: all 0.9s ease-in-out;
           background-color: rgba($white, 0.3);
         }
@@ -212,7 +213,7 @@ export default {
           bottom: -2px;
           left: 0;
           width: 0;
-          height: 3px;
+          height: 4px;
           transition: width 0.9s;
           background-color: rgba($blue, 1);
         }

@@ -100,7 +100,7 @@ img {
     background: linear-gradient(45deg, rgba($blue, 0.8), rgba($black, 0.2));
     transition: all 0.24s ease-in-out;
     border-radius: 50%;
-    box-shadow: inset 0 0 12px rgb(140, 228, 250), 0 0 10px 0 rgba($white, 0.5);
+    box-shadow: inset 0 0 12px rgba($blue, 0.4), 0 0 10px 0 rgba($white, 0.5);
   }
 
   &.light { /* SUN */

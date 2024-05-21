@@ -1,9 +1,7 @@
 <template>
   <section id="projects" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
-      <div>I MAKE INTERFACES</div>
-      <div>FOR THE FUTURE,</div>
-      <div class="together">WITH YOU IN MIND.</div>
+      <div>I make <span class="together">interfaces for the future</span> with your users in mind.</div>
     </section>
     <section class="portfolio" ref="portfolio">
       <section class="works">
@@ -138,24 +136,22 @@ export default {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    gap: $spacing-xs;
     width:50vw;
     height:100vh;
     padding: $spacing-lg;
     color:$black;
     font-size: $font-size-xxl;
     font-weight:bold;
-    text-transform: uppercase;
     z-index: 2;
     position: sticky;
     top:0;
 
+    div {
+      border-left: 4px solid $blue;
+      padding-left: $spacing-md;
+    }
+
     @media screen and (max-width: 768px){
-      // width:100vw;
-      // height:calc($spacing-xl + 30vh);
-      // font-size: 6dvw;
-      // padding-top: calc($spacing-xl + 2rem);
-      // position: relative;
       display: none;
     }
 
@@ -170,9 +166,8 @@ export default {
     background: $black;
     font-size: $font-size-xl;
     font-weight:bold;
-    text-transform: uppercase;
     z-index: 2;
-    border-left: 2px solid $blue-light;
+    border-left: 4px solid $blue;
 
     @media screen and (max-width: 768px){
       width:100vw;
@@ -207,6 +202,8 @@ export default {
         scale:0.8; 
         position: relative;
         overflow: hidden;
+        perspective: 100em;
+        transform: rotate3d(0,0,0,15deg);
 
         @media screen and (max-width: 1400px){
           height:40vh;
@@ -247,6 +244,7 @@ export default {
 
           img {
             right: 0;
+            transform: rotate3d(66, -101, 10, 35deg) scale(1.1);
           }
         }
       }
@@ -262,7 +260,7 @@ export default {
     color:$white;
 
     .together {
-      color: $blue-light;
+      color: $blue;
     }
   }
 
