@@ -243,7 +243,7 @@ export default {
           box-shadow: inset 0 0 0 1000px rgba($black, 0.2);
 
           img {
-            right: 0;
+            right: -4rem;
             transform: rotate3d(66, -101, 10, 35deg) scale(1.1);
           }
         }

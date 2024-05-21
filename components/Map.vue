@@ -22,6 +22,10 @@ export default {
           active: false
         },
         {
+          title: 'Services',
+          active: false
+        },
+        {
           title: 'Contact',
           active: false
         }

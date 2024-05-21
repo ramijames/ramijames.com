@@ -6,6 +6,7 @@
         :class="`${mobileMenuOpen}`"
         @click="toggleMenu"
       ></div>
+      <Button text="Home" size="small" to="/" v-if="notHome" />
     </div>
     <ThemeSwitcher />
   </nav>
@@ -28,11 +29,14 @@
 <script>
 import { useThemeStore } from '~/store/theme'
 import { reactive, computed, onMounted, watch } from 'vue';
+import { useRoute } from 'vue-router';
 import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
+import Button from '~/components/Button.vue'
 
 export default {
   setup() {
     const themeStore = useThemeStore();
+    const route = useRoute();
 
     const state = reactive({
       mobileMenuOpen: false,
@@ -50,11 +54,6 @@ export default {
         { immediate: true }
       )
     })
-
-    const openMenu = () => {
-      state.mobileMenuOpen = true;
-    };
-
     const closeMenu = () => {
       state.mobileMenuOpen = false;
     };
@@ -64,14 +63,20 @@ export default {
       console.log('click');
     };
 
+    const notHome = computed(() => route.path !== '/');
+
     return {
       currentTheme: computed(() => themeStore.currentTheme),
-      openMenu,
       closeMenu,
       toggleMenu,
+      notHome,
       mobileMenuOpen: computed(() => state.mobileMenuOpen),
       ...toRefs(state),
     }
+  },
+  components: {
+    ThemeSwitcher,
+    Button
   }
 }
 </script>
@@ -92,6 +97,9 @@ export default {
   left: $p-desktop;
   top: $p-desktop;
   z-index: 10000;
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
 
   .menu {
     width: 40px;

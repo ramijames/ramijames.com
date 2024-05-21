@@ -37,7 +37,10 @@ export default {
 .button {
   position:relative;
   padding:$spacing-sm $spacing-md;
-  display:block;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   outline:none;
   border-radius: $br-sm;
   transition: all .06s ease-in-out;
@@ -54,9 +57,10 @@ export default {
   transition: all 0.3s ease-in-out;
   
   &.small {
-    font-size: $font-size-sm;
-    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-xs;
+    padding: 0 $spacing-sm;
     border-radius: $br-sm;
+    font-weight: bold;
   }
 
   &:hover {
