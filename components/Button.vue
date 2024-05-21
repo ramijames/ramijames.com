@@ -49,7 +49,9 @@ export default {
   font-weight:normal;
   font-size: $font-size-md;
   z-index: 1;
-  box-shadow: inset 0 0 6px rgba($blue, 0.4), 0 0 30px rgba($blue, 0.4);
+  box-shadow: inset 0 0 6px rgba($blue, 0.8), 0 0 30px rgba($blue, 0.4);
+  border: 2px solid $blue;
+  transition: all 0.3s ease-in-out;
   
   &.small {
     font-size: $font-size-sm;
@@ -58,7 +60,13 @@ export default {
   }
 
   &:hover {
-    background-color: lighten($black, 10%);
+    background-color: lighten($blue, 10%);
+    transform: scale(1.03);
+  }
+
+  &:active {
+    background-color: darken($blue, 10%);
+    transform: scale(1);
   }
 }
 

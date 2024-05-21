@@ -50,6 +50,7 @@ export default {
   z-index: 10000;
   position: fixed;
   padding: $spacing-md $spacing-md;
+  cursor: pointer;
 }
 
 .dark .theme-switcher-box {

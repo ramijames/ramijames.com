@@ -225,13 +225,21 @@ export default {
           position:absolute;
           bottom: $spacing-md;
           left: $spacing-md;
+          text-shadow: 2px 2px 2px rgba($black, 0.5);
+
+          @media screen and (max-width: 768px){
+            bottom: $spacing-sm;
+            left: $spacing-sm;
+            font-size: $font-size-md;
+          }
         }
 
         img {
           position:absolute;
           right: -4rem;
-          width: 100%;
+          height: 100%;
           transition: all 0.3s ease-in-out;
+          z-index: -1;
         }
 
         &:hover {
