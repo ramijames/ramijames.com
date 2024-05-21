@@ -48,28 +48,28 @@ export default {
   font-family: $font-family-secondary;
   color: $black;
   font-weight: bold;
-  padding: $spacing-xs $spacing-sm;
+  padding: $spacing-md $spacing-md;
 
   &::after {
     content: '';
     position: absolute;
-    top: 2px;
+    bottom: 2px;
     left: 0;
     width: 2px;
-    height: calc(100% - 2px);
+    height: 18px;
     backdrop-filter: blur(4px);
-    background: rgba($black, 0.1);
+    background: rgba($blue, 1);
   }
 
   &::before {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 2px;
-    width: calc(100% - 2px);
+    left: 0px;
+    width: 20px;
     height: 2px;
     backdrop-filter: blur(4px);
-    background: rgba($black, 0.1);
+    background: rgba($blue, 1);
   }
 
   .location {
@@ -103,7 +103,7 @@ export default {
     }
 
     .bar {
-      background-color: $blue-light;
+      background-color: $blue;
     }
   }
 }
@@ -112,11 +112,11 @@ export default {
   color: $white;
 
   &::after {
-    background: rgba($white, 0.1);
+    background: rgba($white, 0.8);
   }
 
   &::before {
-    background: rgba($white, 0.1);
+    background: rgba($white, 0.8);
   }
 
 }

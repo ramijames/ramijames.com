@@ -151,11 +151,12 @@ export default {
     top:0;
 
     @media screen and (max-width: 768px){
-      width:100vw;
-      height:calc($spacing-xl + 30vh);
-      font-size: 6dvw;
+      // width:100vw;
+      // height:calc($spacing-xl + 30vh);
+      // font-size: 6dvw;
       // padding-top: calc($spacing-xl + 2rem);
-      position: relative;
+      // position: relative;
+      display: none;
     }
 
     .together {
@@ -171,6 +172,7 @@ export default {
     font-weight:bold;
     text-transform: uppercase;
     z-index: 2;
+    border-left: 2px solid $blue-light;
 
     @media screen and (max-width: 768px){
       width:100vw;

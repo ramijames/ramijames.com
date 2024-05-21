@@ -2,16 +2,17 @@
   <main id="hero-for-the-zero" ref="animatorHero">
     <section class="intro" ref="intro">
       <Woosh class="desktop-only" />
-      <div class="small">I create</div>
-      <div class="products">UNIQUE</div>
-      <div class="experiences">PRODUCT</div>
-      <div class="designs"><span class="designs">EXPERIENCES</span></div>
+      <div class="products">Early stage</div>
+      <div class="blue">Product partner</div>
+      <!-- <div class="products">You can stop looking now, <span class="designs">and get to work</span></div> -->
+      <div class="convince">Go from vision → polished product in a matter of weeks.</div>
+      <Button text="Get to work today" size="default" />
     </section>
     <section class="links">
       <div class="small" ref="linksSubtitle">services</div>
-      <nuxt-link class="linkOne" to="/services/product-concept" ref="linksOne"><span class="number">01</span> <span class="title">Product concept</span></nuxt-link>
-      <nuxt-link class="linkTwo" to="/services/ux-ui" ref="linksTwo"><span class="number">02</span> <span class="title">UX & UI</span></nuxt-link>
-      <nuxt-link class="linkThree" to="/services/implementation" ref="linksThree"><span class="number">03</span> <span class="title">Implementation</span></nuxt-link>
+      <nuxt-link class="linkOne" to="/services/product-concept" ref="linksOne"><span class="number">01</span> <span class="title">Concept</span></nuxt-link>
+      <nuxt-link class="linkTwo" to="/services/ux-ui" ref="linksTwo"><span class="number">02</span> <span class="title">UX&#183;UI</span></nuxt-link>
+      <nuxt-link class="linkThree" to="/services/implementation" ref="linksThree"><span class="number">03</span> <span class="title">Build</span></nuxt-link>
     </section>
   </main>
 </template>
@@ -19,6 +20,7 @@
 <script>
 
 import Woosh from './Woosh.vue'
+import Button from './Button.vue'
 
 export default {
   data(){
@@ -80,6 +82,7 @@ export default {
 
   @media screen and (max-width: 768px){
     flex-direction: column;
+    height: auto;
   }
 
   .intro {
@@ -91,25 +94,37 @@ export default {
     height:100vh;
     padding: $spacing-lg;
     color: $black;
-    font-size: $font-size-xxl;
-    font-weight:black;
-    text-transform: uppercase;
+    font-weight:normal;
+    font-size: $font-size-max;
     z-index: 2;
+    align-items: flex-start;
+    -webkit-transform:scale(1.0);
 
     @media screen and (max-width: 768px){
       width:100vw;
       height:100vh;
-      font-size: 6dvw;
-      margin-top:10vh;
+      font-size: $font-size-mega;
+      padding: $spacing-md;
     }
 
-    .small {
+    .blue {
+      color: $blue;
+    }
+
+    .convince {
+      font-family: $font-family-secondary;
       font-size: $font-size-md;
-      color: $gray-md;
+      text-transform: none;
+      margin-bottom: $spacing-md;
     }
 
     .products {
       opacity: 0;
+      font-weight:black;
+
+      @media screen and (max-width: 768px){
+        font-size: $font-size-mega;
+      }
     }
 
     .experiences {
@@ -117,7 +132,7 @@ export default {
     }
 
     .designs {
-      color: $blue-light;
+      color: $blue;
       opacity: 0;
     }
   }
@@ -131,17 +146,20 @@ export default {
     height:100vh;
     padding: $spacing-lg;
     background: $black;
-    font-size: $font-size-xxl;
+    font-size: $font-size-max;
     font-weight:bold;
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
     z-index: 10;
+    border-left: 2px solid $blue-light;
+    align-items: flex-start;
 
     @media screen and (max-width: 768px){
       width:100vw;
       height:100vh;
       font-size: 6dvw;
+      padding: $spacing-md;
     }
 
     .small {
@@ -167,7 +185,7 @@ export default {
       color: $white;
       display:inline;
       font-weight: normal;
-      transition: all 0.3s ease-in-out;
+      transition: color 0.3s ease-in-out;
 
       span.number {
         margin-right: $spacing-sm;

@@ -118,7 +118,7 @@ export default {
 
 .menu-switch {
   cursor: pointer;
-  padding: $spacing-xs $spacing-sm;
+  padding: $spacing-md $spacing-md;
   position:fixed;
   left: $p-desktop;
   top: $p-desktop;
@@ -130,9 +130,9 @@ export default {
     top: 2px;
     left: 0;
     width: 2px;
-    height: calc(100% - 2px);
+    height: 18px;
     backdrop-filter: blur(4px);
-    background: rgba($black, 0.1);
+    background: rgba($blue, 1);
   }
 
   &::before {
@@ -140,10 +140,10 @@ export default {
     position: absolute;
     top: 0;
     left: 0px;
-    width: calc(100% - 2px);
+    width: 20px;
     height: 2px;
     backdrop-filter: blur(4px);
-    background: rgba($black, 0.1);
+    background: rgba($blue, 1);
   }
 
   img {

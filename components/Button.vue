@@ -1,8 +1,6 @@
 <template>
   <nuxt-link class="button" :class="type, size" :to="link">
-    <div class="button__content">
-      <div class="button__text">{{ text }}</div>
-    </div>
+    {{ text }}
   </nuxt-link>
 </template>
 
@@ -39,47 +37,38 @@ export default {
 .button {
   position:relative;
   padding:$spacing-sm $spacing-md;
-  display:inline-block;
+  display:block;
   outline:none;
-  border-radius: $br-xs;
-  transition: .06s ease-in-out;
+  border-radius: $br-sm;
+  transition: all .06s ease-in-out;
   cursor:pointer;
   background-color: $black;
-  color:white;
+  color:$white !important;
   text-decoration: none;
-  font-family: 'Bitter', sans-serif;
-  font-weight:200;
-  font-size: 24px;
-  margin:-3px -3px 0 0;
+  font-family: $font-family-secondary, sans-serif;
+  font-weight:normal;
+  font-size: $font-size-md;
   z-index: 1;
-  box-shadow: 6px 6px 0 $blue;
-
-  &__content {
-    position:relative;
-    z-index: 1;
-  }
+  box-shadow: inset 0 0 6px rgba($blue, 0.4), 0 0 30px rgba($blue, 0.4);
   
   &.small {
-    font-size: 14px;
+    font-size: $font-size-sm;
     padding: $spacing-xs $spacing-sm;
-    border-radius: $br-xs;
-    box-shadow: 3px 3px 0 $blue;
-    margin:-3px -3px 0 0;
+    border-radius: $br-sm;
+  }
 
-    &:after {
-      top: 4px;
-      left: 4px;
-    }
+  &:hover {
+    background-color: lighten($black, 10%);
   }
 }
 
 .dark .button {
   background-color: $white;
-  color: $black;
-  box-shadow: 6px 6px 0 $blue-light;
+  color: $black !important;
+  box-shadow: 0 0 30px $blue;
 
   &.small {
-    box-shadow: 3px 3px 0 $blue-light;
+    box-shadow: 0 0 30px $blue;
   }
 }
 
