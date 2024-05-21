@@ -63,6 +63,23 @@ export default {
     font-weight: bold;
   }
 
+  &.light {
+    font-size: $font-size-sm;
+    padding: 0 $spacing-sm;
+    border-radius: $br-sm;
+    font-weight: bold;
+    background-color: $white;
+    color:$black !important;
+    border: 2px solid rgba($black, .1);
+    box-shadow: none;
+
+    &:hover {
+      background-color: darken($white, 10%);
+      color:$black !important;
+      transform: scale(1.03);
+    }
+  }
+
   &:hover {
     background-color: lighten($blue, 10%);
     transform: scale(1.03);
@@ -81,6 +98,22 @@ export default {
 
   &.small {
     box-shadow: 0 0 30px $blue;
+  }
+
+  &.light {
+    font-size: $font-size-sm;
+    padding: 0 $spacing-sm;
+    border-radius: $br-sm;
+    font-weight: bold;
+    background-color: $black;
+    color:$white !important;
+    border: 2px solid $black;
+    box-shadow: none;
+
+    &:hover {
+      background-color: lighten($blue, 10%);
+      transform: scale(1.03);
+    }
   }
 }
 

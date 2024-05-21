@@ -6,7 +6,7 @@
         :class="`${mobileMenuOpen}`"
         @click="toggleMenu"
       ></div>
-      <Button text="Home" size="small" to="/" v-if="notHome" />
+      <Button text="Home" size="light" to="/" v-if="notHome" />
     </div>
     <ThemeSwitcher />
   </nav>

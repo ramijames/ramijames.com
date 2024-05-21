@@ -4,15 +4,16 @@
       <Woosh class="desktop-only" />
       <div class="products">Early stage</div>
       <div class="blue">Product partner</div>
-      <!-- <div class="products">You can stop looking now, <span class="designs">and get to work</span></div> -->
       <div class="convince">Go from vision → polished product in a matter of weeks.</div>
       <Button text="Get to work today" size="default" />
     </section>
     <section class="links">
-      <div class="small" ref="linksSubtitle">services</div>
-      <nuxt-link class="linkOne" to="/services/product-concept" ref="linksOne"><span class="number">01</span> <span class="title">Concept</span></nuxt-link>
-      <nuxt-link class="linkTwo" to="/services/ux-ui" ref="linksTwo"><span class="number">02</span> <span class="title">UX&#183;UI</span></nuxt-link>
-      <nuxt-link class="linkThree" to="/services/implementation" ref="linksThree"><span class="number">03</span> <span class="title">Build</span></nuxt-link>
+      <div class="linksRotator">
+        <div class="small" ref="linksSubtitle">services</div>
+        <nuxt-link class="linkOne" to="/services/product-concept" ref="linksOne"><span class="number">01</span> <span class="title">Concept</span></nuxt-link>
+        <nuxt-link class="linkTwo" to="/services/ux-ui" ref="linksTwo"><span class="number">02</span> <span class="title">UX&#183;UI</span></nuxt-link>
+        <nuxt-link class="linkThree" to="/services/implementation" ref="linksThree"><span class="number">03</span> <span class="title">Build</span></nuxt-link>
+      </div>
     </section>
   </main>
 </template>
@@ -82,7 +83,7 @@ export default {
 
   @media screen and (max-width: 768px){
     flex-direction: column;
-    height: auto;
+    height: initial;
   }
 
   .intro {
@@ -155,6 +156,24 @@ export default {
     border-left: 4px solid $blue;
     align-items: flex-start;
     background: $black radial-gradient(ellipse at top left, rgba($blue, 0.2) 0%, rgba($black, 100) 50%);
+    perspective: 10em;
+
+    @media screen and (max-width: 768px){
+      height: 50vh;
+    }
+
+    .linksRotator {
+      transform: rotate3d(0, 1, 0, -25deg) scale(1.2);
+      transform-style: preserve-3d;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: $spacing-xs;
+
+      @media screen and (max-width: 768px){
+        transform: rotate3d(0, 1, 0, 0deg) scale(1);
+      }
+    }
 
     @media screen and (max-width: 768px){
       width:100vw;
@@ -203,7 +222,7 @@ export default {
           left: 0;
           width: 100%;
           height: 4px;
-          transition: all 0.9s ease-in-out;
+          transition: all 0.4s ease-in-out;
           background-color: rgba($white, 0.3);
         }
 
@@ -214,7 +233,7 @@ export default {
           left: 0;
           width: 0;
           height: 4px;
-          transition: width 0.9s;
+          transition: width 0.4s;
           background-color: rgba($blue, 1);
         }
       }

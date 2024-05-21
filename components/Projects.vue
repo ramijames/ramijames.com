@@ -1,7 +1,7 @@
 <template>
   <section id="projects" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
-      <div>I make <span class="together">interfaces for the future</span> with your users in mind.</div>
+      <div>I make <span class="together">interfaces for the future</span> with your business and its users in mind.</div>
     </section>
     <section class="portfolio" ref="portfolio">
       <section class="works">
@@ -235,7 +235,7 @@ export default {
           position:absolute;
           right: -4rem;
           height: 100%;
-          transition: all 0.3s ease-in-out;
+          transition: all 6s ease-in-out;
           z-index: -1;
         }
 

@@ -57,6 +57,22 @@ h1 {
       color:$white;
     }
 
+    h1.home-bold {
+      font-size: 8dvw; 
+      line-height: 8dvw;
+      color:$white;
+
+      @media screen and (max-width: 768px) {
+        font-size: 3.051rem; 
+        line-height: 3.051rem;
+        
+      }
+    }
+
+    .dark h1.home-bold {
+      color:$white;
+    }
+
     h1.general-bold {
       font-weight: bold;
       margin:0 0 1rem;
@@ -603,10 +619,9 @@ img.in-article {
     }
 
     .dark .main-product-image::before {
-      position: absolute;
+      position: fixed;
       content: '';
-      top:-900px;
-      left:80%;
+      top:-400px;
       z-index: 1;
       background:red;
       width:200px;

@@ -1,12 +1,14 @@
 <template>
   <section id="services">
     <section class="service-explainer" ref="serviceExplainer">
+      <h1 class="home-bold">Services</h1>
       <div>Our work together is broken down into discrete milestones so that we can have both structure and fast progress.</div>
     </section>
     <section class="services" ref="services">
       <section class="service">
         <div class="tag">Service</div>
         <h1>Product Conception</h1>
+        <p>Your product starts with a vision that reflects your business' goals and the market that you are actively targeting.</p>
       </section>
 
       <section class="service">
@@ -29,7 +31,7 @@
 #services {
   display: flex;
   flex-direction: column;
-  background: $blue;
+  background: $blue linear-gradient(120deg, $black 0%, $blue 30%);
 
   @media screen and (max-width: 768px){
     flex-direction: column;
@@ -46,6 +48,11 @@
     font-size: $font-size-xxl;
     font-weight:bold;
     z-index: 2;
+
+    @media screen and (max-width: 768px){
+      padding: $spacing-md;
+      font-size: $font-size-md;
+    }
 
     div {
       border-left: 4px solid $white;
@@ -83,6 +90,10 @@
       gap: $spacing-md; 
       position: relative;
       padding: $spacing-xxl;
+
+      @media screen and (max-width: 768px){
+        padding: 0;
+      }
       
       .tag {
         color: $blue;
@@ -96,7 +107,7 @@
 }
 
 .dark #services {
-  background: $black;
+  background: $blue linear-gradient(-120deg, $black 0%, $blue 30%);
 
   .service-explainer {
     color:$white;
@@ -108,6 +119,7 @@
 
   .services {
     background: $white;
+    color: $black;
   }
 }
 
