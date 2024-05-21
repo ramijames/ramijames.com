@@ -55,19 +55,44 @@ export default {
 @import './assets/variables';
 
 .theme-switcher-box {
-  right: calc($spacing-lg - $spacing-xs * 2);
-  top: calc($spacing-lg - $spacing-xs * 2);
+  right: $p-desktop;
+  top: $p-desktop;
   z-index: 10000;
-  // backdrop-filter: blur(8px);
-  // background: rgba($black, 0.8);
-  border-right: 2px solid rgba($blue, 0.8);
-  border-top: 2px solid rgba($blue, 0.8);
   position: fixed;
   padding: $spacing-sm $spacing-sm;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: calc(100% - 2px);
+    backdrop-filter: blur(4px);
+    background: rgba($white, 0.1);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 2px;
+    width: calc(100% - 2px);
+    height: 2px;
+    backdrop-filter: blur(4px);
+    background: rgba($white, 0.1);
+  }
 }
 
-.theme-switcher {
+.dark .theme-switcher-box {
 
+  &::after {
+    background: rgba($black, 0.1);
+  }
+
+  &::before {
+    background: rgba($black, 0.1);
+  }
 }
 
 img {

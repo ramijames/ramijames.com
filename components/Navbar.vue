@@ -119,14 +119,32 @@ export default {
 .menu-switch {
   cursor: pointer;
   padding: $spacing-xs $spacing-sm;
-  // backdrop-filter: blur(8px);
-  // background: rgba($white, 0.8);
-  border-left: 2px solid rgba($blue, 0.2);
-  border-top: 2px solid rgba($blue, 0.2);
   position:fixed;
-  left: calc($spacing-lg - $spacing-xs * 2);
-  top: calc($spacing-lg - $spacing-xs * 2);
+  left: $p-desktop;
+  top: $p-desktop;
   z-index: 10000;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 2px;
+    height: calc(100% - 2px);
+    backdrop-filter: blur(4px);
+    background: rgba($black, 0.1);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: calc(100% - 2px);
+    height: 2px;
+    backdrop-filter: blur(4px);
+    background: rgba($black, 0.1);
+  }
 
   img {
     width: 40px;
@@ -233,7 +251,14 @@ export default {
 
 .dark .mobile-nav-panel {
   background: rgba(0, 0, 0, 0.8);
+}
 
+.dark .menu-switch::after {
+  background: rgba($white, 0.1);
+}
+
+.dark .menu-switch::before {
+  background: rgba($white, 0.1);
 }
 
 @keyframes enter {

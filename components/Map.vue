@@ -39,8 +39,8 @@ export default {
 
 #map {
   position:fixed;
-  left: calc($spacing-lg - $spacing-xs * 2);
-  bottom: calc($spacing-lg - $spacing-xs * 2);
+  left: $p-desktop;
+  bottom: $p-desktop;
   display:flex;
   flex-direction: column;
   z-index: 9999;
@@ -49,10 +49,28 @@ export default {
   color: $black;
   font-weight: bold;
   padding: $spacing-xs $spacing-sm;
-  // backdrop-filter: blur(8px);
-  // background: rgba($white, 0.8);
-  border-left: 2px solid rgba($blue-light, 0.2);
-  border-bottom: 2px solid rgba($blue-light, 0.2);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 2px;
+    height: calc(100% - 2px);
+    backdrop-filter: blur(4px);
+    background: rgba($black, 0.1);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 2px;
+    width: calc(100% - 2px);
+    height: 2px;
+    backdrop-filter: blur(4px);
+    background: rgba($black, 0.1);
+  }
 
   .location {
     display:flex;
@@ -92,7 +110,15 @@ export default {
 
 .dark #map {
   color: $white;
-  background: rgba($black, 0.8);
+
+  &::after {
+    background: rgba($white, 0.1);
+  }
+
+  &::before {
+    background: rgba($white, 0.1);
+  }
+
 }
 
 </style>
