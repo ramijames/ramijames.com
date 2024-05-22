@@ -133,7 +133,7 @@ export default {
   flex-direction: row;
   margin: $spacing-md auto;
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 1000px){
     flex-direction: column;
   }
 
@@ -147,8 +147,10 @@ export default {
     position: sticky;
     top:0;
 
-    @media screen and (max-width: 768px){
-      display: none;
+    @media screen and (max-width: 1000px){
+      width: 100%;
+      height: auto;
+      position: relative;
     }
 
     .together {
@@ -163,9 +165,8 @@ export default {
     z-index: 2;
     border-radius: $br-lg;
 
-    @media screen and (max-width: 768px){
-      width:100vw;
-      padding: $spacing-md;
+    @media screen and (max-width: 1000px){
+      width:100%;
       font-size: $font-size-md;
     }
 
@@ -175,10 +176,6 @@ export default {
       flex-wrap: wrap; 
       gap: $spacing-md; 
       position: relative;
-
-      @media screen and (max-width: 768px){
-        gap: $spacing-md;
-      }
 
       .single-work {
         height:50vh;
@@ -207,8 +204,13 @@ export default {
           height:35vh;
         }
 
+        @media screen and (max-width: 1000px){
+          width:calc(50% - $spacing-md /2);
+          border-radius: $br-sm;
+        }
+
         @media screen and (max-width: 768px){
-          width: 100%;
+          width:calc(100% - $spacing-md /2);
           border-radius: $br-sm;
         }
 

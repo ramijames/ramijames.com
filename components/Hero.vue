@@ -159,6 +159,16 @@ export default {
   h1 {
     font-size: $font-size-mega;
     margin: 0;
+
+    @media screen and (max-width: 1200px) {
+      font-size: $font-size-max;
+      line-height: $font-size-max;
+    }
+
+    @media screen and (max-width: 1000px) {
+      font-size: $font-size-xxl;
+      line-height: $font-size-xxl;
+    }
   }
 
   .centered {
@@ -173,6 +183,10 @@ export default {
   .centered.small {
     line-height: $spacing-md * $multiplier;
     margin-bottom: $spacing-lg;
+
+    @media screen and (max-width: 768px) {
+      line-height: initial;
+    }
   }
 
   .highlight {
@@ -182,6 +196,14 @@ export default {
     border-radius: $br-md;
     backdrop-filter: blur(4px);
     border: 1px solid rgba(lighten($blue,25%), .5);
+
+    @media screen and (max-width: 768px) {
+      padding: initial;
+      background-color: initial;
+      border-radius: initial;
+      backdrop-filter: initial;
+      border: initial;
+    }
   }
 
   .links {

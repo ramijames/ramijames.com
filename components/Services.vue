@@ -21,10 +21,6 @@
           <img src="/prototyping.png" alt="Prototyping">
           <span>Prototyping</span>
         </div>
-        <div class="speciality">
-          <img src="/design-systems.png" alt="Design Systems">
-          <span>Design Systems</span>
-        </div>
       </div>
     <section class="services" ref="services">
       <section class="service">
@@ -72,13 +68,9 @@
     font-weight:normal;
     z-index: 2;
 
-    @media screen and (max-width: 768px){
-      padding: $spacing-md;
+    @media screen and (max-width: 1000px){
+      padding: $spacing-md 0;
       font-size: $font-size-md;
-    }
-
-    @media screen and (max-width: 768px){
-      display: none;
     }
   }
 
@@ -88,13 +80,21 @@
     gap: $spacing-md;
     width: 100%;
 
+    @media screen and (max-width: 768px){
+      flex-wrap: wrap;
+    }
+
     .speciality {
-      width: 20%;
+      width: 25%;
       display: flex;
       flex-direction: column;
       align-items: center;
       font-size: $font-size-md;
       color: $blue;
+
+      @media screen and (max-width: 768px){
+        width: calc(50% - $spacing-md / 2);
+      }
 
       img {
         width: 100%;
@@ -124,7 +124,7 @@
       flex-wrap: wrap; 
       gap: $spacing-md; 
       position: relative;
-      padding: $spacing-xxl;
+      padding: $spacing-xl $spacing-xxl;
 
       @media screen and (max-width: 768px){
         padding: 0;
