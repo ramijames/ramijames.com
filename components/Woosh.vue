@@ -61,10 +61,6 @@ export default {
       opacity: 0.4;
     }
 
-    // .dark .rotateGroup {
-    //   opacity: 0.8;
-    // }
-
     .element {
       position: absolute;
       border-style: solid;

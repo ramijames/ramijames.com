@@ -6,25 +6,23 @@
     </section>
     <div class="service-specializations">
         <div class="speciality">
-          <img src="/web-interface.svg" alt="web interface">
-
-
+          <img src="/web-interface.png" alt="web interface">
           <span>Web Interfaces</span>
         </div>
         <div class="speciality">
-
+          <img src="/mobile-interface.png" alt="mobile interface">
           <span>Mobile Interfaces</span>
         </div>
         <div class="speciality">
-
+          <img src="/landing-pages.png" alt="Landing Pages">
           <span>Landing Pages</span>
         </div>
         <div class="speciality">
-
+          <img src="/prototyping.png" alt="Prototyping">
           <span>Prototyping</span>
         </div>
         <div class="speciality">
-
+          <img src="/design-systems.png" alt="Design Systems">
           <span>Design Systems</span>
         </div>
       </div>
@@ -99,8 +97,11 @@
       color: $blue;
 
       img {
-        width: 80%;
+        width: 100%;
         margin: $spacing-sm 0;
+        padding: $spacing-sm;
+        background: rgba($blue, 0.05);
+        border-radius: $br-md;
       }
     }
   }
