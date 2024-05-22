@@ -750,6 +750,11 @@ img.in-article {
   opacity: 0.8;
   line-height: 1.65rem;
   margin: 0 8rem 0.5rem;
+  font-family: $font-family-secondary, sans-serif;
+
+  @media screen and (max-width: 768px) {
+    margin: 0 0 0.5rem;
+  }
 }
 
 .story-time ul {
