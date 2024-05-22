@@ -1,7 +1,7 @@
 <template>
   <main class="single-article container">
     <section class="article-extras">
-      <h1>Are your docs good?</h1>
+      <SectionTitle title="Quantifying your documentation's success" subtitle="by Rami James" />
       <AllPosts />
     </section>
     <section class="content">

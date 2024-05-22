@@ -1,8 +1,9 @@
 <template>
-  <section id="projects" ref="projects">
+  <section id="projects" class="general-main" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
-      <div>I make <span class="together">interfaces for the future</span> with your business and its users in mind.</div>
+      <SectionTitle title="Recent Work" subtitle="I make interfaces for the future with your business and its users in mind." />
     </section>
+    
     <section class="portfolio" ref="portfolio">
       <section class="works">
         <nuxt-link 
@@ -25,6 +26,8 @@
 </template>
 
 <script>
+
+import SectionTitle from './SectionTitle.vue';
 
 export default {
   data() {
@@ -112,6 +115,9 @@ export default {
     }, options);
 
     observer.observe(this.$refs.projects);
+  },
+  components: {
+    SectionTitle
   }
 
 }
@@ -125,8 +131,7 @@ export default {
 #projects {
   display: flex;
   flex-direction: row;
-  width:100vw;
-  background: $white;
+  margin: $spacing-md auto;
 
   @media screen and (max-width: 768px){
     flex-direction: column;
@@ -138,19 +143,9 @@ export default {
     justify-content: center;
     width:50vw;
     height:100vh;
-    padding: $spacing-lg;
-    color:$black;
-    font-size: $font-size-xxl;
-    font-family: $font-family-secondary;
-    font-weight:normal;
     z-index: 2;
     position: sticky;
     top:0;
-
-    div {
-      border-left: 4px solid $blue;
-      padding-left: $spacing-md;
-    }
 
     @media screen and (max-width: 768px){
       display: none;
@@ -163,12 +158,10 @@ export default {
 
   .portfolio {
     width:50vw;
-    padding: $spacing-lg;
-    background: $black;
     font-size: $font-size-xl;
     font-weight:bold;
     z-index: 2;
-    border-left: 4px solid $blue;
+    border-radius: $br-lg;
 
     @media screen and (max-width: 768px){
       width:100vw;
@@ -198,7 +191,7 @@ export default {
         background-size: cover;
         color:$white !important;
         transition: all 0.3s ease-in-out;
-        border-radius: $br-lg;
+        border-radius: $br-md;
         opacity: 0;
         scale:0.8; 
         position: relative;
@@ -254,22 +247,6 @@ export default {
     }
   }
 
-}
-
-.dark #projects {
-  background: $black;
-
-  .talk-to-me {
-    color:$white;
-
-    .together {
-      color: $blue;
-    }
-  }
-
-  .portfolio {
-    background: $white;
-  }
 }
 
 .animate-in {

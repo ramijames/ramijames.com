@@ -45,14 +45,14 @@ export default {
   border-radius: $br-sm;
   transition: all .06s ease-in-out;
   cursor:pointer;
-  background-color: $black;
+  background-color: $blue;
   color:$white !important;
   text-decoration: none;
   font-family: $font-family-secondary, sans-serif;
   font-weight:normal;
   font-size: $font-size-md;
   z-index: 1;
-  box-shadow: inset 0 0 6px rgba($blue, 0.8), 0 0 30px rgba($blue, 0.4);
+  box-shadow: inset 0 -4px 6px darken($blue, 14%), 0 1px 1px rgba($black, 0.4), 0 3px 3px rgba($black, 0.2), 0 10px 30px rgba($blue, 0.2);
   border: 2px solid $blue;
   transition: all 0.3s ease-in-out;
   

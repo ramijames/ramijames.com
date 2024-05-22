@@ -1,7 +1,7 @@
 <template>
   <main class="single-article container">
     <section class="article-extras">
-      <h1>Asking for help is a core developer skill</h1>
+      <SectionTitle title="Asking for help is a core developer skill" subtitle="by Rami James" />
       <AllPosts />
     </section>
     <section class="content">

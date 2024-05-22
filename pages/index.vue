@@ -1,9 +1,11 @@
 <template>
   <main>
     <Hero />
-    <Map />
+    <!-- <Map /> -->
     <Projects />
     <Services />
+    <GetToWork />
+    <Booking />
     <Footer />
     <Arrow />
   </main>
@@ -14,6 +16,8 @@
 import Hero from '/components/Hero.vue'
 import Projects from '/components/Projects.vue'
 import Services from '/components/Services.vue'
+import GetToWork from '/components/GetToWork.vue'
+import Booking from '/components/Booking.vue'
 import Footer from '/components/Footer.vue'
 import Arrow from '/components/Arrow.vue'
 import Map from '/components/Map.vue'
@@ -28,6 +32,8 @@ export default {
     Hero,
     Projects,
     Services,
+    GetToWork,
+    Booking,
     Footer,
     Arrow,
     Map

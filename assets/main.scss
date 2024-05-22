@@ -14,6 +14,7 @@ html,
 body {
  margin: 0;
  padding: 0;
+ background: $white;
  font-family: $font-family-main, sans-serif;
 }
 
@@ -30,48 +31,13 @@ a {
     }
 
 h1 { 
- font-size: 3.051rem; 
- line-height: 3.051rem;
- font-family: $font-family-main, sans-serif;
- font-weight:700;
- margin-bottom: 2rem;
- padding:0.5rem 0;
+  font-size: $font-size-mega;
+  line-height: $font-size-mega; 
+  font-family: $font-family-main, sans-serif;
+  font-weight:900;
+  margin-bottom: 2rem;
+  padding:0.5rem 0;
 }
-
-    h1.hyper-bold {
-      text-align: center;
-      font-size: 4.12rem; 
-      line-height: 4.12rem;
-      margin:0;
-      padding:0;
-      color:$black;
-
-      @media screen and (max-width: 768px) {
-        font-size: 3.051rem; 
-        line-height: 3.051rem;
-        
-      }
-    }
-
-    .dark h1.hyper-bold {
-      color:$white;
-    }
-
-    h1.home-bold {
-      font-size: 8dvw; 
-      line-height: 8dvw;
-      color:$black;
-
-      @media screen and (max-width: 768px) {
-        font-size: 3.051rem; 
-        line-height: 3.051rem;
-        
-      }
-    }
-
-    .dark h1.home-bold {
-      color:$white;
-    }
 
 @keyframes fadeIn {
   0% {
@@ -83,11 +49,12 @@ h1 {
 }
 
 h2 { 
- font-size: 2.441rem; 
+ font-size: $font-size-xxl;
+ line-height: $font-size-xxl * $multiplier; 
  font-family: $font-family-main, sans-serif;
  margin-top:4rem;
  margin-bottom:1rem;
- font-weight:normal;
+ font-weight:900;
 }
 
 h3 { 
@@ -95,7 +62,6 @@ h3 {
  font-family: $font-family-main, sans-serif;
  margin-top:2rem;
  margin-bottom:1rem;
- font-weight:normal;
 }
 
 h4 { 
@@ -167,14 +133,14 @@ p > strong {
 
 body,
 body.light {
-  color: #160B1D;
-  background-color: #f6f3f7;
+  color: $black;
+  background-color: $white;
   overflow-x: hidden;
 }
 
 body.dark {
-  background-color: rgb(34, 9, 50);
-  color: #ffffff;
+  background-color: $black;
+  color: $white;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -363,7 +329,7 @@ img.in-article {
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
-  padding: calc($spacing-xl + 2rem) $spacing-lg;
+  padding: calc($spacing-xl + 2rem) $spacing-md;
   margin: 0 auto;
 }
 
@@ -491,11 +457,17 @@ img.in-article {
       mix-blend-mode: lighten;
     }
 
+    .product-content h1 {
+      text-align: center;
+      margin:0 auto;
+      max-width:800px;
+    }
+
     .product-content h2,
     .product-content h3,
     .product-content h4 {
       text-align: center;
-      margin:$spacing-md auto;
+      margin:0 auto $spacing-md;
       max-width:600px;
     }
 

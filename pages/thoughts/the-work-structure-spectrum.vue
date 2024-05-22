@@ -1,7 +1,7 @@
 <template>
   <main class="single-article container">
     <section class="article-extras">
-      <h1>The Work Structure Spectrum</h1>
+      <SectionTitle title="The Work Structure Spectrum" subtitle="by Rami James" />
       <AllPosts />
     </section>
     <section class="content">

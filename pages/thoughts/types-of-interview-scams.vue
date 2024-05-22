@@ -1,7 +1,7 @@
 <template>
   <main class="single-article container">
     <section class="article-extras">
-      <h1>Types of Interview Scams</h1>
+      <SectionTitle title="Types of Interview Scams" subtitle="by Rami James" />
       <AllPosts />
     </section>
     <section class="content">

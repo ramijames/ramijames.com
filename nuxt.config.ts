@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Archivo Black': true,
+      'Inter': [400, 600, 700, 900],
       'Roboto': [400, 600, 700, 900],
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <main class="single-article container">
     <section class="article-extras">
-      <h1>Neurodiversity as software incompatibility</h1>
+      <SectionTitle title="Neurodiversity as software incompatibility" subtitle="by Rami James" />
       <AllPosts />
     </section>
     <section class="content">

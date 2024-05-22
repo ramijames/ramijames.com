@@ -1,10 +1,7 @@
 <template>
   <main class="general-main">
-    <section class="explanation">
-      <h1 class="general-bold center">On software and product development</h1>
-      <p class="center">Topic that I commonly cover are software, product development, agile processes, how teams work together, my kids and family, and of course, user experience and interface design.</p>
-    </section>
     <section class="general-content">
+      <SectionTitle title="Thoughts" subtitle="On software and product development" />
       <main class="articles">
         <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug" class="single-article">
           <img :src="article.image" :alt="article.title" />

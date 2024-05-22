@@ -2,7 +2,7 @@
   <main class="product-main">
     <section class="product-content">
       <img src="/products/food-for-future/fff-logo.svg" alt="Food for Future Logo" class="product-logo">
-      <h1 class="hyper-bold">Food For Future</h1>
+      <h1 class="centered">Food For Future</h1>
       <h4 class="centered">Decentralized data for funding farmers</h4>
       
       <div class="main-product-image fff" ref="image">

@@ -13,7 +13,7 @@
   <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
     <section class="mobile-nav-panel-links">
       <nuxt-link to="/" @click="closeMenu">Home</nuxt-link>
-      <nuxt-link to="/products" @click="closeMenu">Products</nuxt-link>
+      <nuxt-link to="/products" @click="closeMenu">Recent Work</nuxt-link>
       <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
       <nuxt-link to="/about" @click="closeMenu">About</nuxt-link>
     </section>
@@ -114,7 +114,7 @@ export default {
       width: 40px;
       height: 2px;
       backdrop-filter: blur(4px);
-      background: rgba($black, 0.8);
+      background: $blue;
       transform-origin: center;
       transition: all 0.24s ease-in-out;
     }
@@ -127,7 +127,7 @@ export default {
       width: 40px;
       height: 2px;
       backdrop-filter: blur(4px);
-      background: rgba($black, 0.8);
+      background: $blue;
       transform-origin: center;
       transition: all 0.24s ease-in-out;
     }
@@ -219,10 +219,9 @@ export default {
           flex-direction: column;
           justify-content: center;
           gap: $spacing-sm;
-          color: $black;
+          color: $blue;
           font-size: $font-size-xxl;
-          font-weight:bold;
-          text-transform: uppercase;
+          font-weight:900;
           text-decoration: none;
 
           @media screen and (max-width: 768px){

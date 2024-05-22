@@ -1,7 +1,7 @@
 <template>
   <main class="single-article container">
     <section class="article-extras">
-      <h1>Package dependency hell</h1>
+      <SectionTitle title="Package dependency hell" subtitle="by Rami James" />
       <AllPosts />
     </section>
     <section class="content">

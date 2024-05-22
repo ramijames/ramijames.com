@@ -1,7 +1,7 @@
 <template>
   <main class="single-article container">
     <section class="article-extras">
-      <h1>Docs Deserve More Respect</h1>
+      <SectionTitle title="Docs Deserve More Respect" subtitle="by Rami James" />
       <AllPosts />
     </section>
     <section class="content">
