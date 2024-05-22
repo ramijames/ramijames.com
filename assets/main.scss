@@ -219,21 +219,9 @@ input {
 }
 
     .article-extras {
-      width:500px;
       display:flex;
       flex-direction: column;
-      margin-right: 4rem;
       position: relative;
-      height: 80vh;
-      overflow-y: auto;
-      position: -webkit-sticky;
-      position: sticky;
-      top: calc($spacing-xl + 2rem);
-      padding-right: 2rem;
-
-      @media screen and (max-width: 1000px) {
-        height: auto;
-      }
     }
 
         .article-extras h1 {
@@ -313,24 +301,24 @@ input {
       background-color: rgb(43, 11, 64);
     }
 
-.single-article h1 {
-  line-height: 2.8rem;
-  font-size: 2.441rem; 
-}
+// .single-article h1 {
+//   line-height: 2.8rem;
+//   font-size: 2.441rem; 
+// }
 
-.single-article h1,
-.single-article h2,
-.single-article h3,
-.single-article h4{
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.5px;
-}
+// .single-article h1,
+// .single-article h2,
+// .single-article h3,
+// .single-article h4{
+//   margin-bottom: 1.5rem;
+//   letter-spacing: -0.5px;
+// }
 
-.single-article h2,
-.single-article h3,
-.single-article h4 {
-  margin-top: 4rem;
-}
+// .single-article h2,
+// .single-article h3,
+// .single-article h4 {
+//   margin-top: 4rem;
+// }
 
 .single-article p {
   line-height: 2.4rem;
@@ -372,10 +360,12 @@ img.in-article {
 .container,
 .general-main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 2rem;
   width: 100%;
+  max-width: 1200px;
   padding: calc($spacing-xl + 2rem) $spacing-lg;
+  margin: 0 auto;
 }
 
     .general-main.white {
@@ -385,7 +375,7 @@ img.in-article {
     @media screen and (max-width: 1400px) {
       .container,
       .general-main {
-        padding: calc($spacing-xl + 2rem) $spacing-lg;
+        padding: calc($spacing-xl + 4rem) $spacing-lg;
       }
     }
 
@@ -393,14 +383,14 @@ img.in-article {
       .container,
       .general-main {
         flex-direction: column;
-        padding: calc($spacing-xl + 2rem) $spacing-lg;
+        padding: calc($spacing-xl + 4rem) $spacing-lg;
       }
     }
 
     @media screen and (max-width: 768px) {
       .container,
       .general-main {
-        padding: calc($spacing-lg + 2rem) $spacing-md;
+        padding: calc($spacing-lg + 4rem) $spacing-md;
       }
     }
 
@@ -410,7 +400,6 @@ img.in-article {
       width: 100%;
       height: auto;
       margin-bottom:4rem;
-      margin-left: calc(400px + 2rem);
     }
 
         @media screen and (max-width: 1000px) {
@@ -436,29 +425,6 @@ img.in-article {
         .dark .general-content img {
           background-color: rgb(43, 11, 64);
         }
-
-    .explanation {
-      max-width: 380px;
-      position: -webkit-sticky;
-      position: fixed;
-      top: calc($spacing-xl + 2rem);
-    }
-
-    @media screen and (max-width: 1000px) {
-      .explanation {
-        width: 100%;
-        max-width: 100%;
-        padding:0rem;
-        position: relative;
-        top:0;
-      }
-    }
-
-    @media screen and (max-width: 1000px) {
-      .explanation h1 {
-        font-size: 2rem;
-      } 
-    }
 
 /* Product */
 

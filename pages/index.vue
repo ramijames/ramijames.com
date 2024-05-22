@@ -42,11 +42,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+
+@import './assets/variables';
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 </style>

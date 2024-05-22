@@ -171,7 +171,9 @@ export default {
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+@import './assets/variables';
 
 .about-main {
   display: flex;
@@ -250,7 +252,7 @@ h1.about-bold {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border-left:2px solid #A131E7;
+  border-left:2px solid $black;
   margin:2rem 0 0 1rem;
 }
 
@@ -270,13 +272,13 @@ h1.about-bold {
           top:0rem;
           width: 6px;
           height: 6px;
-          background-color: white;
-          border:2px solid #A131E7;
+          background-color: $white;
+          border:2px solid $black;
           border-radius: 50%;
         }
 
             .dark .single-job::before {
-              background-color: #190d28;
+              background-color: $black;
             }
 
         .single-job.triangle::before {
@@ -288,13 +290,13 @@ h1.about-bold {
           height: 0px;
           border-style: solid;
           border-width: 0 8px 10px 8px;
-          border-color: #f6f3f7 #f6f3f7 #A131E7 #f6f3f7;
+          border-color: $white $white $black $white;
           transform: rotate(0deg);
           border-radius: 0;
         }
 
             .dark .single-job.triangle::before {
-              border-color: transparent transparent #A131E7 transparent;
+              border-color: transparent transparent $black transparent;
               background-color: #190d28;
             }
 
@@ -310,7 +312,7 @@ h1.about-bold {
           margin-top:2rem;
           margin-bottom: 1rem;
           margin-left:2rem;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.144);
+          border-bottom: 1px solid rgba($black, 0.144);
           padding-bottom: .5rem;
         }
 
@@ -330,27 +332,28 @@ h1.about-bold {
         }
 
         .tiny-show-more {
-          color: #000000;
+          color: $black;
           cursor: pointer;
           text-decoration: none;
           padding:0.15rem .45rem;
-          border:1px solid #0000001b;
+          border:1px solid rgba($black, 0.1);
           border-radius: 4px;
           margin-left:2rem;
           margin-top:1rem;
+          font-size: $font-size-sm;
         }
 
             .dark .tiny-show-more {
-              color: #FFFFFF;
-              border:1px solid #FFFFFF1b;
+              color: $white;
+              border:1px solid rgba($white, 0.1);
             }
 
         .tiny-show-more:hover {
-          border:1px solid #000000FF;
+          border:1px solid rgba($black, 0.2);
         }
 
             .dark .tiny-show-more:hover {
-              border:1px solid #FFFFFFFF;
+              border:1px solid $white;
             }
 
 
