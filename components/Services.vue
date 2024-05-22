@@ -69,7 +69,7 @@
     z-index: 2;
 
     @media screen and (max-width: 1000px){
-      padding: $spacing-md 0;
+      padding: 0;
       font-size: $font-size-md;
     }
   }
@@ -94,6 +94,7 @@
 
       @media screen and (max-width: 768px){
         width: calc(50% - $spacing-md / 2);
+        font-size: $font-size-sm;
       }
 
       img {
@@ -102,6 +103,7 @@
         padding: $spacing-sm;
         background: rgba($blue, 0.05);
         border-radius: $br-md;
+        border: 1px solid rgba(lighten($blue,25%), .5);
       }
     }
   }
@@ -113,8 +115,7 @@
     z-index: 2;
 
     @media screen and (max-width: 768px){
-      width:100vw;
-      padding: $spacing-md;
+      width:100%;
       font-size: $font-size-md;
     }
 
@@ -127,7 +128,9 @@
       padding: $spacing-xl $spacing-xxl;
 
       @media screen and (max-width: 768px){
+        margin: $spacing-lg 0;
         padding: 0;
+        gap: 0; 
       }
 
       p {

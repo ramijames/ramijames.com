@@ -59,7 +59,7 @@
       <path d="M1603.5 165.5C1605.44 166.199 1606.43 166.5 1608.5 166.5" stroke="#1B1B20" stroke-width="3" stroke-linecap="round"/>
     </svg>
     <h1 class="centered">Your early stage Product Partner</h1>
-    <h4 class="centered small">Go from <span class="highlight">from vision &rarr; polished product</span> in a matter of weeks. With my help, you can skip the hiring phase and get right to work.</h4>
+    <h4 class="centered small">Go from <span class="highlight">vision &rarr; polished product</span> in a matter of weeks. With my help, you can skip the hiring phase and get right to work.</h4>
     <Button text="Get to work today" size="default" to="#get-to-work" />
     <section class="links">
       <div class="services-title">Jump to services</div>
@@ -223,6 +223,12 @@ export default {
       display: flex;
       justify-content: space-between;
       gap: $spacing-md;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: $spacing-sm;
+        
+      }
 
       a {
         text-decoration: none;
