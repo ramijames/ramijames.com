@@ -73,11 +73,6 @@ h1 {
       color:$white;
     }
 
-    h1.general-bold {
-      font-weight: bold;
-      margin:0 0 1rem;
-    }
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -164,6 +159,10 @@ p > strong {
   }
 }
 
+.center {
+  text-align: center;
+}
+
 /* Layout */
 
 body,
@@ -226,7 +225,7 @@ input {
 
         .article-extras h1 {
           font-weight: bold;
-          margin:0 0 2rem;
+          margin:0 $spacing-lg $spacing-md;
           z-index: 200;
           color: $black;
         }

@@ -1,9 +1,8 @@
 <template>
   <main class="general-main">
     <section class="explanation">
-      <h1 class="general-bold">Writing is thinking</h1>
-      <h4>I find writing a wonderful tool to hone ideas and develop concepts.</h4>
-      <p>Topics covered are software development, agile processes, teams working together, my family, and of course, design.</p>
+      <h1 class="general-bold center">On software and product development</h1>
+      <p class="center">Topic that I commonly cover are software, product development, agile processes, how teams work together, my kids and family, and of course, user experience and interface design.</p>
     </section>
     <section class="general-content">
       <main class="articles">
