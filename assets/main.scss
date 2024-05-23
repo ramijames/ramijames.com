@@ -57,7 +57,7 @@ h1 {
 
 h2 { 
   font-size: $font-size-max;
-  line-height: $font-size-max * $multiplier; 
+  line-height: $font-size-max * $multiplier-sm; 
   font-family: $font-family-main, sans-serif;
   margin-bottom:1rem;
   font-weight:900;
@@ -85,7 +85,7 @@ h4 {
   line-height: $font-size-xl * $multiplier; 
   font-family: $font-family-main, sans-serif;
   margin-bottom:1rem;
-  font-weight:normal;
+  font-weight:600;
   line-height: $spacing-md;
 
   @media screen and (max-width: 1000px) {

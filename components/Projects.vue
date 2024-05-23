@@ -7,7 +7,25 @@
                     It is now easier than ever to get your vision to market 
                     on-budget, on-time, and with style." 
       />
-      <Button text="See plans" size="default" to="#get-to-work" />
+      <Button text="Add your project" size="default" to="#get-to-work" />
+      <section id="company-logos">
+        <div class="images">
+          <img src="/social-proof/wix.png" alt="Wix" />
+          <img src="/social-proof/ibm.png" alt="IBM" />
+          <img src="/social-proof/spiral.png" alt="Spiral" />
+          <img src="/social-proof/wpt.png" alt="WPT" />
+          <img src="/social-proof/qmarkets.png" alt="Qmarkets" />
+          <img src="/social-proof/telos.png" alt="Telos" />
+        </div>
+        <div class="images">
+          <img src="/social-proof/wix.png" alt="Wix" />
+          <img src="/social-proof/ibm.png" alt="IBM" />
+          <img src="/social-proof/spiral.png" alt="Spiral" />
+          <img src="/social-proof/wpt.png" alt="WPT" />
+          <img src="/social-proof/qmarkets.png" alt="Qmarkets" />
+          <img src="/social-proof/telos.png" alt="Telos" />
+        </div>
+      </section>
       <!-- <section class="project-steps">
         <div class="step">
           <img src="/project-step-1.png">
@@ -328,6 +346,51 @@ export default {
     scale:0.8; 
   }
 
+}
+
+#company-logos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+  padding: $spacing-sm;
+  border: 1px solid rgba($black, 0.2);
+  border-radius: $br-lg;
+  max-width: 400px;
+  overflow-x: hidden;
+  min-height: 84px;
+  width: 100%;
+
+  .images {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-md;
+    animation: scrollX 30s linear infinite;
+  }
+
+  img {
+    width: 50px;
+    opacity: 0.5;
+  }
+}
+
+.dark #company-logos {
+  border: 1px solid rgba($white, 0.2);
+
+  img {
+    filter: invert(1);
+  }
+}
+
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 </style>

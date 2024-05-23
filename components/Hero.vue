@@ -71,30 +71,30 @@
           <span class="number">01</span> 
           <span class="title">Recent Work</span>
         </a>
-        <a href="#ux-ui">
+        <!-- <a href="#ux-ui">
           <span class="number">02</span> 
           <span class="title">The Better Way to Work</span>
-        </a>
+        </a> -->
         <a href="#build">
-          <span class="number">03</span> 
+          <span class="number">02</span> 
           <span class="title">Member Perks</span>
         </a>
-        <a href="#build">
+        <!-- <a href="#build">
           <span class="number">04</span> 
           <span class="title">Types of Designs</span>
-        </a>
+        </a> -->
         <a href="#build">
-          <span class="number">05</span> 
+          <span class="number">03</span> 
           <span class="title">Join Today</span>
         </a>
         <a href="#build">
-          <span class="number">06</span> 
+          <span class="number">04</span> 
           <span class="title">Common Questions</span>
         </a>
-        <a href="#build">
+        <!-- <a href="#build">
           <span class="number">07</span> 
           <span class="title">Book a Call</span>
-        </a>
+        </a> -->
       </section>
     </section>
   </main>
