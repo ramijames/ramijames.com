@@ -1,7 +1,6 @@
 <template>
   <main>
     <Hero />
-    <!-- <Map /> -->
     <Projects />
     <Services />
     <GetToWork />

@@ -1,7 +1,21 @@
 <template>
   <section id="projects" class="general-main" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
-      <SectionTitle title="Recent Work" subtitle="I make interfaces for the future with your business and its users in mind." />
+      <SectionTitle title="A better way to get your product to market" subtitle="Product development as you knew it has evolved to fit your needs." />
+      <section class="project-steps">
+        <div class="step">
+          <img src="/project-step-1.png">
+          <p>Subscribe and request as many designs as you need.</p>
+        </div>
+        <div class="step">
+          <img src="/project-step-1.png">
+          <p>The average turnaround for a design is two days.</p>
+        </div>
+        <div class="step">
+          <img src="/project-step-1.png">
+          <p>We keep iterating until you are satisfied with the result.</p>
+        </div>
+      </section>
     </section>
     
     <section class="portfolio" ref="portfolio">
@@ -155,6 +169,28 @@ export default {
 
     .together {
       color: $blue;
+    }
+  }
+
+  .project-steps {
+    display:flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    .step {
+      display:flex;
+      flex-direction: row;
+      gap: $spacing-md;
+      align-items: center;
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+
+      p {
+        margin:0;
+      }
     }
   }
 
