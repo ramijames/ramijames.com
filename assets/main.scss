@@ -36,12 +36,13 @@ h1 {
   line-height: $font-size-mega; 
   font-family: $font-family-main, sans-serif;
   font-weight:900;
+  margin-top: 0;
   margin-bottom: 2rem;
   padding:0.5rem 0;
 
   @media screen and (max-width: 1200px) {
-    font-size: $font-size-xxl;
-    line-height: $font-size-xxl;
+    font-size: $font-size-max;
+    line-height: $font-size-max;
   }
 }
 
@@ -55,63 +56,82 @@ h1 {
 }
 
 h2 { 
- font-size: $font-size-xxl;
- line-height: $font-size-xxl * $multiplier; 
- font-family: $font-family-main, sans-serif;
- margin-top:4rem;
- margin-bottom:1rem;
- font-weight:900;
+  font-size: $font-size-max;
+  line-height: $font-size-max * $multiplier; 
+  font-family: $font-family-main, sans-serif;
+  margin-bottom:1rem;
+  font-weight:900;
+
+  @media screen and (max-width: 1000px) {
+    font-size: $font-size-xxl;
+    line-height: $font-size-xxl * $multiplier;
+  }
 }
 
 h3 { 
- font-size: 1.953rem; 
- font-family: $font-family-main, sans-serif;
- margin-top:2rem;
- margin-bottom:1rem;
+  font-size: $font-size-xxl; 
+  line-height: $font-size-xxl * $multiplier; 
+  font-family: $font-family-main, sans-serif;
+  margin-bottom:1rem;
+
+  @media screen and (max-width: 1000px) {
+    font-size: $font-size-xl;
+    line-height: $font-size-xl * $multiplier;
+  }
 }
 
 h4 { 
- font-size: 1.562rem; 
- font-family: $font-family-main, sans-serif;
- margin-top:2rem;
- margin-bottom:1rem;
- font-weight:normal;
- line-height: $spacing-md;
+  font-size: $font-size-xl; 
+  line-height: $font-size-xl * $multiplier; 
+  font-family: $font-family-main, sans-serif;
+  margin-bottom:1rem;
+  font-weight:normal;
+  line-height: $spacing-md;
 
-  @media screen and (max-width: 768px) {
-    font-size: $font-size-md;
-    line-height: $font-size-md;
+  @media screen and (max-width: 1000px) {
+    font-size: $font-size-lg;
+    line-height: $font-size-lg * $multiplier;
   }
 }
 
 h5 { 
- font-size: 1.25rem; 
- font-family: $font-family-main, sans-serif;
- margin-top:2rem;
- margin-bottom:1rem;
- font-weight:normal;
- line-height: $spacing-md;
+  font-size: $font-size-md; 
+  line-height: $font-size-md * $multiplier; 
+  font-family: $font-family-main, sans-serif;
+  margin-top: $spacing-md;
+  margin-bottom: $spacing-sm;
+  font-weight:normal;
+  line-height: $spacing-md;
+
+  @media screen and (max-width: 1000px) {
+    font-size: $font-size-md;
+    line-height: $font-size-md * $multiplier;
+  }
 }
 
-p { 
- font-size: 1rem; 
- font-family: $font-family-secondary, sans-serif;
- line-height: $spacing-md;
- margin-bottom: 1rem;
+p,
+li { 
+  font-size: $font-size-md; 
+  line-height: $font-size-md * $multiplier; 
+  font-family: $font-family-secondary, sans-serif;
+  line-height: $spacing-md;
+  margin-bottom: 1rem;
+
 }
 
 small { 
- font-size: 0.8rem; 
- font-family: 'Open Sans', sans-serif;
+  font-size: $font-size-sm;
+  line-height: $font-size-sm * $multiplier; 
+  font-family: 'Open Sans', sans-serif;
+
+  @media screen and (max-width: 1000px) {
+    font-size: $font-size-xs;
+    line-height: $font-size-xs * $multiplier;
+  }
 }
 
 ul {
   margin: 0 0 0 1rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-  padding-left:0.5rem;
 }
 
 hr {
@@ -191,45 +211,14 @@ input {
 
 .single-article {
   display:flex;
-  flex-direction: row;
+  padding-left: $spacing-xl !important;
+  padding-right: $spacing-xl !important;
+
+  @media screen and (max-width: 1000px) {
+    padding-left: $spacing-md !important;
+    padding-right: $spacing-md !important;
+  }
 }
-
-    .article-extras {
-      display:flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-        .article-extras h1 {
-          font-weight: bold;
-          margin:0 $spacing-lg $spacing-md;
-          z-index: 200;
-          color: $black;
-        }
-
-        .dark .article-extras h1 {
-          color: $white;
-        }
-
-        .article-extras.pinned {
-          top:40px;
-        }
-
-        @media screen and (max-width: 768px) {
-          .article-extras {
-            width:100%;
-            position: relative;
-            height: auto;
-          }
-        }
-
-        .article-extras .posts a {
-          margin-left:0px;
-          padding-top:$spacing-sm;
-          position: relative;
-          font-family: $font-family-secondary, sans-serif;
-          text-decoration: none;
-        }
 
     @media screen and (max-width: 1000px) {
       .single-article {
@@ -278,10 +267,9 @@ input {
     }
 
 .single-article p {
-  line-height: 2.4rem;
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: 1.5rem;
-  font-size: 1.2rem;
+  font-size: $font-size-md;
+  line-height: $font-size-md * $multiplier;
 }
 
 .single-article p img {

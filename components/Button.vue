@@ -49,10 +49,14 @@ export default {
   color:$white !important;
   text-decoration: none;
   font-family: $font-family-secondary, sans-serif;
-  font-weight:normal;
-  font-size: $font-size-md;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  font-size: $font-size-lg;
   z-index: 1;
-  box-shadow: inset 0 -4px 6px darken($blue, 14%), 0 1px 1px rgba($black, 0.4), 0 3px 3px rgba($black, 0.2), 0 10px 30px rgba($blue, 0.2);
+  box-shadow: inset 0 -4px 6px darken($blue, 14%), 
+              0 1px 3px rgba($black, 0.8), 
+              0 3px 3px rgba($black, 0.2), 
+              0 10px 30px rgba($blue, 0.4);
   border: 2px solid $blue;
   transition: all 0.3s ease-in-out;
   

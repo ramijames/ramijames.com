@@ -58,23 +58,42 @@
       <path d="M1588.5 188.5C1594.05 190.235 1598.73 189.962 1604.5 189.5" stroke="#1B1B20" stroke-width="3" stroke-linecap="round"/>
       <path d="M1603.5 165.5C1605.44 166.199 1606.43 166.5 1608.5 166.5" stroke="#1B1B20" stroke-width="3" stroke-linecap="round"/>
     </svg>
-    <h1 class="centered">Your early stage Product Partner</h1>
-    <h4 class="centered small">Go from <span class="highlight">vision &rarr; polished product</span> in a matter of weeks. With my help, you can skip the hiring phase and get right to work.</h4>
-    <Button text="Get to work today" size="default" to="#get-to-work" />
+    <h1 class="centered">Designing a product used to be slow, hard, and costly. <span class="highlight">Not anymore.</span></h1>
+    <h4 class="centered small">Specialized design subscriptions are now available as an alternative for smart builders.</h4>
+    <Button text="See plans" size="default" to="#get-to-work" />
     <section class="links">
-      <div class="services-title">Jump to services</div>
+      <div class="services-title">
+        <span>Jump to</span> 
+        <span>Section</span>
+      </div>
       <section class="links-row">
         <a href="#product-concept">
           <span class="number">01</span> 
-          <span class="title">Product Conception</span>
+          <span class="title">Recent Work</span>
         </a>
         <a href="#ux-ui">
           <span class="number">02</span> 
-          <span class="title">User Experience & Interface Design</span>
+          <span class="title">The Better Way to Work</span>
         </a>
         <a href="#build">
           <span class="number">03</span> 
-          <span class="title">Build</span>
+          <span class="title">Member Perks</span>
+        </a>
+        <a href="#build">
+          <span class="number">04</span> 
+          <span class="title">Types of Designs</span>
+        </a>
+        <a href="#build">
+          <span class="number">05</span> 
+          <span class="title">Join Today</span>
+        </a>
+        <a href="#build">
+          <span class="number">06</span> 
+          <span class="title">Common Questions</span>
+        </a>
+        <a href="#build">
+          <span class="number">07</span> 
+          <span class="title">Book a Call</span>
         </a>
       </section>
     </section>
@@ -156,24 +175,9 @@ export default {
     }
   }
 
-  h1 {
-    font-size: $font-size-mega;
-    margin: 0;
-
-    @media screen and (max-width: 1200px) {
-      font-size: $font-size-max;
-      line-height: $font-size-max;
-    }
-
-    @media screen and (max-width: 1000px) {
-      font-size: $font-size-xxl;
-      line-height: $font-size-xxl;
-    }
-  }
-
   .centered {
     text-align: center;
-    max-width: 800px;
+    max-width: 1400px;
     width:100%;
     margin-left: auto;
     margin-right: auto;
@@ -191,24 +195,11 @@ export default {
 
   .highlight {
     color: $blue;
-    padding: $spacing-xs;
-    background-color: rgba($blue, 0.1);
-    border-radius: $br-md;
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(lighten($blue,25%), .5);
-
-    @media screen and (max-width: 768px) {
-      padding: initial;
-      background-color: initial;
-      border-radius: initial;
-      backdrop-filter: initial;
-      border: initial;
-    }
   }
 
   .links {
     margin-top: $spacing-lg;
-    max-width: 800px;
+    max-width: 400px;
     width:100%;
 
     .services-title {
@@ -217,20 +208,25 @@ export default {
       margin-bottom: $spacing-sm;
       border-bottom: 1px solid rgba($black, 0.2);
       text-transform: uppercase;
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
 
     .links-row {
       display: flex;
       justify-content: space-between;
-      gap: $spacing-md;
+      gap: $spacing-sm;
+      flex-direction: column;
 
       @media screen and (max-width: 768px) {
-        flex-direction: column;
         gap: $spacing-sm;
-        
       }
 
       a {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
         text-decoration: none;
       }
 

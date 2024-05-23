@@ -1,6 +1,5 @@
 <template>
   <footer>
-    <div class="footer">
       <div class="footer-content">
         <div class="footer-logo">
           <img src="/logo-light.svg" alt="logo" />
@@ -11,37 +10,62 @@
           <a href="#">Services</a>
           <a href="#">Contact</a>
         </div>
-        <div class="footer-social">
-          <!-- <a href="#"><img src="~/assets/facebook.svg" alt="facebook" /></a>
-          <a href="#"><img src="~/assets/twitter.svg" alt="twitter" /></a>
-          <a href="#"><img src="~/assets/instagram.svg" alt="instagram" /></a> -->
-        </div>
+        <section class="mobile-nav-panel-contact">
+          <a href="https://github.com/ramijames"><img :src="`/github-${currentTheme}.svg`" alt="Github" /></a>
+          <a href="https://www.linkedin.com/in/rami-james/"><img :src="`/linkedin-${currentTheme}.svg`" alt="LinkedIn" /></a>
+          <a href="mailto:rami@ramijames.com"><img :src="`/mail-${currentTheme}.svg`" alt="Send Rami an email" /></a>
+          <a href="https://twitter.com/ramijames"><img :src="`/twitter-${currentTheme}.svg`" alt="Check out Rami's Twitter" /></a>
+        </section>
       </div>
-    </div>
   </footer>
 </template>
+<script>
+import { useThemeStore } from '~/store/theme'
+import { reactive, computed, onMounted, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
+
+export default {
+  setup() {
+    const themeStore = useThemeStore();
+
+    onMounted(() => {
+      watch(
+        () => themeStore.currentTheme,
+        (newTheme, oldTheme) => {
+          if (typeof document !== 'undefined') {
+            document.body.classList.remove(`${oldTheme}`)
+            document.body.classList.add(`${newTheme}`)
+          }
+        },
+        { immediate: true }
+      )
+    })
+
+    return {
+      currentTheme: computed(() => themeStore.currentTheme),
+    }
+  },
+  components: {
+    ThemeSwitcher
+  }
+}
+</script>
 
 <style scoped lang="scss">
 
 @import './assets/variables';
 
 footer {
-  width: 100vw;
-  background: $blue;
-  color: $white;
+  width: 100%;
   font-size: $font-size-xs;
   font-family: $font-family-secondary;
   font-weight: bold;
-  padding: $spacing-md $spacing-md;
-
-  .footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    padding: $spacing-md;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md;
 
   .footer-content {
     display: flex;
@@ -59,7 +83,6 @@ footer {
 
   .footer-links {
     a {
-      color: $white;
       text-decoration: none;
       margin-right: $spacing-md;
     }

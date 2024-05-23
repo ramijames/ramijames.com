@@ -1,7 +1,7 @@
 <template>
   <div class="section-title">
     <h2>{{ title }}</h2>
-    <h3>{{ subtitle }}</h3>
+    <h4>{{ subtitle }}</h4>
   </div>
 </template>
 
@@ -30,7 +30,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: $spacing-lg;
+  justify-content: flex-start;
+  margin-bottom: $spacing-md;
 
   h2 {
     margin-top: 0;
@@ -38,11 +39,6 @@ export default {
   }
 
   h3 {
-    font-size: $font-size-xl;
-    font-family: $font-family-secondary;
-    font-weight:normal;
-    opacity: 0.6;
-    line-height: $spacing-md * $multiplier;
     margin-top: 0;
   }
 }

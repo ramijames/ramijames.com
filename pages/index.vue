@@ -19,7 +19,6 @@ import GetToWork from '/components/GetToWork.vue'
 import Booking from '/components/Booking.vue'
 import Footer from '/components/Footer.vue'
 import Arrow from '/components/Arrow.vue'
-import Map from '/components/Map.vue'
 
 export default {
   data(){

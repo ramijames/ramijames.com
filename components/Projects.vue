@@ -1,8 +1,14 @@
 <template>
   <section id="projects" class="general-main" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
-      <SectionTitle title="A better way to get your product to market" subtitle="Product development as you knew it has evolved to fit your needs." />
-      <section class="project-steps">
+      <SectionTitle 
+          title="Proud to have designed for these companies" 
+          subtitle="Product development has evolved to fit your needs as a fledgling startup. 
+                    It is now easier than ever to get your vision to market 
+                    on-budget, on-time, and with style." 
+      />
+      <Button text="See plans" size="default" to="#get-to-work" />
+      <!-- <section class="project-steps">
         <div class="step">
           <img src="/project-step-1.png">
           <p>Subscribe and request as many designs as you need.</p>
@@ -15,7 +21,7 @@
           <img src="/project-step-1.png">
           <p>We keep iterating until you are satisfied with the result.</p>
         </div>
-      </section>
+      </section> -->
     </section>
     
     <section class="portfolio" ref="portfolio">
@@ -83,24 +89,24 @@ export default {
           slug: '/products/scatter',
           color: '#0899FE'
         },          
-        {
-          title: 'Crisp Tools',
-          description: 'A collection of useful tools for designers and developers',
-          image: '/crisp-tools.png',
-          bg: '/crisp-tools-bg.jpg',
-          status: 'current',
-          slug: '/products/crisp-tools',
-          color: '#D5E7FD'
-        },
-        {
-          title: 'Random Sandwich',
-          description: 'A social network based around randomly generated objects',
-          image: '/random-sandwich.png',
-          bg: '/random-sandwich-bg.jpg',
-          status: 'current',
-          slug: '/products/random-sandwich',
-          color: '#CCA32E'
-        },
+        // {
+        //   title: 'Crisp Tools',
+        //   description: 'A collection of useful tools for designers and developers',
+        //   image: '/crisp-tools.png',
+        //   bg: '/crisp-tools-bg.jpg',
+        //   status: 'current',
+        //   slug: '/products/crisp-tools',
+        //   color: '#D5E7FD'
+        // },
+        // {
+        //   title: 'Random Sandwich',
+        //   description: 'A social network based around randomly generated objects',
+        //   image: '/random-sandwich.png',
+        //   bg: '/random-sandwich-bg.jpg',
+        //   status: 'current',
+        //   slug: '/products/random-sandwich',
+        //   color: '#CCA32E'
+        // },
       ]
     }
   },
@@ -155,6 +161,7 @@ export default {
     display:flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     width:50vw;
     height:100vh;
     z-index: 2;
