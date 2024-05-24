@@ -168,7 +168,7 @@
 
         .include-item {
           &::before {
-            background: $white;
+            background: $black;
           }
         }
       }
@@ -223,6 +223,14 @@
         color: $white;
         text-shadow: 0 0 4px rgba($blue,1), 0 0 50px rgba($blue,1);
       }
+
+      .includes-list {
+        .include-item {
+          &::before {
+            background: $blue;
+          }
+        }
+      }
     }
 
     .select-row {
@@ -230,6 +238,14 @@
 
       .just-in-case {
         color: rgba($white, 0.5);
+      }
+    }
+
+    .includes-list {
+      .include-item {
+        &::before {
+          background: $white;
+        }
       }
     }
   }

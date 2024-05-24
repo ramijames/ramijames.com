@@ -45,18 +45,23 @@
   .types {
     display:flex;
     flex-direction: row;
-    gap: $spacing-sm;
+    gap: $spacing-xs;
     justify-content: center;
     align-items: center;
     max-width: 800px;
     flex-wrap: wrap;
 
     .single-type {
-      padding: $spacing-xs $spacing-md;
-      border-radius: $br-lg;
+      padding: $spacing-sm $spacing-md;
+      border-radius: $br-xl;
       background-color: $blue;
       color: $white;
       font-size: $font-size-md;
+
+      @media screen and (max-width: 1000px){
+        padding: $spacing-xs $spacing-sm;
+        font-size: $font-size-sm;
+      }
     }
   }
 
@@ -75,6 +80,21 @@
     "one-bottom two-bottom three-bottom four-bottom";
   width: 100%;
   min-height: 65vh;
+
+  @media screen and (max-width: 1000px){
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    min-height: auto;
+
+    div {
+      width: calc(50% - $spacing-md / 2);
+      height: 200px;
+      background-color: $blue;
+      border-radius: $br-lg;
+    }
+  }
 
   div:nth-child(1) { 
     grid-area: one-top; 
@@ -104,24 +124,40 @@
     grid-area: three-top; 
     background-color: $blue;
     border-radius: $br-lg;
+    
+    @media screen and (max-width: 1000px){
+      display:none;
+    }
   }
 
   div:nth-child(6) { 
     grid-area: three-bottom; 
     background-color: $blue;
     border-radius: $br-lg;
+    
+    @media screen and (max-width: 1000px){
+      display:none;
+    }
   }
 
   div:nth-child(7) { 
     grid-area: four-top; 
     background-color: $blue;
     border-radius: $br-lg;
+    
+    @media screen and (max-width: 1000px){
+      display:none;
+    }
   }
 
   div:nth-child(8) { 
     grid-area: four-bottom; 
     background-color: $blue;
     border-radius: $br-lg;
+    
+    @media screen and (max-width: 1000px){
+      display:none;
+    }
   }
 
 }
@@ -134,5 +170,10 @@
 .three-bottom { grid-area: three-bottom; }
 .four-top { grid-area: four-top; }
 .four-bottom { grid-area: four-bottom; }
+
+.one { grid-area: one; }
+.two { grid-area: two; }
+.three { grid-area: three; }
+.four { grid-area: four; }
 
 </style>
