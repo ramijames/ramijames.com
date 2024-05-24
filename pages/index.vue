@@ -3,6 +3,7 @@
     <Hero />
     <Projects />
     <Services />
+    <TypesOfDesigns />
     <GetToWork />
     <Booking />
     <Footer />
@@ -15,6 +16,7 @@
 import Hero from '/components/Hero.vue'
 import Projects from '/components/Projects.vue'
 import Services from '/components/Services.vue'
+import TypesOfDesigns from '/components/TypesOfDesigns.vue'
 import GetToWork from '/components/GetToWork.vue'
 import Booking from '/components/Booking.vue'
 import Footer from '/components/Footer.vue'
@@ -30,6 +32,7 @@ export default {
     Hero,
     Projects,
     Services,
+    TypesOfDesigns,
     GetToWork,
     Booking,
     Footer,

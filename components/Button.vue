@@ -52,6 +52,7 @@ export default {
   font-weight: 700;
   letter-spacing: 0.05rem;
   font-size: $font-size-lg;
+  white-space:nowrap;
   z-index: 1;
   box-shadow: inset 0 -4px 6px darken($blue, 14%), 
               0 1px 3px rgba($black, 0.8), 

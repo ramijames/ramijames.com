@@ -15,7 +15,6 @@ html,
 body {
  margin: 0;
  padding: 0;
- background: $white;
  font-family: $font-family-main, sans-serif;
 }
 
@@ -81,16 +80,15 @@ h3 {
 }
 
 h4 { 
-  font-size: $font-size-xl; 
-  line-height: $font-size-xl * $multiplier; 
+  font-size: $font-size-lg; 
+  line-height: $font-size-lg * $multiplier; 
   font-family: $font-family-main, sans-serif;
   margin-bottom:1rem;
-  font-weight:600;
-  line-height: $spacing-md;
+  font-weight:400;
 
   @media screen and (max-width: 1000px) {
-    font-size: $font-size-lg;
-    line-height: $font-size-lg * $multiplier;
+    font-size: $font-size-md;
+    line-height: $font-size-md * $multiplier;
   }
 }
 

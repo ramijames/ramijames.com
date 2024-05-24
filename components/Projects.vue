@@ -2,7 +2,7 @@
   <section id="projects" class="general-main" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
       <SectionTitle 
-          title="Proud to have designed for these companies" 
+          title="I'm proud to have designed for these companies" 
           subtitle="Product development has evolved to fit your needs as a fledgling startup. 
                     It is now easier than ever to get your vision to market 
                     on-budget, on-time, and with style." 
@@ -26,20 +26,6 @@
           <img src="/social-proof/telos.png" alt="Telos" />
         </div>
       </section>
-      <!-- <section class="project-steps">
-        <div class="step">
-          <img src="/project-step-1.png">
-          <p>Subscribe and request as many designs as you need.</p>
-        </div>
-        <div class="step">
-          <img src="/project-step-1.png">
-          <p>The average turnaround for a design is two days.</p>
-        </div>
-        <div class="step">
-          <img src="/project-step-1.png">
-          <p>We keep iterating until you are satisfied with the result.</p>
-        </div>
-      </section> -->
     </section>
     
     <section class="portfolio" ref="portfolio">
@@ -185,11 +171,13 @@ export default {
     z-index: 2;
     position: sticky;
     top:0;
+    padding-right: $spacing-lg;
 
     @media screen and (max-width: 1000px){
       width: 100%;
       height: auto;
       position: relative;
+      padding-right:0;
     }
 
     .together {
@@ -271,7 +259,7 @@ export default {
         }
 
         @media screen and (max-width: 768px){
-          width:calc(100% - $spacing-md /2);
+          width:100%;
           border-radius: $br-sm;
         }
 
@@ -361,6 +349,10 @@ export default {
   overflow-x: hidden;
   min-height: 84px;
   width: 100%;
+
+  @media screen and (max-width: 1000px){
+    max-width: 100%;
+  }
 
   .images {
     display: flex;

@@ -38,7 +38,7 @@ export default {
     margin-bottom: $spacing-md;
   }
 
-  h3 {
+  h4 {
     margin-top: 0;
   }
 }

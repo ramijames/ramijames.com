@@ -58,31 +58,22 @@
       <path d="M1588.5 188.5C1594.05 190.235 1598.73 189.962 1604.5 189.5" stroke="#1B1B20" stroke-width="3" stroke-linecap="round"/>
       <path d="M1603.5 165.5C1605.44 166.199 1606.43 166.5 1608.5 166.5" stroke="#1B1B20" stroke-width="3" stroke-linecap="round"/>
     </svg>
-    <h1 class="centered">Designing a product used to be slow, hard, and costly. <span class="highlight">Not anymore.</span></h1>
+    <h1 class="centered">Designing a product used to be slow, hard, and expensive. <span class="highlight">Not anymore.</span></h1>
     <h4 class="centered small">Specialized design subscriptions are now available as an alternative for smart builders.</h4>
-    <Button text="See plans" size="default" to="#get-to-work" />
+    <Button text="See available plans" size="default" to="#get-to-work" />
     <section class="links">
       <div class="services-title">
-        <span>Jump to</span> 
-        <span>Section</span>
+        <span>Quickstart</span>
       </div>
       <section class="links-row">
         <a href="#product-concept">
           <span class="number">01</span> 
           <span class="title">Recent Work</span>
         </a>
-        <!-- <a href="#ux-ui">
-          <span class="number">02</span> 
-          <span class="title">The Better Way to Work</span>
-        </a> -->
         <a href="#build">
           <span class="number">02</span> 
           <span class="title">Member Perks</span>
         </a>
-        <!-- <a href="#build">
-          <span class="number">04</span> 
-          <span class="title">Types of Designs</span>
-        </a> -->
         <a href="#build">
           <span class="number">03</span> 
           <span class="title">Join Today</span>
@@ -91,10 +82,6 @@
           <span class="number">04</span> 
           <span class="title">Common Questions</span>
         </a>
-        <!-- <a href="#build">
-          <span class="number">07</span> 
-          <span class="title">Book a Call</span>
-        </a> -->
       </section>
     </section>
   </main>
@@ -161,8 +148,31 @@ export default {
   flex-direction: column;
   align-items: center;
   background-color: $white;
-  padding: $spacing-xl $spacing-md;
+  padding: $spacing-xl $spacing-xxl;
   width:100vw;
+
+  @media screen and (max-width: 1200px){
+    padding: $spacing-xl $spacing-lg $spacing-lg;
+  }
+
+  @media screen and (max-width: 768px){
+    padding: $spacing-xl $spacing-md $spacing-md;
+  }
+
+  h1 {
+    font-size: 3.8dvw;
+    line-height: 3.8dvw * $multiplier-sm;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 5dvw;
+      line-height: 5dvw * $multiplier-sm;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 6.4dvw;
+      line-height: 6.4dvw * $multiplier-sm;
+    }
+  }
 
   svg {
     width: 100%;
@@ -199,29 +209,31 @@ export default {
 
   .links {
     margin-top: $spacing-lg;
-    max-width: 400px;
+    max-width: 600px;
     width:100%;
+
+    @media screen and (max-width: 768px) {
+      display:none;
+    }
 
     .services-title {
       font-size: $font-size-sm;
       padding-bottom: $spacing-sm;
-      margin-bottom: $spacing-sm;
-      border-bottom: 1px solid rgba($black, 0.2);
+      letter-spacing: 0.1rem;
+      opacity: 0.5;
       text-transform: uppercase;
       display:flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
+      border-bottom: 1px solid rgba($blue, 0.2);
     }
 
     .links-row {
       display: flex;
       justify-content: space-between;
       gap: $spacing-sm;
-      flex-direction: column;
-
-      @media screen and (max-width: 768px) {
-        gap: $spacing-sm;
-      }
+      padding-top: $spacing-sm;
+      flex-direction: row;
 
       a {
         display:flex;
@@ -231,8 +243,7 @@ export default {
       }
 
       .number {
-        opacity: 0.5;
-        margin-right: $spacing-xs;
+        display:none;
       }
     }
   }
