@@ -3,7 +3,7 @@
     <section class="general-content">
       <SectionTitle title="Thoughts" subtitle="On software and product development" />
       <main class="articles">
-        <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug" class="single-article">
+        <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug">
           <img :src="article.image" :alt="article.title" />
           <span class="title">{{ article.title }}</span>
           <span class="date">{{ article.date }}</span>

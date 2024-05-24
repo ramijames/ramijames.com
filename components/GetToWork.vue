@@ -117,8 +117,8 @@
 
       &.growth {
         box-shadow: inset 0 0 30px 10px $white, 0 0 30px 10px rgba($blue,0.1);
-        background: linear-gradient(140deg, rgba($blue, 0.4) 0%, white 20%) padding-box,
-                    linear-gradient(-40deg, rgba($blue,0.35) 20%, white 45%) border-box;
+        background: linear-gradient(140deg, rgba($blue, 0.4) 0%, $white 20%) padding-box,
+                    linear-gradient(-40deg, rgba($blue,0.35) 20%, $white 45%) border-box;
         border: 1px solid transparent;
 
         .plan-type {

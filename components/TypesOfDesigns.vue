@@ -3,14 +3,14 @@
   <section id="types-of-designs" class="general-main">
     <h2>Hassle-free designs for apps, websites, landing pages & more</h2>
     <div class="types">
-      <div class="single-type">Branding</div>
-      <div class="single-type">Design Systems</div>
-      <div class="single-type">Online apps</div>
-      <div class="single-type">Mobile apps</div>
-      <div class="single-type">Iconography</div>
-      <div class="single-type">Illustrations</div>
-      <div class="single-type">Pitch decks</div>
-      <div class="single-type">Logos</div>
+      <div class="single-type"><span>Branding</span></div>
+      <div class="single-type"><span>Design Systems</span></div>
+      <div class="single-type"><span>Online apps</span></div>
+      <div class="single-type"><span>Mobile apps</span></div>
+      <div class="single-type"><span>Iconography</span></div>
+      <div class="single-type"><span>Illustrations</span></div>
+      <div class="single-type"><span>Pitch decks</span></div>
+      <div class="single-type"><span>Logos</span></div>
     </div>
 
     <div class="work-grid">
@@ -54,9 +54,78 @@
     .single-type {
       padding: $spacing-sm $spacing-md;
       border-radius: $br-xl;
-      background-color: $blue;
-      color: $white;
+      border: 2px solid $blue;
       font-size: $font-size-md;
+
+      span {
+        color: $black;
+      }
+
+      &:nth-child(1) { 
+        border-color: $green; 
+
+        span {
+          color: $green;
+        }
+      }
+
+      &:nth-child(2) { 
+        border-color: $purple; 
+
+        span {
+          color: $purple;
+        }
+      }
+
+      &:nth-child(3) { 
+        border-color: $blue; 
+
+        span {
+          color: $blue;
+        }
+      }
+
+      &:nth-child(4) { 
+        border-color: $teal; 
+
+        span {
+          color: $teal;
+        }
+      }
+
+      &:nth-child(5) { 
+        border-color: $orange; 
+
+        span {
+          color: $orange;
+        }
+      }
+
+      &:nth-child(6) { 
+        border-color: $pink; 
+
+        span {
+          color: $pink;
+        }
+      }
+
+      &:nth-child(7) { 
+        border-color: $blue; 
+
+        span {
+          color: $blue;
+        }
+      }
+
+      &:nth-child(8) { 
+        border-color: $green; 
+
+        span {
+          color: $green;
+        }
+      }
+
+
 
       @media screen and (max-width: 1000px){
         padding: $spacing-xs $spacing-sm;

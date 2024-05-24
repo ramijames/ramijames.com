@@ -237,7 +237,7 @@ export default {
         background-size: cover;
         color:$white !important;
         transition: all 0.3s ease-in-out;
-        border-radius: $br-md;
+        border-radius: $br-lg;
         opacity: 0;
         scale:0.8; 
         position: relative;

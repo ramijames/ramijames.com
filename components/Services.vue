@@ -87,6 +87,8 @@
       width: 100%;
       height: auto;
       position: relative;
+      padding-right: 0;
+      padding-bottom: $spacing-lg;
     }
   
   }
@@ -110,6 +112,11 @@
       p {
         margin: 0;
         font-size: $font-size-lg;
+
+        @media screen and (max-width: 1000px) {
+          font-size: $font-size-md;
+          line-height: $font-size-md * $multiplier;
+        }
       }
     }
   }
@@ -142,10 +149,7 @@
 
     @media screen and (max-width: 1000px){
       grid-template-columns: 1fr 1fr;
-    }
-
-    @media screen and (max-width: 768px){
-      grid-template-columns: 1fr;
+      gap: $spacing-md;
     }
 
     .perk {
