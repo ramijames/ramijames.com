@@ -304,10 +304,10 @@ img.in-article {
 .general-main {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: $spacing-md;
   width: 100%;
   max-width: 1200px;
-  padding: calc($spacing-xl + 2rem) $spacing-md;
+  padding: calc($spacing-xl + 2rem) $spacing-lg;
   margin: 0 auto;
 }
 

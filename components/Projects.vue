@@ -155,7 +155,7 @@ export default {
 #projects {
   display: flex;
   flex-direction: row;
-  margin: $spacing-md auto;
+  margin: 0 auto;
 
   @media screen and (max-width: 1000px){
     flex-direction: column;

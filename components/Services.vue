@@ -9,20 +9,20 @@
     </section>
     <section id="proven-steps">
       <div class="step">
-        <img src="/project-step-1.png" alt="Subscribe and request as many designs as you need.">
+        <img src="/services/design.png" alt="Subscribe and request as many designs as you need.">
         <p>Add as many designs as you need to the queue.</p>
       </div>
       <div class="step">
-        <img src="/project-step-1.png" alt="Subscribe and request as many designs as you need.">
+        <img src="/services/time.png" alt="Subscribe and request as many designs as you need.">
         <p>The average turnaround for a design is two days.</p>
       </div>
       <div class="step">
-        <img src="/project-step-1.png" alt="Subscribe and request as many designs as you need.">
-        <p>We keep iterating until you are happy with the design.</p>
+        <img src="/services/iterate.png" alt="Subscribe and request as many designs as you need.">
+        <p>We keep iterating until you are satisfied.</p>
       </div>
       <div class="step">
-        <img src="/project-step-1.png" alt="Subscribe and request as many designs as you need.">
-        <p>Keep on going! We know there’s always one-more-thing.</p>
+        <img src="/services/succeed.png" alt="Subscribe and request as many designs as you need.">
+        <p>Keep on working! Let's build something great.</p>
       </div>
     </section>
   </section>
@@ -30,32 +30,32 @@
     <h2>Membership perks</h2>
     <section id="perks">
       <div class="perk">
-        <img src="/perks/perk-1.png" alt="No waiting">
+        <Icon />
         <h5>No waiting. No meetings. Just get things done.</h5>
         <p>Asynchronous work means that you don’t lose time waiting for a matching hole in our busy schedules.</p>
       </div>
       <div class="perk">
-        <img src="/perks/perk-2.png" alt="Trello">
+        <Icon />
         <h5>Easy project management with Trello.</h5>
         <p>No complex project management. Simply create a task in Trello, and watch it fly through the process queue.</p>
       </div>
       <div class="perk">
-        <img src="/perks/perk-3.png" alt="Teamwork makes the dream work">
+        <Icon />
         <h5>Everybody is welcome to join your subscription.</h5>
         <p>Each subscription is company-wide, which means that anyone in your organization who needs help gets it.</p>
       </div>
       <div class="perk">
-        <img src="/perks/perk-4.png" alt="Fixed-rate budget">
+        <Icon />
         <h5>Fixed-rate means you can budget accordingly.</h5>
         <p>It's impossible to run a successful business if you don't know the costs ahead of time. Let's make sure you do.</p>
       </div>
       <div class="perk">
-        <img src="/perks/perk-5.png" alt="Super-fast">
+        <Icon />
         <h5>Super-fast delivery so you can hit impossible targets</h5>
         <p>You’ve never worked with a designer who gets it done so fast. You won’t believe it.</p>
       </div>
       <div class="perk">
-        <img src="/perks/perk-6.png" alt="No AI">
+        <Icon />
         <h5>Always unique design, never AI-generated</h5>
         <p>Every design task is a custom piece of work that is never shared with other clients. We take pride in what we do for you.</p>
       </div>
@@ -124,7 +124,6 @@
 }
 
 .dark #services {
-  border-top: 1px solid rgba($white, 0.2);
 
   .service-explainer {
 
@@ -158,9 +157,8 @@
       align-items: center;
       gap: $spacing-sm;
 
-      img {
-        width: 80%;
-        height: auto;
+      .randomIcon {
+        width: 50%;
       }
 
       h5 {
