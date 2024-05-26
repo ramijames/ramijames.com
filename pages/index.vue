@@ -5,6 +5,7 @@
     <Services />
     <TypesOfDesigns />
     <GetToWork />
+    <CommonQuestions />
     <Booking />
     <Footer />
     <Arrow />
@@ -18,6 +19,7 @@ import Projects from '/components/Projects.vue'
 import Services from '/components/Services.vue'
 import TypesOfDesigns from '/components/TypesOfDesigns.vue'
 import GetToWork from '/components/GetToWork.vue'
+import CommonQuestions from '/components/CommonQuestions.vue'
 import Booking from '/components/Booking.vue'
 import Footer from '/components/Footer.vue'
 import Arrow from '/components/Arrow.vue'
@@ -34,6 +36,7 @@ export default {
     Services,
     TypesOfDesigns,
     GetToWork,
+    CommonQuestions,
     Booking,
     Footer,
     Arrow,
