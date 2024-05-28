@@ -36,6 +36,7 @@ export default {
   h2 {
     margin-top: 0;
     margin-bottom: $spacing-md;
+    color: $purple;
   }
 
   h4 {

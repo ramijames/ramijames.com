@@ -58,6 +58,10 @@ export default {
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 
+  @media screen and (max-width: 1200px){
+    font-size: $font-size-md;
+  }
+
   img {
     width: 100%;
     height: 100%;

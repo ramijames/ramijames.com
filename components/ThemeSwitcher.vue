@@ -82,7 +82,7 @@ img {
   width:32px;
   height:32px;
   border-radius: 50%;
-  box-shadow: 0 0 10px 0 rgba(yellow, 0.2);
+  box-shadow: 0 0 10px 0 rgba($orange-light, 0.2);
   background-color: rgb(140, 228, 250);
   transition: all 0.3s ease-in-out;
   overflow: hidden;
@@ -106,11 +106,11 @@ img {
   &.light { /* SUN */
     outline: 2px solid rgba($blue, 0.8);
     outline-offset: -4px;
-    box-shadow: 0 0 16px 0 rgba(yellow, 0.8);
-    background-color: yellow;
+    box-shadow: 0 0 16px 0 rgba($orange-light, 0.2);
+    background-color: $orange-light;
 
     &:after { /* SUN */
-      background: yellow;
+      background: $orange-light;
       right: 0px;
       top:0;
       box-shadow: inset 0 0 8px rgba($white, 0.2);

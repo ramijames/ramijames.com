@@ -1,13 +1,20 @@
 <template>
   <main id="hero" ref="animatorHero" class="general-main">
-    <section ref="bigwow" class="images">
+    <section class="images">
       <img ref="triangle" src="/shapes/hero-triangle.png" class="triangle" alt="Your project is layered">
       <img ref="hummingbird" src="/hummingbird.png" class="hummingbird" alt="Your project is beautiful">
+      <!-- <img ref="floating-shapes-1" src="/shapes/floating-shapes-1.png" class="floating-shapes-1" alt="Woooo!"> -->
     </section>
     <section class="text">
-      <h1>It's time for your product's vision to take flight</h1>
-      <h4 class="small">Specialized design subscriptions are now available as an alternative for smart builders who just want to get to work.</h4>
-      <Button text="See available plans" size="default" to="#get-to-work" />
+      <!-- <h1>Help your digital product to take flight</h1> -->
+      <h1>Concept.<br>Design.<br>Ship.</h1>
+      <div class="go-row">
+        <h4 class="small">Specialized design subscriptions are now available as an alternative for smart builders who just want to get to work.</h4>
+        <div class="button-row">
+          <Button text="See available plans" size="default" to="#get-to-work" />
+          <span>Capacity available</span>
+        </div>
+      </div>
     </section>
   </main>
   <section class="after-links">
@@ -47,15 +54,12 @@ export default {
   setup() {
     const triangle = ref(null);
     const hummingbird = ref(null);
-    const bigwow = ref(null);
 
     const handleScroll = () => {
-      if (triangle.value && hummingbird.value && bigwow.value) {
+      if (triangle.value && hummingbird.value) {
         const scrollY = window.scrollY;
-        triangle.value.style.transform = `translateY(${scrollY * 0.2}px)`;
-        triangle.value.style.opacity = 1 - scrollY * 0.002;
-        bigwow.value.style.opacity = 1 - scrollY * 0.002;
-        hummingbird.value.style.transform = `translateY(${scrollY * 0.1}px)`;
+        triangle.value.style.transform = `rotate(${ scrollY * .025 }deg) translateY(${scrollY * 0.2}px)`;
+        hummingbird.value.style.transform = `rotate(${ scrollY * -.008 }deg) translateY(${scrollY * 0.1}px)`;
       }
     };
 
@@ -69,8 +73,7 @@ export default {
 
     return {
       triangle,
-      hummingbird,
-      bigwow
+      hummingbird
     };
   },
 };
@@ -91,31 +94,137 @@ export default {
 
 #hero {
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   padding: $spacing-xl 0;
   margin-top: $spacing-md;
+  position: relative;
 
-  .triangle {
-    position: absolute;
-    right:10%;
-    top: 100px;
-    width: 40vw;
-  }
-
-  .hummingbird {
-    position: absolute;
-    right:15%;
-    top: 100px;
-    width: 35vw;
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .text {
     display:flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 50%;
     z-index: 2;
+    width: 55%;
+    position: relative;
+
+    @media screen and (max-width: 768px){
+      width: 100%;
+      margin-top: $spacing-md;
+    }
+  }
+
+  .go-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    position: relative;
+    width: 100%;
+
+    .button-row {
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+
+      @media screen and (max-width: 768px){
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $spacing-sm;
+
+      }
+
+      span {
+        font-size: $font-size-sm;
+        color: #7D4893;
+        margin-left: $spacing-sm;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: $green;
+          margin-right: $spacing-xs;
+        
+        }
+      }
+    }
+
+  }
+
+  .images {
+    width: 45%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px){
+      transform: scaleX(-1);
+    }
+
+    .triangle {
+        position: absolute;
+        left: -100px;
+        top: 100px;
+        height: 750px;
+        transition: all 0.35 ease-in-out;
+
+        @media screen and (max-width: 1200px){
+          position: absolute;
+          left: -100px;
+          top: 100px;
+          height: 750px;
+        }
+
+        @media screen and (max-width: 1000px){
+          position: absolute;
+          left: -50px;
+          top: 100px;
+          height: 550px;
+        }
+
+        @media screen and (max-width: 768px){
+          position: absolute;
+          left: -220px;
+          top: -80px;
+          height: 400px;
+        }
+      }
+
+      .hummingbird {
+        position: absolute;
+        left:-100px;
+        top: 150px;
+        height: 600px;
+        transition: all 0.35 ease-in-out;
+
+        @media screen and (max-width: 1200px){
+          position: absolute;
+          left:-100px;
+          top: 120px;
+          height: 600px;
+        }
+
+        @media screen and (max-width: 1000px){
+          position: absolute;
+          left:-50px;
+          top: 100px;
+          height: 500px;
+        }
+
+        @media screen and (max-width: 768px){
+          position: absolute;
+          left:-300px;
+          top: -50px;
+          height: 400px;
+        }
+      }
+
   }
 
   @media screen and (max-width: 1200px){
@@ -127,19 +236,8 @@ export default {
   }
 
   h1 {
-    font-size: 2.8dvw;
-    line-height: 2.8dvw * $multiplier-sm;
-    color: $purple-dark;
-
-    @media screen and (max-width: 1000px) {
-      font-size: 5dvw;
-      line-height: 5dvw * $multiplier-sm;
-    }
-
-    @media screen and (max-width: 768px) {
-      font-size: 6.4dvw;
-      line-height: 6.4dvw * $multiplier-sm;
-    }
+    color: #7E4894;
+    text-shadow: 3px 4px 0 darken($white, 10%);
   }
 
   svg {
@@ -155,6 +253,10 @@ export default {
 
   .small {
     margin-bottom: $spacing-md;
+
+    @media screen and (max-width: 768px){
+      margin-right: $spacing-xl;
+    }
   }
 
   .highlight {
@@ -164,7 +266,7 @@ export default {
 }
 
 .after-links {
-  margin-top: $spacing-lg;
+  margin-top: $spacing-xl;
   max-width: 600px;
   width:100%;
   z-index: 3;
@@ -214,20 +316,11 @@ export default {
 
 .dark #hero {
 
-  svg {
-
-    path {
-      stroke: lighten($blue,25%);
-    }
+  h1 {
+    color: $blue-light;
+    text-shadow: 3px 4px 0 darken($black-light, 10%);
   }
 
-  .services-title {
-    border-bottom: 1px solid rgba($white, 0.2);
-  }
-
-  .highlight {
-    color: lighten($blue,25%);
-  }
 }
 
 // #hero-for-the-zero {
