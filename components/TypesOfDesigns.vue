@@ -102,10 +102,10 @@
       }
 
       &:nth-child(6) { 
-        border-color: $pink; 
+        border-color: $mint; 
 
         span {
-          color: $pink;
+          color: $mint;
         }
       }
 

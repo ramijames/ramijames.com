@@ -9,11 +9,11 @@
     </section>
     <section id="proven-steps">
       <div class="step">
-        <img src="/services/design.png" alt="Subscribe and request as many designs as you need.">
+        <img src="/services/add.png" alt="Subscribe and request as many designs as you need.">
         <p>Add as many designs as you need to the queue.</p>
       </div>
       <div class="step">
-        <img src="/services/time.png" alt="Subscribe and request as many designs as you need.">
+        <img src="/services/calendar.png" alt="Subscribe and request as many designs as you need.">
         <p>The average turnaround for a design is two days.</p>
       </div>
       <div class="step">
@@ -21,7 +21,7 @@
         <p>We keep iterating until you are satisfied.</p>
       </div>
       <div class="step">
-        <img src="/services/succeed.png" alt="Subscribe and request as many designs as you need.">
+        <img src="/services/ok.png" alt="Subscribe and request as many designs as you need.">
         <p>Keep on working! Let's build something great.</p>
       </div>
     </section>

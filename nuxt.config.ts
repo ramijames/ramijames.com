@@ -24,8 +24,8 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Inter': [400, 600, 700, 900],
-      'Roboto': [400, 600, 700, 900],
+      'IBM Plex Mono': [400, 600, 700],
+      'Noto Sans': [400, 600, 700, 900],
     }
   }
 })
