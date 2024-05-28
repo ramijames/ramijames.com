@@ -34,7 +34,8 @@ h1 {
   font-size: $font-size-mega;
   line-height: $font-size-mega; 
   font-family: $font-family-main, sans-serif;
-  font-weight:900;
+  font-weight:500;
+  font-style: italic;
   margin-top: 0;
   margin-bottom: 2rem;
   padding:0.5rem 0;
@@ -311,10 +312,6 @@ img.in-article {
   margin: 0 auto;
 }
 
-    .general-main.white {
-      background-color: white;
-    }
-
     @media screen and (max-width: 1400px) {
       .container,
       .general-main {
@@ -386,7 +383,6 @@ img.in-article {
     }
 
 .product-content-bg {
-  background: #efefef;
   border-radius: 8px;
   margin:4rem 0;
   padding: 8rem 0;
@@ -486,7 +482,7 @@ img.in-article {
   width: 100%;
   height:auto;
   position: relative;
-  background-color: white;
+  background-color: $white-dark;
   padding:10px;
   border-radius: 10px;
   transform: rotate3d(1, 0, 0, 20deg);
