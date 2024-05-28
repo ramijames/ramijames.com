@@ -3,7 +3,9 @@
     <section class="images">
       <img ref="triangle" src="/shapes/hero-triangle.png" class="triangle" alt="Your project is layered">
       <img ref="hummingbird" src="/hummingbird.png" class="hummingbird" alt="Your project is beautiful">
-      <!-- <img ref="floating-shapes-1" src="/shapes/floating-shapes-1.png" class="floating-shapes-1" alt="Woooo!"> -->
+      <img ref="floatingShapes1" src="/shapes/floating-shapes-1.png" class="floating-shapes-1" alt="Woooo!">
+      <img ref="floatingShapes2" src="/shapes/floating-shapes-2.png" class="floating-shapes-2" alt="Woooo!">
+      <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
     </section>
     <section class="text">
       <!-- <h1>Help your digital product to take flight</h1> -->
@@ -54,12 +56,18 @@ export default {
   setup() {
     const triangle = ref(null);
     const hummingbird = ref(null);
+    const floatingShapes1 = ref(null);
+    const floatingShapes2 = ref(null);
+    const floatingShapes3 = ref(null);
 
     const handleScroll = () => {
-      if (triangle.value && hummingbird.value) {
+      if (triangle.value && hummingbird.value && floatingShapes1.value && floatingShapes2.value && floatingShapes3.value) {
         const scrollY = window.scrollY;
-        triangle.value.style.transform = `rotate(${ scrollY * .025 }deg) translateY(${scrollY * 0.2}px)`;
-        hummingbird.value.style.transform = `rotate(${ scrollY * -.008 }deg) translateY(${scrollY * 0.1}px)`;
+        triangle.value.style.transform = `translateY(${scrollY * -0.8}px)`;
+        hummingbird.value.style.transform = `translateY(${scrollY * -0.5}px)`;
+        floatingShapes1.value.style.transform = `translateY(${scrollY * -1}px)`;
+        floatingShapes2.value.style.transform = `translateY(${scrollY * -1}px)`;
+        floatingShapes3.value.style.transform = `translateY(${scrollY * -1}px)`;
       }
     };
 
@@ -73,7 +81,10 @@ export default {
 
     return {
       triangle,
-      hummingbird
+      hummingbird,
+      floatingShapes1,
+      floatingShapes2,
+      floatingShapes3,
     };
   },
 };
@@ -167,6 +178,75 @@ export default {
       transform: scaleX(-1);
     }
 
+    .floating-shapes-1 {
+      position: absolute;
+      right: 100px;
+      top: -100px;
+      transition: all 0.35 ease-in-out;
+      width: 200px;
+
+      @media screen and (max-width: 1200px){
+        width: 200px;
+        right: 200px;
+        top: -100px;
+      }
+
+      @media screen and (max-width: 1000px){
+        right: 200px;
+        top: -100px;
+        width: 200px;
+      }
+
+      @media screen and (max-width: 768px){
+        display: none;
+      }
+    }
+
+    .floating-shapes-2 {
+      position: absolute;
+      right: 100px;
+      bottom: -100px;
+      transition: all 0.35 ease-in-out;
+      width: 200px;
+
+      @media screen and (max-width: 1200px){
+        right: 100px;
+        bottom: -100px;
+        width: 200px;
+      }
+
+      @media screen and (max-width: 1000px){
+        right: 100px;
+        bottom: -100px;
+        width: 150px;
+      }
+
+      @media screen and (max-width: 768px){
+        right: 150px;
+        top: 500px;
+        width: 150px;
+      }
+    }
+
+    .floating-shapes-3 {
+      position: absolute;
+      left: 50px;
+      bottom: 50px;
+      transition: all 0.35 ease-in-out;
+      width: 150px;
+      z-index: -1;
+
+      @media screen and (max-width: 1200px){
+        right: 100px;
+        bottom: -100px;
+        width: 100px;
+      }
+
+      @media screen and (max-width: 1000px){
+        display: none;
+      }
+    }
+
     .triangle {
         position: absolute;
         left: -100px;
@@ -198,14 +278,15 @@ export default {
 
       .hummingbird {
         position: absolute;
-        left:-100px;
+        left:-50px;
         top: 150px;
         height: 600px;
         transition: all 0.35 ease-in-out;
+        z-index: 5;
 
         @media screen and (max-width: 1200px){
           position: absolute;
-          left:-100px;
+          left:-50px;
           top: 120px;
           height: 600px;
         }
