@@ -113,14 +113,9 @@ export default {
     padding: 0 $spacing-sm;
     border-radius: $br-sm;
     font-weight: bold;
-    background-color: $white;
-    color:$black !important;
-    border: 2px solid rgba($black, .1);
     box-shadow: none;
 
     &:hover {
-      background-color: darken($white, 10%);
-      color:$black !important;
       transform: scale(1.03);
     }
   }
@@ -139,11 +134,7 @@ export default {
 .dark .button {
   background-color: $white;
   color: $black !important;
-  box-shadow: 0 0 30px $blue;
-
-  &.small {
-    box-shadow: 0 0 30px $blue;
-  }
+  box-shadow: 0 0 30px rgba($red, 0.2);
 
   &.light {
     font-size: $font-size-sm;
@@ -156,9 +147,14 @@ export default {
     box-shadow: none;
 
     &:hover {
-      background-color: lighten($blue, 10%);
+      box-shadow: 0 0 30px rgba($red, 0.6);
       transform: scale(1.03);
     }
+  }
+
+  &:hover {
+    box-shadow: 0 0 30px rgba($red, 0.6);
+    transform: scale(1.03);
   }
 }
 

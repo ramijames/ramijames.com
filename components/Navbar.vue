@@ -6,7 +6,8 @@
         :class="`${mobileMenuOpen}`"
         @click="toggleMenu"
       ></div>
-      <Button text="Home" size="light" to="/" v-if="notHome" />
+      <img src="/logo-transparent.png" alt="Rami James" @click="toggleMenu" />
+      <Button text="◄ /" size="light" to="/" v-if="notHome" />
     </div>
     <ThemeSwitcher />
   </nav>
@@ -146,7 +147,7 @@ export default {
   }
 
   img {
-    width: 40px;
+    width: auto;
     height: 40px;
   }
 }

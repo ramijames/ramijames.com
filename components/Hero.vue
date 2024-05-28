@@ -1,10 +1,16 @@
 <template>
   <main id="hero" ref="animatorHero" class="general-main">
-    <!-- <Woosh class="desktop-only" /> -->
-    <!-- <h1 class="centered">Designing a product used to be slow, hard, and expensive. <span class="highlight">Not anymore.</span></h1> -->
-    <h1 class="centered">It's time for your product's vision to take flight</h1>
-    <h4 class="centered small">Specialized design subscriptions are now available as an alternative for smart builders who just want to get to work.</h4>
-    <Button text="See available plans" size="default" to="#get-to-work" />
+    <section ref="bigwow" class="images">
+      <img ref="triangle" src="/shapes/hero-triangle.png" class="triangle" alt="Your project is layered">
+      <img ref="hummingbird" src="/hummingbird.png" class="hummingbird" alt="Your project is beautiful">
+    </section>
+    <section class="text">
+      <h1>It's time for your product's vision to take flight</h1>
+      <h4 class="small">Specialized design subscriptions are now available as an alternative for smart builders who just want to get to work.</h4>
+      <Button text="See available plans" size="default" to="#get-to-work" />
+    </section>
+  </main>
+  <section class="after-links">
     <section class="links">
       <div class="services-title">
         <span>Quickstart</span>
@@ -28,50 +34,46 @@
         </a>
       </section>
     </section>
-  </main>
+  </section>
 </template>
 
 <script>
 
-import Woosh from './Woosh.vue'
 import Button from './Button.vue'
+import { onMounted, onUnmounted, ref } from 'vue';
 
 export default {
-  data(){
-    return {
-      title: 'Home'
-    }
-  },
+  // ...
   setup() {
-    return {
-      
-    }
-  },
-  components: {
-    Woosh  
-  },
-  mounted() {
-    const options = {
-      root: null, // viewport
-      rootMargin: '0px',
-      threshold: 0.2 // adjust as needed
+    const triangle = ref(null);
+    const hummingbird = ref(null);
+    const bigwow = ref(null);
+
+    const handleScroll = () => {
+      if (triangle.value && hummingbird.value && bigwow.value) {
+        const scrollY = window.scrollY;
+        triangle.value.style.transform = `translateY(${scrollY * 0.2}px)`;
+        triangle.value.style.opacity = 1 - scrollY * 0.002;
+        bigwow.value.style.opacity = 1 - scrollY * 0.002;
+        hummingbird.value.style.transform = `translateY(${scrollY * 0.1}px)`;
+      }
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-          entry.target.classList.remove('animate-out');
-        } else {
-          entry.target.classList.remove('animate-in');
-          entry.target.classList.add('animate-out');
-        }
-      });
-    }, options);
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll);
+    });
 
-    observer.observe(this.$refs.animatorHero);
-  }
-}
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+
+    return {
+      triangle,
+      hummingbird,
+      bigwow
+    };
+  },
+};
 
 </script>
 
@@ -90,11 +92,31 @@ export default {
 #hero {
   display:flex;
   flex-direction: column;
-  align-items: center;
-  padding: $spacing-xl $spacing-xxl;
-  width:100vw;
+  align-items: flex-start;
+  padding: $spacing-xl 0;
   margin-top: $spacing-md;
-  border-radius: $br-xl $br-xl 0 0;
+
+  .triangle {
+    position: absolute;
+    right:10%;
+    top: 100px;
+    width: 40vw;
+  }
+
+  .hummingbird {
+    position: absolute;
+    right:15%;
+    top: 100px;
+    width: 35vw;
+  }
+
+  .text {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 50%;
+    z-index: 2;
+  }
 
   @media screen and (max-width: 1200px){
     padding: $spacing-xl $spacing-lg $spacing-lg;
@@ -105,8 +127,9 @@ export default {
   }
 
   h1 {
-    font-size: 3.8dvw;
-    line-height: 3.8dvw * $multiplier-sm;
+    font-size: 2.8dvw;
+    line-height: 2.8dvw * $multiplier-sm;
+    color: $purple-dark;
 
     @media screen and (max-width: 1000px) {
       font-size: 5dvw;
@@ -130,32 +153,23 @@ export default {
     }
   }
 
-  .centered {
-    text-align: center;
-    max-width: 1400px;
-    width:100%;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 1;
-  }
-
-  .centered.small {
-    line-height: $spacing-md * $multiplier;
-    margin-bottom: $spacing-lg;
-
-    @media screen and (max-width: 768px) {
-      line-height: initial;
-    }
+  .small {
+    margin-bottom: $spacing-md;
   }
 
   .highlight {
     color: $blue;
   }
 
+}
+
+.after-links {
+  margin-top: $spacing-lg;
+  max-width: 600px;
+  width:100%;
+  z-index: 3;
+
   .links {
-    margin-top: $spacing-lg;
-    max-width: 600px;
-    width:100%;
 
     @media screen and (max-width: 768px) {
       display:none;
@@ -185,6 +199,10 @@ export default {
         flex-direction: row;
         justify-content: space-between;
         text-decoration: none;
+        font-family: $font-family-secondary;
+        font-weight: 400;
+        font-size: $font-size-md;
+        color: $red;
       }
 
       .number {
@@ -195,7 +213,6 @@ export default {
 }
 
 .dark #hero {
-  background-color: $black;
 
   svg {
 

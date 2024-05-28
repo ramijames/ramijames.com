@@ -13,9 +13,13 @@
 
 html, 
 body {
- margin: 0;
- padding: 0;
- font-family: $font-family-main, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-main, sans-serif;
+  background-image: url('/textures/texture-3-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Typography */
@@ -60,7 +64,7 @@ h2 {
   line-height: $font-size-max * $multiplier-sm; 
   font-family: $font-family-main, sans-serif;
   margin-bottom:1rem;
-  font-weight:900;
+  font-weight:500;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xxl;
@@ -73,6 +77,7 @@ h3 {
   line-height: $font-size-xxl * $multiplier; 
   font-family: $font-family-main, sans-serif;
   margin-bottom:1rem;
+  font-weight:500;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
@@ -83,9 +88,9 @@ h3 {
 h4 { 
   font-size: $font-size-lg; 
   line-height: $font-size-lg * $multiplier; 
-  font-family: $font-family-main, sans-serif;
+  font-family: $font-family-secondary, sans-serif;
   margin-bottom:1rem;
-  font-weight:400;
+  font-weight:500;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-md;
@@ -99,7 +104,7 @@ h5 {
   font-family: $font-family-main, sans-serif;
   margin-top: $spacing-md;
   margin-bottom: $spacing-sm;
-  font-weight:normal;
+  font-weight:500;
   line-height: $spacing-md;
 
   @media screen and (max-width: 1000px) {
