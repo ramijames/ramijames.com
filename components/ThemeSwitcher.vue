@@ -51,6 +51,11 @@ export default {
   position: fixed;
   padding: $spacing-md $spacing-md;
   cursor: pointer;
+
+  @media screen and (max-width: 768px){
+    right: $p-mobile;
+    top: $p-mobile;
+  }
 }
 
 .dark .theme-switcher-box {

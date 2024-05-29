@@ -102,10 +102,20 @@ export default {
   flex-direction: row;
   gap: $spacing-md;
 
+  @media screen and (max-width: 768px){
+    left: $p-mobile;
+    top: $p-mobile;
+  }
+
   .menu {
     width: 40px;
     height: 40px;
     position: relative;
+
+    @media screen and (max-width: 768px){
+      width: 30px;
+      height: 30px;
+    }
 
     &::before {
       content: '';
@@ -118,6 +128,10 @@ export default {
       background: $blue;
       transform-origin: center;
       transition: all 0.24s ease-in-out;
+
+      @media screen and (max-width: 768px){
+        width: 30px;
+      }
     }
 
     &::after {
@@ -131,6 +145,10 @@ export default {
       background: $blue;
       transform-origin: center;
       transition: all 0.24s ease-in-out;
+
+      @media screen and (max-width: 768px){
+        width: 30px;
+      }
     }
 
     &.true {
