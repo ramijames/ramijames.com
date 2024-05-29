@@ -542,36 +542,34 @@ img.in-article {
   height:auto;
   position: relative;
   background-color: $white-dark;
-  padding:10px;
-  border-radius: 10px;
+  border-radius: $br-lg;
   transform: rotate3d(1, 0, 0, 20deg);
   margin-bottom:2rem;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.063) 0px 10px 10px -3.75px;
 }
 
     .main-product-image img {
       width: 100%;
-      border-radius: .3rem;
+      border-radius: $br-lg;
       position: relative;
       z-index: 9;
       border:0;
-      box-shadow: 0 0 20px #ff9f671f, 0 0 80px #f636b615;
+      box-shadow: 0px 4px 0 darken($white-dark, 10%);
       margin-bottom: -4px;
     }
 
     .main-product-image video {
       width: 100%;
       height: auto;
-      border-radius: .3rem;
+      border-radius: $br-lg;
       position: relative;
       z-index: 9;
       border:0;
-      box-shadow: 0 0 20px #ff9f671f, 0 0 80px #f636b615;
+      box-shadow: 0px 4px 0 darken($white-dark, 10%);
     }
 
     .dark .main-product-image img,
     .dark .main-product-image video {
-      box-shadow: 0 0 20px #ff71d0e4, 0 0 80px #f636b672;
+      box-shadow: 0px 4px 0 darken($black-light, 10%);
       background-color: rgb(34, 9, 50);
     }
 
