@@ -3,9 +3,14 @@
     <h2>Common Questions about the service</h2>
   </section>
   <div class="questions general-main">
-    <div class="single-question" v-for="(question, index) in questions" :key="index">
-      <h4>{{ question.question }}</h4>
-      <p>{{ question.answer }}</p>
+    <!-- <div class="single-question closed" v-for="(question, index) in questions" :key="index">
+      <h4 class="question">{{ question.question }}</h4>
+      <p class="answer">{{ question.answer }}</p>
+    </div> -->
+
+    <div class="single-question" v-for="(question, index) in questions" :key="index" :class="{ open: openedQuestion === index, closed: openedQuestion !== index }">
+      <h4 class="question" @click="openQuestion(index)">{{ question.question }}</h4>
+      <p class="answer" v-if="openedQuestion === index">{{ question.answer }}</p>
     </div>
   </div>
 </template>
@@ -18,7 +23,7 @@ export default {
       questions: [
         {
           question: 'Why not just hire a designer full-time?',
-          answer: 'That’s a great question! At some point in your journey it may be beneficial for you to do so. If you’re just starting out, there is a real cost associated with searching for, vetting, and hiring a designer. Working with me, you can skip that phase and get straight to work today.'
+          answer: 'That’s a great question! At some point in your journey it may be beneficial for you to do so. If you’re just starting out, there is a real cost associated with searching for, vetting, and hiring a designer and a developer. Working with me, you can skip those phases and get straight to work today.'
         },
         {
           question: 'Why not hire an agency?',
@@ -33,16 +38,22 @@ export default {
           answer: 'That is something we can discuss in a one-on-one call. I have a limited number of slots available for clients who need more of my time. If you need more than what is available, we can discuss a custom plan that fits your needs.'
         },
         {
-          question: 'What if I do not like the designs?',
+          question: 'What if I do not like the designs or the implementation?',
           answer: 'I will keep iterating on the designs until you are satisfied. If you are not satisfied, you can cancel your subscription at any time. I want you to be happy with the work that I do for you.'
         },
         {
           question: 'Are there refunds if I don’t like the service?',
           answer: 'I do not offer refunds for the service. If you are not satisfied with the work, you can cancel your subscription at any time.'
         },
-      ]
+      ],
+      openedQuestion: null,
     }
-  }
+  },
+  methods: {
+    openQuestion(index) {
+      this.openedQuestion = index;
+    },
+  },
 }
 
 
@@ -59,10 +70,47 @@ export default {
 .questions {
   padding-top:0;
 
-  h4 {
-    color: $red;
-    font-family: $font-family-main;
-    font-size: $font-size-lg;
+  .single-question {
+    cursor: pointer;
+
+    &.closed {
+
+      .question {
+        color: $red;
+        font-family: $font-family-main;
+        font-size: $font-size-lg;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        &::after {
+          content: '+';
+          font-size: $font-size-xl;
+          transiation: all 0.3s ease-in-out;
+        }
+      }
+
+    }
+
+    &.open {
+
+      .question {
+        color: $purple;
+        font-family: $font-family-main;
+        font-size: $font-size-lg;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        &::after {
+          content: '+';
+          font-size: $font-size-xl;
+          transform: rotate(45deg);
+        }
+      }
+
+    }
+
   }
 }
 

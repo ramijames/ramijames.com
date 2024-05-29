@@ -14,14 +14,30 @@
     </div>
 
     <div class="work-grid">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div>
+        <img src="/juicy/juicy-climbing-monster.png" alt="Juicy examples of work" />
+      </div>
+      <div>
+        <img src="/juicy/juicy-expressicons.png" alt="Juicy examples of work" />
+      </div>
+      <div>
+        <img src="/juicy/juicy-finfluencers.png" alt="Juicy examples of work" />
+      </div>
+      <div>
+        <img src="/juicy/juicy-megacade.png" alt="Juicy examples of work" />
+      </div>
+      <div>
+        <img src="/juicy/juicy-src.png" alt="Juicy examples of work" />
+      </div>
+      <div>
+        <img src="/juicy/juicy-statshorizon.png" alt="Juicy examples of work" />
+      </div>
+      <div>
+        <img src="/juicy/juicy-tonara.png" alt="Juicy examples of work" />
+      </div>
+      <div>
+        <img src="/juicy/juicy-touchspin.png" alt="Juicy examples of work" />
+      </div>
     </div>
   </section>
 </template>
@@ -139,7 +155,7 @@
 .work-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
-  grid-template-rows: repeat(4, 1fr); 
+  grid-template-rows: repeat(4, 150px); 
   gap: $spacing-md;
   grid-auto-flow: row;
   grid-template-areas:
@@ -149,6 +165,14 @@
     "one-bottom two-bottom three-bottom four-bottom";
   width: 100%;
   min-height: 65vh;
+
+  div img {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: $br-lg;
+  }
 
   @media screen and (max-width: 1000px){
     display:flex;
@@ -160,38 +184,38 @@
     div {
       width: calc(50% - $spacing-md / 2);
       height: 200px;
-      background-color: $blue;
+      background-color: $white-dark;
       border-radius: $br-lg;
     }
   }
 
   div:nth-child(1) { 
     grid-area: one-top; 
-    background-color: $blue;
+    background-color: $white-dark;
     border-radius: $br-lg;
   }
 
   div:nth-child(2) { 
     grid-area: one-bottom; 
-    background-color: $blue;
+    background-color: $white-dark;
     border-radius: $br-lg;
   }
 
   div:nth-child(3) { 
     grid-area: two-top; 
-    background-color: $blue;
+    background-color: $white-dark;
     border-radius: $br-lg;
   }
 
   div:nth-child(4) { 
     grid-area: two-bottom; 
-    background-color: $blue;
+    background-color: $white-dark;
     border-radius: $br-lg;
   }
 
   div:nth-child(5) { 
     grid-area: three-top; 
-    background-color: $blue;
+    background-color: $white-dark;
     border-radius: $br-lg;
     
     @media screen and (max-width: 1000px){
@@ -201,7 +225,7 @@
 
   div:nth-child(6) { 
     grid-area: three-bottom; 
-    background-color: $blue;
+    background-color: $white-dark;
     border-radius: $br-lg;
     
     @media screen and (max-width: 1000px){
@@ -211,7 +235,7 @@
 
   div:nth-child(7) { 
     grid-area: four-top; 
-    background-color: $blue;
+    background-color: $white-dark;
     border-radius: $br-lg;
     
     @media screen and (max-width: 1000px){
@@ -221,7 +245,7 @@
 
   div:nth-child(8) { 
     grid-area: four-bottom; 
-    background-color: $blue;
+    background-color: $white-dark;
     border-radius: $br-lg;
     
     @media screen and (max-width: 1000px){
