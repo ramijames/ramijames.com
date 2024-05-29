@@ -1,6 +1,8 @@
 <template>
+  <Separator />
   <section id="booking" class="general-main">
     <a name="booking"></a>
+    <SectionTitle title="Book a call" subtitle="I'm happy to set aside a little time to chat with you about your project, answer your questions, and assuage your concerns." /> 
     <CalendlyInlineWidget v-bind="options" />
   </section>
 </template>

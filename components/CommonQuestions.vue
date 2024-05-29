@@ -1,4 +1,5 @@
 <template>
+  <Separator />
   <section id="common-questions" class="general-main">
     <a name="questions"></a>
     <h2>Common Questions about the service</h2>
