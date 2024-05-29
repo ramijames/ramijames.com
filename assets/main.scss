@@ -72,6 +72,10 @@ h2 {
     font-size: $font-size-xxl;
     line-height: $font-size-xxl * $multiplier;
   }
+
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 }
 
 .content h2 {
@@ -93,6 +97,10 @@ h3 {
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
     line-height: $font-size-xl * $multiplier;
+  }
+
+  @media screen and (max-width: 768px) {
+    text-align: center;
   }
 }
 

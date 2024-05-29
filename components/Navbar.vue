@@ -245,13 +245,13 @@ export default {
           flex-direction: column;
           justify-content: center;
           gap: $spacing-sm;
-          color: $blue;
+          color: $black;
           font-size: $font-size-xxl;
-          font-weight:900;
+          font-weight:500;
           text-decoration: none;
 
           @media screen and (max-width: 768px){
-            font-size: $font-size-md;
+            font-size: $font-size-xl;
           }
         }
 

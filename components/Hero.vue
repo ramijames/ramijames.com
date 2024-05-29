@@ -132,6 +132,8 @@ export default {
   padding: $spacing-xl 0;
   margin-top: $spacing-md;
   position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
 
   @media screen and (max-width: 768px){
     flex-direction: column;
@@ -230,20 +232,20 @@ export default {
     .floating-shapes-2 {
       position: absolute;
       right: 100px;
-      bottom: -100px;
+      bottom: 100px;
       transition: all 0.35 ease-in-out;
       width: 200px;
       animation: spin 190s linear infinite;
 
       @media screen and (max-width: 1200px){
         right: 100px;
-        bottom: -100px;
+        bottom: 100px;
         width: 200px;
       }
 
       @media screen and (max-width: 1000px){
         right: 100px;
-        bottom: -100px;
+        bottom: 100px;
         width: 150px;
       }
 
@@ -265,7 +267,7 @@ export default {
 
       @media screen and (max-width: 1200px){
         right: 100px;
-        bottom: -100px;
+        bottom: 100px;
         width: 100px;
       }
 

@@ -4,7 +4,7 @@
   </section>
   <div class="questions general-main">
     <div class="single-question" v-for="(question, index) in questions" :key="index">
-      <h3>{{ question.question }}</h3>
+      <h4>{{ question.question }}</h4>
       <p>{{ question.answer }}</p>
     </div>
   </div>
@@ -47,3 +47,23 @@ export default {
 
 
 </script>
+
+<style scoped lang="scss">
+
+@import './assets/variables';
+
+#common-questions {
+  padding-bottom: $spacing-lg;
+}
+
+.questions {
+  padding-top:0;
+
+  h4 {
+    color: $red;
+    font-family: $font-family-main;
+    font-size: $font-size-lg;
+  }
+}
+
+</style>

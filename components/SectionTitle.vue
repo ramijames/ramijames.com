@@ -33,6 +33,11 @@ export default {
   justify-content: flex-start;
   margin-bottom: $spacing-md;
 
+  @media screen and (max-width: 768px){
+    align-items: center;
+    text-align: center;
+  }
+
   h2 {
     margin-top: 0;
     margin-bottom: $spacing-md;

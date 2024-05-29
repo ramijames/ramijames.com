@@ -89,6 +89,7 @@
       position: relative;
       padding-right: 0;
       padding-bottom: $spacing-lg;
+      align-items: center;
     }
   
   }
@@ -157,8 +158,9 @@
       align-items: center;
       gap: $spacing-sm;
 
-      .randomIcon {
-        width: 50%;
+      img {
+        width: 75%;
+        height: auto;
       }
 
       h5 {

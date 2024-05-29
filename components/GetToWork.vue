@@ -66,7 +66,6 @@
 
   h2 {
     text-align: center;
-    margin-bottom: 0;
     margin-top: 0;
   }
 
@@ -80,7 +79,6 @@
 #post-work-question {
   h3 {
     text-align: center;
-    margin-bottom: 0;
     margin-top: $spacing-md;
   }
 }

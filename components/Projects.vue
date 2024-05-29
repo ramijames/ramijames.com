@@ -180,6 +180,11 @@ export default {
       padding-right:0;
     }
 
+    @media screen and (max-width: 768px){
+      align-items: center;
+      text-align: center;
+    }
+
     .together {
       color: $blue;
     }
