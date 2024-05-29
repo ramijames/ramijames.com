@@ -9,7 +9,7 @@
     <div class="plans">
       <div class="single-plan">
         <div class="plan-type">Standard</div>
-        <div class="plan-price">$3,995 /m</div>
+        <div class="plan-price">$3,995<span class="per-month">/month</span></div>
 
         <div class="plan-includes">What’s included?</div>
         <div class="includes-list">
@@ -29,7 +29,7 @@
 
       <div class="single-plan growth">
         <div class="plan-type">Growth</div>
-        <div class="plan-price">$6,295 /m</div>
+        <div class="plan-price">$6,295<span class="per-month">/month</span></div>
 
         <div class="plan-includes">What’s included?</div>
         <div class="includes-list">
@@ -110,22 +110,33 @@
       flex-direction: column;
       gap: $spacing-md;
       padding: $spacing-md;
-      border: 1px solid rgba($black, 0.2);
+      background-color: $white-dark;
       border-radius: $br-lg;
 
       &.growth {
-        box-shadow: inset 0 0 30px 10px $white, 0 0 30px 10px rgba($blue,0.1);
-        background: linear-gradient(140deg, rgba($blue, 0.4) 0%, $white 20%) padding-box,
-                    linear-gradient(-40deg, rgba($blue,0.35) 20%, $white 45%) border-box;
-        border: 1px solid transparent;
+
+        background: $blue-light;
 
         .plan-type {
           color: $white;
-          text-shadow: 0 0 20px $blue, 0 0 6px $blue;
         }
 
         .plan-price {
-          color: $blue;
+          color: $white;
+        }
+
+        .plan-includes {
+          color: $white;
+        }
+
+        .includes-list {
+          .include-item {
+            color: $white;
+
+            &::before {
+              background: $blue;
+            }
+          }
         }
 
         .select-row {
@@ -142,6 +153,11 @@
       .plan-price {
         font-size: $font-size-max;
         font-weight: 700;
+
+        .per-month {
+          font-size: $font-size-md;
+          font-weight: 400;
+        }
       }
 
       .plan-type {
@@ -209,13 +225,10 @@
 
 .dark #get-to-work {
   .single-plan {
-    border: 1px solid rgba($white, 0.2);
+    background-color: $black-light;
 
     &.growth {
-      box-shadow: inset 0 0 30px 10px $black, 0 0 30px 10px rgba($blue,0.2);
-      background: linear-gradient(140deg, rgba($blue, 0.4) 0%, $black 60%) padding-box,
-                  linear-gradient(-40deg, $blue 20%, rgba($white,0.2) 45%) border-box;
-      border: 1px solid transparent;
+      background: $blue-dark;
 
       .plan-price {
         color: $white;

@@ -1,16 +1,16 @@
 <template>
   <footer>
-      <div class="footer-content">
+      <div class="footer-content general-main">
         <div class="footer-logo">
-          <img src="/logo-light.svg" alt="logo" />
+          <img src="/logo-transparent.png" alt="logo" />
         </div>
         <div class="footer-links">
-          <a href="#">Home</a>
-          <a href="#">Projects</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
+          <nuxt-link href="/">Home</nuxt-link>
+          <nuxt-link href="/products">Products</nuxt-link>
+          <nuxt-link href="/thoughts">Thoughts</nuxt-link>
+          <nuxt-link href="/about">About</nuxt-link>
         </div>
-        <section class="mobile-nav-panel-contact">
+        <section class="footer-social">
           <a href="https://github.com/ramijames"><img :src="`/github-${currentTheme}.svg`" alt="Github" /></a>
           <a href="https://www.linkedin.com/in/rami-james/"><img :src="`/linkedin-${currentTheme}.svg`" alt="LinkedIn" /></a>
           <a href="mailto:rami@ramijames.com"><img :src="`/mail-${currentTheme}.svg`" alt="Send Rami an email" /></a>
@@ -58,14 +58,13 @@ export default {
 
 footer {
   width: 100%;
-  font-size: $font-size-xs;
-  font-family: $font-family-secondary;
+  font-size: $font-size-md;
+  font-family: $font-family-main;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-md;
 
   .footer-content {
     display: flex;
@@ -73,26 +72,37 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: 100vw;
+    padding-top: 0;
   }
 
   .footer-logo {
     img {
-      width: 100px;
+      width: 47px;
+      margin-bottom: $spacing-lg;
     }
   }
 
   .footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: $spacing-lg;
+
     a {
       text-decoration: none;
-      margin-right: $spacing-md;
+      font-weight: 500;
     }
   }
 
   .footer-social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: $spacing-lg;
+
     a {
       img {
-        width: 20px;
-        margin-right: $spacing-md;
+        width: 30px;
       }
     }
   }

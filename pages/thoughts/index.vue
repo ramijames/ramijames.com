@@ -11,6 +11,7 @@
       </main>
     </section>
   </main>
+  <Footer />
 </template>
 
 <script>
