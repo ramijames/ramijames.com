@@ -1,5 +1,6 @@
 <template>
   <section id="common-questions" class="general-main">
+    <a name="questions"></a>
     <h2>Common Questions about the service</h2>
   </section>
   <div class="questions general-main">

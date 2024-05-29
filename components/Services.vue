@@ -26,6 +26,7 @@
       </div>
     </section>
   </section>
+  <a name="perks"></a>
   <section id="member-perks" class="general-main">
     <h2>Membership perks</h2>
     <section id="perks">

@@ -29,19 +29,15 @@
         <span>Quickstart</span>
       </div>
       <section class="links-row">
-        <a href="#product-concept">
-          <span class="number">01</span> 
-          <span class="title">Recent Work</span>
-        </a>
-        <a href="#build">
+        <a href="#perks">
           <span class="number">02</span> 
           <span class="title">Member Perks</span>
         </a>
-        <a href="#build">
+        <a href="#join">
           <span class="number">03</span> 
           <span class="title">Join Today</span>
         </a>
-        <a href="#build">
+        <a href="#questions">
           <span class="number">04</span> 
           <span class="title">Common Questions</span>
         </a>
@@ -420,7 +416,6 @@ export default {
         font-family: $font-family-secondary;
         font-weight: 400;
         font-size: $font-size-md;
-        color: $red;
       }
 
       .number {

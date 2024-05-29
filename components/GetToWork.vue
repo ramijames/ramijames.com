@@ -1,5 +1,5 @@
 <template>
-  <a name="get-to-work"></a>
+  <a name="join"></a>
   <Separator />
   <section id="get-to-work-intro" class="general-main">
     <h2>Join today</h2>

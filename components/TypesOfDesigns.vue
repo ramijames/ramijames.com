@@ -165,13 +165,17 @@
     "one-bottom two-bottom three-bottom four-bottom";
   width: 100%;
   min-height: 65vh;
+  
 
-  div img {
-    width: 100%;
-    height: 100%;
-    max-height: 600px;
-    object-fit: cover;
-    border-radius: $br-lg;
+  div { 
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      border-radius: $br-lg;
+    }
   }
 
   @media screen and (max-width: 1000px){
