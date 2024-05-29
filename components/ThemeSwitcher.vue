@@ -94,6 +94,7 @@ img {
   position: relative;
   outline: 2px solid rgba($blue, 0.1);
   outline-offset: 2px;
+  margin: 4px 0;
 
   &:after { /* MOON */
     content: '';
