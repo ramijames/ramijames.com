@@ -66,6 +66,10 @@ footer {
   justify-content: space-between;
   align-items: center;
 
+  @media screen and (max-width: 768px){
+    font-size: $font-size-sm;
+  }
+
   .footer-content {
     display: flex;
     flex-direction: column;
@@ -88,6 +92,10 @@ footer {
     justify-content: space-between;
     gap: $spacing-lg;
 
+    @media screen and (max-width: 768px){
+      gap: 10vw;
+    }
+
     a {
       text-decoration: none;
       font-weight: 500;
@@ -99,6 +107,10 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     gap: $spacing-lg;
+
+    @media screen and (max-width: 768px){
+      gap: 10vw;
+    }
 
     a {
       img {
