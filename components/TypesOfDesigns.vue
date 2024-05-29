@@ -15,28 +15,28 @@
 
     <div class="work-grid">
       <div>
-        <img src="/juicy/juicy-climbing-monster.png" alt="Juicy examples of work" />
+        <img src="/juicy/juicy-tonara.png" alt="Juicy examples of work" />
       </div>
       <div>
-        <img src="/juicy/juicy-expressicons.png" alt="Juicy examples of work" />
+        <img src="/juicy/juicy-climbing-monster.png" alt="Juicy examples of work" />
       </div>
       <div>
         <img src="/juicy/juicy-finfluencers.png" alt="Juicy examples of work" />
       </div>
       <div>
-        <img src="/juicy/juicy-megacade.png" alt="Juicy examples of work" />
+        <img src="/juicy/juicy-u.png" alt="Juicy examples of work" />
       </div>
       <div>
-        <img src="/juicy/juicy-src.png" alt="Juicy examples of work" />
+        <img src="/juicy/juicy-cinq.png" alt="Juicy examples of work" />
       </div>
       <div>
         <img src="/juicy/juicy-statshorizon.png" alt="Juicy examples of work" />
       </div>
       <div>
-        <img src="/juicy/juicy-tonara.png" alt="Juicy examples of work" />
+        <img src="/juicy/juicy-touchspin.png" alt="Juicy examples of work" />
       </div>
       <div>
-        <img src="/juicy/juicy-touchspin.png" alt="Juicy examples of work" />
+        <img src="/juicy/juicy-k.png" alt="Juicy examples of work" />
       </div>
     </div>
   </section>
