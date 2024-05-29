@@ -86,6 +86,12 @@ export default {
 
 @import './assets/variables';
 
+.mobile-nav-bar {
+  position: sticky;
+  width: 100vw;
+  top: 0;
+}
+
 /* Don't show nav-panel by default */
 .mobile-nav-panel {
   display: none;
@@ -94,7 +100,7 @@ export default {
 .menu-switch {
   cursor: pointer;
   padding: $spacing-md $spacing-md;
-  position:fixed;
+  position:absolute;
   left: $p-desktop;
   top: $p-desktop;
   z-index: 10000;

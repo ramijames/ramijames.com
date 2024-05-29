@@ -198,6 +198,8 @@ export default {
 
     @media screen and (max-width: 768px){
       transform: scaleX(-1);
+      position: absollute;
+      right: 150px;
     }
 
     .floating-shapes-1 {

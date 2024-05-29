@@ -2,7 +2,7 @@
   <section id="common-questions" class="general-main">
     <h2>Common Questions about the service</h2>
   </section>
-  <div class="questions">
+  <div class="questions general-main">
     <div class="single-question" v-for="(question, index) in questions" :key="index">
       <h3>{{ question.question }}</h3>
       <p>{{ question.answer }}</p>

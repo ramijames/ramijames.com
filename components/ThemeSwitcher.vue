@@ -48,7 +48,7 @@ export default {
   right: $p-desktop;
   top: $p-desktop;
   z-index: 10000;
-  position: fixed;
+  position: absolute;
   padding: $spacing-md $spacing-md;
   cursor: pointer;
 
