@@ -90,6 +90,7 @@ export default {
   position: sticky;
   width: 100vw;
   top: 0;
+  z-index: 10000;
 }
 
 /* Don't show nav-panel by default */
