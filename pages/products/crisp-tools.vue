@@ -181,6 +181,7 @@
       <img src="/products/crisp-tools/crisp-tools-typescale.png" alt="Crisp Tools Text" class="single-product-image">
     </section>
   </main>
+  <Footer />
 </template>
 
 <script setup>

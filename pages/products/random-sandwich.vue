@@ -73,6 +73,7 @@
       <img src="/products/random-sandwich/random-sandwich-login.png" alt="Random Sandwich Login" class="single-product-image">
     </section>
   </main>
+  <Footer />
 </template>
 
 <script setup>

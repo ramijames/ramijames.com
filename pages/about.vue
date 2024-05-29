@@ -102,6 +102,7 @@
       </section>
     </section>
   </section>
+  <Footer />
 </template>
 
 <script>

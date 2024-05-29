@@ -41,6 +41,7 @@
     </section>
 
   </main>
+  <Footer />
 </template>
 
 <script setup>
