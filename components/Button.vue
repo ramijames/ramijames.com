@@ -57,6 +57,7 @@ export default {
   z-index: 1;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+  box-shadow: 3px 4px 0 darken($white, 10%);
 
   @media screen and (max-width: 1200px){
     font-size: $font-size-md;
@@ -138,7 +139,7 @@ export default {
 .dark .button {
   background-color: $white;
   color: $black !important;
-  box-shadow: 0 0 30px rgba($red, 0.2);
+  box-shadow: 3px 4px 0 darken($black-light, 10%);
 
   &.light {
     font-size: $font-size-sm;
@@ -157,7 +158,7 @@ export default {
   }
 
   &:hover {
-    box-shadow: 0 0 30px rgba($red, 0.6);
+    box-shadow: 5px 7px 0 darken($black-light, 10%);
     transform: scale(1.03);
   }
 }

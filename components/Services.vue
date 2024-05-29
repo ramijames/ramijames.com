@@ -30,32 +30,32 @@
     <h2>Membership perks</h2>
     <section id="perks">
       <div class="perk">
-        <Icon />
+        <img src="/services/success.png" alt="Subscribe and request as many designs as you need.">
         <h5>No waiting. No meetings. Just get things done.</h5>
         <p>Asynchronous work means that you don’t lose time waiting for a matching hole in our busy schedules.</p>
       </div>
       <div class="perk">
-        <Icon />
+        <img src="/services/trello.png" alt="Subscribe and request as many designs as you need.">
         <h5>Easy project management with Trello.</h5>
         <p>No complex project management. Simply create a task in Trello, and watch it fly through the process queue.</p>
       </div>
       <div class="perk">
-        <Icon />
+        <img src="/services/team.png" alt="Subscribe and request as many designs as you need.">
         <h5>Everybody is welcome to join your subscription.</h5>
         <p>Each subscription is company-wide, which means that anyone in your organization who needs help gets it.</p>
       </div>
       <div class="perk">
-        <Icon />
+        <img src="/services/budget.png" alt="Subscribe and request as many designs as you need.">
         <h5>Fixed-rate means you can budget accordingly.</h5>
         <p>It's impossible to run a successful business if you don't know the costs ahead of time. Let's make sure you do.</p>
       </div>
       <div class="perk">
-        <Icon />
+        <img src="/services/fast.png" alt="Subscribe and request as many designs as you need.">
         <h5>Super-fast delivery so you can hit impossible targets</h5>
         <p>You’ve never worked with a designer who gets it done so fast. You won’t believe it.</p>
       </div>
       <div class="perk">
-        <Icon />
+        <img src="/services/ai.png" alt="Subscribe and request as many designs as you need.">
         <h5>Always unique design, never AI-generated</h5>
         <p>Every design task is a custom piece of work that is never shared with other clients. We take pride in what we do for you.</p>
       </div>

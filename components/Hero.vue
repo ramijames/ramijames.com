@@ -9,7 +9,11 @@
     </section>
     <section class="text">
       <!-- <h1>Help your digital product to take flight</h1> -->
-      <h1>Concept.<br>Design.<br>Ship.</h1>
+      <h1>
+          Concept.<br>
+          <span class="design">Design.</span><br>
+          <span class="ship">Ship.</span>
+      </h1>
       <div class="go-row">
         <h4 class="small">Specialized design subscriptions are now available as an alternative for smart builders who just want to get to work.</h4>
         <div class="button-row">
@@ -94,6 +98,24 @@ export default {
 <style scoped lang="scss">
 
 @import './assets/variables';
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes antispin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 
 .desktop-only {
   display: block;
@@ -184,6 +206,7 @@ export default {
       top: -100px;
       transition: all 0.35 ease-in-out;
       width: 200px;
+      animation: spin 390s linear infinite;
 
       @media screen and (max-width: 1200px){
         width: 200px;
@@ -208,6 +231,7 @@ export default {
       bottom: -100px;
       transition: all 0.35 ease-in-out;
       width: 200px;
+      animation: spin 190s linear infinite;
 
       @media screen and (max-width: 1200px){
         right: 100px;
@@ -235,6 +259,7 @@ export default {
       transition: all 0.35 ease-in-out;
       width: 150px;
       z-index: -1;
+      animation: spin 90s linear infinite;
 
       @media screen and (max-width: 1200px){
         right: 100px;
@@ -253,6 +278,7 @@ export default {
         top: 100px;
         height: 750px;
         transition: all 0.35 ease-in-out;
+        animation: antispin 920s linear infinite;
 
         @media screen and (max-width: 1200px){
           position: absolute;
@@ -317,8 +343,15 @@ export default {
   }
 
   h1 {
-    color: #7E4894;
-    text-shadow: 3px 4px 0 darken($white, 10%);
+    color: $mint-dark;
+
+    .design {
+      color: $blue-light;
+    }
+
+    .ship {
+      color: $red;
+    }
   }
 
   svg {
@@ -398,8 +431,15 @@ export default {
 .dark #hero {
 
   h1 {
-    color: $blue-light;
-    text-shadow: 3px 4px 0 darken($black-light, 10%);
+    color: $mint-dark;
+
+    .design {
+      color: $blue-light;
+    }
+
+    .ship {
+      color: $red;
+    }
   }
 
 }
