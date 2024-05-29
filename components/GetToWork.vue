@@ -87,22 +87,12 @@
   padding-top: 0;
   
   .plans {
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr; 
-    gap: $spacing-lg;
+    display:flex;
+    flex-direction: row;
+    gap: $spacing-md;
 
     @media screen and (max-width: 1000px){
-      display: grid; 
-      grid-template-columns: 1fr; 
-      grid-template-rows: 1fr 1fr; 
-      gap: $spacing-lg;
-      grid-template-areas: 
-        "top"
-        "bottom"; 
-
-        .top { grid-area: top; }
-        .bottom { grid-area: bottom; }
+      flex-direction: column;
     }
 
     .single-plan {
@@ -213,6 +203,10 @@
         font-size: $font-size-sm;
         border-top: 1px solid rgba($black, 0.2);
         padding: $spacing-md 0;
+
+        @media screen and (max-width: 1000px){
+          flex-direction: column;
+        }
 
         .just-in-case {
           font-size: $font-size-xs;
