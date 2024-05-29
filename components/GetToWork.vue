@@ -9,7 +9,7 @@
     <div class="plans">
       <div class="single-plan">
         <div class="plan-type">Standard</div>
-        <div class="plan-price">$3,995<span class="per-month">/month</span></div>
+        <div class="plan-price">$3,395<span class="per-month">/month</span></div>
 
         <div class="plan-includes">What’s included?</div>
         <div class="includes-list">
@@ -29,7 +29,7 @@
 
       <div class="single-plan growth">
         <div class="plan-type">Growth</div>
-        <div class="plan-price">$6,295<span class="per-month">/month</span></div>
+        <div class="plan-price">$4,995<span class="per-month">/month</span></div>
 
         <div class="plan-includes">What’s included?</div>
         <div class="includes-list">
