@@ -2,7 +2,7 @@
   <Separator />
   <section id="booking" class="general-main">
     <a name="booking"></a>
-    <SectionTitle title="Book a call" subtitle="I'm happy to set aside a little time to chat with you about your project, answer your questions, and assuage your concerns." /> 
+    <SectionTitle title="Book a call" subtitle="Let's chat about your vision." /> 
     <CalendlyInlineWidget v-bind="options" />
   </section>
 </template>
@@ -15,7 +15,15 @@
 
 </script>
 
-<style>
+<style lang="scss">
+
+  #booking {
+    
+    h2, h4 {
+      width: 100%;
+      text-align: center;
+    }
+  }
 
   .calendly-inline-widget {
     min-height:800px !important;
