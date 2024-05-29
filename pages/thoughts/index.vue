@@ -71,12 +71,13 @@ export default {
 
 .articles a {
   text-decoration: none;
-  color: #000;
+  color: $blue;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
   text-align: center;
+  margin-bottom: $spacing-lg;
 }
 
     .dark .articles a {

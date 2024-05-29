@@ -333,7 +333,8 @@ input {
 .single-article p {
   font-family: 'Open Sans', sans-serif;
   font-size: $font-size-md;
-  line-height: $font-size-md * $multiplier;
+  line-height: $font-size-md * $multiplier * 1.4;
+  margin-bottom: $spacing-md;
 }
 
 .single-article p img {

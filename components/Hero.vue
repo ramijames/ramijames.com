@@ -30,16 +30,20 @@
       </div>
       <section class="links-row">
         <a href="#perks">
-          <span class="number">02</span> 
+          <span class="number">01</span> 
           <span class="title">Member Perks</span>
         </a>
         <a href="#join">
-          <span class="number">03</span> 
+          <span class="number">02</span> 
           <span class="title">Join Today</span>
         </a>
         <a href="#questions">
-          <span class="number">04</span> 
+          <span class="number">03</span> 
           <span class="title">Common Questions</span>
+        </a>
+        <a href="#booking">
+          <span class="number">04</span> 
+          <span class="title">Book a Call</span>
         </a>
       </section>
     </section>
