@@ -131,11 +131,11 @@ export default {
   align-items: flex-start;
   padding: $spacing-xl 0;
   position: relative;
-  min-height: 100vh;
 
   @media screen and (max-width: 768px){
     flex-direction: column;
     align-items: flex-end;
+    overflow: hidden;
   }
 
   .text {
@@ -248,8 +248,8 @@ export default {
       }
 
       @media screen and (max-width: 768px){
-        right: 150px;
-        top: 500px;
+        right: 120px;
+        top: 400px;
         width: 150px;
       }
     }
