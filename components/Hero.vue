@@ -130,9 +130,7 @@ export default {
   flex-direction: row;
   align-items: flex-start;
   padding: $spacing-xl 0;
-  margin-top: $spacing-md;
   position: relative;
-  overflow-x: hidden;
   min-height: 100vh;
 
   @media screen and (max-width: 768px){
