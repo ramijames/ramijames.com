@@ -233,7 +233,7 @@ export default {
       bottom: 100px;
       transition: all 0.35 ease-in-out;
       width: 200px;
-      animation: spin 190s linear infinite;
+      // animation: spin 190s linear infinite;
 
       @media screen and (max-width: 1200px){
         right: 100px;
@@ -280,7 +280,7 @@ export default {
         top: 100px;
         height: 750px;
         transition: all 0.35 ease-in-out;
-        animation: antispin 920s linear infinite;
+        // animation: antispin 920s linear infinite;
 
         @media screen and (max-width: 1200px){
           position: absolute;

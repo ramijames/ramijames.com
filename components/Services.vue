@@ -113,12 +113,6 @@
 
       p {
         margin: 0;
-        font-size: $font-size-lg;
-
-        @media screen and (max-width: 1000px) {
-          font-size: $font-size-md;
-          line-height: $font-size-md * $multiplier;
-        }
       }
     }
   }

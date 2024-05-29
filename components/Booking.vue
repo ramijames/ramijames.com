@@ -1,6 +1,6 @@
 <template>
   <Separator />
-  <section id="booking" class="general-main">
+  <section id="booking">
     <a name="booking"></a>
     <SectionTitle title="Book a call" subtitle="Let's chat about your vision." /> 
     <CalendlyInlineWidget v-bind="options" />
@@ -17,7 +17,11 @@
 
 <style lang="scss">
 
+  @import './assets/variables';
+
   #booking {
+    width: 100%;
+    margin-bottom: $spacing-xl;
     
     h2, h4 {
       width: 100%;
