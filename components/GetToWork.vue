@@ -9,9 +9,8 @@
     <div class="plans">
       <div class="single-plan">
         <div class="plan-type">Standard</div>
+        <div class="plan-includes">Just Design Tasks</div>
         <div class="plan-price">$3,395<span class="per-month">/month</span></div>
-
-        <div class="plan-includes">What’s included?</div>
         <div class="includes-list">
           <div class="include-item">One active request</div>
           <div class="include-item">Unlimited queued items</div>
@@ -29,9 +28,8 @@
 
       <div class="single-plan growth">
         <div class="plan-type">Growth</div>
+        <div class="plan-includes">Design and Development</div>
         <div class="plan-price">$4,995<span class="per-month">/month</span></div>
-
-        <div class="plan-includes">What’s included?</div>
         <div class="includes-list">
           <div class="include-item">Multiple active requests</div>
           <div class="include-item">Vuejs development</div>
@@ -108,7 +106,8 @@
         background: $blue-light;
 
         .plan-type {
-          color: $white;
+          background-color: darken($blue-light, 10%);
+          color:$red;
         }
 
         .plan-price {
@@ -151,12 +150,19 @@
       }
 
       .plan-type {
-        font-size: $font-size-lg;
+        font-size: $font-size-md;
         font-weight: 700;
+        background-color: darken($white-dark, 10%);
+        width: 50%;
+        padding: $spacing-sm 0 $spacing-sm $spacing-md;
+        color:$purple;
+        margin-left: -$spacing-md;
+        border-radius: 0 $br-lg $br-lg 0;
       }
 
       .plan-includes {
-        $font-weight: 700;
+        font-weight: 700;
+        font-size: $font-size-xl;
       }
 
       .includes-list {
