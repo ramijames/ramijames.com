@@ -382,7 +382,7 @@ export default {
 }
 
 .after-links {
-  margin-top: $spacing-xl;
+  margin-top: $spacing-sm;
   max-width: 600px;
   width:100%;
   z-index: 3;
