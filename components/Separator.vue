@@ -23,7 +23,7 @@
 
   path {
     stroke: $purple-light;
-    stroke-width: 6;
+    stroke-width: 1;
   }
 }
 
