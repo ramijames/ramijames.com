@@ -9,8 +9,9 @@
       <img src="/logo-transparent.png" alt="Rami James" @click="toggleMenu" />
       <div class="bread-crumbs">
         <nuxt-link to="/" v-if="notHome">Home</nuxt-link>
-        <nuxt-link to="/thoughts" v-if="isThoughtsPage">Thoughts</nuxt-link>
-        <nuxt-link to="/products" v-if="isProductsPage">Products</nuxt-link>
+        <nuxt-link to="/thoughts" v-if="!isThoughtsPage && isThoughtsSubPage">Thoughts</nuxt-link>
+        <nuxt-link to="/products" v-if="!isProductsPage && isProductsSubPage">Products</nuxt-link>
+        <div class="current" v-if="notHome">{{ routeName }}</div>
       </div>
     </div>
     <ThemeSwitcher />
@@ -84,11 +85,21 @@ export default {
       return this.$route.path !== '/';
     },
     isThoughtsPage() {
-      return this.$route.path.startsWith('/thoughts');
+      return this.$route.path === '/thoughts';
+    },
+    isThoughtsSubPage() {
+      return this.$route.path.startsWith('/thoughts/');
     },
     isProductsPage() {
-      return this.$route.path.startsWith('/products');
+      return this.$route.path === '/products';
     },
+    isProductsSubPage() {
+      return this.$route.path.startsWith('/products/');
+    },
+    routeName() {
+      const pathParts = this.$route.path.split('/');
+      return pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
+    }
   },
 }
 </script>
@@ -115,13 +126,20 @@ export default {
   gap: $spacing-xs;
   font-size: $font-size-md;
 
-  a {
+  a,
+  .current {
     text-decoration: none;
     background-color: rgba($blue, 0.2);
     border-radius: $br-sm;
     padding: $spacing-xs $spacing-sm;
     backdrop-filter: blur(4px);
     transform: skewX(-10deg);
+    text-transform: capitalize;
+  }
+
+  .current {
+    background-color: $blue;
+    color: $white;
   }
 
   @media screen and (max-width: 768px){
