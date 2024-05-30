@@ -101,7 +101,7 @@
       display:flex;
       flex-direction: column;
       gap: $spacing-md;
-      padding: $spacing-md;
+      padding: $spacing-md $spacing-md $spacing-lg $spacing-md;
       background-color: $white-dark;
       border-radius: $br-lg;
       width: 50%;
