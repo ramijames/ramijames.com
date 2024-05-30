@@ -99,6 +99,9 @@ export default {
     routeName() {
       const pathParts = this.$route.path.split('/');
       return pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
+    },
+    routeArray() {
+      return this.$route.path.split('/');
     }
   },
 }

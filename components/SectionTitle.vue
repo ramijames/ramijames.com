@@ -1,7 +1,7 @@
 <template>
   <div class="section-title">
     <h2>{{ title }}</h2>
-    <h4>{{ subtitle }}</h4>
+    <h4 v-if="subtitle">{{ subtitle }}</h4>
   </div>
 </template>
 

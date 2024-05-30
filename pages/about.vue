@@ -1,13 +1,11 @@
 <template>
-  <section class="general-main">
+  <section class="general-main page-top">
     <section class="explanation">
-      <SectionTitle 
-          title="Hello!" 
-          subtitle="My name is Rami James and I have been actively building online products since 1996. 
+      <SectionTitle title="Hello!" />
+      <p>My name is Rami James and I have been actively building online products since 1996. 
                     My roles within organizations have ranged from designer, product leader, developer, 
                     technical writer, head of developer relations, up to senior management. I like to work 
-                    with small, fast-moving teams who build innovative and interesting functionality." 
-      />
+                    with small, fast-moving teams who build innovative and interesting functionality.</p>
       <h4>Interested in working together?</h4>
       <p>I'm always eager to learn about new teams and products.</p>
       <br>

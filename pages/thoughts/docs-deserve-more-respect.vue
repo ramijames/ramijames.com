@@ -1,5 +1,5 @@
 <template>
-  <main class="single-article container">
+  <main class="general-main page-top">
     <section class="article-extras">
       <SectionTitle title="Docs Deserve More Respect" subtitle="by Rami James" />
       <AllPosts />

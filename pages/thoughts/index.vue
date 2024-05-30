@@ -1,5 +1,5 @@
 <template>
-  <main class="general-main">
+  <main class="general-main page-top">
     <section class="general-content">
       <SectionTitle title="Thoughts" subtitle="On software and product development" />
       <main class="articles">

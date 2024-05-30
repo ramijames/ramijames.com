@@ -382,6 +382,13 @@ img.in-article {
   max-width: 1200px;
   padding: $spacing-xl $spacing-lg;
   margin: 0 auto;
+
+  &.page-top {
+    
+    @media screen and (max-width: 768px) {
+      margin-top: 8rem !important;
+    }
+  }
 }
 
     @media screen and (max-width: 768px) {
@@ -489,6 +496,10 @@ img.in-article {
       text-align: center;
       margin:0 auto;
       max-width:800px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 12dvw;
+      }
     }
 
     .product-content h2,

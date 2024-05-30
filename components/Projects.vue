@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="general-main" ref="projects">
+  <section id="projects" class="general-main page-top" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
       <SectionTitle 
           title="I'm proud to have designed for these companies" 
