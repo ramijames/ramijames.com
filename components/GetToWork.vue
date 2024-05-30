@@ -10,7 +10,7 @@
       <div class="single-plan">
         <div class="plan-type">Standard</div>
         <div class="plan-includes">Just Design Tasks</div>
-        <div class="plan-price">$3,395<span class="per-month">/month</span></div>
+        <div class="plan-price">$995<span class="per-week">/week</span></div>
         <div class="includes-list">
           <div class="include-item">One active request</div>
           <div class="include-item">Unlimited queued items</div>
@@ -21,7 +21,7 @@
         </div>
 
         <div class="select-row">
-          <Button text="Buy Standard" size="default" to="/contact" />
+          <Button text="Buy Standard" size="default" to="#" />
           <div class="just-in-case">Cancel or pause your subscription anytime</div>
         </div>
       </div>
@@ -29,7 +29,7 @@
       <div class="single-plan growth">
         <div class="plan-type">Growth</div>
         <div class="plan-includes">Design and Development</div>
-        <div class="plan-price">$4,995<span class="per-month">/month</span></div>
+        <div class="plan-price">$1,195<span class="per-week">/week</span></div>
         <div class="includes-list">
           <div class="include-item">Multiple active requests</div>
           <div class="include-item">Vuejs development</div>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="select-row">
-          <Button text="Buy Growth" size="default" to="/contact" />
+          <Button text="Buy Growth" size="default" to="#" />
           <div class="just-in-case">Cancel or pause your subscription anytime</div>
         </div>
       </div>
@@ -143,7 +143,7 @@
         font-size: $font-size-max;
         font-weight: 700;
 
-        .per-month {
+        .per-week {
           font-size: $font-size-md;
           font-weight: 400;
         }
