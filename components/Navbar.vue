@@ -7,7 +7,11 @@
         @click="toggleMenu"
       ></div>
       <img src="/logo-transparent.png" alt="Rami James" @click="toggleMenu" />
-      <Button text="◄ /" size="light" to="/" v-if="notHome" />
+      <div class="bread-crumbs">
+        <nuxt-link to="/" v-if="notHome">Home</nuxt-link>
+        <nuxt-link to="/thoughts" v-if="isThoughtsPage">/ Thoughts</nuxt-link>
+        <nuxt-link to="/products" v-if="isProductsPage">/ Products</nuxt-link>
+      </div>
     </div>
     <ThemeSwitcher />
   </nav>
@@ -37,7 +41,6 @@ import Button from '~/components/Button.vue'
 export default {
   setup() {
     const themeStore = useThemeStore();
-    const route = useRoute();
 
     const state = reactive({
       mobileMenuOpen: false,
@@ -64,13 +67,10 @@ export default {
       console.log('click');
     };
 
-    const notHome = computed(() => route.path !== '/');
-
     return {
       currentTheme: computed(() => themeStore.currentTheme),
       closeMenu,
       toggleMenu,
-      notHome,
       mobileMenuOpen: computed(() => state.mobileMenuOpen),
       ...toRefs(state),
     }
@@ -78,7 +78,18 @@ export default {
   components: {
     ThemeSwitcher,
     Button
-  }
+  },
+  computed: {
+    notHome() {
+      return this.$route.path !== '/';
+    },
+    isThoughtsPage() {
+      return this.$route.path.startsWith('/thoughts');
+    },
+    isProductsPage() {
+      return this.$route.path.startsWith('/products');
+    },
+  },
 }
 </script>
 
@@ -98,6 +109,17 @@ export default {
   display: none;
 }
 
+.bread-crumbs {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+  font-size: $font-size-md;
+
+  a {
+    text-decoration: none;
+  }
+}
+
 .menu-switch {
   cursor: pointer;
   padding: $spacing-md $spacing-md;
@@ -107,6 +129,7 @@ export default {
   z-index: 10000;
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: $spacing-md;
 
   @media screen and (max-width: 768px){
