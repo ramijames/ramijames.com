@@ -121,6 +121,7 @@ export default {
     border-radius: $br-sm;
     padding: $spacing-xs $spacing-sm;
     backdrop-filter: blur(4px);
+    transform: skewX(-10deg);
   }
 
   @media screen and (max-width: 768px){
