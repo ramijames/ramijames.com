@@ -233,13 +233,13 @@ export default {
     .floating-shapes-2 {
       position: absolute;
       right: 100px;
-      bottom: 100px;
+      bottom: 0px;
       transition: all 0.35 ease-in-out;
       width: 200px;
 
       @media screen and (max-width: 1200px){
         right: 100px;
-        bottom: 100px;
+        bottom: 200px;
         width: 200px;
       }
 
@@ -250,8 +250,8 @@ export default {
       }
 
       @media screen and (max-width: 768px){
-        right: 120px;
-        top: 400px;
+        right: 220px;
+        top: 300px;
         width: 150px;
       }
     }
