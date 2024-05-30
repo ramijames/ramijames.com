@@ -1,7 +1,7 @@
 <template>
   <div id="arrow">
     <svg width="32" height="19" viewBox="0 0 32 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 2L16 16L30 2" stroke="white" stroke-width="2"/>
+      <path d="M2 2L16 16L30 2" stroke="white" stroke-width="4"/>
     </svg>
   </div>
 </template>
@@ -13,13 +13,13 @@
 #arrow {
   position: fixed;
   bottom: 0;
-  margin-bottom: 5vh;
+  margin-bottom: $spacing-md;
   animation: bounce 2s infinite;
   z-index: 100;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
   svg path {
-    stroke: $blue;
+    stroke: $red;
   }
 }
 

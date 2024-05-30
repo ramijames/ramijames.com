@@ -7,7 +7,7 @@
                     It is now easier than ever to get your vision to market 
                     on-budget, on-time, and with style." 
       />
-      <Button text="Add your project" size="default" to="#join" v-if="!notHome" />
+      <!-- <Button text="Add your project" size="default" to="#join" v-if="!notHome" /> -->
       <section id="company-logos">
         <div class="images">
           <img src="/social-proof/wix.png" alt="Wix" />

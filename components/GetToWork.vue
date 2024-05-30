@@ -45,10 +45,10 @@
         </div>
       </div>
     </div>
-    <section id="post-work-question">
+    <!-- <section id="post-work-question">
       <h3>Not sure exactly what you need?</h3>
       <h5><a href="#booking">Book a quick call</a> and I’ll run you through the process and its benefits.</h5>
-    </section>
+    </section> -->
   </section>
 </template>
 
@@ -104,6 +104,11 @@
       padding: $spacing-md;
       background-color: $white-dark;
       border-radius: $br-lg;
+      width: 50%;
+
+      @media screen and (max-width: 1000px){
+        width: 100%;
+      }
 
       @media screen and (max-width: 768px){
         border-radius: 0;
@@ -213,7 +218,8 @@
       }
 
       .select-row {
-        display: flex;
+        display:none;
+        // display: flex;
         flex-direction: row;
         gap: $spacing-sm;
         align-items: center;

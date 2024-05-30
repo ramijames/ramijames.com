@@ -5,8 +5,8 @@
     <Services />
     <TypesOfDesigns />
     <GetToWork />
-    <CommonQuestions />
     <Booking />
+    <CommonQuestions />
     <Footer />
     <Arrow />
   </main>

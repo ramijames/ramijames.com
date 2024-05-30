@@ -380,24 +380,9 @@ img.in-article {
   gap: $spacing-md;
   width: 100%;
   max-width: 1200px;
-  padding: calc($spacing-xl + 2rem) $spacing-lg;
+  padding: $spacing-xl $spacing-lg;
   margin: 0 auto;
 }
-
-    @media screen and (max-width: 1400px) {
-      .container,
-      .general-main {
-        padding: calc($spacing-xl + 4rem) $spacing-lg;
-      }
-    }
-
-    @media screen and (max-width: 1000px) {
-      .container,
-      .general-main {
-        flex-direction: column;
-        padding: calc($spacing-xl + 4rem) $spacing-lg;
-      }
-    }
 
     @media screen and (max-width: 768px) {
       .container,

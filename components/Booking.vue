@@ -1,5 +1,5 @@
 <template>
-  <Separator />
+  <!-- <Separator /> -->
   <section id="booking">
     <a name="booking"></a>
     <SectionTitle title="Book a call" subtitle="Let's chat about your vision." /> 
