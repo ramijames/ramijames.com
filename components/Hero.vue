@@ -8,7 +8,6 @@
       <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
     </section>
     <section class="text">
-      <!-- <h1>Help your digital product to take flight</h1> -->
       <h1>
           Concept.<br>
           <span class="design">Design.</span><br>
@@ -165,7 +164,7 @@ export default {
       flex-direction: row;
       align-items: center;
 
-      @media screen and (max-width: 768px){
+      @media screen and (max-width: 1000px){
         flex-direction: column;
         align-items: flex-start;
         gap: $spacing-sm;
@@ -176,6 +175,10 @@ export default {
         font-size: $font-size-sm;
         color: #7D4893;
         margin-left: $spacing-sm;
+
+        @media screen and (max-width: 1000px){
+          margin-left: 0;
+        }
 
         &::before {
           content: '';
@@ -233,7 +236,6 @@ export default {
       bottom: 100px;
       transition: all 0.35 ease-in-out;
       width: 200px;
-      // animation: spin 190s linear infinite;
 
       @media screen and (max-width: 1200px){
         right: 100px;
@@ -280,7 +282,6 @@ export default {
         top: 100px;
         height: 750px;
         transition: all 0.35 ease-in-out;
-        // animation: antispin 920s linear infinite;
 
         @media screen and (max-width: 1200px){
           position: absolute;
@@ -298,9 +299,9 @@ export default {
 
         @media screen and (max-width: 768px){
           position: absolute;
-          left: -220px;
+          left: -120px;
           top: -80px;
-          height: 400px;
+          height: 200px;
         }
       }
 

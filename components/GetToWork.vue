@@ -138,6 +138,10 @@
 
         .select-row {
           border-top: 1px solid rgba($blue, 0.2);
+
+          .button {
+            box-shadow: 3px 4px 0 darken($blue-light, 10%);
+          }
         }
 
         .include-item {
