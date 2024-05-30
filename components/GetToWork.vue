@@ -29,7 +29,7 @@
       <div class="single-plan growth">
         <div class="plan-type">Growth</div>
         <div class="plan-includes">Design and Development</div>
-        <div class="plan-price">$1,195<span class="per-week">/week</span></div>
+        <div class="plan-price">$1,295<span class="per-week">/week</span></div>
         <div class="includes-list">
           <div class="include-item">Multiple active requests</div>
           <div class="include-item">Vuejs development</div>
@@ -83,6 +83,10 @@
 
 #get-to-work {
   padding-top: 0;
+
+  @media screen and (max-width: 768px){
+    padding: 0;
+  }
   
   .plans {
     display:flex;
@@ -100,6 +104,10 @@
       padding: $spacing-md;
       background-color: $white-dark;
       border-radius: $br-lg;
+
+      @media screen and (max-width: 768px){
+        border-radius: 0;
+      }
 
       &.growth {
 

@@ -402,7 +402,7 @@ img.in-article {
     @media screen and (max-width: 768px) {
       .container,
       .general-main {
-        padding: calc($spacing-lg + 4rem) $spacing-md;
+        padding: $spacing-lg $spacing-md;
       }
     }
 

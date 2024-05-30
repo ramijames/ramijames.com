@@ -264,12 +264,10 @@ export default {
 
         @media screen and (max-width: 1000px){
           width:calc(50% - $spacing-md /2);
-          border-radius: $br-sm;
         }
 
         @media screen and (max-width: 768px){
           width:100%;
-          border-radius: $br-sm;
         }
 
         span {
