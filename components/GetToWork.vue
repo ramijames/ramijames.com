@@ -10,7 +10,7 @@
       <div class="single-plan">
         <div class="plan-type">Standard</div>
         <div class="plan-includes">Just Design Tasks</div>
-        <div class="plan-price">$995<span class="per-week">/week</span></div>
+        <div class="plan-price">$1,495<span class="per-week">/week</span></div>
         <div class="includes-list">
           <div class="include-item">One active request</div>
           <div class="include-item">Unlimited queued items</div>
@@ -29,7 +29,7 @@
       <div class="single-plan growth">
         <div class="plan-type">Growth</div>
         <div class="plan-includes">Design and Development</div>
-        <div class="plan-price">$1,495<span class="per-week">/week</span></div>
+        <div class="plan-price">$1,895<span class="per-week">/week</span></div>
         <div class="includes-list">
           <div class="include-item">Multiple active requests</div>
           <div class="include-item">Vuejs development</div>
