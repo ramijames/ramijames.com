@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     "nuxt-newsletter",
     "nuxt-calendly",
-    "nuxt-gtag"
+    "nuxt-gtag",
+    "@nuxtjs/sitemap"
   ],
   gtag: {
     id: 'G-420689865'
