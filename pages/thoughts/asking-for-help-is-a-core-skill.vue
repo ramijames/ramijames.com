@@ -33,4 +33,5 @@
       <p>Asking for help is a core skill. It can help ensure that the product you are building sees the light of day, and more importantly, it can ensure that you continue to progress as a developer.</p>
     </section>
   </main>
+  <Footer />
 </template>

@@ -40,4 +40,5 @@
 
     </section>
   </main>
+  <Footer />
 </template>

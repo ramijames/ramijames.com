@@ -81,4 +81,5 @@
 
     </section>
   </main>
+  <Footer />
 </template>

@@ -77,4 +77,5 @@
 
     </section>
   </main>
+  <Footer />
 </template>

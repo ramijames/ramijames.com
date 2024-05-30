@@ -32,4 +32,5 @@
 
     </section>
   </main>
+  <Footer />
 </template>

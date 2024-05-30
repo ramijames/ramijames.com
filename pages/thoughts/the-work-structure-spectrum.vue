@@ -49,4 +49,5 @@
 
     </section>
   </main>
+  <Footer />
 </template>
