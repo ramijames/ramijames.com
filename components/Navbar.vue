@@ -9,8 +9,8 @@
       <img src="/logo-transparent.png" alt="Rami James" @click="toggleMenu" />
       <div class="bread-crumbs">
         <nuxt-link to="/" v-if="notHome">Home</nuxt-link>
-        <nuxt-link to="/thoughts" v-if="isThoughtsPage">/ Thoughts</nuxt-link>
-        <nuxt-link to="/products" v-if="isProductsPage">/ Products</nuxt-link>
+        <nuxt-link to="/thoughts" v-if="isThoughtsPage">Thoughts</nuxt-link>
+        <nuxt-link to="/products" v-if="isProductsPage">Products</nuxt-link>
       </div>
     </div>
     <ThemeSwitcher />
@@ -117,6 +117,13 @@ export default {
 
   a {
     text-decoration: none;
+    background-color: rgba($blue, 0.2);
+    border-radius: $br-sm;
+    padding: $spacing-xs $spacing-sm;
+  }
+
+  @media screen and (max-width: 768px){
+    display: none;
   }
 }
 
