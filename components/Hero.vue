@@ -14,7 +14,7 @@
           <span class="ship">Ship.</span>
       </h1>
       <div class="go-row">
-        <h4 class="small">Specialized design subscriptions are now available as an alternative for smart builders who just want to get to work. <span>Pay by the week, get what you need now.</span></h4>
+        <h4 class="small">Specialized <span>design & development service retainers</span> are now available as an alternative for smart builders who just want to get to work. <span>Pay by the week, get what you need now.</span></h4>
         <div class="button-row">
           <Button text="See available plans" size="default" to="#get-to-work" />
           <span>Capacity available</span>
@@ -372,7 +372,7 @@ export default {
     margin-bottom: $spacing-md;
 
     span {
-      color: $red-dark;
+      color: $blue;
       font-weight: 700;
     }
 
