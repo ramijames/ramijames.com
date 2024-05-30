@@ -120,6 +120,7 @@ export default {
     background-color: rgba($blue, 0.2);
     border-radius: $br-sm;
     padding: $spacing-xs $spacing-sm;
+    backdrop-filter: blur(4px);
   }
 
   @media screen and (max-width: 768px){

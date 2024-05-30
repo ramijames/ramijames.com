@@ -8,12 +8,16 @@ export default defineNuxtConfig({
     dirs: ['~/components'],
   },
   modules: [
-    '@nuxtjs/google-fonts', 
-    '@pinia/nuxt', 
+    '@nuxtjs/google-fonts',
+    '@pinia/nuxt',
     '@nuxt/content',
     "nuxt-newsletter",
-    "nuxt-calendly"
+    "nuxt-calendly",
+    "nuxt-gtag"
   ],
+  gtag: {
+    id: 'G-420689865'
+  },
   newsletter: {    
     mailchimp: {      
     apiKey: process.env.MAILCHIMP_API_KEY,      
