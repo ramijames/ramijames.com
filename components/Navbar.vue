@@ -130,7 +130,6 @@ export default {
 }
 
 .menu-switch {
-  cursor: pointer;
   padding: $spacing-md $spacing-md;
   position:absolute;
   left: $p-desktop;
