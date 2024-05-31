@@ -9,7 +9,7 @@
     </section>
     <section class="text">
       <h1>
-          Conceive.<br>
+          Ideate.<br>
           <span class="design">Design.</span><br>
           <span class="ship">Ship.</span>
       </h1>
