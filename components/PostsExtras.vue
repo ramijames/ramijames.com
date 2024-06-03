@@ -3,7 +3,7 @@
     <img src="/public/services/team.png" alt="Trello is nice">
     <section class="postContent">
       <h4>Are you a struggling founder?</h4>
-      <p>I'm <nuxt-link to="/about">highly experienced</nuxt-link> with <nuxt-link to="/about">many projects</nuxt-link> under my belt, and am currently accepting new clientele. I'd love for us to build something great together!</p>
+      <p>I'm <nuxt-link to="/about">highly experienced</nuxt-link> with <nuxt-link to="/products">many projects</nuxt-link> under my belt, and am currently accepting new clientele. I'd love for us to build something great together!</p>
       <Button type="small" text="Let's talk" to="https://calendly.com/itsramijames" />
     </section>
   </section>
