@@ -156,7 +156,7 @@ li {
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-sm;
-    line-height: $font-size-sm * $multiplier;
+    line-height: $font-size-sm * $multiplier * 1.4;
   }
 
 }
