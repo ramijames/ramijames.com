@@ -7,6 +7,9 @@
     <section class="content">
       <p>I've been doing technical writing of one sort or another since 1999, when I was doing QA for Altec Lansing's R&amp;D branch in Kfar Saba in Israel. Back then we would put out innovative, new audio related devices like (gasp) USB audio devices that worked on Windows ME and 2000. They were buggy and setting them up wasn't the straightforward thing that it is today.</p>
       <p>We needed docs.</p>
+
+      <PostsExtras />
+
       <p>We had some hoops that users had to jump through, and we needed a way to document what they were, what the edge cases were, and how to diagnose and fix all of that stuff. It needed to be nicely packaged, cleanly formatted, and accessible to users who installed our helper application. I found the Robohelp application, which is used for creating standard help applications on Windows, and added a help file to our install.</p>
       <p>During our QA process we would identify the issues, document what we thought was salient, and organize it into the help file that was bundled with the device. I was 19 at the time, and I had zero experience with this stuff, and it was an immensely naive process. But, it just felt like the right thing to do for our users, and my manager didn't explicitly tell me not to.</p>
       <p><img src="/articles/docs-deserve-respect.png" alt="Docs deserve more respect"></p>

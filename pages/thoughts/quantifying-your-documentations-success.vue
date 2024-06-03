@@ -8,6 +8,9 @@
       <img src="/articles/quantifying.png" alt="Quantifying your documentation's success">
       <p>The primary challenge faced by technical writers often boils down to how to evaluate the effectiveness of what you write. </p>
       <p>You build some documentation and you think it is great. How do you know if you are right? How do you prove it to upper management? How do you really, really know?</p>
+      
+      <PostsExtras />
+      
       <p>I’d like to talk quickly about an <a href="https://passo.uno/docs-observability-do11y/">approach that I came</a> across called &quot;documentation observability&quot; (<a href="https://www.linkedin.com/in/fabrizioferri/">grazie, Fabrizio!</a>) that I think is an excellent candidate solution for those whose documentation is part of a larger product strategy, and who need to know if they are hitting the mark or not. </p>
       <p>This methodology isn’t for the faint of heart and does require substantial extra integration efforts. I’d like to convince you that it is worth it.</p>
       <h2 id="how-do-we-measure-docs-success-today">How do we measure docs&#39; success today?</h2>

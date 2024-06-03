@@ -7,6 +7,9 @@
     <section class="content">
       <p>Working on an Agile team can really suck. But, why? No structure at all sucks way more. We should talk about that, too.</p>
       <p>The first startup that I joined, in 2000 and at the height of the dot-com boom, was called WHnetworks. </p>
+      
+      <PostsExtras />
+
       <p>I was just a kid of twenty years old and didn’t really understand what immense disorder I was being exposed to. WHnetworks were building a website where any user could ask any question, and the community would strive to answer it. It wasn’t focused on any specific niche. They had a thriving set of users who were rewarded by a points system that awarded points for good answers. It was the early 2000s, and this was innovative.</p>
       <p>At the time, I was early in my design career, and I’d been hired to do special caricatures of users. When you hit a certain points threshold, you became an elite member of the site who had an illustrated avatar. This system made the power users of the site really stand out, and it successfully drove engagement and usage of the website. It also gave me a job, which I liked.</p>
       <p>What I remember from that experience was a general sense of chaos. There were no paying customers, there was no apparent business vision, and the product was all over the place.</p>

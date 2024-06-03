@@ -5,12 +5,17 @@
       <AllPosts />
     </section>
     <section class="content">
-      <img src="/articles/neurodiversity.png" alt="Neurodiversity as software incompatibility">
       <p>If you’ve been following the stuff that I write about, you’ll know that my family and I recently fled the difficult situation in Israel. We were in the far north of the country and were terrified that things were going to escalate with Hezbollah. We left in November of 2023 and have been trying to find our way in the world since then.</p>
+      
+      <PostsExtras />
+
       <p>Temporarily we’ve found ourselves in the US, although where we’ll end up long-term is still up in the air. My wife wants to go back to Israel, I want us to stay far away.</p>
       <p>We have three relatively small kids, aged 10, 9, and 4 as of writing this. Those are tough ages to drag kids across an ocean, up-end their lives, and subject them to semi-perpetual uncertainty. I suppose that there isn’t any good time of life to do that to a kid. It’s always going to be hard.</p>
       <p>My oldest, a girl, is somewhere on the neurodiversity scale. We’ve had her tested for autism but never had any conclusive answer as to what her specific diagnosis is.</p>
       <p>She’s smart, unbelievably creative, and we adore her. She also has a hard time maintaining control over her behavior, thoughts, and focus. In general setting her own boundaries is a challenge. She suffers from anxiety and has a hard time being left alone for any length of time. She also often has a hard time understanding what other people are thinking or feeling—with the caveat of her younger sister, who she seems to understand just fine.</p>
+      
+      <img src="/articles/neurodiversity.png" alt="Neurodiversity as software incompatibility">
+
       <p>All of this is to say that she can be a handful to deal with and I’m often very frustrated.</p>
       <p>When we moved, it was her that I was most concerned about. Fitting in has always been a challenge for her, and making friends within a school setting took a long time. Thankfully, the school where we are currently is excellent and she is supported and doing really well within that context.</p>
       <p>At home, all of the kids are having a rough time, but my oldest is having the roughest ride of all. Lots of aberrant, off behavior. Lots of fights. Lots of erratic, irrational outbursts. I think that having her world turned upside-down has reset her internal set of expectations regarding acceptable behavior patterns and it is going to be a long while until we get back on track.</p>

@@ -5,13 +5,20 @@
       <AllPosts />
     </section>
     <section class="content">
-      <img src="/articles/iterate-relentlessly.png" alt="Iterate relentlessly" />
       <p>How do you get your product to market and ensure that it matches a market need? This is the problem that every founder, every team, and every company of every size encounters when they attempt to develop a product.</p>
       <p>If you’re building a product, you likely have some vision for what it is and you need some plan for how to get it into the user&#39;s hands. You must also be aware of the fact that your product doesn’t exist in a vacuum. At the end of the day your product’s success is entirely dependent on whether or not you’ll find users, partners, and a market for it. Typically this is called Product-Market fit. I’m not a huge fan of that terminology because it insinuates that you and your team are somehow not an integrated part of the market, but are adjacent to it. But, what can you do? That’s what it is called.</p>
+
+      <PostsExtras />
+
       <p>Finding Product-Market fit can be a frustrating, demoralizing, and fruitless effort if you do not have the right feedback cycle to support the decisions that you make. Alternatively, it can be a fast-paced, exciting ride that changes your career and your professional life. It&#39;s up to you and your team to decide which of the two experiences you&#39;ll have and isn&#39;t a simple happenstance.</p>
       <p>You’re probably not going to get it right the first time, so your process needs to be built around getting there in as few steps as possible.</p>
       <p>I&#39;ve put together some thoughts that I use to give form to the concepts that I turn into products. Following that, I talk about what I think is the right process to mold your unformed idea into something that fits people’s needs.</p>
+      
       <p>Hopefully these ideas can help you and yours have a better time getting your house in order as you ship your great new thing.</p>
+
+      <br>
+      <img src="/articles/iterate-relentlessly.png" alt="Iterate relentlessly" />
+
       <h2 id="figure-out-your-products-answer-to-why">Figure out your product’s answer to “Why?”</h2>
       <p>At the foundation of a software product is the deceptively simple question of “why are we doing this?”. Fundamentally, that question and its answers are what sets good products apart from bad ones.</p>
       <p>If you can competently, coherently, and confidently express why you’re building what you’re building, then you’ll be able to decide what you want to build and who you’ll want to build it for.</p>

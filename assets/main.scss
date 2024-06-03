@@ -97,7 +97,6 @@ h3 {
   font-family: $font-family-main, sans-serif;
   margin-bottom:1rem;
   font-weight:500;
-  text-shadow: 3px 4px 0 darken($white, 10%);
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-lg;
@@ -113,13 +112,9 @@ h3 {
   margin-top: $spacing-lg;
 }
 
-.dark h3 {
-  text-shadow: 3px 4px 0 darken($black-light, 10%);
-}
-
 h4 { 
-  font-size: $font-size-md; 
-  line-height: $font-size-md * $multiplier; 
+  font-size: $font-size-lg; 
+  line-height: $font-size-lg * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
   margin-bottom:1rem;
   font-weight:500;

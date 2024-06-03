@@ -58,6 +58,7 @@ export default {
   transition: all 0.3s ease-in-out;
   overflow: hidden;
   box-shadow: 3px 4px 0 darken($white, 10%);
+  text-shadow: 1px 1px 1px rgba($black, 0.5);
 
   @media screen and (max-width: 1200px){
     font-size: $font-size-md;
@@ -67,10 +68,12 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    mix-blend-mode: multiply;
+    mix-blend-mode: color-burn;
     position: absolute;
     left:0;
     top:0;
+    box-shadow: none;
+    background-color: $white;
   }
 
   &:before {
@@ -100,8 +103,8 @@ export default {
   }
   
   &.small {
-    font-size: $font-size-xs;
-    padding: 0 $spacing-sm;
+    font-size: $font-size-md;
+    padding: $spacing-xs $spacing-sm;
     border-radius: $br-sm;
     font-weight: bold;
   }
@@ -138,7 +141,7 @@ export default {
 
 .dark .button {
   background-color: $white;
-  color: $black !important;
+  color: $white !important;
   box-shadow: 3px 4px 0 darken($black-light, 10%);
 
   &.light {
