@@ -1,7 +1,9 @@
 <template>
   <main class="general-main page-top">
-    <section class="general-content">
-      <SectionTitle title="Thoughts" subtitle="On software and product development" centered="true" />
+    <section class="thoughts-main general-content">
+      <SectionTitle title="Thoughts on Software and Product Development" centered="true" />
+      <!-- <Button to="/products" text="Recent Work" /> -->
+      <PostsExtras />
       <main class="articles">
         <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug">
           <img :src="article.image" :alt="article.title" />
@@ -29,6 +31,15 @@ export default {
 <style scoped lang="scss">
 
 @import './assets/variables';
+
+.thoughts-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+
+}
 
 .articles {
   display: grid;
