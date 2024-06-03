@@ -357,7 +357,7 @@ export default {
     line-height: 84px;
     padding: $spacing-md 0;
 
-    background: linear-gradient(to top, $purple, $red);
+    background: lighten($red, 20%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -365,7 +365,7 @@ export default {
       text-shadow: 0px 3px 0 $red, 0px -10px 30px rgba($red,0.05);
 
     .design {
-      background: linear-gradient(to top, $purple, $red);
+      background: lighten($black, 20%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -375,7 +375,7 @@ export default {
 
     .ship {
       color: $purple;
-      background: linear-gradient(to top, $purple, $red);
+      background: lighten($purple, 20%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
