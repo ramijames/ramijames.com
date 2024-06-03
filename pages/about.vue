@@ -7,10 +7,8 @@
                     technical writer, head of developer relations, up to senior management. I like to work 
                     with small, fast-moving teams who build innovative and interesting functionality.</p>
       <PostsExtras />
-    </section>
-    <section class="general-content">
-      <img class="" src="/interface-images.jpg" alt="Interface work">
-      <!-- <h4>Work History</h4> -->
+      <Separator />
+      <h3>Work History</h3>
       <section class="jobs">
         <section class="single-job triangle">
           <p class="job-title">Consulting Specialist</p>
@@ -253,6 +251,10 @@ h1.about-bold {
   margin:2rem 0 0 1rem;
 }
 
+    .dark .jobs {
+      border-left:2px solid $white;
+    }
+
     .single-job {
       margin: 0 0 2rem 2rem;
       position: relative;
@@ -276,6 +278,7 @@ h1.about-bold {
 
             .dark .single-job::before {
               background-color: $black;
+              border:2px solid $white;
             }
 
         .single-job.triangle::before {
@@ -293,8 +296,8 @@ h1.about-bold {
         }
 
             .dark .single-job.triangle::before {
-              border-color: transparent transparent $black transparent;
-              background-color: #190d28;
+              border-color: transparent transparent $white transparent;
+              background-color: $black;
             }
 
         .job-title {
