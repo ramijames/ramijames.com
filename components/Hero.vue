@@ -357,18 +357,30 @@ export default {
     line-height: 84px;
     padding: $spacing-md 0;
 
-    .design {
-      color: $black;
-      -webkit-mask-image: url('/public/textures/texture-3-text.png');
-      mask-image: linear-gradient(black 0%, rgba(0,0,0,0.6) 100%);
+    background: linear-gradient(to top, $purple, $red);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       margin-left: -$spacing-sm;
+      text-shadow: 0px 3px 0 $red, 0px -10px 30px rgba($red,0.05);
+
+    .design {
+      background: linear-gradient(to top, $purple, $red);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-left: -$spacing-sm;
+      text-shadow: 0px 3px 0 $black, 0px -10px 30px rgba($red,0.05);
     }
 
     .ship {
       color: $purple;
-      -webkit-mask-image: url('/public/textures/texture-3-text.png');
-      mask-image: linear-gradient(black 0%, rgba(0,0,0,0.6) 100%);
+      background: linear-gradient(to top, $purple, $red);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       margin-left: -$spacing-sm;
+      text-shadow: 0px 3px 0 $purple, 0px -10px 30px rgba($red,0.05);
     }
   }
 
