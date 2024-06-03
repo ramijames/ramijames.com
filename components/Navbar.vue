@@ -138,6 +138,7 @@ export default {
     backdrop-filter: blur(4px);
     transform: skewX(-10deg);
     text-transform: capitalize;
+    font-weight: 500;
   }
 
   .current {

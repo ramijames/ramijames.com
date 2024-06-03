@@ -1,5 +1,5 @@
 <template>
-  <div class="section-title">
+  <div class="section-title" :class="centered ? 'centered' : ''">
     <h2>{{ title }}</h2>
     <h4 v-if="subtitle">{{ subtitle }}</h4>
   </div>
@@ -16,6 +16,10 @@ export default {
     subtitle: {
       type: String,
       required: true
+    },
+    centered: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -32,6 +36,13 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   margin-bottom: $spacing-md;
+
+  &.centered {
+    h2, h4 {
+      text-align: center;
+      width:100%;
+    }
+  }
 
   @media screen and (max-width: 768px){
     align-items: center;

@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'IBM Plex Mono': [400, 500, 600, 700],
+      'Montserrat': [400, 500, 600, 700],
       'Noto Sans': [400, 600, 700, 900],
     }
   }

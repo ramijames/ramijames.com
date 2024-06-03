@@ -1,7 +1,7 @@
 <template>
   <section class="general-main page-top">
     <section class="explanation">
-      <SectionTitle title="Hello!" />
+      <SectionTitle title="Hello!" centered="true" />
       <p>My name is Rami James and I have been actively building online products since 1996. 
                     My roles within organizations have ranged from designer, product leader, developer, 
                     technical writer, head of developer relations, up to senior management. I like to work 
