@@ -128,6 +128,9 @@ export default {
   flex-direction: row;
   gap: $spacing-xs;
   font-size: $font-size-md;
+  border-left: 2px solid #ee6a33;
+  transform: skewX(-10deg);
+  padding: 0 $spacing-sm;
 
   a,
   .current {
@@ -136,7 +139,6 @@ export default {
     border-radius: $br-sm;
     padding: $spacing-xs $spacing-sm;
     backdrop-filter: blur(4px);
-    transform: skewX(-10deg);
     text-transform: capitalize;
     font-weight: 500;
   }

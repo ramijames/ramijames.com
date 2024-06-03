@@ -57,7 +57,6 @@ export default {
   z-index: 1;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
-  box-shadow: 3px 4px 0 darken($white, 10%);
   text-shadow: 1px 1px 1px rgba($black, 0.5);
 
   @media screen and (max-width: 1200px){

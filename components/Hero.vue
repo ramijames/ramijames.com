@@ -8,7 +8,7 @@
       <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
     </section>
     <section class="text">
-      <h1>
+      <h1 ref="heroText">
           Ideate.<br>
           <span class="design">Design.</span><br>
           <span class="ship">Ship.</span>
@@ -62,6 +62,7 @@ export default {
     const floatingShapes1 = ref(null);
     const floatingShapes2 = ref(null);
     const floatingShapes3 = ref(null);
+    const heroText = ref(null);
 
     const handleScroll = () => {
       if (triangle.value && hummingbird.value && floatingShapes1.value && floatingShapes2.value && floatingShapes3.value) {
@@ -71,6 +72,7 @@ export default {
         floatingShapes1.value.style.transform = `translateY(${scrollY * -1}px)`;
         floatingShapes2.value.style.transform = `translateY(${scrollY * -1}px)`;
         floatingShapes3.value.style.transform = `translateY(${scrollY * -1}px)`;
+        heroText.value.style.lineHeight = `${84 - scrollY * 0.4}px`;
       }
     };
 
@@ -88,6 +90,7 @@ export default {
       floatingShapes1,
       floatingShapes2,
       floatingShapes3,
+      heroText,
     };
   },
 };
@@ -346,14 +349,26 @@ export default {
   }
 
   h1 {
-    color: $mint-dark;
+    color: $red;
+    font-weight: 800;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat; 
+    font-size: 120px;
+    line-height: 84px;
+    padding: $spacing-md 0;
 
     .design {
-      color: $blue-light;
+      color: $black;
+      -webkit-mask-image: url('/public/textures/texture-3-text.png');
+      mask-image: linear-gradient(black 0%, rgba(0,0,0,0.6) 100%);
+      margin-left: -$spacing-sm;
     }
 
     .ship {
-      color: $red;
+      color: $purple;
+      -webkit-mask-image: url('/public/textures/texture-3-text.png');
+      mask-image: linear-gradient(black 0%, rgba(0,0,0,0.6) 100%);
+      margin-left: -$spacing-sm;
     }
   }
 
@@ -370,10 +385,10 @@ export default {
 
   .small {
     margin-bottom: $spacing-md;
+    color: lighten($black, 40%);
 
     span {
       color: $blue;
-      font-weight: 700;
     }
 
     @media screen and (max-width: 768px){
