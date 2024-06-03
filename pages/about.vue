@@ -1,17 +1,12 @@
 <template>
   <section class="general-main page-top">
     <section class="explanation">
-      <SectionTitle title="Hello!" centered="true" />
-      <p>My name is Rami James and I have been actively building online products since 1996. 
+      <SectionTitle title="About Rami James" centered="true" />
+      <p>I have been actively building online products since 1996. 
                     My roles within organizations have ranged from designer, product leader, developer, 
                     technical writer, head of developer relations, up to senior management. I like to work 
                     with small, fast-moving teams who build innovative and interesting functionality.</p>
-      <h4>Interested in working together?</h4>
-      <p>I'm always eager to learn about new teams and products.</p>
-      <br>
-      <!-- <p><a class="button" href="mailto:rami@ramijames.com">Start a conversation</a></p> -->
-      <Button to="mailto:rami@ramijames.com" text="Start a conversation" type="default" />
-      <br>
+      <PostsExtras />
     </section>
     <section class="general-content">
       <img class="" src="/interface-images.jpg" alt="Interface work">
