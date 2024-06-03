@@ -69,7 +69,6 @@ h2 {
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
     line-height: $font-size-xl * $multiplier;
-    text-shadow: 2px 2px 0 darken($white, 10%);
   }
 
   @media screen and (max-width: 768px) {

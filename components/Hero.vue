@@ -71,8 +71,11 @@ export default {
         hummingbird.value.style.transform = `translateY(${scrollY * -0.5}px)`;
         floatingShapes1.value.style.transform = `translateY(${scrollY * -1}px)`;
         floatingShapes2.value.style.transform = `translateY(${scrollY * -1}px)`;
+        floatingShapes2.value.style.filter = `blur(${scrollY * 0.03}px)`;
         floatingShapes3.value.style.transform = `translateY(${scrollY * -1}px)`;
-        heroText.value.style.lineHeight = `${84 - scrollY * 0.4}px`;
+        heroText.value.style.lineHeight = `${80 - scrollY * 0.4}%`;
+        designText.value.style.filter = `blur(${scrollY * 0.03}px)`;
+        shipText.value.style.filter = `blur(${scrollY * 0.03}px)`;
       }
     };
 
@@ -354,15 +357,20 @@ export default {
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat; 
     font-size: 120px;
-    line-height: 84px;
+    line-height: 80%;
     padding: $spacing-md 0;
 
+    @media screen and (max-width: 768px){
+      font-size: 80px;
+      text-shadow: 0px 2px 0 $red, 0px -10px 30px rgba($red,0.05);
+    }
+
     background: lighten($red, 20%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-left: -$spacing-sm;
-      text-shadow: 0px 3px 0 $red, 0px -10px 30px rgba($red,0.05);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-left: -$spacing-sm;
+    text-shadow: 0px 3px 0 $red, 0px -10px 30px rgba($red,0.05);
 
     .design {
       background: lighten($black, 20%);
@@ -371,6 +379,11 @@ export default {
       color: transparent;
       margin-left: -$spacing-sm;
       text-shadow: 0px 3px 0 $black, 0px -10px 30px rgba($red,0.05);
+
+      @media screen and (max-width: 768px){
+        margin-left: 0;
+        text-shadow: 0px 2px 0 $black, 0px -10px 30px rgba($red,0.05);
+      }
     }
 
     .ship {
@@ -381,6 +394,10 @@ export default {
       color: transparent;
       margin-left: -$spacing-sm;
       text-shadow: 0px 3px 0 $purple, 0px -10px 30px rgba($red,0.05);
+
+      @media screen and (max-width: 768px){
+        text-shadow: 0px 2px 0 $purple, 0px -10px 30px rgba($red,0.05);
+      }
     }
   }
 
