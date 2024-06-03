@@ -39,13 +39,19 @@ export default {
   }
 
   h2 {
-    margin-top: 0;
+    margin-top: $spacing-md;
     margin-bottom: $spacing-sm;
   }
 
   h4 {
     margin-top: 0;
   }
+}
+
+.article-extras .section-title h2,
+.article-extras .section-title h4 {
+  width: 100%;
+  text-align:center;
 }
 
 </style>
