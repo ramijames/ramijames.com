@@ -13,11 +13,12 @@ export default defineNuxtConfig({
     '@nuxt/content',
     "nuxt-newsletter",
     "nuxt-calendly",
-    "nuxt-gtag",
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
+    "nuxt-module-hotjar"
   ],
-  gtag: {
-    id: 'G-420689865'
+  hotjar: {
+    hotjarId: 5004344,
+    scriptVersion: 6,
   },
   newsletter: {    
     mailchimp: {      
