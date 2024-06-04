@@ -257,7 +257,7 @@ export default {
 
       @media screen and (max-width: 768px){
         right: 220px;
-        top: 300px;
+        top: 380px;
         width: 150px;
       }
     }
@@ -304,10 +304,7 @@ export default {
         }
 
         @media screen and (max-width: 768px){
-          position: absolute;
-          left: -120px;
-          top: -80px;
-          height: 200px;
+          display: none;
         }
       }
 
@@ -335,9 +332,9 @@ export default {
 
         @media screen and (max-width: 768px){
           position: absolute;
-          left:-300px;
+          left:-360px;
           top: -50px;
-          height: 400px;
+          height: 500px;
         }
       }
 
@@ -359,18 +356,18 @@ export default {
     font-size: 120px;
     line-height: 80%;
     padding: $spacing-md 0;
-
-    @media screen and (max-width: 768px){
-      font-size: 80px;
-      text-shadow: 0px 2px 0 $red, 0px -10px 30px rgba($red,0.05);
-    }
-
     background: lighten($red, 20%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     margin-left: -$spacing-sm;
     text-shadow: 0px 3px 0 $red, 0px -10px 30px rgba($red,0.05);
+
+    @media screen and (max-width: 768px){
+      font-size: 60px;
+      margin-left: 0;
+      text-shadow: 0px 2px 0 $red, 0px -10px 30px rgba($red,0.05);
+    }
 
     .design {
       background: lighten($black, 20%);
@@ -396,6 +393,7 @@ export default {
       text-shadow: 0px 3px 0 $purple, 0px -10px 30px rgba($red,0.05);
 
       @media screen and (max-width: 768px){
+        margin-left: 0;
         text-shadow: 0px 2px 0 $purple, 0px -10px 30px rgba($red,0.05);
       }
     }
