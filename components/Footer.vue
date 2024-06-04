@@ -85,7 +85,7 @@ footer {
 
   .footer-logo {
     img {
-      width: 47px;
+      width: 120px;
       margin-bottom: $spacing-lg;
     }
   }

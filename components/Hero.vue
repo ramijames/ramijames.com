@@ -74,8 +74,6 @@ export default {
         floatingShapes2.value.style.filter = `blur(${scrollY * 0.03}px)`;
         floatingShapes3.value.style.transform = `translateY(${scrollY * -1}px)`;
         heroText.value.style.lineHeight = `${80 - scrollY * 0.4}%`;
-        designText.value.style.filter = `blur(${scrollY * 0.03}px)`;
-        shipText.value.style.filter = `blur(${scrollY * 0.03}px)`;
       }
     };
 

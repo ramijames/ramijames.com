@@ -228,7 +228,11 @@ export default {
 
   img {
     width: auto;
-    height: 40px;
+    height: 60px;
+
+    @media screen and (max-width: 768px){
+      height: 40px;
+    }
   }
 }
 
