@@ -1,7 +1,7 @@
 <template>
-  <div class="theme-switcher-box">
+  <div class="theme-switcher-box" @click="toggleTheme">
+    <span>{{ currentTheme }} theme</span>
     <div class="theme-switcher-sun"
-      @click="toggleTheme"
       :class="`${currentTheme}`"
     ></div>
   </div>
@@ -51,14 +51,32 @@ export default {
   position: absolute;
   padding: $spacing-md $spacing-md;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
   @media screen and (max-width: 768px){
     right: $p-mobile;
     top: $p-mobile;
   }
+
+  span {
+    background: $white-dark;
+    border-radius: $br-lg;
+    padding: 4px $spacing-md 4px $spacing-xs;
+    margin-right: -26px;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba($black,0.4);
+  }
 }
 
 .dark .theme-switcher-box {
+
+  span {
+    background: $black-light;
+    color: rgba($white,0.4);
+  }
 
   &::after {
     background: rgba($blue, 0.8);
