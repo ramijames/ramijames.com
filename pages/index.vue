@@ -2,10 +2,10 @@
   <main>
     <Hero />
     <Projects />
+    <Booking />
     <Services />
     <TypesOfDesigns />
-    <GetToWork />
-    <Booking />
+    <!-- <GetToWork /> -->
     <CommonQuestions />
     <Footer />
     <Arrow />

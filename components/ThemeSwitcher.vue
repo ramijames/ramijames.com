@@ -1,6 +1,6 @@
 <template>
   <div class="theme-switcher-box" @click="toggleTheme">
-    <span>{{ currentTheme }} theme</span>
+    <!-- <span>{{ currentTheme }} theme</span> -->
     <div class="theme-switcher-sun"
       :class="`${currentTheme}`"
     ></div>
