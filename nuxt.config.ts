@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     "nuxt-newsletter",
     "nuxt-calendly",
     "@nuxtjs/sitemap",
-    "nuxt-module-hotjar"
+    "nuxt-module-hotjar",
+    '@nuxtjs/robots'
   ],
   hotjar: {
     hotjarId: 5004344,
