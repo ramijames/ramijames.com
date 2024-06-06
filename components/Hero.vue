@@ -16,7 +16,7 @@
       <div class="go-row">
         <h4 class="small">Specialized <span>design & development service retainers</span> are now available as an alternative for smart builders who just want to get to work. <span>Pay by the week, get what you need now.</span></h4>
         <div class="button-row">
-          <Button text="See available plans" size="default" to="#get-to-work" />
+          <Button text="Book a call" size="default" to="#booking" />
           <span>Capacity available</span>
         </div>
       </div>
