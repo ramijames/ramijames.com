@@ -1,14 +1,16 @@
 <template>
   <main>
     <Hero />
+    <a name="recentwork"></a>
     <Projects />
-    <Booking />
+    <!-- <Booking /> -->
+    <a name="methodology"></a>
     <Services />
     <TypesOfDesigns />
     <!-- <GetToWork /> -->
     <CommonQuestions />
     <Footer />
-    <Arrow />
+    <AfterLinks />
   </main>
 </template>
 
@@ -22,7 +24,7 @@ import GetToWork from '/components/GetToWork.vue'
 import CommonQuestions from '/components/CommonQuestions.vue'
 import Booking from '/components/Booking.vue'
 import Footer from '/components/Footer.vue'
-import Arrow from '/components/Arrow.vue'
+import AfterLinks from '/components/AfterLinks.vue'
 
 export default {
   data(){
@@ -39,8 +41,8 @@ export default {
     CommonQuestions,
     Booking,
     Footer,
-    Arrow,
-    Map
+    Map,
+    AfterLinks
   },
   setup() {
     return {

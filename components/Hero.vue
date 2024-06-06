@@ -4,7 +4,7 @@
       <img ref="triangle" src="/shapes/hero-triangle.png" class="triangle" alt="Your project is layered">
       <img ref="hummingbird" src="/hummingbird.png" class="hummingbird" alt="Your project is beautiful">
       <img ref="floatingShapes1" src="/shapes/floating-shapes-1.png" class="floating-shapes-1" alt="Woooo!">
-      <img ref="floatingShapes2" src="/shapes/floating-shapes-2.png" class="floating-shapes-2" alt="Woooo!">
+      <!-- <img ref="floatingShapes2" src="/shapes/floating-shapes-2.png" class="floating-shapes-2" alt="Woooo!"> -->
       <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
     </section>
     <section class="text">
@@ -14,39 +14,40 @@
           <span class="ship">Ship.</span>
       </h1>
       <div class="go-row">
-        <h4 class="small">Specialized <span>design & development service retainers</span> are now available as an alternative for smart builders who just want to get to work. <span>Pay by the week, get what you need now.</span></h4>
-        <div class="button-row">
+        <h4 class="small">I help startups, small teams, and solopreneurs:</h4>
+        <ul class="help-them">
+          <li>
+            <img src="/hero/vision.svg" alt="" />
+            <span>Improve their product vision and definition</span>
+          </li>
+          <li>
+            <img src="/hero/process.svg" alt="" />
+            <span>Define a product process</span>
+          </li>
+          <li>
+            <img src="/hero/data.svg" alt="" />
+            <span>Be data-driven</span>
+          </li>
+          <li>
+            <img src="/hero/error.svg" alt="" />
+            <span>Identify issues with their products</span>
+          </li>
+          <li>
+            <img src="/hero/wireframe.svg" alt="" />
+            <span>Create wireframes and prototypes</span>
+          </li>
+          <li>
+            <img src="/hero/designs.svg" alt="" />
+            <span>Create friendly and attractive designs</span>
+          </li>
+        </ul>
+        <!-- <div class="button-row">
           <Button text="Book a call" size="default" to="#booking" />
           <span>Capacity available</span>
-        </div>
+        </div> -->
       </div>
     </section>
   </main>
-  <section class="after-links">
-    <section class="links">
-      <div class="services-title">
-        <span>Quickstart</span>
-      </div>
-      <section class="links-row">
-        <a href="#perks">
-          <span class="number">01</span> 
-          <span class="title">Member Perks</span>
-        </a>
-        <a href="#join">
-          <span class="number">02</span> 
-          <span class="title">Join Today</span>
-        </a>
-        <a href="#questions">
-          <span class="number">03</span> 
-          <span class="title">Common Questions</span>
-        </a>
-        <a href="#booking">
-          <span class="number">04</span> 
-          <span class="title">Book a Call</span>
-        </a>
-      </section>
-    </section>
-  </section>
 </template>
 
 <script>
@@ -60,18 +61,15 @@ export default {
     const triangle = ref(null);
     const hummingbird = ref(null);
     const floatingShapes1 = ref(null);
-    const floatingShapes2 = ref(null);
     const floatingShapes3 = ref(null);
     const heroText = ref(null);
 
     const handleScroll = () => {
-      if (triangle.value && hummingbird.value && floatingShapes1.value && floatingShapes2.value && floatingShapes3.value) {
+      if (triangle.value && hummingbird.value && floatingShapes1.value && floatingShapes3.value) {
         const scrollY = window.scrollY;
         triangle.value.style.transform = `translateY(${scrollY * -0.8}px)`;
         hummingbird.value.style.transform = `translateY(${scrollY * -0.5}px)`;
         floatingShapes1.value.style.transform = `translateY(${scrollY * -1}px)`;
-        floatingShapes2.value.style.transform = `translateY(${scrollY * -1}px)`;
-        floatingShapes2.value.style.filter = `blur(${scrollY * 0.03}px)`;
         floatingShapes3.value.style.transform = `translateY(${scrollY * -1}px)`;
         heroText.value.style.lineHeight = `${80 - scrollY * 0.4}%`;
       }
@@ -89,7 +87,6 @@ export default {
       triangle,
       hummingbird,
       floatingShapes1,
-      floatingShapes2,
       floatingShapes3,
       heroText,
     };
@@ -132,7 +129,7 @@ export default {
   display:flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: $spacing-xl 0;
+  padding: $spacing-lg 0;
   position: relative;
 
   @media screen and (max-width: 768px){
@@ -152,6 +149,42 @@ export default {
     @media screen and (max-width: 768px){
       width: 100%;
       margin-top: $spacing-md;
+    }
+  }
+
+  .help-them {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin:0;
+    padding:0;
+    width: 100%;
+
+    li {
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: $spacing-sm;
+      list-style: none;
+      margin:0;
+      font-family: $font-family-main, 'sans-serif';
+      font-size: $font-size-sm;
+      font-weight: 500;
+      color: lighten($black, 20%);
+      line-height: $font-size-sm * $multiplier;
+
+      span {
+        margin: 0 auto;
+      }
+      
+      img {
+        width: 46px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+      }
     }
   }
 
@@ -332,7 +365,7 @@ export default {
           position: absolute;
           left:-360px;
           top: -50px;
-          height: 500px;
+          height: 450px;
         }
       }
 
@@ -358,12 +391,10 @@ export default {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin-left: -$spacing-sm;
     text-shadow: 0px 3px 0 $red, 0px -10px 30px rgba($red,0.05);
 
     @media screen and (max-width: 768px){
       font-size: 60px;
-      margin-left: 0;
       text-shadow: 0px 2px 0 $red, 0px -10px 30px rgba($red,0.05);
     }
 
@@ -372,11 +403,9 @@ export default {
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-left: -$spacing-sm;
       text-shadow: 0px 3px 0 $black, 0px -10px 30px rgba($red,0.05);
 
       @media screen and (max-width: 768px){
-        margin-left: 0;
         text-shadow: 0px 2px 0 $black, 0px -10px 30px rgba($red,0.05);
       }
     }
@@ -387,11 +416,9 @@ export default {
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-left: -$spacing-sm;
       text-shadow: 0px 3px 0 $purple, 0px -10px 30px rgba($red,0.05);
 
       @media screen and (max-width: 768px){
-        margin-left: 0;
         text-shadow: 0px 2px 0 $purple, 0px -10px 30px rgba($red,0.05);
       }
     }
@@ -410,7 +437,7 @@ export default {
 
   .small {
     margin-bottom: $spacing-md;
-    color: lighten($black, 40%);
+    color: lighten($black, 20%);
 
     span {
       color: $blue;
@@ -425,54 +452,6 @@ export default {
     color: $blue;
   }
 
-}
-
-.after-links {
-  margin-top: $spacing-sm;
-  max-width: 600px;
-  width:100%;
-  z-index: 3;
-
-  .links {
-
-    @media screen and (max-width: 768px) {
-      display:none;
-    }
-
-    .services-title {
-      font-size: $font-size-sm;
-      padding-bottom: $spacing-sm;
-      letter-spacing: 0.1rem;
-      opacity: 0.5;
-      text-transform: uppercase;
-      display:flex;
-      flex-direction: row;
-      justify-content: center;
-      border-bottom: 1px solid rgba($blue, 0.2);
-    }
-
-    .links-row {
-      display: flex;
-      justify-content: space-between;
-      gap: $spacing-sm;
-      padding-top: $spacing-sm;
-      flex-direction: row;
-
-      a {
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
-        text-decoration: none;
-        font-family: $font-family-secondary;
-        font-weight: 400;
-        font-size: $font-size-md;
-      }
-
-      .number {
-        display:none;
-      }
-    }
-  }
 }
 
 .dark #hero {
@@ -490,336 +469,5 @@ export default {
   }
 
 }
-
-// #hero-for-the-zero {
-//   display:flex;
-//   flex-direction: row;
-//   background-color: $white;
-//   height:100vh;
-//   width:100vw;
-
-//   @media screen and (max-width: 768px){
-//     flex-direction: column;
-//     height: initial;
-//   }
-
-//   .intro {
-//     display:flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     gap: $spacing-xs;
-//     width:50vw;
-//     height:100vh;
-//     padding: $spacing-lg;
-//     z-index: 2;
-//     align-items: flex-start;
-//     -webkit-transform:scale(1.0);
-
-//     h1 {
-//       font-size: 6rem;
-//       line-height: 6rem;
-//       margin: 0;
-//       color: $blue;
-//     }
-
-//     @media screen and (max-width: 768px){
-//       width:100vw;
-//       height:100vh;
-//       font-size: $font-size-mega;
-//       padding: $spacing-md;
-//     }
-
-//     .blue {
-//       color: $blue;
-//     }
-
-//     .convince {
-//       font-family: $font-family-secondary;
-//       font-size: $font-size-xl;
-//       font-weight:normal;
-//       text-transform: none;
-//       margin: $spacing-md 0;
-//     }
-
-//     .products {
-//       opacity: 0;
-//       font-weight:black;
-
-//       @media screen and (max-width: 768px){
-//         font-size: $font-size-mega;
-//       }
-//     }
-
-//     .experiences {
-//       opacity: 0;
-//     }
-
-//     .designs {
-//       color: $blue;
-//       opacity: 0;
-//     }
-//   }
-
-//   .links {
-//     display:flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     gap: $spacing-xs;
-//     width:50vw;
-//     height:100vh;
-//     padding: $spacing-lg;
-//     background: $black;
-//     font-size: $font-size-max;
-//     font-weight:bold;
-//     text-transform: uppercase;
-//     position: relative;
-//     overflow: hidden;
-//     z-index: 10;
-//     border-left: 4px solid $blue;
-//     align-items: flex-start;
-//     background: $black radial-gradient(ellipse at top left, rgba($blue, 0.2) 0%, rgba($black, 100) 50%);
-//     perspective: 10em;
-
-//     @media screen and (max-width: 768px){
-//       height: 50vh;
-//     }
-
-//     .linksRotator {
-//       transform: rotate3d(0, 1, 0, -25deg) scale(1.2);
-//       transform-style: preserve-3d;
-//       display:flex;
-//       flex-direction: column;
-//       justify-content: center;
-//       gap: $spacing-xs;
-
-//       @media screen and (max-width: 768px){
-//         transform: rotate3d(0, 1, 0, 0deg) scale(1);
-//       }
-//     }
-
-//     @media screen and (max-width: 768px){
-//       width:100vw;
-//       height:100vh;
-//       font-size: 6dvw;
-//       padding: $spacing-md;
-//     }
-
-//     .small {
-//       font-size: $font-size-md;
-//       color: rgba($white, 0.5);
-//       opacity: 0;
-//     }
-
-//     .linkOne {
-//       opacity: 0;
-//     }
-
-//     .linkTwo {
-//       opacity: 0;
-//     }
-
-//     .linkThree {
-//       opacity: 0;
-//     }
-
-//     a {
-//       text-decoration: none;
-//       color: $white;
-//       display:inline;
-//       font-weight: normal;
-//       transition: color 0.3s ease-in-out;
-
-//       span.number {
-//         margin-right: $spacing-sm;
-//         opacity: 0.5;
-//       }
-
-//       span.title {
-//         position: relative;
-
-//         &::before {
-//           content: '';
-//           position: absolute;
-//           bottom: -2px;
-//           left: 0;
-//           width: 100%;
-//           height: 4px;
-//           transition: all 0.4s ease-in-out;
-//           background-color: rgba($white, 0.3);
-//         }
-
-//         &::after {
-//           content: '';
-//           position: absolute;
-//           bottom: -2px;
-//           left: 0;
-//           width: 0;
-//           height: 4px;
-//           transition: width 0.4s;
-//           background-color: rgba($blue, 1);
-//         }
-//       }
-//     }
-//   }
-// }
-
-// #hero-for-the-zero a:hover {
-//   color: $blue;
-// }
-
-// #hero-for-the-zero a:hover span.title::after {
-//   background-color: rgba($blue, 1);
-//   width:100%;
-// }
-
-// .dark #hero-for-the-zero {
-//   background-color: $black;
-
-//   .intro {
-//     color: $white;
-//   }
-
-//   .links {
-//     background: $white;
-
-//     .small {
-//       color: $gray-md;
-//     }
-
-//     a {
-//       color: $black;
-
-//       span.number {
-//         opacity: 0.5;
-//       }
-
-//       span.title::before {
-//         background-color: rgba($black, 0.3);
-//       }
-
-//       span.title::after {
-//         background-color: rgba($black, 1);
-//       }
-//     }
-
-//     .designs {
-//       color: $blue-light;
-//     }
-//   }
-// }
-
-// .animate-in {
-//   .intro {
-//     .small {
-//       animation: fadeIn 0.5s ease-in forwards;
-//     }
-
-//     .products {
-//       animation: fadeIn 0.5s ease-in forwards 0.25s;
-//     }
-
-//     .experiences {
-//       animation: fadeIn 0.5s ease-in forwards 0.5s;
-//     }
-
-//     .designs {
-//       animation: fadeIn 0.5s ease-in forwards .75s;
-//     }
-//   }
-// }
-
-// .animate-out {
-//   .intro {
-//     .small {
-//       opacity: 1;
-//       animation: fadeOut 0.25s ease-in forwards;
-//     }
-
-//     .products {
-//       opacity: 1;
-//       animation: fadeOut 0.25s ease-in forwards;
-//     }
-
-//     .experiences {
-//       opacity: 1;
-//       animation: fadeOut 0.25s ease-in forwards;
-//     }
-
-//     .designs {
-//       opacity: 1;
-//       animation: fadeOut 0.25s ease-in forwards;
-//     }
-//   }
-// }
-
-// .animate-in {
-//   .links {
-//     .small {
-//       animation: fadeIn 0.5s ease-in forwards;
-//     }
-
-//     .linkOne {
-//       animation: fadeIn 0.5s ease-in forwards 0.25s;
-//     }
-
-//     .linkTwo {
-//       animation: fadeIn 0.5s ease-in forwards 0.5s;
-//     }
-
-//     .linkThree {
-//       animation: fadeIn 0.5s ease-in forwards .75s;
-//     }
-//   }
-// }
-
-// .animate-out {
-//   .links {
-//     .small {
-//       opacity: 1;
-//       animation: fadeOut 0.25s ease-in forwards;
-//     }
-
-//     .linkOne {
-//       opacity: 1;
-//       animation: fadeOut 0.25s ease-in forwards;
-//     }
-
-//     .linkTwo {
-//       opacity: 1;
-//       animation: fadeOut 0.25s ease-in forwards;
-//     }
-
-//     .linkThree {
-//       opacity: 1;
-//       animation: fadeOut 0.25s ease-in forwards;
-//     }
-//   }
-// }
-
-// @keyframes fadeIn {
-//   0% { 
-//     opacity: 0; 
-//     transform: translateX(-10px);
-//   }
-
-//   100% { 
-//     opacity: 1; 
-//     transform: translateX(0);
-//   }
-
-// }
-
-// @keyframes fadeOut {
-//   0% { 
-//     opacity: 1; 
-//     transform: translateX(0);
-//   }
-
-//   100% { 
-//     opacity: 0; 
-//     transform: translateX(10px);
-//   }
-
-// }
 
 </style>
