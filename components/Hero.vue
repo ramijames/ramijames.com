@@ -1,20 +1,22 @@
 <template>
   <main id="hero" ref="animatorHero" class="general-main">
-    <section class="images">
+    <!-- <section class="images">
       <img ref="triangle" src="/shapes/hero-triangle.png" class="triangle" alt="Your project is layered">
       <img ref="hummingbird" src="/hummingbird.png" class="hummingbird" alt="Your project is beautiful">
-      <img ref="floatingShapes1" src="/shapes/floating-shapes-1.png" class="floating-shapes-1" alt="Woooo!">
+      <img ref="floatingShapes1" src="/shapes/floating-shapes-1.png" class="floating-shapes-1" alt="Woooo!"> -->
       <!-- <img ref="floatingShapes2" src="/shapes/floating-shapes-2.png" class="floating-shapes-2" alt="Woooo!"> -->
-      <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
-    </section>
+      <!-- <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
+    </section> -->
     <section class="text">
+      <p class="super-text">Don't build anything until you read this!</p>
       <h1 ref="heroText">
-          Ideate.<br>
-          <span class="design">Design.</span><br>
-          <span class="ship">Ship.</span>
+          Become a<br>
+          <span class="ship">Product-first</span><br>
+          Company.
       </h1>
       <div class="go-row">
-        <h4 class="small">I help startups, small teams, and solopreneurs:</h4>
+        <a href="#" class="cta">But, why?</a>
+        <!-- <h4 class="small">I help startups, small teams, and solopreneurs:</h4>
         <ul class="help-them">
           <li>
             <img src="/hero/vision.svg" alt="" />
@@ -40,7 +42,7 @@
             <img src="/hero/designs.svg" alt="" />
             <span>Create friendly and attractive designs</span>
           </li>
-        </ul>
+        </ul> -->
         <!-- <div class="button-row">
           <Button text="Book a call" size="default" to="#booking" />
           <span>Capacity available</span>
@@ -65,13 +67,13 @@ export default {
     const heroText = ref(null);
 
     const handleScroll = () => {
-      if (triangle.value && hummingbird.value && floatingShapes1.value && floatingShapes3.value) {
+      if (heroText.value ) {
         const scrollY = window.scrollY;
-        triangle.value.style.transform = `translateY(${scrollY * -0.8}px)`;
-        hummingbird.value.style.transform = `translateY(${scrollY * -0.5}px)`;
-        floatingShapes1.value.style.transform = `translateY(${scrollY * -1}px)`;
-        floatingShapes3.value.style.transform = `translateY(${scrollY * -1}px)`;
-        heroText.value.style.lineHeight = `${80 - scrollY * 0.4}%`;
+        // triangle.value.style.transform = `translateY(${scrollY * -0.8}px)`;
+        // hummingbird.value.style.transform = `translateY(${scrollY * -0.5}px)`;
+        // floatingShapes1.value.style.transform = `translateY(${scrollY * -1}px)`;
+        // floatingShapes3.value.style.transform = `translateY(${scrollY * -1}px)`;
+        heroText.value.style.lineHeight = `${100 - scrollY * 0.4}%`;
       }
     };
 
@@ -84,10 +86,10 @@ export default {
     });
 
     return {
-      triangle,
-      hummingbird,
-      floatingShapes1,
-      floatingShapes3,
+      // triangle,
+      // hummingbird,
+      // floatingShapes1,
+      // floatingShapes3,
       heroText,
     };
   },
@@ -141,9 +143,8 @@ export default {
   .text {
     display:flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     z-index: 2;
-    width: 55%;
     position: relative;
 
     @media screen and (max-width: 768px){
@@ -195,6 +196,13 @@ export default {
     margin-bottom: 50px;
     position: relative;
     width: 100%;
+
+    .cta {
+      font-size: $font-size-xxl;
+      color: $red;
+      text-align: center;
+      width: 100%;
+    }
 
     .button-row {
       display:flex;
@@ -380,47 +388,24 @@ export default {
   }
 
   h1 {
-    color: $red;
+    color: $blue-dark;
     font-weight: 800;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat; 
-    font-size: 120px;
-    line-height: 80%;
+    font-size: $font-size-mega;
+    line-height: 100%;
     padding: $spacing-md 0;
-    background: lighten($red, 20%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0px 3px 0 $red, 0px -10px 30px rgba($red,0.05);
+    color: $teal-dark;
+    text-align: center;
+    text-shadow: 0px 1.5px 0 lighten($teal, 5%), 0px 3px 0 darken($teal, 25%);
 
     @media screen and (max-width: 768px){
-      font-size: 60px;
-      text-shadow: 0px 2px 0 $red, 0px -10px 30px rgba($red,0.05);
-    }
-
-    .design {
-      background: lighten($black, 20%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0px 3px 0 $black, 0px -10px 30px rgba($red,0.05);
-
-      @media screen and (max-width: 768px){
-        text-shadow: 0px 2px 0 $black, 0px -10px 30px rgba($red,0.05);
-      }
+      font-size: $font-size-xxl;
     }
 
     .ship {
-      color: $purple;
-      background: lighten($purple, 20%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0px 3px 0 $purple, 0px -10px 30px rgba($red,0.05);
-
-      @media screen and (max-width: 768px){
-        text-shadow: 0px 2px 0 $purple, 0px -10px 30px rgba($red,0.05);
-      }
+      color: $red-dark;
+      text-shadow: 0px 1.5px 0 lighten($red, 5%), 0px 3px 0 darken($red, 25%);
     }
   }
 
@@ -457,11 +442,7 @@ export default {
 .dark #hero {
 
   h1 {
-    color: $mint-dark;
-
-    .design {
-      color: $blue-light;
-    }
+    color: $teal;
 
     .ship {
       color: $red;

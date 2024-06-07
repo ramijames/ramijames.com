@@ -11,7 +11,7 @@
         <a href="#questions">
           <span class="title">Questions</span>
         </a>
-        <Button text="Book a call" to="https://calendly.com/itsramijames" type="small" />
+        <Button text="Book a call" to="https://calendly.com/itsramijames" />
       </section>
     </section>
   </section>
@@ -26,10 +26,11 @@
   z-index: 10000;
   position: fixed;
   bottom: $p-desktop;
-  background-color: rgba($blue, 0.65);
+  background: linear-gradient(0deg, rgba($white,0.7), rgba($white,0.2));
+  backdrop-filter: blur(10px);
   border-radius: $br-md;
   padding: $spacing-xs;
-  backdrop-filter: blur(10px);
+  box-shadow: 0px 2px 0 rgba($teal, 5%), 0px 4px 0 rgba($teal, 25%);
 
   @media screen and (max-width: 768px){
     bottom: 0;
@@ -59,7 +60,7 @@
         font-family: $font-family-main, 'sans-serif';
         font-weight: 500;
         font-size: $font-size-md;
-        color: $white;
+        color: $teal-dark;
 
         @media screen and (max-width: 768px){
           font-size: 2.5dvw;

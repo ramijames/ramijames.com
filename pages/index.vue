@@ -2,7 +2,7 @@
   <main>
     <Hero />
     <a name="recentwork"></a>
-    <Projects />
+    <HeroProjects />
     <!-- <Booking /> -->
     <a name="methodology"></a>
     <Services />
@@ -17,7 +17,7 @@
 <script>
 
 import Hero from '/components/Hero.vue'
-import Projects from '/components/Projects.vue'
+import HeroProjects from '/components/HeroProjects.vue'
 import Services from '/components/Services.vue'
 import TypesOfDesigns from '/components/TypesOfDesigns.vue'
 import GetToWork from '/components/GetToWork.vue'
@@ -34,7 +34,7 @@ export default {
   },
   components: {
     Hero,
-    Projects,
+    HeroProjects,
     Services,
     TypesOfDesigns,
     GetToWork,

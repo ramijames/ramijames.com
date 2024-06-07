@@ -20,7 +20,8 @@
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
-    "vue-slider-component": "^3.2.24"
+    "vue-slider-component": "^3.2.24",
+    "vue3-carousel-nuxt": "^1.1.1"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
