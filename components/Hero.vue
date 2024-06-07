@@ -1,11 +1,9 @@
 <template>
   <main id="hero" ref="animatorHero" class="general-main">
     <!-- <section class="images">
-      <img ref="triangle" src="/shapes/hero-triangle.png" class="triangle" alt="Your project is layered">
-      <img ref="hummingbird" src="/hummingbird.png" class="hummingbird" alt="Your project is beautiful">
-      <img ref="floatingShapes1" src="/shapes/floating-shapes-1.png" class="floating-shapes-1" alt="Woooo!"> -->
-      <!-- <img ref="floatingShapes2" src="/shapes/floating-shapes-2.png" class="floating-shapes-2" alt="Woooo!"> -->
-      <!-- <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
+      <img ref="floatingShapes1" src="/shapes/floating-shapes-1.png" class="floating-shapes-1" alt="Woooo!">
+      <img ref="floatingShapes2" src="/shapes/floating-shapes-2.png" class="floating-shapes-2" alt="Woooo!">
+      <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
     </section> -->
     <section class="text">
       <p class="super-text">Don't build anything until you read this!</p>
@@ -15,40 +13,10 @@
           Company.
       </h1>
       <div class="go-row">
-        <a href="#" class="cta">But, why?</a>
-        <!-- <h4 class="small">I help startups, small teams, and solopreneurs:</h4>
-        <ul class="help-them">
-          <li>
-            <img src="/hero/vision.svg" alt="" />
-            <span>Improve their product vision and definition</span>
-          </li>
-          <li>
-            <img src="/hero/process.svg" alt="" />
-            <span>Define a product process</span>
-          </li>
-          <li>
-            <img src="/hero/data.svg" alt="" />
-            <span>Be data-driven</span>
-          </li>
-          <li>
-            <img src="/hero/error.svg" alt="" />
-            <span>Identify issues with their products</span>
-          </li>
-          <li>
-            <img src="/hero/wireframe.svg" alt="" />
-            <span>Create wireframes and prototypes</span>
-          </li>
-          <li>
-            <img src="/hero/designs.svg" alt="" />
-            <span>Create friendly and attractive designs</span>
-          </li>
-        </ul> -->
-        <!-- <div class="button-row">
-          <Button text="Book a call" size="default" to="#booking" />
-          <span>Capacity available</span>
-        </div> -->
+        <a href="#methodology" class="cta">But, why?</a>
       </div>
     </section>
+    <Triangle />
   </main>
 </template>
 
@@ -58,21 +26,12 @@ import Button from './Button.vue'
 import { onMounted, onUnmounted, ref } from 'vue';
 
 export default {
-  // ...
   setup() {
-    const triangle = ref(null);
-    const hummingbird = ref(null);
-    const floatingShapes1 = ref(null);
-    const floatingShapes3 = ref(null);
     const heroText = ref(null);
 
     const handleScroll = () => {
       if (heroText.value ) {
         const scrollY = window.scrollY;
-        // triangle.value.style.transform = `translateY(${scrollY * -0.8}px)`;
-        // hummingbird.value.style.transform = `translateY(${scrollY * -0.5}px)`;
-        // floatingShapes1.value.style.transform = `translateY(${scrollY * -1}px)`;
-        // floatingShapes3.value.style.transform = `translateY(${scrollY * -1}px)`;
         heroText.value.style.lineHeight = `${100 - scrollY * 0.4}%`;
       }
     };
@@ -86,10 +45,6 @@ export default {
     });
 
     return {
-      // triangle,
-      // hummingbird,
-      // floatingShapes1,
-      // floatingShapes3,
       heroText,
     };
   },

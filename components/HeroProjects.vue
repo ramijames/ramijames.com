@@ -13,6 +13,7 @@
       </div>
       <Button class="products-button" to="/products" text="See Recent Work" size="big" />
     </section>
+    <HummingBird />
   </main>
 </template>
 
@@ -25,6 +26,8 @@ export default {
       slides: [
         { image: '/products/doodledapp/flow.png', link: '/products/doodledapp', description: 'Doodledapp' },
         { image: '/products/scatter/scatter-main-mobile.png', link: '/products/scatter', description: 'Scatter' },
+        { image: '/products/food-for-future/fff-display-two.png', link: '/products/food-for-future', description: 'Food for Future' },
+        { image: '/products/ultra/ultra-docs-main.png', link: '/products/ultra', description: 'Ultra' },
       ]
     }
   },
@@ -50,7 +53,6 @@ export default {
   height: 720px;
   position: relative;
   padding:0;
-  overflow: hidden;
   margin-bottom: $spacing-lg;
   box-shadow: 0px 2px 0 rgba($teal, 5%), 0px 4px 0 rgba($teal, 25%);
 
@@ -87,7 +89,7 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: linear-gradient(0deg, rgba($white,0.7), rgba($white,0.2));
+    background: linear-gradient(0deg, rgba($white,0.98), rgba($white,0.68));
     backdrop-filter: blur(10px);
     color: $teal-dark;
     font-size: $font-size-xxl;
@@ -107,6 +109,8 @@ export default {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      overflow: hidden;
+      border-radius: $br-lg;
     }
   }
 }
