@@ -26,11 +26,11 @@
   z-index: 10000;
   position: fixed;
   bottom: $p-desktop;
-  background: linear-gradient(0deg, rgba($white,0.7), rgba($white,0.2));
+  background: linear-gradient(180deg, rgba($white,0.7), rgba($white,0.2));
   backdrop-filter: blur(10px);
   border-radius: $br-md;
   padding: $spacing-xs;
-  box-shadow: 0px 2px 0 rgba($teal, 5%), 0px 4px 0 rgba($teal, 25%);
+  box-shadow: 0px 2px 0 rgba($teal, 5%), 0px 4px 0 rgba($teal, 25%), 0 2px 0 rgba($white, 0.4);
 
   @media screen and (max-width: 768px){
     bottom: 0;

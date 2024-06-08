@@ -105,6 +105,7 @@ h4 {
   font-family: $font-family-secondary, sans-serif;
   margin-bottom:1rem;
   font-weight:500;
+  color: $red-dark;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-md;
@@ -199,6 +200,51 @@ p > strong {
 
 .center {
   text-align: center;
+}
+
+.w-full {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.w-two-thirds {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 66.666%;
+  margin: 0 auto;
+}
+
+.w-half {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.w-third {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.333%;
+  margin: 0 auto;
+}
+
+.w-quarter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  margin: 0 auto;
 }
 
 /* Layout */

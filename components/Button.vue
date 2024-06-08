@@ -62,11 +62,9 @@ export default {
     font-size: $font-size-xl;
     font-weight: 700;
     border-radius: $br-md;
-    background-color: $teal-dark;
-    box-shadow: 0px 2px 0 lighten($teal, 5%), 0px 4px 0 darken($teal, 25%);
+    box-shadow: 0px 2px 0 lighten($red, 5%), 0px 4px 0 darken($red, 25%);
 
     &:hover {
-      background-color: darken($teal-dark, 10%);
       transform: scale(1.03);
     }
   }

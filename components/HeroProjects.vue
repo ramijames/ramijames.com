@@ -69,8 +69,6 @@ export default {
 @import './assets/variables';
 
 #HeroProjects {
-  border-radius: $br-lg;
-  background-color: $white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,8 +76,6 @@ export default {
   position: relative;
   padding:0;
   margin-bottom: $spacing-lg;
-  overflow: hidden;
-  box-shadow: 0px 2px 0 rgba($teal, 5%), 0px 4px 0 rgba($teal, 25%);
 
   @media screen and (max-width: 1000px){
     border-radius: 0;
@@ -96,6 +92,8 @@ export default {
     width: 100%;
     height: 100%;
     position: relative;
+    border-radius: $br-lg;
+    box-shadow: 0px 2px 0 rgba($teal, 5%), 0px 4px 0 rgba($teal, 25%);
 
     .navigation {
       position: absolute;
@@ -141,14 +139,17 @@ export default {
     display: flex;
     width: 100%;
     height: 100%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.25s ease-in-out;
     overflow: hidden;
+    border-radius: $br-lg;
   }
 
   .slide {
     width: 100%;
     height: 100%;
     position: relative;
+    border-radius: $br-lg;
+    overflow: hidden;
   }
 
   .slide-description {
@@ -163,6 +164,7 @@ export default {
     padding: $spacing-md $spacing-lg;
     text-align: center;
     border-radius: 0 $br-lg 0 $br-lg;
+    overflow: hidden;
     border-top: 1px solid rgba($white,0.4);
 
     @media screen and (max-width: 1000px){

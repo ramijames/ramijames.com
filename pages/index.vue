@@ -3,6 +3,7 @@
     <Hero />
     <a name="recentwork"></a>
     <HeroProjects />
+    <ProductFirst />
     <!-- <Booking /> -->
     <a name="methodology"></a>
     <Services />
@@ -18,6 +19,7 @@
 
 import Hero from '/components/Hero.vue'
 import HeroProjects from '/components/HeroProjects.vue'
+import ProductFirst from '/components/ProductFirst.vue'
 import Services from '/components/Services.vue'
 import TypesOfDesigns from '/components/TypesOfDesigns.vue'
 import GetToWork from '/components/GetToWork.vue'
@@ -35,6 +37,7 @@ export default {
   components: {
     Hero,
     HeroProjects,
+    ProductFirst,
     Services,
     TypesOfDesigns,
     GetToWork,
