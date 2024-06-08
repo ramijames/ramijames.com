@@ -1,15 +1,14 @@
 <template>
   <section class="general-main page-top">
     <section class="explanation">
-      <SectionTitle title="About Rami James" centered="true" />
-      <p>I have been actively building online products since 1996. 
-                    My roles within organizations have ranged from designer, product leader, developer, 
-                    technical writer, head of developer relations, up to senior management. I like to work 
-                    with small, fast-moving teams who build innovative and interesting functionality.</p>
-      <PostsExtras />
-      <Separator />
-      <h3>Work History</h3>
+      <img src="/rami-profile.png" alt="Rami James" class="profile-pic">
+      
       <section class="jobs">
+        <h4>I have been actively building online products since 1996. 
+                    My roles within organizations have ranged from designer, product leader, developer, 
+                    technical writer, head of developer relations, up to senior management as COO and Co-founder.</h4>
+        <h4>I currently teach small, fast-moving teams <nuxt-link to="/">how to be Product-first</nuxt-link> so that they can build innovative and interesting software to take their market niche by storm.</h4>
+        <br><br>
         <section class="single-job triangle">
           <p class="job-title">Consulting Specialist</p>
           <p class="job-duration">1996 - Present</p>
@@ -170,192 +169,84 @@ export default {
 
 @import './assets/variables';
 
-.about-main {
+
+.explanation {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  padding:0 8rem;
-  margin-top: 8rem;
-}
-
-h1.about-bold {
-  text-align: left;
-  font-size:4dvw;
-  font-weight: bold;
-  margin:0;
-  line-height: 4dvw;
-  z-index: 200;
-  animation: animatedBackground 5s ease-in-out infinite;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  background-image: linear-gradient(90deg, rgb(161, 49, 231), #d81515, #7523e1, rgb(161, 49, 231)) !important;
-  background-size: 300% !important;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-
-    @media screen and (max-width: 768px) {
-      h1.about-bold {
-        font-size: 4rem;
-        line-height: 3.5rem;
-        padding:0 0 1rem;
-      }
-      
-    }
-
-    @keyframes animatedBackground {
-      0% {
-        background-position:0 50%;
-      }
-      50% {
-        background-position:50% 50%;
-      }
-      100% {
-        background-position:0 50%;
-      }
-    }
-
-.story-mode {
-  margin:0 auto;
-  display:flex;
   flex-direction: column;
-  gap:4rem;
+  align-items: flex-start;
+  width: 100%;
 }
 
-    section.right h4:first-of-type {
-      margin-top: 0;
-    }
+.profile-pic {
+  margin: 0 auto;
+  border-radius: $br-lg;
+  align-self: flex-end;
+  width: 200px;
+  margin-bottom: -$spacing-lg;
+  z-index: 1;
+}
 
-    @media screen and (max-width: 768px) {
-      section.content {
-        flex-direction: column;
-      }
-
-      section.left {
-        display: none;
-      }
-
-      section.right {
-        width:100%;
-      }
-      
-    }
 
 .jobs {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border-left:2px solid $black;
-  margin:2rem 0 0 1rem;
+  background: url("/_nuxt/public/textures/texture-3-bg.png") padding-box, linear-gradient(140deg, white -5%, white 15%) border-box;
+  border-radius: 0.6rem;
+  border: 4px solid transparent;
+  padding: $spacing-xl $spacing-lg $spacing-lg $spacing-lg;
 }
 
-    .dark .jobs {
-      border-left:2px solid $white;
-    }
-
     .single-job {
-      margin: 0 0 2rem 2rem;
+      margin: 0;
       position: relative;
+      margin-bottom: $spacing-lg;
     }
-
-        .single-job:first-child {
-          margin-top: 0;
-        }
-
-        .single-job::before {
-          content: '';
-          position: absolute;
-          left: -38px;
-          top:0rem;
-          width: 6px;
-          height: 6px;
-          background-color: $white;
-          border:2px solid $black;
-          border-radius: 50%;
-        }
-
-            .dark .single-job::before {
-              background-color: $black;
-              border:2px solid $white;
-            }
-
-        .single-job.triangle::before {
-          content: '';
-          position: absolute;
-          left: -41px;
-          top:0rem;
-          width: 0px;
-          height: 0px;
-          border-style: solid;
-          border-width: 0 8px 10px 8px;
-          border-color: $white $white $black $white;
-          transform: rotate(0deg);
-          border-radius: 0;
-        }
-
-            .dark .single-job.triangle::before {
-              border-color: transparent transparent $white transparent;
-              background-color: $black;
-            }
 
         .job-title {
-          font-weight: bold;
-          margin-top:-0.5rem;
-          margin-bottom: 0.25rem;
-          font-size:1.2rem;
+          font-family: $font-family-main, sans-serif;
+          color: $teal-dark;
+          font-weight: 700;
+          font-size: $font-size-xl;
         }
 
         .job-subtitle {
           font-weight: bold;
-          margin-top:2rem;
-          margin-bottom: 1rem;
-          margin-left:2rem;
-          border-bottom: 1px solid rgba($black, 0.144);
-          padding-bottom: .5rem;
+          margin-top: $spacing-md;
+          margin-bottom: 0;
         }
 
         .job-duration {
-          font-size: 0.8rem;
-          color: #666;
+          font-size: $font-size-sm;
+          color: $teal;
+          border-radius: $br-sm;
         }
 
-        .job-descriptions,
-        .job-descriptions li {
-          margin-left:2rem;
-          margin-bottom: 1rem;
+        .job-descriptions {
+          margin-top: 0;
+          margin-bottom: $spacing-sm;
         }
 
         .job-descriptions li {
-          margin:0 0 0.5rem 1rem;
+          margin-bottom: 0;
+          font-size: $font-size-sm;
         }
 
         .tiny-show-more {
           color: $black;
           cursor: pointer;
           text-decoration: none;
-          padding:0.15rem .45rem;
-          border:1px solid rgba($black, 0.1);
-          border-radius: 4px;
-          margin-left:2rem;
-          margin-top:1rem;
+          padding: $spacing-xs $spacing-sm;
+          border-radius: $br-sm;
+          background-color: rgba($blue, 0.1);
+          margin-top: $spacing-md;
           font-size: $font-size-sm;
+          color: $teal;
         }
-
-            .dark .tiny-show-more {
-              color: $white;
-              border:1px solid rgba($white, 0.1);
-            }
 
         .tiny-show-more:hover {
-          border:1px solid rgba($black, 0.2);
+          background-color: rgba($blue, 0.2);
         }
-
-            .dark .tiny-show-more:hover {
-              border:1px solid $white;
-            }
-
 
 
 </style>

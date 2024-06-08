@@ -3,13 +3,13 @@
     <Hero />
     <a name="recentwork"></a>
     <HeroProjects />
+    <a name="methodology"></a>
     <ProductFirst />
     <!-- <Booking /> -->
-    <a name="methodology"></a>
-    <Services />
-    <TypesOfDesigns />
+    <!-- <Services /> -->
+    <!-- <TypesOfDesigns /> -->
     <!-- <GetToWork /> -->
-    <CommonQuestions />
+    <!-- <CommonQuestions /> -->
     <Footer />
     <AfterLinks />
   </main>

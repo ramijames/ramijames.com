@@ -34,11 +34,16 @@ h1 {
   font-size: $font-size-mega;
   line-height: $font-size-mega; 
   font-family: $font-family-main, sans-serif;
+  color: $teal-dark;
   font-weight:800;
   font-style: italic;
   margin-top: 0;
   margin-bottom: 2rem;
   padding:0.5rem 0;
+
+  .highlight {
+    color: $red-dark;
+  }
 
   @media screen and (max-width: 1200px) {
     font-size: $font-size-max;
@@ -62,6 +67,7 @@ h2 {
   font-family: $font-family-main, sans-serif;
   margin-bottom:1rem;
   font-weight:800;
+  font-style: italic;
   color: $teal-dark;
 
   @media screen and (max-width: 1000px) {
@@ -105,7 +111,12 @@ h4 {
   font-family: $font-family-secondary, sans-serif;
   margin-bottom:1rem;
   font-weight:500;
-  color: $red-dark;
+  color: $teal-dark;
+
+  .highlight {
+    color: $red-dark;
+    font-weight: 700;
+  }
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-md;

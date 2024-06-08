@@ -11,7 +11,7 @@
         <a href="#questions">
           <span class="title">Questions</span>
         </a>
-        <Button text="Book a call" to="https://calendly.com/itsramijames" />
+        <Button text="Get help now" to="https://calendly.com/itsramijames" />
       </section>
     </section>
   </section>

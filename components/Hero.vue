@@ -13,7 +13,7 @@
           Company.
       </h1>
       <div class="go-row">
-        <a href="#methodology" class="cta">But, why?</a>
+        <a href="#methodology" class="cta">A what?</a>
       </div>
     </section>
     <Triangle />
