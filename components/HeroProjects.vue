@@ -11,6 +11,18 @@
           </div>
         </div>
       </div>
+      <section class="navigation">
+        <button class="previous" @click="prevSlide">
+          <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 3L3.70711 10.2929C3.31658 10.6834 3.31658 11.3166 3.70711 11.7071L11 19" stroke="white" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="next" @click="nextSlide">
+          <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3L10.2929 10.2929C10.6834 10.6834 10.6834 11.3166 10.2929 11.7071L3 19" stroke="white" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </section>
       <Button class="products-button" to="/products" text="See Recent Work" size="big" />
     </section>
     <HummingBird />
@@ -29,6 +41,18 @@ export default {
         { image: '/products/food-for-future/fff-display-two.png', link: '/products/food-for-future', description: 'Food for Future' },
         { image: '/products/ultra/ultra-docs-main.png', link: '/products/ultra', description: 'Ultra' },
       ]
+    }
+  },
+  methods: {
+    nextSlide() {
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+    },
+    prevSlide() {
+      if (this.currentSlide === 0) {
+        this.currentSlide = this.slides.length - 1;
+      } else {
+        this.currentSlide--;
+      }
     }
   },
   mounted() {
@@ -54,6 +78,7 @@ export default {
   position: relative;
   padding:0;
   margin-bottom: $spacing-lg;
+  overflow: hidden;
   box-shadow: 0px 2px 0 rgba($teal, 5%), 0px 4px 0 rgba($teal, 25%);
 
   @media screen and (max-width: 1000px){
@@ -70,6 +95,46 @@ export default {
     overflow: hidden;
     width: 100%;
     height: 100%;
+    position: relative;
+
+    .navigation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: $br-lg 0 $br-lg 0;
+      padding: $spacing-md;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      flex-direction: row;
+      gap: $spacing-md;
+      background: linear-gradient(180deg, rgba($white,0.98), rgba($white,0.68));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba($white,0.4);
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+          svg path {
+            stroke: darken($teal-dark, 20%);
+          }
+        }
+
+        &:active {
+          svg path {
+            stroke: lighten($teal-dark, 20%);
+          }
+        }
+
+        svg path {
+          stroke: $teal-dark;
+        }
+      }
+    }
   }
 
   .slides {
@@ -77,6 +142,7 @@ export default {
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease-in-out;
+    overflow: hidden;
   }
 
   .slide {
