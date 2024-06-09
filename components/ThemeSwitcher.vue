@@ -56,8 +56,8 @@ export default {
   align-items: center;
 
   @media screen and (max-width: 768px){
-    right: $p-mobile;
-    top: $p-mobile;
+    right: 0;
+    top: 0;
   }
 
   span {

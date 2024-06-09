@@ -18,6 +18,12 @@ body {
   font-family: $font-family-main, sans-serif;
 }
 
+/* Fix for overflow bug */
+#__nuxt {
+  overflow-x: hidden;
+}
+
+
 /* Typography */
 
 a {
@@ -48,6 +54,11 @@ h1 {
   @media screen and (max-width: 1200px) {
     font-size: $font-size-max;
     line-height: $font-size-max;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: $font-size-xxl;
+    line-height: $font-size-xxl;
   }
 
 }
@@ -111,7 +122,6 @@ h4 {
   font-family: $font-family-secondary, sans-serif;
   margin-bottom:1rem;
   font-weight:500;
-  color: $teal-dark;
 
   .highlight {
     color: $red-dark;
@@ -140,21 +150,28 @@ h5 {
   line-height: $spacing-md;
 
   @media screen and (max-width: 1000px) {
-    font-size: $font-size-md;
-    line-height: $font-size-md * $multiplier;
+    font-size: $font-size-xs;
+    line-height: $font-size-sm * $multiplier;
   }
 }
 
 p.super-text {
   font-family: $font-family-main, sans-serif;
   font-style: normal;
-  font-weight: 900;
-  font-size: 14px;
+  font-weight: 800;
+  font-size: $font-size-sm;
   line-height: 17px;
   text-align: center;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba($black, 0.3);
+
+  @media screen and (max-width: 1000px) {
+    font-size: $font-size-xs;
+  }
+}
+
+.dark p.super-text {
+  color: rgba($white, 0.3);
 }
 
 p,
@@ -213,6 +230,8 @@ p > strong {
   text-align: center;
 }
 
+/* Layout helpers */
+
 .w-full {
   display: flex;
   flex-direction: column;
@@ -220,6 +239,7 @@ p > strong {
   align-items: center;
   width: 100%;
   margin: 0 auto;
+  padding: 0 $spacing-md;
 }
 
 .w-two-thirds {
@@ -229,6 +249,11 @@ p > strong {
   align-items: center;
   width: 66.666%;
   margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 }
 
 .w-half {
@@ -238,6 +263,11 @@ p > strong {
   align-items: center;
   width: 50%;
   margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 }
 
 .w-third {
@@ -247,6 +277,11 @@ p > strong {
   align-items: center;
   width: 33.333%;
   margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 }
 
 .w-quarter {
@@ -256,6 +291,10 @@ p > strong {
   align-items: center;
   width: 25%;
   margin: 0 auto;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 }
 
 /* Layout */
@@ -446,7 +485,8 @@ img.in-article {
     @media screen and (max-width: 768px) {
       .container,
       .general-main {
-        padding: $spacing-md $spacing-md;
+        padding: $spacing-md $spacing-sm;
+        gap: $spacing-sm;
       }
     }
 
@@ -548,10 +588,6 @@ img.in-article {
       text-align: center;
       margin:0 auto;
       max-width:800px;
-
-      @media screen and (max-width: 768px) {
-        font-size: 12dvw;
-      }
     }
 
     .product-content h2,

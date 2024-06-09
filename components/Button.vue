@@ -56,6 +56,12 @@ export default {
   background: $red-dark;
   box-shadow: 0px 1.5px 0 lighten($red, 5%), 0px 3px 0 darken($red, 25%);
 
+  @media screen and (max-width: 768px){
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-md;
+    
+  }
+
   &.big {
     padding: $spacing-md $spacing-lg;
     color: $white !important;
@@ -63,6 +69,28 @@ export default {
     font-weight: 700;
     border-radius: $br-md;
     box-shadow: 0px 2px 0 lighten($red, 5%), 0px 4px 0 darken($red, 25%);
+
+    @media screen and (max-width: 768px){
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-lg;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &.small {
+    padding: $spacing-sm $spacing-md;
+    color: $white !important;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    border-radius: $br-sm;
+    box-shadow: 0px 2px 0 lighten($red, 5%), 0px 4px 0 darken($red, 25%);
+
+    @media screen and (max-width: 768px){
+      padding: $spacing-sm;
+    }
 
     &:hover {
       transform: scale(1.03);

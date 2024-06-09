@@ -47,6 +47,10 @@ export default {
   z-index: 10;
   transform: rotateY(180deg);
   filter: drop-shadow(10px 40px 0px rgba($black, 0.1));
+
+  @media screen and (max-width: 768px){
+    display: none;
+  }
 }
 
 </style>

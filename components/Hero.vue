@@ -6,14 +6,15 @@
       <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
     </section> -->
     <section class="text">
-      <p class="super-text">Don't build anything until you read this!</p>
+      <p class="super-text">Tired of being stuck and not gaining traction?</p>
       <h1 ref="heroText">
           Become a<br>
           <span class="ship">Product-first</span><br>
           Company.
       </h1>
       <div class="go-row">
-        <a href="#methodology" class="cta">A what?</a>
+        <Button to="/booking" text="Sign Up Now" type="small" />
+        <a class="cta" href="#methodology">What is Product-first?</a>
       </div>
     </section>
     <Triangle />
@@ -93,6 +94,7 @@ export default {
     flex-direction: column;
     align-items: flex-end;
     overflow: hidden;
+    padding: $spacing-xl $spacing-sm $spacing-md;
   }
 
   .text {
@@ -104,7 +106,7 @@ export default {
 
     @media screen and (max-width: 768px){
       width: 100%;
-      margin-top: $spacing-md;
+      margin-top: 0;
     }
   }
 
@@ -146,17 +148,25 @@ export default {
 
   .go-row {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 50px;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
     position: relative;
-    width: 100%;
+
+    @media screen and (max-width: 768px){
+      flex-direction: column;
+    }
 
     .cta {
-      font-size: $font-size-xxl;
+      font-size: $font-size-sm;
       color: $red;
       text-align: center;
-      width: 100%;
+
+      @media screen and (max-width: 768px){
+        font-size: $font-size-sm;
+      }
     }
 
     .button-row {
@@ -334,14 +344,6 @@ export default {
 
   }
 
-  @media screen and (max-width: 1200px){
-    padding: $spacing-xl $spacing-lg $spacing-lg;
-  }
-
-  @media screen and (max-width: 768px){
-    padding: $spacing-xl $spacing-md $spacing-md;
-  }
-
   h1 {
     color: $blue-dark;
     font-weight: 800;
@@ -355,12 +357,18 @@ export default {
     text-shadow: 0px 1.5px 0 lighten($teal, 5%), 0px 3px 0 darken($teal, 25%);
 
     @media screen and (max-width: 768px){
+      padding: 0;
       font-size: $font-size-xxl;
+      text-shadow: none;
     }
 
     .ship {
       color: $red-dark;
       text-shadow: 0px 1.5px 0 lighten($red, 5%), 0px 3px 0 darken($red, 25%);
+
+      @media screen and (max-width: 768px){
+        text-shadow: none;
+      }
     }
   }
 
@@ -372,19 +380,6 @@ export default {
 
     path {
       stroke: $blue;
-    }
-  }
-
-  .small {
-    margin-bottom: $spacing-md;
-    color: lighten($black, 20%);
-
-    span {
-      color: $blue;
-    }
-
-    @media screen and (max-width: 768px){
-      margin-right: $spacing-xl;
     }
   }
 

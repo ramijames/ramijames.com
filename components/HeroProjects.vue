@@ -79,12 +79,22 @@ export default {
 
   @media screen and (max-width: 1000px){
     border-radius: 0;
+    height: 400px;
+    margin: 0 auto;
+    width: 90vw;
   }
 
   .products-button {
     position: absolute;
     bottom: $spacing-md;
     right: $spacing-md;
+
+    @media screen and (max-width: 1000px){
+      bottom: $spacing-md;
+      right: $spacing-md;
+      left: $spacing-md;
+      margin: 0 auto;
+    }
   }
 
   .slides-wrapper {
@@ -94,6 +104,7 @@ export default {
     position: relative;
     border-radius: $br-lg;
     box-shadow: 0px 2px 0 rgba($teal, 5%), 0px 4px 0 rgba($teal, 25%);
+    border: 1.75px solid rgba($teal,0.4);
 
     .navigation {
       position: absolute;
@@ -109,6 +120,10 @@ export default {
       background: linear-gradient(180deg, rgba($white,0.98), rgba($white,0.68));
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba($white,0.4);
+
+      @media screen and (max-width: 768px){
+        display:none;
+      }
 
       button {
         background: none;
@@ -156,8 +171,7 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: linear-gradient(0deg, rgba($white,0.98), rgba($white,0.68));
-    backdrop-filter: blur(10px);
+    background: url("/_nuxt/public/textures/texture-3-bg.png") padding-box, linear-gradient(140deg, white -5%, white 15%) border-box;
     color: $teal-dark;
     font-size: $font-size-xxl;
     font-weight: 800;
@@ -166,9 +180,10 @@ export default {
     border-radius: 0 $br-lg 0 $br-lg;
     overflow: hidden;
     border-top: 1px solid rgba($white,0.4);
+    box-shadow: 0 10px 10px rgba($black, 0.24);
 
     @media screen and (max-width: 1000px){
-      border-radius: 0 $br-lg 0 0;
+      display: none;
     }
   }
 

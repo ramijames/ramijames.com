@@ -45,6 +45,10 @@ export default {
   height: auto;
   z-index: 10;
   filter: drop-shadow(10px 40px 0px rgba($black, 0.1));
+
+  @media screen and (max-width: 768px){
+    display: none;
+  }
 }
 
 </style>

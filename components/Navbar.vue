@@ -165,8 +165,8 @@ export default {
   gap: $spacing-md;
 
   @media screen and (max-width: 768px){
-    left: $p-mobile;
-    top: $p-mobile;
+    left: 0;
+    top: 0;
   }
 
   .menu {

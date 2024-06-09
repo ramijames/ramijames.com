@@ -5,12 +5,11 @@
     </section>
     <section class="w-half">
       <h4 class="center">It simply means that your Product team is <span class="highlight">a first-class player and decision maker</span> within your organization.</h4>
-      <p class="center">To get there, you need a clear vision of what you are building, why you are building it, a roadmap for how you want to get there, and a clear process that keeps you out of trouble.</p>
+      <p class="center">I'm a big advocate for this methodology. To get there, you need a clear vision of what you are building, why you are building it, a roadmap for how you want to get there, and a clear process that keeps you out of trouble.</p>
     </section>
     <section class="w-full flow-diagram">
 
       <div class="flow-diagram-item">
-        <img src="" alt="">
         <h5>Comprehensive Product Vision</h5>
       </div>
 
@@ -19,7 +18,6 @@
       </svg>
 
       <div class="flow-diagram-item">
-        <img src="" alt="">
         <h5>Thoughtful Roadmap Building</h5>
       </div>
 
@@ -28,7 +26,6 @@
       </svg>
 
       <div class="flow-diagram-item">
-        <img src="" alt="">
         <h5>User-focused Feature Definition</h5>
       </div>
 
@@ -37,7 +34,6 @@
       </svg>
 
       <div class="flow-diagram-item">
-        <img src="" alt="">
         <h5>Excellent Design & Development</h5>
       </div>
 
@@ -58,33 +54,39 @@
         <h3 class="center w-two-thirds">Can you tell me in 10 words or less what you are building?</h3>
       </section>
       <p class="center w-two-thirds">Your Product Vision is a foundational component of how you define features, market your product, and build your user base. I’ve developed a unique three part process that will help you hone in on your perfect Product Vision.</p>
-      <img src="/hero/three-part-process.png" alt="Three part process">
-      <Button text="Get help now" to="/book" />
+      <img class="steps" src="/hero/three-part-process.png" alt="Three part process">
+      <Button text="Let's define your Product Vision" to="/book" />
     </section>
     <Separator />
-    <section class="service w-two-thirds">
+    <section class="service w-half">
       <img src="/services/budget.png" alt="Calculator illustration">
-      <p class="super-text w-half">Service</p>
+      <p class="super-text">Service</p>
       <section>
         <h2 class="center">Be Data-driven</h2>
-        <h3 class="center w-two-thirds">How are you validating that your users need what you are building?</h3>
+        <h3 class="center">How are you validating that your users need what you are building?</h3>
       </section>
-      <p class="center w-two-thirds">You should have a process in place that allows you to get insights from your users, convert that into a product roadmap, and validate with data. I have developed a framework for how this should be done, and can help your team implement it quickly.</p>
-      <section>
-        <div>
-          Set up an insights channel
-          checkmark
+      <p class="center">You should have a process in place that allows you to get insights from your users, convert that into a product roadmap, and validate with data. I have developed a framework for how this should be done, and can help your team implement it quickly.</p>
+      <section class="data-steps">
+        <div class="single-step">
+          <h4>Build your product roadmap</h4>
+          <svg width="53" height="39" viewBox="0 0 53 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 22L16.2929 35.2929C16.6834 35.6834 17.3166 35.6834 17.7071 35.2929L50 3" stroke="#7D4793" stroke-width="5" stroke-linecap="round"/>
+          </svg>
         </div>
-        <div>
-          Set up an insights channel
-          checkmark
+        <div class="single-step">
+          <h4>Set up an insights channel</h4>
+          <svg width="53" height="39" viewBox="0 0 53 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 22L16.2929 35.2929C16.6834 35.6834 17.3166 35.6834 17.7071 35.2929L50 3" stroke="#7D4793" stroke-width="5" stroke-linecap="round"/>
+          </svg>
         </div>
-        <div>
-          Set up your validation methodology
-          checkmark
+        <div class="single-step">
+          <h4>Set up your validation methodology</h4>
+          <svg width="53" height="39" viewBox="0 0 53 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 22L16.2929 35.2929C16.6834 35.6834 17.3166 35.6834 17.7071 35.2929L50 3" stroke="#7D4793" stroke-width="5" stroke-linecap="round"/>
+          </svg>
         </div>
       </section>
-      <Button text="Get help now" to="/book" />
+      <Button text="Learn to be data driven" to="/book" />
     </section>
     <Separator />
     <section class="service w-two-thirds">
@@ -94,19 +96,22 @@
         <h2 class="center">Create your Product</h2>
         <h3 class="center w-two-thirds">Don’t you want to get a hassle-free design for your app, website, or landing page?</h3>
       </section>
-      <p class="center w-two-thirds">You should work with the best (that’s me!) to build your product. I can  guarantee that it will be beautiful and easy to use. </p>
-      <section>
+      <p class="center w-two-thirds">I also provide top-tier user-experience, design, and front-end development services. With a solid Product-first process, and access to the right talent, your product will shine.</p>
+      <section class="create-a-product">
         <div>
-          brand systems
+          <img src="/services/bulb.png" alt="Bright ideas">
+          <h4>Fresh concepts</h4>
         </div>
         <div>
-          user experience
+          <img src="/services/iterate.png" alt="Iterate">
+          <h4>Iterative Approach</h4>
         </div>
         <div>
-          design
+          <img src="/services/calendar.png" alt="Always on-time">
+          <h4>Always On-time</h4>
         </div>
       </section>
-      <Button text="Get help now" to="/book" />
+      <Button text="Start creating now" to="/book" />
     </section>
 
   </section>
@@ -124,12 +129,21 @@
     flex-direction: row;
     align-items: flex-end;
 
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;   
+    }
+
     .flow-diagram-item {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: $spacing-sm;
       width: 20%;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
 
       img {
         width: 50px;
@@ -151,6 +165,11 @@
       height: 24px;
       fill: $teal-dark;
       margin-bottom: $spacing-md;
+
+      @media screen and (max-width: 768px) {
+        transform: rotate(90deg);
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -167,6 +186,14 @@
     flex-direction: column;
     gap: $spacing-md;
 
+    img.steps {
+      width: 100%;
+    
+      @media screen and (max-width: 768px) {
+        width: 80%;
+      }
+    } 
+
     h2 {
       color: $red-dark;
       margin-top: 0;
@@ -177,6 +204,62 @@
       color: $red-dark;
       margin-top: 0;
       margin-bottom: 0;
+    }
+  }
+
+  .data-steps {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    width: 100%;
+
+    .single-step {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
+      justify-content: space-between;
+      gap: $spacing-xs;
+      border: 1px solid $red;
+      border-radius: $br-md;
+      padding: $spacing-sm $spacing-md;
+
+      h4 {
+        color: $red-dark;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      svg {
+        width: 36px;
+        fill: none;
+        stroke: $red-dark;
+        stroke-width: 5;
+        stroke-linecap: round;
+      }
+    }
+  }
+
+  .create-a-product {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-md;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    div {
+      h4 {
+        color: $red-dark;
+        font-weight: 600;
+        margin: $spacing-sm 0;
+        text-align: center;
+      }
     }
   }
 
