@@ -3,9 +3,9 @@
     <section class="w-full">
       <h1 class="center">What does it mean to be <span class="highlight">Product-first?</span></h1>
     </section>
-    <section class="w-half">
+    <section class="w-two-thirds">
       <h4 class="center">It simply means that your Product team is <span class="highlight">a first-class player and decision maker</span> within your organization.</h4>
-      <p class="center">I'm a big advocate for this methodology. To get there, you need a clear vision of what you are building, why you are building it, a roadmap for how you want to get there, and a clear process that keeps you out of trouble.</p>
+      <p class="center">My name is <nuxt-link to="/about">Rami James</nuxt-link>, and I'm a big advocate for this methodology. To get there, you need a clear vision of what you are building, why you are building it, a roadmap for how you want to get there, and a clear process that keeps you out of trouble.</p>
     </section>
     <section class="w-full flow-diagram">
 
@@ -42,13 +42,13 @@
   <section id="BuildTheRightThing" class="general-main">
 
     <section class="w-full">
-      <p class="super-text w-half">Early-stage startups, small teams, and solopreneurs need help with this stuff</p>
+      <p class="super-text">Early-stage startups, small teams, and solopreneurs need help with this stuff</p>
       <h1 class="center">It's the answer to: <span class="highlight">"Are we building the right thing?"</span></h1>
     </section>
     
-    <section class="service w-two-thirds">
+    <section class="service w-full">
       <img src="/services/success.png" alt="Subscribe and request as many designs as you need.">
-      <p class="super-text w-half">Service</p>
+      <p class="super-text">Service</p>
       <section>
         <h2 class="center">Define your Product Vision</h2>
         <h3 class="center w-two-thirds">Can you tell me in 10 words or less what you are building?</h3>
@@ -58,7 +58,7 @@
       <Button text="Let's define your Product Vision" to="/book" />
     </section>
     <Separator />
-    <section class="service w-half">
+    <section class="service w-two-thirds">
       <img src="/services/budget.png" alt="Calculator illustration">
       <p class="super-text">Service</p>
       <section>
@@ -89,14 +89,14 @@
       <Button text="Learn to be data driven" to="/book" />
     </section>
     <Separator />
-    <section class="service w-two-thirds">
+    <section class="service w-full">
       <img src="/services/team.png" alt="Happy designer illustration">
-      <p class="super-text w-half">Service</p>
+      <p class="super-text w-two-thirds">Service</p>
       <section>
         <h2 class="center">Create your Product</h2>
         <h3 class="center w-two-thirds">Don’t you want to get a hassle-free design for your app, website, or landing page?</h3>
       </section>
-      <p class="center w-two-thirds">I also provide top-tier user-experience, design, and front-end development services. With a solid Product-first process, and access to the right talent, your product will shine.</p>
+      <p class="center w-half">I also provide top-tier user-experience, design, and front-end development services. With a solid Product-first process, and access to the right talent, your product will shine.</p>
       <section class="create-a-product">
         <div>
           <img src="/services/bulb.png" alt="Bright ideas">
@@ -127,7 +127,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -157,6 +157,7 @@
         font-weight: 600;
         font-size: $font-size-lg;
         text-align: center;
+        margin:0;
       }
     }
 
@@ -164,11 +165,9 @@
       width: 28px;
       height: 24px;
       fill: $teal-dark;
-      margin-bottom: $spacing-md;
 
       @media screen and (max-width: 768px) {
         transform: rotate(90deg);
-        margin-bottom: 0;
       }
     }
   }

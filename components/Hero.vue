@@ -6,7 +6,7 @@
       <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
     </section> -->
     <section class="text">
-      <p class="super-text">Tired of being stuck and not gaining traction?</p>
+      <p class="super-text">Tired of your project being stuck and not gaining traction?</p>
       <h1 ref="heroText">
           Become a<br>
           <span class="ship">Product-first</span><br>

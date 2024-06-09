@@ -12,6 +12,7 @@
           <nuxt-link to="/about">
             <span class="title">About</span>
           </nuxt-link> -->
+          <h5>Learn how to be Product-first</h5>
           <div id="mc_embed_shell">
             <div id="mc_embed_signup">
                 <form action="https://doodledapp.us12.list-manage.com/subscribe/post?u=f081fdb86b92e439e4994e8d6&amp;id=6210f0527f&amp;f_id=00eb4ae0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
@@ -86,10 +87,10 @@ export default {
   z-index: 10000;
   position: fixed;
   bottom: 0;
-  background: $white;
+  background: $teal-dark;
   border-radius: $br-md $br-md 0 0;
-  padding: $spacing-xs;
-  box-shadow: 0px 2px 0 rgba($teal, 5%), 0px 4px 0 rgba($teal, 25%), 0 2px 0 rgba($white, 0.4), 0 10px 10px rgba($black, 0.24);
+  padding: $spacing-xs $spacing-md;
+  box-shadow: 0 10px 10px rgba($black, 0.24);
 
   @media screen and (max-width: 768px){
     bottom: 0;
@@ -103,12 +104,51 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: $spacing-lg;
-      flex-direction: row;
-      
+      flex-direction: column;
+
       @media screen and (max-width: 768px){
-        gap: $spacing-sm;
-        padding: 0 $spacing-sm;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      h5 {
+        margin: 0;
+        font-family: $font-family-main, 'sans-serif';
+        font-weight: 700;
+        font-size: $font-size-md;
+        color: $white;
+
+        @media screen and (max-width: 768px){
+          display: none;
+        }
+      }
+
+      .mc-field-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: $spacing-xs;
+
+        @media screen and (max-width: 768px){
+          flex-direction: row;
+          align-items: center;
+          margin:0;
+        }
+      }
+
+      input {
+        padding: $spacing-xs;
+        border-radius: $br-sm;
+        border: 1px solid rgba($white, 0.1411764706);
+        font-size: $font-size-md;
+        background: $teal;
+        color: $white;
+        margin-right: $spacing-xs;
+      }
+
+      #mc-embedded-subscribe {
+        background-color: $red-dark;
       }
 
       a {

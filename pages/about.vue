@@ -203,6 +203,10 @@ export default {
   }
 }
 
+    .dark .jobs {
+      background: url("/_nuxt/public/textures/texture-3-bg-dark.png") padding-box, linear-gradient(140deg, $black-light -5%, $black-light 15%) border-box;
+    }
+
     .single-job {
       margin: 0;
       position: relative;

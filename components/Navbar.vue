@@ -155,7 +155,7 @@ export default {
 
 .menu-switch {
   padding: $spacing-md $spacing-md;
-  position:absolute;
+  position: fixed;
   left: $p-desktop;
   top: $p-desktop;
   z-index: 10000;
