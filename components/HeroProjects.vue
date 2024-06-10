@@ -23,8 +23,8 @@
           </svg>
         </button>
       </section>
-      <Button class="products-button" to="/products" text="See Recent Work" size="default" />
     </section>
+    <Button class="products-button" to="/products" text="See Recent Work" size="default" />
     <HummingBird />
   </main>
 </template>
@@ -75,26 +75,21 @@ export default {
   height: 720px;
   position: relative;
   padding:0;
-  margin-bottom: $spacing-lg;
+  margin-bottom: $spacing-xl;
 
   @media screen and (max-width: 1000px){
     border-radius: 0;
     height: 400px;
-    margin: 0 auto;
+    margin: 0 auto $spacing-lg;
     width: 90vw;
   }
 
   .products-button {
     position: absolute;
-    bottom: $spacing-md;
-    right: $spacing-md;
-
-    @media screen and (max-width: 1000px){
-      bottom: $spacing-md;
-      right: $spacing-md;
-      left: $spacing-md;
-      margin: 0 auto;
-    }
+    bottom: -23px;
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 10px 0px rgba($black, 0.24);
   }
 
   .slides-wrapper {
