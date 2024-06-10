@@ -221,6 +221,12 @@ export default {
           color: $teal-dark;
           font-weight: 700;
           font-size: $font-size-xl;
+          line-height: $font-size-xl * $multiplier;
+
+          @media screen and (max-width: 768px){
+            font-size: $font-size-lg;
+            line-height: $font-size-lg * $multiplier;
+          }
         }
 
         .job-subtitle {
