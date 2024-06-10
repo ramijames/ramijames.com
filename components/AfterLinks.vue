@@ -141,6 +141,11 @@ export default {
         padding-left: $spacing-md;
         padding-right: $spacing-md;
         margin: 0;
+
+        @media screen and (max-width: 768px){
+          padding-left: $spacing-xs;
+          padding-right: $spacing-xs;
+        }
       }
 
       a {

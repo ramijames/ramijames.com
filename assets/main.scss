@@ -239,6 +239,11 @@ p > strong {
   width: 100%;
   margin: 0 auto;
   padding: 0 $spacing-md;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    padding: 0 $spacing-xs;
+  }
 }
 
 .w-two-thirds {
@@ -252,6 +257,7 @@ p > strong {
 
   @media screen and (max-width: 1000px) {
     width: 100%;
+    padding: 0 $spacing-xs;
   }
 }
 
@@ -266,6 +272,7 @@ p > strong {
 
   @media screen and (max-width: 1000px) {
     width: 100%;
+    padding: 0 $spacing-xs;
   }
 }
 
@@ -280,6 +287,7 @@ p > strong {
 
   @media screen and (max-width: 1000px) {
     width: 100%;
+    padding: 0 $spacing-xs;
   }
 }
 
@@ -290,9 +298,11 @@ p > strong {
   align-items: center;
   width: 25%;
   margin: 0 auto;
+  padding: 0 $spacing-md;
 
   @media screen and (max-width: 1000px) {
     width: 100%;
+    padding: 0 $spacing-xs;
   }
 }
 

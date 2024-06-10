@@ -123,10 +123,6 @@
   img.product-team {
     width: 100%;
     margin-bottom: $spacing-md;
-  
-    @media screen and (max-width: 768px) {
-      width: 80%;
-    }
   } 
 
   .flow-diagram {
