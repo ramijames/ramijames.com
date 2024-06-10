@@ -1,8 +1,6 @@
 <template>
-  <!-- <Separator /> -->
   <section id="booking">
-    <a name="booking"></a>
-    <SectionTitle title="Book a call" subtitle="Let's chat about your vision." /> 
+    <SectionTitle title="Start your Product-first Journey" subtitle="This introductory call is quick and free!" /> 
     <CalendlyInlineWidget v-bind="options" />
   </section>
 </template>
@@ -30,7 +28,7 @@
   }
 
   .calendly-inline-widget {
-    min-height:800px !important;
+    min-height:1600px !important;
 
     @media screen and (max-width: 1200px) {
       min-height: 1600px !important;

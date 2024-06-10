@@ -3,16 +3,7 @@
     <section class="after-links"  v-show="!atBottom">
       <section class="links">
         <section class="links-row">
-          <!-- <a href="#methodology">
-            <span class="title">Method</span>
-          </a>
-          <nuxt-link to="/products">
-            <span class="title">Work</span>
-          </nuxt-link>
-          <nuxt-link to="/about">
-            <span class="title">About</span>
-          </nuxt-link> -->
-          <h5>Learn how to be Product-first</h5>
+          <h5>Sign up to get the book</h5>
           <div id="mc_embed_shell">
             <div id="mc_embed_signup">
                 <form action="https://doodledapp.us12.list-manage.com/subscribe/post?u=f081fdb86b92e439e4994e8d6&amp;id=6210f0527f&amp;f_id=00eb4ae0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
@@ -31,17 +22,10 @@
                   <div style="position: absolute; left: -5000px;" aria-hidden="true">
                     <input type="text" name="b_f081fdb86b92e439e4994e8d6_6210f0527f" tabindex="-1" value="">
                   </div>
-                  <!-- <div class="optionalParent">
-                    <div class="clear foot">
-                      <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                        <p style="margin: 0px auto;"><a href="http://eepurl.com/iPabqQ" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
-                    </div>
-                  </div> -->
                 </div>
             </form>
             </div>
           </div>
-          <!-- <Button text="Get help now" to="https://calendly.com/itsramijames" /> -->
         </section>
       </section>
     </section>
@@ -106,20 +90,18 @@ export default {
       align-items: center;
       flex-direction: column;
 
-      @media screen and (max-width: 768px){
-        flex-direction: row;
-        justify-content: space-around;
-      }
-
       h5 {
         margin: 0;
-        font-family: $font-family-main, 'sans-serif';
+        font-family: $font-family-main, sans-serif;
+        font-style: normal;
         font-weight: 700;
         font-size: $font-size-md;
-        color: $white;
+        line-height: 100%;
+        text-align: center;
+        color: rgba($white, 0.6);
 
         @media screen and (max-width: 768px){
-          display: none;
+          font-size: $font-size-sm;
         }
       }
 
@@ -133,7 +115,6 @@ export default {
         @media screen and (max-width: 768px){
           flex-direction: row;
           align-items: center;
-          margin:0;
         }
       }
 
@@ -148,7 +129,18 @@ export default {
       }
 
       #mc-embedded-subscribe {
-        background-color: $red-dark;
+        cursor:pointer;
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+        border-radius: $br-sm;
+        color: $white;
+        font-family: $font-family-main, sans-serif;
+        font-weight: 500;
+        font-size: $font-size-sm;
+        background: $red-dark;
+        padding-left: $spacing-md;
+        padding-right: $spacing-md;
+        margin: 0;
       }
 
       a {

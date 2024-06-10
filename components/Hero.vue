@@ -6,7 +6,7 @@
       <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
     </section> -->
     <section class="text">
-      <p class="super-text">Tired of your project being stuck and not gaining traction?</p>
+      <p class="super-text">Tired of being stuck?</p>
       <h1 ref="heroText">
           Become a<br>
           <span class="ship">Product-first</span><br>
@@ -160,7 +160,7 @@ export default {
     }
 
     .cta {
-      font-size: $font-size-sm;
+      font-size: $font-size-md;
       color: $red;
       text-align: center;
 
@@ -354,20 +354,20 @@ export default {
     padding: $spacing-md 0;
     color: $teal-dark;
     text-align: center;
-    text-shadow: 0px 1.5px 0 lighten($teal, 5%), 0px 3px 0 darken($teal, 25%);
+    text-shadow: 0px 1.5px 0 lighten($teal, 5%), 0px 3px 0 darken($teal, 15%), 0 10px 0px rgba($black, 0.14);
 
     @media screen and (max-width: 768px){
       padding: 0;
       font-size: $font-size-xxl;
-      text-shadow: none;
+      text-shadow: 0px 1.5px 0 darken($teal, 25%), 0px 1px 0 darken($teal, 25%), 0 5px 0px rgba($black, 0.14);
     }
 
     .ship {
       color: $red-dark;
-      text-shadow: 0px 1.5px 0 lighten($red, 5%), 0px 3px 0 darken($red, 25%);
+      text-shadow: 0px 1.5px 0 lighten($red, 5%), 0px 3px 0 darken($red, 25%), 0 10px 0px rgba($black, 0.14);
 
       @media screen and (max-width: 768px){
-        text-shadow: none;
+        text-shadow: 0px 1.5px 0 darken($red, 25%), 0px 1px 0 darken($red, 25%), 0 5px 0px rgba($black, 0.14);
       }
     }
   }
@@ -392,10 +392,11 @@ export default {
 .dark #hero {
 
   h1 {
-    color: $teal;
+    color: $teal-dark;
+    text-shadow: 0 -10px 10px rgba($black, 0.24), 0 -4px 4px rgba($black, 0.34);
 
     .ship {
-      color: $red;
+      color: $red-dark;
     }
   }
 

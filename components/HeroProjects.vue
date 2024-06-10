@@ -6,9 +6,9 @@
           <a :href="slide.link">
             <img :src="slide.image" alt="slide.description" />
           </a>
-          <div class="slide-description">
+          <!-- <div class="slide-description">
             {{ slide.description }}
-          </div>
+          </div> -->
         </div>
       </div>
       <section class="navigation">
@@ -23,7 +23,7 @@
           </svg>
         </button>
       </section>
-      <Button class="products-button" to="/products" text="See Recent Work" size="big" />
+      <Button class="products-button" to="/products" text="See Recent Work" size="default" />
     </section>
     <HummingBird />
   </main>
@@ -104,20 +104,20 @@ export default {
     position: relative;
     border-radius: $br-lg;
     box-shadow: 0px 2px 0 rgba($teal, 5%), 0px 4px 0 rgba($teal, 25%);
-    border: 1.75px solid rgba($teal,0.4);
+    border-top: 1px solid rgba($white,0.4);
 
     .navigation {
       position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: $br-lg 0 $br-lg 0;
-      padding: $spacing-md;
+      top: $spacing-md;
+      left: $spacing-md;
+      border-radius: $br-sm;
+      padding: $spacing-sm;
       cursor: pointer;
       z-index: 10;
       display: flex;
       flex-direction: row;
       gap: $spacing-md;
-      background: linear-gradient(180deg, rgba($white,0.98), rgba($white,0.68));
+      background: $teal-dark;
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba($white,0.4);
 
@@ -133,7 +133,7 @@ export default {
 
         &:hover {
           svg path {
-            stroke: darken($teal-dark, 20%);
+            stroke: rgba($white, 0.8);
           }
         }
 
@@ -144,7 +144,7 @@ export default {
         }
 
         svg path {
-          stroke: $teal-dark;
+          stroke: $white;
         }
       }
     }

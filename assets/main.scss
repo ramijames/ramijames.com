@@ -57,8 +57,8 @@ h1 {
   }
 
   @media screen and (max-width: 768px) {
-    font-size: $font-size-xxl;
-    line-height: $font-size-xxl;
+    font-size: $font-size-xl;
+    line-height: $font-size-xl;
   }
 
 }
@@ -158,11 +158,10 @@ h5 {
 p.super-text {
   font-family: $font-family-main, sans-serif;
   font-style: normal;
-  font-weight: 800;
-  font-size: $font-size-sm;
-  line-height: 17px;
+  font-weight: 700;
+  font-size: $font-size-md;
+  line-height: 100%;
   text-align: center;
-  text-transform: uppercase;
   color: rgba($black, 0.3);
 
   @media screen and (max-width: 1000px) {
