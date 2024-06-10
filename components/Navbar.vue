@@ -23,12 +23,6 @@
       <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
       <nuxt-link to="/about" @click="closeMenu">About</nuxt-link>
     </section>
-    <section class="mobile-nav-panel-contact">
-      <a href="https://github.com/ramijames"><img :src="`/github-${currentTheme}.svg`" alt="Github" /></a>
-      <a href="https://www.linkedin.com/in/rami-james/"><img :src="`/linkedin-${currentTheme}.svg`" alt="LinkedIn" /></a>
-      <a href="mailto:rami@ramijames.com"><img :src="`/mail-${currentTheme}.svg`" alt="Send Rami an email" /></a>
-      <a href="https://twitter.com/ramijames"><img :src="`/twitter-${currentTheme}.svg`" alt="Check out Rami's Twitter" /></a>
-    </section>
   </section>
 </template>
 
@@ -305,12 +299,12 @@ export default {
           justify-content: center;
           gap: $spacing-sm;
           color: $black;
-          font-size: $font-size-xxl;
+          font-size: 30px;
           font-weight:500;
           text-decoration: none;
 
           @media screen and (max-width: 768px){
-            font-size: $font-size-xl;
+            font-size: 30px;
           }
         }
 
