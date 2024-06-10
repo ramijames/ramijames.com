@@ -354,21 +354,14 @@ export default {
     padding: $spacing-md 0;
     color: $teal-dark;
     text-align: center;
-    text-shadow: 0px 1.5px 0 lighten($teal, 5%), 0px 3px 0 darken($teal, 15%), 0 10px 0px rgba($black, 0.14);
 
     @media screen and (max-width: 768px){
       padding: 0;
       font-size: $font-size-xxl;
-      text-shadow: 0px 1.5px 0 darken($teal, 25%), 0px 1px 0 darken($teal, 25%), 0 5px 0px rgba($black, 0.14);
     }
 
     .ship {
       color: $red-dark;
-      text-shadow: 0px 1.5px 0 lighten($red, 5%), 0px 3px 0 darken($red, 25%), 0 10px 0px rgba($black, 0.14);
-
-      @media screen and (max-width: 768px){
-        text-shadow: 0px 1.5px 0 darken($red, 25%), 0px 1px 0 darken($red, 25%), 0 5px 0px rgba($black, 0.14);
-      }
     }
   }
 
@@ -393,7 +386,6 @@ export default {
 
   h1 {
     color: $teal-dark;
-    text-shadow: 0 -10px 10px rgba($black, 0.24), 0 -4px 4px rgba($black, 0.34);
 
     .ship {
       color: $red-dark;
