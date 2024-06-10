@@ -2,9 +2,8 @@
   <section id="projects" class="general-main page-top" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
       <SectionTitle 
-          title="I'm proud to have designed for these companies" 
-          subtitle="Product development has evolved to fit your needs as a fledgling startup. 
-                    It is now easier than ever to get your vision to market 
+          title="I'm proud to have worked with these companies" 
+          subtitle="Product-first means that it is now easier than ever to get your vision to market 
                     on-budget, on-time, and with style." 
       />
       <!-- <Button text="Add your project" size="default" to="#join" v-if="!notHome" /> -->
