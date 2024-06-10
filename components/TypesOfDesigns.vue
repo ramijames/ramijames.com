@@ -13,6 +13,8 @@
       <div class="single-type"><span>Logos</span></div>
     </div>
 
+    <Button text="Work with me" to="/booking" />
+
     <div class="work-grid">
       <div>
         <img src="/juicy/juicy-tonara.png" alt="Juicy examples of work" />
