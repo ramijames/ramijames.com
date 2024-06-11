@@ -9,7 +9,7 @@
     </section>
 
     <section class="w-two-thirds">
-      <h2 class="center">Product-first is a Process</h2>
+      <h2 class="center">Product-first is a Process your team can adopt</h2>
       <p class="center">To get there, you need a clear vision of what you are building, why you are building it, a roadmap for how you want to get there, and a clear process that keeps you out of trouble.</p>
     </section>
     <section class="w-full flow-diagram">
@@ -51,7 +51,6 @@
         <h3 class="center w-two-thirds">Can you tell me in 10 words or less what you are building?</h3>
       </section>
       <p class="center w-two-thirds">Your Product Vision is a foundational component of how you define features, market your product, and build your user base. I’ve developed a unique three part process that will help you hone in on your perfect Product Vision.</p>
-      <!-- <img class="steps" src="/hero/three-part-process.png" alt="Three part process"> -->
       <Button text="Let's define your Product Vision" to="/booking" />
     </section>
     <Separator />

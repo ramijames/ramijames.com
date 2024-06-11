@@ -74,7 +74,7 @@ h1 {
 
 h2 { 
   font-size: $font-size-xxl;
-  line-height: $font-size-xxl * $multiplier-sm; 
+  line-height: $font-size-xxl; 
   font-family: $font-family-main, sans-serif;
   margin-bottom:1rem;
   font-weight:800;
@@ -83,7 +83,7 @@ h2 {
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
-    line-height: $font-size-xl * $multiplier;
+    line-height: $font-size-xl;
   }
 
   @media screen and (max-width: 768px) {
