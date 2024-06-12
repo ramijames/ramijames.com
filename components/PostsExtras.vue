@@ -30,6 +30,7 @@
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    background: $teal-dark;
   }
 
   .postContent {
