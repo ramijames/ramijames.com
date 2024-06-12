@@ -1,10 +1,9 @@
 <template>
   <section id="PostsExtras">
-    <img src="/public/services/team.png" alt="Trello is nice">
     <section class="postContent">
-      <h4>Are you a struggling founder?</h4>
-      <p>I'm <nuxt-link to="/about">highly experienced</nuxt-link> with <nuxt-link to="/products">many projects</nuxt-link> under my belt, and am currently accepting new clientele. I'd love for us to build something great together!</p>
-      <Button type="small" text="Let's talk" to="https://calendly.com/itsramijames" />
+      <h3>Become a <span class="highlight">Product-first</span> Company</h3>
+      <p>Help your organization build the right thing for the right reasons.</p>
+      <Button type="small" text="Learn more" to="/" />
     </section>
   </section>
 </template>
@@ -17,37 +16,20 @@
   background-color: $black;
   backdrop-filter: blur(10px);
   width: 100%;
-  padding: $spacing-sm;
+  padding: $spacing-md;
   float: right;
   border-radius: $br-md;
   margin: $spacing-md 0 $spacing-lg;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  background: url('/public/textures/texture-3-bg.png') padding-box,
-              linear-gradient(140deg, lighten($blue-light, 20%) -5%, lighten($white,3%) 15%) border-box;
+  background: url('/public/product-first-bg.png') no-repeat top right;
+  background-size: cover;
   border-radius: $br-md;
-  border: 4px solid transparent;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-  }
-
-  img {
-    width: 140px;
-    background: transparent;
-    box-shadow: none;
-    margin-right: $spacing-md;
-    margin-bottom: 0;
-
-    @media screen and (max-width: 768px) {
-      width: 100px;
-      margin-right:0;
-      margin-bottom: $spacing-md;
-    }
   }
 
   .postContent {
@@ -55,14 +37,23 @@
     flex-direction: column;
     align-items: flex-start;
 
-    h4 {
-      font-weight: 700;
-      font-size: $font-size-lg;
-      margin-bottom: $spacing-xs;
-      color: $mint-dark;
+    @media screen and (max-width: 1000px) {
+        align-items: center;
+    }
 
-      @media screen and (max-width: 768px) {
-        font-size: $font-size-md;
+    h3 {
+      font-weight: 700;
+      margin-top: 0;
+      line-height: 100%;
+      margin-bottom: $spacing-xs;
+      color: $white;
+
+      .highlight {
+        color: $red;
+      }
+
+      @media screen and (max-width: 1000px) {
+        font-size: 30px !important;
       }
     }
 
@@ -70,6 +61,11 @@
       font-size: $font-size-sm;
       margin-bottom: $spacing-sm;
       line-height: $spacing-sm * $multiplier;
+      color: white;
+
+      @media screen and (max-width: 768px) {
+        text-align: center;
+      }
     }
   }
 }

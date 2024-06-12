@@ -45,6 +45,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  width: 100%;
 }
 
     @keyframes animatedBackground {

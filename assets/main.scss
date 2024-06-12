@@ -431,12 +431,10 @@ input {
       background-color: $white-dark;
       border:0;
       border-radius: $br-md;
-      box-shadow: 3px 4px 0 darken($white, 10%);
     }
 
     .dark .content img {
       background-color: $black-dark;
-      box-shadow: 3px 4px 0 darken($black-light, 10%);
     }
 
 .single-article p {
@@ -449,7 +447,6 @@ input {
 .single-article p img {
   margin: 1rem 0;
   width:100%;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.063) 0px 10px 10px -3.75px;
 }
 
 .dark .single-article p img {
@@ -521,11 +518,6 @@ img.in-article {
           margin:0 0 $spacing-sm 0;
           width: 100%;
           border-radius: $br-md;
-          box-shadow: 3px 4px 0 darken($white, 10%);
-        }
-    
-        .dark .general-content img {
-          box-shadow: 3px 4px 0 darken($black-light, 10%);
         }
 
 /* Product */
@@ -656,7 +648,6 @@ img.in-article {
       position: relative;
       z-index: 9;
       border:0;
-      box-shadow: 0px 4px 0 darken($white-dark, 10%);
       margin-bottom: -4px;
     }
 
@@ -667,12 +658,10 @@ img.in-article {
       position: relative;
       z-index: 9;
       border:0;
-      box-shadow: 0px 4px 0 darken($white-dark, 10%);
     }
 
     .dark .main-product-image img,
     .dark .main-product-image video {
-      box-shadow: 0px 4px 0 darken($black-light, 10%);
       background-color: rgb(34, 9, 50);
     }
 
@@ -755,12 +744,10 @@ img.in-article {
     width: 100%;
     border-radius: $br-md;
     background: $white-dark;
-    box-shadow: 3px 4px 0 darken($white, 10%);
 }
 
     .dark .single-product-image {
       background: $black-dark;
-      box-shadow: 3px 4px 0 darken($black-light, 10%);
     }
 
 .product-images {
