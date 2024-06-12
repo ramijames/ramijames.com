@@ -21,6 +21,7 @@
       <nuxt-link to="/" @click="closeMenu">Home</nuxt-link>
       <nuxt-link to="/products" @click="closeMenu">Recent Work</nuxt-link>
       <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
+      <nuxt-link to="/labs" @click="closeMenu">Labs</nuxt-link>
       <nuxt-link to="/about" @click="closeMenu">About</nuxt-link>
     </section>
   </section>
