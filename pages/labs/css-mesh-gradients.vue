@@ -5,7 +5,7 @@
       <AllPosts />
     </section>
     <section class="content">
-      <p>On Twitter, someone was showing off how the new iOS version allows you to quickly and easily make mesh gradients as a background for an app.</p>
+      <p>On <a href="https://x.com/tonilijic/status/1800551272598364591">Twitter</a>, Toni Lijic was showing off how the new iOS version allows you to quickly and easily make mesh gradients as a background for an app.</p>
       <p>It was a cool effect, and I wanted to see if I could recreate it using CSS.</p>
       <p>For our reference, here's the original animation.</p>
       <div id="simulator">

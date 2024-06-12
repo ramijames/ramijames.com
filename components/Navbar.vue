@@ -9,7 +9,8 @@
       <img src="/logo-transparent.png" alt="Rami James" @click="toggleMenu" />
       <div class="bread-crumbs">
         <nuxt-link to="/" v-if="notHome">Home</nuxt-link>
-        <nuxt-link to="/thoughts" v-if="!isThoughtsPage && isThoughtsSubPage">Thoughts</nuxt-link>
+        <nuxt-link to="/thoughts" v-if="isThoughtsSubPage">Thoughts</nuxt-link>
+        <nuxt-link to="/labs" v-if="isLabsSubPage">Labs</nuxt-link>
         <nuxt-link to="/products" v-if="!isProductsPage && isProductsSubPage">Products</nuxt-link>
         <div class="current" v-if="notHome">{{ routeName }}</div>
       </div>
@@ -84,6 +85,12 @@ export default {
     },
     isThoughtsSubPage() {
       return this.$route.path.startsWith('/thoughts/');
+    },
+    isLabsPage() {
+      return this.$route.path === '/labs';
+    },
+    isLabsSubPage() {
+      return this.$route.path.startsWith('/labs/');
     },
     isProductsPage() {
       return this.$route.path === '/products';
