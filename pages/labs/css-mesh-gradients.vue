@@ -1,0 +1,224 @@
+<template>
+  <main class="general-main page-top">
+    <section class="article-extras">
+      <SectionTitle title="CSS Mesh Gradients" subtitle="by Rami James" />
+      <AllPosts />
+    </section>
+    <section class="content">
+      <p>On Twitter, someone was showing off how the new iOS version allows you to quickly and easily make mesh gradients as a background for an app.</p>
+      <p>It was a cool effect, and I wanted to see if I could recreate it using CSS.</p>
+      <p>For our reference, here's the original animation.</p>
+      <div id="simulator">
+        <video src="/labs/GQwusCV43DDSc9KF.mp4" controls></video>
+      </div>
+      <h3>Naive Gradient Animation</h3>
+      <p>So the easiest, but least pleasing way to go about this is with a simple css gradient. It gets you like 30% of the way towards the effect.</p>
+      <p>Basically, this is just a well positioned radial-gradient that is animated to move around a bit. It's slow enough that if you don't pay attention, you can miss the wonkiness of the effect.</p>
+      <p>What it is critically missing to give it the flowing effect are two things:</p>
+      <ul>
+        <li>It needs more pink, which is achieved at the intersection between the colors as an interplay between the gradients.</li>
+        <li>It needs to have a wave effect which happens as the diffent quadrants of the mesh alter their dominance.</li>
+      </ul>
+      <div id="simulator">
+        <div id="phone">
+          <div id="screen">
+            <div id="notch"></div>
+            <div id="mesh-gradient" class="naive"></div>
+          </div>
+        </div>  
+      </div>
+
+
+      <h3>Positioned Elements</h3>
+      <p>So, the above was a good start, but it's not quite there. I think the next step is to try and create a mesh gradient using a combination of four elements with blurs, which we can control their color dominace in a similar fashion to a mesh gradient.</p>
+      <p>What we're doing is:</p>
+      <ul>
+        <li>Setting a gradient background</li>
+        <li>Creating four elements, top two are red, bottom two are blue</li>
+        <li>Positioning them in the corners of the screen</li>
+        <li>Blurring them</li>
+        <li>Animating their opacity and scale</li>
+        <li>Adding an animation-delay to stagger the animations</li>
+      </ul>
+      <div id="simulator">
+        <div id="phone">
+          <div id="screen">
+            <div id="notch"></div>
+            <div id="mesh-gradient" class="four-elements">
+              <div id="notch"></div>
+              <div class="element top-left"></div>
+              <div class="element top-right"></div>
+              <div class="element bottom-left"></div>
+              <div class="element bottom-right"></div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <p>This gives a nice flowing and repeatable effect which we can customize easily to any color combination.</p>
+      <p>It's not perfect, but it's a good start!</p>
+      <p>The code for this is available here: </p>
+
+    </section>
+  </main>
+  <Footer />
+</template>
+
+<style lang="scss" scoped>
+
+@import './assets/variables';
+
+$apple-red: #FF1E49;
+$apple-blue: #2E53F9;
+
+#simulator {
+  background: $black url('/textures/texture-3-bg-dark.png') no-repeat center center;
+  width: 100%;
+  border-radius: $br-lg;
+  margin: $spacing-lg 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing-lg;
+
+  video {
+    width: 75%;
+    border-radius: $br-lg;
+  }
+
+  #phone {
+    background: black;
+    border: 1px solid rgba(white, 0.48);
+    box-shadow: inset 0 -4px 4px 0px rgba(white, 0.32), inset 0 44px 14px 6px rgba(white, 0.12), inset 0 0 2px 4px rgba(white, 0.12), 0 10px 10px 5px rgba(black, 0.42);
+    width: 345px;
+    height: 717px;
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #screen {
+      background: $black;
+      width: 100%;
+      height: 100%;
+      border-radius: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+
+      #notch {
+        height: 30px;
+        width: 105px;
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: black;
+        border-radius: 20px;
+        z-index: 1;
+      }
+
+      #mesh-gradient.naive {
+        width: 100%;
+        height: 100%;
+        background: $apple-red radial-gradient(100% 50% at 50% 75%, $apple-blue 46%, rgba($apple-red, 0) 100%);
+        background-size: 200% 200%;
+        animation: naive-gradient 25s linear infinite;
+
+        @keyframes naive-gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      }
+
+      #mesh-gradient.four-elements {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        position: relative;
+        background: linear-gradient(180deg, $apple-red 20%, $apple-blue 70%);
+
+        .element {
+          position: absolute;
+          border-radius: 100px;
+          filter: blur(100px);
+          transition: background 1s;
+        }
+
+        .top-left {
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 50%;
+          background: $apple-red;
+          opacity: 0;
+          animation: four-elements 10s linear infinite;
+          animation-delay: 0s;
+        }
+
+        .top-right {
+          top: 0;
+          right: 0;
+          width: 50%;
+          height: 50%;
+          background: $apple-red;
+          opacity: 0;
+          animation: four-elements 10s linear infinite;
+          animation-delay: -10s;
+        }
+
+        .bottom-left {
+          bottom: 0;
+          left: 0;
+          width: 50%;
+          height: 50%;
+          background: $apple-blue;
+          opacity: 0;
+          animation: four-elements 10s linear infinite;
+          animation-delay: 0;
+        }
+
+        .bottom-right {
+          bottom: 0;
+          right: 0;
+          width: 50%;
+          height: 50%;
+          background: $apple-blue;
+          opacity: 0;
+          animation: four-elements 10s linear infinite;
+          animation-delay: -12.5s;
+        }
+
+        @keyframes four-elements {
+          0% {
+            opacity:0;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(2);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+</style>

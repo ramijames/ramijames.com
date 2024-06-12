@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  background: url('/public/product-first-bg.png') no-repeat top right;
+  background: $teal-dark url('/public/product-first-bg.png') no-repeat top right;
   background-size: cover;
   border-radius: $br-md;
 
