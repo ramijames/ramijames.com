@@ -80,9 +80,18 @@ $apple-blue: #2E53F9;
   align-items: center;
   padding: $spacing-lg;
 
+  @media screen and (max-width: 768px){
+    padding: $spacing-sm;
+    border-radius: 30px;
+  }
+
   video {
     width: 75%;
     border-radius: $br-lg;
+
+    @media screen and (max-width: 768px){
+      width: 100%;
+    }
   }
 
   #phone {
@@ -148,12 +157,12 @@ $apple-blue: #2E53F9;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         position: relative;
-        background: linear-gradient(180deg, $apple-red 20%, $apple-blue 70%);
+        background: linear-gradient(180deg, $apple-red 20%, lighten($apple-red, 5%) 35%, $apple-blue 70%);
 
         .element {
           position: absolute;
           border-radius: 100px;
-          filter: blur(100px);
+          filter: blur(200px);
           transition: background 1s;
         }
 
