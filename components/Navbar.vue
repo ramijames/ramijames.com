@@ -325,6 +325,10 @@ export default {
           animation: enter 0.8s ease-in-out;
         }
 
+        .mobile-nav-panel-links a:nth-child(5) {
+          animation: enter 1s ease-in-out;
+        }
+
         .dark .mobile-nav-panel-links a {
           color: $white;
         }
