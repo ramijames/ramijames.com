@@ -56,7 +56,7 @@
       </div>
       <p>This gives a nice flowing and repeatable effect which we can customize easily to any color combination.</p>
       <p>It's not perfect, but it's a good start!</p>
-      <p>The code for this is available here: </p>
+      <p><a href="https://github.com/ramijames/ramijames.com/blob/main/pages/labs/css-mesh-gradients.vue">The code for this is available here</a>.</p>
 
     </section>
   </main>
