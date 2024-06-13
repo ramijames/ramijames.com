@@ -1,7 +1,12 @@
 <template>
   <main class="general-main page-top">
+    <section id="example">
+      <div id="mesh-gradient" class="sixteen-elements">
+        <div class="element" v-for="n in 32" :key="n"></div>
+        <h2 class="special-title">CSS Mesh Gradients</h2>
+      </div>
+    </section>
     <section class="article-extras">
-      <SectionTitle title="CSS Mesh Gradients" subtitle="by Rami James" />
       <AllPosts />
     </section>
     <section class="content">
@@ -263,6 +268,25 @@
 $apple-red: #FF1E49;
 $apple-blue: #2E53F9;
 
+#example {
+  width: 100%;
+  height: 400px;
+  background: $white;
+  overflow: hidden;
+  position: relative;
+  border-radius: $br-lg;
+
+  .special-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    color: $white !important;
+  }
+}
+
 #simulator {
   background: $black url('/textures/texture-3-bg-dark.png') no-repeat center center;
   width: 100%;
@@ -420,59 +444,58 @@ $apple-blue: #2E53F9;
           }
         }
       }
+    }
+  }
+}
 
-      #mesh-gradient.sixteen-elements {
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr ;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        position: relative;
-        background: $black-light;
+#mesh-gradient.sixteen-elements {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  position: relative;
 
-        $mesh-colors: ();
+  $mesh-colors: ();
 
-        // generate the colors with an HSL model
-        @for $i from 1 through 32 {
-          $hue: ($i - 1) * (360 / 32);
-          $color: hsl($hue, 100%, 50%);
-          $mesh-colors: map-merge($mesh-colors, ($i: $color));
-        }
+  // generate the colors with an HSL model
+  @for $i from 1 through 32 {
+    $hue: ($i - 1) * (360 / 32);
+    $color: hsl($hue, 100%, 50%);
+    $mesh-colors: map-merge($mesh-colors, ($i: $color));
+  }
 
-        $i: 1;
-        @each $name, $color in $mesh-colors {
-          $i: $i + 1;
-          .element:nth-child(#{$i}) {
-            background-color: $color;
-            animation-delay: -#{$i * 0.625}s;
-          }
-        }
+  $i: 1;
+  @each $name, $color in $mesh-colors {
+    $i: $i + 1;
+    .element:nth-child(#{$i}) {
+      background-color: $color;
+      animation-delay: -#{$i * 0.625}s;
+    }
+  }
 
-        .element {
-          border-radius: 100px;
-          filter: blur(50px);
-          animation: sixteen-elements 10s linear infinite;
-        }
+  .element {
+    border-radius: 100px;
+    filter: blur(50px);
+    animation: sixteen-elements 10s linear infinite;
+  }
 
-        .no-blur {
-          filter: none;
-        }
+  .no-blur {
+    filter: none;
+  }
 
-        @keyframes sixteen-elements {
-          0% {
-            opacity:0;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(2);
-          }
-          100% {
-            opacity: 0;
-            transform: scale(1);
-          }
-        }
-      }
+  @keyframes sixteen-elements {
+    0% {
+      opacity:0;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(2);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
     }
   }
 }
