@@ -167,33 +167,6 @@
       </div>
       <p>This gives a nice flowing and repeatable effect which we can customize easily to any color combination. What is really interesting about this technique is that we can build up even more complicated meshes by adding more elements and colors.</p>
 
-      <div id="simulator">
-        <div id="phone">
-          <div id="screen">
-            <div id="notch"></div>
-            <div id="mesh-gradient" class="sixteen-elements">
-              <div id="notch"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-              <div class="element"></div>
-            </div>
-          </div>
-        </div>  
-      </div>
-
       <p>To get a better sense of what is going on, you can remove the blur and see just the elements.</p>
 
       <div id="simulator">
@@ -202,22 +175,16 @@
             <div id="notch"></div>
             <div id="mesh-gradient" class="sixteen-elements">
               <div id="notch"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
-              <div class="element no-blur"></div>
+              <div class="element" v-for="n in 32" :key="n"></div>
+            </div>
+          </div>
+        </div>  
+        <div id="phone">
+          <div id="screen">
+            <div id="notch"></div>
+            <div id="mesh-gradient" class="sixteen-elements">
+              <div id="notch"></div>
+              <div class="element no-blur" v-for="n in 32" :key="n"></div>
             </div>
           </div>
         </div>  
@@ -227,68 +194,58 @@
 
       <pre class="code"><div class="type">CSS</div>
         <code v-pre>
-  #mesh-gradient.sixteen-elements {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    position: relative;
-    background: $black-light;
+    #mesh-gradient.sixteen-elements {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr ;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      position: relative;
+      background: $black-light;
 
-    $mesh-colors: (
-      blue-light: #8AA1D2,
-      orange: #CAA466,
-      orange-dark: #B5803D,
-      orange-light: #DABF85,
-      green: #5B7D39,
-      green-dark: #374B22,
-      green-light: #76A34A,
-      purple: #A276B2,
-      purple-dark: #7D4793,
-      purple-light: #BE99C9,
-      red: #F29453,
-      red-dark: #ED6932,
-      red-light: #F6B46C,
-      mint: #C3D5AD,
-      mint-dark: #ABC48C,
-      mint-light: #D5E2C6
-    );
+      $mesh-colors: ();
 
-    $i: 1;
-    @each $name, $color in $mesh-colors {
-      $i: $i + 1;
-      .element:nth-child(#{$i}) {
-        background-color: $color;
-        animation-delay: -#{$i * 0.625}s;
+      // generate the colors with an HSL model
+      @for $i from 1 through 32 {
+        $hue: ($i - 1) * (360 / 32);
+        $color: hsl($hue, 100%, 50%);
+        $mesh-colors: map-merge($mesh-colors, ($i: $color));
+      }
+
+      $i: 1;
+      @each $name, $color in $mesh-colors {
+        $i: $i + 1;
+        .element:nth-child(#{$i}) {
+          background-color: $color;
+          animation-delay: -#{$i * 0.625}s;
+        }
+      }
+
+      .element {
+        border-radius: 100px;
+        filter: blur(50px);
+        animation: sixteen-elements 10s linear infinite;
+      }
+
+      .no-blur {
+        filter: none;
+      }
+
+      @keyframes sixteen-elements {
+        0% {
+          opacity:0;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(2);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1);
+        }
       }
     }
-
-    .element {
-      border-radius: 100px;
-      filter: blur(50px);
-      animation: sixteen-elements 10s linear infinite;
-    }
-
-    .no-blur {
-      filter: none;
-    }
-
-    @keyframes sixteen-elements {
-      0% {
-        opacity:0;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(2);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(1);
-      }
-    }
-  }
     </code>
       </pre>
 
@@ -315,6 +272,7 @@ $apple-blue: #2E53F9;
   justify-content: center;
   align-items: center;
   padding: $spacing-lg;
+  gap: $spacing-md;
 
   @media screen and (max-width: 768px){
     padding: $spacing-sm;
@@ -467,29 +425,19 @@ $apple-blue: #2E53F9;
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         position: relative;
         background: $black-light;
 
-        $mesh-colors: (
-          blue-light: #8AA1D2,
-          orange: #CAA466,
-          orange-dark: #B5803D,
-          orange-light: #DABF85,
-          green: #5B7D39,
-          green-dark: #374B22,
-          green-light: #76A34A,
-          purple: #A276B2,
-          purple-dark: #7D4793,
-          purple-light: #BE99C9,
-          red: #F29453,
-          red-dark: #ED6932,
-          red-light: #F6B46C,
-          mint: #C3D5AD,
-          mint-dark: #ABC48C,
-          mint-light: #D5E2C6
-        );
+        $mesh-colors: ();
+
+        // generate the colors with an HSL model
+        @for $i from 1 through 32 {
+          $hue: ($i - 1) * (360 / 32);
+          $color: hsl($hue, 100%, 50%);
+          $mesh-colors: map-merge($mesh-colors, ($i: $color));
+        }
 
         $i: 1;
         @each $name, $color in $mesh-colors {
