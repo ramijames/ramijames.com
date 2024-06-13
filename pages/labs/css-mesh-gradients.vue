@@ -562,7 +562,7 @@ $apple-blue: #2E53F9;
     }
     50% {
       opacity: 1;
-      transform: scale(4);
+      transform: scale(2.5);
     }
     100% {
       opacity: 0;
