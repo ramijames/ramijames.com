@@ -285,6 +285,10 @@ $apple-blue: #2E53F9;
     color: $white !important;
     font-size: $font-size-mega;
     line-height: 100%;
+
+    @media screen and (max-width: 768px){
+      font-size: $font-size-xl;
+    }
   }
 }
 
