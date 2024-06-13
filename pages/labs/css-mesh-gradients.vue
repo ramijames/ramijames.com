@@ -257,6 +257,7 @@
       <h3>Conclusion</h3>
       <p>So, this is a fun little experiment that I think could be used in a lot of different ways. I think it would be cool to see this used in a more subtle way as a background for a site. I think it could also be used as a loading animation or a background for a hero section. I think the possibilities are endless.</p>
     </section>
+    <PostsExtras />
   </main>
   <Footer />
 </template>
