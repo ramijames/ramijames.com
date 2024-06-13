@@ -293,12 +293,14 @@ $apple-blue: #2E53F9;
   border-radius: $br-lg;
   margin: $spacing-lg 0;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: $spacing-lg;
   gap: $spacing-md;
 
   @media screen and (max-width: 768px){
+    flex-direction: column;
     padding: $spacing-sm;
     border-radius: 30px;
   }
