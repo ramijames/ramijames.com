@@ -5,15 +5,36 @@
       <AllPosts />
     </section>
     <section class="content">
-      <p>On <a href="https://x.com/tonilijic/status/1800551272598364591">Twitter</a>, Toni Lijic was showing off how the new iOS version allows you to quickly and easily make mesh gradients as a background for an app.</p>
-      <p>It was a cool effect, and I wanted to see if I could recreate it using CSS.</p>
-      <p>For our reference, here's the original animation.</p>
+      <p>On <a href="https://x.com/tonilijic/status/1800551272598364591">Twitter</a>, a guy named Toni Lijic was showing off how the new iOS version allows you to quickly and easily make mesh gradients as a background within iOS. It is a cool effect, and I wanted to see if I could recreate it using CSS. For our reference, here's the original animation.</p>
       <div id="simulator">
         <video src="/labs/GQwusCV43DDSc9KF.mp4" controls></video>
       </div>
       <h3>Naive Gradient Animation</h3>
       <p>So the easiest, but least pleasing way to go about this is with a simple css gradient. It gets you like 30% of the way towards the effect.</p>
       <p>Basically, this is just a well positioned radial-gradient that is animated to move around a bit. It's slow enough that if you don't pay attention, you can miss the wonkiness of the effect.</p>
+      <pre class="code"><div class="type">CSS</div>
+        <code>
+    #mesh-gradient.naive {
+      width: 100%;
+      height: 100%;
+      background: $apple-red radial-gradient(100% 50% at 50% 75%, $apple-blue 46%, rgba($apple-red, 0) 100%);
+      background-size: 200% 200%;
+      animation: naive-gradient 25s linear infinite;
+
+      @keyframes naive-gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    }
+        </code>
+      </pre>
       <p>What it is critically missing to give it the flowing effect are two things:</p>
       <ul>
         <li>It needs more pink, which is achieved at the intersection between the colors as an interplay between the gradients.</li>
@@ -31,6 +52,96 @@
 
       <h3>Positioned Elements</h3>
       <p>So, the above was a good start, but it's not quite there. I think the next step is to try and create a mesh gradient using a combination of four elements with blurs, which we can control their color dominace in a similar fashion to a mesh gradient.</p>
+      <pre class="code"><div class="type">HTML</div>
+        <code v-pre>
+    &lt;div id="mesh-gradient" class="four-elements"&gt;
+      &lt;div class="element top-left"&gt;&lt;/div&gt;
+      &lt;div class="element top-right"&gt;&lt;/div&gt;
+      &lt;div class="element bottom-left"&gt;&lt;/div&gt;
+      &lt;div class="element bottom-right"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+        </code>
+      </pre>
+      
+      <pre class="code"><div class="type">CSS</div>
+        <code v-pre>
+    #mesh-gradient.four-elements {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      position: relative;
+      background: linear-gradient(180deg, $apple-red 20%, lighten($apple-red, 5%) 35%, $apple-blue 70%);
+
+      .element {
+        position: absolute;
+        border-radius: 100px;
+        filter: blur(200px);
+        transition: background 1s;
+      }
+
+      .top-left {
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+        background: $apple-red;
+        opacity: 0;
+        animation: four-elements 10s linear infinite;
+        animation-delay: 0s;
+      }
+
+      .top-right {
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 50%;
+        background: $apple-red;
+        opacity: 0;
+        animation: four-elements 10s linear infinite;
+        animation-delay: -10s;
+      }
+
+      .bottom-left {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+        background: $apple-blue;
+        opacity: 0;
+        animation: four-elements 10s linear infinite;
+        animation-delay: 0;
+      }
+
+      .bottom-right {
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: 50%;
+        background: $apple-blue;
+        opacity: 0;
+        animation: four-elements 10s linear infinite;
+        animation-delay: -12.5s;
+      }
+
+      @keyframes four-elements {
+        0% {
+          opacity:0;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(2);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1);
+        }
+      }
+    }
+        </code>
+      </pre>
       <p>What we're doing is:</p>
       <ul>
         <li>Setting a gradient background</li>
@@ -54,10 +165,135 @@
           </div>
         </div>  
       </div>
-      <p>This gives a nice flowing and repeatable effect which we can customize easily to any color combination.</p>
-      <p>It's not perfect, but it's a good start!</p>
-      <p><a href="https://github.com/ramijames/ramijames.com/blob/main/pages/labs/css-mesh-gradients.vue">The code for this is available here</a>.</p>
+      <p>This gives a nice flowing and repeatable effect which we can customize easily to any color combination. What is really interesting about this technique is that we can build up even more complicated meshes by adding more elements and colors.</p>
 
+      <div id="simulator">
+        <div id="phone">
+          <div id="screen">
+            <div id="notch"></div>
+            <div id="mesh-gradient" class="sixteen-elements">
+              <div id="notch"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+              <div class="element"></div>
+            </div>
+          </div>
+        </div>  
+      </div>
+
+      <p>To get a better sense of what is going on, you can remove the blur and see just the elements.</p>
+
+      <div id="simulator">
+        <div id="phone">
+          <div id="screen">
+            <div id="notch"></div>
+            <div id="mesh-gradient" class="sixteen-elements">
+              <div id="notch"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+              <div class="element no-blur"></div>
+            </div>
+          </div>
+        </div>  
+      </div>
+
+      <p>Here's the Sass that generated this.</p>
+
+      <pre class="code"><div class="type">CSS</div>
+        <code v-pre>
+  #mesh-gradient.sixteen-elements {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    position: relative;
+    background: $black-light;
+
+    $mesh-colors: (
+      blue-light: #8AA1D2,
+      orange: #CAA466,
+      orange-dark: #B5803D,
+      orange-light: #DABF85,
+      green: #5B7D39,
+      green-dark: #374B22,
+      green-light: #76A34A,
+      purple: #A276B2,
+      purple-dark: #7D4793,
+      purple-light: #BE99C9,
+      red: #F29453,
+      red-dark: #ED6932,
+      red-light: #F6B46C,
+      mint: #C3D5AD,
+      mint-dark: #ABC48C,
+      mint-light: #D5E2C6
+    );
+
+    $i: 1;
+    @each $name, $color in $mesh-colors {
+      $i: $i + 1;
+      .element:nth-child(#{$i}) {
+        background-color: $color;
+        animation-delay: -#{$i * 0.625}s;
+      }
+    }
+
+    .element {
+      border-radius: 100px;
+      filter: blur(50px);
+      animation: sixteen-elements 10s linear infinite;
+    }
+
+    .no-blur {
+      filter: none;
+    }
+
+    @keyframes sixteen-elements {
+      0% {
+        opacity:0;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(2);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+  }
+    </code>
+      </pre>
+
+      <h3>Conclusion</h3>
+      <p>So, this is a fun little experiment that I think could be used in a lot of different ways. I think it would be cool to see this used in a more subtle way as a background for a site. I think it could also be used as a loading animation or a background for a hero section. I think the possibilities are endless.</p>
     </section>
   </main>
   <Footer />
@@ -117,6 +353,7 @@ $apple-blue: #2E53F9;
       justify-content: center;
       overflow: hidden;
       position: relative;
+      box-shadow: 0 1px 0 0 rgba(white, 0.52);
 
       #notch {
         height: 30px;
@@ -211,6 +448,69 @@ $apple-blue: #2E53F9;
         }
 
         @keyframes four-elements {
+          0% {
+            opacity:0;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(2);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(1);
+          }
+        }
+      }
+
+      #mesh-gradient.sixteen-elements {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        position: relative;
+        background: $black-light;
+
+        $mesh-colors: (
+          blue-light: #8AA1D2,
+          orange: #CAA466,
+          orange-dark: #B5803D,
+          orange-light: #DABF85,
+          green: #5B7D39,
+          green-dark: #374B22,
+          green-light: #76A34A,
+          purple: #A276B2,
+          purple-dark: #7D4793,
+          purple-light: #BE99C9,
+          red: #F29453,
+          red-dark: #ED6932,
+          red-light: #F6B46C,
+          mint: #C3D5AD,
+          mint-dark: #ABC48C,
+          mint-light: #D5E2C6
+        );
+
+        $i: 1;
+        @each $name, $color in $mesh-colors {
+          $i: $i + 1;
+          .element:nth-child(#{$i}) {
+            background-color: $color;
+            animation-delay: -#{$i * 0.625}s;
+          }
+        }
+
+        .element {
+          border-radius: 100px;
+          filter: blur(50px);
+          animation: sixteen-elements 10s linear infinite;
+        }
+
+        .no-blur {
+          filter: none;
+        }
+
+        @keyframes sixteen-elements {
           0% {
             opacity:0;
             transform: scale(1);

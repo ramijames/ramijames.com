@@ -173,8 +173,7 @@ p.super-text {
   color: rgba($white, 0.3);
 }
 
-p,
-li { 
+p { 
   font-size: $font-size-md; 
   line-height: $font-size-md * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
@@ -187,6 +186,50 @@ li {
   }
 
 }
+
+li { 
+  font-size: $font-size-md; 
+  line-height: $font-size-md * $multiplier; 
+  font-family: $font-family-secondary, sans-serif;
+  line-height: $spacing-md;
+
+  @media screen and (max-width: 1000px) {
+    font-size: $font-size-sm;
+    line-height: $font-size-sm * $multiplier * 1.4;
+  }
+
+}
+
+.code {
+  padding: 0.5rem;
+  border-radius: $br-lg;
+  margin: $spacing-md 0;
+  overflow-x: auto;
+  background: $black url('/textures/texture-3-bg-dark.png') no-repeat center center;
+  position: relative;
+
+  .type {
+    background-color: $teal-dark;
+    border-radius: $br-md;
+    position: absolute;
+    right: $spacing-sm;
+    top: $spacing-sm;
+    padding: $spacing-xs;
+    color: $white;
+    z-index: 1;
+  }
+
+  code {
+    font-family: 'Fira Code', monospace;
+    font-size: $font-size-xs;
+    line-height: $font-size-sm * $multiplier;
+    color: $white;
+  }
+}
+
+    .dark .code {
+      background-color: #333;
+    }
 
 small { 
   font-size: $font-size-sm;
