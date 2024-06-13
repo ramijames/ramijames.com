@@ -271,9 +271,9 @@ $apple-blue: #2E53F9;
 #example {
   width: 100%;
   height: 600px;
-  background: $black-dark;
   overflow: hidden;
   position: relative;
+  background: $black linear-gradient(180deg, $black 40%, $gray-dark 120%);
 
   .special-title {
     position: absolute;
@@ -283,6 +283,8 @@ $apple-blue: #2E53F9;
     z-index: 1;
     text-align: center;
     color: $white !important;
+    font-size: $font-size-mega;
+    line-height: 100%;
   }
 }
 
@@ -533,7 +535,7 @@ $apple-blue: #2E53F9;
     $i: $i + 1;
     .element:nth-child(#{$i}) {
       background-color: $color;
-      animation-delay: -#{$i * 0.625}s;
+      animation-delay: -#{$i * 1.625}s;
     }
   }
 
@@ -541,6 +543,7 @@ $apple-blue: #2E53F9;
     border-radius: 100px;
     filter: blur(50px);
     animation: sixteen-elements 10s linear infinite;
+    mix-blend-mode: hard-light;
   }
 
   .no-blur {
@@ -553,8 +556,8 @@ $apple-blue: #2E53F9;
       transform: scale(1);
     }
     50% {
-      opacity: 0.4;
-      transform: scale(2);
+      opacity: 1;
+      transform: scale(4);
     }
     100% {
       opacity: 0;
