@@ -1,7 +1,7 @@
 <template>
   <section id="example">
     <div id="mesh-gradient" class="ramijames-elements">
-      <div class="element" v-for="n in 32" :key="n"></div>
+      <div class="element" v-for="n in 16" :key="n"></div>
       <h2 class="special-title">CSS Mesh Gradients</h2>
     </div>
   </section>
@@ -271,7 +271,7 @@ $apple-blue: #2E53F9;
 #example {
   width: 100%;
   height: 600px;
-  background: $teal-dark;
+  background: $black-dark;
   overflow: hidden;
   position: relative;
 
@@ -506,40 +506,24 @@ $apple-blue: #2E53F9;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr ;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   position: relative;
 
   $mesh-colors: (
-    black: #2F2E31,
-    black-dark: #1C1C1D,
-    black-light: #3D3C40,
-    white: #fcf8f4,
-    white-dark: #F8F0E4,
-    white-light: #fbf8f6,
     blue: #6A7CBE,
     blue-dark: #404AA4,
-    blue-light: #8AA1D2,
     orange: #CAA466,
     orange-dark: #B5803D,
-    orange-light: #DABF85,
     green: #5B7D39,
-    green-dark: #374B22,
-    green-light: #76A34A,
     purple: #A276B2,
     purple-dark: #7D4793,
-    purple-light: #BE99C9,
     red: #F29453,
-    red-dark: #ED6932,
-    red-light: #F6B46C,
     mint: #C3D5AD,
     mint-dark: #ABC48C,
-    mint-light: #D5E2C6,
     gray: #DBD7E1,
     gray-dark: #CDC7D5,
-    gray-light: #E6E3EA,
     teal: #82A0CE,
     teal-dark: #507ABA,
-    teal-light: #A7BDDD,
     apple-red: #FF1E49,
     apple-blue: #2E53F9
   );
@@ -569,7 +553,7 @@ $apple-blue: #2E53F9;
       transform: scale(1);
     }
     50% {
-      opacity: 1;
+      opacity: 0.4;
       transform: scale(2);
     }
     100% {
