@@ -10,10 +10,10 @@
       <AllPosts />
     </section>
     <section class="content">
-      <p>On <a href="https://x.com/tonilijic/status/1800551272598364591">Twitter</a>, a guy named Toni Lijic was showing off how the new iOS version allows you to quickly and easily make mesh gradients as a background within iOS. It is a cool effect, and I wanted to see if I could recreate it using CSS. For our reference, here's the original animation.</p>
-      <div id="simulator">
+      <p>On <a href="https://x.com/tonilijic/status/1800551272598364591">Twitter</a>, a guy named Toni Lijic was showing off how the new iOS version allows you to quickly and easily make mesh gradients as a background within iOS. It is a cool effect, and I wanted to see if I could recreate it using CSS.</p>
+      <!-- <div id="simulator">
         <video src="/labs/GQwusCV43DDSc9KF.mp4" controls></video>
-      </div>
+      </div> -->
       <h3>Naive Gradient Animation</h3>
       <p>So the easiest, but least pleasing way to go about this is with a simple css gradient. It gets you like 30% of the way towards the effect.</p>
       <p>Basically, this is just a well positioned radial-gradient that is animated to move around a bit. It's slow enough that if you don't pay attention, you can miss the wonkiness of the effect.</p>
