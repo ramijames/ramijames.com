@@ -109,10 +109,6 @@ export default {
       input {
         padding: $spacing-xs;
         border-radius: $br-sm;
-        border: 1px solid rgba($white, 0.1411764706);
-        font-size: $font-size-md;
-        background: $teal;
-        color: $white;
         margin: 0;
       }
 
@@ -125,6 +121,10 @@ export default {
 
       #mce-EMAIL {
         width: inherit;
+        border: 1px solid rgba($teal-dark, 0.3);
+        font-size: $font-size-md;
+        background: $white-light;
+        color: $teal;
       }
 
       #mc-embedded-subscribe {
@@ -136,7 +136,7 @@ export default {
         font-family: $font-family-main, sans-serif;
         font-weight: 500;
         font-size: $font-size-sm;
-        background: $red-dark;
+        background: $teal-dark;
         margin: 0;
         width: auto;
 

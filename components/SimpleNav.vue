@@ -16,7 +16,7 @@
       </div>
     </section>
     <section class="extras">
-      <Button to="/booking" text="Get Started" type="small" />
+      <Button to="/booking" v-if="notHome" text="Get Started" type="small" />
       <ThemeSwitcher />
     </section>
   </nav>
