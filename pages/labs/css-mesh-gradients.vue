@@ -250,168 +250,81 @@ $apple-blue: #2E53F9;
   }
 }
 
-#simulator {
-  background: $black url('/textures/texture-3-bg-dark.png') no-repeat center center;
-  width: 100%;
-  border-radius: $br-lg;
-  margin: $spacing-lg 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: $spacing-lg;
-  gap: $spacing-md;
+#mesh-gradient.four-elements {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    background: linear-gradient(180deg, $apple-red 20%, lighten($apple-red, 5%) 35%, $apple-blue 70%);
 
-  @media screen and (max-width: 768px){
-    flex-direction: column;
-    padding: $spacing-sm;
-    border-radius: 30px;
-  }
-
-  video {
-    width: 75%;
-    border-radius: $br-lg;
-
-    @media screen and (max-width: 768px){
-      width: 100%;
+    .element {
+      position: absolute;
+      border-radius: 100px;
+      filter: blur(200px);
+      transition: background 1s;
     }
-  }
 
-  #phone {
-    background: black;
-    border: 1px solid rgba(white, 0.48);
-    box-shadow: inset 0 -4px 4px 0px rgba(white, 0.32), inset 0 44px 14px 6px rgba(white, 0.12), inset 0 0 2px 4px rgba(white, 0.12), 0 10px 10px 5px rgba(black, 0.42);
-    width: 345px;
-    height: 717px;
-    padding: 15px;
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    .top-left {
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 50%;
+      background: $apple-red;
+      opacity: 0;
+      animation: four-elements 10s linear infinite;
+      animation-delay: 0s;
+    }
 
-    #screen {
-      background: $black;
-      width: 100%;
-      height: 100%;
-      border-radius: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 1px 0 0 rgba(white, 0.52);
+    .top-right {
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 50%;
+      background: $apple-red;
+      opacity: 0;
+      animation: four-elements 10s linear infinite;
+      animation-delay: -10s;
+    }
 
-      #notch {
-        height: 30px;
-        width: 105px;
-        position: absolute;
-        top: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: black;
-        border-radius: 20px;
-        z-index: 1;
+    .bottom-left {
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      height: 50%;
+      background: $apple-blue;
+      opacity: 0;
+      animation: four-elements 10s linear infinite;
+      animation-delay: 0;
+    }
+
+    .bottom-right {
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: 50%;
+      background: $apple-blue;
+      opacity: 0;
+      animation: four-elements 10s linear infinite;
+      animation-delay: -12.5s;
+    }
+
+    @keyframes four-elements {
+      0% {
+        opacity:0;
+        transform: scale(1);
       }
-
-      #mesh-gradient.naive {
-        width: 100%;
-        height: 100%;
-        background: $apple-red radial-gradient(100% 50% at 50% 75%, $apple-blue 46%, rgba($apple-red, 0) 100%);
-        background-size: 200% 200%;
-        animation: naive-gradient 25s linear infinite;
-
-        @keyframes naive-gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
+      50% {
+        opacity: 1;
+        transform: scale(2);
       }
-
-      #mesh-gradient.four-elements {
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        position: relative;
-        background: linear-gradient(180deg, $apple-red 20%, lighten($apple-red, 5%) 35%, $apple-blue 70%);
-
-        .element {
-          position: absolute;
-          border-radius: 100px;
-          filter: blur(200px);
-          transition: background 1s;
-        }
-
-        .top-left {
-          top: 0;
-          left: 0;
-          width: 50%;
-          height: 50%;
-          background: $apple-red;
-          opacity: 0;
-          animation: four-elements 10s linear infinite;
-          animation-delay: 0s;
-        }
-
-        .top-right {
-          top: 0;
-          right: 0;
-          width: 50%;
-          height: 50%;
-          background: $apple-red;
-          opacity: 0;
-          animation: four-elements 10s linear infinite;
-          animation-delay: -10s;
-        }
-
-        .bottom-left {
-          bottom: 0;
-          left: 0;
-          width: 50%;
-          height: 50%;
-          background: $apple-blue;
-          opacity: 0;
-          animation: four-elements 10s linear infinite;
-          animation-delay: 0;
-        }
-
-        .bottom-right {
-          bottom: 0;
-          right: 0;
-          width: 50%;
-          height: 50%;
-          background: $apple-blue;
-          opacity: 0;
-          animation: four-elements 10s linear infinite;
-          animation-delay: -12.5s;
-        }
-
-        @keyframes four-elements {
-          0% {
-            opacity:0;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(2);
-          }
-          100% {
-            opacity: 0;
-            transform: scale(1);
-          }
-        }
+      100% {
+        opacity: 0;
+        transform: scale(1);
       }
     }
   }
-}
 
 #mesh-gradient.sixteen-elements {
   width: 100%;
@@ -504,7 +417,7 @@ $apple-blue: #2E53F9;
   .element {
     border-radius: 100px;
     filter: blur(50px);
-    animation: sixteen-elements 10s linear infinite;
+    animation: sixteen-elements 6s linear infinite;
     mix-blend-mode: hard-light;
   }
 

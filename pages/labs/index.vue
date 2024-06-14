@@ -59,7 +59,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: 768px) {
       .labs {
         display: grid;
         grid-template-columns: 1fr;

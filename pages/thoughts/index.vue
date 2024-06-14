@@ -2,8 +2,6 @@
   <main class="general-main page-top">
     <section class="thoughts-main general-content">
       <SectionTitle title="Thoughts on Software and Product Development" centered="true" />
-      <!-- <Button to="/products" text="Recent Work" /> -->
-      <PostsExtras />
       <main class="articles">
         <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug">
           <img :src="article.image" :alt="article.title" />
@@ -11,6 +9,7 @@
           <span class="date">{{ article.date }}</span>
         </nuxt-link>
       </main>
+      <PostsExtras />
     </section>
   </main>
   <Footer />
@@ -60,7 +59,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: 768px) {
       .articles {
         display: grid;
         grid-template-columns: 1fr;

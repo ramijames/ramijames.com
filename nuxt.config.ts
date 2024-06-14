@@ -1,6 +1,7 @@
 export default defineNuxtConfig({
   css: [
-    '~/assets/main.scss'
+    '~/assets/main.scss',
+    '~/assets/labs.scss'
   ],
   devtools: { enabled: true },
   components: {

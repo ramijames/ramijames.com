@@ -96,9 +96,13 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     gap: $spacing-lg;
+    margin-bottom: $spacing-md;
 
     @media screen and (max-width: 768px){
-      gap: 10vw;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing-sm;
     }
 
     a {

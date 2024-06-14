@@ -1,0 +1,88 @@
+
+@import 'variables';
+
+#simulator {
+  background: $white-dark url('/textures/texture-3-bg.png') no-repeat center center;
+  width: 100%;
+  border-radius: $br-lg;
+  margin: $spacing-lg 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing-lg;
+  gap: $spacing-md;
+
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+    padding: $spacing-sm;
+    border-radius: 30px;
+    background: none;
+    padding: 0;
+  }
+
+  video {
+    width: 75%;
+    border-radius: $br-lg;
+
+    @media screen and (max-width: 768px){
+      width: 100%;
+    }
+  }
+
+  #phone {
+    background: black;
+    border: 1px solid rgba(white, 0.48);
+    box-shadow: inset 0 -4px 4px 0px rgba(white, 0.32), inset 0 44px 14px 6px rgba(white, 0.12), inset 0 0 2px 4px rgba(white, 0.12), 0 14px 1px 0px rgba(black, 0.08), 0 16px 20px 5px rgba(black, 0.32);
+    width: 345px;
+    height: 717px;
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: 768px){
+      width: 240px;
+      height: 460px;
+      padding: 8px;
+      border-radius: 24px;
+    }
+
+    #screen {
+      background: $black;
+      width: 100%;
+      height: 100%;
+      border-radius: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+
+      @media screen and (max-width: 768px){
+        border-radius: 16px;
+      }
+
+      #notch {
+        height: 30px;
+        width: 105px;
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: black;
+        border-radius: 20px;
+        z-index: 1;
+
+        @media screen and (max-width: 768px){
+          height: 15px;
+          width: 50px;
+          border-radius: 10px;
+        }
+      }
+
+    }
+  }
+}

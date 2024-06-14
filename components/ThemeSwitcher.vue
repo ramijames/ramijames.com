@@ -45,11 +45,7 @@ export default {
 @import './assets/variables';
 
 .theme-switcher-box {
-  right: $p-desktop;
-  top: $p-desktop;
-  z-index: 10000;
-  position: fixed;
-  padding: $spacing-md $spacing-md;
+  position: relative;
   cursor: pointer;
   display: flex;
   flex-direction: row;

@@ -3,7 +3,6 @@
     <section class="after-links"  v-show="!atBottom">
       <section class="links">
         <section class="links-row">
-          <h5>Sign up to get the book</h5>
           <div id="mc_embed_shell">
             <div id="mc_embed_signup">
                 <form action="https://doodledapp.us12.list-manage.com/subscribe/post?u=f081fdb86b92e439e4994e8d6&amp;id=6210f0527f&amp;f_id=00eb4ae0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
@@ -90,27 +89,14 @@ export default {
       align-items: center;
       flex-direction: column;
 
-      h5 {
-        margin: 0;
-        font-family: $font-family-main, sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: $font-size-md;
-        line-height: 100%;
-        text-align: center;
-        color: rgba($white, 0.6);
-
-        @media screen and (max-width: 768px){
-          font-size: $font-size-sm;
-        }
-      }
-
       .mc-field-group {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-top: $spacing-xs;
+        margin-top: 0;
+        width: 100%;
+        gap: $spacing-xs;
 
         @media screen and (max-width: 768px){
           flex-direction: row;
@@ -125,7 +111,14 @@ export default {
         font-size: $font-size-md;
         background: $teal;
         color: $white;
-        margin-right: $spacing-xs;
+        margin: 0;
+      }
+
+      #mc_embed_shell,
+      #mc_embed_signup,
+      #mc-embedded-subscribe-form, 
+      #mc_embed_signup_scroll {
+        width: 100%;
       }
 
       #mc-embedded-subscribe {

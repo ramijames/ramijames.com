@@ -1,7 +1,7 @@
 <template>
   <main class="default-layout">
     <section class="default-main">
-      <Navbar />
+      <SimpleNav />
       <NuxtPage />
     </section>
   </main>

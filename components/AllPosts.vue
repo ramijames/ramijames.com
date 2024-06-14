@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 @import './assets/variables';
 
@@ -86,49 +86,5 @@ export default {
   top: calc($spacing-xl + 2rem);
   z-index: 210;
 }
-
-.mc-field-group {
-  width:100%;
-  position: relative;
-  margin:0;
-}
-
-.mc-field-group input.email {
-  width: 100%;
-  padding:.6rem 0.5rem;
-  margin:0 0 1rem;
-  border:1px solid #0000001b;
-  color:black;
-  background-color: white;
-  border-radius: 8px;
-}
-
-    .mc-field-group input.email:hover {
-      border:1px solid black;
-    }
-
-    .mc-field-group input.email:focus-visible {
-      border:1px solid #ff53f1;
-      outline: none;
-    }
-
-    .dark .mc-field-group input.email {
-      border:1px solid white;
-      color:white;
-      background-color: transparent;
-    }
-
-    .dark .mc-field-group input.email:focus-visible {
-      border:1px solid #ffffff;
-      outline: none;
-    }
-
-.mc-field-group input.button {
-  padding:0.2rem 0.5rem;
-  position: absolute;
-  right: 0.6rem;
-  top:.4rem;
-}
-
 
 </style>
