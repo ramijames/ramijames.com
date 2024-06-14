@@ -366,7 +366,7 @@ export default {
           justify-content: center;
           gap: $spacing-sm;
           color: $teal-dark;
-          font-size: 10dvw;
+          font-size: 8dvw;
           font-weight:500;
           text-decoration: none;
           text-align: center;
