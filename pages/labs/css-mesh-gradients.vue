@@ -257,7 +257,7 @@ $apple-blue: #2E53F9;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     position: relative;
-    background: linear-gradient(180deg, $apple-red 20%, lighten($apple-red, 5%) 35%, $apple-blue 70%);
+    background: linear-gradient(180deg, $black -20%, $apple-red 45%, $apple-blue 100%);
 
     .element {
       position: absolute;
@@ -293,7 +293,7 @@ $apple-blue: #2E53F9;
       left: 0;
       width: 50%;
       height: 50%;
-      background: $apple-blue;
+      background: $purple;
       opacity: 0;
       animation: four-elements 10s linear infinite;
       animation-delay: 0;
