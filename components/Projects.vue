@@ -113,27 +113,6 @@ export default {
       notHome,
     }
   },
-  mounted() {
-    const options = {
-      root: null, // viewport
-      rootMargin: '0px',
-      threshold: 0.1 // adjust as needed
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-          entry.target.classList.remove('animate-out');
-        } else {
-          entry.target.classList.remove('animate-in');
-          entry.target.classList.add('animate-out');
-        }
-      });
-    }, options);
-
-    observer.observe(this.$refs.projects);
-  },
   components: {
     SectionTitle
   }
@@ -158,16 +137,8 @@ export default {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-
-    @media screen and (max-width: 768px){
-      align-items: center;
-      text-align: center;
-    }
-
-    .together {
-      color: $blue;
-    }
+    align-items: center;
+    text-align: center;
   }
 
   .project-steps {
@@ -222,12 +193,9 @@ export default {
         color:$white !important;
         transition: all 0.3s ease-in-out;
         border-radius: $br-lg;
-        opacity: 0;
-        scale:0.8; 
         position: relative;
         overflow: hidden;
         perspective: 100em;
-        transform: rotate3d(0,0,0,15deg);
 
         @media screen and (max-width: 1400px){
           height:40vh;
@@ -282,42 +250,6 @@ export default {
 
 }
 
-.animate-in {
-  .portfolio {
-    .works {
-      .single-work {
-        animation: projectIn 1s forwards;
-      }
-    }
-  }
-}
-
-@keyframes projectIn {
-  0% { 
-    opacity: 0; 
-    scale:0.8; 
-  }
-
-  100% { 
-    opacity: 1; 
-    scale:1; 
-  }
-
-}
-
-@keyframes projectOut {
-  0% { 
-    opacity: 1;
-    scale:1; 
-  }
-
-  100% { 
-    opacity: 0; 
-    scale:0.8; 
-  }
-
-}
-
 #company-logos {
   display: flex;
   flex-direction: row;
@@ -340,7 +272,6 @@ export default {
 }
 
 .dark #company-logos {
-  border: 1px solid rgba($white, 0.2);
 
   img {
     filter: invert(1);
