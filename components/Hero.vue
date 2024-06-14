@@ -13,7 +13,7 @@
           Company.
       </h1>
       <div class="go-row">
-        <Button to="/booking" text="Sign Up Now" type="small" />
+        <Button to="/booking" text="Get Started" type="small" />
         <a class="cta" href="#methodology">What is Product-first?</a>
       </div>
     </section>
