@@ -352,7 +352,7 @@ export default {
 
     @media screen and (max-width: 768px){
       padding: 0;
-      font-size: $font-size-xxl;
+      font-size: 44px;
     }
 
     .ship {
