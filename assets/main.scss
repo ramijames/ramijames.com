@@ -523,11 +523,7 @@ img.in-article {
   margin: 0 auto;
 
   &.page-top {
-    margin-top: 2rem;
-    
-    @media screen and (max-width: 768px) {
-      margin-top: 8rem !important;
-    }
+    padding-top: $spacing-lg;
   }
 }
 

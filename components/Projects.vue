@@ -6,24 +6,15 @@
           subtitle="Product-first means that it is now easier than ever to get your vision to market 
                     on-budget, on-time, and with style." 
       />
-      <!-- <Button text="Add your project" size="default" to="#join" v-if="!notHome" /> -->
+      <Button text="Add your project" size="default" to="/booking" />
       <section id="company-logos">
-        <div class="images">
-          <img src="/social-proof/wix.png" alt="Wix" />
-          <img src="/social-proof/ibm.png" alt="IBM" />
-          <img src="/social-proof/spiral.png" alt="Spiral" />
-          <img src="/social-proof/wpt.png" alt="WPT" />
-          <img src="/social-proof/qmarkets.png" alt="Qmarkets" />
-          <img src="/social-proof/telos.png" alt="Telos" />
-        </div>
-        <div class="images">
-          <img src="/social-proof/wix.png" alt="Wix" />
-          <img src="/social-proof/ibm.png" alt="IBM" />
-          <img src="/social-proof/spiral.png" alt="Spiral" />
-          <img src="/social-proof/wpt.png" alt="WPT" />
-          <img src="/social-proof/qmarkets.png" alt="Qmarkets" />
-          <img src="/social-proof/telos.png" alt="Telos" />
-        </div>
+        <img src="/social-proof/wix.png" alt="Wix" />
+        <img src="/social-proof/ibm.png" alt="IBM" />
+        <img src="/social-proof/spiral.png" alt="Spiral" />
+        <img src="/social-proof/wpt.png" alt="WPT" />
+        <img src="/social-proof/qmarkets.png" alt="Qmarkets" />
+        <img src="/social-proof/telos.png" alt="Telos" />
+        <img src="/social-proof/ultra.png" alt="Ultra" />
       </section>
     </section>
     
@@ -157,8 +148,7 @@ export default {
 
 #projects {
   display: flex;
-  flex-direction: row;
-  margin: 0 auto;
+  flex-direction: column;
 
   @media screen and (max-width: 1000px){
     flex-direction: column;
@@ -169,19 +159,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width:50vw;
-    height:100vh;
-    z-index: 2;
-    position: sticky;
-    top:0;
-    padding-right: $spacing-lg;
-
-    @media screen and (max-width: 1000px){
-      width: 100%;
-      height: auto;
-      position: relative;
-      padding-right:0;
-    }
 
     @media screen and (max-width: 768px){
       align-items: center;
@@ -216,7 +193,6 @@ export default {
   }
 
   .portfolio {
-    width:50vw;
     font-size: $font-size-xl;
     font-weight:bold;
     z-index: 2;
@@ -345,26 +321,16 @@ export default {
 #company-logos {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: $spacing-md;
-  margin-top: $spacing-lg;
-  padding: $spacing-sm;
-  border: 1px solid rgba($black, 0.2);
-  border-radius: $br-lg;
-  max-width: 400px;
-  overflow-x: hidden;
-  min-height: 84px;
+  margin: $spacing-lg 0;
   width: 100%;
-
-  @media screen and (max-width: 1000px){
-    max-width: 100%;
-  }
 
   .images {
     display: flex;
     flex-direction: row;
     gap: $spacing-md;
-    animation: scrollX 30s linear infinite;
   }
 
   img {
@@ -378,16 +344,6 @@ export default {
 
   img {
     filter: invert(1);
-  }
-}
-
-@keyframes scrollX {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
   }
 }
 

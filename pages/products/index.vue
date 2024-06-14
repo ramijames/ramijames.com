@@ -1,6 +1,5 @@
 <template>
   <Projects />
-  <TypesOfDesigns />
   <Footer />
 </template>
 
