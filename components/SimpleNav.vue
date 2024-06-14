@@ -143,6 +143,10 @@ export default {
     align-items: center;
     gap: $spacing-md;
 
+    @media screen and (max-width: 768px){
+      gap: $spacing-xs;
+    }
+
     .menu {
       width: 30px;
       height: 30px;

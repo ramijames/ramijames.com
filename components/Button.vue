@@ -49,7 +49,7 @@ export default {
   border-radius: $br-sm;
   color: $white !important;
   font-family: $font-family-main, sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: $font-size-md;
   white-space:nowrap;
   text-decoration: none;
@@ -79,10 +79,10 @@ export default {
   }
 
   &.small {
-    padding: $spacing-sm $spacing-md;
+    padding: $spacing-xs $spacing-sm!important;
     color: $white !important;
-    font-size: $font-size-md;
-    font-weight: 700;
+    font-size: $font-size-sm;
+    font-weight: 600;
     border-radius: $br-sm;
 
     @media screen and (max-width: 768px){

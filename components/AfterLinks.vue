@@ -70,10 +70,12 @@ export default {
   z-index: 10000;
   position: fixed;
   bottom: 0;
-  background: $teal-dark;
+  background: rgba($white-dark, 0.6);
+  backdrop-filter: blur(10px);
   border-radius: $br-md $br-md 0 0;
-  padding: $spacing-xs $spacing-md;
+  padding: $spacing-xs;
   box-shadow: 0 10px 10px rgba($black, 0.24);
+  border-top: 1px solid rgba($white, 0.3);
 
   @media screen and (max-width: 768px){
     bottom: 0;
@@ -121,6 +123,10 @@ export default {
         width: 100%;
       }
 
+      #mce-EMAIL {
+        width: inherit;
+      }
+
       #mc-embedded-subscribe {
         cursor:pointer;
         transition: all 0.3s ease-in-out;
@@ -131,9 +137,8 @@ export default {
         font-weight: 500;
         font-size: $font-size-sm;
         background: $red-dark;
-        padding-left: $spacing-md;
-        padding-right: $spacing-md;
         margin: 0;
+        width: auto;
 
         @media screen and (max-width: 768px){
           padding-left: $spacing-xs;

@@ -1,10 +1,5 @@
 <template>
   <main id="hero" ref="animatorHero" class="general-main">
-    <!-- <section class="images">
-      <img ref="floatingShapes1" src="/shapes/floating-shapes-1.png" class="floating-shapes-1" alt="Woooo!">
-      <img ref="floatingShapes2" src="/shapes/floating-shapes-2.png" class="floating-shapes-2" alt="Woooo!">
-      <img ref="floatingShapes3" src="/shapes/floating-shapes-3.png" class="floating-shapes-3" alt="Woooo!">
-    </section> -->
     <section class="text">
       <p class="super-text">Tired of being stuck?</p>
       <h1 ref="heroText">
@@ -13,7 +8,7 @@
           Company.
       </h1>
       <div class="go-row">
-        <Button to="/booking" text="Get Started" type="small" />
+        <Button to="/booking" text="Get Started" type="default" />
         <a class="cta" href="#methodology">What is Product-first?</a>
       </div>
     </section>
@@ -94,7 +89,7 @@ export default {
     flex-direction: column;
     align-items: flex-end;
     overflow: hidden;
-    padding: $spacing-xl $spacing-sm $spacing-md;
+    padding: $spacing-lg $spacing-sm $spacing-md;
   }
 
   .text {
