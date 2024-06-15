@@ -34,12 +34,21 @@
       </div>  
     </div>
     <h3>Interactivity</h3>
-    <p>Let's talk for a second about what interactivity actually could mean, so that we know what it is that we're going to implement.</p>
-    <p>There are two possible interactions which I think would be interesting:</p>
+    <p>Let's talk for a second about what interactivity actually could mean, so that we know what it is that we're going to implement. There are two possible interactions which I think would be interesting:</p>
     <ul>
-      <li>Hovering over the mesh gradient to show the different colors</li>
-      <li>Changing the mesh gradient by adding or removing nodes</li>
+      <li>Hovering over the mesh gradient to show the different colors, making it an interactive play thing</li>
+      <li>Changing the mesh gradient by adding or removing nodes, making it a tool for editing mesh gradients</li>
     </ul>
+    <h4>Mesh Gradient Play Thing</h4>
+    <p>For the first interaction, we're going to make it so that when you hover over the mesh gradient, it will show the colors of the mesh gradient. This is a simple interaction, and a way to show off the mesh gradient in a way that is a step up from a non-interactive animation.</p>
+    <div id="simulator">
+      <div id="blank">
+        <div id="mesh-gradient" class="play-thing" ref="play-thing">
+          <div class="element" v-for="n in 64" :key="n"></div>
+        </div>
+      </div>
+    </div>
+    <h4>Mesh Gradient Editor</h4>
     <PostsExtras />
   </main>
   <Footer />
@@ -72,73 +81,6 @@ $apple-blue: #2E53F9;
 
     @media screen and (max-width: 768px){
       font-size: $font-size-xl;
-    }
-  }
-}
-
-#simulator {
-  background: $black url('/textures/texture-3-bg-dark.png') no-repeat center center;
-  width: 100%;
-  border-radius: $br-lg;
-  margin: $spacing-lg 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: $spacing-lg;
-  gap: $spacing-md;
-
-  @media screen and (max-width: 768px){
-    flex-direction: column;
-    padding: $spacing-sm;
-    border-radius: 30px;
-  }
-
-  video {
-    width: 75%;
-    border-radius: $br-lg;
-
-    @media screen and (max-width: 768px){
-      width: 100%;
-    }
-  }
-
-  #phone {
-    background: black;
-    border: 1px solid rgba(white, 0.48);
-    box-shadow: inset 0 -4px 4px 0px rgba(white, 0.32), inset 0 44px 14px 6px rgba(white, 0.12), inset 0 0 2px 4px rgba(white, 0.12), 0 10px 10px 5px rgba(black, 0.42);
-    width: 345px;
-    height: 717px;
-    padding: 15px;
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    #screen {
-      background: $black;
-      width: 100%;
-      height: 100%;
-      border-radius: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 1px 0 0 rgba(white, 0.52);
-
-      #notch {
-        height: 30px;
-        width: 105px;
-        position: absolute;
-        top: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: black;
-        border-radius: 20px;
-        z-index: 1;
-      }
     }
   }
 }
@@ -196,6 +138,80 @@ $apple-blue: #2E53F9;
       transform: scale(1);
     }
   }
+}
+
+#mesh-gradient.play-thing {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+  position: relative;
+
+  $mesh-colors: ();
+
+  // generate the colors with an HSL model
+  @for $i from 0 through 63 {
+    $hue: ($i - 1) * (360 / 64);
+    $color: hsl($hue, 50%, 50%);
+    $mesh-colors: map-merge($mesh-colors, ($i: $color));
+  }
+
+  $i: 0;
+  @each $name, $color in $mesh-colors {
+    $i: $i + 1;
+    .element:nth-child(#{$i}) {
+      background-color: $color;
+    }
+  }
+
+  .element {
+    // border-radius: 100%;
+    // transform: scale(1.5);
+    transition: all 0.15s;
+    opacity: .3;
+    position: relative;
+
+    &:hover {
+      opacity: 1;
+      // transform: scale(1);
+      z-index: 9;
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 300%;
+      height: 300%;
+      background: rgba($white, 0);
+      filter: blur(30px);
+      transition: opacity 0.5s;
+      z-index: 10;
+      pointer-events: none;
+      border-radius: 100%;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($black, 0);
+    backdrop-filter: blur(30px);
+    transition: opacity 0.5s;
+    z-index: 10;
+    pointer-events: none;
+  }
+
 }
 
 </style>
