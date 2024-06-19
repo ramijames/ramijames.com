@@ -19,7 +19,7 @@
       <br>
       <img src="/articles/peak-software-abuse.png" alt="Peak software abuse">
       
-      <h2 id="nfts-are-a-dark-ux-pattern">NFTs are a dark UX pattern</h2>
+      <h3 id="nfts-are-a-dark-ux-pattern">NFTs are a dark UX pattern</h3>
       <p>NFTs make me sad. I was part of a team that tried to use NFTs for game licenses and digital assets for a long time. As someone who plays many games, I genuinely thought they (and cousin technologies like fungible tokens) were cool and solved the irritating things that game developers and publishers implemented. Things like in-game gold that got resold on black markets, and digital assets that users didn’t own. I wanted players to be more free to use them as they saw fit, without false restrictions that benefited businesses. My vision of NFTs was that they would act as a key that enabled access to functionality. If you owned an NFT, the software you were using would allow you to do stuff that you wouldn’t otherwise be able to. </p>
       <p>From my perspective, the right way to use NFTs is with zero scarcity, and as a way to build loyalty with fans. They can be used to build engagement and they can be amazing marketing opportunities. Give them away and build excitement if that’s what your community is already into. Don’t force it down their throats if they don’t want it. Make games more fun by adding depth and complexity that would otherwise be impossible. It’s ok to experiment, but don’t do it for profit and at the expense of your users.</p>
       <p>But, really, who cares what I wanted?</p>

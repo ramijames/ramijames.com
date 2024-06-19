@@ -19,7 +19,7 @@
       <br>
       <img src="/articles/iterate-relentlessly.png" alt="Iterate relentlessly" />
 
-      <h2 id="figure-out-your-products-answer-to-why">Figure out your product’s answer to “Why?”</h2>
+      <h3 id="figure-out-your-products-answer-to-why">Figure out your product’s answer to “Why?”</h3>
       <p>At the foundation of a software product is the deceptively simple question of “why are we doing this?”. Fundamentally, that question and its answers are what sets good products apart from bad ones.</p>
       <p>If you can competently, coherently, and confidently express why you’re building what you’re building, then you’ll be able to decide what you want to build and who you’ll want to build it for.</p>
       <h3 id="getting-started">Getting Started</h3>
@@ -29,7 +29,7 @@
       <p><strong>Explain who you&#39;re trying to sell to.</strong> If this isn’t clear from the get-go, you’re probably just building something for yourself with the hope that someone, somewhere out there, will want it to. More often than not, this isn’t true and you’ll burn a lot of time (and money) building something that has no future.</p>
       <p>If you&#39;ve been reading this and thinking, wait, isn&#39;t this part of my business plan? What does this have to do with my software product? That is the core point that I&#39;m trying so hard to make in this section: there isn’t really a divide between the software that you build and the business that runs it. They must be deeply intertwined so that when you define features they are based on some user need, some partner requirement, or some business goal.</p>
       <p>Your answers to Why? guide your product and keep you from getting lost in the weeds.</p>
-      <h2 id="get-some-product-out-there">Get some product out there</h2>
+      <h3 id="get-some-product-out-there">Get some product out there</h3>
       <p>You can’t iterate if you don’t have something to build off of. A blank page is the hardest thing to overcome.</p>
       <h3 id="defining-your-first-iteration">Defining your first iteration</h3>
       <p>This is the thing that holds back founders and startups the most because the boundaries for an MVP are very hard to define. </p>
@@ -38,7 +38,7 @@
       <h3 id="err-on-the-small-side">Err on the small side</h3>
       <p>If you aren’t sure, build less and deploy faster. It’s better to be feature poor, than to waste time building the wrong things.</p>
       <p>Once you have some product released to the market, you need some feedback. There are a myriad of ways that people do this (or worse, don’t do this), and there are a bunch of caveats and gotchas that we should consider when getting feedback.</p>
-      <h2 id="talk-to-your-products-users">Talk to your product’s users</h2>
+      <h3 id="talk-to-your-products-users">Talk to your product’s users</h3>
       <p>From my perspective, there are two ways to go about understanding what you’re supposed to be building. </p>
       <p>Experience has taught me to prefer the latter one because it has a built in iterative and reactive product cycle. But, let&#39;s start with the more common formal process so you have something to compare it to.
       Formal Interviews (bleh)</p>
@@ -57,7 +57,7 @@
       <p>It is a fundamental truth that you can’t think of everything, and so your process can’t include it all.</p>
       <p>At the end of the day, this process is really about insulating teams from users to ensure that there isn’t internal disruption from external forces. Designers and engineers do not have direct contact with the users that they are impacting through their decisions. </p>
       <p>This means that those teams can work in peace, but it also often means that they are working on the wrong things for the wrong reasons.</p>
-      <h2 id="embedded-knowledge">Embedded Knowledge</h2>
+      <h3 id="embedded-knowledge">Embedded Knowledge</h3>
       <p>The second way of determining what you are supposed to build is something that I call “embedding”. I take the name from how journalists embed with troops as they deploy to combat. These journalists aren’t active in the fight but are down in the dirt and exposed to how things play out in real time. They see the truth.</p>
       <h3 id="embedded-knowledge-process">Embedded Knowledge process</h3>
       <p>The concept behind embedded knowledge is that you should be directly interacting with your users on a day to day basis, either through your support mechanisms, or through some community discussion platform. </p>
@@ -65,7 +65,7 @@
       <p>The core value of this methodology is that it isn’t intermittent, but is instead constant. The feedback that you are getting from the market is always the most up to date, and the most relevant to your product and to your business.</p>
       <p>If you’re embedded in the community of users who are using your product, then the teams who build it are not directly insulated from the users that are impacted by their decisions. This is a fundamentally different way of working which creates a level of personal responsibility that is missing in more formal methodologies.</p>
       <p>I’m sure that you can see the value of this latter way of working.</p>
-      <h2 id="caveats">Caveats</h2>
+      <h3 id="caveats">Caveats</h3>
       <h3 id="dont-believe-everything-you-hear">Don’t believe everything you hear</h3>
       <p>This is tricky to write about because it is not a straightforward do-this, do-that kind of thing. Understanding what is valuable feedback versus what is not is an intuitive sense that a team builds up over time.</p>
       <p>It’s dangerous to take every bit of feedback at face-value, both from external users and from internal stakeholders. It is a balancing act that can be difficult to manage.</p>
@@ -77,7 +77,7 @@
       <li><p>Business development, marketing, and other stakeholders within a company may drive revenue and traffic, but they should not be the sole drivers of a product. Their specific view of what is valuable is skewed towards their goals. These goals may or may not align with user’s needs or your product vision. Stay focused.</p>
       </li>
       </ul>
-      <h2 id="start-iterating">Start Iterating</h2>
+      <h3 id="start-iterating">Start Iterating</h3>
       <p>Lack of clarity inevitably leads to unnecessary redesigns, loss of users, reduction in revenue, missed business opportunities, wasted development efforts, and unhappy teams.</p>
       <p>Fortunately, the best way to gain real clarity is a matter of communication with those that actually use your product and a proper product process that takes feedback and turns it into something better than it currently is.</p>
       <p>Build something simple,

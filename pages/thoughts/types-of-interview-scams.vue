@@ -16,32 +16,32 @@
       <img src="/articles/types-of-interview-scams.png">
       
       <p>Be careful out there though, because this is not a complete list by any means and scammers are actively updating and adapting their methodologies.</p>
-      <h2 id="whatsapp-number-request-scam">WhatsApp Number Request Scam</h2>
-      <h3 id="the-scam">The Scam</h3>
+      <h3 id="whatsapp-number-request-scam">WhatsApp Number Request Scam</h3>
+      <h4 id="the-scam">The Scam</h4>
       <p>I was lucky enough to be contacted by a whole slew of fake accounts like the inimitable Emma portrayed below.</p>
       <p><img src="/articles/interview-scam-emma.png"></p>
       <p>The goal of these types of scams is to gain access to your phone number, either for further spam or scams, or to hijack your WhatsApp account entirely. </p>
       <p>In the US WhatsApp is not very dominant, but in many places like the Middle East and Asia, it is the primary mode of communication. </p>
       <p>Losing access to your WhatsApp account can be very dangerous as through it you can be impersonated, meaning that your direct contacts are also in danger. </p>
-      <h3 id="defense-method">Defense Method</h3>
+      <h4 id="defense-method">Defense Method</h4>
       <p>The best way to defend against this type of attack is to never give out personal information which may compromise you or those close to you. </p>
       <p>WhatsApp is tied to your phone number and SIM, and these are not foolproof security mechanisms and should not be trusted on their own to keep you and your account safe. </p>
       <p>There is a <a href="https://faq.whatsapp.com/1920866721452534/?helpref=hc_fnav">basic setup for 2FA for WhatsApp</a>, which I highly recommend that every active user of the app use. WhatsApp has some <a href="https://faq.whatsapp.com/1095301557782068">basic recommendations for securing your account</a> which you should also review.</p>
       <p>Accounts like Emma’s should be reported and blocked.</p>
-      <h2 id="fake-job-offer-scam">Fake Job Offer Scam</h2>
-      <h3 id="the-scam-1">The Scam</h3>
+      <h3 id="fake-job-offer-scam">Fake Job Offer Scam</h3>
+      <h4 id="the-scam-1">The Scam</h4>
       <p>Just from an emotionally draining perspective, this one is right at the top. The accounts who run them tend to look really legit, and tend to leverage the good reputations of large companies to invoke a sense of trust in the false process.</p>
       <p>They reach out to you, generally posing as a recruiter for a large company. They ask intelligent questions and usually have checked out your LinkedIn profile so they can sound non-generic and realistic.</p>
       <p>They will set up a typical interview and they will actually show up. The one that I showed up for was with a lady from the far east. I’m not sure if she was Indonesian or Malaysian. She asked some pretty general questions and let me do most of the talking. It didn’t feel too different from the dozen or so other interviews that I’d taken the month prior to that.</p>
       <p>What did feel different was the quick offer that I received the following day. Typically for leadership roles in tech you have three or more interviews with different people within a company to assess both your capabilities and your cultural fit within a company. It’s a process and when it feels rushed, it sets off a red flag in my mind.</p>
       <p>The offer itself was at least 100% more than what I’d mentioned during my call with her as my target salary, and this felt strange.</p>
       <p>What made it an obvious scam were the requests for me to hand over money to process the job application, and that I’d need to cover their equipment costs. I declined and she ghosted me.</p>
-      <h3 id="defense-method">Defense Method</h3>
+      <h4 id="defense-method">Defense Method</h4>
       <p>Being aware that these types of scams are out there is a big help in setting you up for a solid defense against them. </p>
       <p>During interviews you should remember that you’re not just being interviewed, but also doing an interview of the company itself. Ask pointed questions and get a feel for if anything strikes you as odd or off.</p>
       <p>Categorically refuse to pay any processing fees for your recruitment or on-boarding. I know that there are some companies out there that expect you to front costs for training, clothing, work materials, or other things needed for the job. I do consider these a type of scam and actively avoid companies who require them.</p>
-      <h2 id="install-and-scan">Install and Scan</h2>
-      <h3 id="the-scam-2">The Scam</h3>
+      <h3 id="install-and-scan">Install and Scan</h3>
+      <h4 id="the-scam-2">The Scam</h4>
       <p>As promised, I’m going to share how I lost about 33 ETH tokens. A little back story is necessary to make this make any sense. In truth, I had no intention of making this personal disaster public, but I feel a need to share in the hopes that it saves someone in the future.</p>
       <p>My apologies for the length. </p>
       <p>In October, war broke out in Israel. My wife and three kids just happened to be on the way back from visiting family in the US on October 7th, and they got stuck in Munich as Lufthansa canceled all flights for fear of having planes shot out of the sky. </p>
@@ -67,7 +67,7 @@
       <p>In retrospect, I understand today that the “game” I’d installed was simply an application that searched all of the directories on my computer for strings that looked like private keys or seed phrases, and uploaded them to the attacker’s site for use in draining addresses and accounts.</p>
       <p>The attackers also gained access to a bunch of my secondary accounts, but since I’m a stickler for using 2FA, they thankfully did not end my digital life.</p>
       <p>The computer that was compromised went in the trash. I had no way to verify at the time what had been done to it, and if the hardware itself was compromised. I was also really, really angry and it felt good. Don’t judge me.</p>
-      <h3 id="defense-method-1">Defense Method</h3>
+      <h4 id="defense-method-1">Defense Method</h4>
       <p>I was dumb. Your best defense is to not be dumb like me.</p>
       <ul>
       <li><p>Don’t keep keys or seed phrases in plain text on your computers.</p>
