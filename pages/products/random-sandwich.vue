@@ -4,8 +4,6 @@
       <img src="/products/random-sandwich/random-sandwich-logo-white.png" alt="Random Sandwich Logo" class="product-logo invert">
       <h1 class="hyper-bold">Random Sandwich</h1>
       <h4 class="centered">Create surprisingly delicious things</h4>
-      
-      
       <div class="main-product-image sammitch" ref="image">
         <video id="sampleMovie" width="640" height="360" preload autoplay loop>
           <source src="/products/random-sandwich/random-sandwiches.webm" />
@@ -33,10 +31,6 @@
         
         <p>I'll be extending the other randomly generated components to include avatars, creatures and characters, and much more!</p>
       </aside>
-
-      
-
-
     </section>
 
     <hr>

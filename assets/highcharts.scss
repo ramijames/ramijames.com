@@ -1,0 +1,45 @@
+
+@import 'variables';
+
+.highcharts-wrapper {
+  margin: $spacing-md 0;
+}
+
+.highcharts-container {
+  border-radius: $br-lg;
+}
+
+.highcharts-credits {
+  display: none;
+}
+
+.data-table {
+  margin: $spacing-md 0;
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+  border-radius: $br-lg;
+  padding: $spacing-md;
+  overflow: hidden;
+
+  th, td {
+    padding: $spacing-xs $spacing-sm;
+  }
+
+  th {
+    text-align: left;
+    font-weight: 600;
+
+    &.highlighted {
+      background-color: rgba($blue, 0.1);
+    }
+  }
+
+  td {
+    text-align: left;
+
+    &.highlighted {
+      background-color: rgba($blue, 0.1);
+    }
+  }
+}

@@ -1,7 +1,8 @@
 export default defineNuxtConfig({
   css: [
     '~/assets/main.scss',
-    '~/assets/labs.scss'
+    '~/assets/labs.scss',
+    '~/assets/highcharts.scss',
   ],
   devtools: { enabled: true },
   components: {
@@ -17,6 +18,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "nuxt-module-hotjar",
     "@nuxtjs/robots",
+    "nuxt-highcharts"
   ],
   hotjar: {
     hotjarId: 5004344,

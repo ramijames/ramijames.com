@@ -5,83 +5,130 @@
       <AllPosts />
     </section>
     <section class="content">
-      <h3>TLDR Solution</h3>
-      <p>Create a sorting algorithm that incentivizes nurses to be better workers by providing them higher pay for being reliable and consistent. Unreliable and inconsistent staff are penalized by being paid less, which can be used to increase Clipboard Health’s profit margin.</p>
+      <section class="summary">
+        <h3>TLDR Summary</h3>
+        <p>Create a sorting algorithm that incentivizes nurses to be more reliable staff by providing them higher pay for being reliable and consistent. Unreliable and inconsistent staff are penalized by being paid less, which can be used to increase Clipboard Health’s profit margin.</p>
 
-      <p>There are some ethical concerns with this approach, which I have outlined at the end.</p>
-      
+        <p>There are some ethical concerns with this approach, which I have <a href="#ethical-considerations">outlined at the end</a>.</p>
+      </section>
+
       <h3>Introduction</h3>
       
       <p>For a potential job at Clipboard Health, I’ve been asked to write a solution to the question “how do we maximize profit for a healthcare-related marketplace company.” </p>
 
-      <p>Clipboard Health is providing an easy to use marketplace of professionals that facilities can rely upon for staffing. They solve for attendance, staffing, nurse location tracking, and other problems related to staffing medical facilities.</p>
+      <p>Clipboard Health is providing a marketplace of nursing staff that facilities can rely upon for filling shift positions.</p>
 
-      <p>My typical thought process is to have a well-defined problem, build arguments for and against the litany of solutions, and select one based on a compromise that allows for a solution while taking into consideration some of those negative effects that can be associated with it.</p>
+      <h4>Product Process</h4>
+      <p>I'll approach this as I do all Product problems:</p>
+      
+      <ol>
+        <li>Have a well-defined problem</li> 
+        <li>Build arguments for and against the possible solutions</li>
+        <li>Define negative effects</li>
+        <li>Select one solution that minimizes negative effects</li>
+        <li>Try to implement a prototype and see if my assumptions are correct</li>
+      </ol>
 
       <h3>The Problem</h3>
 
       <p>Let’s start by defining the unit economics and their incentivization structures. There are three parties involved.</p>
 
-      <p>Nurses provide the workforce value within the ecosystem. There is a limited supply of them, and likely a high cost of acquisition. They want to fill shifts that are as close to their home as possible, while getting the highest pay possible.</p>
+      <p><strong>Nurses</strong> provide the workforce value within the ecosystem. There is a limited supply of them, and likely a high cost of acquisition. They want to fill shifts that are as close to their home as possible, while getting the highest pay possible.</p>
 
-      <p>Facilities are where nurses have shifts. For facilities it is critical that they fill shifts as they can not run their enterprises without nurses. They would like to fill those shifts at the lowest rate which can guarantee a contractor that shows up consistently.</p>
+      <p><strong>Facilities</strong> are where nurses have shifts. For facilities it is critical that they fill shifts as they can not run their enterprises without nurses. They would like to fill those shifts at the lowest rate which can guarantee a contractor that shows up consistently.</p>
 
-      <p>Clipboard Health runs the marketplace which connects nurses to facilities. Their aim is to provide nurses to facilities. CBH extracts the highest profit by charging the highest rate to facilities which don't turn them off, and the lowest rate to nurses which will consistently incentivize them to show up and get the work done.</p>
+      <p><strong>Clipboard Health</strong> runs the marketplace which connects nurses to facilities. Their aim is to provide nurses to facilities. CBH extracts the highest profit by charging the highest rate to facilities which don't turn them off, and the lowest rate to nurses which will consistently incentivize them to show up and get the work done.</p>
 
-      <p>This can be best described with two bell curves, showing acceptable cost and pay ranges for facilities and nurses respectively. The intersecting region between is the profit for Clipboard Health.</p>
-
-      <p>The breakdown goes like this:</p>
+      <p>This can be best described with two bell curves, showing acceptable cost and pay ranges for facilities and nurses respectively. The intersecting region between is the profit for Clipboard Health. The breakdown goes like this:</p>
 
       <h4>Acceptable cost for facilities</h4>
 
       <ul>
-      <li>Too high and they can’t break even</li>
-      <li>Too low and they can’t source staff</li>
+      <li>If nurse pay is too high and they can’t break even</li>
+      <li>If nurse pay is too low and they can’t source staff</li>
       </ul>
 
       <h4>Acceptable pay for nurses</h4>
 
       <ul>
-      <li>Too high and facilities won’t hire them</li>
-      <li>Too low and they won’t work</li>
+      <li>If nurse pay is too high and facilities won’t hire them</li>
+      <li>If nurse pay is too low and they won’t work</li>
       </ul>
 
-      [ diagram of two bell curves ]
+      <p>An <a href="https://www.indeed.com/career/nurse/salaries/New-York--NY">acceptable average range for nurses as an hourly wage</a> seems to be between $35 and $95. Let's map that and add 10% on top as the cost that facilities will have to pay via the marketplace. I don't actually know what Clipboard Health's margins are, but that isn't relevant for the argument that I make in this article. Ten percent is easy to calculate with, so let's go with that.</p>
 
-      <p>The goal of Clipboard Health is to increase profits. This can be done by widening the gap between those two peaks, but the further you push one peak or the other, the worse the impact will be on either churn or acquisition.</p>
+      <section class="highcharts-wrapper">
+        <highchart :options="bellCurvesOptions" />
+      </section>
+
+      <p>The goal of Clipboard Health is to increase profits. This can be done by widening the gap between those two peaks, but the further you push one peak or the other, the worse the impact will be on either churn or acquisition for nurses and facilities.</p>
 
       <p>If you pay nurses less, you’ll have unhappy nurses and eventually no nurses. If you charge facilities too much, you’ll have less facilities willing to use your marketplace.</p>
 
       <h3>The Proposed Solution</h3>
-      <p>I think that there is an opportunity to find a way to extract more value from inside the gap by adding a weighting mechanism to how nurses are paid. This means that the gap shifts to be wider for some nurses and decreases for others. We can use this mechanism to incentivize better staffing compliance by providing a carrot in higher pay while also paying unreliable nurses less. </p>
 
-      <p>Instead of an across the board cut in pay to nurses to increase profits, I propose that Clipboard Health sort nurses by:</p>
+      <p>I do not think that shifting the global nurse pay to be lower is acceptable. I also do not think that shifting the costs for facilities is a good solution.</p>
+      
+      <p>I think that there is an opportunity to find a way to extract more value from inside the gap by adding a weighting mechanism to how nurses are paid. We can use this mechanism to incentivize better staffing compliance by providing a carrot of higher pay to reliable staff, while paying unreliable nurses less.</p>
+
+      <p>I propose that Clipboard Health sort nurses by:</p>
 
       <ul>
-      <li>Number of shifts completed</li>
-      <li>Number of shifts not completed</li>
-      <li>Number of upcoming shifts</li>
+        <li>Number of shifts completed</li>
+        <li>Number of shifts not completed</li>
+        <li>Number of upcoming shifts</li>
       </ul>
 
-      [ diagram showing weighting ]
+      <NurseCalculator />
+
+      <p>For this example, I've created a table of fake nurses which we can use as illustrative data points.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th class="highlighted">Nurse Quality Quotient</th>
+            <th>Pay in USD</th>
+            <th>Shifts Completed</th>
+            <th>Shifts Not Completed</th>
+            <th>Scheduled Shifts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(point, index) in nursesWeightingOptions.series[0].data" :key="index">
+            <td class="highlighted">{{ point[0] }}</td>
+            <td>${{ point[1] }}</td>
+            <td>{{ point[2] }}</td>
+            <td>{{ point[3] }}</td>
+            <td>{{ point[4] }}</td>
+          </tr>
+        </tbody>
+      </table>
 
       <p>This acts as an incentivization mechanism that promotes the behavior that you want such as getting nurses to show up on-time, successfully completing shifts, and scheduling more shifts.</p>
 
       <p>The sort function requirements would be:</p>
 
       <ul>
-      <li>Shifts completed is most important and is highest weighted</li>
-      <li>Shifts not completed should not be a permanent mark against a nurse, but should be weighted with a time-function to decay to ensure that unreliable nurses are pushed out of the system</li>
-      <li>Number of upcoming shifts should add to your current value, but not highly as we don’t want to incentivize nurses to try to game the system by taking on a large number of shifts</li>
+        <li>If you have no completed shifts, your quotient is 0</li>
+        <li>For every X completed shifts, your quotient goes up proportionally from 0 to 1</li>
+        <li>incomplete shifts reduce your quotient by 10%, and decay over time</li>
+        <li>number of upcoming shifts adds to your quotient by 2.5%, up to 10%</li>
       </ul>
 
       <p>Then we can set a payment curve that determines who to pay more and who to pay less.</p>
 
-      <p>Importantly, this will have some variables which can be tweaked to ensure that profits do not go down in the event that all nurses have excellent compliance. The floor will always be the status quo today plus a critical incentivization mechanism which ensures higher-quality service for the facilities. Even in the unlikely scenario that profits don’t increase, the service you provide will be better.</p>
+      <section class="highcharts-wrapper">
+        <highchart :options="nursesWeightingOptions" />
+      </section>
 
+      <p>Importantly, this will have some variables which can be tweaked to ensure that profits do not go down in the event that all nurses have excellent compliance. The floor will always be the status quo today plus a critical incentivization mechanism which ensures higher-quality service for the facilities. Even in the unlikely scenario that profits don’t increase, the service you provide will be better than it is today because of the incentivized workforce.</p>
+
+      <a name="ethical-considerations"></a>
       <h3>Ethical Considerations</h3>
 
-      <p>From a strictly mathematical perspective we can make cold, calculated decisions as to how much profit can be extracted from a marketplace and those that depend on it. We can simply lower salaries for nurses across the market and get rich that way. The truth is that this is a fine short-term solution, but long-term it will negatively impact the entire market (and the company’s objectives!) because nurses will make the rational decision to stop being nurses if they are overworked and underpaid.</p>
+      <p>From a strictly mathematical perspective we can make cold, calculated decisions as to how much profit can be extracted from a marketplace and those that depend on it. We can simply lower salaries for nurses across the market and get rich that way. The truth is that this is a fine short-term solution if profit is your only motive.</p>
+        
+      <p>But, <strong>from a Product-first perspective</strong>, long-term it will negatively impact the entire market (and the company’s objectives!) because nurses will make the rational decision to stop being nurses if they are overworked and underpaid.</p>
 
       <ul>
       <li>If you want to incentivize companies to use the marketplace, you want to drive prices down so that for them it is most profitable.</li>
@@ -91,9 +138,126 @@
 
       <p>The core issue here is that the power structure between these three sets of entities is not equal, and therefore the weakest set, the nurses, will always end up with the short end of the stick, squeezed by the market they are forced to work in. They should be protected from value extraction because without them, the economic system they participate in collapses and everyone loses.</p>
 
-      <p>Boards, and the companies that they run, have an ethical obligation to maximize profits for their company. But, they must do so in a way that maintains a long term perspective on what promotes growth of their ecosystem, and quality of life for those who participate in it. Short term gains must not trump longevity and viability of a market as a whole.</p>
+      <p>Boards, and the companies that they run, have an ethical obligation to maximize profits for their company. But, they must do so in a way that maintains a long term perspective on what promotes growth of their ecosystem, and quality of life for those who participate in it. <strong>Short term gains must not trump longevity and viability of a market as a whole.</strong></p>
 
     </section>
   </main>
   <Footer />
 </template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      accessibility: { enabled: false }, // disable accessibility warning
+      nursesWeightingOptions: {
+        chart: {
+          type: 'scatter'
+        },
+        title: {
+          text: 'Higher Nurse Quotient = Higher Pay'
+        },
+        xAxis: {
+          title: {
+            text: 'Nurse Quotient'
+          }
+        },
+        yAxis: {
+          title: {
+            text: 'Pay'
+          },
+          gridLineWidth: 0,
+          plotBands: [
+          {
+            from: 0,
+            to: 65, // Adjust this to the maximum pay rate
+            color: 'rgba(255, 0, 0, 0.1)', // Color of the plot band
+            label: {
+              text: 'Profitable for CBH',
+              style: {
+                color: '#606060'
+              }
+            }
+          },
+          {
+            from: 65, // Start of the plot band
+            to: 100, // End of the plot band
+            color: 'rgba(0, 255, 0, 0.1)', // Color of the plot band
+            label: {
+              text: 'Not Profitable for CBH',
+              style: {
+                color: '#606060'
+              }
+            }
+          },
+          
+        ]
+        },
+        series: [
+        {
+          name: 'Nurses',
+          data: [
+            // calculated quotient, pay in usd, completed shifts, not completed shifts, scheduled shifts
+            [5.4, 54, 0, 0, 0], 
+            [4.0, 40, 0, 0, 0],
+            [3.9, 39, 0, 0, 0],
+            [7.0, 70, 0, 0, 0],
+            [7.1, 71, 0, 0, 0],
+            [6.2, 62, 0, 0, 0],
+            [3.8, 38, 0, 0, 0],
+            [5.2, 52, 0, 0, 0],
+            [5.9, 59, 0, 0, 0],
+            [9.1, 90, 0, 0, 0],
+          ]
+        }
+      ]
+      },
+      bellCurvesOptions: {
+        chart: {
+          type: 'areaspline'
+        },
+        title: {
+          text: 'The Profit Spread'
+        },
+        xAxis: {
+          categories: Array.from({length: 11}, (_, i) => i),
+          plotBands: [{
+            from: 65, // best case pay for nurses
+            to: 71.5, // best case cost for facilities
+            color: '#006AB422',
+            label: {
+              text: 'CBH Profit Zone',
+              style: {
+                color: '#006AB4',
+                fontWeight: 'bold',
+                fontSize: '18px',
+                top: '10px'
+              }
+            }
+          }]
+        },
+        yAxis: {
+          title: {
+            text: 'Likelihood a nurse works at this rate'
+          }
+        },
+        series: [
+          {
+            name: 'Acceptable pay for nurses',
+            data: Array.from({length: 101}, // total length of the line
+                  (_, i) => Math.exp(-Math.pow(i - 65, 2) / 200)), // Average wages between $35 and $95
+            fillColor: 'rgba(172, 227, 245, 0.4)'
+          }, 
+          {
+            name: 'Acceptable cost for facilities',
+            data: Array.from({length: 101}, // total length of the line
+                  (_, i) => Math.exp(-Math.pow(i - 71.5, 2) / 200)), // Average wages between $35 and $95
+            fillColor: 'rgba(254, 190, 112, 0.4)'
+          }
+        ]
+      }
+    }
+  }
+}
+</script>

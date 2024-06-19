@@ -120,7 +120,7 @@ h4 {
   font-size: $font-size-md; 
   line-height: $font-size-md * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
-  margin-bottom:1rem;
+  margin: $spacing-md 0 $spacing-sm;
   font-weight:800;
 
   .highlight {
@@ -242,7 +242,8 @@ small {
   }
 }
 
-ul {
+ul,
+ol {
   margin: 0 $spacing-sm $spacing-md $spacing-md;
 }
 
@@ -258,14 +259,7 @@ hr {
     }
 
 p > strong {
-  font-weight: 400;  
-
-  &::after {
-    bottom: -0.2rem;
-    height: 0.5rem;
-    left: -0.25rem;
-    right: -0.25rem;
-  }
+  font-weight: 700;  
 }
 
 .center {
@@ -459,6 +453,16 @@ input {
 
     .content {
       width: 100%;
+    }
+
+    .summary {
+      background-color: $white-dark;
+      padding: $spacing-md;
+      border-radius: $br-lg;
+
+      h3 {
+        margin-top: 0;
+      }
     }
 
       @media screen and (max-width: 1000px) {
