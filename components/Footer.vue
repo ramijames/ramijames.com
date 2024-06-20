@@ -3,7 +3,7 @@
       <div class="summary" v-if="isThoughtsSubPage">
         <h3>Article Addendum</h3>
         <p>I hope you enjoyed this article!</p>
-        <p>Without direct feedback, it can be hard to iterate and I value yours immensely. Please <a href="mailto:rami@ramijames.com">send me an email</a> if you find a typo or disagree with the content. I'm always up for a vigorous and lively debate!</p>
+        <p>Without direct feedback it can be hard to iterate, and I value your thoughts immensely. Please <a href="mailto:rami@ramijames.com">send me an email</a> if you find a typo or disagree with the content. I'm always up for a vigorous and lively debate!</p>
       </div>
       <div class="footer-content general-main">
         <div class="footer-logo">
