@@ -7,7 +7,8 @@
     <section class="content">
       <section class="summary">
         <h3>TLDR Summary</h3>
-        <p>Create a sorting algorithm that incentivizes nurses to be more reliable staff by providing them higher pay for being reliable and consistent. Unreliable and inconsistent staff are penalized by being paid less, which can be used to increase Clipboard Health’s profit margin.</p>
+        <p>A company must be careful when their primary goal is to squeeze profits out of the users who provide the core value proposition of their product.</p>
+        <p>My solution is to create a sorting algorithm that incentivizes nurses to be more reliable staff by providing them higher pay for being reliable and consistent. Unreliable and inconsistent staff are penalized by being paid less, which can be used to increase Clipboard Health’s profit margin.</p>
 
         <p>There are some ethical concerns with this approach, which I have <a href="#ethical-considerations">outlined at the end</a>.</p>
       </section>
@@ -38,7 +39,9 @@
 
       <p><strong>Clipboard Health</strong> runs the marketplace which connects nurses to facilities. Their aim is to provide nurses to facilities. CBH extracts the highest profit by charging the highest rate to facilities which don't turn them off, and the lowest rate to nurses which will consistently incentivize them to show up and get the work done.</p>
 
-      <p>This can be best described with two bell curves, showing acceptable cost and pay ranges for facilities and nurses respectively. The intersecting region between is the profit for Clipboard Health. The breakdown goes like this:</p>
+      <p>From a Product-first perspective, it's my responsibility to take all three party's needs into account and product some solution which solves for the business need while not harming the integrity of the core product being produced, or the users who are using it.</p>
+
+      <p>I think that we can best illustrate the economics involved with two bell curves, showing acceptable cost and pay ranges for facilities and nurses respectively. The intersecting region between is the profit for Clipboard Health. The breakdown goes like this:</p>
 
       <h4>Acceptable cost range for facilities</h4>
 
@@ -80,7 +83,7 @@
 
       <NurseCalculator />
 
-      <p>For this example, I've created a table of fake nurses which we can use as illustrative data points.</p>
+      <!-- <p>For this example, I've created a table of fake nurses which we can use as illustrative data points.</p> -->
 
       <!-- <table class="data-table">
         <thead>
@@ -113,6 +116,27 @@
         <li>incomplete shifts reduce your quotient by 10%, and decay over time</li>
         <li>number of upcoming shifts adds to your quotient by 2.5%, up to 10%</li>
       </ul>
+
+      <p>For completeness, you can see the prototype code for generating the Nurse Quality Quotient here:</p>
+
+      <pre class="code"><div class="type">Javascript</div>
+        <code v-pre>
+    nurseQuotient() {
+      const X = 100; // Define the number of completed shifts needed to reach a quotient of 1
+      if (this.completedShifts === 0) return 0;
+      let quotient = this.completedShifts / X;
+      quotient -= Math.min(this.uncompletedShifts * 0.025);
+      quotient += Math.min(0.1, this.upcomingShifts * 0.025);
+      return Math.max(0, Math.min(quotient, 1));
+    }
+
+    recommendedPay() {
+      const minPay = 35;
+      const maxPay = 95;
+      return Math.sqrt(this.nurseQuotient) * (maxPay - minPay) + minPay;
+    }
+        </code>
+      </pre>
 
       <p>Then we can set an optimized threshold that determines who to pay more and who to pay less based on this new Nurse Quality Quotient.</p>
 
