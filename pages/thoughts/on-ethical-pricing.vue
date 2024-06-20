@@ -14,15 +14,14 @@
 
       <h3>Introduction</h3>
       
-      <p>For a potential job at Clipboard Health, I’ve been asked to write a solution to the question “how do we maximize profit for a healthcare-related marketplace company.” </p>
+      <p>For a potential job at Clipboard Health, I’ve been asked to write a solution to the question “how do we maximize profit for a healthcare-related marketplace company without raising costs for facilities.”</p>
 
-      <p>Clipboard Health is providing a marketplace of nursing staff that facilities can rely upon for filling shift positions.</p>
+      <p>This, on its face, means lowering pay for the nurses who provide the staffing solutions their marketplace fulfills. I thought that this would be a great way for me to outline how my <nuxt-link to="/">Product-first mentality</nuxt-link> takes into account business desires, and weighs them against how it changes the product that a company produces.</p>
 
       <h4>Product Process</h4>
-      <p>I'll approach this as I do all Product problems:</p>
       
       <ol>
-        <li>Have a well-defined problem</li> 
+        <li>Have a well-defined problem with clear stakeholders</li> 
         <li>Build arguments for and against the possible solutions</li>
         <li>Define negative effects</li>
         <li>Select one solution that minimizes negative effects</li>
@@ -41,18 +40,18 @@
 
       <p>This can be best described with two bell curves, showing acceptable cost and pay ranges for facilities and nurses respectively. The intersecting region between is the profit for Clipboard Health. The breakdown goes like this:</p>
 
-      <h4>Acceptable cost for facilities</h4>
+      <h4>Acceptable cost range for facilities</h4>
 
       <ul>
-      <li>If nurse pay is too high and they can’t break even</li>
-      <li>If nurse pay is too low and they can’t source staff</li>
+      <li>If nurse pay is too high, they can’t break even</li>
+      <li>If nurse pay is too low, they can’t source staff</li>
       </ul>
 
-      <h4>Acceptable pay for nurses</h4>
+      <h4>Acceptable pay range for nurses</h4>
 
       <ul>
-      <li>If nurse pay is too high and facilities won’t hire them</li>
-      <li>If nurse pay is too low and they won’t work</li>
+      <li>If nurse pay is too high, facilities won’t hire them</li>
+      <li>If nurse pay is too low, they won’t work</li>
       </ul>
 
       <p>An <a href="https://www.indeed.com/career/nurse/salaries/New-York--NY">acceptable average range for nurses as an hourly wage</a> seems to be between $35 and $95. Let's map that and add 10% on top as the cost that facilities will have to pay via the marketplace. I don't actually know what Clipboard Health's margins are, but that isn't relevant for the argument that I make in this article. Ten percent is easy to calculate with, so let's go with that.</p>
@@ -83,7 +82,7 @@
 
       <p>For this example, I've created a table of fake nurses which we can use as illustrative data points.</p>
 
-      <table class="data-table">
+      <!-- <table class="data-table">
         <thead>
           <tr>
             <th class="highlighted">Nurse Quality Quotient</th>
@@ -102,7 +101,7 @@
             <td>{{ point[4] }}</td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
 
       <p>This acts as an incentivization mechanism that promotes the behavior that you want such as getting nurses to show up on-time, successfully completing shifts, and scheduling more shifts.</p>
 
@@ -115,7 +114,7 @@
         <li>number of upcoming shifts adds to your quotient by 2.5%, up to 10%</li>
       </ul>
 
-      <p>Then we can set a payment curve that determines who to pay more and who to pay less.</p>
+      <p>Then we can set an optimized threshold that determines who to pay more and who to pay less based on this new Nurse Quality Quotient.</p>
 
       <section class="highcharts-wrapper">
         <highchart :options="nursesWeightingOptions" />
@@ -258,6 +257,21 @@ export default {
         ]
       }
     }
-  }
+  },
+  computed: {
+    nurseQuotient() {
+      const X = 100; // Define the number of completed shifts needed to reach a quotient of 1
+      if (this.completedShifts === 0) return 0;
+      let quotient = this.completedShifts / X;
+      quotient -= Math.min(this.uncompletedShifts * 0.025);
+      quotient += Math.min(0.1, this.upcomingShifts * 0.025);
+      return Math.max(0, Math.min(quotient, 1));
+    },
+    recommendedPay() {
+      const minPay = 35;
+      const maxPay = 95;
+      return Math.sqrt(this.nurseQuotient) * (maxPay - minPay) + minPay;
+    },
+  },
 }
 </script>

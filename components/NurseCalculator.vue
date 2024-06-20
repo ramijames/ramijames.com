@@ -1,22 +1,22 @@
 <template>
   <div class="nurse-calculator">
     <div class="nurse-calc-row">
-    <label>
-      Completed Shifts:
-    </label>
-    <input type="number" v-model.number="completedShifts" min="0">
+      <label>
+        Completed Shifts:
+      </label>
+      <input type="number" v-model.number="completedShifts" min="0">
     </div>
     <div class="nurse-calc-row">
-    <label>
-      Uncompleted Shifts:
-    </label>
-    <input type="number" v-model.number="uncompletedShifts" min="0">
+      <label>
+        Uncompleted Shifts:
+      </label>
+      <input type="number" v-model.number="uncompletedShifts" min="0">
     </div>
     <div class="nurse-calc-row">
-    <label>
-      Upcoming Shifts:
-    </label>
-    <input type="number" v-model.number="upcomingShifts" min="0">
+      <label>
+        Upcoming Shifts:
+      </label>
+      <input type="number" v-model.number="upcomingShifts" min="0">
     </div>
     <section class="quotient-output">
       <p>Nurse Quotient: {{ nurseQuotient }}</p>
@@ -39,7 +39,7 @@ export default {
       const X = 100; // Define the number of completed shifts needed to reach a quotient of 1
       if (this.completedShifts === 0) return 0;
       let quotient = this.completedShifts / X;
-      quotient -= Math.min(0.1, this.uncompletedShifts * 0.025);
+      quotient -= Math.min(this.uncompletedShifts * 0.025);
       quotient += Math.min(0.1, this.upcomingShifts * 0.025);
       return Math.max(0, Math.min(quotient, 1));
     },
