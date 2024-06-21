@@ -75,14 +75,13 @@ h1 {
 
 h2 { 
   font-size: $font-size-xxl;
-  line-height: $font-size-xxl; 
+  line-height: 120%; 
   font-family: $font-family-main;
   margin-bottom:1rem;
-  font-weight:700;
+  font-weight:500;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
-    line-height: $font-size-xl;
   }
 
 }
@@ -239,9 +238,9 @@ ol {
 }
 
 hr {
-  margin: 8rem auto 4rem;
-  width:20%;
-  opacity: 0.2;
+  margin: $spacing-lg auto;
+  width:100%;
+  opacity: 0.1;
   border:1px solid #000000;
 }
 

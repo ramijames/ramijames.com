@@ -410,8 +410,7 @@ export default {
 
 .dark .bread-crumbs {
   border-top: 1px solid rgba($white-dark, 0.2);
-  border-bottom: 1px solid rgba($white-dark, 0.2);
-  padding: $spacing-sm $spacing-md;
+  padding: $spacing-md;
   display: flex;
   flex-direction: row;
   gap: $spacing-sm;

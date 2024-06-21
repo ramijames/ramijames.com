@@ -4,17 +4,16 @@
       <!-- <img src="/rami-profile.png" alt="Rami James" class="profile-pic"> -->
       
       <section class="jobs">
-        <h3>My name is Rami James and I have been actively building online products since 1996. 
-            My roles within organizations have ranged from designer, product leader, developer, 
-            technical writer, head of developer relations, and in recent years up to senior management as COO and Co-founder. I know, it's confusing for me, too.</h3>
-        <h3>You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h3>
-        <br><br>
+        <h2>My name is Rami James and I have been actively building online products since 1996. 
+            My roles within organizations have ranged from <span class="green">designer</span>, <span class="green">product leader</span>, <span class="blue">developer</span>, 
+            <span class="mint">technical writer</span>, <span class="red">head of developer relations</span>, and in recent years up to senior management as <span class="purple">COO and Co-founder</span>. I know, it's confusing for me, too.</h2>
+        <h2>You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h2>
+        <hr>
         <section class="single-job">
           <p class="job-title">Consulting Specialist</p>
           <p class="job-duration">1996 - Present</p>
-          <p class="job-descriptions">I currently teach small, fast-moving teams <nuxt-link to="/">how to be Product-first</nuxt-link> so that they can build innovative and interesting software while taking their market niche by storm.</p>
+          <p class="job-descriptions">I currently provide a variety of product design and development services as a solo contractor. If you need that, email me directly at <a href="mailto:rami@ramijames.com">rami@ramijames.com</a>.</p>
           <p><Button text="Contact me" to="https://calendly.com/itsramijames" type="small" /></p>
-          <p>Or email me directly at <a href="mailto:rami@ramijames.com">rami@ramijames.com</a>.</p>
         </section>
         <section class="single-job">
           <p class="job-title">Ultra</p>
@@ -171,6 +170,11 @@ export default {
 
 @import './assets/variables';
 
+.green { color:$green }
+.blue { color:$blue }
+.mint { color:$mint }
+.red { color:$red }
+.purple { color:$purple }
 
 .explanation {
   display: flex;
@@ -179,26 +183,11 @@ export default {
   width: 100%;
 }
 
-.profile-pic {
-  margin: 0 auto;
-  border-radius: $br-lg;
-  align-self: flex-end;
-  width: 200px;
-  margin-bottom: -$spacing-lg;
-  z-index: 1;
-}
-
-
 .jobs {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
 }
-
-    .dark .jobs {
-      background: url("/_nuxt/public/textures/texture-3-bg-dark.png") padding-box, linear-gradient(140deg, $black-light -5%, $black-light 15%) border-box;
-    }
 
     .single-job {
       margin: 0;
@@ -210,15 +199,10 @@ export default {
     }
 
         .job-title {
-          font-family: $font-family-main, sans-serif;
-          font-weight: 700;
+          font-family: $font-family-main;
+          font-weight: 500;
           font-size: $font-size-xl;
-          line-height: $font-size-xl * $multiplier;
-
-          @media screen and (max-width: 768px){
-            font-size: $font-size-lg;
-            line-height: $font-size-lg * $multiplier;
-          }
+          line-height: 120%;
         }
 
         .job-subtitle {
