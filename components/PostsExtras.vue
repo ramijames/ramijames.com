@@ -35,6 +35,7 @@
 
     @media screen and (max-width: 1000px) {
         align-items: center;
+        width: 100%;
     }
 
     h3 {
