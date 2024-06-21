@@ -6,7 +6,8 @@
       <section class="jobs">
         <h3>My name is Rami James and I have been actively building online products since 1996. 
             My roles within organizations have ranged from designer, product leader, developer, 
-            technical writer, head of developer relations, and in recent years up to senior management as COO and Co-founder. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h3>
+            technical writer, head of developer relations, and in recent years up to senior management as COO and Co-founder. I know, it's confusing for me, too.</h3>
+        <h3>You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h3>
         <br><br>
         <section class="single-job">
           <p class="job-title">Consulting Specialist</p>
