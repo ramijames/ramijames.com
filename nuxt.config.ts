@@ -18,8 +18,12 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "nuxt-module-hotjar",
     "@nuxtjs/robots",
-    "nuxt-highcharts"
+    "nuxt-highcharts",
+    "nuxt-gtag"
   ],
+  gtag: {
+    id: 'G-N9MEGS1HSD'
+  },
   hotjar: {
     hotjarId: 5004344,
     scriptVersion: 6,
@@ -37,5 +41,8 @@ export default defineNuxtConfig({
       'Montserrat': [400, 500, 600, 700, 800, 900],
       'Noto Sans': [400, 600, 700, 900],
     }
-  }
+  },
+  routeRules: {
+    '/thoughts/on-ethical-pricing': { redirect: '/thoughts/how-to-make-product-decisions-based-on-business-needs' },
+  },
 })

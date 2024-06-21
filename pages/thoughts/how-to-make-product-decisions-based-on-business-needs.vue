@@ -1,7 +1,7 @@
 <template>
   <main class="general-main page-top">
     <section class="article-extras">
-      <SectionTitle title="On Ethical Pricing" subtitle="by Rami James" />
+      <SectionTitle title="How to Make Product Decisions based on Business Needs" subtitle="by Rami James" />
       <AllPosts />
     </section>
     <section class="content">
