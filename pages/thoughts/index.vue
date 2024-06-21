@@ -83,7 +83,7 @@ export default {
 
 .articles a {
   text-decoration: none;
-  color: $black;
+  color: $blue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,7 +98,8 @@ export default {
 
 .articles .title {
   margin: 1rem 0 0.5rem;
-  font-size: $font-size-lg;
+  font-weight: normal;
+  font-size: 1.25rem;
 }
 
 .articles .date {

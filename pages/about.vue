@@ -6,7 +6,7 @@
       <section class="jobs">
         <h2>My name is Rami James and I have been actively building online products since 1996. 
             My roles within organizations have ranged from <span class="purple">designer</span>, <span class="green">product leader</span>, <span class="blue">developer</span>, 
-            <span class="mint">technical writer</span>, <span class="red">head of developer relations</span>, and in recent years up to senior management as <span class="purple">COO and Co-founder</span>. I know, it's confusing for me, too.</h2>
+            <span class="mint">technical writer</span>, <span class="red">head of developer relations</span>, and in recent years up to senior management as <span class="purple">COO and Co-founder</span>. <span class="grey">I know, it's confusing for me, too.</span></h2>
         <h2>You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h2>
         <hr>
         <section class="single-job">
@@ -175,6 +175,7 @@ export default {
 .mint { color:$mint }
 .red { color:$red }
 .purple { color:$purple }
+.grey { opacity: 0.1 }
 
 .explanation {
   display: flex;
