@@ -302,6 +302,9 @@ export default {
 
   .current {
     color: $teal-light;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   a {

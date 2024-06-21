@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     "nuxt-module-hotjar",
     "@nuxtjs/robots",
     "nuxt-highcharts",
-    "nuxt-gtag"
+    "nuxt-gtag",
   ],
   gtag: {
     id: 'G-N9MEGS1HSD'
