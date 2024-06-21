@@ -7,8 +7,8 @@
       <h1 class="home-max">Senior Product Designer</h1>
       <h2>I have two decades of <nuxt-link to="/about">experience</nuxt-link> in product design, software development, and developer tooling.</h2>
       <section class="buttons">
-        <Button to="/products" text="Explore my work" type="small" />
-        <Button to="/booking" text="📬 Get in touch" type="text" />
+        <Button to="/products" text="🚀 Explore my work" type="big" />
+        <Button to="/booking" text="📬 Get in touch" type="big" />
       </section>
     </section>
   </main>
