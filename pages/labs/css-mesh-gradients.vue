@@ -144,9 +144,9 @@
         <div id="phone">
           <div id="screen">
             <div id="notch"></div>
-            <div id="mesh-gradient" class="sixteen-elements">
+            <div id="mesh-gradient" class="sixteen-elements no-blur">
               <div id="notch"></div>
-              <div class="element no-blur" v-for="n in 32" :key="n"></div>
+              <div class="element" v-for="n in 32" :key="n"></div>
             </div>
           </div>
         </div>  
@@ -163,7 +163,9 @@
       grid-template-columns: 1fr 1fr 1fr 1fr ;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       position: relative;
-      background: $black-light;
+
+      // generate a linear gradient from the $mesh-colors
+      background: linear-gradient(180deg, $orange 20%, $mint 50%, $purple 80%);
 
       $mesh-colors: ();
 
@@ -178,19 +180,34 @@
       @each $name, $color in $mesh-colors {
         $i: $i + 1;
         .element:nth-child(#{$i}) {
-          background-color: $color;
+          background: $color;
           animation-delay: -#{$i * 0.625}s;
         }
       }
 
       .element {
         border-radius: 100px;
-        filter: blur(50px);
         animation: sixteen-elements 10s linear infinite;
       }
 
-      .no-blur {
-        filter: none;
+      &::after {
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(black, 0.01);
+        backdrop-filter: blur(20px);
+        z-index: 1;
+      }
+
+      &.no-blur {
+        
+        &::after {
+          display:none;
+        }
+
       }
 
       @keyframes sixteen-elements {
@@ -200,7 +217,7 @@
         }
         50% {
           opacity: 1;
-          transform: scale(2);
+          transform: scale(1.5);
         }
         100% {
           opacity: 0;
@@ -213,6 +230,9 @@
 
       <h3>Conclusion</h3>
       <p>So, this is a fun little experiment that I think could be used in a lot of different ways. I think it would be cool to see this used in a more subtle way as a background for a site. I think it could also be used as a loading animation or a background for a hero section. I think the possibilities are endless.</p>
+    </section>
+    <section class="summary">
+      <small>Code was updated on July 21, 2024 to be more performant.</small>
     </section>
     <PostsExtras />
   </main>
@@ -238,7 +258,7 @@ $apple-blue: #2E53F9;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 10;
     text-align: center;
     color: $white !important;
     font-size: $font-size-mega;
@@ -334,6 +354,9 @@ $apple-blue: #2E53F9;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   position: relative;
 
+  // generate a linear gradient from the $mesh-colors
+  background: linear-gradient(180deg, $orange 20%, $mint 50%, $purple 80%);
+
   $mesh-colors: ();
 
   // generate the colors with an HSL model
@@ -354,12 +377,27 @@ $apple-blue: #2E53F9;
 
   .element {
     border-radius: 100px;
-    filter: blur(50px);
     animation: sixteen-elements 10s linear infinite;
   }
 
-  .no-blur {
-    filter: none;
+  &::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(black, 0.01);
+    backdrop-filter: blur(20px);
+    z-index: 1;
+  }
+
+  &.no-blur {
+    
+    &::after {
+      display:none;
+    }
+
   }
 
   @keyframes sixteen-elements {
@@ -369,7 +407,7 @@ $apple-blue: #2E53F9;
     }
     50% {
       opacity: 1;
-      transform: scale(2);
+      transform: scale(1.5);
     }
     100% {
       opacity: 0;
@@ -416,13 +454,20 @@ $apple-blue: #2E53F9;
 
   .element {
     border-radius: 100px;
-    filter: blur(50px);
     animation: sixteen-elements 6s linear infinite;
     mix-blend-mode: hard-light;
   }
 
-  .no-blur {
-    filter: none;
+  &::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(black, 0.01);
+    backdrop-filter: blur(50px);
+    z-index: 1;
   }
 
   @keyframes sixteen-elements {
