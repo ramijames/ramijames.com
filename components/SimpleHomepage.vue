@@ -54,9 +54,8 @@
     height: 20rem;
     background: linear-gradient(to top, $black 0%, rgba($black, 0) 100%);
     z-index: 100;
+    opacity: 0.3;
   }
-
-
 
   @media screen and (max-width: 768px){
     min-height: 80dvh;
@@ -130,7 +129,6 @@
   position: relative;
   position: absolute;
   z-index: -1;
-  opacity: 0.4;
   align-items: center;
   justify-content: center;
   transform: scale(1) rotate(45deg);
@@ -148,13 +146,13 @@
   @each $name, $color in $mesh-colors {
     $i: $i + 1;
     .element:nth-child(#{$i}) {
-      border: 0px solid transparent;
+      border: 1px solid $color;
       animation-delay: -#{$i * .125}s;
       width: 100px;
       height: 100px;
       align-self: center;
       justify-self: center;
-      box-shadow: inset 0 0 100px rgba($color, 0.85), 0 0 100px rgba($color, 0.85);
+      // box-shadow: inset 0 0 100px rgba($color, 0.85), 0 0 100px rgba($color, 0.85);
     }
   }
 
@@ -168,8 +166,8 @@
       transform: scale(0) rotate(0deg);
     }
     50% {
-      opacity: 1;
-      transform: scale(1) rotate(180deg);
+      opacity: 0.6;
+      transform: scale(2) rotate(180deg);
     }
     100% {
       opacity: 0;
