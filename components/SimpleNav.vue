@@ -6,7 +6,7 @@
         :class="`${mobileMenuOpen}`"
         @click="toggleMenu"
       ></div>
-      <img :src="`/logo-${currentTheme}.svg`" alt="Rami James" />
+      <nuxt-link to="/"><img :src="`/logo-${currentTheme}.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
         <nuxt-link to="/thoughts" class="nav-link">Thoughts</nuxt-link>

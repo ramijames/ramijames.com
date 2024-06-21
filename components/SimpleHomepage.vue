@@ -22,10 +22,13 @@
 
 #hero {
   width: 100dvw;
-  padding: $spacing-lg;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media screen and (max-width: 768px){
+    min-height: 80dvh;
+  }
 
   .home-max {
     font-size: 8dvw;
@@ -35,6 +38,10 @@
   h2 {
     margin-top: 0;
     line-height: 140%;
+
+    @media screen and (max-width: 768px){
+      font-size: $font-size-lg;
+    }
   }
 }
 
@@ -59,6 +66,11 @@
   flex-direction: row;
   justify-content: flex-start;
   gap: $spacing-sm;
+
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
 
 </style>
