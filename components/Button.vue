@@ -46,74 +46,87 @@ export default {
   text-decoration: none;
   overflow: hidden;
   padding: $spacing-sm $spacing-md;
-  border-radius: $br-sm;
-  color: $white !important;
+  color: $teal-dark;
   font-family: $font-family-main, sans-serif;
   font-weight: 700;
   font-size: $font-size-md;
   white-space:nowrap;
   text-decoration: none;
-  background: $red-dark;
+  background: transparent;
+  border: 2px solid $teal-dark;
+
+  &:hover {
+    background: $teal-dark;
+    color: $white;
+  }
 
   @media screen and (max-width: 768px){
     padding: $spacing-xs $spacing-sm;
     font-size: $font-size-md;
-    
-  }
-
-  &.big {
-    padding: $spacing-md $spacing-lg;
-    color: $white !important;
-    font-size: $font-size-xl;
-    font-weight: 700;
-    border-radius: $br-md;
-
-    @media screen and (max-width: 768px){
-      padding: $spacing-sm $spacing-md;
-      font-size: $font-size-lg;
-    }
-
-    &:hover {
-      transform: scale(1.03);
-    }
   }
 
   &.small {
     padding: $spacing-xs $spacing-sm!important;
-    color: $white !important;
     font-size: $font-size-sm;
     font-weight: 600;
-    border-radius: $br-sm;
 
     @media screen and (max-width: 768px){
       padding: $spacing-sm;
     }
 
     &:hover {
-      transform: scale(1.03);
+      background: $teal-dark;
+      color: $white;
     }
   }
 
-  &:hover {
-    background-color: darken($red-dark, 10%);
-    transform: scale(1.03);
-  }
+  &.text {
+    padding: $spacing-xs $spacing-sm!important;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    background: transparent;
+    border-color: transparent;
 
-  &:active {
-    background-color: darken($blue, 10%);
-    transform: scale(1);
+    @media screen and (max-width: 768px){
+      padding: $spacing-sm;
+    }
+
+    &:hover {
+      background: $teal-dark;
+      color: $white;
+    }
   }
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+.dark .button {
+  color: $white;
+  border-color: $white;
+
+  &:hover {
+    background: $white;
+    color: $teal-dark;
   }
-  50% {
-    background-position: 100% 50%;
+
+  &.small {
+
+    &:hover {
+      background: $white;
+      color: $teal-dark;
+    }
   }
-  100% {
-    background-position: 0% 50%;
+
+  &.text {
+    background: transparent;
+    border-color: transparent;
+
+    @media screen and (max-width: 768px){
+      padding: $spacing-sm;
+    }
+
+    &:hover {
+      background: $white;
+      color: $teal-dark;
+    }
   }
 }
 

@@ -1,14 +1,11 @@
 <template>
+  <div class="footer-summary general-main" v-if="isThoughtsSubPage">
+    <h3>Article Addendum</h3>
+    <p>I hope you enjoyed this article!</p>
+    <p>Without direct feedback it can be hard to iterate, and I value your thoughts immensely. Please <a href="mailto:rami@ramijames.com">send me an email</a> if you find a typo or disagree with the content. I'm always up for a vigorous and lively debate!</p>
+  </div>
   <footer>
-      <div class="summary" v-if="isThoughtsSubPage">
-        <h3>Article Addendum</h3>
-        <p>I hope you enjoyed this article!</p>
-        <p>Without direct feedback it can be hard to iterate, and I value your thoughts immensely. Please <a href="mailto:rami@ramijames.com">send me an email</a> if you find a typo or disagree with the content. I'm always up for a vigorous and lively debate!</p>
-      </div>
       <div class="footer-content general-main">
-        <div class="footer-logo">
-          <img src="/logo-transparent.png" alt="logo" />
-        </div>
         <div class="footer-links">
           <nuxt-link href="/">Home</nuxt-link>
           <nuxt-link href="/products">Products</nuxt-link>
@@ -21,10 +18,10 @@
           <nuxt-link href="/terms-and-conditions">Terms & Conditions</nuxt-link>
         </div>
         <section class="footer-social">
-          <a href="https://github.com/ramijames"><img :src="`/github-${currentTheme}.svg`" alt="Github" /></a>
-          <a href="https://www.linkedin.com/in/rami-james/"><img :src="`/linkedin-${currentTheme}.svg`" alt="LinkedIn" /></a>
-          <a href="mailto:rami@ramijames.com"><img :src="`/mail-${currentTheme}.svg`" alt="Send Rami an email" /></a>
-          <a href="https://twitter.com/ramijames"><img :src="`/twitter-${currentTheme}.svg`" alt="Check out Rami's Twitter" /></a>
+          <a href="https://github.com/ramijames"><img src="/github-dark.svg" alt="Github" /></a>
+          <a href="https://www.linkedin.com/in/rami-james/"><img src="/linkedin-dark.svg" alt="LinkedIn" /></a>
+          <a href="mailto:rami@ramijames.com"><img src="/mail-dark.svg" alt="Send Rami an email" /></a>
+          <a href="https://twitter.com/ramijames"><img src="/twitter-dark.svg" alt="Check out Rami's Twitter" /></a>
         </section>
       </div>
   </footer>
@@ -74,27 +71,43 @@ export default {
 
 @import './assets/variables';
 
+
+.footer-summary {
+  border-top: 2px solid rgba($black-dark, 0.1) ;
+}
+
+.dark .footer-summary {
+  border-top: 2px solid rgba($white, 0.1) ;
+}
+
 footer {
-  width: 100%;
-  font-size: $font-size-md;
+  width: 100dvw;
+  min-height: 50dvh;
+  font-size: $font-size-sm;
   font-family: $font-family-main;
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: $black-dark;
 
   @media screen and (max-width: 768px){
-    font-size: $font-size-sm;
+    align-items: center;
   }
 
   .footer-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100vw;
     padding-top: 0;
+    padding-bottom: 0;
+
+    @media screen and (max-width: 768px){
+      align-items: center;
+    }
   }
 
   .footer-logo {
@@ -107,9 +120,8 @@ footer {
   .footer-links {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: $spacing-lg;
-    margin-bottom: $spacing-md;
 
     @media screen and (max-width: 768px){
       flex-direction: column;
@@ -120,7 +132,8 @@ footer {
 
     a {
       text-decoration: none;
-      font-weight: 500;
+      font-weight:700;
+      color: $blue;
     }
   }
 
@@ -137,6 +150,24 @@ footer {
     a {
       img {
         width: 30px;
+      }
+    }
+  }
+}
+
+.dark footer {
+  background-color: $black-dark;
+
+  .footer-links {
+    a {
+      color: $blue;
+    }
+  }
+
+  .footer-social {
+    a {
+      img {
+
       }
     }
   }

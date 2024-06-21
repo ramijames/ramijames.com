@@ -1,18 +1,18 @@
 <template>
   <section class="general-main page-top">
     <section class="explanation">
-      <img src="/rami-profile.png" alt="Rami James" class="profile-pic">
+      <!-- <img src="/rami-profile.png" alt="Rami James" class="profile-pic"> -->
       
       <section class="jobs">
-        <h4>My name is Rami James and I have been actively building online products since 1996. 
-                    My roles within organizations have ranged from designer, product leader, developer, 
-                    technical writer, head of developer relations, and in recent years up to senior management as COO and Co-founder. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h4>
+        <h3>My name is Rami James and I have been actively building online products since 1996. 
+            My roles within organizations have ranged from designer, product leader, developer, 
+            technical writer, head of developer relations, and in recent years up to senior management as COO and Co-founder. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h3>
         <br><br>
         <section class="single-job">
           <p class="job-title">Consulting Specialist</p>
           <p class="job-duration">1996 - Present</p>
           <p class="job-descriptions">I currently teach small, fast-moving teams <nuxt-link to="/">how to be Product-first</nuxt-link> so that they can build innovative and interesting software while taking their market niche by storm.</p>
-          <p><Button text="Get in touch" to="https://calendly.com/itsramijames" /></p>
+          <p><Button text="Contact me" to="https://calendly.com/itsramijames" type="small" /></p>
           <p>Or email me directly at <a href="mailto:rami@ramijames.com">rami@ramijames.com</a>.</p>
         </section>
         <section class="single-job">
@@ -192,15 +192,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: url("/_nuxt/public/textures/texture-3-bg.png") padding-box, linear-gradient(140deg, white -5%, white 15%) border-box;
-  border-radius: $br-lg;
-  border: 4px solid transparent;
-  padding: $spacing-xl $spacing-lg $spacing-lg $spacing-lg;
 
-  @media screen and (max-width: 768px){
-    padding: $spacing-xl $spacing-md $spacing-md $spacing-md;
-    
-  }
 }
 
     .dark .jobs {
@@ -218,7 +210,6 @@ export default {
 
         .job-title {
           font-family: $font-family-main, sans-serif;
-          color: $teal-dark;
           font-weight: 700;
           font-size: $font-size-xl;
           line-height: $font-size-xl * $multiplier;
@@ -256,7 +247,6 @@ export default {
           cursor: pointer;
           text-decoration: none;
           padding: $spacing-xs $spacing-sm;
-          border-radius: $br-sm;
           background-color: rgba($blue, 0.1);
           margin-top: $spacing-md;
           font-size: $font-size-sm;

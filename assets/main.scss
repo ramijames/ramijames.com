@@ -40,16 +40,11 @@ h1 {
   font-size: $font-size-mega;
   line-height: $font-size-mega; 
   font-family: $font-family-main, sans-serif;
-  color: $teal-dark;
   font-weight:800;
   font-style: italic;
   margin-top: 0;
   margin-bottom: 2rem;
   padding:0.5rem 0;
-
-  .highlight {
-    color: $red-dark;
-  }
 
   @media screen and (max-width: 1200px) {
     font-size: $font-size-max;
@@ -57,8 +52,8 @@ h1 {
   }
 
   @media screen and (max-width: 768px) {
-    font-size: $font-size-xl;
-    line-height: $font-size-xl;
+    font-size: $font-size-max;
+    line-height: $font-size-max;
   }
 
 }
@@ -72,6 +67,10 @@ h1 {
   }
 }
 
+.dark h1 {
+  color: $white;
+}
+
 h2 { 
   font-size: $font-size-xxl;
   line-height: $font-size-xxl; 
@@ -79,16 +78,12 @@ h2 {
   margin-bottom:1rem;
   font-weight:800;
   font-style: italic;
-  color: $teal-dark;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
     line-height: $font-size-xl;
   }
 
-  @media screen and (max-width: 768px) {
-    text-align: center;
-  }
 }
 
 .content h2 {
@@ -106,10 +101,6 @@ h3 {
     font-size: $font-size-lg;
     line-height: $font-size-lg * $multiplier;
   }
-
-  @media screen and (max-width: 768px) {
-    text-align: center;
-  }
 }
 
 .content h3 {
@@ -121,11 +112,10 @@ h4 {
   line-height: $font-size-md * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
   margin: $spacing-md 0 $spacing-sm;
-  font-weight:800;
+  font-weight:700;
 
   .highlight {
     color: $red-dark;
-    font-weight: 700;
   }
 
   @media screen and (max-width: 1000px) {
@@ -209,7 +199,7 @@ li {
   position: relative;
 
   .type {
-    background-color: $teal-dark;
+    background-color: $black-dark;
     border-radius: $br-md;
     position: absolute;
     right: $spacing-sm;

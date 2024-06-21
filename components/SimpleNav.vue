@@ -16,7 +16,7 @@
       </div>
     </section>
     <section class="extras">
-      <Button to="/booking" v-if="notHome" text="Get Started" type="small" />
+      <Button to="/booking" v-if="notHome" text="Contact me" type="small" />
       <ThemeSwitcher />
     </section>
   </nav>
@@ -206,7 +206,7 @@ export default {
 
     .nav-links {
       display: flex;
-      gap: $spacing-xs;
+      gap: $spacing-md;
 
       @media screen and (max-width: 1000px) {
         gap: 0;
@@ -218,20 +218,23 @@ export default {
         font-weight: 600;
         font-size: $font-size-sm;
         transition: color 0.3s;
-        padding: $spacing-xs $spacing-sm;
+        padding: $spacing-xs 0;
+        border-bottom:2px solid transparent;
+        transition: all 0.3s ease-in-out;
 
         @media screen and (max-width: 768px) {
           display: none;
         }
 
         &:hover {
-          color: $teal;
+          color: $black;
+          border-bottom:2px solid rgba($black, 0.4);
         }
         
         &.router-link-exact-active {
-          color: $teal-dark;
-          background-color: rgba($teal, 0.1);
-          border-radius: $br-lg;
+          color: $black-dark;
+          background-color: transparent;
+          border-bottom:2px solid $black;
         }
       }
     }
@@ -255,10 +258,12 @@ export default {
 
       &.router-link-exact-active {
           color: $white;
+          border-color: $white;
       }
 
       &:hover {
         color: $white;
+        border-color: rgba($white,0.4);
       }
     }
   }
@@ -277,8 +282,8 @@ export default {
 }
 
 .bread-crumbs {
-  border-top: 1px solid rgba($teal-dark, 0.2);
-  border-bottom: 1px solid rgba($teal-dark, 0.2);
+  border-top: 1px solid rgba($black-dark, 0.2);
+  border-bottom: 1px solid rgba($black-dark, 0.2);
   padding: $spacing-sm $spacing-md;
   display: flex;
   flex-direction: row;
@@ -286,22 +291,24 @@ export default {
   text-transform: capitalize;
   font-weight: 600;
   font-size: $font-size-xs;
-  color: $teal-dark;
+  color: $black-dark;
 
   .bread-crumb {
     position: relative;
     text-decoration: none;
+    color: $black-dark;
+    text-decoration: underline;
 
     &:after {
       content: '/';
       position: absolute;
       right: -10px;
-      color: rgba($teal-dark, 0.2);
+      color: rgba($black-dark, 0.2);
     }
   }
 
   .current {
-    color: $teal-light;
+    color: $black-light;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -311,7 +318,7 @@ export default {
     transition: color 0.3s;
 
     &:hover {
-      color: $teal;
+      color: $black;
     }
   }
 }
@@ -368,7 +375,7 @@ export default {
           flex-direction: column;
           justify-content: center;
           gap: $spacing-sm;
-          color: $teal-dark;
+          color: $black-dark;
           font-size: 8dvw;
           font-weight:500;
           text-decoration: none;
@@ -398,5 +405,47 @@ export default {
         .dark .mobile-nav-panel-links a {
           color: $white;
         }
+
+.dark .bread-crumbs {
+  border-top: 1px solid rgba($white-dark, 0.2);
+  border-bottom: 1px solid rgba($white-dark, 0.2);
+  padding: $spacing-sm $spacing-md;
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-sm;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: $font-size-xs;
+  color: $white-dark;
+
+  .bread-crumb {
+    position: relative;
+    text-decoration: none;
+    color: $white-dark;
+    text-decoration: underline;
+
+    &:after {
+      content: '/';
+      position: absolute;
+      right: -10px;
+      color: rgba($white-dark, 0.2);
+    }
+  }
+
+  .current {
+    color: $white-light;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  a {
+    transition: color 0.3s;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
 
 </style>
