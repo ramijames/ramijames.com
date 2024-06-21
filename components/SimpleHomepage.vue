@@ -32,6 +32,31 @@
   perspective: 1000rem;
   overflow: hidden;
   background: linear-gradient(-140deg, white 60%, rgba($teal, 0.2) 100%);
+  padding-bottom: 30rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10dvh;
+    background: linear-gradient(to bottom, white 0%, rgba(white, 0) 100%);
+    z-index: 100;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20rem;
+    background: linear-gradient(to top, $black 0%, rgba($black, 0) 100%);
+    z-index: 100;
+  }
+
+
 
   @media screen and (max-width: 768px){
     min-height: 80dvh;
