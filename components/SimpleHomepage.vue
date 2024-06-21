@@ -31,6 +31,7 @@
   position: relative;
   perspective: 1000rem;
   overflow: hidden;
+  background: linear-gradient(-140deg, white 60%, rgba($teal, 0.2) 100%);
 
   @media screen and (max-width: 768px){
     min-height: 80dvh;
@@ -63,6 +64,10 @@
   }
 }
 
+.dark #hero {
+  background: linear-gradient(-140deg, $black 60%, rgba($black, 0.2) 100%);
+}
+
 #featured {
   width: 100dvw;
   padding: $spacing-lg;
@@ -92,23 +97,24 @@
 }
 
 #mesh-gradient.sixteen-elements {
-  width: 130%;
-  height: 100%;
+  width: 100%;
+  height: 200%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
   position: relative;
   position: absolute;
   z-index: -1;
-  transform: translateX(-15%) scale(0.55) rotate3d(-2, -4, 6, 30deg);
-  opacity: 0.3;
-  
+  opacity: 0.4;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1) rotate(45deg);
 
   $mesh-colors: ();
 
   // generate the colors with an HSL model
   @for $i from 0 through 256 {
-    $hue: ($i - 1) * (100000 / 256);
+    $hue: ($i - 1) * (360 / 256);
     $color: hsl($hue, 100%, 50%);
     $mesh-colors: map-merge($mesh-colors, ($i: $color));
   }
@@ -117,8 +123,13 @@
   @each $name, $color in $mesh-colors {
     $i: $i + 1;
     .element:nth-child(#{$i}) {
-      border: 1px solid $color;
+      border: 0px solid transparent;
       animation-delay: -#{$i * .125}s;
+      width: 100px;
+      height: 100px;
+      align-self: center;
+      justify-self: center;
+      box-shadow: inset 0 0 100px rgba($color, 0.85), 0 0 100px rgba($color, 0.85);
     }
   }
 
@@ -129,18 +140,15 @@
   @keyframes sixteen-elements {
     0% {
       opacity:0;
-      transform: scale(1);
-      height: 10%;
+      transform: scale(0) rotate(0deg);
     }
     50% {
       opacity: 1;
-      transform: scale(2);
-      height: 200%;
+      transform: scale(1) rotate(180deg);
     }
     100% {
       opacity: 0;
-      transform: scale(1);
-      height: 10%;
+      transform: scale(0) rotate(360deg);
     }
   }
 }

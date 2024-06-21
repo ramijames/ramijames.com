@@ -1,9 +1,9 @@
 <template>
   <section id="PostsExtras">
     <section class="postContent">
-      <h3>Become a <span class="highlight">Product-first</span> Company</h3>
-      <p>Help your organization build the right thing for the right reasons.</p>
-      <Button type="small" text="Learn more" to="/" />
+      <h3>Looking for a Product Professional?</h3>
+      <p>I'm recruiting new clients. I'd love to hear what you're working on!</p>
+      <Button type="small" text="Set a call" to="/booking" />
     </section>
   </section>
 </template>
@@ -13,19 +13,14 @@
 @import '/assets/variables.scss';
 
 #PostsExtras {
-  background-color: $black;
-  backdrop-filter: blur(10px);
+  background: linear-gradient(140deg, $blue-dark -5%, lighten($black,5%) 15%) border-box;
   width: 100%;
   padding: $spacing-md;
   float: right;
-  border-radius: $br-md;
   margin: $spacing-md 0 $spacing-lg;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  background: $teal-dark url('/public/product-first-bg.png') no-repeat top right;
-  background-size: cover;
-  border-radius: $br-md;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -68,15 +63,6 @@
         text-align: center;
       }
     }
-  }
-}
-
-.dark #PostsExtras {
-  background: url('/public/textures/texture-3-bg-dark.png') padding-box,
-              linear-gradient(140deg, $blue-dark -5%, lighten($black,5%) 15%) border-box;
-
-  h4 {
-    color:$blue-light;
   }
 }
 

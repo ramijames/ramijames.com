@@ -148,8 +148,8 @@ export default {
     }
 
     .menu {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       position: relative;
       display:none;
 
@@ -165,7 +165,7 @@ export default {
         width: 40px;
         height: 2px;
         backdrop-filter: blur(4px);
-        background: $blue;
+        background: $black;
         transform-origin: center;
         transition: all 0.24s ease-in-out;
 
@@ -182,7 +182,7 @@ export default {
         width: 40px;
         height: 2px;
         backdrop-filter: blur(4px);
-        background: $blue;
+        background: $black;
         transform-origin: center;
         transition: all 0.24s ease-in-out;
 
@@ -191,17 +191,6 @@ export default {
         }
       }
 
-      &.true {
-        &::before {
-          top: 20px;
-          transform: rotate(45deg);
-        }
-
-        &::after {
-          top: 20px;
-          transform: rotate(-45deg);
-        }
-      }
     }
 
     .nav-links {
@@ -213,7 +202,7 @@ export default {
       }
 
       .nav-link {
-        color: $teal-dark;
+        color: $black-dark;
         text-decoration: none;
         font-weight: 600;
         font-size: $font-size-sm;
@@ -252,9 +241,19 @@ export default {
 }
 
 .dark .simple-nav-bar {
+  .menu {
+    &::before {
+      background: $white;
+    }
+
+    &::after {
+      background: $white;
+    }
+  }
+
   .navigation {
     .nav-link {
-      color: $teal-light;
+      color: $white-light;
 
       &.router-link-exact-active {
           color: $white;
@@ -267,6 +266,10 @@ export default {
       }
     }
   }
+}
+
+.dark .mobile-nav-panel.open {
+  background: rgba($black, 0.2);
 }
 
 .extras {
@@ -330,7 +333,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.2);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;

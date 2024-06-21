@@ -40,8 +40,7 @@ h1 {
   font-size: $font-size-mega;
   line-height: $font-size-mega; 
   font-family: $font-family-main, sans-serif;
-  font-weight:800;
-  font-style: italic;
+  font-weight:700;
   margin-top: 0;
   margin-bottom: 2rem;
   padding:0.5rem 0;
@@ -74,10 +73,9 @@ h1 {
 h2 { 
   font-size: $font-size-xxl;
   line-height: $font-size-xxl; 
-  font-family: $font-family-main, sans-serif;
+  font-family: $font-family-main;
   margin-bottom:1rem;
-  font-weight:800;
-  font-style: italic;
+  font-weight:700;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
@@ -93,7 +91,7 @@ h2 {
 h3 { 
   font-size: $font-size-lg; 
   line-height: $font-size-lg * $multiplier; 
-  font-family: $font-family-main, sans-serif;
+  font-family: $font-family-main;
   margin-bottom:1rem;
   font-weight:800;
 
@@ -110,7 +108,7 @@ h3 {
 h4 { 
   font-size: $font-size-md; 
   line-height: $font-size-md * $multiplier; 
-  font-family: $font-family-secondary, sans-serif;
+  font-family: $font-family-main;
   margin: $spacing-md 0 $spacing-sm;
   font-weight:700;
 
@@ -133,7 +131,7 @@ h4 {
 h5 { 
   font-size: $font-size-md; 
   line-height: $font-size-md * $multiplier; 
-  font-family: $font-family-main, sans-serif;
+  font-family: $font-family-main;
   margin-top: $spacing-md;
   margin-bottom: $spacing-sm;
   font-weight:500;

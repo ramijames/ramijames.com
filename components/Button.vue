@@ -46,14 +46,13 @@ export default {
   text-decoration: none;
   overflow: hidden;
   padding: $spacing-sm $spacing-md;
-  color: $teal-dark;
+  color: $white;
   font-family: $font-family-main, sans-serif;
   font-weight: 700;
   font-size: $font-size-md;
   white-space:nowrap;
   text-decoration: none;
-  background: transparent;
-  border: 2px solid $teal-dark;
+  background: $black;
 
   &:hover {
     background: $teal-dark;
