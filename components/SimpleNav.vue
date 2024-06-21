@@ -209,7 +209,7 @@ export default {
       gap: $spacing-md;
 
       @media screen and (max-width: 1000px) {
-        gap: 0;
+        gap: $spacing-sm;
       }
 
       .nav-link {
