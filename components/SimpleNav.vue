@@ -285,9 +285,8 @@ export default {
 }
 
 .bread-crumbs {
-  border-top: 1px solid rgba($black-dark, 0.2);
-  border-bottom: 1px solid rgba($black-dark, 0.2);
-  padding: $spacing-sm $spacing-md;
+  border-top: 1px solid rgba($black-dark, 0.1);
+  padding: $spacing-md $spacing-md;
   display: flex;
   flex-direction: row;
   gap: $spacing-sm;
