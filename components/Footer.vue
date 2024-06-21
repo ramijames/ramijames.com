@@ -6,14 +6,14 @@
   </div>
   <footer>
       <div class="footer-content general-main">
-        <div class="footer-links">
+        <div class="footer-links" v-if="notHome">
           <nuxt-link href="/">Home</nuxt-link>
           <nuxt-link href="/products">Products</nuxt-link>
           <nuxt-link href="/thoughts">Thoughts</nuxt-link>
           <nuxt-link href="/labs">Labs</nuxt-link>
           <nuxt-link href="/about">About</nuxt-link>
         </div>
-        <div class="footer-links">
+        <div class="footer-links" v-if="notHome">
           <nuxt-link href="/privacy-policy">Privacy Policy</nuxt-link>
           <nuxt-link href="/terms-and-conditions">Terms & Conditions</nuxt-link>
         </div>
@@ -63,6 +63,9 @@ export default {
     isThoughtsSubPage() {
       return this.$route.path.startsWith('/thoughts/');
     },
+    notHome() {
+      return this.$route.path !== '/';
+    },
   }
 }
 </script>
@@ -82,7 +85,6 @@ export default {
 
 footer {
   width: 100dvw;
-  min-height: 50dvh;
   font-size: $font-size-sm;
   font-family: $font-family-main;
   font-weight: bold;
@@ -91,6 +93,7 @@ footer {
   justify-content: center;
   align-items: flex-start;
   background-color: $black-dark;
+  padding: $spacing-lg 0;
 
   @media screen and (max-width: 768px){
     align-items: center;
@@ -122,6 +125,7 @@ footer {
     flex-direction: row;
     justify-content: flex-start;
     gap: $spacing-lg;
+    margin-bottom: $spacing-md;
 
     @media screen and (max-width: 768px){
       flex-direction: column;
@@ -133,7 +137,7 @@ footer {
     a {
       text-decoration: none;
       font-weight:700;
-      color: $blue;
+      color: $white;
     }
   }
 
