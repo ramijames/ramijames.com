@@ -52,7 +52,7 @@ export default {
   font-size: $font-size-md;
   white-space:nowrap;
   text-decoration: none;
-  background: $black;
+  background: $black-dark;
 
   &:hover {
     background: $teal-dark;
