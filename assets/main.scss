@@ -11,7 +11,10 @@
   transition: color, background-color 0.28s;
 }
 
-html, 
+html {
+  background: $black-dark;
+}
+
 body {
   margin: 0;
   padding: 0;

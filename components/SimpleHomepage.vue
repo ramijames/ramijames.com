@@ -54,7 +54,7 @@
     height: 20rem;
     background: linear-gradient(to top, $black 0%, rgba($black, 0) 100%);
     z-index: 100;
-    opacity: 0.3;
+    opacity: 0.6;
   }
 
   @media screen and (max-width: 768px){
@@ -90,6 +90,15 @@
 
 .dark #hero {
   background: linear-gradient(-140deg, $black 60%, rgba($black, 0.2) 100%);
+
+    
+  &::before {
+    background: linear-gradient(to bottom, $black 0%, rgba($black, 0) 100%);
+  }
+
+  &::after {
+    background: linear-gradient(to top, $black-dark 0%, rgba($black-dark, 0) 100%);
+  }
 }
 
 #featured {
