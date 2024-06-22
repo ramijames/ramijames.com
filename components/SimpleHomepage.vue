@@ -6,126 +6,15 @@
     <section class="general-main page-top">
       <h1 class="home-max">Senior Product Designer</h1>
       <h2>I have two decades of <nuxt-link to="/about">experience</nuxt-link> in <span class="red">product design</span>, <span class="mint">software development</span>, and <span class="purple">developer tooling</span>.</h2>
-      <!-- <section class="buttons">
-        <Button to="/products" text="Explore my work" type="big" />
-        <Button to="/booking" text="Get in touch" type="big clear" />
-      </section> -->
       <h3>I make <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software - myself included. If you’d like to commission a work, <a href="rami@ramijames.com">send me an email</a>.</h3>
     </section>
-    <section id="Products">
-      <div class="project ultra">
-        <section class="info">
-          <h1>Ultra</h1>
-          <p>Tokenized game licenses and digital items</p>
-          <Button to="/products/ultra" text="View project" type="big" />
-        </section>
-      </div>
-      <div class="project scatter">
-        <section class="info">
-          <h1>Scatter</h1>
-          <p>Web3 Wallet, Digital Identity, and Marketplace</p>
-          <Button to="/products/scatter" text="View project" type="big" />
-        </section>
-      </div>
-      <div class="project foodforfuture">
-        <section class="info">
-          <h1>Food for Future</h1>
-          <p>Decentralized data for funding farmers</p>
-          <Button to="/products/food-for-future" text="View project" type="big" />
-        </section>
-      </div>
-      <div class="project doodledapp">
-        <section class="info">
-          <h1>Doodledapp</h1>
-          <p>No-code smart contract development, deployment, and component marketplace</p>
-          <Button to="/products/doodledapp" text="View project" type="big" />
-        </section>
-      </div>
-    </section>
+    <MergedProjects />
   </main>
 </template>
 
 <style lang="scss" scoped>
 
 @import './assets/variables';
-
-#Products {
-  .project {
-    background-size: cover;
-    height: 580px;
-    width: 100dvw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    color: white;
-    padding: $spacing-xl;
-
-    @media screen and (max-width: 1000px){
-      align-items: center;
-    }
-
-    &.ultra {
-      background: url('/homepage/hp-ultra.png') no-repeat center center;
-
-      @media screen and (max-width: 1000px){
-        align-items: center;
-        background-position: center right;
-      }
-    }
-
-    &.scatter {
-      background: url('/homepage/hp-scatter.png') no-repeat center center;
-      align-items: flex-end;
-
-      @media screen and (max-width: 1000px){
-        align-items: center;
-      }
-    }
-
-    &.doodledapp {
-      background: url('/homepage/hp-doodledapp.png') no-repeat center center;
-      align-items: flex-end;
-
-      @media screen and (max-width: 1000px){
-        align-items: center;
-      }
-    }
-
-    &.foodforfuture {
-      background: url('/homepage/hp-fff.png') no-repeat center center;
-
-      @media screen and (max-width: 1000px){
-        align-items: center;
-        background-position: center right;
-      }
-    }
-
-    .info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: $spacing-sm 0;
-      text-align: center;
-
-      h1 {
-        text-align: center;
-        margin: 0;
-        text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
-
-        @media screen and (max-width: 768px){
-          font-size: $font-size-xl;
-        }
-      }
-
-      p {
-        text-align: center;
-        text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
-      }
-    }
-  }
-}
 
 #Hero {
   width: 100dvw;

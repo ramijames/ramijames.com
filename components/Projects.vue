@@ -17,109 +17,9 @@
         <img src="/social-proof/ultra.png" alt="Ultra" />
       </section>
     </section>
-    
-    <section class="portfolio" ref="portfolio">
-      <section class="works">
-        <nuxt-link 
-          class="single-work" 
-          v-for="(product, index) in products" 
-          :key="product.title" 
-          :to="product.slug" 
-          :style="{ 
-            animationDelay: index * 0.2 + 's', 
-            backgroundColor: product.color, 
-            backgroundImage: `url(${product.bg})` 
-          }"
-        >
-          <span>{{ product.title }}</span>
-          <img :src="product.image" alt="Product Image" />
-        </nuxt-link>
-      </section>
-    </section>
   </section>
+  <MergedProjects />
 </template>
-
-<script>
-
-import SectionTitle from './SectionTitle.vue';
-import { useRoute } from 'vue-router';
-
-export default {
-  data() {
-    return {
-      products: [
-        {
-          title: 'Food For Future',
-          description: 'Decentralized data for funding farmers',
-          image: '/fff.png',
-          bg: '/fff-bg.jpg',
-          status: 'past',
-          slug: '/products/food-for-future',
-          color: '#9446BD'
-        },
-        {
-          title: 'Doodledapp',
-          description: 'No-code smart contract development and deployment',
-          image: '/doodledapp.png',
-          bg: '/doodledapp-bg.jpg',
-          status: 'past',
-          slug: '/products/doodledapp',
-          color: '#3E74FF'
-        },
-        {
-          title: 'Ultra',
-          description: 'Tokenized gaming platform',
-          image: '/ultra.png',
-          bg: '/ultra-bg.jpg',
-          status: 'past',
-          slug: '/products/ultra',
-          color: '#2E2667'
-        },
-        {
-          title: 'Scatter',
-          description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
-          image: '/scatter.png',
-          bg: '/scatter-bg.jpg',
-          status: 'past',
-          slug: '/products/scatter',
-          color: '#0899FE'
-        },          
-        // {
-        //   title: 'Crisp Tools',
-        //   description: 'A collection of useful tools for designers and developers',
-        //   image: '/crisp-tools.png',
-        //   bg: '/crisp-tools-bg.jpg',
-        //   status: 'current',
-        //   slug: '/products/crisp-tools',
-        //   color: '#D5E7FD'
-        // },
-        // {
-        //   title: 'Random Sandwich',
-        //   description: 'A social network based around randomly generated objects',
-        //   image: '/random-sandwich.png',
-        //   bg: '/random-sandwich-bg.jpg',
-        //   status: 'current',
-        //   slug: '/products/random-sandwich',
-        //   color: '#CCA32E'
-        // },
-      ]
-    }
-  },
-  setup() {
-    const route = useRoute();
-    const notHome = computed(() => route.path !== '/');
-
-    return {
-      notHome,
-    }
-  },
-  components: {
-    SectionTitle
-  }
-
-}
-
-</script>
 
 <style scoped lang="scss">
 
@@ -162,92 +62,6 @@ export default {
       }
     }
   }
-
-  .portfolio {
-    font-size: $font-size-xl;
-    font-weight:bold;
-    z-index: 2;
-    border-radius: $br-lg;
-
-    @media screen and (max-width: 1000px){
-      width:100%;
-      font-size: $font-size-md;
-    }
-
-    .works {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap; 
-      gap: $spacing-md; 
-      position: relative;
-
-      .single-work {
-        height:50vh;
-        width:calc(100% - $spacing-md /2);
-        background: $white;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        text-decoration: none;
-        background-size: cover;
-        color:$white !important;
-        transition: all 0.3s ease-in-out;
-        border-radius: $br-lg;
-        position: relative;
-        overflow: hidden;
-        perspective: 100em;
-
-        @media screen and (max-width: 1400px){
-          height:40vh;
-        }
-        
-        @media screen and (max-width: 1200px){
-          height:35vh;
-        }
-
-        @media screen and (max-width: 1000px){
-          width:calc(50% - $spacing-md /2);
-        }
-
-        @media screen and (max-width: 768px){
-          width:100%;
-        }
-
-        span {
-          position:absolute;
-          bottom: $spacing-md;
-          left: $spacing-md;
-          text-shadow: 2px 2px 2px rgba($black, 0.5);
-
-          @media screen and (max-width: 768px){
-            bottom: $spacing-sm;
-            left: $spacing-sm;
-            font-size: $font-size-md;
-          }
-        }
-
-        img {
-          position:absolute;
-          right: -4rem;
-          height: 100%;
-          transition: all 4s ease-out;
-          z-index: -1;
-          filter: drop-shadow(0 0 0.75rem rgba($white, 0));
-        }
-
-        &:hover {
-          box-shadow: inset 0 0 0 1000px rgba($black, 0.2);
-
-          img {
-            right: -4rem;
-            transform: rotate3d(66, -101, 10, 35deg) scale(1.1);
-            filter: drop-shadow(0 0 2rem rgba($white, 1));
-          }
-        }
-      }
-    }
-  }
-
 }
 
 #company-logos {
@@ -272,7 +86,6 @@ export default {
 }
 
 .dark #company-logos {
-
   img {
     filter: invert(1);
   }
