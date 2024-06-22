@@ -46,6 +46,7 @@
     line-height: 100%;
     padding: $spacing-sm 0;
     font-weight: 700;
+    pointer-events: none;
   }
 
   h2 {
@@ -149,7 +150,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  z-index: -1;
+  z-index: 0;
   align-items: center;
   justify-content: center;;
   opacity: 0.5;
@@ -160,7 +161,7 @@
   transform: rotate(22.5deg);
 
   @media screen and (max-width: 768px){
-    opacity: 0.1;
+    opacity: 0.01;
   }
 
   $mesh-colors: ();
@@ -182,12 +183,22 @@
       height: 5dvw;
       align-self: center;
       justify-self: center;
-      // box-shadow: inset 0 0 100px rgba($color, 0.85), 0 0 100px rgba($color, 0.85);
+      box-shadow: inset 0 0 100px rgba($color, 0.25), 0 0 100px rgba($color, 0.85);
+
+      @media screen and (max-width: 1000px){
+        box-shadow: none;
+      }
+
+      &:hover {
+        background-color: $color;
+      }
     }
   }
 
   .element {
     animation: sixteen-elements 10s linear infinite;
+
+    
   }
 
   @keyframes sixteen-elements {
