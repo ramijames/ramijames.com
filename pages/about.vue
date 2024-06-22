@@ -170,13 +170,6 @@ export default {
 
 @import './assets/variables';
 
-.green { color:$green }
-.blue { color:$blue }
-.mint { color:$mint }
-.red { color:$red }
-.purple { color:$purple }
-.grey { opacity: 0.1 }
-
 .explanation {
   display: flex;
   flex-direction: column;

@@ -29,6 +29,15 @@ body {
 
 /* Typography */
 
+.teal { color:$teal }
+.green { color:$green }
+.blue { color:$blue }
+.mint { color:$mint }
+.red { color:$red }
+.purple { color:$purple }
+.grey { color: darken($white, 10%) }
+  .dark .grey { color: lighten($black, 10%) }
+
 a {
   color:$blue;
   text-decoration: underline;
@@ -75,7 +84,7 @@ h1 {
 
 h2 { 
   font-size: $font-size-xxl;
-  line-height: 120%; 
+  line-height: 140%; 
   font-family: $font-family-main;
   margin-bottom:1rem;
   font-weight:500;
@@ -91,11 +100,11 @@ h2 {
 }
 
 h3 { 
-  font-size: $font-size-lg; 
-  line-height: $font-size-lg * $multiplier; 
+  font-size: $font-size-xl; 
+  line-height: 140%; 
   font-family: $font-family-main;
   margin-bottom:1rem;
-  font-weight:800;
+  font-weight:500;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-lg;
@@ -109,7 +118,7 @@ h3 {
 
 h4 { 
   font-size: $font-size-md; 
-  line-height: $font-size-md * $multiplier; 
+  line-height: 140%;  
   font-family: $font-family-main;
   margin: $spacing-md 0 $spacing-sm;
   font-weight:700;
