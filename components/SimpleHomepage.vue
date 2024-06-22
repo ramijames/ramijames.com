@@ -9,6 +9,7 @@
       <h3>I make <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software - myself included. If you’d like to commission a work, <a href="rami@ramijames.com">send me an email</a>.</h3>
     </section>
     <MergedProjects />
+    <TypesOfDesigns />
   </main>
 </template>
 

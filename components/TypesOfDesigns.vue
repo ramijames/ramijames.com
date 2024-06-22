@@ -1,7 +1,6 @@
 <template>
-  <Separator />
   <section id="types-of-designs" class="general-main">
-    <h2>Hassle-free designs for apps, websites, landing pages & more</h2>
+    <h2>Hassle-free designs for your apps, websites, landing pages, & more</h2>
     <div class="types">
       <div class="single-type"><span>Branding</span></div>
       <div class="single-type"><span>Design Systems</span></div>
@@ -15,32 +14,6 @@
 
     <Button text="Work with me" to="/booking" />
 
-    <div class="work-grid">
-      <div>
-        <img src="/juicy/juicy-tonara.png" alt="Juicy examples of work" />
-      </div>
-      <div>
-        <img src="/juicy/juicy-climbing-monster.png" alt="Juicy examples of work" />
-      </div>
-      <div>
-        <img src="/juicy/juicy-finfluencers.png" alt="Juicy examples of work" />
-      </div>
-      <div>
-        <img src="/juicy/juicy-u.png" alt="Juicy examples of work" />
-      </div>
-      <div>
-        <img src="/juicy/juicy-cinq.png" alt="Juicy examples of work" />
-      </div>
-      <div>
-        <img src="/juicy/juicy-statshorizon.png" alt="Juicy examples of work" />
-      </div>
-      <div>
-        <img src="/juicy/juicy-touchspin.png" alt="Juicy examples of work" />
-      </div>
-      <div>
-        <img src="/juicy/juicy-k.png" alt="Juicy examples of work" />
-      </div>
-    </div>
   </section>
 </template>
 
@@ -54,6 +27,7 @@
   align-items: center;
   justify-content: center;
   gap: $spacing-lg;
+  border-top: 2px solid rgba($black,0.2);
 
   h2 {
     margin-top: 0;

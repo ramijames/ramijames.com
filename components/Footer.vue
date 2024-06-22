@@ -1,9 +1,4 @@
 <template>
-  <div class="footer-summary general-main" v-if="isThoughtsSubPage">
-    <h3>Article Addendum</h3>
-    <p>I hope you enjoyed this article!</p>
-    <p>Without direct feedback it can be hard to iterate, and I value your thoughts immensely. Please <a href="mailto:rami@ramijames.com">send me an email</a> if you find a typo or disagree with the content. I'm always up for a vigorous and lively debate!</p>
-  </div>
   <footer>
       <div class="footer-content general-main">
         <div class="footer-links" v-if="notHome">
@@ -26,6 +21,7 @@
       </div>
   </footer>
 </template>
+
 <script>
 import { useThemeStore } from '~/store/theme'
 import { reactive, computed, onMounted, watch } from 'vue';
@@ -73,15 +69,6 @@ export default {
 <style scoped lang="scss">
 
 @import './assets/variables';
-
-
-.footer-summary {
-  border-top: 2px solid rgba($black-dark, 0.1) ;
-}
-
-.dark .footer-summary {
-  border-top: 2px solid rgba($white, 0.1) ;
-}
 
 footer {
   width: 100dvw;

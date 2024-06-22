@@ -33,5 +33,7 @@
       <p>I’m not sure why, but it helps me to think about my failures with my kids in this fashion. I perpetually live in hope that I can find a better way to communicate with them, and that the queries I make in the future return 200 (OK).</p>
     </section>
   </main>
+  <ArticleAddendum />
+  <TypesOfDesigns />
   <Footer />
 </template>

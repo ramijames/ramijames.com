@@ -1,20 +1,16 @@
 <template>
-  <Separator />
   <section id="services" class="general-main">
     <section id="proven">
+      <h2>A better way of working</h2>
+      <h3>I know what I'm doing, so you can send me a task and </h3>
       <SectionTitle title="A better way of working" 
                     subtitle="Replace unreliable freelancers and expensive design agencies with 
                               a flat-fee subscription to an experienced product designer so that you can focus on making your business grow." />
-      <Button text="See available plans" size="default" to="#get-to-work" />
     </section>
     <section id="proven-steps">
       <div class="step">
         <img src="/services/add.png" alt="Subscribe and request as many designs as you need.">
         <p>Add as many designs as you need to the queue.</p>
-      </div>
-      <div class="step">
-        <img src="/services/calendar.png" alt="Subscribe and request as many designs as you need.">
-        <p>The average turnaround for a design is two days.</p>
       </div>
       <div class="step">
         <img src="/services/iterate.png" alt="Subscribe and request as many designs as you need.">

@@ -52,5 +52,7 @@
 
     </section>
   </main>
+  <ArticleAddendum />
+  <TypesOfDesigns />
   <Footer />
 </template>

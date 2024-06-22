@@ -48,5 +48,7 @@
       <p>Docs are a serious sub-product in their own right, are an investment, and must be part of your wider product strategy.</p>
     </section>
   </main>
+  <ArticleAddendum />
+  <TypesOfDesigns />
   <Footer />
 </template>
