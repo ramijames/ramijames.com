@@ -3,7 +3,8 @@
     <!-- <span>{{ currentTheme }} theme</span> -->
     <div class="theme-switcher-sun"
       :class="`${currentTheme}`"
-    ></div>
+    >
+    </div>
   </div>
 </template>
 
@@ -50,6 +51,14 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  transform: scale(0.8);
+  mix-blend-mode: luminosity;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1);
+    mix-blend-mode: initial;
+  }
 
   @media screen and (max-width: 768px){
     right: 0;
@@ -126,11 +135,11 @@ img {
   &.light { /* SUN */
     outline: 2px solid rgba($blue, 0.8);
     outline-offset: -4px;
-    box-shadow: 0 0 16px 0 rgba($orange-light, 0.2);
-    background-color: $orange-light;
+    box-shadow: 0 0 16px 0 rgba($gray-light, 0.2);
+    background-color: $gray-light;
 
     &:after { /* SUN */
-      background: $orange-light;
+      background: $gray-light;
       right: 0px;
       top:0;
       box-shadow: inset 0 0 8px rgba($white, 0.2);

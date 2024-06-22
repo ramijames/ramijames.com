@@ -16,8 +16,8 @@
       </div>
     </section>
     <section class="extras">
-      <Button to="/booking" v-if="notHome" text="Contact me" type="small" />
       <ThemeSwitcher />
+      <Button to="/booking" v-if="notHome" text="Contact me" type="small" />
     </section>
   </nav>
   <section class="bread-crumbs" v-if="notHome">
