@@ -7,8 +7,9 @@
     <section class="content">
       <section class="summary">
         <h3>TLDR Summary</h3>
-        <p>A company must be careful when their primary goal is to squeeze profits out of the users who provide the core value proposition of their product.</p>
-        <p>My solution is to create a sorting algorithm that incentivizes nurses to be more reliable staff by providing them higher pay for being reliable and consistent. Unreliable and inconsistent staff are penalized by being paid less, which can be used to increase Clipboard Health’s profit margin.</p>
+        <p>A company must be careful when their primary goal is to squeeze profits out of the staff who provide the core value proposition of their product.</p>
+
+        <p>My solution is to create a sorting algorithm that incentivizes nurses by providing them higher pay for being reliable and consistent. Unreliable and inconsistent staff are penalized by being paid less, which can be used to increase Clipboard Health’s profit margin.</p>
 
         <p>There are some ethical concerns with this approach, which I have <a href="#ethical-considerations">outlined at the end</a>.</p>
       </section>
@@ -17,7 +18,7 @@
       
       <p>For a potential job at Clipboard Health, I’ve been asked to write a solution to the question “how do we maximize profit for a healthcare-related marketplace company without raising costs for facilities.”</p>
 
-      <p>This, on its face, means lowering pay for the nurses who provide the staffing solutions their marketplace fulfills. I thought that this would be a great way for me to outline how my <nuxt-link to="/">Product-first mentality</nuxt-link> takes into account business desires, and weighs them against how it changes the product that a company produces.</p>
+      <p>This, on its face, means lowering pay for the nurses who provide the staffing solutions which their marketplace fulfills. I thought that this would be a great way for me to outline how my Product-first mentality takes into account business desires, and weighs them against how it changes the product that a company produces.</p>
 
       <h4>Product Process</h4>
       
@@ -33,13 +34,13 @@
 
       <p>Let’s start by defining the unit economics and their incentivization structures. There are three parties involved.</p>
 
-      <p><strong>Nurses</strong> provide the workforce value within the ecosystem. There is a limited supply of them, and likely a high cost of acquisition. They want to fill shifts that are as close to their home as possible, while getting the highest pay possible.</p>
+      <p><strong>Nurses</strong> provide the workforce value within the ecosystem. There is a limited supply of them, and likely a high cost of acquisition. They want to fill shifts while getting the highest pay possible.</p>
 
-      <p><strong>Facilities</strong> are where nurses have shifts. For facilities it is critical that they fill shifts as they can not run their enterprises without nurses. They would like to fill those shifts at the lowest rate which can guarantee a contractor that shows up consistently.</p>
+      <p><strong>Facilities</strong> are where nurses have shifts. For facilities it is critical that they fill shifts as they can not run their enterprises without nurses. They would like to fill those shifts at the lowest rate which can guarantee a nurse will show up consistently.</p>
 
-      <p><strong>Clipboard Health</strong> runs the marketplace which connects nurses to facilities. Their aim is to provide nurses to facilities. CBH extracts the highest profit by charging the highest rate to facilities which don't turn them off, and the lowest rate to nurses which will consistently incentivize them to show up and get the work done.</p>
+      <p><strong>Clipboard Health</strong> runs the marketplace which connects nurses to facilities. Their aim is to provide nurses to facilities and to extract the highest profit from the ecosystem.</p>
 
-      <p>From a Product-first perspective, it's my responsibility to take all three party's needs into account and product some solution which solves for the business need while not harming the integrity of the core product being produced, or the users who are using it.</p>
+      <p>From a Product-first perspective, it's my responsibility to take all three party's needs into account. The product solution which solves for the business need should not harm the integrity of the core product being produced, or the users who are using it.</p>
 
       <p>I think that we can best illustrate the economics involved with two bell curves, showing acceptable cost and pay ranges for facilities and nurses respectively. The intersecting region between is the profit for Clipboard Health. The breakdown goes like this:</p>
 
@@ -57,7 +58,7 @@
       <li>If nurse pay is too low, they won’t work</li>
       </ul>
 
-      <p>An <a href="https://www.indeed.com/career/nurse/salaries/New-York--NY">acceptable average range for nurses as an hourly wage</a> seems to be between $35 and $95. Let's map that and add 10% on top as the cost that facilities will have to pay via the marketplace. I don't actually know what Clipboard Health's margins are, but that isn't relevant for the argument that I make in this article. Ten percent is easy to calculate with, so let's go with that.</p>
+      <p>An <a href="https://www.indeed.com/career/nurse/salaries/New-York--NY">acceptable average range for nurses as an hourly wage</a> seems to be between $35 and $95. Let's map that and add 10% on top as the cost that facilities will have to pay via the marketplace. I don't actually know what Clipboard Health's margins are, but that isn't super relevant for the argument that I make in this article. Ten percent is easy to calculate with, so let's go with that.</p>
 
       <section class="highcharts-wrapper">
         <highchart :options="bellCurvesOptions" />
@@ -144,7 +145,7 @@
         <highchart :options="nursesWeightingOptions" />
       </section>
 
-      <p>Importantly, this will have some variables which can be tweaked to ensure that profits do not go down in the event that all nurses have excellent compliance. The floor will always be the status quo today plus a critical incentivization mechanism which ensures higher-quality service for the facilities. Even in the unlikely scenario that profits don’t increase, the service you provide will be better than it is today because of the incentivized workforce.</p>
+      <p>Importantly, this will have some variables which can be tweaked to ensure that profits do not go down in the event that all nurses have excellent compliance. The floor will always be the status quo today plus a critical incentivization mechanism that ensures higher-quality service for the facilities. Even in the unlikely scenario that profits don’t increase, the service you provide them will be better than it is today because of the incentivized workforce.</p>
 
       <a name="ethical-considerations"></a>
       <h3>Ethical Considerations</h3>
