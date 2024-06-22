@@ -204,10 +204,10 @@ export default {
       .nav-link {
         color: $black-dark;
         text-decoration: none;
-        font-weight: 600;
-        font-size: $font-size-sm;
+        font-weight: 500;
+        font-size: $font-size-md;
         transition: color 0.3s;
-        padding: $spacing-xs 0;
+        padding: $spacing-xxs 0;
         border-bottom:2px solid transparent;
         transition: all 0.3s ease-in-out;
 
@@ -217,13 +217,13 @@ export default {
 
         &:hover {
           color: $black;
-          border-bottom:2px solid rgba($black, 0.4);
+          border-bottom:2px solid rgba($blue, 1);
         }
         
         &.router-link-exact-active {
-          color: $black-dark;
+          color: $blue-dark;
           background-color: transparent;
-          border-bottom:2px solid $black;
+          border-bottom:2px solid $blue;
         }
       }
     }
