@@ -187,20 +187,9 @@
 }
 
 .dark #Hero {
-  background: linear-gradient(-140deg, $black 60%, rgba($black, 0.2) 100%);
-
-  .home-max {
-    background: linear-gradient(120deg, $white-light 30%, darken($teal-dark,20%) 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
     
   &::before {
     background: linear-gradient(to bottom, $black 0%, rgba($black, 0) 100%);
-  }
-
-  &::after {
-    background: linear-gradient(to top, $black-dark 0%, rgba($black-dark, 0) 100%);
   }
 }
 
