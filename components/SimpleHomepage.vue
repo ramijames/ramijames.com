@@ -187,6 +187,7 @@
 }
 
 .dark #Hero {
+  background: linear-gradient(-140deg, $black 60%, rgba($black, 0.2) 100%);
     
   &::before {
     background: linear-gradient(to bottom, $black 0%, rgba($black, 0) 100%);
