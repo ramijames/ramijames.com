@@ -182,14 +182,14 @@
 #Various {
   width: 100%;
   position: relative;
-  padding: $spacing-md;
+  padding: $spacing-md $spacing-lg;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: $spacing-md;
+  gap: $spacing-lg;
 
   div {
-    width: calc(50% - $spacing-md);
+    width: calc(50% - $spacing-lg / 2);
     display: flex;
     flex-direction: column;
     justify-content: center;
