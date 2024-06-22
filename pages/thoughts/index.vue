@@ -1,7 +1,8 @@
 <template>
   <main class="general-main page-top">
     <section class="thoughts-main general-content">
-      <SectionTitle title="Thoughts on Product Design, Software Development, and our shared Industry" centered="true" />
+      <h2 class="center">I wanted to share some thoughts on <span class="red">product design</span>, <span class="mint">software development</span>, and our <span class="purple">shared industry</span></h2>
+      <h3 class="grey">(I hope that's ok)</h3>
       <main class="articles">
         <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug">
           <img :src="article.image" :alt="article.title" />
@@ -45,6 +46,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   width: 100%;
+  margin-top: $spacing-lg;
 }
 
     @keyframes animatedBackground {
