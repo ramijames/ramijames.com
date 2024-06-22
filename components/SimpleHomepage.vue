@@ -23,7 +23,7 @@
       <div class="project scatter">
         <section class="info">
           <h1>Scatter</h1>
-          <p>Tokenized game licenses and digital items</p>
+          <p>Web3 Wallet, Digital Identity, and Marketplace</p>
           <Button to="/products/scatter" text="View project" type="big" />
         </section>
       </div>
