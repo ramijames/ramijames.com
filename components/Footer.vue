@@ -146,6 +146,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     gap: $spacing-lg;
+    width: 100%;
 
     @media screen and (max-width: 768px){
       gap: 10vw;

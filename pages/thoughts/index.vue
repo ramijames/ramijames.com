@@ -1,7 +1,7 @@
 <template>
   <main class="general-main page-top">
     <section class="thoughts-main general-content">
-      <SectionTitle title="Thoughts on Software and Product Development" centered="true" />
+      <SectionTitle title="Thoughts on Product Design, Software Development, and our shared Industry" centered="true" />
       <main class="articles">
         <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug">
           <img :src="article.image" :alt="article.title" />

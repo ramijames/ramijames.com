@@ -12,87 +12,114 @@
       </section> -->
       <h3>I make <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software - myself included. If you’d like to commission a work, <a href="rami@ramijames.com">send me an email</a>.</h3>
     </section>
-    <section id="Various" class="general-main">
-      <div>
-        <img src="/homepage/hp-scatter.png" alt="Scatter" />
+    <section id="Products">
+      <div class="project ultra">
         <section class="info">
-          <p>Scatter</p>
-          <p><small>2017-2020</small></p>
+          <h1>Ultra</h1>
+          <p>Tokenized game licenses and digital items</p>
+          <Button to="/products/ultra" text="View project" type="big" />
         </section>
       </div>
-      <div>
-        <img src="/homepage/hp-ultra.png" alt="Ultra" />
+      <div class="project scatter">
         <section class="info">
-          <p>Ultra</p>
-          <p><small>2020-2023</small></p>
+          <h1>Scatter</h1>
+          <p>Tokenized game licenses and digital items</p>
+          <Button to="/products/scatter" text="View project" type="big" />
         </section>
       </div>
-      <div>
-        <img src="/homepage/hp-fff.png" alt="Food for Future" />
+      <div class="project foodforfuture">
         <section class="info">
-          <p>Food for Future</p>
-          <p><small>2023</small></p>
+          <h1>Food for Future</h1>
+          <p>Decentralized data for funding farmers</p>
+          <Button to="/products/food-for-future" text="View project" type="big" />
         </section>
       </div>
-      <div>
-        <img src="/homepage/hp-doodledapp.png" alt="Doodledapp" />
+      <div class="project doodledapp">
         <section class="info">
-          <p>Doodledapp</p>
-          <p><small>2023</small></p>
-        </section>
-      </div>
-      <div>
-        <img src="/homepage/hp-climbingmonster.png" alt="Climbing Monster" />
-        <section class="info">
-          <p>Climbing Monster</p>
-          <p><small>2016</small></p>
-        </section>
-      </div>
-      <div>
-        <img src="/homepage/hp-src.png" alt="SRC" />
-        <section class="info">
-          <p>SRC</p>
-          <p><small>2014</small></p>
-        </section>
-      </div>
-      <div>
-        <img src="/homepage/hp-tonara.png" alt="Tonara" />
-        <section class="info">
-          <p>Tonara</p>
-          <p><small>2012</small></p>
-        </section>
-      </div>
-      <div>
-        <img src="/homepage/hp-legalaunch.png" alt="Legalaunch" />
-        <section class="info">
-          <p>Legalaunch</p>
-          <p><small>2011</small></p>
+          <h1>Doodledapp</h1>
+          <p>No-code smart contract development, deployment, and component marketplace</p>
+          <Button to="/products/doodledapp" text="View project" type="big" />
         </section>
       </div>
     </section>
-    <!-- <section class="general-main">
-      <h1 class="home-max">Process & Services</h1>
-      <h2>I can jump into your project and provide maximum value.</h2>
-      <ul class="services">
-        <li>Product Design</li>
-        <li>User Experience</li>
-        <li>Frontend Development</li>
-        <li>Product Strategy</li>
-        <li>Design Systems</li>
-        <li>Design Leadership</li>
-      </ul>
-    </section> -->
   </main>
-  <!-- <section id="featured">
-    <section class="general-main page-top">
-      <h2>I focus my efforts on creating user-centered solutions that drive business success.</h2>
-    </section>
-  </section> -->
 </template>
 
 <style lang="scss" scoped>
 
 @import './assets/variables';
+
+#Products {
+  .project {
+    background-size: cover;
+    height: 580px;
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    padding: $spacing-xl;
+
+    @media screen and (max-width: 1000px){
+      align-items: center;
+    }
+
+    &.ultra {
+      background: url('/homepage/hp-ultra.png') no-repeat center center;
+
+      @media screen and (max-width: 1000px){
+        align-items: center;
+        background-position: center right;
+      }
+    }
+
+    &.scatter {
+      background: url('/homepage/hp-scatter.png') no-repeat center center;
+      align-items: flex-end;
+
+      @media screen and (max-width: 1000px){
+        align-items: center;
+      }
+    }
+
+    &.doodledapp {
+      background: url('/homepage/hp-doodledapp.png') no-repeat center center;
+      align-items: flex-end;
+
+      @media screen and (max-width: 1000px){
+        align-items: center;
+      }
+    }
+
+    &.foodforfuture {
+      background: url('/homepage/hp-fff.png') no-repeat center center;
+
+      @media screen and (max-width: 1000px){
+        align-items: center;
+        background-position: center right;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: $spacing-sm 0;
+
+      h1 {
+        margin: 0;
+        text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
+      }
+
+      p {
+        text-align: center;
+        text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
+      }
+    }
+  }
+}
 
 #Hero {
   width: 100dvw;
@@ -103,7 +130,6 @@
   perspective: 1000rem;
   overflow: hidden;
   background: linear-gradient(-140deg, white 60%, rgba($teal, 0.2) 100%);
-  padding-bottom: 30rem;
   
   &::before {
     content: '';
