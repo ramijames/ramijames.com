@@ -536,6 +536,7 @@ img.in-article {
   max-width: 1020px;
   padding: $spacing-xl $spacing-lg;
   margin: 0 auto;
+  z-index: 10;
 
   &.page-top {
     padding-top: $spacing-lg;

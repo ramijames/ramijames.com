@@ -150,7 +150,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  z-index: 0;
+  z-index: -10;
   align-items: center;
   justify-content: center;;
   opacity: 0.5;
@@ -183,15 +183,6 @@
       height: 5dvw;
       align-self: center;
       justify-self: center;
-      box-shadow: inset 0 0 100px rgba($color, 0.25), 0 0 100px rgba($color, 0.85);
-
-      @media screen and (max-width: 1000px){
-        box-shadow: none;
-      }
-
-      &:hover {
-        background-color: $color;
-      }
     }
   }
 
