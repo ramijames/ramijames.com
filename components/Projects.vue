@@ -1,11 +1,8 @@
 <template>
   <section id="projects" class="general-main page-top" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
-      <SectionTitle 
-          title="I'm proud to have worked with these companies" 
-          subtitle="Product-first means that it is now easier than ever to get your vision to market 
-                    on-budget, on-time, and with style." 
-      />
+      <h2 class="center">I'm proud to have worked with these companies</h2>
+      <h3 class="grey">(Let's get your vision to market on-budget, on-time, and with style.)</h3>
       <Button text="Add your project" size="default" to="/booking" />
       <section id="company-logos">
         <img src="/social-proof/wix.png" alt="Wix" />
