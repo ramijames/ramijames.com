@@ -200,15 +200,14 @@ export default {
         }
 
         .job-subtitle {
-          font-weight: bold;
-          margin-top: $spacing-md;
-          margin-bottom: 0;
+          font-weight:500;
+          font-size: $font-size-lg;
         }
 
         .job-duration {
           font-size: $font-size-sm;
-          color: $teal;
           border-radius: $br-sm;
+          opacity: 0.3;
         }
 
         .job-descriptions {
@@ -226,14 +225,16 @@ export default {
           cursor: pointer;
           text-decoration: none;
           padding: $spacing-xs $spacing-sm;
-          background-color: rgba($blue, 0.1);
+          background-color: rgba($black, 0.1);
           margin-top: $spacing-md;
-          font-size: $font-size-sm;
-          color: $teal;
+          font-size: $font-size-xs;
+          color: $black;
+          font-weight: 600;
+          text-transform: uppercase;
         }
 
         .tiny-show-more:hover {
-          background-color: rgba($blue, 0.2);
+          background-color: rgba($black, 0.2);
         }
 
 

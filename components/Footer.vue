@@ -127,6 +127,12 @@ footer {
     gap: $spacing-lg;
     margin-bottom: $spacing-md;
     width: 100%;
+    opacity: 0.2;
+    transition: opacity 0.5s ease-in-out;
+    
+    &:hover {
+      opacity: 1;
+    }
 
     @media screen and (max-width: 768px){
       flex-direction: column;
@@ -139,17 +145,18 @@ footer {
       text-decoration: none;
       font-weight:500;
       color: $white;
-      font-size: $font-size-xl;
+      font-size: $font-size-lg;
+      border-bottom: 2px solid transparent;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        border-bottom: 2px solid $blue;
+      }
 
       @media screen and (max-width: 1000px){
         font-size: $font-size-md;
       }
 
-      &.dim {
-        color: $white;
-        opacity: 0.3;
-        font-size: $font-size-sm;
-      }
     }
   }
 
@@ -159,6 +166,12 @@ footer {
     justify-content: space-between;
     gap: $spacing-lg;
     width: 100%;
+    opacity: 0.2;
+    transition: opacity 0.5s ease-in-out;
+    
+    &:hover {
+      opacity: 1;
+    }
 
     @media screen and (max-width: 768px){
       gap: 10vw;
