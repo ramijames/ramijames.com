@@ -125,9 +125,6 @@
     line-height: 100%;
     padding: $spacing-sm 0;
     font-weight: 700;
-    background: linear-gradient(120deg, $black-light 30%, darken($teal-dark,5%) 60%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 
   h2 {
@@ -244,7 +241,7 @@
   z-index: -1;
   align-items: center;
   justify-content: center;;
-  opacity: 0.44;
+  opacity: 0.1;
   position: fixed;
   top:0;
   left:0;
@@ -255,7 +252,7 @@
 
   // generate the colors with an HSL model
   @for $i from 0 through 160 {
-    $hue: ($i - 1) * (-80 / 160);
+    $hue: ($i - 1) * (360 / 160);
     $color: hsl($hue, 100%, 50%);
     $mesh-colors: map-merge($mesh-colors, ($i: $color));
   }
