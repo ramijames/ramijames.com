@@ -643,6 +643,10 @@ img.in-article {
       text-align: center;
       margin:0 auto;
       max-width:800px;
+
+      @media screen and (max-width: 768px) {
+        font-size: $font-size-xl;
+      }
     }
 
     .product-content h2,

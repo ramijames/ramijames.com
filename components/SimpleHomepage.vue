@@ -113,6 +113,10 @@
         text-align: center;
         margin: 0;
         text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
+
+        @media screen and (max-width: 768px){
+          font-size: $font-size-xl;
+        }
       }
 
       p {
