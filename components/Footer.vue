@@ -14,8 +14,8 @@
           <nuxt-link href="/about">About</nuxt-link>
         </div>
         <div class="footer-links" v-if="notHome">
-          <nuxt-link href="/privacy-policy">Privacy Policy</nuxt-link>
-          <nuxt-link href="/terms-and-conditions">Terms & Conditions</nuxt-link>
+          <nuxt-link href="/privacy-policy" class="dim">Privacy Policy</nuxt-link>
+          <nuxt-link href="/terms-and-conditions" class="dim">Terms & Conditions</nuxt-link>
         </div>
         <section class="footer-social">
           <a href="https://github.com/ramijames"><img src="/github-dark.svg" alt="Github" /></a>
@@ -123,9 +123,10 @@ footer {
   .footer-links {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: $spacing-lg;
     margin-bottom: $spacing-md;
+    width: 100%;
 
     @media screen and (max-width: 768px){
       flex-direction: column;
@@ -136,8 +137,19 @@ footer {
 
     a {
       text-decoration: none;
-      font-weight:700;
+      font-weight:500;
       color: $white;
+      font-size: $font-size-xl;
+
+      @media screen and (max-width: 1000px){
+        font-size: $font-size-md;
+      }
+
+      &.dim {
+        color: $white;
+        opacity: 0.3;
+        font-size: $font-size-sm;
+      }
     }
   }
 
