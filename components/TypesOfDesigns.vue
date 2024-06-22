@@ -12,7 +12,10 @@
       <div class="single-type"><span>Logos</span></div>
     </div>
 
-    <Button text="Work with me" to="/booking" />
+    <section class="things">
+      <Button text="Say hello" to="/booking" />
+      <Button text="See my work" to="/products" />
+    </section>
 
   </section>
 </template>
@@ -32,6 +35,16 @@
   h2 {
     margin-top: 0;
     text-align: center;
+  }
+
+  .things {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-sm;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    flex-wrap: wrap;
   }
 
   .types {
