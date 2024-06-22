@@ -107,8 +107,10 @@
       justify-content: center;
       align-items: center;
       padding: $spacing-sm 0;
+      text-align: center;
 
       h1 {
+        text-align: center;
         margin: 0;
         text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
       }
