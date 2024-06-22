@@ -269,7 +269,7 @@
   z-index: -1;
   align-items: center;
   justify-content: center;;
-  opacity: 0.1;
+  opacity: 0.5;
   position: fixed;
   top:0;
   left:0;
