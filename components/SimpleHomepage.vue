@@ -270,6 +270,10 @@
   right:0;
   transform: rotate(22.5deg);
 
+  @media screen and (max-width: 768px){
+    opacity: 0.1;
+  }
+
   $mesh-colors: ();
 
   // generate the colors with an HSL model
