@@ -18,7 +18,7 @@
 @import './assets/variables';
 
 #Hero {
-  width: 100dvw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

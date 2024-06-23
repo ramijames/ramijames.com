@@ -182,22 +182,4 @@ footer {
   }
 }
 
-.dark footer {
-  background-color: $black-dark;
-
-  .footer-links {
-    a {
-      color: $blue;
-    }
-  }
-
-  .footer-social {
-    a {
-      img {
-
-      }
-    }
-  }
-}
-
 </style>

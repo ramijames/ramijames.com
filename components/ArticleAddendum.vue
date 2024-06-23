@@ -55,11 +55,11 @@ export default {
 @import './assets/variables';
 
 .footer-summary {
-  border-top: 2px solid rgba($black-dark, 0.1) ;
+  border-top: 1px dashed rgba($black,0.2);
 }
 
 .dark .footer-summary {
-  border-top: 2px solid rgba($white, 0.1) ;
+  border-top: 1px dashed rgba($white,0.2);
 }
 
 </style>

@@ -250,11 +250,11 @@ hr {
   margin: $spacing-lg auto;
   width:100%;
   opacity: 0.1;
-  border:1px solid #000000;
+  border:1px dashed rgba(0,0,0,0.26);
 }
 
     .dark hr {
-      border:1px solid #ffffff;
+      border:1px dashed rgba(255,255,255,0.26);
     }
 
 p > strong {

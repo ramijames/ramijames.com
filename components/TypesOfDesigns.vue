@@ -1,5 +1,5 @@
 <template>
-  <section id="types-of-designs" class="general-main">
+  <section id="types-of-designs" class="general-main" :class="!notHome ? 'drop-top' : ''">
     <h2>Hassle-free designs for your apps, websites, landing pages, & more</h2>
     <div class="types">
       <div class="single-type"><span>Branding</span></div>
@@ -20,7 +20,29 @@
   </section>
 </template>
 
+<script>
+import { useThemeStore } from '~/store/theme'
+import { reactive, computed, onMounted, watch } from 'vue';
+import { useRoute } from 'vue-router';
 
+export default {
+  setup() {
+    const themeStore = useThemeStore();
+
+    return {
+      currentTheme: computed(() => themeStore.currentTheme),
+    }
+  },
+  components: {
+
+  },
+  computed: {
+    notHome() {
+      return this.$route.path !== '/';
+    }
+  },
+}
+</script>
 
 <style scoped lang="scss">
 
@@ -32,7 +54,11 @@
   align-items: center;
   justify-content: center;
   gap: $spacing-lg;
-  border-top: 2px solid rgba($black,0.2);
+  border-top: 1px dashed rgba($black,0.2);
+
+  &.drop-top {
+    border-top: none;
+  }
 
   h2 {
     margin-top: 0;
@@ -141,6 +167,10 @@
     }
   }
 
+}
+
+.dark #types-of-designs {
+  border-top: 1px dashed rgba($white,0.2);
 }
 
 .work-grid {
