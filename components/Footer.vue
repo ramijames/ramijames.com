@@ -1,6 +1,7 @@
 <template>
   <footer>
-      <div class="footer-content general-main">
+    <section class="general-main">
+      <div class="footer-content ">
         <div class="footer-links" v-if="notHome">
           <nuxt-link href="/">Home</nuxt-link>
           <nuxt-link href="/products">Products</nuxt-link>
@@ -19,6 +20,7 @@
           <a href="https://twitter.com/ramijames"><img src="/twitter-dark.svg" alt="Check out Rami's Twitter" /></a>
         </section>
       </div>
+    </section>
   </footer>
 </template>
 
@@ -71,7 +73,7 @@ export default {
 @import './assets/variables';
 
 footer {
-  width: 100dvw;
+  width: 100%;
   font-size: $font-size-sm;
   font-family: $font-family-main;
   font-weight: bold;
@@ -80,10 +82,20 @@ footer {
   justify-content: center;
   align-items: flex-start;
   background-color: $black-dark;
-  padding: $spacing-lg 0;
 
   @media screen and (max-width: 768px){
     align-items: center;
+  }
+
+  .general-main {
+    padding-top: $spacing-lg;
+    border-left: 1px dashed rgba(255,255,255,0.26);
+    border-right: 1px dashed rgba(255,255,255,0.26);
+
+    @media screen and (max-width: 768px){
+      border-left: none;
+      border-right: none;
+    }
   }
 
   .footer-content {
@@ -91,9 +103,7 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 100vw;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: $spacing-lg 0;
 
     @media screen and (max-width: 768px){
       align-items: center;
