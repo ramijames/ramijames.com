@@ -26,6 +26,13 @@
   perspective: 1000rem;
   overflow: hidden;
   background: linear-gradient(-140deg, white 60%, rgba($teal, 0.2) 100%);
+
+  .general-main.page-top {
+    @media screen and (max-width: 768px){
+      padding-top: $spacing-sm;
+      z-index: 100;
+    }
+  }
   
   &::before {
     content: '';
@@ -48,6 +55,11 @@
     padding: $spacing-sm 0;
     font-weight: 700;
     pointer-events: none;
+
+    @media screen and (max-width: 768px){
+      font-size: 12dvw;
+      padding:0;
+    }
   }
 
   h2 {

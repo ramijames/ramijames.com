@@ -20,6 +20,8 @@
   </section>
 </template>
 
+
+
 <style scoped lang="scss">
 
 @import './assets/variables';

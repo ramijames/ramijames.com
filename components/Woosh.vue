@@ -1,6 +1,5 @@
 <template>
   <div class="animBox">
-    <div class="rotateGroup">
       <div
         v-for="(element, index) in numberOfElements"
           :key="element"
@@ -10,7 +9,6 @@
           }"
           class="element"
       ></div>
-    </div>
   </div>
 </template>
 
@@ -20,7 +18,7 @@ export default {
     numberOfElements: {
       type: Number,
       required: false,
-      default: 8
+      default: 16
     },
     animationStyle: {
       type: String,
@@ -31,12 +29,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 @import './assets/variables';
 
 .animBox {
-  perspective: 100em;
   position:absolute;
   right:0;
   top:0;
@@ -48,34 +45,36 @@ export default {
   align-items: center;
   pointer-events: none;
   z-index: 0;
-  background: radial-gradient(ellipse at top right, rgba($blue, 0.2) 0%, rgba($white, 0) 60%);
+  animation: rotateGroupRotator 30s infinite;
+  transform-style: preserve-3d;
+  perspective: 1000em;
+  opacity: 0.1;
 }
-    .rotateGroup {
-      transform-style: preserve-3d;
-      transform: translateX(-400px) rotate3d(2.5,3.75,3,90deg);
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      animation: rotateGroupRotator 30s infinite;
-      opacity: 0.4;
+
+    $mesh-colors: ();
+
+    // generate the colors with an HSL model
+    @for $i from 0 through 48 {
+      $hue: ($i - 1) * (360 / 48);
+      $color: hsl($hue, 100%, 50%);
+      $mesh-colors: map-merge($mesh-colors, ($i: $color));
     }
 
-    .element {
-      position: absolute;
-      border-style: solid;
-      border-color: rgba(0, 0, 0, 0);
-      transform-style: preserve-3d;
-      width:400px;
-      height:400px;
-      border-radius: 20%;
-      transform:  translateY(0)
-                  rotate3d(1, 0, 0, 90deg);
-      animation-iteration-count: 1;
-      box-shadow: inset 0px 4px 10px #0800f115, 
-                  0px 0px 20px #0800f115, 
-                  0px 100px 100px #0800f10c, 
-                  inset 0px 0px 60px #0800f13d;
+    $i: 0;
+    @each $name, $color in $mesh-colors {
+      $i: $i + 1;
+      .element:nth-child(#{$i}) {
+        position: absolute;
+        border: 2px solid $color;
+        animation-delay: -#{$i * .125}s;
+        width:400px;
+        height:400px;
+        border-radius: 100%;
+        transform:  translateY(0)
+                    rotate3d(1, 0, 0, 90deg);
+        animation-iteration-count: 1;
+        transform-style: preserve-3d;
+      }
     }
 
 @keyframes defaultWoosh {
@@ -91,8 +90,9 @@ export default {
   */
 
   0% {
-    width:80px;
-    height:80px;
+    width:0px;
+    height:0px;
+    opacity: 0;
     transform:  translateZ(0px)
                 rotate3d(1, 0, 0, 0deg);
   }
@@ -100,6 +100,7 @@ export default {
   10% {
     width:800px;
     height:800px;
+    opacity: 1;
     transform:  translateZ(0px)
                 rotate3d(1, 0, 0, 0deg);
   }
@@ -107,15 +108,17 @@ export default {
   50% {
     width:800px;
     height:800px;
+    opacity: 1;
     transform:  translateZ(1800px)
                 rotate3d(1, 0, 0, 0deg);
   }
 
   90% {
-    width:80px;
-    height:80px;
+    width:0px;
+    height:0px;
     transform:  translateZ(1800px)
                 rotate3d(1, 0, 0, 0deg);
+    opacity: 0;
   }
 
   100% {
@@ -129,13 +132,13 @@ export default {
 
 @keyframes rotateGroupRotator {
   0% {
-    transform: translateX(-300px) rotate3d(2.5,3.75,0,90deg);
+    transform: translateX(400px) translateY(100px) rotate3d(2.5,3.75,0,90deg);
   }
   50% {
-    transform: translateX(-300px) rotate3d(2.5,3.75,10,90deg);
+    transform: translateX(400px) translateY(100px) rotate3d(2.5,3.75,10,90deg);
   }
   100% {
-    transform: translateX(-300px) rotate3d(2.5,3.75,0,90deg);
+    transform: translateX(400px) translateY(100px) rotate3d(2.5,3.75,0,90deg);
   }
 }
 
