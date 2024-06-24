@@ -4,9 +4,10 @@
       <div class="footer-content ">
         <div class="footer-links" v-if="notHome">
           <nuxt-link href="/">Home</nuxt-link>
-          <nuxt-link href="/products">Products</nuxt-link>
           <nuxt-link href="/thoughts">Thoughts</nuxt-link>
           <nuxt-link href="/labs">Labs</nuxt-link>
+          <nuxt-link href="/illustrations">Illustrations</nuxt-link>
+          <nuxt-link href="/products">Recent Work</nuxt-link>
           <nuxt-link href="/about">About</nuxt-link>
         </div>
         <div class="footer-links" v-if="notHome">
@@ -111,19 +112,12 @@ footer {
     }
   }
 
-  .footer-logo {
-    img {
-      width: 120px;
-      margin-bottom: $spacing-lg;
-    }
-  }
-
   .footer-links {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: $spacing-lg;
-    margin-bottom: $spacing-md;
+    margin-bottom: $spacing-lg;
     width: 100%;
     opacity: 0.2;
     transition: opacity 0.5s ease-in-out;
@@ -132,7 +126,7 @@ footer {
       opacity: 1;
     }
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 1000px){
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -143,16 +137,12 @@ footer {
       text-decoration: none;
       font-weight:500;
       color: $white;
-      font-size: $font-size-lg;
+      font-size: $font-size-md;
       border-bottom: 2px solid transparent;
       transition: all 0.5s ease-in-out;
 
       &:hover {
         border-bottom: 2px solid $blue;
-      }
-
-      @media screen and (max-width: 1000px){
-        font-size: $font-size-md;
       }
 
     }
