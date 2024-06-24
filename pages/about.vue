@@ -3,9 +3,7 @@
     <section class="explanation">
       <!-- <img src="/rami-profile.png" alt="Rami James" class="profile-pic"> -->
       <section class="jobs">
-        <h2>My name is Rami James and I have been actively building online products since 1996. 
-            My roles within organizations have ranged from <span class="purple">designer</span>, <span class="green">product leader</span>, <span class="blue">developer</span>, 
-            <span class="mint">technical writer</span>, <span class="red">head of developer relations</span>, and in recent years up to senior management as <span class="purple">COO and Co-founder</span>. <span class="grey">I know, it's confusing for me, too.</span></h2>
+        <h2>My name is Rami James and I <span class="red">design products</span> and <span class="mint">implement front-ends</span> in Vue and Nuxt.</h2>
         <h2>You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h2>
       </section>
     </section>
@@ -15,54 +13,37 @@
     <section class="explanation">
       <section class="jobs">  
         <section class="single-job">
-          <p class="job-title">Consulting Specialist</p>
-          <p class="job-duration">1996 - Present</p>
-          <p class="job-descriptions">I currently provide a variety of product design and development services as a solo contractor. If you need that, email me directly at <a href="mailto:rami@ramijames.com">rami@ramijames.com</a>.</p>
-          <p><Button text="Contact me" to="https://calendly.com/itsramijames" type="small" /></p>
+          <p class="job-title">Freelance</p>
+          <p class="job-subtitle">Product Design and Front-end implementation</p>
+          <p class="job-duration">Present</p>
+          <p class="job-descriptions">I currently provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
         </section>
         <section class="single-job">
           <p class="job-title">Ultra</p>
           <p class="job-duration">2020 - 2023</p>
-          <p class="job-subtitle">Head of Developer Relations and Strategy</p>
+          <p class="job-subtitle">Head of Product for Developer Relations</p>
           <ul class="job-descriptions">
             <li v-for="(description, index) in ultraDevReldescriptions" :key="index" v-show="index < 3 || showMore[0]">
               {{ description }}
             </li>
           </ul>
-          <p><a class="tiny-show-more" href="#" @click.prevent="showMore[0] = !showMore[0]">{{ showMore[0] ? 'Hide' : 'Show more' }}</a></p>
+
           <p class="job-subtitle">Technical Project Manager</p>
           <ul class="job-descriptions">
             <li v-for="(description, index) in ultraTechdescriptions" :key="index" v-show="index < 3 || showMore[1]">
               {{ description }}
             </li>
           </ul>
-          <p><a class="tiny-show-more" href="#" @click.prevent="showMore[1] = !showMore[1]">{{ showMore[1] ? 'Hide' : 'Show more' }}</a></p>
-        </section>
-        <section class="single-job">
-          <p class="job-title">FIO</p>
-          <p class="job-duration">2020 - 2021</p>
-          <p class="job-subtitle">Board Member</p>
-          <ul class="job-descriptions">
-            <li>As a board member I helped make tough decisions to define strategy for FIO as they tried to expand the reach of their technology</li>
-          </ul>
         </section>
         <section class="single-job">
           <p class="job-title">Scatter</p>
           <p class="job-duration">2018 - 2020</p>
-          <p class="job-subtitle">COO</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in scatterCoodescription" :key="index" v-show="index < 3 || showMore[3]">
-              {{ description }}
-            </li>
-          </ul>
-          <p><a class="tiny-show-more" href="#" @click.prevent="showMore[3] = !showMore[3]">{{ showMore[3] ? 'Hide' : 'Show more' }}</a></p>
-          <p class="job-subtitle">Head of Product</p>
+          <p class="job-subtitle">Co-founder and Head of Product</p>
           <ul class="job-descriptions">
             <li v-for="(description, index) in scatterProductdescriptions" :key="index" v-show="index < 3 || showMore[4]">
               {{ description }}
             </li>
           </ul>
-          <p><a class="tiny-show-more" href="#" @click.prevent="showMore[4] = !showMore[4]">{{ showMore[4] ? 'Hide' : 'Show more' }}</a></p>
         </section>
         <section class="single-job">
           <p class="job-title">Qmarkets</p>
@@ -70,27 +51,6 @@
           <p class="job-subtitle">Senior User Experience Designer and Developer</p>
           <ul class="job-descriptions">
             <li v-for="(description, index) in qmarketsdescription" :key="index" v-show="index < 3 || showMore[5]">
-              {{ description }}
-            </li>
-          </ul>
-          <p><a class="tiny-show-more" href="#" @click.prevent="showMore[5] = !showMore[5]">{{ showMore[5] ? 'Hide' : 'Show more' }}</a></p>  
-        </section>
-        <section class="single-job">
-          <p class="job-title">Inkod-Hypera</p>
-          <p class="job-duration">2005 - 2007</p>
-          <p class="job-subtitle">Designer</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in inkodHyperadescription" :key="index" v-show="index < 3 || showMore[6]">
-              {{ description }}
-            </li>
-          </ul>
-        </section>
-        <section class="single-job">
-          <p class="job-title">Spiral Solutions</p>
-          <p class="job-duration">2001 - 2005</p>
-          <p class="job-subtitle">Designer</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in spiralSolutionsDescription" :key="index" v-show="index < 3 || showMore[7]">
               {{ description }}
             </li>
           </ul>
@@ -107,61 +67,34 @@ import Button from '/components/Button';
 export default {
   data() {
     return {
-      showMore: [ false, // Ultra Developer Relations
-                  false, // Ultra Technical
-                  false, // Scatter Product
-                  false, // Scatter COO
-                  false, // Qmarkets
-                  false, // Inkod
-                  false  // Spiral Solutions
+      showMore: [ true, // Ultra Developer Relations
+                  true, // Ultra Technical
+                  true, // Scatter Product
+                  true, // Qmarkets
                 ],
       ultraDevReldescriptions: [
-        'Established the Developer Relations Product and built its roadmap',
-        'Successfully ran a Developer Hackathon with a $30K prize pool which attracted new and engaged people to the community we were targeting',
-        'Produced technical documentation which on-boarded new developers and supported existing ones',
-        'Produced video tutorials that gave a detailed set of instructions for developers to follow',
-        'Produced Ultra Chill, a successful tech-focused podcast which explained business use-cases, interviewed internal employees, external partners, and gave Ultra a platform to share their vision',
-        'Managed developer outreach in coordination with the Business Development team',
-        'Set up and streamlined Ultras technical support processes',
-        'Led teams of developers to produce documentation, tutorials, code examples, and how-to videos'
+        'Product Lead to on-board, support, and inspire developers',
+        'Established Ultra’s documentation platform Product and built its roadmap, wrote docs, and produced video tutorials',
+        'Successfully ran a Developer Hackathon with a $30K prize pool',
+        'Produced Ultra Chill, a successful tech-focused podcast'
       ],
       ultraTechdescriptions: [
-        'Oversaw highly technical projects within a blockchain development environment, while managing team expansions and project roadmaps',
-        'Launched to the public the gaming-focused L1 blockchain Testnet and Mainnet',
-        'Oversaw the on-boarding of new developers and the expansion of the development team',
-        'Produced roadmaps, product plans, and technical requirements using JIRA and Product Board',
-        'Defined expectations for and acted as a liaison among the retail and developer community, company heads, middle management, and executive stakeholders'
+        'Oversaw the development of highly technical products, while managing team expansions and project roadmaps',
+        'Lead the team which launched the Ultra networks',
+        'Used an agile approach to solve production issues within a team of 10 developers',
+        'Produced roadmaps, product plans, and technical requirements using JIRA and Product Board'
       ],
       scatterProductdescriptions: [
-        'Provided a clear vision for our product while defining the product strategy, drove innovation, and ensured that the products aligned with market needs and business goals.',
+        'Provided a clear vision for our startup while defining the product strategy and driving innovation',
         'Launched multiple versions of the popular Scatter wallet',
-        'Engaged directly with the retail and developer communities to understand their needs',
-        'Produced wireframes, prototypes, and final designs',
-        'Produced marketing materials, websites, and documentation hubs for the community'
-      ],
-      scatterCoodescription: [
-        'Oversaw the day-to-day operations of the company. Focused on improving efficiency, implementing processes, and ensuring that our resources were effectively utilized to achieve our goals.',
-        'Set up operations allowing Scatter to run as a legal business entity in Malta',
-        'Managed legal teams in navigating the uncertainty of the crypto market',
-        'Built decks for use in fundraising efforts',
-        'Initiated relations and negotiated with multiple interested VCs',
-        'Produced due diligence documentation for potential investors'
+        'Produced wireframes, prototypes, designs, marketing materials, websites, and documentation hubs for the community',
+        'Directly interfaced with both developers and retail users to understand their needs'
       ],
       qmarketsdescription: [
         'Overhauled the user experience of an established enterprise product. Modernized the user experience to support mobile devices while making it easier to access, input, and manage key data and workflows',
         'Lead the update to the user experience and visual design of the core products of Qmarkets',
-        'Worked closely with the R&D group where I facilitated the implementation of enterprise software used by tens of thousands of people across many large companies',
-        'Created innovative new ways to view and interact with complex enterprise processes'
+        'Worked closely with the R&D group where I facilitated the implementation of enterprise software used by tens of thousands of people across many large companies. Work was primarily in Drupal/PHP/CSS'
       ],
-      inkodHyperadescription: [
-        'I worked as a designer under the tutelage of the highly experience Ilan Dray.',
-        'During my tenure, created a variety of designs such as interfaces, websites, games, and illustrative works.'
-      ],
-      spiralSolutionsDescription: [
-        'I helped design and deploy materials that supported marketing efforts for a large, established igaming group',
-        'We produced websites, banners, newsletters, mailers, print materials, and other supporting goods',
-        'During the tail end of my tenure, I was the lead designer and guided strategy while art directing the junior designers.'
-      ]
     }
   },
   components: {

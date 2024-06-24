@@ -17,7 +17,7 @@
         <section class="footer-social">
           <a href="https://github.com/ramijames"><img src="/github-dark.svg" alt="Github" /></a>
           <a href="https://www.linkedin.com/in/rami-james/"><img src="/linkedin-dark.svg" alt="LinkedIn" /></a>
-          <a href="mailto:rami@ramijames.com"><img src="/mail-dark.svg" alt="Send Rami an email" /></a>
+          <a href="mailto:ramijames@gmail.com"><img src="/mail-dark.svg" alt="Send Rami an email" /></a>
           <a href="https://twitter.com/ramijames"><img src="/twitter-dark.svg" alt="Check out Rami's Twitter" /></a>
         </section>
       </div>

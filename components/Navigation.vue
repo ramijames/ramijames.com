@@ -1,33 +1,11 @@
 <template>
   <nav class="main-nav">
-    <!-- <section class="extras left">
-      
-      <ThemeSwitcher />
-    </section> -->
     <section class="core">
       <nuxt-link to="/">Home</nuxt-link>
       <nuxt-link to="/products">Products</nuxt-link>
-      <!-- <div class="cube">
-        <div class="top"></div>
-        <div class="right"></div>
-        <div class="bottom"></div>
-        <div class="left"></div>
-        <div class="front"></div>
-        <div class="back"></div>
-      </div> -->
       <nuxt-link to="/thoughts">Thoughts</nuxt-link>
       <nuxt-link to="/about">About</nuxt-link>
     </section>
-    <!-- <section class="extras right">
-      <a href="mailto:rami@ramijames.com"><img 
-          :src="`/mail-${currentTheme}.svg`" 
-          alt="Send Rami an email" 
-        /></a>
-      <a href="https://twitter.com/ramijames"><img 
-          :src="`/twitter-${currentTheme}.svg`" 
-          alt="Check out Rami's Twitter" 
-        /></a>
-    </section> -->
   </nav>
 </template>
 

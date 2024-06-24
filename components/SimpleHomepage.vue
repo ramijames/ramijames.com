@@ -5,8 +5,7 @@
     </div>
     <section class="general-main page-top">
       <h1 class="home-max">Senior Product Designer</h1>
-      <h2>I have two decades of <nuxt-link to="/about">experience</nuxt-link> in <span class="red">product design</span>, <span class="mint">software development</span>, and <span class="purple">developer tooling</span>. I often <nuxt-link to="/thoughts">write</nuxt-link> about our industry, and create esoteric <nuxt-link to="/labs">art</nuxt-link> in my free time.</h2>
-      <h3>I make <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software - myself included. If you’d like to commission a work, <a href="rami@ramijames.com">send me an email</a>.</h3>
+      <h3>I make <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software - myself included. If you’d like to commission a work, <a href="ramijames@gmail.com">send me an email</a>.</h3>
     </section>
     <MergedProjects />
     <TypesOfDesigns />

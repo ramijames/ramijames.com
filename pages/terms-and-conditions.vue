@@ -69,6 +69,6 @@
     <h3>17. Miscellaneous</h3>
     <p>These Terms of Use and any policies posted on the Website or regarding the Website constitute the entire agreement and understanding between the Client and Rami James Consulting. Failure of Rami James Consulting to enforce any right or provision of these Terms of Use shall not operate as a waiver of such right or provision. If any provision or part of these Terms of Use is determined to be unlawful, void, or unenforceable, that provision shall be severed from these Terms of Use but shall not otherwise affect the validity or unenforceability of the remaining provisions herein. Nothing in these Terms of Use, the Privacy Policy, or on the Website shall be construed to constitute the forming of a joint venture, partnership, employment, or agency relationship between the Client and Rami James Consulting.</p>
     <h3>18. Contact Information</h3>
-    <p>For any questions or complaints regarding the Website, please contact Rami James Consulting at: <a href="mailto:rami@ramijames.com">rami@ramijames.com</a></p>
+    <p>For any questions or complaints regarding the Website, please contact Rami James Consulting at: <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a></p>
   </main>
 </template>

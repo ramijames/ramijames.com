@@ -37,7 +37,7 @@
 
         <p>As we developed the Doodledapp product, we quickly understood that the scope of what was envisioned out-stripped our available funding. With some deep discussions within the team, we made the difficult decision to pause the project.</p>
 
-        <p>The Doodledapp project is currently in stasis. If you're interested in funding its continued development, <a href="mailto:rami@ramijames.com">please reach out</a>.</p>
+        <p>The Doodledapp project is currently in stasis. If you're interested in funding its continued development, <a href="mailto:ramijames@gmail.com">please reach out</a>.</p>
 
       </aside>
 
