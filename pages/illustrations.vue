@@ -11,6 +11,13 @@
         </div>
       </div>
       <div class="single-illustration">
+        <img src="/illustrations/dumdrops.png" alt="Dumdrops" />
+        <div class="info">
+          <p>Dumdrops</p>
+          <date>2022</date>
+        </div>
+      </div>
+      <div class="single-illustration">
         <img src="/illustrations/scatter.png" alt="Scatter Illustration Work" />
         <div class="info">
           <p><nuxt-link to="/products/scatter">Scatter</nuxt-link></p>
