@@ -539,12 +539,13 @@ img.in-article {
   z-index: 10;
   border-left: 1px dashed rgba(0,0,0,0.26);
   border-right: 1px dashed rgba(0,0,0,0.26);
+  position: relative;
 
       @media screen and (max-width: 768px){
         border-left: none;
         border-right: none;
       }
-
+      
   &.page-top {
     padding-top: $spacing-lg;
   }

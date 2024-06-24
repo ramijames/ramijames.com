@@ -88,9 +88,10 @@ footer {
   }
 
   .general-main {
-    padding-top: $spacing-lg;
+    padding-top: 0;
     border-left: 1px dashed rgba(255,255,255,0.26);
     border-right: 1px dashed rgba(255,255,255,0.26);
+    position: relative;
 
     @media screen and (max-width: 768px){
       border-left: none;

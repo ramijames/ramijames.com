@@ -25,7 +25,6 @@
   position: relative;
   perspective: 1000rem;
   overflow: hidden;
-  background: linear-gradient(-140deg, white 60%, rgba($teal, 0.2) 100%);
 
   .general-main.page-top {
     @media screen and (max-width: 768px){
