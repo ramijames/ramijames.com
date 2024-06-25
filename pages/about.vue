@@ -17,6 +17,11 @@
           <p class="job-subtitle">Product Design and Front-end implementation</p>
           <p class="job-duration">Present</p>
           <p class="job-descriptions">I currently provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in freelanceContractor" :key="index" v-show="index < 3 || showMore[0]">
+              {{ description }}
+            </li>
+          </ul>
         </section>
         <section class="single-job">
           <p class="job-title">Ultra</p>
@@ -72,28 +77,33 @@ export default {
                   true, // Scatter Product
                   true, // Qmarkets
                 ],
+      freelanceContractor :[
+        'Worked with multiple teams to produce beautiful, usable, and accessible interfaces for web and mobile',
+        'Provided key insights to small teams as they developed their product strategy, vision, user experiences, and designs',
+        'Helped fine-tune product processes in companies as they experienced growing pains',
+        'Implemented front-end interfaces in a variety of modern javascript frameworks like Vue and Nuxt'
+      ],
       ultraDevReldescriptions: [
-        'Product Lead to on-board, support, and inspire developers',
-        'Established Ultra’s documentation platform Product and built its roadmap, wrote docs, and produced video tutorials',
-        'Successfully ran a Developer Hackathon with a $30K prize pool',
-        'Produced Ultra Chill, a successful tech-focused podcast'
+        'Grew the developer pool from zero to dozens of active developers',
+        'Established Ultra’s documentation platform product website. Built its roadmap, wrote docs, and produced video tutorials ',
+        'Successfully ran a Developer Hackathon with a $30K prize pool ',
+        'Produced a successful tech-focused podcast with thousands of listeners'
       ],
       ultraTechdescriptions: [
-        'Oversaw the development of highly technical products, while managing team expansions and project roadmaps',
-        'Lead the team which launched the Ultra networks',
-        'Used an agile approach to solve production issues within a team of 10 developers',
+        'Scaled (3 to 10 developers) and lead the technical team that launched Ultra’s gaming-focused networks',
+        'Used an agile approach to solve production issues across multiple teams',
         'Produced roadmaps, product plans, and technical requirements using JIRA and Product Board'
       ],
       scatterProductdescriptions: [
         'Provided a clear vision for our startup while defining the product strategy and driving innovation',
-        'Launched multiple versions of the popular Scatter wallet',
+        'Launched multiple versions of the popular Scatter wallet and scaled to 250K DAU',
         'Produced wireframes, prototypes, designs, marketing materials, websites, and documentation hubs for the community',
         'Directly interfaced with both developers and retail users to understand their needs'
       ],
       qmarketsdescription: [
         'Overhauled the user experience of an established enterprise product. Modernized the user experience to support mobile devices while making it easier to access, input, and manage key data and workflows',
         'Lead the update to the user experience and visual design of the core products of Qmarkets',
-        'Worked closely with the R&D group where I facilitated the implementation of enterprise software used by tens of thousands of people across many large companies. Work was primarily in Drupal/PHP/CSS'
+        'Worked closely with the R&D group where I facilitated the implementation of enterprise software used by tens of thousands of people across many large enterprises such as Lufthansa and Ford. Work was primarily in Drupal/PHP/CSS'
       ],
     }
   },
