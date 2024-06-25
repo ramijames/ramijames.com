@@ -9,7 +9,6 @@
       <div class="single-type"><span>Iconography</span></div>
       <div class="single-type"><span>Illustrations</span></div>
       <div class="single-type"><span>Pitch decks</span></div>
-      <div class="single-type"><span>Logos</span></div>
     </div>
 
     <section class="things">
