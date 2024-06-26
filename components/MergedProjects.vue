@@ -132,7 +132,6 @@ export default {
       width: 150%;
       height: 100%;
       background: rgba($black, 0.5);
-      backdrop-filter: blur(20px);
       transition: all 0.8s ease-in-out;
     }
 
@@ -147,8 +146,6 @@ export default {
         width: 100%;
         height: 100%;
         background: rgba($black, 0);
-        backdrop-filter: blur(20px);
-        mix-blend-mode: soft-light;
       }
 
       .info {
