@@ -18,7 +18,7 @@
           <p class="job-duration">Present</p>
           <p class="job-descriptions">I currently provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
           <ul class="job-descriptions">
-            <li v-for="(description, index) in freelanceContractor" :key="index" v-show="index < 3 || showMore[0]">
+            <li v-for="(description, index) in freelanceContractor" :key="index">
               {{ description }}
             </li>
           </ul>
@@ -28,14 +28,14 @@
           <p class="job-duration">2020 - 2023</p>
           <p class="job-subtitle">Head of Product for Developer Relations</p>
           <ul class="job-descriptions">
-            <li v-for="(description, index) in ultraDevReldescriptions" :key="index" v-show="index < 3 || showMore[0]">
+            <li v-for="(description, index) in ultraDevReldescriptions" :key="index">
               {{ description }}
             </li>
           </ul>
 
           <p class="job-subtitle">Technical Project Manager</p>
           <ul class="job-descriptions">
-            <li v-for="(description, index) in ultraTechdescriptions" :key="index" v-show="index < 3 || showMore[1]">
+            <li v-for="(description, index) in ultraTechdescriptions" :key="index">
               {{ description }}
             </li>
           </ul>
@@ -45,7 +45,7 @@
           <p class="job-duration">2018 - 2020</p>
           <p class="job-subtitle">Co-founder and Head of Product</p>
           <ul class="job-descriptions">
-            <li v-for="(description, index) in scatterProductdescriptions" :key="index" v-show="index < 3 || showMore[4]">
+            <li v-for="(description, index) in scatterProductdescriptions" :key="index">
               {{ description }}
             </li>
           </ul>
@@ -55,7 +55,7 @@
           <p class="job-duration">2015 - 2019</p>
           <p class="job-subtitle">Senior User Experience Designer and Developer</p>
           <ul class="job-descriptions">
-            <li v-for="(description, index) in qmarketsdescription" :key="index" v-show="index < 3 || showMore[5]">
+            <li v-for="(description, index) in qmarketsdescription" :key="index">
               {{ description }}
             </li>
           </ul>
@@ -72,11 +72,6 @@ import Button from '/components/Button';
 export default {
   data() {
     return {
-      showMore: [ true, // Ultra Developer Relations
-                  true, // Ultra Technical
-                  true, // Scatter Product
-                  true, // Qmarkets
-                ],
       freelanceContractor :[
         'Worked with multiple teams to produce beautiful, usable, and accessible interfaces for web and mobile',
         'Provided key insights to small teams as they developed their product strategy, vision, user experiences, and designs',
@@ -171,23 +166,6 @@ export default {
         .job-descriptions li {
           margin-bottom: 0;
           font-size: $font-size-sm;
-        }
-
-        .tiny-show-more {
-          color: $black;
-          cursor: pointer;
-          text-decoration: none;
-          padding: $spacing-xs $spacing-sm;
-          background-color: rgba($black, 0.1);
-          margin-top: $spacing-md;
-          font-size: $font-size-xs;
-          color: $black;
-          font-weight: 600;
-          text-transform: uppercase;
-        }
-
-        .tiny-show-more:hover {
-          background-color: rgba($black, 0.2);
         }
 
 

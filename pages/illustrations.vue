@@ -7,49 +7,49 @@
         <img src="/illustrations/hummingbird.png" alt="Personal Brand Hummingbird Illustration" />
         <div class="info">
           <p>Personal Brand + Icons</p>
-          <date>2024</date>
+          <p class="date">2024</p>
         </div>
       </div>
       <div class="single-illustration">
         <img src="/illustrations/dumdrops.png" alt="Dumdrops" />
         <div class="info">
           <p>Dumdrops</p>
-          <date>2022</date>
+          <p class="date">2022</p>
         </div>
       </div>
       <div class="single-illustration">
         <img src="/illustrations/scatter.png" alt="Scatter Illustration Work" />
         <div class="info">
           <p><nuxt-link to="/products/scatter">Scatter</nuxt-link></p>
-          <date>2019</date>
+          <p class="date">2019</p>
         </div>
       </div>
       <div class="single-illustration">
         <img src="/illustrations/personal.png" alt="Personal Illustration" />
         <div class="info">
           <p>Personal Illustration</p>
-          <date>2014</date>
+          <p class="date">2014</p>
         </div>
       </div>
       <div class="single-illustration">
         <img src="/illustrations/statshorizon.png" alt="Stats Horizon" />
         <div class="info">
           <p>Stats Horizon</p>
-          <date>2010</date>
+          <p class="date">2010</p>
         </div>
       </div>
       <div class="single-illustration">
         <img src="/illustrations/pigs.png" alt="Yooya" />
         <div class="info">
           <p>Pigs</p>
-          <date>2013</date>
+          <p class="date">2013</p>
         </div>
       </div>
       <div class="single-illustration">
         <img src="/illustrations/yooya.png" alt="Yooya" />
         <div class="info">
           <p>Yooya</p>
-          <date>2004</date>
+          <p class="date">2004</p>
         </div>
       </div>
     </section>
@@ -86,11 +86,11 @@
         font-size: $font-size-sm;
         font-weight: 700;
         margin-bottom: 0;
-      }
-
-      date {
-        font-size: $font-size-sm;
-        color: $gray;
+        
+        &.date {
+          font-size: $font-size-sm;
+          color: $gray;
+        }
       }
     }
   }
