@@ -173,6 +173,10 @@ export default {
 
       .info {
         transform: scale(0.9) rotate3d(1,-1,0,-36deg);
+
+        @media screen and (max-width: 1000px){
+          transform: none;
+        }
       }
 
       @media screen and (max-width: 1000px){
@@ -186,6 +190,10 @@ export default {
 
       .info {
         transform: scale(0.9) rotate3d(1,-1,0,-36deg);
+
+        @media screen and (max-width: 1000px){
+          transform: none;
+        }
       }
 
       @media screen and (max-width: 1000px){
@@ -214,7 +222,9 @@ export default {
       transform: scale(0.9) rotate3d(1,1,0,36deg);
       transition: all 0.4s ease-in-out;
 
-
+      @media screen and (max-width: 1000px){
+        transform: none;
+      }
 
       h1 {
         text-align: center;
@@ -237,6 +247,10 @@ export default {
 .flipped {
   &.info {
     transform: scale(0.9) rotate3d(1,1,0,-36deg);
+
+    @media screen and (max-width: 1000px){
+      transform: none;
+    }
   }
 }
 
