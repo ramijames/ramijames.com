@@ -77,15 +77,6 @@ export default {
         //   slug: '/products/crisp-tools',
         //   color: '#D5E7FD'
         // },
-        // {
-        //   title: 'Random Sandwich',
-        //   description: 'A social network based around randomly generated objects',
-        //   image: '/random-sandwich.png',
-        //   bg: '/random-sandwich-bg.jpg',
-        //   status: 'current',
-        //   slug: '/products/random-sandwich',
-        //   color: '#CCA32E'
-        // },
       ]
     }
   },
