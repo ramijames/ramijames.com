@@ -166,7 +166,6 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: url("/_nuxt/public/textures/texture-3-bg.png") padding-box, linear-gradient(140deg, white -5%, white 15%) border-box;
     color: $teal-dark;
     font-size: $font-size-xxl;
     font-weight: 800;

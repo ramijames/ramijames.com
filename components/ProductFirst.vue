@@ -5,7 +5,6 @@
     </section>
     <section class="w-two-thirds">
       <h4 class="center">Being Product-first means that you have a Product team and it is <span class="highlight">a first-class player and decision maker</span> within your organization.</h4>
-      <img class="product-team center" src="/hero/product-team.png" alt="Product team illustration" />
     </section>
 
     <section class="w-two-thirds">
