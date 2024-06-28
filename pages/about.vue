@@ -16,7 +16,8 @@
           <p class="job-title">Freelance</p>
           <p class="job-subtitle">Product Design and Front-end implementation</p>
           <p class="job-duration">Present</p>
-          <p class="job-descriptions">I currently provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
+          <p class="job-descriptions">Currently I provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
+          <p class="job-descriptions">I have:</p>
           <ul class="job-descriptions">
             <li v-for="(description, index) in freelanceContractor" :key="index">
               {{ description }}
