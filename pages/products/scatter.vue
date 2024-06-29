@@ -12,13 +12,10 @@
       
     </section>
     <section class="product-content">
-      <h2>The Scatter Story</h2>
       <aside class="story-time">
         <p>Scatter was started in 2017 by <a href="https://twitter.com/nsjames_">Nathan James</a> as a way for the EOSIO community to launch its Mainnet. I joined shortly after both as Head of Product and the COO. As with most startups, we all had to wear many hats.</p>
 
         <p>Scatter was a digital identity and wallet that allowed users to interact with the EOS blockchain. At first, it was simply a browser extension that allowed users to sign transactions and interact with apps in a secure way. Quickly the vision of the product evolved from a signing extension into a digital hub for EOS users to manage their signing keys, their digital identity, and the apps that they would find most useful.</p>
-
-        <img src="/products/scatter/extension.png" alt="Scatter Extension" class="single-product-image">
 
         <p>The first standalone application launched in 2018, and was based on the <span class="codehighlight">Vue.js</span> stack embedded in an <span class="codehighlight">Electron</span> app. Throughout 2018 and 2019, we iterated through many versions of the interface with the intense feedback of the quickly growing community of users. At our peak, we had around 150-200K DAU.</p>
 

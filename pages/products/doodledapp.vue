@@ -11,10 +11,11 @@
       
     </section>
     <section class="product-content">
-      <h2>The Doodledapp Story</h2>
       <aside class="story-time">
-        <p>The first fully-fledged product concept that I developed with <a href="">Nathan James</a> since Scatter was Doodledapp. At its most simple, Doodledapp was a no-code editor, in your browser, which allowed you to create smart contracts and deploy them to any Ethereum-compatible network from the comfort of your browser.</p>
-        <p>The product vision was broken up into a few discrete parts. Initially, we wanted to target smart contract developers working in Solidity, and provide them a comfortable environment to build their contracts with a node-based editor. These developers would create complex, vetted components which any other user could then import into their smart contracts to extend.</p>
+        <p>The product vision of Doodledapp was to allow anyone to create and deploy smart contracts to public networks quickly and easily. These smart contracts should be built up from components, all within a no-code editor, in your browser.</p>
+        <p>The project was broken up into a few discrete parts. Initially, we targeted smart contract developers working in Solidity, and provided them a comfortable environment to build their contracts with a node-based editor. These developers created complex, vetted components that any other user could then import into their smart contracts to extend.</p>
+
+        <p>Following this, we intended to allow users to sell these components on an open marketplace, while also providing adjacent services such as security auditing and peer reviews.</p>
 
         <img src="/products/doodledapp/contract-function-single.png" alt="Early Doodledapp" class="single-product-image">
 
@@ -29,10 +30,7 @@
       </aside>
     </section>
 
-    <hr>
-
     <section class="product-content">
-      <h4>Adendum</h4>
       <aside class="story-time">
 
         <p>As we developed the Doodledapp product, we quickly understood that the scope of what was envisioned out-stripped our available funding. With some deep discussions within the team, we made the difficult decision to pause the project.</p>

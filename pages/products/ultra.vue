@@ -12,7 +12,6 @@
       
     </section>
     <section class="product-content">
-      <h2>The Ultra Story</h2>
       <aside class="story-time">
         <p>Ultra is a blockchain-based platform that allows game developers to mint and sell tokenized game licenses and digital items. The platform is based on a fork of the EOSIO blockchain and is designed to be a scalable, secure, and user-friendly platform for game developers and players.</p>
 
@@ -29,18 +28,25 @@
       <aside class="story-time">
         <p>In early 2023, I took on the role of Head of Developer Relations. It was my pleasure to directly interact with countless talented developers who were creating tools and games for Ultra's ecosystem.</p>
 
-        <p>This involved creating a strategy for reaching developers, and of course, teaching them how to use the countless technologies that the teams had developed over the years. A large and complex documentation site was designed and developed by me and my team. This included hundreds of pages of documentation, video tutorials, and many code examples.</p>
+        <p>This involved creating a strategy for reaching developers, and of course, teaching them how to use the countless technologies that the teams had developed over the years. As part of my work as Head of Developer relations, I lead the production of a large and complex documentation portal. This included hundreds of pages of documentation, video tutorials, and many code examples.</p>
       </aside>
     </section>
-
-    <img src="/products/ultra/ultra-chill.png" alt="Ultra Chill" class="single-product-image">
 
     <section class="product-content">
       <aside class="story-time">
 
-        <p>As part of both the Developer Relations and Marketing efforts, I hosted and produced the Ultra Chill podcast. Over four seasons, and dozens of episodes, I brought on both internal Ultra employees and external guests and talked to them about a wide range of topics. We covered things like how tokenization could impact businesses to why Ultra is building what it is.</p>
+        <p>As part of the Marketing efforts, I conceptualized and designed the Ultra Prime product, which was deployed to the client. It allowed the marketing team to present an easy to use, clear, and manageable roadmap of events.</p>
 
-        <p>I resigned from Ultra in late 2024.</p>
+      </aside>
+    </section>
+
+    <img src="/products/ultra/ultra-prime.png" alt="Ultra Prime" class="single-product-image">
+
+    <section class="product-content">
+      <aside class="story-time">
+
+        <p>As part of the Marketing efforts, I conceptualized and designed the Ultra Prime product, which was deployed to the client. It allowed the marketing team to present an easy to use, clear, and manageable roadmap of events.</p>
+
       </aside>
     </section>
 

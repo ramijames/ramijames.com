@@ -1,10 +1,11 @@
 <template>
   <div class="theme-switcher-box" @click="toggleTheme">
-    <!-- <span>{{ currentTheme }} theme</span> -->
-    <div class="theme-switcher-sun"
+    <!-- <div class="theme-switcher-sun"
       :class="`${currentTheme}`"
     >
-    </div>
+    </div> -->
+    <img src="/light.svg" alt="sun" class="theme-image" v-if="currentTheme === 'light'">
+    <img src="/dark.svg" alt="sun" class="theme-image" v-if="currentTheme === 'dark'">
   </div>
 </template>
 
@@ -102,8 +103,8 @@ export default {
 
 img {
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
 }
 
 .theme-switcher-sun { /* MOON */
