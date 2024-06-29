@@ -103,8 +103,8 @@ export default {
 
 img {
   cursor: pointer;
-  width: 56px;
-  height: 56px;
+  width: 32px;
+  height: 32px;
 }
 
 .theme-switcher-sun { /* MOON */
