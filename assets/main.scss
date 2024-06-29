@@ -520,8 +520,6 @@ img.in-article {
   padding: $spacing-xl $spacing-lg;
   margin: 0 auto;
   z-index: 10;
-  border-left: 1px dashed rgba(0,0,0,0.26);
-  border-right: 1px dashed rgba(0,0,0,0.26);
   position: relative;
 
       @media screen and (max-width: 768px){
@@ -533,17 +531,6 @@ img.in-article {
     padding-top: $spacing-lg;
   }
 }
-
-    .dark .container,
-    .dark .general-main {
-      border-left: 1px dashed rgba(255,255,255,0.26);
-      border-right: 1px dashed rgba(255,255,255,0.26);
-
-      @media screen and (max-width: 768px){
-        border-left: none;
-        border-right: none;
-      }
-    }
 
     @media screen and (max-width: 768px) {
       .container,
