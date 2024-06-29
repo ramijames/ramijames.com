@@ -2,8 +2,8 @@
   <footer>
     <section class="general-main">
       <div class="footer-content ">
-        <div class="footer-links" v-if="notHome">
-          <nuxt-link href="/">Home</nuxt-link>
+        <div class="footer-links">
+          <nuxt-link href="/" v-if="notHome">Home</nuxt-link>
           <nuxt-link href="/thoughts">Thoughts</nuxt-link>
           <nuxt-link href="/labs">Labs</nuxt-link>
           <nuxt-link href="/illustrations">Illustrations</nuxt-link>

@@ -6,14 +6,15 @@
         :key="product.title" 
         :to="product.slug" 
         :style="{ 
-          animationDelay: index * 0.2 + 's', 
           backgroundColor: product.color, 
         }"
       >
       <section class="info">
-        <h1>{{ product.title }}</h1>
-        <p>{{ product.description }}</p>
-        <!-- <Button to="/products/doodledapp" text="View project" type="big" /> -->
+        <section class="text">
+          <h1>{{ product.title }}</h1>
+          <p>{{ product.description }}</p>
+        </section>
+        <img class="product-image-thumb" :src="product.image" :alt="product.title" />
       </section>
     </nuxt-link>
   </section>
@@ -31,7 +32,7 @@ export default {
         {
           title: 'Food For Future',
           description: 'Decentralized data for funding farmers',
-          image: '/fff.png',
+          image: '/products/food-for-future/fff-thumb.png',
           bg: '/fff-bg.jpg',
           status: 'past',
           slug: '/products/food-for-future',
@@ -41,17 +42,17 @@ export default {
         {
           title: 'Doodledapp',
           description: 'No-code smart contract development and deployment',
-          image: '/doodledapp.png',
+          image: '/products/doodledapp/doodledapp-thumb.png',
           bg: '/doodledapp-bg.jpg',
           status: 'past',
           slug: '/products/doodledapp',
           color: '#3E74FF',
-          class: 'doodledapp flipped'
+          class: 'doodledapp'
         },
         {
           title: 'Ultra',
           description: 'Tokenized gaming platform',
-          image: '/ultra.png',
+          image: '/products/ultra/ultra-prime-thumb.png',
           bg: '/ultra-bg.jpg',
           status: 'past',
           slug: '/products/ultra',
@@ -61,12 +62,12 @@ export default {
         {
           title: 'Scatter',
           description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
-          image: '/scatter.png',
+          image: '/products/scatter/scatter-thumb.png',
           bg: '/scatter-bg.jpg',
           status: 'past',
           slug: '/products/scatter',
           color: '#0899FE',
-          class: 'scatter flipped'
+          class: 'scatter'
         },          
         // {
         //   title: 'Crisp Tools',
@@ -103,17 +104,23 @@ export default {
 #Products {
   .project {
     background-size: 100%;
-    height: 580px;
+    height: 100dvh;
     width: 100dvw;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     color: white;
-    padding: $spacing-xl;
     position: relative;
     text-decoration: none;
     perspective: 1000rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    .right {
+      background-position: center right;
+    }
 
     &::after {
       content: '';
@@ -122,125 +129,87 @@ export default {
       left: 0;
       width: 150%;
       height: 100%;
-      background: rgba($black, 0.5);
+      background: linear-gradient(to bottom, rgba($black, 0), rgba($black, 0.75));
       transition: all 0.8s ease-in-out;
+      mix-blend-mode: soft-light;
     }
 
-    &:hover {
-      background-size: 80%;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba($black, 0);
+    &:hover .info {
+       img {
+        transform: translateY(0px);
+        opacity: 1;
+        mix-blend-mode: reset;
       }
-
-      .info {
-        transform: scale(1) !important;
-      }
-
-    }
-
-    @media screen and (max-width: 1000px){
-      align-items: center;
     }
 
     &.ultra {
-      background: url('/homepage/hp-ultra.png') no-repeat center center;
-
-      @media screen and (max-width: 1000px){
-        align-items: center;
-        background-position: center right;
-      }
+      background-image: url('/homepage/hp-ultra.png');
     }
 
     &.scatter {
-      background: url('/homepage/hp-scatter.png') no-repeat center center;
-      align-items: flex-end;
-
-      .info {
-        transform: scale(0.9) rotate3d(1,-1,0,-36deg);
-
-        @media screen and (max-width: 1000px){
-          transform: none;
-        }
-      }
-
-      @media screen and (max-width: 1000px){
-        align-items: center;
-      }
+      background-image: url('/homepage/hp-scatter.png');
     }
 
     &.doodledapp {
-      background: url('/homepage/hp-doodledapp.png') no-repeat center center;
-      align-items: flex-end;
-
-      .info {
-        transform: scale(0.9) rotate3d(1,-1,0,-36deg);
-
-        @media screen and (max-width: 1000px){
-          transform: none;
-        }
-      }
-
-      @media screen and (max-width: 1000px){
-        align-items: center;
-      }
+      background-image: url('/homepage/hp-doodledapp.png');
     }
 
     &.foodforfuture {
-      background: url('/homepage/hp-fff.png') no-repeat center center;
-
-      @media screen and (max-width: 1000px){
-        align-items: center;
-        background-position: center right;
-      }
+      background-image: url('/homepage/hp-fff.png');
+      background-position: center right;
     }
 
     .info {
+      height: 100%;
+      width: 100dvw;
+      padding: 0 $spacing-xl;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: $spacing-sm 0;
       text-align: center;
       position: relative;
       z-index: 10;
-      transform: scale(0.9) rotate3d(1,1,0,36deg);
-      transition: all 0.4s ease-in-out;
+      overflow: hidden;
+      perspective: 150em;
 
-      @media screen and (max-width: 1000px){
-        transform: none;
+      @media screen and (max-width: 768px) {
+        padding: 0 $spacing-md;
       }
 
-      h1 {
-        text-align: center;
-        margin: 0;
-        text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
+      .text {
+        margin-top: $spacing-xl;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-xs;
 
-        @media screen and (max-width: 768px){
-          font-size: $font-size-xxl;
+        h1 {
+          text-align: center;
+          margin: 0;
+          text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
+
+          @media screen and (max-width: 768px){
+            font-size: $font-size-xxl;
+          }
+        }
+
+        p {
+          text-align: center;
+          text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
         }
       }
 
-      p {
-        text-align: center;
-        text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
+      img {
+        width: 100%;
+        max-width: 600px;
+        margin: $spacing-xl 0 0;
+        border-radius: 6px 6px 0 0;
+        box-shadow: 0 0px 100px rgba($black, 0.45);
+        transform: translateY(80px);
+        mix-blend-mode: luminosity;
+        transition: all 0.38s ease-in-out;
       }
-    }
-  }
-}
 
-.flipped {
-  &.info {
-    transform: scale(0.9) rotate3d(1,1,0,-36deg);
-
-    @media screen and (max-width: 1000px){
-      transform: none;
     }
   }
 }
