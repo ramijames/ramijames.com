@@ -1,11 +1,9 @@
 <template>
   <div class="theme-switcher-box" @click="toggleTheme">
-    <!-- <div class="theme-switcher-sun"
+    <div class="theme-switcher-sun"
       :class="`${currentTheme}`"
     >
-    </div> -->
-    <img src="/light.svg" alt="sun" class="theme-image" v-if="currentTheme === 'light'">
-    <img src="/dark.svg" alt="sun" class="theme-image" v-if="currentTheme === 'dark'">
+    </div>
   </div>
 </template>
 
