@@ -133,9 +133,9 @@ export default {
       left: 0;
       width: 150%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba($black, 0) 55%, rgba($black, 1));
+      background: linear-gradient(to top, rgba($black, 0) 75%, rgba($black, .7) 100%);
       transition: all 0.8s ease-in-out;
-      mix-blend-mode: overlay;
+      mix-blend-mode: multiply;
     }
 
     &:hover .info {
@@ -188,7 +188,7 @@ export default {
         gap: $spacing-xs;
 
         @media screen and (max-width: 768px) {
-          margin-top: $spacing-md;
+          margin-top: $spacing-lg;
         }
 
         h1 {
