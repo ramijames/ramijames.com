@@ -104,7 +104,7 @@ export default {
 #Products {
   .project {
     background-size: 100%;
-    height: 100dvh;
+    height: 100vh;
     width: 100dvw;
     display: flex;
     flex-direction: column;
@@ -122,6 +122,10 @@ export default {
       background-position: center right;
     }
 
+    @media screen and (max-width: 768px) {
+      height: 70vh;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -129,9 +133,9 @@ export default {
       left: 0;
       width: 150%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba($black, 0), rgba($black, 0.75));
+      background: linear-gradient(to bottom, rgba($black, 0) 55%, rgba($black, 1));
       transition: all 0.8s ease-in-out;
-      mix-blend-mode: soft-light;
+      mix-blend-mode: overlay;
     }
 
     &:hover .info {
@@ -174,7 +178,7 @@ export default {
       perspective: 150em;
 
       @media screen and (max-width: 768px) {
-        padding: 0 $spacing-md;
+        padding: 0 $spacing-sm;
       }
 
       .text {
@@ -182,6 +186,10 @@ export default {
         display: flex;
         flex-direction: column;
         gap: $spacing-xs;
+
+        @media screen and (max-width: 768px) {
+          margin-top: $spacing-md;
+        }
 
         h1 {
           text-align: center;
@@ -208,6 +216,10 @@ export default {
         transform: translateY(80px);
         mix-blend-mode: luminosity;
         transition: all 0.38s ease-in-out;
+
+        @media screen and (max-width: 768px) {
+          transform: translateY(0px);
+        }
       }
 
     }
