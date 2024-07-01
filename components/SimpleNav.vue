@@ -9,10 +9,10 @@
       <nuxt-link to="/"><img :src="`/logo-${currentTheme}.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
-        <nuxt-link to="/thoughts" class="nav-link">Thoughts</nuxt-link>
-        <nuxt-link to="/labs" class="nav-link">Labs</nuxt-link>
-        <nuxt-link to="/illustrations" class="nav-link">Illustrations</nuxt-link>
+        <nuxt-link to="/services" class="nav-link">Services</nuxt-link>
         <nuxt-link to="/products" class="nav-link">Recent Work</nuxt-link>
+        <nuxt-link to="/labs" class="nav-link">Labs</nuxt-link>
+        <nuxt-link to="/thoughts" class="nav-link">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
     </section>
@@ -31,10 +31,10 @@
   <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
     <section class="mobile-nav-panel-links">
       <nuxt-link to="/" @click="closeMenu">Home</nuxt-link>
+      <nuxt-link to="/services" @click="closeMenu">Services</nuxt-link>
       <nuxt-link to="/products" @click="closeMenu">Recent Work</nuxt-link>
-      <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
       <nuxt-link to="/labs" @click="closeMenu">Labs</nuxt-link>
-      <nuxt-link to="/illustrations" @click="closeMenu">Illustrations</nuxt-link>
+      <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
       <nuxt-link to="/about" @click="closeMenu">About</nuxt-link>
     </section>
   </section>

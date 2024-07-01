@@ -44,5 +44,6 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/thoughts/on-ethical-pricing': { redirect: '/thoughts/how-to-make-product-decisions-based-on-business-needs' },
+    '/illustrations': { redirect: '/products/illustrations' },
   },
 })

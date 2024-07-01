@@ -30,6 +30,26 @@ export default {
     return {
       products: [
         {
+          title: 'Scatter',
+          description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
+          image: '/products/scatter/scatter-thumb.png',
+          bg: '/scatter-bg.jpg',
+          status: 'past',
+          slug: '/products/scatter',
+          color: '#0899FE',
+          class: 'scatter'
+        },  
+        {
+          title: 'Ultra',
+          description: 'Tokenized gaming platform',
+          image: '/products/ultra/ultra-prime-thumb.png',
+          bg: '/ultra-bg.jpg',
+          status: 'past',
+          slug: '/products/ultra',
+          color: '#2E2667',
+          class: 'ultra'
+        },  
+        {
           title: 'Food For Future',
           description: 'Decentralized data for funding farmers',
           image: '/products/food-for-future/fff-thumb.png',
@@ -50,24 +70,14 @@ export default {
           class: 'doodledapp'
         },
         {
-          title: 'Ultra',
-          description: 'Tokenized gaming platform',
-          image: '/products/ultra/ultra-prime-thumb.png',
-          bg: '/ultra-bg.jpg',
+          title: 'Illustrations',
+          description: 'Various illustrations during my journey',
+          image: '/products/illustrations/illustrations-thumb.png',
+          bg: '/illustrations-bg.jpg',
           status: 'past',
-          slug: '/products/ultra',
-          color: '#2E2667',
-          class: 'ultra'
-        },
-        {
-          title: 'Scatter',
-          description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
-          image: '/products/scatter/scatter-thumb.png',
-          bg: '/scatter-bg.jpg',
-          status: 'past',
-          slug: '/products/scatter',
+          slug: '/products/illustrations',
           color: '#0899FE',
-          class: 'scatter'
+          class: 'illustrations'
         },          
         // {
         //   title: 'Crisp Tools',
@@ -133,7 +143,7 @@ export default {
       left: 0;
       width: 150%;
       height: 100%;
-      background: linear-gradient(to top, rgba($black, 0) 75%, rgba($black, .7) 100%);
+      background: linear-gradient(20deg, rgba($black, 0) 45%, rgba($black, .8) 90%);
       transition: all 0.8s ease-in-out;
       mix-blend-mode: multiply;
     }
@@ -148,6 +158,11 @@ export default {
 
     &.ultra {
       background-image: url('/homepage/hp-ultra.png');
+    }
+
+    &.illustrations {
+      background-image: url('/homepage/hp-illustrations.jpg');
+      background-position: bottom center;
     }
 
     &.scatter {
@@ -212,10 +227,11 @@ export default {
         max-width: 600px;
         margin: $spacing-xl 0 0;
         border-radius: 6px 6px 0 0;
-        box-shadow: 0 0px 100px rgba($black, 0.45);
+        box-shadow: 0 0px 100px rgba($black, 0.25), 0 0px 10px rgba($blue, 0.18), 0 -2px 4px rgba($blue, 0.12);
         transform: translateY(80px);
         mix-blend-mode: luminosity;
         transition: all 0.38s ease-in-out;
+        border: 1px solid rgba($white, 0.2);
 
         @media screen and (max-width: 768px) {
           transform: translateY(0px);
