@@ -36,7 +36,7 @@
 
     <section id="Rate">
       <h2 class="center">Rate and availability</h2>
-      <p class="center">My current hourly rate is $65, and I book up to 160 hours of work monthly.</p>
+      <h3 class="grey center">My current hourly rate is $65, and I book up to 160 hours of work monthly.</h3>
       <Button text="Add your project" size="default" to="/booking" />
     </section>
 

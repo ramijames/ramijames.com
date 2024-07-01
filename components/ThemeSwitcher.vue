@@ -109,12 +109,11 @@ img {
   width:32px;
   height:32px;
   border-radius: 50%;
-  box-shadow: 0 0 10px 0 rgba($orange-light, 0.2);
   background-color: rgb(140, 228, 250);
   transition: all 0.3s ease-in-out;
   overflow: hidden;
   position: relative;
-  outline: 2px solid rgba($blue, 0.1);
+  outline: 2px solid rgba($black, 0.4);
   outline-offset: 2px;
   margin: 4px 0;
 
@@ -132,16 +131,14 @@ img {
   }
 
   &.light { /* SUN */
-    outline: 2px solid rgba($blue, 0.8);
-    outline-offset: -4px;
-    box-shadow: 0 0 16px 0 rgba($gray-light, 0.2);
-    background-color: $gray-light;
+    outline: 2px solid rgba($orange, 0.4);
+    border: 2px solid rgba($orange, 1);
 
     &:after { /* SUN */
-      background: $gray-light;
+      background: $orange-light;
       right: 0px;
       top:0;
-      box-shadow: inset 0 0 8px rgba($white, 0.2);
+      box-shadow: inset 0 0 8px rgba($orange-dark, 0.2);
     }
   }
 }

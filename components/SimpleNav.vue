@@ -20,13 +20,14 @@
       <ThemeSwitcher />
     </section>
   </nav>
-  <section class="bread-crumbs" v-if="notHome">
+  
+  <!-- <section class="bread-crumbs" v-if="notHome">
     <nuxt-link to="/" v-if="notHome" class="bread-crumb">Home</nuxt-link>
     <nuxt-link to="/thoughts" v-if="isThoughtsSubPage" class="bread-crumb">Thoughts</nuxt-link>
     <nuxt-link to="/labs" v-if="isLabsSubPage" class="bread-crumb">Labs</nuxt-link>
     <nuxt-link to="/products" v-if="!isProductsPage && isProductsSubPage" class="bread-crumb">Products</nuxt-link>
     <div class="current" v-if="notHome">{{ routeName }}</div>
-  </section>
+  </section> -->
 
   <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
     <section class="mobile-nav-panel-links">
@@ -286,7 +287,6 @@ export default {
 }
 
 .bread-crumbs {
-  border-top: 1px solid rgba($black-dark, 0.1);
   padding: $spacing-md $spacing-md;
   display: flex;
   flex-direction: row;
