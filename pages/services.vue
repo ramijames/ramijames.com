@@ -1,5 +1,5 @@
 <template>
-  <section class="general-main page-top">
+  <section class="general-main page-top services-gap">
     <h2 class="center">Services</h2>
     <h3 class="grey center">I provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can <a href="mailto:ramijames@gmail.com">email me directly</a>.</h3>
 
@@ -78,6 +78,10 @@ import Button from '/components/Button';
 <style scoped lang="scss">
 
 @import './assets/variables';
+
+.services-gap {
+  gap: 0;
+}
 
 #Services {
   display: grid;
