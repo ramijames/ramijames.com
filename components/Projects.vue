@@ -1,7 +1,7 @@
 <template>
   <section id="projects" class="general-main page-top" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
-      <h2 class="center">I'm proud to have worked on these</h2>
+      <h2 class="center">Recent Work</h2>
       <h3 class="grey">I'd love to get your vision to market on-budget, on-time, and with style. Check out my <nuxt-link to="/services">Services</nuxt-link>.</h3>
       <Button text="Add your project" size="default" to="/booking" />
       <section id="company-logos">
