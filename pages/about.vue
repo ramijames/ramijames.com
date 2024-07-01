@@ -3,8 +3,8 @@
     <section class="explanation">
       <!-- <img src="/rami-profile.png" alt="Rami James" class="profile-pic"> -->
       <section class="jobs">
-        <h2>My name is Rami James. I <span class="red">design products</span> and <span class="mint">implement front-ends</span> in Vue and Nuxt.</h2>
-        <h2>You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h2>
+        <h2 class="center">My name is Rami James. I <span class="red">design products</span> and <span class="mint">implement front-ends</span> in Vue and Nuxt.</h2>
+        <h2 class="center">You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h2>
       </section>
     </section>
   </section>
