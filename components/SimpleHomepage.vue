@@ -3,7 +3,7 @@
     <div id="mesh-gradient" class="sixteen-elements">
       <div class="element" v-for="n in 160" :key="n"></div>
     </div>
-    <section class="general-main page-top">
+    <section class="general-main hero-top">
       <h1 class="center home-max">Senior Product Designer</h1>
       <h3 class="center">I make <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software - myself included. If you’d like to commission a work, <a href="ramijames@gmail.com">send me an email</a>.</h3>
     </section>
@@ -25,9 +25,11 @@
   perspective: 1000rem;
   overflow: hidden;
 
-  .general-main.page-top {
+  .general-main.hero-top {
+    padding: $spacing-xl 0;
+
     @media screen and (max-width: 768px){
-      padding-top: $spacing-sm;
+      padding: $spacing-lg $spacing-md;
       z-index: 100;
     }
   }
@@ -48,9 +50,10 @@
   }
 
   .home-max {
-    font-size: 8dvw;
+    font-size: 5dvw;
     line-height: 100%;
-    padding: $spacing-sm 0;
+    padding: $spacing-sm 0 0;
+    margin-bottom: 0;
     font-weight: 700;
     pointer-events: none;
 
