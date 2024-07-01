@@ -6,7 +6,7 @@
         :class="`${mobileMenuOpen}`"
         @click="toggleMenu"
       ></div>
-      <nuxt-link to="/"><img :src="`/logo-${currentTheme}.svg`" alt="Rami James" /></nuxt-link>
+      <nuxt-link to="/" class="logo-link"><img :src="`/logo-${currentTheme}.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
         <nuxt-link to="/services" class="nav-link">Services</nuxt-link>
@@ -126,6 +126,10 @@ export default {
 <style scoped lang="scss">
 
 @import './assets/variables';
+
+.logo-link {
+  border-bottom: none;
+}
 
 .simple-nav-bar {
   display: flex;
@@ -383,6 +387,7 @@ export default {
           font-weight:500;
           text-decoration: none;
           text-align: center;
+          border-bottom: none;
         }
 
         .mobile-nav-panel-links a:nth-child(1) {
