@@ -4,8 +4,8 @@
       <div class="element" v-for="n in 160" :key="n"></div>
     </div>
     <section class="general-main page-top">
-      <h1 class="home-max">Senior Product Designer</h1>
-      <h3>I make <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software - myself included. If you’d like to commission a work, <a href="ramijames@gmail.com">send me an email</a>.</h3>
+      <h1 class="center home-max">Senior Product Designer</h1>
+      <h3 class="center">I make <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software - myself included. If you’d like to commission a work, <a href="ramijames@gmail.com">send me an email</a>.</h3>
     </section>
     <MergedProjects />
     <!-- <TypesOfDesigns /> -->
