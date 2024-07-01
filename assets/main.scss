@@ -41,21 +41,11 @@ body {
 a {
   color:$blue;
   text-decoration: none;
-  border-bottom: 2px solid lighten($blue, 25%);
   transition: color, border-bottom 0.28s ease-in-out;
-
-  &:hover {
-    border-bottom: 2px solid $blue;
-  }
 }
 
     .dark a {
       color:$blue-light;
-      border-bottom: 2px solid darken($blue-light, 25%);
-
-      &:hover {
-        border-bottom: 2px solid $blue;
-      }
     }
 
 h1 { 
