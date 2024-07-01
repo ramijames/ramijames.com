@@ -112,6 +112,7 @@ export default {
 @import './assets/variables';
 
 #Products {
+
   .project {
     background-size: 100%;
     height: 100vh;
@@ -143,16 +144,26 @@ export default {
       left: 0;
       width: 150%;
       height: 100%;
-      background: linear-gradient(20deg, rgba($black, 0) 45%, rgba($black, .8) 90%);
+      background: rgba($black, .9);
       transition: all 0.8s ease-in-out;
       mix-blend-mode: multiply;
     }
 
-    &:hover .info {
-       img {
-        transform: translateY(0px);
-        opacity: 1;
-        mix-blend-mode: reset;
+    &:hover {
+      &::after {
+        background: rgba($black, .15);
+      }
+
+      .info {
+        img {
+          transform: translateY(0px);
+          opacity: 1;
+          mix-blend-mode: reset;
+        }
+
+        .text {
+          transform: scale(1);
+        }
       }
     }
 
@@ -201,6 +212,8 @@ export default {
         display: flex;
         flex-direction: column;
         gap: $spacing-xs;
+        transform: scale(.7);
+        transition: all 0.5s ease-in-out;
 
         @media screen and (max-width: 768px) {
           margin-top: $spacing-lg;
