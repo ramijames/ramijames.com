@@ -14,7 +14,9 @@
           <h3>{{ product.title }}</h3>
           <p>{{ product.description }}</p>
         </section>
-        <img class="product-image-thumb" :src="product.image" :alt="product.title" />
+        <section class="image-wrapper">
+          <img class="product-image-thumb" :src="product.image" :alt="product.title" />
+        </section>
       </section>
     </nuxt-link>
   </section>
@@ -182,10 +184,18 @@ export default {
       }
 
       .info {
-        img {
+        .image-wrapper {
           bottom: -30px;
           opacity: 1;
           mix-blend-mode: reset;
+
+          &::after {
+            top:3px;
+          }
+
+          &::before {
+            top:-4px;
+          }
         }
 
         .text {
@@ -265,19 +275,55 @@ export default {
       }
 
       img {
-        width: 100%;
-        max-width: 30vw;
-        margin: $spacing-xl 0 0;
-        border-radius: 6px 6px 0 0;
-        transform: translateY(0vw);
-        mix-blend-mode: luminosity;
-        transition: all 0.38s ease-in-out;
+        
+      }
+
+      .image-wrapper {
         position: absolute;
         bottom:0;
+        z-index: 10;
+        width: 100%;
+        max-width: 30vw;
+        border-radius: 6px 6px 0 0;
+        transform: translateY(0vw);
+        transition: all 0.38s ease-in-out;
 
         @media screen and (max-width: 768px) {
           transform: none !important;
           max-width: 80vw;
+        }
+
+        img {
+          width: 100%;
+          bottom:-10px;
+          position: relative;
+          z-index: 10;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 10px;
+          left: 5%;
+          width: 90%;
+          height: 40px;
+          background: darken($white, 15%);
+          z-index: 9;  
+          transition: all 0.18s ease-in-out;
+          mix-blend-mode: overlay;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 10px;
+          left: 10%;
+          width: 80%;
+          height: 40px;
+          background: darken($white, 30%);
+          z-index: 8;
+          transition: all 0.18s ease-in-out;
+          mix-blend-mode: overlay;
         }
       }
 
