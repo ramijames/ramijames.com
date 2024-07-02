@@ -11,7 +11,7 @@
       >
       <section class="info">
         <section class="text">
-          <h1>{{ product.title }}</h1>
+          <h3>{{ product.title }}</h3>
           <p>{{ product.description }}</p>
         </section>
         <img class="product-image-thumb" :src="product.image" :alt="product.title" />
@@ -70,6 +70,16 @@ export default {
           class: 'doodledapp'
         },
         {
+          title: 'Telos Open Block Explorer',
+          description: 'A way to view transactions and manage your wallets',
+          image: '/products/telos/telos-thumb.png',
+          bg: '/homepage/hp-telos.png',
+          status: 'past',
+          slug: '/products/telos-obe',
+          color: '#571AFF',
+          class: 'telos'
+        },
+        {
           title: 'Illustrations',
           description: 'Various illustrations during my journey',
           image: '/products/illustrations/illustrations-thumb.png',
@@ -112,22 +122,35 @@ export default {
 @import './assets/variables';
 
 #Products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    
+  }
 
   .project {
     background-size: 100%;
-    height: 100vh;
-    width: 100dvw;
+    height: 50vh;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
+    overflow: hidden;
     position: relative;
     text-decoration: none;
     perspective: 1000rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+
+    @media screen and (max-width: 768px) {
+      height: 50vh;
+      width: 100vw;
+    }
 
     .right {
       background-position: center right;
@@ -156,7 +179,7 @@ export default {
 
       .info {
         img {
-          transform: translateY(0px);
+          transform: translateY(-5vw);
           opacity: 1;
           mix-blend-mode: reset;
         }
@@ -208,19 +231,20 @@ export default {
       }
 
       .text {
-        margin-top: $spacing-xl;
+        margin-top: $spacing-md;
         display: flex;
         flex-direction: column;
         gap: $spacing-xs;
-        transform: scale(.7);
+        transform: scale(.9);
         transition: all 0.5s ease-in-out;
 
         @media screen and (max-width: 768px) {
           margin-top: $spacing-lg;
         }
 
-        h1 {
+        h3 {
           text-align: center;
+          font-weight: 700;
           margin: 0;
           text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
 
@@ -237,17 +261,18 @@ export default {
 
       img {
         width: 100%;
-        max-width: 600px;
+        max-width: 30vw;
         margin: $spacing-xl 0 0;
         border-radius: 6px 6px 0 0;
         box-shadow: 0 0px 100px rgba($black, 0.25), 0 0px 10px rgba($blue, 0.18), 0 -2px 4px rgba($blue, 0.12);
-        transform: translateY(80px);
+        transform: translateY(0vw);
         mix-blend-mode: luminosity;
         transition: all 0.38s ease-in-out;
         border: 1px solid rgba($white, 0.2);
 
         @media screen and (max-width: 768px) {
-          transform: translateY(0px);
+          transform: none !important;
+          max-width: 60vw;
         }
       }
 
