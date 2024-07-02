@@ -1,8 +1,8 @@
 <template>
   <main class="general-main page-top">
     <section class="thoughts-main general-content">
-      <h2 class="center">I wanted to share some thoughts on <span class="red">product design</span>, <span class="mint">software development</span>, and our <span class="purple">shared industry</span></h2>
-      <h3 class="grey">(I hope that's ok)</h3>
+      <h1 class="center">Thoughts</h1>
+      <h2 class="center grey">On products, teams, software development, and design.</h2>
       <main class="articles">
         <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug">
           <img :src="article.image" :alt="article.title" />

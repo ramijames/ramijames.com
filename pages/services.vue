@@ -1,7 +1,7 @@
 <template>
   <section class="general-main page-top services-gap">
-    <h2 class="center">Services</h2>
-    <h3 class="grey center">I provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can <a href="mailto:ramijames@gmail.com">email me directly</a>.</h3>
+    <h1 class="center">Services</h1>
+    <h2 class="grey center">Valuable, business-oriented help for your startup or enterprise.</h2>
 
     <section id="QuickServices">
       <section id="ServicesGrid">

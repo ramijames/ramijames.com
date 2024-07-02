@@ -1,9 +1,8 @@
 <template>
   <section id="projects" class="general-main page-top" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
-      <h2 class="center">Recent Work</h2>
-      <h3 class="grey">I'd love to get your vision to market on-budget, on-time, and with style. Check out my <nuxt-link to="/services">Services</nuxt-link>.</h3>
-      <Button text="Add your project" size="default" to="/booking" />
+      <h1 class="center">Recent Work</h1>
+      <h2 class="grey center">I'm proud to have worked on these products over the years</h2>
       <section id="company-logos">
         <img src="/social-proof/wix.png" alt="Wix" />
         <img src="/social-proof/ibm.png" alt="IBM" />
@@ -13,6 +12,7 @@
         <img src="/social-proof/telos.png" alt="Telos" />
         <img src="/social-proof/ultra.png" alt="Ultra" />
       </section>
+      <Button text="Add your project" size="default" to="/booking" />
     </section>
   </section>
   <MergedProjects />

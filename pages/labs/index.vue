@@ -1,8 +1,8 @@
 <template>
   <main class="general-main page-top">
     <section class="labs-main general-content">
-      <h2 class="center">I sometimes like to make esoteric digital art in <span class="red">css</span>, <span class="mint">vue.js</span>, or <span class="purple">GLSL</span></h2>
-      <h3 class="grey">(Let's geek out together)</h3>
+      <h1>Labs</h1>
+      <h2 class="grey center">Esoteric digital art in css, Vue, and GLSL</h2>
       <main class="labs">
         <nuxt-link :to="`/labs/${lab.slug}`" v-for="lab in labs" :key="lab.slug">
           <img :src="lab.image" :alt="lab.title" />
