@@ -845,8 +845,10 @@ img.in-article {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $spacing-md;
-  background: $white-dark;
+  background: $white;
   padding: $spacing-md;
+  box-shadow: 0 60px 80px rgba(0, 0, 0, 0.09), 0 4px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 0.5rem;
 
   @media screen and (max-width: 768px){
     grid-template-columns: 1fr;

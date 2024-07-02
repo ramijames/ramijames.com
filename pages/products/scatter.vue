@@ -9,7 +9,7 @@
       </div>
     </section>
 
-    <section class="product-content">
+    <section class="product-content general-main page-top">
       <aside class="product-role">
         <div class="single-role">
           <h4>Role</h4>
