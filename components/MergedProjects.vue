@@ -179,7 +179,7 @@ export default {
 
       .info {
         img {
-          transform: translateY(-5vw);
+          bottom: -30px;
           opacity: 1;
           mix-blend-mode: reset;
         }
@@ -245,6 +245,7 @@ export default {
         h3 {
           text-align: center;
           font-weight: 700;
+          line-height: 100%;
           margin: 0;
           text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
 
@@ -264,15 +265,15 @@ export default {
         max-width: 30vw;
         margin: $spacing-xl 0 0;
         border-radius: 6px 6px 0 0;
-        box-shadow: 0 0px 100px rgba($black, 0.25), 0 0px 10px rgba($blue, 0.18), 0 -2px 4px rgba($blue, 0.12);
         transform: translateY(0vw);
         mix-blend-mode: luminosity;
         transition: all 0.38s ease-in-out;
-        border: 1px solid rgba($white, 0.2);
+        position: absolute;
+        bottom:0;
 
         @media screen and (max-width: 768px) {
           transform: none !important;
-          max-width: 60vw;
+          max-width: 80vw;
         }
       }
 
