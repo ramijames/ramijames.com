@@ -534,10 +534,14 @@ img.in-article {
     padding-top: $spacing-lg;
 
     @media screen and (max-width: 768px){
-      padding: 0rem;
+      padding: 0rem $spacing-md;
       margin: $spacing-lg 0;
-      width: calc(100vw - 4rem);
     }
+  }
+
+  &.product-content {
+    width: 100%;
+    padding: 0;
   }
 }
 

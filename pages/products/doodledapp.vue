@@ -9,7 +9,7 @@
       </div>  
     </section>
 
-    <section class="product-content general-main page-top">
+    <section class="product-content general-main page-top product-content">
       <aside class="product-role">
         <div class="single-role">
           <h4>Role</h4>
@@ -29,7 +29,7 @@
       </aside>
     </section>
 
-    <section class="product-content general-main page-top">
+    <section class="product-content general-main page-top product-content">
       <aside class="story-time">
         <h3>Doodledapp Product</h3>
         <p>The product vision of Doodledapp was to allow anyone to create and deploy smart contracts to public networks quickly and easily. These smart contracts should be built up from components, all within a no-code editor, in your browser.</p>
@@ -43,7 +43,7 @@
       </aside>
     </section>
 
-    <section class="product-content general-main page-top">
+    <section class="product-content general-main page-top product-content">
       <aside class="story-time">
         <h3>Doodledapp Website</h3>
         <p>As part of our wider strategy, we also developed a Doodledapp website which allowed our potential users to understand our pitch, and its value to the market that we were targeting. It included dynamic testimonials, quick-start smart contracts, our pricing strategy, and much more.</p> 
@@ -52,7 +52,7 @@
 
     <img src="/products/doodledapp/doodledapp-website.png" alt="Doodledapp Website" class="single-product-image">
 
-    <section class="product-content general-main page-top">
+    <section class="product-content general-main page-top product-content">
       <aside class="story-time">
         <h3>Addendum</h3>
         <p>As we developed the Doodledapp product, we quickly understood that the scope of what was envisioned out-stripped our available resources. With some deep discussions within the team, we made the difficult decision to pause the project.</p>
