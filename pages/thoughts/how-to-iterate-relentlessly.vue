@@ -1,7 +1,7 @@
 <template>
   <main class="general-main page-top">
     <section class="article-extras">
-      <SectionTitle title="Iterate relentlessly" subtitle="by Rami James" />
+      <SectionTitle title="Iterate relentlessly" />
       <AllPosts />
     </section>
     <section class="content">

@@ -1,7 +1,7 @@
 <template>
   <main class="general-main page-top">
     <section class="article-extras">
-      <SectionTitle title="Quantifying your documentation's success" subtitle="by Rami James" />
+      <SectionTitle title="Quantifying your documentation's success" />
       <AllPosts />
     </section>
     <section class="content">

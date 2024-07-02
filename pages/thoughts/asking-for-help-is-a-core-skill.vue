@@ -1,7 +1,7 @@
 <template>
   <main class="general-main page-top">
     <section class="article-extras">
-      <SectionTitle title="Asking for help is a core developer skill" subtitle="by Rami James" />
+      <SectionTitle title="Asking for help is a core developer skill" />
       <AllPosts />
     </section>
     <section class="content">

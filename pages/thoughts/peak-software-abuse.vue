@@ -1,7 +1,7 @@
 <template>
   <main class="general-main page-top">
     <section class="article-extras">
-      <SectionTitle title="Peak software abuse" subtitle="by Rami James" />
+      <SectionTitle title="Peak software abuse" />
       <AllPosts />
     </section>
     <section class="content">
