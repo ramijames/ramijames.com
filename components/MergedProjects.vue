@@ -170,6 +170,10 @@ export default {
       background: rgba($black, .9);
       transition: all 0.8s ease-in-out;
       mix-blend-mode: multiply;
+
+      @media screen and (max-width: 768px){
+        background: rgba($black, .25);
+      }
     }
 
     &:hover {
