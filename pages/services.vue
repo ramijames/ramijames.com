@@ -105,10 +105,18 @@ import Button from '/components/Button';
   flex-direction: column;
   align-items: center;
   gap: $spacing-sm;
+
+  @media screen and (max-width: 768px){
+    margin-top: $spacing-lg;
+  }
 }
 
 #QuickServices {
   margin-top: $spacing-xl;
+
+  @media screen and (max-width: 768px){
+    margin-top: $spacing-lg;
+  }
 
   #ServicesGrid {
     display: grid;
@@ -124,7 +132,7 @@ import Button from '/components/Button';
 
       @media screen and (max-width: 768px){
         border-right: none;
-        border-bottom: 1px solid $gray;
+        margin-bottom: $spacing-md;
       }
 
       h4 {
@@ -151,11 +159,6 @@ import Button from '/components/Button';
   #ServicesGrid {
     .single-service {
       border-left: 2px solid $white;
-
-      @media screen and (max-width: 768px){
-        border-bottom: 1px solid rgba(241, 240, 251, 0.2);
-      }
-
     }
   }
 }

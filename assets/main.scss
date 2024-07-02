@@ -62,7 +62,7 @@ h1 {
   }
 
   @media screen and (max-width: 768px) {
-    font-size: $font-size-max;
+    font-size: 12vw;
     line-height: $font-size-max;
   }
 
@@ -535,7 +535,8 @@ img.in-article {
 
     @media screen and (max-width: 768px){
       padding: 0rem;
-      margin-top: 4rem;
+      margin: $spacing-lg $spacing-md;
+      width: calc(100vw - 4rem);
     }
   }
 }
