@@ -8,9 +8,10 @@
         <section class="single-service">
           <h4>Product</h4>
           <ul>
-            <li>Product Vision</li>
-            <li>Product First Management</li>
-            <li>Product Roadmapping</li>
+            <li>Concept</li>
+            <li>Vision</li>
+            <li>Roadmapping</li>
+            <li>Leadership</li>
           </ul>
         </section>
         <section class="single-service">
@@ -107,8 +108,7 @@ import Button from '/components/Button';
 }
 
 #QuickServices {
-  border: 1px solid $gray;
-  margin-top: $spacing-md;
+  margin-top: $spacing-xl;
 
   #ServicesGrid {
     display: grid;
@@ -119,16 +119,12 @@ import Button from '/components/Button';
     }
 
     .single-service {
-      padding: $spacing-md;
-      border-right: 1px solid $gray;
+      padding: 0 $spacing-md;
+      border-left: 2px solid $black;
 
       @media screen and (max-width: 768px){
         border-right: none;
         border-bottom: 1px solid $gray;
-      }
-
-      &:last-child {
-        border: none;
       }
 
       h4 {
@@ -151,20 +147,15 @@ import Button from '/components/Button';
 }
 
 .dark #QuickServices {
-  border: 1px solid rgba(241, 240, 251, 0.2);
 
   #ServicesGrid {
     .single-service {
-      border-right: 1px solid rgba(241, 240, 251, 0.2);
+      border-left: 2px solid $white;
 
       @media screen and (max-width: 768px){
-        border-right: none;
         border-bottom: 1px solid rgba(241, 240, 251, 0.2);
       }
 
-      &:last-child {
-        border: none;
-      }
     }
   }
 }

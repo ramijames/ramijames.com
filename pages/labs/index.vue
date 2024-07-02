@@ -2,7 +2,7 @@
   <main class="general-main page-top">
     <section class="labs-main general-content">
       <h1>Labs</h1>
-      <h2 class="grey center">Esoteric digital art in css, Vue, and GLSL</h2>
+      <h2 class="grey center">Esoteric digital art in CSS, Vue, and GLSL</h2>
       <main class="labs">
         <nuxt-link :to="`/labs/${lab.slug}`" v-for="lab in labs" :key="lab.slug">
           <img :src="lab.image" :alt="lab.title" />

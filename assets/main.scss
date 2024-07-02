@@ -526,13 +526,17 @@ img.in-article {
   z-index: 10;
   position: relative;
 
-      @media screen and (max-width: 768px){
-        border-left: none;
-        border-right: none;
-      }
+  @media screen and (max-width: 768px){
+    padding: 0;
+  }
       
   &.page-top {
     padding-top: $spacing-lg;
+
+    @media screen and (max-width: 768px){
+      padding: 0rem;
+      margin-top: 4rem;
+    }
   }
 }
 
@@ -755,6 +759,14 @@ img.in-article {
       background: linear-gradient(130deg, #a5daff31 0%, #0899FE 60%);
     }
 
+    .main-product-image.telos::after {
+      background: linear-gradient(130deg, #4f1aef30 0%, #501AEF 60%);
+    }
+
+    .dark .main-product-image.telos::before {
+      background: linear-gradient(130deg, #4f1aef30 0%, #501AEF 60%);
+    }
+
     .main-product-image.doodledapp::after {
       background: linear-gradient(130deg, #4431CD 0%, #22C154 60%);
     }
@@ -827,28 +839,59 @@ img.in-article {
       
     }
 
-.story-time {
-  margin:0 2rem;
-}
+.product-role {
+  margin: $spacing-md 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-md;
+  background: $white-dark;
+  padding: $spacing-md;
 
-    @media screen and (max-width: 768px) {
-      .story-time {
-        margin:0rem;
-      }
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+  }
+
+  .single-role {
+
+    h4 {
+      text-align: left;
+      margin-bottom: $spacing-sm;
     }
 
-.story-time p {
-  font-size:0.9rem;
-  opacity: 0.8;
-  line-height: 1.65rem;
-  margin: 0 8rem 2rem;
-}
+    &:first-child {
+      border-left: none;
+    }
 
-    @media screen and (max-width: 768px) {
-      .story-time p {
-        margin: 0 0 2rem;
+    @media screen and (max-width: 768px){
+      border-left: none;
+    }
+
+    ul.roles {
+      list-style: none;
+      padding: 0;
+      margin: $spacing-sm 0;
+      display: flex; 
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      li {
+        margin: 0 $spacing-xs $spacing-xs 0;
+        padding: $spacing-xxs $spacing-sm;
+        border-radius: 2rem;
+        border: 2px solid $blue;
+        font-size: $font-size-xs;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $blue;
       }
     }
+  }
+}
+
+.dark .product-role {
+  background: $black-dark;
+}
+
 
 .story-time li {
   font-size:0.9rem;

@@ -71,7 +71,7 @@ export default {
         },
         {
           title: 'Telos Open Block Explorer',
-          description: 'A way to view transactions and manage your wallets',
+          description: 'The best way to view transactions and manage your wallets',
           image: '/products/telos/telos-thumb.png',
           bg: '/homepage/hp-telos.png',
           status: 'past',
