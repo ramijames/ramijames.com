@@ -45,6 +45,7 @@
     <img src="/products/telos/telos-obe-various.png" alt="Telos OBE Various Screens" class="single-product-image">
 
   </main>
+  <MergedProjects />
   <Footer />
 </template>
 

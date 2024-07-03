@@ -72,6 +72,7 @@
       
 
   </main>
+  <MergedProjects />
   <Footer />
 </template>
 

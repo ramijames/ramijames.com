@@ -76,6 +76,7 @@
     </section>
 
   </main>
+  <MergedProjects />
   <Footer />
 </template>
 

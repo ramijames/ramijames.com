@@ -273,11 +273,7 @@ export default {
           text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
         }
       }
-
-      img {
-        
-      }
-
+      
       .image-wrapper {
         position: absolute;
         bottom:0;
@@ -287,6 +283,18 @@ export default {
         border-radius: 6px 6px 0 0;
         transform: translateY(0vw);
         transition: all 0.38s ease-in-out;
+
+        @media screen and (max-height: 640px) {
+          width: 30vw;
+          max-width: 300px;
+          bottom: -20px;
+        }
+
+        @media screen and (max-height: 400px) {
+          width: 30vw;
+          max-width: 300px;
+          bottom: -100px;
+        }
 
         @media screen and (max-width: 768px) {
           transform: none !important;
