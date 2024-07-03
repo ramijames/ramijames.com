@@ -73,8 +73,6 @@
 
     img {
       width: 100%;
-      border-radius: 0.5rem;
-      box-shadow: 0 60px 80px rgba(0, 0, 0, 0.09), 0 4px 8px rgba(0, 0, 0, 0.12);
     }
 
     .info {
