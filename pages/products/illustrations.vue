@@ -1,5 +1,5 @@
 <template>
-  <section class="general-main page-top">
+  <section class="w-full">
     <h1 class="center">Illustrations</h1>
     <h2 class="grey center">Many of my works have an illustrative element. Here is a selection of my favorite ones from over the years.</h2>
   </section>

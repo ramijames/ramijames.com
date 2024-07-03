@@ -1,18 +1,16 @@
 <template>
-  <main class="general-main page-top">
-    <section class="labs-main general-content">
-      <h1>Labs</h1>
-      <h2 class="grey center">Esoteric digital art in CSS, Vue, and GLSL</h2>
-      <main class="labs">
-        <nuxt-link :to="`/labs/${lab.slug}`" v-for="lab in labs" :key="lab.slug">
-          <img :src="lab.image" :alt="lab.title" />
-          <span class="title">{{ lab.title }}</span>
-          <span class="date">{{ lab.date }}</span>
-        </nuxt-link>
-      </main>
-      <PostsExtras />
-    </section>
-  </main>
+  <section class="w-full">
+    <h1 class="center">Labs</h1>
+    <h2 class="grey center">Esoteric digital art in CSS, Vue, and GLSL</h2>
+    <main class="labs">
+      <nuxt-link :to="`/labs/${lab.slug}`" v-for="lab in labs" :key="lab.slug">
+        <img :src="lab.image" :alt="lab.title" />
+        <span class="title">{{ lab.title }}</span>
+        <span class="date">{{ lab.date }}</span>
+      </nuxt-link>
+    </main>
+  </section>
+  <PostsExtras />
   <Footer />
 </template>
 
@@ -32,15 +30,6 @@ export default {
 
 @import './assets/variables';
 
-.labs-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-
-
-}
-
 .labs {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -49,38 +38,12 @@ export default {
   margin-top: $spacing-lg;
 }
 
-    @keyframes animatedBackground {
-      0% {
-        background-position:0 50%;
-      }
-      50% {
-        background-position:50% 50%;
-      }
-      100% {
-        background-position:0 50%;
-      }
-    }
-
     @media screen and (max-width: 768px) {
       .labs {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
       }
-    }
-
-.single-lab {
-  display:flex;
-  flex-direction: column;
-  width:100%;
-}
-
-.single-lab img {
-  margin:0;
-}
-
-    .single-lab:hover img {
-      background-color: $white;
     }
 
 .labs a {
@@ -92,11 +55,13 @@ export default {
   font-size: 2rem;
   text-align: center;
   margin-bottom: $spacing-lg;
-}
 
-    .dark .labs a {
-      color: #fff;
-    }
+  img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 60px 80px rgba(0,0,0,0.09), 0 4px 8px rgba(0,0,0,0.12);
+  }
+}
 
 .labs .title {
   margin: 1rem 0 0.5rem;

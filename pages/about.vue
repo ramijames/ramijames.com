@@ -1,69 +1,67 @@
 <template>
-  <section class="general-main page-top">
-    <section class="explanation">
-      <!-- <img src="/rami-profile.png" alt="Rami James" class="profile-pic"> -->
-      <section class="jobs">
-        <h1 class="center">About</h1>
-        <h2 class="grey center">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h2>
-      </section>
-    </section>
+  <section class="w-full">
+    <h1 class="center">About</h1>
+    <h2 class="grey center">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h2>
   </section>
-  <img src="/interface-images.jpg" alt="Rami James" class="split">
-  <section class="general-main page-top">
-    <section class="explanation">
-      <section class="jobs">  
-        <section class="single-job">
-          <p class="job-title">Freelance</p>
-          <p class="job-subtitle">Product Design and Front-end implementation</p>
-          <p class="job-duration">Present</p>
-          <p class="job-descriptions">Currently I provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
-          <p class="job-descriptions">I have:</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in freelanceContractor" :key="index">
-              {{ description }}
-            </li>
-          </ul>
-        </section>
-        <section class="single-job">
-          <p class="job-title">Ultra</p>
-          <p class="job-duration">2020 - 2023</p>
-          <p class="job-subtitle">Head of Product for Developer Relations</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in ultraDevReldescriptions" :key="index">
-              {{ description }}
-            </li>
-          </ul>
 
-          <p class="job-subtitle">Technical Project Manager</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in ultraTechdescriptions" :key="index">
-              {{ description }}
-            </li>
-          </ul>
-        </section>
-        <section class="single-job">
-          <p class="job-title">Scatter</p>
-          <p class="job-duration">2018 - 2020</p>
-          <p class="job-subtitle">Co-founder and Head of Product</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in scatterProductdescriptions" :key="index">
-              {{ description }}
-            </li>
-          </ul>
-        </section>
-        <section class="single-job">
-          <p class="job-title">Qmarkets</p>
-          <p class="job-duration">2015 - 2019</p>
-          <p class="job-subtitle">Senior User Experience Designer and Developer</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in qmarketsdescription" :key="index">
-              {{ description }}
-            </li>
-          </ul>
-        </section>
+  <section class="w-full">
+    <img src="/interface-images.jpg" alt="Rami James"  class="single-product-image">
+  </section>
+  
+  <section class="w-three-quarters">
+    <section class="jobs">  
+      <section class="single-job">
+        <p class="job-title">Freelance</p>
+        <p class="job-subtitle">Product Design and Front-end implementation</p>
+        <p class="job-duration">Present</p>
+        <p class="job-descriptions">Currently I provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
+        <p class="job-descriptions">I have:</p>
+        <ul class="job-descriptions">
+          <li v-for="(description, index) in freelanceContractor" :key="index">
+            {{ description }}
+          </li>
+        </ul>
+      </section>
+      <section class="single-job">
+        <p class="job-title">Ultra</p>
+        <p class="job-duration">2020 - 2023</p>
+        <p class="job-subtitle">Head of Product for Developer Relations</p>
+        <ul class="job-descriptions">
+          <li v-for="(description, index) in ultraDevReldescriptions" :key="index">
+            {{ description }}
+          </li>
+        </ul>
+
+        <p class="job-subtitle">Technical Project Manager</p>
+        <ul class="job-descriptions">
+          <li v-for="(description, index) in ultraTechdescriptions" :key="index">
+            {{ description }}
+          </li>
+        </ul>
+      </section>
+      <section class="single-job">
+        <p class="job-title">Scatter</p>
+        <p class="job-duration">2018 - 2020</p>
+        <p class="job-subtitle">Co-founder and Head of Product</p>
+        <ul class="job-descriptions">
+          <li v-for="(description, index) in scatterProductdescriptions" :key="index">
+            {{ description }}
+          </li>
+        </ul>
+      </section>
+      <section class="single-job">
+        <p class="job-title">Qmarkets</p>
+        <p class="job-duration">2015 - 2019</p>
+        <p class="job-subtitle">Senior User Experience Designer and Developer</p>
+        <ul class="job-descriptions">
+          <li v-for="(description, index) in qmarketsdescription" :key="index">
+            {{ description }}
+          </li>
+        </ul>
       </section>
     </section>
   </section>
+  <PostsExtras />
   <Footer />
 </template>
 

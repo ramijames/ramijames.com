@@ -16,9 +16,8 @@
 #PostsExtras {
   background: $white-dark;
   width: 100%;
-  padding: $spacing-md;
+  padding: $spacing-xl $spacing-md;
   float: right;
-  margin: $spacing-md 0 $spacing-lg;
   display: flex;
   flex-direction: row;
   align-items: center;

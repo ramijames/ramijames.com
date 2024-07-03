@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <section class="general-main">
+    <section class="w-three-quarters">
       <div class="footer-content ">
         <div class="footer-links">
           <nuxt-link href="/" v-if="notHome">Home</nuxt-link>
@@ -104,6 +104,7 @@ footer {
     justify-content: flex-start;
     align-items: flex-start;
     padding: $spacing-lg 0;
+    width: 100%;
 
     @media screen and (max-width: 768px){
       align-items: center;

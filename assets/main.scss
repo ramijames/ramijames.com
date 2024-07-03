@@ -51,7 +51,7 @@ h1 {
   font-size: $font-size-mega;
   line-height: $font-size-mega; 
   font-family: $font-family-main, sans-serif;
-  font-weight:700;
+  font-weight:500;
   margin-top: 0;
   margin-bottom: 2rem;
   padding:0.5rem 0;
@@ -124,7 +124,7 @@ h4 {
   line-height: 140%;  
   font-family: $font-family-main;
   margin: $spacing-md 0 $spacing-sm;
-  font-weight:700;
+  font-weight:500;
 
   .highlight {
     color: $red-dark;
@@ -160,7 +160,7 @@ h5 {
 p.super-text {
   font-family: $font-family-main, sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: $font-size-md;
   line-height: 100%;
   text-align: center;
@@ -209,6 +209,7 @@ li {
   overflow-x: auto;
   background: $black url('/textures/texture-3-bg-dark.png') no-repeat center center;
   position: relative;
+  width: 100%;
 
   .type {
     background-color: $black-dark;
@@ -261,12 +262,13 @@ hr {
     }
 
 p > strong {
-  font-weight: 700;  
+  font-weight: 500;  
 }
 
 .center {
   text-align: center;
   text-wrap: balance;
+  align-self: center;
 }
 
 /* Layout helpers */
@@ -274,75 +276,96 @@ p > strong {
 .w-full {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
-  margin: 0 auto;
+  max-width: 100vw;
+  margin: $spacing-lg auto;
   padding: 0 $spacing-md;
 
   @media screen and (max-width: 1000px) {
-    width: 100%;
-    padding: 0 $spacing-xs;
+    margin: $spacing-lg auto;
+    padding: 0 $spacing-md;
+  }
+}
+
+.w-three-quarters {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 75vw;
+  width: 100%;
+  margin: $spacing-lg auto;
+  padding: 0 $spacing-md;
+
+  @media screen and (max-width: 1000px) {
+    max-width: 100vw;
+    padding: 0 $spacing-md;
   }
 }
 
 .w-two-thirds {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 66.666%;
-  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 66.666vw;
+  width: 100%;
+  margin: $spacing-lg auto;
   padding: 0 $spacing-md;
 
   @media screen and (max-width: 1000px) {
-    width: 100%;
-    padding: 0 $spacing-xs;
+    max-width: 100vw;
+    padding: 0 $spacing-md;
   }
 }
 
 .w-half {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 50vw;
+  width: 100%;
+  margin: $spacing-lg auto;
   padding: 0 $spacing-md;
 
   @media screen and (max-width: 1000px) {
-    width: 100%;
-    padding: 0 $spacing-xs;
+    max-width: 100vw;
+    padding: 0 $spacing-sm;
   }
 }
 
 .w-third {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 33.333%;
-  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 33.3333vw;
+  margin: $spacing-lg auto;
   padding: 0 $spacing-md;
 
   @media screen and (max-width: 1000px) {
-    width: 100%;
-    padding: 0 $spacing-xs;
+    max-width: 100vw;
+    padding: 0 $spacing-md;
   }
 }
 
 .w-quarter {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 25%;
-  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 25vw;
+  width: 100%;
+  margin: $spacing-lg auto;
   padding: 0 $spacing-md;
 
   @media screen and (max-width: 1000px) {
     width: 100%;
-    padding: 0 $spacing-xs;
+    max-width: 100vw;
+    padding: 0 $spacing-md;
   }
 }
 
@@ -541,36 +564,9 @@ img.in-article {
 
   &.product-content {
     width: 100%;
-    padding: $spacing-lg 0;
+    padding: $spacing-lg $spacing-md;
   }
 }
-
-    @media screen and (max-width: 768px) {
-      .container,
-      .general-main {
-        padding: $spacing-md;
-        gap: $spacing-sm;
-      }
-    }
-
-    .general-content {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-      margin-bottom:4rem;
-    }
-
-        @media screen and (max-width: 1000px) {
-            .general-content {
-              margin-left: 0;
-            } 
-        }
-
-        .general-content img {
-          margin:0 0 $spacing-sm 0;
-          width: 100%;
-        }
 
 /* Product */
 
@@ -689,11 +685,11 @@ img.in-article {
     }
 
 .main-product-image {
-  width: 100%;
+  width: 90%;
   height:auto;
   position: relative;
   transform: rotate3d(1, 0, 0, 20deg);
-  margin-bottom:2rem;
+  margin: 0 auto $spacing-md;
 }
 
     .main-product-image img {
@@ -849,10 +845,6 @@ img.in-article {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $spacing-md;
-  background: $white;
-  padding: $spacing-md;
-  box-shadow: 0 60px 80px rgba(0, 0, 0, 0.09), 0 4px 8px rgba(0, 0, 0, 0.12);
-  border-radius: 0.5rem;
 
   @media screen and (max-width: 768px){
     grid-template-columns: 1fr;
@@ -860,8 +852,7 @@ img.in-article {
 
   .single-role {
 
-    h4 {
-      text-align: left;
+    h3 {
       margin-bottom: $spacing-sm;
     }
 
@@ -887,7 +878,7 @@ img.in-article {
         border-radius: 2rem;
         border: 2px solid $blue;
         font-size: $font-size-xs;
-        font-weight: 700;
+        font-weight: 500;
         text-transform: uppercase;
         color: $blue;
       }
