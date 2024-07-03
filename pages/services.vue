@@ -143,15 +143,14 @@ import Button from '/components/Button';
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
+    gap: $spacing-md;
 
     @media screen and (max-width: 1200px){
       grid-template-columns: 1fr 1fr;
-      gap: $spacing-md;
     }
 
     @media screen and (max-width: 768px){
       grid-template-columns: 1fr;
-      gap: $spacing-md;
     }
 
     .single-service {
