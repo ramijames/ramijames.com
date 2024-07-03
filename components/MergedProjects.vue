@@ -284,13 +284,13 @@ export default {
         transform: translateY(0vw);
         transition: all 0.38s ease-in-out;
 
-        @media screen and (max-height: 640px) {
+        @media screen and (orientation: landscape) and (max-height: 640px) {
           width: 30vw;
           max-width: 300px;
           bottom: -20px;
         }
 
-        @media screen and (max-height: 400px) {
+        @media screen and (orientation: landscape) and (max-height: 400px) {
           width: 30vw;
           max-width: 300px;
           bottom: -100px;
