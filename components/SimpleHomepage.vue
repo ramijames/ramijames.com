@@ -3,7 +3,7 @@
     <div id="mesh-gradient" class="sixteen-elements">
       <div class="element" v-for="n in 160" :key="n"></div>
     </div>
-    <section class="w-full hero-top">
+    <section class="w-three-quarters hero-top">
       <h1 class="center">Senior Product Designer</h1>
       <h2 class="grey center">I make <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software - myself included. If you’d like to commission a work, <a href="mailto:ramijames@gmail.com">send me an email</a>.</h2>
     </section>
