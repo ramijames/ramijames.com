@@ -38,8 +38,8 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Montserrat': [400, 500, 600, 700, 800, 900],
-      'Noto Sans': [400, 600, 700, 900],
+      'Lexend Deca': [400, 600, 700],
+      'Roboto Sans': [400, 600, 700, 900],
     }
   },
   routeRules: {
