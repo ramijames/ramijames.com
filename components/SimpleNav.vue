@@ -136,7 +136,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-md;
+  padding: $spacing-sm $spacing-md;
   position: fixed;
   top: 0;
   left: 0;
