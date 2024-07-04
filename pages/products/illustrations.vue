@@ -80,17 +80,16 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-top: $spacing-sm;
+      margin-top: $spacing-md;
       justify-content: space-between;
       width: 100%;
 
       p {
-        font-size: $font-size-sm;
-        font-weight: 700;
+        font-size: $font-size-xl;
         margin-bottom: 0;
         
         &.date {
-          font-size: $font-size-sm;
+          font-size: $font-size-xl;
           color: $gray;
         }
       }

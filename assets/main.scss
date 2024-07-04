@@ -86,7 +86,7 @@ h2 {
   line-height: 140%; 
   font-family: $font-family-main;
   margin-bottom:1rem;
-  font-weight:500;
+  font-weight:400;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
@@ -107,7 +107,7 @@ h3 {
   line-height: 140%; 
   font-family: $font-family-main;
   margin-bottom:1rem;
-  font-weight:500;
+  font-weight:400;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-lg;
@@ -371,7 +371,7 @@ p > strong {
 
 .page-top {
   padding-top: $spacing-xl;
-  margin-bottom: 0;
+  margin: $spacing-sm auto 0;
 }
 
 /* Layout */

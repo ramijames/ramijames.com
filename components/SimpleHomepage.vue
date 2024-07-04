@@ -37,20 +37,6 @@
     min-height: 80dvh;
   }
 
-  .home-max {
-    font-size: 5dvw;
-    line-height: 100%;
-    padding: $spacing-sm 0 0;
-    margin-bottom: 0;
-    font-weight: 700;
-    pointer-events: none;
-
-    @media screen and (max-width: 768px){
-      font-size: 12dvw;
-      padding:0;
-    }
-  }
-
   h2 {
     margin-top: 0;
     line-height: 140%;

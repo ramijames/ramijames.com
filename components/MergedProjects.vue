@@ -258,7 +258,6 @@ export default {
 
         h3 {
           text-align: center;
-          font-weight: 700;
           line-height: 100%;
           margin: 0;
           text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
