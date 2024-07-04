@@ -145,6 +145,11 @@ export default {
   background: rgba(white, 0.98);
   backdrop-filter: blur(14px);
 
+  @media screen and (max-width: 768px) {
+    padding: $spacing-xs $spacing-sm;
+    border-bottom: 1px solid rgba($black, 0.1);
+  }
+
   .navigation {
     display: flex;
     flex-direction: row;
@@ -240,6 +245,10 @@ export default {
   img {
     width: 56px;
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      width: 36px;
+    }
   }
 
   .nav-links {
