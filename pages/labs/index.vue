@@ -1,7 +1,9 @@
 <template>
-  <section class="w-full">
+  <section class="w-three-quarters page-top">
     <h1 class="center">Labs</h1>
     <h2 class="grey center">Esoteric digital art in CSS, Vue, and GLSL</h2>
+  </section>
+  <section class="w-full">
     <main class="labs">
       <nuxt-link :to="`/labs/${lab.slug}`" v-for="lab in labs" :key="lab.slug">
         <img :src="lab.image" :alt="lab.title" />

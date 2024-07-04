@@ -1,5 +1,5 @@
 <template>
-  <main id="privacy-policy" class="general-main page-top">
+  <main id="privacy-policy" class="w-three-quarters page-top">
     <SectionTitle title="Terms and Conditions" subtitle="Last updated: June 3, 2024" centered="true" />
     <p>This document, referred to as the "Agreement," establishes a legally binding arrangement between RAMI JAMES CONSULTING, LLC, a limited liability company registered under the laws of Delaware, USA ("Rami James Consulting"), and the user, whether an individual or representing an entity ("Client"). It pertains to the access and utilization of Rami James Consulting's website: https://www.ramijames.com (referred to as the "Website") and all associated media forms, channels, mobile websites, or mobile applications linked to or connected with it. Failure to accept and comply with the terms, conditions, and responsibilities outlined herein results in an immediate prohibition on the Client's use of the Website. The Client is hereby instructed to cease use promptly. Subsequently, the relationship between the Client and Rami James Consulting shall terminate and become void, with the exception of any outstanding obligations for services rendered, which the Client remains liable to pay to Rami James Consulting.</p>
     <h3>1. Intellectual Property Rights</h3>

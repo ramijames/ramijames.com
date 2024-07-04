@@ -1,8 +1,9 @@
 <template>
-  <section class="w-full">
+  <section class="w-three-quarters page-top">
     <h1 class="center">Services</h1>
     <h2 class="grey center">Valuable, business-oriented help for your startup or enterprise.</h2>
-
+  </section>
+  <section class="w-three-quarters">
     <section id="QuickServices">
       <section id="ServicesGrid">
         <section class="single-service product">
@@ -19,7 +20,7 @@
             <path d="M89.4669 25.4215L94.0083 17.6364" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
             <path d="M50.5413 20.2314V10.5" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
           </svg>
-          <h3>Product</h3>
+          <h2>Product</h2>
           <ul>
             <li>Concept</li>
             <li>Vision</li>
@@ -36,7 +37,7 @@
             <circle cx="30.3055" cy="36.3745" r="8.52501" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
             <circle cx="27.1086" cy="65.1465" r="8.52501" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
           </svg>
-          <h3>Design</h3>
+          <h2>Design</h2>
           <ul>
             <li>Wireframing</li>
             <li>Prototyping</li>
@@ -51,7 +52,7 @@
             <path d="M5 24L9.62344 24C12.3362 24 14.5541 21.8369 14.6219 19.125L14.6281 18.875C14.6959 16.1631 16.9138 14 19.6266 14L47.5 14C50.2614 14 52.5 16.2386 52.5 19V19C52.5 21.7614 54.7386 24 57.5 24L95 24" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
             <path d="M5 86L95 86" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
           </svg>
-          <h3>Development</h3>
+          <h2>Development</h2>
           <ul>
             <li>Front-end Development</li>
             <li>Vue/Nuxt</li>
@@ -68,7 +69,7 @@
             <rect x="55" y="45" width="12" height="40" rx="6" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
             <rect x="75" y="13" width="12" height="72" rx="6" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
           </svg>
-          <h3>Analysis</h3>
+          <h2>Analysis</h2>
           <ul>
             <li>Product Success</li>
             <li>Team Process</li>
@@ -141,13 +142,9 @@ import Button from '/components/Button';
 
   #ServicesGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     gap: $spacing-md;
-
-    @media screen and (max-width: 1200px){
-      grid-template-columns: 1fr 1fr;
-    }
 
     @media screen and (max-width: 768px){
       grid-template-columns: 1fr;
@@ -172,14 +169,19 @@ import Button from '/components/Button';
 
       ul {
         list-style: none;
-        padding: $spacing-md 0;
+        padding: $spacing-md 0 0;
         margin: $spacing-md 0;
 
         li {
           margin: 0;
           padding: 0;
-          font-weight: 700;
+          line-height: 180%;
+          font-size: $font-size-xl;
         }
+      }
+
+      p {
+        margin-bottom: $spacing-lg;
       }
     }
   }
@@ -194,7 +196,6 @@ import Button from '/components/Button';
 
   ul {
     border-top: 2px solid $blue;
-    border-bottom: 2px solid $blue;
 
     li {
       color: $blue;
@@ -211,7 +212,6 @@ import Button from '/components/Button';
 
   ul {
     border-top: 2px solid $red;
-    border-bottom: 2px solid $red;
 
     li {
       color: $red;
@@ -228,7 +228,6 @@ import Button from '/components/Button';
 
   ul {
     border-top: 2px solid $mint-dark;
-    border-bottom: 2px solid $mint-dark;
 
     li {
       color: $mint-dark;
@@ -245,7 +244,6 @@ import Button from '/components/Button';
 
   ul {
     border-top: 2px solid $purple;
-    border-bottom: 2px solid $purple;
 
     li {
       color: $purple;

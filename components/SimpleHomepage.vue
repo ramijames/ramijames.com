@@ -32,17 +32,6 @@
       z-index: 100;
     }
   }
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10dvh;
-    background: linear-gradient(to bottom, white 0%, rgba(white, 0) 100%);
-    z-index: 100;
-  }
 
   @media screen and (max-width: 768px){
     min-height: 80dvh;
@@ -96,9 +85,6 @@
 .dark #Hero {
   background: linear-gradient(-140deg, $black 60%, rgba($black, 0.2) 100%);
     
-  &::before {
-    background: linear-gradient(to bottom, $black 0%, rgba($black, 0) 100%);
-  }
 }
 
 #Various {
@@ -174,7 +160,7 @@
   transform: rotate(22.5deg);
 
   @media screen and (max-width: 768px){
-    opacity: 0.01;
+    opacity: 0.3;
   }
 
   $mesh-colors: ();

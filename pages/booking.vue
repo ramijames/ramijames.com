@@ -1,5 +1,5 @@
 <template>
-  <main class="general-main page-top">
+  <main class="w-three-quarters page-top">
     <Booking />
   </main>
   <Footer />

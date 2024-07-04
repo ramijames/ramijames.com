@@ -137,11 +137,13 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: $spacing-md;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  background: rgba(white, 0.4);
+  backdrop-filter: blur(8px);
 
   .navigation {
     display: flex;
@@ -272,6 +274,10 @@ export default {
       }
     }
   }
+}
+
+.dark .simple-nav-bar {
+  background: rgba($black, 0.4);
 }
 
 .dark .mobile-nav-panel.open {

@@ -1,7 +1,9 @@
 <template>
-  <section class="w-full">
+  <section class="w-three-quarters page-top">
     <h1 class="center">Thoughts</h1>
     <h2 class="center grey">On products, teams, software development, and design.</h2>
+  </section>
+  <section class="w-full">
     <main class="articles">
       <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug">
         <img :src="article.image" :alt="article.title" />

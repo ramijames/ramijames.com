@@ -1,8 +1,9 @@
 <template>
-  <section class="w-full">
+  <section class="w-three-quarters page-top">
     <h1 class="center">Illustrations</h1>
     <h2 class="grey center">Many of my works have an illustrative element. Here is a selection of my favorite ones from over the years.</h2>
   </section>
+  <hr>
   <section id="illustrations">
     <div class="single-illustration">
       <img src="/illustrations/hummingbird.png" alt="Personal Brand Hummingbird Illustration" />

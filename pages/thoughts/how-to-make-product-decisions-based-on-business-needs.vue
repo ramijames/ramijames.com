@@ -1,5 +1,5 @@
 <template>
-  <main class="general-main page-top">
+  <main class="w-three-quarters page-top">
     <section class="article-extras">
       <SectionTitle title="How to Make Product Decisions based on Business Needs" />
       <AllPosts />

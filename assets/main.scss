@@ -369,6 +369,11 @@ p > strong {
   }
 }
 
+.page-top {
+  padding-top: $spacing-xl;
+  margin-bottom: 0;
+}
+
 /* Layout */
 
 body,
@@ -468,7 +473,6 @@ input {
       background-color: $white-dark;
       border-radius: $br-lg;
       width: 100%;
-      max-width: 1020px;
       padding: $spacing-lg;
       margin: $spacing-lg 0;
       font-weight: 400;
@@ -483,7 +487,7 @@ input {
     }
 
       .dark .summary {
-        background: url("/_nuxt/public/textures/texture-3-bg-dark.png") padding-box, linear-gradient(140deg, #404AA4 -5%, #3c3a3e 15%) border-box;
+        background-color: $black-dark;
       }
 
       @media screen and (max-width: 1000px) {

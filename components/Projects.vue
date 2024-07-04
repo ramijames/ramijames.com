@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="general-main page-top" ref="projects">
+  <section id="projects" class="w-three-quarters page-top" ref="projects">
     <section class="talk-to-me" ref="talkToMe">
       <h1 class="center">Recent Work</h1>
       <h2 class="grey center">I'm proud to have worked on these products over the years</h2>
@@ -15,6 +15,7 @@
       <Button text="Add your project" size="default" to="/booking" />
     </section>
   </section>
+  <hr>
   <MergedProjects />
 </template>
 
