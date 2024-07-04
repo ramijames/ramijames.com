@@ -142,7 +142,7 @@ export default {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(white, 0.8);
+  background: rgba(white, 0.98);
   backdrop-filter: blur(14px);
 
   .navigation {
@@ -277,7 +277,7 @@ export default {
 }
 
 .dark .simple-nav-bar {
-  background: rgba($black, 0.8);
+  background: rgba($black, 0.98);
 }
 
 .dark .mobile-nav-panel.open {
