@@ -189,6 +189,10 @@ export default {
           opacity: 1;
           mix-blend-mode: reset;
 
+          @media screen and (orientation: landscape) and (max-height: 768px) {
+            bottom: -80px;
+          }
+
           &::after {
             top:3px;
           }
@@ -283,10 +287,10 @@ export default {
         transform: translateY(0vw);
         transition: all 0.38s ease-in-out;
 
-        @media screen and (orientation: landscape) and (max-height: 640px) {
+        @media screen and (orientation: landscape) and (max-height: 768px) {
           width: 30vw;
           max-width: 300px;
-          bottom: -20px;
+          bottom: -100px;
         }
 
         @media screen and (orientation: landscape) and (max-height: 400px) {
