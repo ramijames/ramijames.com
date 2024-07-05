@@ -1,5 +1,5 @@
 <template>
-  <section class="product-content">
+  <section class="product-content page-top">
     <img src="/products/doodledapp/doodledapp-logo.svg" alt="Doodledapp Logo" class="product-logo">
     <h1 class="hyper-bold">Doodledapp</h1>
     <h4 class="centered">No-code smart contract development, deployment, and component marketplace</h4>

@@ -1,5 +1,5 @@
 <template>
-    <section class="product-content">
+    <section class="product-content page-top">
       <img src="/products/scatter/scatter-logo.png" alt="Scatter Logo" class="product-logo">
       <h1 class="hyper-bold">Scatter</h1>
       <h4 class="centered">Web3 Wallet, Digital Identity, and Marketplace</h4>

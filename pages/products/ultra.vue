@@ -1,5 +1,5 @@
 <template>
-  <section class="product-content">
+  <section class="product-content page-top">
     <img src="/products/ultra/ultra-logo.svg" alt="Ultra Logo" class="product-logo">
     <h1 class="hyper-bold">Ultra</h1>
     <h4 class="centered">Tokenized game licenses and digital items</h4>

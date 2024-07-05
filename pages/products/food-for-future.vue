@@ -1,5 +1,5 @@
 <template>
-  <section class="product-content">
+  <section class="product-content page-top">
     <img src="/products/food-for-future/fff-logo.svg" alt="Food for Future Logo" class="product-logo">
     <h1 class="centered">Food For Future</h1>
     <h4 class="centered">Decentralized data for funding farmers</h4>

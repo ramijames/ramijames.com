@@ -1,5 +1,5 @@
 <template>
-  <section class="product-content">
+  <section class="product-content page-top">
     <img src="/products/telos/telos-logo.png" alt="Telos Logo" class="product-logo">
     <h1 class="hyper-bold">Telos Open Block Explorer</h1>
     <h4 class="centered">The best way to view transactions and manage your wallets</h4>
