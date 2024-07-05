@@ -60,16 +60,12 @@ export default {
   margin-bottom: $spacing-lg;
   transition: all 0.35s ease-in-out;
   position: relative;
+  outline: 2px solid transparent;
 
   &:hover {
     transform: scale(.95);
-    outline: 2px solid rgba(23, 17, 35, 0.4);
+    outline: 2px solid $blue;
     outline-offset: 10px;
-
-    .info {
-      background: $black;
-      color: $white;
-    }
   }
 
   img {
@@ -84,20 +80,20 @@ export default {
     display:flex;
     flex-direction: column;
     color: $white;
-    background: rgba($white,0.1);
+    background: rgba($white,0);
     backdrop-filter: blur(20px);
-    border-top: 1px solid rgba($white, 0.1);
-    padding: $spacing-md;
+    padding: $spacing-lg $spacing-lg $spacing-md;
+    text-wrap: balance;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 35%);
 
     .title {
-      font-size: $font-size-lg;
-    }
+      font-size: $font-size-xl;
 
-    .date {
-      font-size: $font-size-md;
+      @media screen and (max-width: 1000px){
+        font-size: $font-size-lg;
+      }
     }
   }
 }
-
 
 </style>

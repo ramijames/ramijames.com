@@ -150,6 +150,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
     transition: all 0.35s ease-in-out;
+    outline: 2px solid transparent;
 
     @media screen and (max-width: 768px) {
       height: 50vh;
@@ -182,7 +183,7 @@ export default {
 
     &:hover {
       transform: scale(.95);
-      outline: 2px solid rgba(23, 17, 35, 0.4);
+      outline: 2px solid $blue;
       outline-offset: 10px;
 
       &::after {
@@ -248,7 +249,6 @@ export default {
       position: relative;
       z-index: 10;
       overflow: hidden;
-      perspective: 150em;
 
       @media screen and (max-width: 768px) {
         padding: 0 $spacing-sm;
