@@ -1,5 +1,5 @@
 <template>
-  <section id="Products" class="w-full">
+  <section id="Products">
     <nuxt-link 
         :class="['project', product.class]"
         v-for="(product, index) in products" 
@@ -126,7 +126,6 @@ export default {
 #Products {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: $spacing-md;
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -136,7 +135,7 @@ export default {
   .project {
     background-size: 100%;
     height: 50vh;
-    width: 100%;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,8 +148,6 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    transition: all 0.35s ease-in-out;
-    outline: 2px solid transparent;
 
     @media screen and (max-width: 768px) {
       height: 50vh;
@@ -182,9 +179,6 @@ export default {
     }
 
     &:hover {
-      transform: scale(.95);
-      outline: 2px solid $blue;
-      outline-offset: 10px;
 
       &::after {
         background: rgba($black, .15);
