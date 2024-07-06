@@ -1,24 +1,24 @@
 <template>
   <section id="Products">
-    <nuxt-link 
-        :class="['project', product.class]"
-        v-for="(product, index) in products" 
-        :key="product.title" 
-        :to="product.slug" 
-        :style="{ 
-          backgroundColor: product.color, 
-        }"
-      >
-      <section class="info">
-        <section class="text">
-          <h3>{{ product.title }}</h3>
-          <p>{{ product.description }}</p>
+    <div class="row" v-for="(pair, index) in productPairs" :key="index">
+      <nuxt-link 
+          :class="['project', product.class]"
+          v-for="(product, pIndex) in pair" 
+          :key="product.title" 
+          :to="product.slug" 
+          :style="{ backgroundColor: product.color }"
+        >
+        <section class="info">
+          <section class="text">
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.description }}</p>
+          </section>
+          <section class="image-wrapper">
+            <img class="product-image-thumb" :src="product.image" :alt="product.title" />
+          </section>
         </section>
-        <section class="image-wrapper">
-          <img class="product-image-thumb" :src="product.image" :alt="product.title" />
-        </section>
-      </section>
-    </nuxt-link>
+      </nuxt-link>
+    </div>
   </section>
 </template>
 
@@ -113,7 +113,16 @@ export default {
   },
   components: {
     SectionTitle
-  }
+  },
+  computed: {
+    productPairs() {
+      let pairs = [];
+      for (let i = 0; i < this.products.length; i += 2) {
+        pairs.push(this.products.slice(i, i + 2));
+      }
+      return pairs;
+    },
+  },
 
 }
 
@@ -124,12 +133,21 @@ export default {
 @import './assets/variables';
 
 #Products {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
 
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-    
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: $spacing-xs;
+
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      height: 140vh;
+    }
   }
 
   .project {
@@ -148,8 +166,10 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    transition: all 0.38s ease-in-out;
+    flex: 1 0 0;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       height: 50vh;
       width: 100vw;
     }
@@ -158,8 +178,8 @@ export default {
       background-position: center right;
     }
 
-    @media screen and (max-width: 768px) {
-      height: 70vh;
+    @media screen and (max-width: 1000px) {
+      height: 100vh;
     }
 
     &::after {
@@ -179,6 +199,11 @@ export default {
     }
 
     &:hover {
+      flex: 2 0 0;
+
+      @media screen and (max-width: 1000px){
+        flex: 1 0 0;
+      }
 
       &::after {
         background: rgba($black, .15);
@@ -266,7 +291,7 @@ export default {
           margin: 0;
           text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
 
-          @media screen and (max-width: 768px){
+          @media screen and (max-width: 1000px){
             font-size: $font-size-xxl;
           }
         }
@@ -284,7 +309,6 @@ export default {
         width: 100%;
         max-width: 30vw;
         border-radius: 6px 6px 0 0;
-        transform: translateY(0vw);
         transition: all 0.38s ease-in-out;
 
         @media screen and (orientation: landscape) and (max-height: 768px) {
@@ -299,8 +323,11 @@ export default {
           bottom: -100px;
         }
 
+        @media screen and (max-width: 1000px) {
+          max-width: 50vw;
+        }
+
         @media screen and (max-width: 768px) {
-          transform: none !important;
           max-width: 80vw;
         }
 
