@@ -64,27 +64,36 @@ export default {
 
   .theme-switcher {
     position: relative;
-    width: 60px;
+    width: 40px;
     border: 2px solid $black;
     border-radius: 30px;
-    height: 32px;
+    height: 26px;
+    transition: all 0.3s ease-in-out;
 
     img {
       cursor: pointer;
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
+      margin: 1px;
       border-radius: 50%;
-      margin: 2px;
       position: absolute;
       transition: all 0.3s ease-in-out;
     }
 
-    &.light img {
-      left: 0;
+    &.light { 
+      background: linear-gradient(to right, $white 50%, $orange 150%);
+
+      img {
+        left: 0;
+      }
     }
 
-    &.dark img {
-      left: 24px;
+    &.dark {
+      background: linear-gradient(to left, $black 50%, $blue 150%);
+
+      img {
+        left: 12px;
+      }
     }
   }
 }

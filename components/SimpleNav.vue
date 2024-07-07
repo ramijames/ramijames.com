@@ -173,7 +173,7 @@ export default {
       &::before {
         content: '';
         position: absolute;
-        top: 12px;
+        top: 14px;
         left: 0;
         width: 40px;
         height: 2px;
@@ -192,7 +192,7 @@ export default {
         position: absolute;
         top: 22px;
         left: 0;
-        width: 40px;
+        width: 36px;
         height: 2px;
         backdrop-filter: blur(4px);
         background: $black;
@@ -200,7 +200,7 @@ export default {
         transition: all 0.24s ease-in-out;
 
         @media screen and (max-width: 1000px){
-          width: 30px;
+          width: 24px;
         }
       }
 
