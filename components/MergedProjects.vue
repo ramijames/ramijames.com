@@ -1,24 +1,21 @@
 <template>
   <section id="Products">
-    <div class="row" v-for="(pair, index) in productPairs" :key="index">
-      <nuxt-link 
-          :class="['project', product.class]"
-          v-for="(product, pIndex) in pair" 
-          :key="product.title" 
-          :to="product.slug" 
-          :style="{ backgroundColor: product.color }"
-        >
-        <section class="info">
-          <section class="text">
-            <h3>{{ product.title }}</h3>
-            <p>{{ product.description }}</p>
-          </section>
-          <section class="image-wrapper">
-            <img class="product-image-thumb" :src="product.image" :alt="product.title" />
-          </section>
+    <nuxt-link
+        :class="['project', product.class]"
+        v-for="product in products" 
+        :key="product.title" 
+        :to="product.slug" 
+        :style="{ backgroundColor: product.color }"
+      >
+      <section class="info">
+        <section class="text">
+          <h3>{{ product.title }}</h3>
         </section>
-      </nuxt-link>
-    </div>
+        <section class="image-wrapper">
+          <img class="product-image-thumb" :src="product.image" :alt="product.title" />
+        </section>
+      </section>
+    </nuxt-link>
   </section>
 </template>
 
@@ -114,15 +111,6 @@ export default {
   components: {
     SectionTitle
   },
-  computed: {
-    productPairs() {
-      let pairs = [];
-      for (let i = 0; i < this.products.length; i += 2) {
-        pairs.push(this.products.slice(i, i + 2));
-      }
-      return pairs;
-    },
-  },
 
 }
 
@@ -133,21 +121,12 @@ export default {
 @import './assets/variables';
 
 #Products {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-xs;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: $black;
 
-  .row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: $spacing-xs;
-
-    @media screen and (max-width: 1000px) {
-      flex-direction: column;
-      height: 140vh;
-    }
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
   }
 
   .project {
@@ -167,7 +146,6 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
     transition: all 0.38s ease-in-out;
-    flex: 1 0 0;
 
     @media screen and (max-width: 1000px) {
       height: 50vh;
@@ -179,7 +157,7 @@ export default {
     }
 
     @media screen and (max-width: 1000px) {
-      height: 100vh;
+      height: 50vh;
     }
 
     &::after {
@@ -199,7 +177,6 @@ export default {
     }
 
     &:hover {
-      flex: 2 0 0;
 
       @media screen and (max-width: 1000px){
         flex: 1 0 0;
@@ -274,7 +251,7 @@ export default {
       }
 
       .text {
-        margin-top: $spacing-md;
+        margin-top: $spacing-lg;
         display: flex;
         flex-direction: column;
         gap: $spacing-xs;
