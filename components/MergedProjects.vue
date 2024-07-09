@@ -10,6 +10,7 @@
       <section class="info">
         <section class="text">
           <h3>{{ product.title }}</h3>
+          <p>{{ product.description }}</p>
         </section>
         <section class="image-wrapper">
           <img class="product-image-thumb" :src="product.image" :alt="product.title" />
@@ -196,10 +197,10 @@ export default {
       }
 
       .info {
+
         .image-wrapper {
           bottom: -30px;
           opacity: 1;
-          mix-blend-mode: reset;
 
           @media screen and (orientation: landscape) and (max-height: 768px) {
             bottom: -80px;
@@ -212,10 +213,6 @@ export default {
           &::before {
             top:-4px;
           }
-        }
-
-        .text {
-          transform: scale(1);
         }
       }
     }
@@ -268,14 +265,14 @@ export default {
         flex-direction: column;
         color: $white;
         text-wrap: balance;
+        padding: $spacing-md $spacing-md;
+        background: linear-gradient(to bottom, rgba($black,0.6), rgba($black,0.9) 100%);
+        backdrop-filter: blur(20px);
 
         h3 {
           text-align: center;
           line-height: 100%;
-          margin: 0;
-          padding: $spacing-md $spacing-md;
-          background: linear-gradient(to bottom, rgba($black,0.6), rgba($black,0.9) 100%);
-          backdrop-filter: blur(20px);
+          margin: 0 0 $spacing-xs 0;
 
           @media screen and (max-width: 1000px){
             font-size: $font-size-xl;
@@ -289,7 +286,12 @@ export default {
 
         p {
           text-align: center;
-          text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
+          margin:0;
+          opacity: 0.4;
+
+          @media screen and (max-width: 768px){
+            display: none;
+          }
         }
       }
       
