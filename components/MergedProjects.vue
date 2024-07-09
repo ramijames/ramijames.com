@@ -251,16 +251,19 @@ export default {
       }
 
       .text {
-        margin-top: $spacing-lg;
-        display: flex;
+        position: absolute;
+        bottom: 0;
+        left:0;
+        z-index: 100;
+        width: 100%;
+        display:flex;
         flex-direction: column;
-        gap: $spacing-xs;
-        transform: scale(.9);
-        transition: all 0.5s ease-in-out;
-
-        @media screen and (max-width: 768px) {
-          margin-top: $spacing-lg;
-        }
+        color: $white;
+        background: rgba($black,0.6);
+        backdrop-filter: blur(20px);
+        padding: $spacing-lg $spacing-lg $spacing-md;
+        text-wrap: balance;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 35%);
 
         h3 {
           text-align: center;
@@ -284,7 +287,7 @@ export default {
         bottom:0;
         z-index: 10;
         width: 100%;
-        max-width: 30vw;
+        max-width: 40vw;
         border-radius: 6px 6px 0 0;
         transition: all 0.38s ease-in-out;
 

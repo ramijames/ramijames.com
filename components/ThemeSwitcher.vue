@@ -3,7 +3,7 @@
     <div class="theme-switcher"
       :class="`${currentTheme}`"
     >
-      <img :src="`${currentTheme}.svg`" alt="theme icon" />
+      <img :src="`/${currentTheme}.svg`" alt="theme icon" />
     </div>
   </div>
 </template>
