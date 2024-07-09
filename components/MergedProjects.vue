@@ -160,6 +160,10 @@ export default {
       height: 50vh;
     }
 
+    @media screen and (max-width: 600px) {
+      height: 30vh;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -236,7 +240,6 @@ export default {
     .info {
       height: 100%;
       width: 100dvw;
-      padding: 0 $spacing-xl;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -252,27 +255,28 @@ export default {
 
       .text {
         position: absolute;
-        bottom: 0;
+        bottom: -2px;
         left:0;
         z-index: 100;
         width: 100%;
         display:flex;
         flex-direction: column;
         color: $white;
-        background: rgba($black,0.6);
-        backdrop-filter: blur(20px);
-        padding: $spacing-lg $spacing-lg $spacing-md;
         text-wrap: balance;
-        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 35%);
+        // mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 35%);
 
         h3 {
           text-align: center;
           line-height: 100%;
           margin: 0;
-          text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
+          padding: $spacing-md $spacing-md;
+          background: linear-gradient(to bottom, rgba($black,0), rgba($black,0.9) 100%);
+          backdrop-filter: blur(20px);
+
+          // text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
 
           @media screen and (max-width: 1000px){
-            font-size: $font-size-xxl;
+            font-size: $font-size-xl;
           }
         }
 
@@ -307,8 +311,12 @@ export default {
           max-width: 50vw;
         }
 
-        @media screen and (max-width: 768px) {
-          max-width: 80vw;
+        @media screen and (max-width: 600px) {
+          max-width: 66vw;
+        }
+
+        @media screen and (max-width: 420px) {
+          max-width: 82vw;
         }
 
         img {
