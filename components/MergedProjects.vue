@@ -131,7 +131,7 @@ export default {
 
   .project {
     background-size: 100%;
-    height: 50vh;
+    height: 520px;
     width: 50vw;
     display: flex;
     flex-direction: column;
@@ -147,21 +147,26 @@ export default {
     background-position: center center;
     transition: all 0.38s ease-in-out;
 
+    @media screen and (max-width: 1200px) {
+      height: 420px;
+    }
+
     @media screen and (max-width: 1000px) {
-      height: 50vh;
+      height: 420px;
       width: 100vw;
     }
 
+    @media screen and (max-width: 600px) {
+      height: 320px;
+    }
+
+    @media screen and (max-width: 420px) {
+      height: 280px;
+    }
+
+
     .right {
       background-position: center right;
-    }
-
-    @media screen and (max-width: 1000px) {
-      height: 50vh;
-    }
-
-    @media screen and (max-width: 600px) {
-      height: 30vh;
     }
 
     &::after {
@@ -263,20 +268,22 @@ export default {
         flex-direction: column;
         color: $white;
         text-wrap: balance;
-        // mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 35%);
 
         h3 {
           text-align: center;
           line-height: 100%;
           margin: 0;
           padding: $spacing-md $spacing-md;
-          background: linear-gradient(to bottom, rgba($black,0), rgba($black,0.9) 100%);
+          background: linear-gradient(to bottom, rgba($black,0.6), rgba($black,0.9) 100%);
           backdrop-filter: blur(20px);
-
-          // text-shadow: 0 4px 10px rgba($black, 0.25), 0 2px 2px rgba($black, 0.25), 0 1px 1px rgba($black, 0.5);
 
           @media screen and (max-width: 1000px){
             font-size: $font-size-xl;
+          }
+
+          @media screen and (max-width: 600px){
+            padding: $spacing-sm;
+            font-size: $font-size-lg;
           }
         }
 
@@ -295,16 +302,16 @@ export default {
         border-radius: 6px 6px 0 0;
         transition: all 0.38s ease-in-out;
 
-        @media screen and (orientation: landscape) and (max-height: 768px) {
+        @media screen and (orientation: landscape) and (max-width: 600px) and (max-height: 768px) {
           width: 30vw;
           max-width: 300px;
           bottom: -100px;
         }
 
         @media screen and (orientation: landscape) and (max-height: 400px) {
-          width: 30vw;
-          max-width: 300px;
-          bottom: -100px;
+          width: 90vw;
+          bottom: 0;
+          bottom: 0px;
         }
 
         @media screen and (max-width: 1000px) {
