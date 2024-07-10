@@ -1,5 +1,5 @@
 <template>
-  <section id="Products">
+  <section id="Products" class="w-full">
     <nuxt-link
         :class="['project', product.class]"
         v-for="product in products" 
@@ -7,13 +7,15 @@
         :to="product.slug" 
         :style="{ backgroundColor: product.color }"
       >
-      <section class="info">
+      <section class="image-wrapper">
+        <section class="image-pages">
+          <img class="product-image-thumb" :src="product.image" :alt="product.title" />
+        </section>
+      </section>
+      <section class="info" :style="{ backgroundColor: product.color }">
         <section class="text">
           <h3>{{ product.title }}</h3>
           <p>{{ product.description }}</p>
-        </section>
-        <section class="image-wrapper">
-          <img class="product-image-thumb" :src="product.image" :alt="product.title" />
         </section>
       </section>
     </nuxt-link>
@@ -123,47 +125,168 @@ export default {
 
 #Products {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: $black;
+  grid-template-columns: 1fr;
+  padding-bottom: $spacing-xxl;
+  position: relative;
+  height: 100%;
+  width: 100%;
 
-  @media screen and (max-width: 1000px) {
-    grid-template-columns: 1fr;
+  &::before {
+    content: '';
+    display: block;
+    left: 25%;
+    right: 25%;
+    width: 50%;
+    top: 200px;
+    bottom: 400px;
+    background: rgba($blue, 0.1);
+    position: absolute;
   }
 
   .project {
     background-size: 100%;
     height: 520px;
-    width: 50vw;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    overflow: hidden;
     position: relative;
     text-decoration: none;
-    perspective: 1000rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     transition: all 0.38s ease-in-out;
 
-    @media screen and (max-width: 1200px) {
-      height: 420px;
-    }
-
     @media screen and (max-width: 1000px) {
       height: 420px;
-      width: 100vw;
+      width: 100%;
     }
 
-    @media screen and (max-width: 600px) {
-      height: 320px;
+    .image-wrapper {
+      position: absolute;
+      bottom:0;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      width: 100%;
+      border-radius: 6px 6px 0 0;
+      transition: all 0.38s ease-in-out;
+      overflow: hidden;
+
+      // @media screen and (orientation: landscape) and (max-width: 600px) and (max-height: 768px) {
+      //   width: 30vw;
+      //   max-width: 300px;
+      //   bottom: -100px;
+      // }
+
+      // @media screen and (orientation: landscape) and (max-height: 400px) {
+      //   width: 90vw;
+      //   bottom: 0;
+      //   bottom: 0px;
+      // }
+
+      // @media screen and (max-width: 1000px) {
+      //   max-width: 50vw;
+      // }
+
+      // @media screen and (max-width: 600px) {
+      //   max-width: 66vw;
+      // }
+
+      // @media screen and (max-width: 420px) {
+      //   max-width: 82vw;
+      // }
+
+      .image-pages {
+        width: 100%;
+        max-width: 600px;
+        bottom:-74px;
+        position: absolute;
+        right: -54px;
+        z-index: 9;
+        transform: rotate(-11.5deg) scale(0.9);
+        border-radius: 6px;
+        transition: transform 0.38s ease-in-out;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 6px;
+          transition: all 0.38s ease-in-out;
+          position: relative;
+          z-index: 10;
+          overflow: hidden;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0px;
+          left: 5%;
+          width: 90%;
+          height: 40px;
+          border: 1px solid darken($white, 30%);
+          z-index: -1;  
+          transition: all 0.18s ease-in-out;
+          mix-blend-mode: overlay;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0px;
+          left: 10%;
+          width: 80%;
+          height: 40px;
+          border: 1px solid darken($white, 30%);
+          z-index: -2;
+          transition: all 0.18s ease-in-out;
+          mix-blend-mode: overlay;
+        }
+      }
+
+      img {
+
+      }
     }
 
-    @media screen and (max-width: 420px) {
-      height: 280px;
+    &:nth-child(even) {
+      margin-left: 50%;
+
+      @media screen and (max-width: 1000px) {
+        margin-left: 0;
+      }
+
+      .info {
+        left: auto;
+        right: 0;
+
+        @media screen and (max-width: 1000px) {
+          left: 0;
+          right: auto;
+        }
+      }
     }
+
+    // @media screen and (max-width: 1200px) {
+    //   height: 420px;
+    // }
+
+    // @media screen and (max-width: 1000px) {
+    //   height: 420px;
+    //   width: 100vw;
+    // }
+
+    // @media screen and (max-width: 600px) {
+    //   height: 320px;
+    // }
+
+    // @media screen and (max-width: 420px) {
+    //   height: 280px;
+    // }
 
 
     .right {
@@ -175,9 +298,9 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      width: 150%;
+      width: 100%;
       height: 100%;
-      background: rgba($black, .9);
+      background: rgba($black, .4);
       transition: all 0.8s ease-in-out;
       mix-blend-mode: multiply;
 
@@ -196,24 +319,21 @@ export default {
         background: rgba($black, .15);
       }
 
-      .info {
 
-        .image-wrapper {
-          bottom: -30px;
-          opacity: 1;
+      .image-wrapper {
 
-          @media screen and (orientation: landscape) and (max-height: 768px) {
-            bottom: -80px;
-          }
+        .image-pages {
+          transform: rotate(-6.5deg) scale(1);
 
           &::after {
-            top:3px;
+            top:-10px;
           }
 
           &::before {
-            top:-4px;
+            top:-20px;
           }
         }
+
       }
     }
 
@@ -239,129 +359,60 @@ export default {
       background-position: center right;
     }
 
-    .info {
-      height: 100%;
-      width: 100dvw;
-      display: flex;
+    &.telos {
+      background-image: url('/homepage/hp-telos.png');
+      background-position: center right;
+    }
+  }
+
+  .info {
+    width: 75%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(50%);
+    z-index: 10;
+
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+      transform: none;
+    }
+
+    .text {
+      width: 100%;
+      display:flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      z-index: 10;
-      overflow: hidden;
+      justify-content: flex-start;
+      align-items: flex-start;
+      color: $white;
+      text-wrap: balance;
+      padding: $spacing-md $spacing-md;
 
-      @media screen and (max-width: 768px) {
-        padding: 0 $spacing-sm;
-      }
+      h3 {
+        text-align: left;
+        line-height: 100%;
+        margin: 0 0 $spacing-xs 0;
 
-      .text {
-        position: absolute;
-        bottom: -2px;
-        left:0;
-        z-index: 100;
-        width: 100%;
-        display:flex;
-        flex-direction: column;
-        color: $white;
-        text-wrap: balance;
-        padding: $spacing-md $spacing-md;
-        background: linear-gradient(to bottom, rgba($black,0.6), rgba($black,0.9) 100%);
-        backdrop-filter: blur(20px);
-
-        h3 {
-          text-align: center;
-          line-height: 100%;
-          margin: 0 0 $spacing-xs 0;
-
-          @media screen and (max-width: 1000px){
-            font-size: $font-size-xl;
-          }
-
-          @media screen and (max-width: 600px){
-            padding: $spacing-sm;
-            font-size: $font-size-lg;
-          }
+        @media screen and (max-width: 1000px){
+          font-size: $font-size-xl;
         }
 
-        p {
-          text-align: center;
-          margin:0;
-          opacity: 0.4;
-
-          @media screen and (max-width: 768px){
-            display: none;
-          }
-        }
-      }
-      
-      .image-wrapper {
-        position: absolute;
-        bottom:0;
-        z-index: 10;
-        width: 100%;
-        max-width: 40vw;
-        border-radius: 6px 6px 0 0;
-        transition: all 0.38s ease-in-out;
-
-        @media screen and (orientation: landscape) and (max-width: 600px) and (max-height: 768px) {
-          width: 30vw;
-          max-width: 300px;
-          bottom: -100px;
-        }
-
-        @media screen and (orientation: landscape) and (max-height: 400px) {
-          width: 90vw;
-          bottom: 0;
-          bottom: 0px;
-        }
-
-        @media screen and (max-width: 1000px) {
-          max-width: 50vw;
-        }
-
-        @media screen and (max-width: 600px) {
-          max-width: 66vw;
-        }
-
-        @media screen and (max-width: 420px) {
-          max-width: 82vw;
-        }
-
-        img {
-          width: 100%;
-          bottom:-10px;
-          position: relative;
-          z-index: 10;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          top: 10px;
-          left: 5%;
-          width: 90%;
-          height: 40px;
-          background: darken($white, 15%);
-          z-index: 9;  
-          transition: all 0.18s ease-in-out;
-          mix-blend-mode: overlay;
-        }
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 10px;
-          left: 10%;
-          width: 80%;
-          height: 40px;
-          background: darken($white, 30%);
-          z-index: 8;
-          transition: all 0.18s ease-in-out;
-          mix-blend-mode: overlay;
+        @media screen and (max-width: 600px){
+          padding: $spacing-sm;
+          font-size: $font-size-lg;
         }
       }
 
+      p {
+        text-align: left;
+        margin:0;
+        opacity: 0.4;
+        line-height: 120%;
+
+        @media screen and (max-width: 768px){
+          display: none;
+        }
+      }
     }
   }
 }
