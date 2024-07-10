@@ -118,7 +118,7 @@ footer {
     gap: $spacing-lg;
     margin-bottom: $spacing-lg;
     width: 100%;
-    opacity: 0.2;
+    opacity: 0.5;
     transition: opacity 0.5s ease-in-out;
     
     &:hover {
@@ -130,6 +130,7 @@ footer {
       justify-content: center;
       align-items: center;
       gap: $spacing-sm;
+      opacity: 1;
     }
 
     a {
@@ -153,10 +154,14 @@ footer {
     justify-content: space-between;
     gap: $spacing-lg;
     width: 100%;
-    opacity: 0.2;
+    opacity: 0.5;
     transition: opacity 0.5s ease-in-out;
     
     &:hover {
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 1000px){
       opacity: 1;
     }
 

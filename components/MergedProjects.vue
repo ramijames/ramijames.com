@@ -1,5 +1,5 @@
 <template>
-  <section id="Products" class="w-full">
+  <section id="Products" class="w-three-quarters">
     <nuxt-link
         :class="['project', product.class]"
         v-for="product in products" 
@@ -24,7 +24,6 @@
 
 <script>
 
-import SectionTitle from './SectionTitle.vue';
 import { useRoute } from 'vue-router';
 
 export default {
@@ -111,10 +110,32 @@ export default {
       notHome,
     }
   },
-  components: {
-    SectionTitle
+  mounted() {
+    this.observeElements();
   },
+  methods: {
+    observeElements() {
+      const options = {
+        threshold: 0.2 // Adjust based on when you consider the element to be "visible"
+      };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          // Check if the element is intersecting
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      }, options);
 
+      this.$nextTick(() => {
+        document.querySelectorAll('.project').forEach(el => {
+          observer.observe(el);
+        });
+      });
+    },
+  },
 }
 
 </script>
@@ -130,6 +151,12 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
+  perspective: 100em;
+
+  @media screen and (max-width: 1000px) {
+    padding-bottom: 0;
+    
+  }
 
   &::before {
     content: '';
@@ -140,6 +167,7 @@ export default {
     top: 200px;
     bottom: 400px;
     background: rgba($blue, 0.1);
+    backdrop-filter: blur(6px);
     position: absolute;
   }
 
@@ -157,11 +185,19 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    transition: all 0.38s ease-in-out;
+    transition: all .5s ease-in-out;
+    transform: translateY(50px) scale(0.9);
+    opacity: 0;
+
+    &.visible {
+      transform: translateY(0px) scale(1);
+      opacity: 1;
+    }
 
     @media screen and (max-width: 1000px) {
       height: 420px;
       width: 100%;
+      margin-bottom: $spacing-md;
     }
 
     .image-wrapper {

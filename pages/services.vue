@@ -1,7 +1,7 @@
 <template>
   <section class="w-three-quarters page-top">
-    <h1 class="center">Services</h1>
-    <h4 class="center">Valuable, business-oriented help for your startup or enterprise.</h4>
+    <h1 class="">Services</h1>
+    <h4 class="">Valuable, business-oriented help for your startup or enterprise.</h4>
   </section>
   <section class="w-three-quarters">
     <section id="QuickServices">
@@ -134,7 +134,6 @@ import Button from '/components/Button';
 }
 
 #QuickServices {
-  margin-top: $spacing-xl;
 
   @media screen and (max-width: 768px){
     margin-top: $spacing-lg;

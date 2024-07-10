@@ -1,7 +1,7 @@
 <template>
   <section class="w-three-quarters page-top">
-    <h1 class="center">About</h1>
-    <h4 class="center">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h4>
+    <h1 class="">About</h1>
+    <h4 class="">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h4>
   </section>
 
   <!-- <section class="w-full">
@@ -142,7 +142,7 @@ export default {
         .job-title {
           font-family: $font-family-main;
           font-weight: 500;
-          font-size: $font-size-xl;
+          font-size: $font-size-xxl;
           line-height: 120%;
         }
 

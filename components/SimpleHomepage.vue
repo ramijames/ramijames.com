@@ -3,9 +3,9 @@
     <div id="mesh-gradient" class="sixteen-elements">
       <div class="element" v-for="n in 160" :key="n"></div>
     </div>
-    <section class="w-three-quarters hero-top">
-      <h1 class="center">Senior Product Designer</h1>
-      <h4 class="center">I make <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software - myself included. If you’d like to commission a work, <a href="mailto:ramijames@gmail.com">send me an email</a>.</h4>
+    <section class="w-three-quarters page-top">
+      <h1 class="">Rami James</h1>
+      <h4 class="">I'm Senior Product Designer who makes <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software&ndash;myself included. If you’d like to commission a work, <a href="mailto:ramijames@gmail.com">send me an email</a>.</h4>
     </section>
     <MergedProjects />
   </main>
@@ -25,7 +25,7 @@
   overflow: hidden;
 
   .hero-top {
-    padding: $spacing-xl 0 $spacing-md;
+    padding: $spacing-xl $spacing-md $spacing-md;
 
     @media screen and (max-width: 768px){
       padding: $spacing-lg $spacing-md 0;

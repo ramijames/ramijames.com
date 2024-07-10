@@ -1,7 +1,7 @@
 <template>
-  <section id="projects" class="w-full page-top" ref="projects">
-    <h1 class="center">Recent Work</h1>
-    <h4 class="center">I'm proud to have worked on these products over the years</h4>
+  <section id="projects" class="w-three-quarters page-top" ref="projects">
+    <h1 class="">Recent Work</h1>
+    <h4 class="">I'm proud to have worked on these products over the years</h4>
     <section id="company-logos">
       <img src="/social-proof/wix.png" alt="Wix" />
       <img src="/social-proof/ibm.png" alt="IBM" />
@@ -62,7 +62,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: $spacing-md;
   margin: $spacing-lg 0;
   width: 100%;
