@@ -1,7 +1,7 @@
 <template>
   <section class="w-three-quarters page-top">
     <h1 class="center">Services</h1>
-    <h2 class="grey center">Valuable, business-oriented help for your startup or enterprise.</h2>
+    <h4 class="center">Valuable, business-oriented help for your startup or enterprise.</h4>
   </section>
   <section class="w-three-quarters">
     <section id="QuickServices">

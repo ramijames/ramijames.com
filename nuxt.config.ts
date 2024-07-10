@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "nuxt-highcharts",
     "nuxt-gtag",
+    "@nuxt/fonts"
   ],
   gtag: {
     id: 'G-N9MEGS1HSD'
@@ -41,6 +42,11 @@ export default defineNuxtConfig({
       'Lexend Deca': [400, 600, 700],
       'Roboto Sans': [400, 600, 700, 900],
     }
+  },
+  fonts: {
+    families: [
+      { name: 'AlmarenaNeue-DisplayRegular', provider: 'local' },
+    ],
   },
   routeRules: {
     '/thoughts/on-ethical-pricing': { redirect: '/thoughts/how-to-make-product-decisions-based-on-business-needs' },

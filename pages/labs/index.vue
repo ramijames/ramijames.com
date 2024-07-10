@@ -1,7 +1,7 @@
 <template>
   <section class="w-three-quarters page-top">
     <h1 class="center">Labs</h1>
-    <h2 class="grey center">Esoteric digital art in CSS, Vue, and GLSL</h2>
+    <h4 class="center">Esoteric digital art in CSS, Vue, and GLSL</h4>
   </section>
   <section class="w-full">
     <main class="labs">

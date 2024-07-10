@@ -15,7 +15,7 @@
       <section class="info" :style="{ backgroundColor: product.color }">
         <section class="text">
           <h3>{{ product.title }}</h3>
-          <p>{{ product.description }}</p>
+          <h4>{{ product.description }}</h4>
         </section>
       </section>
     </nuxt-link>
@@ -211,6 +211,11 @@ export default {
         border-radius: 6px;
         transition: transform 0.38s ease-in-out;
 
+        @media screen and (max-width: 1000px) {
+          right: -54px;
+          bottom: 80px;
+        }
+
         img {
           width: 100%;
           height: auto;
@@ -388,7 +393,7 @@ export default {
       text-wrap: balance;
       padding: $spacing-md $spacing-md;
 
-      h3 {
+      h2 {
         text-align: left;
         line-height: 100%;
         margin: 0 0 $spacing-xs 0;
@@ -403,15 +408,11 @@ export default {
         }
       }
 
-      p {
+      h4 {
         text-align: left;
         margin:0;
         opacity: 0.4;
         line-height: 120%;
-
-        @media screen and (max-width: 768px){
-          display: none;
-        }
       }
     }
   }

@@ -1,21 +1,17 @@
 <template>
-  <section id="projects" class="w-three-quarters page-top" ref="projects">
-    <section class="talk-to-me" ref="talkToMe">
-      <h1 class="center">Recent Work</h1>
-      <h2 class="grey center">I'm proud to have worked on these products over the years</h2>
-      <section id="company-logos">
-        <img src="/social-proof/wix.png" alt="Wix" />
-        <img src="/social-proof/ibm.png" alt="IBM" />
-        <img src="/social-proof/spiral.png" alt="Spiral" />
-        <img src="/social-proof/wpt.png" alt="WPT" />
-        <img src="/social-proof/qmarkets.png" alt="Qmarkets" />
-        <img src="/social-proof/telos.png" alt="Telos" />
-        <img src="/social-proof/ultra.png" alt="Ultra" />
-      </section>
-      <Button text="Add your project" size="default" to="/booking" />
+  <section id="projects" class="w-full page-top" ref="projects">
+    <h1 class="center">Recent Work</h1>
+    <h4 class="center">I'm proud to have worked on these products over the years</h4>
+    <section id="company-logos">
+      <img src="/social-proof/wix.png" alt="Wix" />
+      <img src="/social-proof/ibm.png" alt="IBM" />
+      <img src="/social-proof/spiral.png" alt="Spiral" />
+      <img src="/social-proof/wpt.png" alt="WPT" />
+      <img src="/social-proof/qmarkets.png" alt="Qmarkets" />
+      <img src="/social-proof/telos.png" alt="Telos" />
+      <img src="/social-proof/ultra.png" alt="Ultra" />
     </section>
   </section>
-  <hr>
   <MergedProjects />
 </template>
 

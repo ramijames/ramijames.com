@@ -1,14 +1,12 @@
 <template>
   <section class="w-three-quarters page-top">
     <h1 class="center">About</h1>
-    <h2 class="grey center">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h2>
+    <h4 class="center">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h4>
   </section>
 
-  <hr>
-
-  <section class="w-full">
+  <!-- <section class="w-full">
     <img src="/interface-images.jpg" alt="Rami James"  class="single-product-image">
-  </section>
+  </section> -->
   
   <section class="w-three-quarters">
     <section class="jobs">  
