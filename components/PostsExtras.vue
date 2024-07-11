@@ -14,9 +14,9 @@
 @import '/assets/variables.scss';
 
 #PostsExtras {
-  background: $white-dark;
+  background: $black-dark;
   width: 100%;
-  padding: $spacing-xl $spacing-md;
+  padding: $spacing-lg $spacing-md;
   float: right;
   display: flex;
   flex-direction: row;

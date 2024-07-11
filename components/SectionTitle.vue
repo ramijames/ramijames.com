@@ -1,7 +1,7 @@
 <template>
   <div class="section-title" :class="centered ? 'centered' : ''">
-    <h1 class="center">{{ title }}</h1>
-    <h2 class="grey center" v-if="subtitle">{{ subtitle }}</h2>
+    <h1 class="">{{ title }}</h1>
+    <h4 class="" v-if="subtitle">{{ subtitle }}</h4>
   </div>
 </template>
 

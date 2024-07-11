@@ -23,8 +23,8 @@ body {
 
 body,
 body.light {
-  color: $black;
-  background-color: $gray-light;
+  color: $white;
+  background-color: $black;
 }
 
 body.dark {
@@ -164,30 +164,13 @@ h5 {
   }
 }
 
-p.super-text {
-  font-family: $font-family-main, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: $font-size-md;
-  line-height: 100%;
-  text-align: center;
-  color: rgba($black, 0.3);
-
-  @media screen and (max-width: 1000px) {
-    font-size: $font-size-xs;
-  }
-}
-
-.dark p.super-text {
-  color: rgba($white, 0.3);
-}
-
 p { 
-  font-size: $font-size-md; 
-  line-height: $font-size-md * $multiplier; 
+  font-size: $font-size-lg; 
+  line-height: $font-size-lg * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
   line-height: $spacing-md;
   margin-bottom: 1rem;
+  opacity: 0.8;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-sm;
@@ -197,10 +180,11 @@ p {
 }
 
 li { 
-  font-size: $font-size-md; 
-  line-height: $font-size-md * $multiplier; 
+  font-size: $font-size-lg; 
+  line-height: $font-size-lg * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
   line-height: $spacing-md;
+  opacity: 0.8;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-sm;
@@ -214,7 +198,7 @@ li {
   border-radius: $br-lg;
   margin: $spacing-md 0;
   overflow-x: auto;
-  background: $black url('/textures/texture-3-bg-dark.png') no-repeat center center;
+  background: $black-dark;
   position: relative;
   width: 100%;
 
@@ -445,10 +429,14 @@ input {
 
     .content {
       width: 100%;
+
+      #PostsExtras {
+        margin: $spacing-lg 0;
+      }
     }
 
     .summary {
-      background-color: $white-dark;
+      background-color: $black-dark;
       border-radius: $br-lg;
       width: 100%;
       padding: $spacing-lg;
@@ -476,7 +464,7 @@ input {
       }
 
     .content img {
-      margin:0 0 2rem 0;
+      margin: $spacing-lg 0;
       width: 100%;
       background-color: $white-dark;
       border:0;

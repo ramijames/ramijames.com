@@ -1,12 +1,7 @@
 <template>
   <nav class="simple-nav-bar">
     <section class="navigation">
-      <div 
-        class="menu"
-        :class="`${mobileMenuOpen}`"
-        @click="toggleMenu"
-      ></div>
-      <nuxt-link to="/" class="logo-link"><img :src="`/logo-${currentTheme}.svg`" alt="Rami James" /></nuxt-link>
+      <nuxt-link to="/" class="logo-link"><img :src="`/logo-dark.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
         <nuxt-link to="/services" class="nav-link">Services</nuxt-link>
@@ -15,19 +10,21 @@
         <nuxt-link to="/thoughts" class="nav-link">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
+      <button 
+        class="menu"
+        :class="`${mobileMenuOpen}`"
+        @click="toggleMenu"
+        @touchstart="toggleMenu"
+        tabindex="0"
+        role="button"
+      >
+      Menu
+      </button>
     </section>
     <section class="extras">
-      <ThemeSwitcher />
+      <!-- <ThemeSwitcher /> -->
     </section>
   </nav>
-  
-  <!-- <section class="bread-crumbs" v-if="notHome">
-    <nuxt-link to="/" v-if="notHome" class="bread-crumb">Home</nuxt-link>
-    <nuxt-link to="/thoughts" v-if="isThoughtsSubPage" class="bread-crumb">Thoughts</nuxt-link>
-    <nuxt-link to="/labs" v-if="isLabsSubPage" class="bread-crumb">Labs</nuxt-link>
-    <nuxt-link to="/products" v-if="!isProductsPage && isProductsSubPage" class="bread-crumb">Products</nuxt-link>
-    <div class="current" v-if="notHome">{{ routeName }}</div>
-  </section> -->
 
   <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
     <section class="mobile-nav-panel-links">
@@ -126,10 +123,7 @@ export default {
 <style scoped lang="scss">
 
 @import './assets/variables';
-
-.logo-link {
-  border-bottom: none;
-}
+@import './assets/animation';
 
 .simple-nav-bar {
   display: flex;
@@ -137,106 +131,60 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: $spacing-sm $spacing-md;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba($gray-light, 0.8);
-  backdrop-filter: blur(6px);
-
-  @media screen and (max-width: 768px) {
-    padding: $spacing-xs $spacing-sm;
-    background: $gray-light;
-  }
+  position: relative;
 
   .navigation {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: $spacing-md;
-
-    @media screen and (max-width: 768px){
-      gap: $spacing-xs;
-    }
+    width: 100%;
 
     .menu {
-      width: 40px;
+      width: 60px;
       height: 40px;
       position: relative;
       display:none;
+      background: $white;
+      border: none;
+      color: $black;
+      text-transform: uppercase;
+      border-radius: 0.5rem;
 
       @media screen and (max-width: 1000px){
         display: block;
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 14px;
-        left: 0;
-        width: 40px;
-        height: 2px;
-        backdrop-filter: blur(4px);
-        background: $black;
-        transform-origin: center;
-        transition: all 0.24s ease-in-out;
-
-        @media screen and (max-width: 1000px){
-          width: 30px;
-        }
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 22px;
-        left: 0;
-        width: 36px;
-        height: 2px;
-        backdrop-filter: blur(4px);
-        background: $black;
-        transform-origin: center;
-        transition: all 0.24s ease-in-out;
-
-        @media screen and (max-width: 1000px){
-          width: 24px;
-        }
+        cursor: pointer;
       }
 
     }
 
     .nav-links {
       display: flex;
-      gap: $spacing-md;
-
-      @media screen and (max-width: 1000px) {
-        gap: $spacing-sm;
-      }
+      gap: $spacing-xs;
 
       .nav-link {
-        color: $black-dark;
         text-decoration: none;
         font-weight: 500;
         font-size: $font-size-md;
         transition: color 0.3s;
-        padding: $spacing-xxs 0;
-        border-bottom:2px solid transparent;
+        padding: $spacing-xs $spacing-sm;
         transition: all 0.3s ease-in-out;
+        color: $white;
+        border: 2px solid transparent;
+        border-radius: 0.2rem;
 
         @media screen and (max-width: 1000px) {
           display: none;
         }
 
         &:hover {
-          color: $black;
-          border-bottom:2px solid rgba($blue, 1);
+          color: $white;
+          border: 2px solid $blue;
         }
         
         &.router-link-exact-active {
-          color: $blue-dark;
-          background-color: transparent;
-          border-bottom:2px solid $blue;
+          color: $white;
+          border: 2px solid $blue;
         }
       }
     }
@@ -245,15 +193,6 @@ export default {
   img {
     width: 56px;
     cursor: pointer;
-
-    @media screen and (max-width: 768px) {
-      width: 36px;
-    }
-  }
-
-  .nav-links {
-    display: flex;
-    gap: $spacing-md;
   }
 }
 
@@ -306,46 +245,6 @@ export default {
 
 }
 
-.bread-crumbs {
-  padding: $spacing-md $spacing-md;
-  display: flex;
-  flex-direction: row;
-  gap: $spacing-sm;
-  text-transform: capitalize;
-  font-weight: 600;
-  font-size: $font-size-xs;
-  color: $black-dark;
-
-  .bread-crumb {
-    position: relative;
-    text-decoration: none;
-    color: $black-dark;
-    text-decoration: underline;
-
-    &:after {
-      content: '/';
-      position: absolute;
-      right: -10px;
-      color: rgba($black-dark, 0.2);
-    }
-  }
-
-  .current {
-    color: $black-light;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  a {
-    transition: color 0.3s;
-
-    &:hover {
-      color: $black;
-    }
-  }
-}
-
 .mobile-nav-panel {
   display:none;
   position: fixed;
@@ -353,7 +252,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba($black, 0.8);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -398,7 +297,7 @@ export default {
           flex-direction: column;
           justify-content: center;
           gap: $spacing-sm;
-          color: $black-dark;
+          color: $white;
           font-size: 8dvw;
           font-weight:500;
           text-decoration: none;
@@ -407,23 +306,27 @@ export default {
         }
 
         .mobile-nav-panel-links a:nth-child(1) {
-          animation: enter 0.2s ease-in-out;
+          animation: fadeInUp 0.2s ease-in-out;
         }
 
         .mobile-nav-panel-links a:nth-child(2) {
-          animation: enter 0.4s ease-in-out;
+          animation: fadeInUp 0.4s ease-in-out;
         }
 
         .mobile-nav-panel-links a:nth-child(3) {
-          animation: enter 0.6s ease-in-out;
+          animation: fadeInUp 0.6s ease-in-out;
         }
 
         .mobile-nav-panel-links a:nth-child(4) {
-          animation: enter 0.8s ease-in-out;
+          animation: fadeInUp 0.8s ease-in-out;
         }
 
         .mobile-nav-panel-links a:nth-child(5) {
-          animation: enter 1s ease-in-out;
+          animation: fadeInUp 1s ease-in-out;
+        }
+
+        .mobile-nav-panel-links a:nth-child(6) {
+          animation: fadeInUp 1.2s ease-in-out;
         }
 
         .dark .mobile-nav-panel-links a {

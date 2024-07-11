@@ -76,11 +76,6 @@
   img {
     width: 50px;
     opacity: 0.5;
-  }
-}
-
-.dark #company-logos {
-  img {
     filter: invert(1);
   }
 }

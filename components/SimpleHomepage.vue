@@ -4,16 +4,21 @@
       <div class="element" v-for="n in 160" :key="n"></div>
     </div>
     <section class="mega-hero">
-      <h3>Senior Product Designer</h3>
-      <h1>
-        <span>R</span><span>A</span><span>M</span><span>I</span>
-        <span>J</span><span>A</span><span>M</span><span>E</span><span>S</span>
-      </h1>
+      <section class="intro-text">
+        <h3>Senior Product Designer</h3>
+        <p>
+          <span class="mint">To delight with design & code,<br></span>
+          <span class="blue">You must bring new ideas to life,<br></span>
+          <span class="red">A new way of thinking, a new way of doing.</span>
+        </p>
+      </section>
+      <section class="bottom-text">
+        <h1>
+          <span>R</span><span>A</span><span>M</span><span>I</span>
+          <span>J</span><span>A</span><span>M</span><span>E</span><span>S</span>
+        </h1>
+      </section>
     </section>
-    <!-- <section class="w-three-quarters page-top">
-      <h1 class="">Rami James</h1>
-      <h4 class="">I'm Senior Product Designer who makes <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software&ndash;myself included. If you’d like to commission a work, <a href="mailto:ramijames@gmail.com">send me an email</a>.</h4>
-    </section> -->
     <MergedProjects />
   </main>
 </template>
@@ -21,17 +26,7 @@
 <style lang="scss" scoped>
 
 @import './assets/variables';
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+@import './assets/animation';
 
 #Hero {
   width: 100%;
@@ -42,20 +37,38 @@
   perspective: 100rem;
 
   .mega-hero {
-    width: 100%;
-    height: 100vh;
+    height: calc(100vh - 160px);
+    width: 100dvw;
     padding: $spacing-md;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
+
+    .intro-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    p {
+      animation: fadeInUp 0.5s forwards;
+      font-size: $font-size-lg;
+      animation-delay: 1.4s;
+      opacity: 0;
+
+      @media screen and (max-width: 768px){
+        font-size: $font-size-md;
+      }
+    }
 
     h1 {
       font-size: 16.15vw;
       line-height: 90%;
       letter-spacing: -0.1rem;
       text-wrap: nowrap;
-      margin-bottom: $spacing-lg;
 
       span {
         opacity: 0;
@@ -77,10 +90,9 @@
 
     h3 {
       font-size: $font-size-xl;
-      margin-left: $spacing-sm;
       font-weight: 500;
       opacity: 0;
-      animation: fadeInUp 0.5s forwards;
+      animation: fadeInUp 1.6s forwards;
       animation-delay: 1s;
 
       @media screen and (max-width: 768px){
@@ -94,7 +106,6 @@
 
     @media screen and (max-width: 768px){
       padding: $spacing-lg $spacing-md 0;
-      z-index: 100;
     }
   }
 
@@ -205,6 +216,7 @@
   justify-content: center;;
   opacity: 1;
   position: fixed;
+  pointer-events: none;
   top:0;
   left:0;
   right:0;
@@ -228,7 +240,7 @@
   @each $name, $color in $mesh-colors {
     $i: $i + 1;
     .element:nth-child(#{$i}) {
-      background: $color;
+      // background: $color;
       animation-delay: -#{$i * .125}s;
       width: 10dvw;
       height: 15dvw;

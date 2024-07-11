@@ -53,9 +53,10 @@ export default {
   white-space:nowrap;
   text-decoration: none;
   background: $black-dark;
+  border: 2px solid $blue;
 
   &:hover {
-    background: $teal-dark;
+    background: $blue-dark;
     color: $white;
   }
 
