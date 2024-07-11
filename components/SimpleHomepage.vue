@@ -37,7 +37,6 @@
   perspective: 100rem;
 
   .mega-hero {
-    height: calc(100vh - 240px);
     width: 100dvw;
     padding: $spacing-md;
     display: flex;
@@ -64,16 +63,24 @@
       }
     }
 
+    .bottom-text {
+      width: 100%;
+    }
+
     h1 {
-      font-size: 16.15vw;
+      font-size: 16.65vw;
       line-height: 90%;
       letter-spacing: -0.1rem;
       text-wrap: nowrap;
+      margin-top: $spacing-lg;
+
+      @media screen and (max-width: 768px){
+        font-size: 15.25vw;
+      }
 
       span {
         opacity: 0;
         display: inline-block;
-        font-size: 15vw;
         animation: fadeInUp 0.5s forwards;
       }
 
@@ -222,10 +229,8 @@
   left:0;
   right:0;
   mask-image: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 90%);
-  transform: scale(1.25) rotate3d(-12, 6, 4, -18deg);
 
   @media screen and (max-width: 768px){
-    transform: scale(1.25) rotate3d(0, 0.5, 0, 25deg);
   }
 
   $mesh-colors: ();

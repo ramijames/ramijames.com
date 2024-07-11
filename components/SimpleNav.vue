@@ -205,12 +205,12 @@ export default {
 
         &:hover {
           color: $white;
-          border: 2px solid $blue;
+          border: 2px solid $white;
         }
         
         &.router-link-exact-active {
           color: $white;
-          border: 2px solid $blue;
+          border: 2px solid $white;
         }
       }
     }
