@@ -37,7 +37,7 @@
   perspective: 100rem;
 
   .mega-hero {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 240px);
     width: 100dvw;
     padding: $spacing-md;
     display: flex;
@@ -60,7 +60,7 @@
       opacity: 0;
 
       @media screen and (max-width: 768px){
-        font-size: $font-size-md;
+        font-size: $font-size-sm;
       }
     }
 
@@ -97,6 +97,7 @@
 
       @media screen and (max-width: 768px){
         margin-left: 0;
+        font-size: $font-size-lg;
       }
     }
   }
@@ -220,11 +221,11 @@
   top:0;
   left:0;
   right:0;
-  mask-image: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 80%);
-  transform: scale(1) rotate3d(0, 0, 0, 25deg);
+  mask-image: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 90%);
+  transform: scale(1.25) rotate3d(-12, 6, 4, -18deg);
 
   @media screen and (max-width: 768px){
-    transform: scale(1.25) rotate3d(0, 1, 0, 25deg);
+    transform: scale(1.25) rotate3d(0, 0.5, 0, 25deg);
   }
 
   $mesh-colors: ();
@@ -240,27 +241,19 @@
   @each $name, $color in $mesh-colors {
     $i: $i + 1;
     .element:nth-child(#{$i}) {
-      // background: $color;
+      // background: linear-gradient(to bottom, rgba($color,0), rgba($color,0.25));
       animation-delay: -#{$i * .125}s;
       width: 10dvw;
-      height: 15dvw;
-      border: 1px solid $color;
-      border-radius: 100%;
+      height: 20dvw;
+      border: 1px solid rgba($color, 0.4);
+      border-radius: 2rem;
       align-self: center;
       justify-self: center;
-
-      @media screen and (max-width: 768px){
-        width: 10dvw;
-        height: 15dvw;
-        border: 1px solid $color;
-      }
     }
   }
 
   .element {
     animation: sixteen-elements 10s linear infinite;
-
-    
   }
 
   @keyframes sixteen-elements {
@@ -269,7 +262,7 @@
       transform: scale(0) rotate(0deg);
     }
     50% {
-      opacity: 0.6;
+      opacity: 0.8;
       transform: scale(2) rotate(180deg);
     }
     100% {
