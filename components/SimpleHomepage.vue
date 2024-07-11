@@ -55,10 +55,12 @@
       line-height: 90%;
       letter-spacing: -0.1rem;
       text-wrap: nowrap;
+      margin-bottom: $spacing-lg;
 
       span {
         opacity: 0;
         display: inline-block;
+        font-size: 15vw;
         animation: fadeInUp 0.5s forwards;
       }
 
