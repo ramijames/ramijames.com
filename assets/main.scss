@@ -18,13 +18,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-family-main, sans-serif;
-  background: $blue;
 }
 
 body,
 body.light {
   color: $white;
-  background-color: $black;
+  background: linear-gradient(-210deg, rgba($blue, 0.35) 0%, $black 30%);
 }
 
 body.dark {
