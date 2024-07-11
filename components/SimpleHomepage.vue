@@ -152,11 +152,6 @@
   }
 }
 
-.dark #Hero {
-  background: linear-gradient(-140deg, $black 60%, rgba($black, 0.2) 100%);
-    
-}
-
 #Various {
   width: 100%;
   position: relative;

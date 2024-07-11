@@ -694,28 +694,10 @@ img.in-article {
       height:100%;
       filter:blur(400px);
       background: linear-gradient(130deg, #FF9E67 0%, #A566AF 20%, #F636B5 40%);
-      opacity: 0.15;
-    }
-
-    .dark .main-product-image::before {
-      position: fixed;
-      content: '';
-      top:-400px;
-      z-index: 1;
-      background:red;
-      width:200px;
-      height:800px;
-      rotate:20deg;
-      filter:blur(80px);
-      background: linear-gradient(130deg, #FF9E67 0%, #A566AF 20%, #F636B5 40%);
-      opacity: 0.35;
+      opacity: 0.25;
     }
 
     .main-product-image.sammitch::after {
-      background: linear-gradient(130deg, #3E9C13 0%, #A566AF 20%, #7844AA 40%);
-    }
-
-    .dark .main-product-image.sammitch::before {
       background: linear-gradient(130deg, #3E9C13 0%, #A566AF 20%, #7844AA 40%);
     }
 
@@ -723,44 +705,20 @@ img.in-article {
       background: linear-gradient(130deg, #a5daff31 0%, #0899FE 60%);
     }
 
-    .dark .main-product-image.scatter::before {
-      background: linear-gradient(130deg, #a5daff31 0%, #0899FE 60%);
-    }
-
     .main-product-image.telos::after {
       background: linear-gradient(130deg, #4f1aef30 0%, #501AEF 60%);
     }
 
-    .dark .main-product-image.telos::before {
-      background: linear-gradient(130deg, #4f1aef30 0%, #501AEF 60%);
-    }
-
     .main-product-image.doodledapp::after {
-      background: linear-gradient(130deg, #4431CD 0%, #22C154 60%);
-    }
-
-    .dark .main-product-image.doodledapp::before {
       background: linear-gradient(130deg, #3e75ff2f 0%, #3E74FF 60%);
     }
 
     .main-product-image.ultra::after {
-      background: linear-gradient(130deg, #27213a 0%, #b98df7 60%);
-    }
-
-    .dark .main-product-image.ultra::before {
       background: linear-gradient(130deg, #886ae231 0%, #896AE2 60%);
     }
 
     .main-product-image.fff::after {
-      background: linear-gradient(130deg, #9446BD 0%, #9446BD 60%);
-    }
-
-    .dark .main-product-image.fff::before {
       background: linear-gradient(130deg, #9346bd5e 0%, #9446BD 60%);
-    }
-
-    .dark .main-product-image::after {
-      opacity: 1;
     }
 
 .single-product-image {
