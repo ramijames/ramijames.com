@@ -1,7 +1,7 @@
 
 @import 'variables';
 
-/* Reset */
+/* Standard */
 
 * {
   margin: 0px;
@@ -18,6 +18,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-family-main, sans-serif;
+  background: $blue;
+}
+
+body,
+body.light {
+  color: $black;
+  background-color: $gray-light;
+}
+
+body.dark {
+  background-color: $black;
+  color: $white;
 }
 
 /* Fix for overflow bug */
@@ -74,10 +86,6 @@ h1 {
   100% {
     opacity: 1;
   }
-}
-
-.dark h1 {
-  color: $white;
 }
 
 h2 { 
@@ -371,35 +379,6 @@ p > strong {
 .page-top {
   padding-top: $spacing-xl;
   margin: $spacing-sm auto 0;
-}
-
-/* Layout */
-
-body,
-body.light {
-  color: $black;
-  background-color: $white;
-}
-
-body.dark {
-  background-color: $black;
-  color: $white;
-
-  &::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    height:100vh;
-    background-image: url('/textures/texture-3-bg-dark.png');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
 }
 
 /* Standard elements */

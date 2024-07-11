@@ -81,7 +81,7 @@ export default {
     }
 
     &.light { 
-      background: linear-gradient(to right, $white 50%, $orange 150%);
+      background: linear-gradient(to right, $gray-light 50%, $orange 150%);
 
       img {
         left: 0;

@@ -142,12 +142,12 @@ export default {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(white, 0.98);
-  backdrop-filter: blur(14px);
+  background: rgba($gray-light, 0.8);
+  backdrop-filter: blur(6px);
 
   @media screen and (max-width: 768px) {
     padding: $spacing-xs $spacing-sm;
-    border-bottom: 1px solid rgba($black, 0.1);
+    background: $gray-light;
   }
 
   .navigation {
@@ -286,7 +286,8 @@ export default {
 }
 
 .dark .simple-nav-bar {
-  background: rgba($black, 0.98);
+  background: rgba($black, 0.48);
+  backdrop-filter: blur(6px);
 }
 
 .dark .mobile-nav-panel.open {

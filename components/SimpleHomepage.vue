@@ -3,10 +3,17 @@
     <div id="mesh-gradient" class="sixteen-elements">
       <div class="element" v-for="n in 160" :key="n"></div>
     </div>
-    <section class="w-three-quarters page-top">
+    <section class="mega-hero">
+      <h3>Senior Product Designer</h3>
+      <h1>
+        <span>R</span><span>A</span><span>M</span><span>I</span>
+        <span>J</span><span>A</span><span>M</span><span>E</span><span>S</span>
+      </h1>
+    </section>
+    <!-- <section class="w-three-quarters page-top">
       <h1 class="">Rami James</h1>
       <h4 class="">I'm Senior Product Designer who makes <nuxt-link to="/products">clean, clear interfaces</nuxt-link> for folks building fun software&ndash;myself included. If you’d like to commission a work, <a href="mailto:ramijames@gmail.com">send me an email</a>.</h4>
-    </section>
+    </section> -->
     <MergedProjects />
   </main>
 </template>
@@ -15,6 +22,17 @@
 
 @import './assets/variables';
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 #Hero {
   width: 100%;
   display: flex;
@@ -22,7 +40,52 @@
   justify-content: center;
   position: relative;
   perspective: 1000rem;
-  overflow: hidden;
+
+  .mega-hero {
+    width: 100%;
+    height: 100vh;
+    padding: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    h1 {
+      font-size: 16.15vw;
+      line-height: 90%;
+      letter-spacing: -0.1rem;
+      text-wrap: nowrap;
+
+      span {
+        opacity: 0;
+        display: inline-block;
+        animation: fadeInUp 0.5s forwards;
+      }
+
+      span:nth-child(1) { animation-delay: 0.1s; }
+      span:nth-child(2) { animation-delay: 0.2s; }
+      span:nth-child(3) { animation-delay: 0.3s; }
+      span:nth-child(4) { animation-delay: 0.4s; }
+      span:nth-child(5) { animation-delay: 0.5s; }
+      span:nth-child(6) { animation-delay: 0.6s; }
+      span:nth-child(7) { animation-delay: 0.7s; }
+      span:nth-child(8) { animation-delay: 0.8s; }
+      span:nth-child(9) { animation-delay: 0.9s; }
+    }
+
+    h3 {
+      font-size: $font-size-xl;
+      margin-left: $spacing-sm;
+      font-weight: 500;
+      opacity: 0;
+      animation: fadeInUp 0.5s forwards;
+      animation-delay: 1s;
+
+      @media screen and (max-width: 768px){
+        margin-left: 0;
+      }
+    }
+  }
 
   .hero-top {
     padding: $spacing-xl $spacing-md $spacing-md;
@@ -130,24 +193,20 @@
 }
 
 #mesh-gradient.sixteen-elements {
-  width: 150%;
-  height: 600px;
+  width: 100vw;
+  height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   z-index: -10;
   align-items: center;
   justify-content: center;;
-  opacity: 0.5;
+  opacity: 1;
   position: fixed;
   top:0;
   left:0;
   right:0;
-  transform: rotate(22.5deg);
-
-  @media screen and (max-width: 768px){
-    opacity: 0.3;
-  }
+  mask-image: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 100%);
 
   $mesh-colors: ();
 
@@ -162,12 +221,20 @@
   @each $name, $color in $mesh-colors {
     $i: $i + 1;
     .element:nth-child(#{$i}) {
-      border: 1px solid $color;
+      background: $color;
       animation-delay: -#{$i * .125}s;
-      width: 5dvw;
-      height: 5dvw;
+      width: 10dvw;
+      height: 15dvw;
+      border: 1px solid $color;
+      border-radius: 100%;
       align-self: center;
       justify-self: center;
+
+      @media screen and (max-width: 768px){
+        width: 10dvw;
+        height: 15dvw;
+        border: 1px solid $color;
+      }
     }
   }
 
