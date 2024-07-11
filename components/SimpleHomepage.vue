@@ -39,7 +39,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  perspective: 1000rem;
+  perspective: 100rem;
 
   .mega-hero {
     width: 100%;
@@ -47,7 +47,7 @@
     padding: $spacing-md;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-start;
 
     h1 {
@@ -208,7 +208,12 @@
   top:0;
   left:0;
   right:0;
-  mask-image: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 100%);
+  mask-image: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 80%);
+  transform: scale(1) rotate3d(0, 0, 0, 25deg);
+
+  @media screen and (max-width: 768px){
+    transform: scale(1.25) rotate3d(0, 1, 0, 25deg);
+  }
 
   $mesh-colors: ();
 
