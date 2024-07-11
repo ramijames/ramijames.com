@@ -172,6 +172,32 @@ export default {
         color: $white;
         border: 2px solid transparent;
         border-radius: 0.2rem;
+        opacity: 0;
+        animation: fadeInDown 0.2s ease-in-out forwards;
+
+        &:nth-child(1) {
+          animation-delay: 0.1s;
+        }
+
+        &:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 0.3s;
+        }
+
+        &:nth-child(4) {
+          animation-delay: 0.4s;
+        }
+
+        &:nth-child(5) {
+          animation-delay: 0.5s;
+        }
+
+        &:nth-child(6) {
+          animation-delay: 0.6s;
+        }
 
         @media screen and (max-width: 1000px) {
           display: none;
@@ -303,30 +329,32 @@ export default {
           text-decoration: none;
           text-align: center;
           border-bottom: none;
-        }
+          opacity: 0;
+          animation: fadeInUp 0.2s ease-in-out forwards;
 
-        .mobile-nav-panel-links a:nth-child(1) {
-          animation: fadeInUp 0.2s ease-in-out;
-        }
+          &:nth-child(1) {
+            animation-delay: 0.1s;
+          }
 
-        .mobile-nav-panel-links a:nth-child(2) {
-          animation: fadeInUp 0.4s ease-in-out;
-        }
+          &:nth-child(2) {
+            animation-delay: 0.2s;
+          }
 
-        .mobile-nav-panel-links a:nth-child(3) {
-          animation: fadeInUp 0.6s ease-in-out;
-        }
+          &:nth-child(3) {
+            animation-delay: 0.3s;
+          }
 
-        .mobile-nav-panel-links a:nth-child(4) {
-          animation: fadeInUp 0.8s ease-in-out;
-        }
+          &:nth-child(4) {
+            animation-delay: 0.4s;
+          }
 
-        .mobile-nav-panel-links a:nth-child(5) {
-          animation: fadeInUp 1s ease-in-out;
-        }
+          &:nth-child(5) {
+            animation-delay: 0.5s;
+          }
 
-        .mobile-nav-panel-links a:nth-child(6) {
-          animation: fadeInUp 1.2s ease-in-out;
+          &:nth-child(6) {
+            animation-delay: 0.6s;
+          }
         }
 
         .dark .mobile-nav-panel-links a {
