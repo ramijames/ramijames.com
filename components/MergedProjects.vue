@@ -189,6 +189,12 @@ export default {
     transform: translateY(50px) scale(0.9);
     opacity: 0;
 
+    &:hover {
+      transform: translateY(0px) scale(1.1) !important;
+      box-shadow: 0 20px 20px rgba($black, 0.6), 0 40px 40px rgba($black, 0.3);
+      z-index: 10;
+    }
+
     &.visible {
       transform: translateY(0px) scale(1);
       opacity: 1;
