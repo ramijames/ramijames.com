@@ -1,9 +1,9 @@
 <template>
-  <section id="booking">
-    <!-- <SectionTitle title="Start your Product-first Journey" subtitle="This introductory call is quick and free!" />  -->
-    <img src="/services/team.png" alt="Let's do it" class="center" />
-    <h2 class="center">I'm glad you are here</h2>
-      <h3 class="center">I provide a variety of valuable services for reasonable prices. If you need <span class="red">product</span>, <span class="mint">UX/UI</span>, <span class="purple">design</span>, or <span class="teal">front-end</span> work done, I'm your guy.</h3>
+  <section class="w-three-quarters" id="booking">
+    <h1 class="">Book a Call</h1>
+    <h4 class="">I provide a variety of valuable <nuxt-link to="/services">services</nuxt-link> for reasonable prices. If you haven't done so already, you should <nuxt-link to="products">check out the work</nuxt-link> that I have done in the past.</h4>
+      
+    <h4>Perhaps you're not sure yet what you need. That's ok, too. Let's have a quick call to discuss it.</h4>
     <CalendlyInlineWidget v-bind="options" />
   </section>
 </template>
@@ -25,20 +25,14 @@
     margin-bottom: $spacing-xl;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    img {
-      width: 100px;
-      margin: 0 auto;
-    }
+    justify-content: flex-start;
+    align-items: flex-start;
     
-    h2, h4 {
-      width: 100%;
-      text-align: center;
-    }
   }
 
   .calendly-inline-widget {
     min-height:1600px !important;
+    width: 100%;
 
     @media screen and (max-width: 1200px) {
       min-height: 1600px !important;
