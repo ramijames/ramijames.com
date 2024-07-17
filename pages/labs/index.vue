@@ -61,6 +61,12 @@ export default {
   transition: all 0.35s ease-in-out;
   position: relative;
   outline: 2px solid transparent;
+  height: 480px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+    height: 340px;
+  }
 
   &:hover {
     transform: scale(.95);
@@ -69,7 +75,9 @@ export default {
   }
 
   img {
+    height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 
   .info {

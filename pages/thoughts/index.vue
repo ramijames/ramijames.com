@@ -1,7 +1,7 @@
 <template>
   <section class="w-three-quarters page-top">
     <h1 class="">Thoughts</h1>
-    <h4 class="">On products, teams, software development, and design.</h4>
+    <h4 class="">On design, building products, software development, and how we work together.</h4>
   </section>
   <section class="w-three-quarters">
     <main class="articles">
@@ -45,7 +45,7 @@ export default {
       .articles {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: $spacing-sm;
       }
     }
 
@@ -61,6 +61,12 @@ export default {
   transition: all 0.35s ease-in-out;
   position: relative;
   outline: 2px solid transparent;
+  height: 480px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+    height: 340px;
+  }
 
   &:hover {
     transform: scale(.95);
@@ -69,7 +75,9 @@ export default {
   }
 
   img {
+    height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 
   .info {
