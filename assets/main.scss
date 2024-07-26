@@ -759,8 +759,8 @@ img.in-article {
 
 .product-role {
   margin: $spacing-md 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: $spacing-md;
 
   @media screen and (max-width: 768px){
@@ -790,14 +790,11 @@ img.in-article {
       flex-wrap: wrap;
 
       li {
-        margin: 0 $spacing-xs $spacing-xs 0;
-        padding: $spacing-xxs $spacing-sm;
-        border-radius: 2rem;
-        border: 2px solid $blue;
-        font-size: $font-size-xs;
-        font-weight: 500;
+        margin: 0 $spacing-md $spacing-sm 0;
+        font-size: $font-size-sm;
+        font-weight: 600;
         text-transform: uppercase;
-        color: $blue;
+        color: rgba($white, 0.6);
       }
     }
   }

@@ -2,6 +2,8 @@
 
 $scatter-color: #017CD0;
 $doodledapp-color: #4431CD;
+$ultra-color: #7F4EC8;
+$fff-color: #9446BD;
 
 .product-splash {
   width: 100%;
@@ -76,9 +78,45 @@ $doodledapp-color: #4431CD;
         opacity: 0;
       }
 
-      &.scatter-marketplace {
+      &.doodledapp-new {
         background-color: $doodledapp-color;
         background: url(/products/doodledapp/doodledapp-new.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+
+      &.ultra-show {
+        background-color: $ultra-color;
+        background: url(/products/ultra/ultra-show.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.ultra-devdocs {
+        background-color: $ultra-color;
+        background: url(/products/ultra/ultra-devdocs.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+
+      &.fff-show {
+        background-color: $ultra-color;
+        background: url(/products/food-for-future/fff-show.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.fff-new {
+        background-color: $ultra-color;
+        background: url(/products/food-for-future/fff-new.png) no-repeat center center;
         background-size: cover;
         animation: clipReveal 0.44s forwards;
         animation-delay: 0.6s;
@@ -100,23 +138,6 @@ $doodledapp-color: #4431CD;
       height: 50%;
     }
 
-    .product-intro-image {
-      width: 100%;
-      height: 50%;
-
-      &.scatter {
-        background-color: $scatter-color;
-        background: url(/products/scatter/scatter-main-mobile.png) no-repeat center center;
-        background-size: cover;
-      }
-
-      &.doodledapp {
-        background-color: $doodledapp-color;
-        background: url(/products/doodledapp/flow.png) no-repeat center center;
-        background-size: cover;
-      }
-    }
-
     .product-intro-brand {
       width: 100%;
       height: 100%;
@@ -131,6 +152,14 @@ $doodledapp-color: #4431CD;
 
       &.doodledapp {
         background-color: $doodledapp-color;
+      }
+
+      &.ultra {
+        background-color: $ultra-color;
+      }
+
+      &.fff {
+        background-color: $fff-color;
       }
     }
   }

@@ -1,27 +1,28 @@
 <template>
-  <section class="product-content page-top">
-    <img src="/products/ultra/ultra-logo.svg" alt="Ultra Logo" class="product-logo">
-    <h1 class="hyper-bold">Ultra</h1>
-    <h4 class="centered">Tokenized game licenses and digital items</h4>
-    <div class="main-product-image ultra" ref="image">
-      <img src="/products/ultra/ultra-docs-main.png" alt="Ultra">
-    </div>
-  </section>
+
+  <section class="product-splash">
+      <section class="product-intro">
+        <div class="product-intro-brand ultra">
+          <img src="/products/ultra/ultra-logo.svg" alt="Ultra Logo" class="product-logo">
+          <h2 class="product-title">Ultra</h2>
+        </div>
+      </section>
+      <section class="product-teasers">
+        <section class="product-teaser ultra-show"></section>
+        <section class="product-teaser ultra-devdocs"></section>
+      </section>
+    </section>
 
   <section class="w-three-quarters">
     <aside class="product-role">
       <div class="single-role">
-        <h3>Role</h3>
-        <h4>I was the Technical Project Manager of the blockchain team during the critical period where Ultra developed many of its core features and deployed them to the public as they launched their gaming-focused networks. Following that I lead the product which became Ultra's Developer Relations unit.</h4>
+        <h3>I was the Technical Project Manager of the blockchain team during the critical period where Ultra developed many of its core features and deployed them to the public as they launched their gaming-focused networks. Following that I lead the product which became Ultra's Developer Relations unit.</h3>
       </div>
       <div class="single-role">
-        <h3>Responsibilities</h3>
         <ul class="roles">
-          <li>Concept</li>
-          <li>Roadmap</li>
+          <li>Strategy</li>
+          <li>Project Management</li>
           <li>Design</li>
-          <li>Leadership</li>
-          <li>Agile</li>
         </ul>
       </div>
     </aside>

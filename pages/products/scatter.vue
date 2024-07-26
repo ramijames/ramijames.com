@@ -12,15 +12,13 @@
         <section class="product-teaser scatter-marketplace"></section>
       </section>
     </section>
-    
+
     <section class="w-three-quarters">
       <aside class="product-role">
         <div class="single-role">
-          <h3>Role</h3>
-          <h4>I was the Head of Product and Co-founder at Scatter. I helped guide the product vision according to the business and market needs. I assisted in implementing the interface in Vue and Electron.</h4>
+          <h3>I was the Head of Product and Co-founder at Scatter. I helped guide the product vision according to the business and market needs. I assisted in implementing the interface in Vue and Electron.</h3>
         </div>
         <div class="single-role">
-          <h3>Responsibilities</h3>
           <ul class="roles">
             <li>Concept</li>
             <li>Roadmap</li>
