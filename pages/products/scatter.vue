@@ -12,14 +12,7 @@
         <section class="product-teaser scatter-marketplace"></section>
       </section>
     </section>
-
-    <!-- 
-      - Product Intro
-      - My Role
-      - Skills and tools used
-      - Process explanation
-    -->
-
+    
     <section class="w-three-quarters">
       <aside class="product-role">
         <div class="single-role">

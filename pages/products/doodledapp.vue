@@ -1,18 +1,31 @@
 <template>
-  <section class="product-content page-top">
+  <!-- <section class="product-content page-top">
     <img src="/products/doodledapp/doodledapp-logo.svg" alt="Doodledapp Logo" class="product-logo">
     <h1 class="hyper-bold">Doodledapp</h1>
     <h4 class="centered">No-code smart contract development, deployment, and component marketplace</h4>
     <div class="main-product-image doodledapp" ref="image">
       <img src="/products/doodledapp/flow.png" alt="Doodledapp">
     </div>  
-  </section>
+  </section> -->
+
+  <section class="product-splash">
+      <section class="product-intro">
+        <div class="product-intro-brand doodledapp">
+          <img src="/products/doodledapp/doodledapp-logo.svg" alt="Doodledapp Logo" class="product-logo">
+          <h2 class="product-title">Doodledapp</h2>
+        </div>
+      </section>
+      <section class="product-teasers">
+        <section class="product-teaser doodledapp-website-show"></section>
+        <section class="product-teaser scatter-marketplace"></section>
+      </section>
+    </section>
 
   <section class="w-three-quarters">
     <aside class="product-role">
       <div class="single-role">
         <h3>Role</h3>
-        <h4>I was the Head of Product for this personal project, which I worked on with Nathan James, my counterpart at Scatter. I converted his vision of a no-code smart contract editor into a full product concept and implemented a set of designs and Iconography.</h4>
+        <h4>I was the Head of Product for the POC and launch, which I worked on with Nathan James, my counterpart at Scatter. I converted his vision of a no-code smart contract editor into a full product concept and implemented a set of designs and Iconography.</h4>
       </div>
       <div class="single-role">
         <h3>Responsibilities</h3>
