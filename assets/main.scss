@@ -592,13 +592,8 @@ img.in-article {
 }
 
     .product-logo {
-      width:140px;
+      width:100px;
       margin:0 auto;
-      mix-blend-mode: darken;
-    }
-
-    .dark .product-logo {
-      mix-blend-mode: lighten;
     }
 
     .product-content h1 {

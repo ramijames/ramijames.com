@@ -1,24 +1,12 @@
 <template>
-
-    <section class="product-splash">
-      <section class="product-intro">
-        <div class="product-intro-brand scatter">
-          <img src="/products/scatter/scatter-logo.png" alt="Scatter Logo" class="product-logo">
-          <h2 class="product-title">Scatter</h2>
-        </div>
-      </section>
-      <section class="product-teasers">
-        <section class="product-teaser scatter-mobile"></section>
-        <section class="product-teaser scatter-marketplace"></section>
-      </section>
+    <section class="product-content page-top">
+      <img src="/products/scatter/scatter-logo.png" alt="Scatter Logo" class="product-logo">
+      <h1 class="hyper-bold">Scatter</h1>
+      <h4 class="centered">Web3 Wallet, Digital Identity, and Marketplace</h4>
+      <div class="main-product-image scatter" ref="image">
+        <img src="/products/scatter/scatter-main-mobile.png" alt="Scatter Mobile">
+      </div>
     </section>
-
-    <!-- 
-      - Product Intro
-      - My Role
-      - Skills and tools used
-      - Process explanation
-    -->
 
     <section class="w-three-quarters">
       <aside class="product-role">
@@ -53,7 +41,7 @@
     </section>
 
     <section class="w-three-quarters">
-      <h3>Challenges</h3>
+      <h3>A complex beast</h3>
       <p>The utterly complex nature of the EOS blockchain was often a stumbling block for users, and it became our core challenge to simplify the user experience while still allowing users to interact with the blockchain in a secure way. We had to balance the needs of the power users with the needs of the new users, and it was a constant dance to keep everyone happy. I spent a lot of time tweaking and inventing new interfaces which, for example, made things like on-boarding new users straightforward and understandable.</p>
     </section>
 
@@ -62,8 +50,8 @@
     </section>
 
     <section class="w-three-quarters">
-      <h3>Product Suite</h3>
-      <p>As our vision grew, we ended up working on a wide variety of products, including:</p>
+      <h3>Challenges from the ecosystem</h3>
+      <p>Our core challenge at Scatter was finding a way to provide enough revenue to support our growing team. At its peak, we had ten people on payroll working on a wide variety of products, including:</p>
       <ul>
         <li><strong>Scatter Desktop</strong> - Our desktop, Electron-based signing wallet.</li>
         <li><strong>Scatter Mobile</strong> - Our mobile native signing wallet, unreleased.</li>
@@ -83,7 +71,7 @@
       <p>Scatter was a wild ride, and I learned a lot about managing teams, building products in a fast-paced market, and the challenges of building something that is used by a lot of people. <strong>I'm proud of the work that we did</strong>. I'm also deeply saddened that we failed to break out into the wider web3 ecosystems, and ultimately that we had to close things down. I learned much of what I know today by building this startup.</p>
       <p>We shuttered operations in early 2020, and our team largely moved to <nuxt-link to="/products/ultra">Ultra</nuxt-link>, where we continued to build great things together.</p>
     </section>
-    
+
   <MergedProjects />
   <Footer />
 </template>

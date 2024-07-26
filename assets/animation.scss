@@ -1,3 +1,5 @@
+@import 'variables';
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -31,9 +33,37 @@
 
 @keyframes clipReveal {
   from {
+    opacity: 0;
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transform: scale(0.9);
   }
   to {
+    opacity: 1;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: scale(1);
+  }
+}
+
+@keyframes animatedFocusShadow {
+  0% {
+    box-shadow: inset 200px 100px 400px 0px rgba($black, 0.6);
+  }
+  50% {
+    box-shadow: inset -200px 400px 400px 0px rgba($black, 0.6);
+  }
+  100% {
+    box-shadow: inset 200px 100px 400px 0px rgba($black, 0.6);
+  }
+}
+
+@keyframes animatedFocusShadowAlt {
+  0% {
+    box-shadow: inset -200px -400px 200px 0px rgba($black, 0.6);
+  }
+  50% {
+    box-shadow: inset 200px 0px 200px 0px rgba($black, 0.6);
+  }
+  100% {
+    box-shadow: inset -200px 400px 200px 0px rgba($black, 0.6);
   }
 }

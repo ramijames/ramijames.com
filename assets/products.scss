@@ -1,0 +1,117 @@
+@import 'variables';
+
+$scatter-color: #017CD0;
+
+.product-splash {
+  width: 100%;
+  min-height: calc(100vh - 92px);
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: calc(100vh - 92px);
+  }
+
+  .product-teasers {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: inset 200px 100px 400px 0px rgba($black, 0.6);
+      animation: animatedFocusShadow 30s infinite;
+      z-index: 1; 
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: row;
+      width: 100%;
+      height: 50%;
+    }
+
+    .product-teaser {
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+
+      @media (max-width: 768px) {
+        height: 100%;
+      }
+  
+      &.scatter-mobile {
+        background-color: $scatter-color;
+        background: url(/products/scatter/scatter-mobile.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.scatter-marketplace {
+        background-color: $scatter-color;
+        background: url(/products/scatter/scatter-marketplace.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+    }
+  }
+
+  .product-intro {
+    width: 50%;
+    height: 100%;
+    animation: clipReveal 0.44s forwards;
+    animation-delay: 0.1s;
+    opacity: 0;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 50%;
+    }
+
+    .product-intro-image {
+      width: 100%;
+      height: 50%;
+
+      &.scatter {
+        background-color: $scatter-color;
+        background: url(/products/scatter/scatter-main-mobile.png) no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    .product-intro-brand {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &.scatter {
+        background-color: $scatter-color;
+      }
+    }
+  }
+}
+
+.product-page {
+  width: 100%;
+  min-height: 800px;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,6 +1,8 @@
 export default defineNuxtConfig({
   css: [
     '~/assets/main.scss',
+    '~/assets/products.scss',
+    '~/assets/animation.scss',
     '~/assets/labs.scss',
     '~/assets/highcharts.scss',
   ],
