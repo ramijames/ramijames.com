@@ -1,5 +1,5 @@
 <template>
-  <section class="product-content page-top">
+  <!-- <section class="product-content page-top">
     <img src="/products/telos/telos-logo.png" alt="Telos Logo" class="product-logo">
     <h1 class="hyper-bold">Telos Open Block Explorer</h1>
     <h4 class="centered">The best way to view transactions and manage your wallets</h4>
@@ -8,6 +8,19 @@
     <div class="main-product-image telos" ref="image">
       <img src="/products/telos/telos-mobile.png" alt="Telos OBE Mobile">
     </div>      
+  </section> -->
+
+  <section class="product-splash">
+    <section class="product-intro">
+      <div class="product-intro-brand telos">
+        <img src="/products/telos/telos-logo.png" alt="Telos Logo" class="product-logo">
+        <h2 class="product-title">Telos Open Block Explorer</h2>
+      </div>
+    </section>
+    <section class="product-teasers">
+      <section class="product-teaser telos-show"></section>
+      <section class="product-teaser telos-new"></section>
+    </section>
   </section>
 
   <section class="w-three-quarters">

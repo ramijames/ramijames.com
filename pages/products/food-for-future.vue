@@ -1,17 +1,17 @@
 <template>
 
   <section class="product-splash">
-      <section class="product-intro">
-        <div class="product-intro-brand fff">
-          <img src="/products/food-for-future/fff-logo.svg" alt="Food for Future Logo" class="product-logo">
-          <h2 class="product-title">Food For Future</h2>
-        </div>
-      </section>
-      <section class="product-teasers">
-        <section class="product-teaser fff-show"></section>
-        <section class="product-teaser fff-new"></section>
-      </section>
+    <section class="product-intro">
+      <div class="product-intro-brand fff">
+        <img src="/products/food-for-future/fff-logo.svg" alt="Food for Future Logo" class="product-logo">
+        <h2 class="product-title">Food For Future</h2>
+      </div>
     </section>
+    <section class="product-teasers">
+      <section class="product-teaser fff-show"></section>
+      <section class="product-teaser fff-new"></section>
+    </section>
+  </section>
 
   <section class="w-three-quarters">
     <aside class="product-role">

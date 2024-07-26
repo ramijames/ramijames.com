@@ -4,6 +4,8 @@ $scatter-color: #017CD0;
 $doodledapp-color: #4431CD;
 $ultra-color: #7F4EC8;
 $fff-color: #9446BD;
+$telos-color: #4526C3;
+
 
 .product-splash {
   width: 100%;
@@ -123,6 +125,24 @@ $fff-color: #9446BD;
         opacity: 0;
       }
 
+      &.telos-show {
+        background-color: $ultra-color;
+        background: url(/products/telos/telos-show.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.telos-new {
+        background-color: $ultra-color;
+        background: url(/products/telos/telos-new.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+
     }
   }
 
@@ -160,6 +180,10 @@ $fff-color: #9446BD;
 
       &.fff {
         background-color: $fff-color;
+      }
+
+      &.telos {
+        background-color: $telos-color;
       }
     }
   }
