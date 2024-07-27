@@ -17,9 +17,7 @@
         @touchstart="toggleMenu"
         tabindex="0"
         role="button"
-      >
-      Menu
-      </button>
+      ></button>
     </section>
     <section class="extras">
       <!-- <ThemeSwitcher /> -->
@@ -141,15 +139,49 @@ export default {
     width: 100%;
 
     .menu {
-      width: 60px;
+      width: 40px;
       height: 40px;
       position: relative;
       display:none;
-      background: $white;
+      background: none;
       border: none;
       color: $black;
       text-transform: uppercase;
       border-radius: 0.5rem;
+      margin-right: $spacing-xs;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        width: 30px;
+        height: 2px;
+        background: $white;
+        transition: all 0.3s;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        width: 30px;
+        height: 2px;
+        background: $white;
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        
+        &::before {
+          top: 6px;
+        }
+
+        &::after {
+          top: 24px;
+        }
+      }
 
       @media screen and (max-width: 1000px){
         display: block;
