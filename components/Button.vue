@@ -48,12 +48,13 @@ export default {
   padding: $spacing-sm $spacing-md;
   color: $white;
   font-family: $font-family-main, sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   font-size: $font-size-md;
   white-space:nowrap;
   text-decoration: none;
-  background: $black-dark;
-  border: 2px solid $blue;
+  background: darken($blue, 10%);
+  border: 1px solid $blue;
+  border-radius: 4px;
 
   &:hover {
     background: $blue-dark;

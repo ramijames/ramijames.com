@@ -1,10 +1,10 @@
 <template>
   <section id="PostsExtras">
     <section class="postContent">
-      <img src="/services/iterate.png" alt="Rami James is a nice guy" />
-      <h3>Looking for a Product Professional?</h3>
-      <p>I'm recruiting new clients and I'd love to hear about what you're working on!</p>
-      <Button type="small" text="Set a call" to="/booking" />
+      <img src="/services/ai.png" alt="Rami James is a nice guy" />
+      <h3>I'm actively looking for work!</h3>
+      <p>If you need a product specialist, designer, or front-end developer, please reach out.</p>
+      <Button type="small" text="Email Me" to="mailto:ramijames@gmail.com" />
     </section>
   </section>
 </template>
@@ -14,10 +14,10 @@
 @import '/assets/variables.scss';
 
 #PostsExtras {
-  background: $black-dark;
+  background: rgba(lighten($black, 1.5%), 0.4);
+  border-top: 1px solid $white;
   width: 100%;
   padding: $spacing-lg $spacing-md;
-  float: right;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,6 +40,7 @@
 
     img {
       width: 100px;
+      margin: 0 auto $spacing-md;
     }
 
     h3 {
@@ -51,7 +52,7 @@
 
     p {
       font-size: $font-size-sm;
-      margin-bottom: $spacing-sm;
+      margin-bottom: $spacing-md;
       line-height: 140%;
 
       @media screen and (max-width: 768px) {

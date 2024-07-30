@@ -1,5 +1,5 @@
 <template>
-  <section id="types-of-designs" class="w-three-quarters" :class="!notHome ? 'drop-top' : ''">
+  <!-- <section id="types-of-designs" class="w-three-quarters" :class="!notHome ? 'drop-top' : ''">
     <h2>Hassle-free designs for your apps, websites, landing pages, & more</h2>
     <div class="types">
       <div class="single-type"><span>Branding</span></div>
@@ -16,7 +16,8 @@
       <Button text="See my work" to="/products" />
     </section>
 
-  </section>
+  </section> -->
+  <MergedProjects />
 </template>
 
 <script>
