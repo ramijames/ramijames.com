@@ -13,7 +13,8 @@
     <section class="w-three-quarters">
       <h3>Positioned Elements</h3>
       <p>I think the first step is to try and create a mesh gradient using a combination of four elements with blurs, which we can control their color dominace in a similar fashion to a mesh gradient.</p>
-      <pre class="code"><div class="type">HTML</div>
+      <div class="code-type">HTML</div>
+      <pre class="code">
         <code v-pre>
     &lt;div id="mesh-gradient" class="four-elements"&gt;
       &lt;div class="element top-left"&gt;&lt;/div&gt;
@@ -24,7 +25,8 @@
         </code>
       </pre>
       
-      <pre class="code"><div class="type">CSS</div>
+      <div class="code-type">SCSS</div>
+      <pre class="code">
         <code v-pre>
     #mesh-gradient.four-elements {
       width: 100%;
@@ -153,7 +155,8 @@
 
       <p>Here's the Sass that generated this.</p>
 
-      <pre class="code"><div class="type">CSS</div>
+      <div class="code-type">SCSS</div>
+      <pre class="code">
         <code v-pre>
     #mesh-gradient.sixteen-elements {
       width: 100%;
