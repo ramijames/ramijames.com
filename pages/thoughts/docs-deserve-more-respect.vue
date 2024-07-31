@@ -2,6 +2,7 @@
   <main class="w-three-quarters page-top">
     <section class="article-extras">
       <SectionTitle title="Docs Deserve More Respect" />
+      <Share route="/thoughts/" topic="" />
       <AllPosts />
     </section>
     <section class="content">

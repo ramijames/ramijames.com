@@ -2,6 +2,7 @@
   <main class="w-three-quarters page-top">
     <section class="article-extras">
       <SectionTitle title="How to Make Product Decisions based on Business Needs" />
+      <Share route="/thoughts/how-to-make-product-decisions-based-on-business-needs" topic="How to Make Product Decisions based on Business Needs" />
       <AllPosts />
     </section>
     <section class="content">

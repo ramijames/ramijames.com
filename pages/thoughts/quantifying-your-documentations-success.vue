@@ -2,6 +2,7 @@
   <main class="w-three-quarters page-top">
     <section class="article-extras">
       <SectionTitle title="Quantifying your documentation's success" />
+      <Share route="/thoughts/quantifying-your-documentations-success" topic="Quantifying your documentation's success" />
       <AllPosts />
     </section>
     <section class="content">

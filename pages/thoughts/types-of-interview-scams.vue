@@ -2,6 +2,7 @@
   <main class="w-three-quarters page-top">
     <section class="article-extras">
       <SectionTitle title="Types of Interview Scams" />
+      <Share route="/thoughts/types-of-interview-scams" topic="Types of Interview Scams" />
       <AllPosts />
     </section>
     <section class="content">

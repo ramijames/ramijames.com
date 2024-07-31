@@ -2,6 +2,7 @@
   <main class="w-three-quarters page-top">
     <section class="article-extras">
       <SectionTitle title="Package dependency hell" />
+      <Share route="/thoughts/package-dependency-hell" topic="Package dependency hell" />
       <AllPosts />
     </section>
     <section class="content">

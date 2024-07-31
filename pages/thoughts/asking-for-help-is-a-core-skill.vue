@@ -2,6 +2,7 @@
   <main class="w-three-quarters page-top">
     <section class="article-extras">
       <SectionTitle title="Asking for help is a core developer skill" />
+      <Share route="/thoughts/asking-for-help-is-a-core-skill" topic="Asking for help is a core developer skill" />
       <AllPosts />
     </section>
     <section class="content">

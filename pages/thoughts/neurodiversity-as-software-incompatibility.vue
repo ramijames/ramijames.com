@@ -2,6 +2,7 @@
   <main class="w-three-quarters page-top">
     <section class="article-extras">
       <SectionTitle title="Neurodiversity as software incompatibility" />
+      <Share route="/thoughts/neurodiversity-as-software-incompatibility" topic="Neurodiversity as software incompatibility" />
       <AllPosts />
     </section>
     <section class="content">
