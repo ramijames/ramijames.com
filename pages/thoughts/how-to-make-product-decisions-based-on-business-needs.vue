@@ -9,18 +9,13 @@
       <section class="summary">
         <h3>TLDR Summary</h3>
         <p>A company must be careful when their primary goal is to squeeze profits out of the staff who provide the core value proposition of their product.</p>
-
         <p>My solution is to create a sorting algorithm that incentivizes nurses by providing them higher pay for being reliable and consistent. Unreliable and inconsistent staff are penalized by being paid less, which can be used to increase Clipboard Health’s profit margin.</p>
-
         <p>There are some ethical concerns with this approach, which I have <a href="#ethical-considerations">outlined at the end</a>.</p>
       </section>
 
-      <h3>Introduction</h3>
-      
+      <h3>Introduction</h3>      
       <p>For a potential job at Clipboard Health, I’ve been asked to write a solution to the question “how do we maximize profit for a healthcare-related marketplace company without raising costs for facilities.”</p>
-
       <p>This, on its face, means lowering pay for the nurses who provide the staffing solutions which their marketplace fulfills. I thought that this would be a great way for me to outline how my Product-first mentality takes into account business desires, and weighs them against how it changes the product that a company produces.</p>
-
       <h4>Product Process</h4>
       
       <ol>
@@ -34,17 +29,11 @@
       <h3>The Problem</h3>
 
       <p>Let’s start by defining the unit economics and their incentivization structures. There are three parties involved.</p>
-
       <p><strong>Nurses</strong> provide the workforce value within the ecosystem. There is a limited supply of them, and likely a high cost of acquisition. They want to fill shifts while getting the highest pay possible.</p>
-
       <p><strong>Facilities</strong> are where nurses have shifts. For facilities it is critical that they fill shifts as they can not run their enterprises without nurses. They would like to fill those shifts at the lowest rate which can guarantee a nurse will show up consistently.</p>
-
       <p><strong>Clipboard Health</strong> runs the marketplace which connects nurses to facilities. Their aim is to provide nurses to facilities and to extract the highest profit from the ecosystem.</p>
-
       <p>From a Product-first perspective, it's my responsibility to take all three party's needs into account. The product solution which solves for the business need should not harm the integrity of the core product being produced, or the users who are using it.</p>
-
       <p>I think that we can best illustrate the economics involved with two bell curves, showing acceptable cost and pay ranges for facilities and nurses respectively. The intersecting region between is the profit for Clipboard Health. The breakdown goes like this:</p>
-
       <h4>Acceptable cost range for facilities</h4>
 
       <ul>
@@ -66,15 +55,10 @@
       </section>
 
       <p>The goal of Clipboard Health is to increase profits. This can be done by widening the gap between those two peaks, but the further you push one peak or the other, the worse the impact will be on either churn or acquisition for nurses and facilities.</p>
-
       <p>If you pay nurses less, you’ll have unhappy nurses and eventually no nurses. If you charge facilities too much, you’ll have less facilities willing to use your marketplace.</p>
-
       <h3>The Proposed Solution</h3>
-
       <p>I do not think that shifting the global nurse pay to be lower is acceptable. I also do not think that shifting the costs for facilities is a good solution.</p>
-      
       <p>I think that there is an opportunity to find a way to extract more value from inside the gap by adding a weighting mechanism to how nurses are paid. We can use this mechanism to incentivize better staffing compliance by providing a carrot of higher pay to reliable staff, while paying unreliable nurses less.</p>
-
       <p>I propose that Clipboard Health sort nurses by:</p>
 
       <ul>
@@ -84,29 +68,6 @@
       </ul>
 
       <NurseCalculator />
-
-      <!-- <p>For this example, I've created a table of fake nurses which we can use as illustrative data points.</p> -->
-
-      <!-- <table class="data-table">
-        <thead>
-          <tr>
-            <th class="highlighted">Nurse Quality Quotient</th>
-            <th>Pay in USD</th>
-            <th>Shifts Completed</th>
-            <th>Shifts Not Completed</th>
-            <th>Scheduled Shifts</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(point, index) in nursesWeightingOptions.series[0].data" :key="index">
-            <td class="highlighted">{{ point[0] }}</td>
-            <td>${{ point[1] }}</td>
-            <td>{{ point[2] }}</td>
-            <td>{{ point[3] }}</td>
-            <td>{{ point[4] }}</td>
-          </tr>
-        </tbody>
-      </table> -->
 
       <p>This acts as an incentivization mechanism that promotes the behavior that you want such as getting nurses to show up on-time, successfully completing shifts, and scheduling more shifts.</p>
 
