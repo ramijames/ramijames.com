@@ -7,13 +7,9 @@
     </section>
     <section class="content">
       <p>On Reddit, in the /r/learnprogramming forum, there was <a href="https://www.reddit.com/r/learnprogramming/comments/1buc15f/got_greedy_and_now_getting_fked_up_real_bad/">a post that I wanted to highlight</a>. The original poster is still in his junior phase and is experiencing the pain of the learning curve. He got stuck, and stayed stuck for three weeks. His anxiety in the post is about how he is failing and what is going to happen to him when his boss finds out. He is stressed about having taken on something too hard and not finishing it. I think he is looking at it wrong.</p>
-      
       <p>Let's take a look at why that is.</p>
-
       <PostsExtras />
-      
       <p>There is a great channel on YouTube called Healthy Software Developer, and he recently posted a <a href="https://www.youtube.com/watch?v=4JoBM7GkYyM">relevant video</a> about whether having a DIY mentality can limit a developer’s growth. It partially covers the topic above and I recommend that you take a few minutes to watch it if you feel like your path to being a better dev is blocked.</p>
-      
       <p>His core message is parallel to one that I’ve thought about a lot recently: <strong>how we teach kids to be is how they are as adults</strong>. I have three young kids (5, 9, and 11) and I spend an inordinate amount of time trying to guide them towards being the people that I know they can be. For the most part it isn’t about specifically pushing them to be engineers, scientists, or doctors. </p>
       <p>To my mind, my job as a parent is about teaching them to be thoughtful, organized, present, and, of course, how to ask for help. </p>
       <p>With a focus on individualism, we lose something that is critically important when we do not understand that we can not exist as atomic entities. We are all part of something bigger and our best selves pass through those that support us. It took me a really long time to internalize that because I really wanted to stand on my own and shine. It never occurred to me that I would shine brighter if other people helped me to do so.</p>

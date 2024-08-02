@@ -34,10 +34,10 @@
       <p>Making good docs simply means that you must approach your docs creation as you would any other product process.</p>
       <p>You need to:</p>
       <ul>
-      <li>Know why you are creating your docs</li>
-      <li>Know who your target audience is</li>
-      <li>Know what their pain points are</li>
-      <li>Improve your docs over time</li>
+        <li>Know why you are creating your docs</li>
+        <li>Know who your target audience is</li>
+        <li>Know what their pain points are</li>
+        <li>Improve your docs over time</li>
       </ul>
       <p>Knowing the why of your docs is often a really straightforward question and answer set on its surface. You are creating docs because if you don't, users will fall through the cracks and fail to use your product. At a deeper level there is a specific answer for your use-case. Have a developer tool? That's one answer set. Have a retail design tool? Have an Accounting SaaS product? Have an automatic coffee maker? These are all separate answer sets.</p>
       <p>The form of your docs is described by who will use it. Is it online? Is it bundled with an app? Is it printed? Every user base will need something else and you have to be clear from the get-go who they are.</p>

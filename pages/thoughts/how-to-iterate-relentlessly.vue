@@ -71,12 +71,12 @@
       <p>This is tricky to write about because it is not a straightforward do-this, do-that kind of thing. Understanding what is valuable feedback versus what is not is an intuitive sense that a team builds up over time.</p>
       <p>It’s dangerous to take every bit of feedback at face-value, both from external users and from internal stakeholders. It is a balancing act that can be difficult to manage.</p>
       <ul>
-      <li><p>Users do not always know what they actually need, and their complaints my only be symptomatic or hints that point you towards a more holistic, comprehensive solution. </p>
-      </li>
-      <li><p>What is valuable for one user may not be valuable for any other user, which means that if you satisfy that one user, you have used up resources which may have benefited more users. Bang for your buck is a very real consideration that must be respected when choosing what to build next.</p>
-      </li>
-      <li><p>Business development, marketing, and other stakeholders within a company may drive revenue and traffic, but they should not be the sole drivers of a product. Their specific view of what is valuable is skewed towards their goals. These goals may or may not align with user’s needs or your product vision. Stay focused.</p>
-      </li>
+        <li><p>Users do not always know what they actually need, and their complaints my only be symptomatic or hints that point you towards a more holistic, comprehensive solution. </p>
+        </li>
+        <li><p>What is valuable for one user may not be valuable for any other user, which means that if you satisfy that one user, you have used up resources which may have benefited more users. Bang for your buck is a very real consideration that must be respected when choosing what to build next.</p>
+        </li>
+        <li><p>Business development, marketing, and other stakeholders within a company may drive revenue and traffic, but they should not be the sole drivers of a product. Their specific view of what is valuable is skewed towards their goals. These goals may or may not align with user’s needs or your product vision. Stay focused.</p>
+        </li>
       </ul>
       <h3 id="start-iterating">Start Iterating</h3>
       <p>Lack of clarity inevitably leads to unnecessary redesigns, loss of users, reduction in revenue, missed business opportunities, wasted development efforts, and unhappy teams.</p>
