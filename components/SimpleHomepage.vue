@@ -13,15 +13,60 @@
         </p>
       </section>
       <section class="bottom-text">
-        <h1>
-          <span>R</span><span>A</span><span>M</span><span>I</span>
-          <span>J</span><span>A</span><span>M</span><span>E</span><span>S</span>
+        <h1 v-if="whichText === 0">
+          <span>MUCH</span>
+          <span>W</span>
+          <span>O</span>
+          <span>W</span>
+        </h1>
+        <h1 v-if="whichText === 1">
+          <span>S</span>
+          <span>H</span>
+          <span>I</span>
+          <span>N</span>
+          <span>Y</span>
+        </h1>
+        <h1 v-if="whichText === 2">
+          <span>W</span>
+          <span>H</span>
+          <span>O</span>
+          <span>O</span>
+          <span>S</span>
+          <span>H</span>
+        </h1>
+        <h1 v-if="whichText === 3">
+          <span>W</span>
+          <span>E</span>
+          <span>E</span>
+          <span>E</span>
+          <span>E</span>
+          <span>E</span>
+        </h1>
+        <h1 v-if="whichText === 4">
+          <span>P</span>
+          <span>L</span>
+          <span>A</span>
+          <span>Y</span>
+          <span>T</span>
+          <span>I</span>
+          <span>M</span>
+          <span>E</span>
         </h1>
       </section>
     </section>
     <MergedProjects />
   </main>
 </template>
+
+<script setup>
+
+const whichText = ref(0);
+
+onMounted(() => {
+  whichText.value = Math.floor(Math.random() * 5);
+});
+
+</script>
 
 <style lang="scss" scoped>
 
