@@ -7,6 +7,19 @@ export default defineNuxtConfig({
     '~/assets/highcharts.scss',
   ],
   devtools: { enabled: true },
+  app: {
+    head: {
+      htmlAttrs: {
+          lang: 'en',
+      },
+      title: 'Rami James - Product Designer',
+      charset: 'utf-8',
+      meta: [
+        { name: 'author', content: 'Rami James' },
+  { name: 'description', content: 'To delight with design & code, You must bring new ideas to life, A new way of thinking, a new way of doing.' }
+      ],
+    }
+  },
   components: {
     global: true,
     dirs: ['~/components'],
