@@ -158,7 +158,13 @@ export default {
         position: relative;
         overflow: hidden;
         mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
-        transform: translateX(10vw) translateY(10vh) rotate(-20deg) scale(0.9);
+        transform: translateX(10vw) translateY(10vh) rotate(-20deg);
+        border-radius: $br-lg;
+
+        @media screen and (max-width: 768px){
+          width: 100vw;
+          transform: translateX(22vw) translateY(-10vh) rotate(-20deg) scale(1.2);
+        }
       }
     }
 
@@ -167,13 +173,23 @@ export default {
       font-size: 10vw;
       border: 0;
       line-height: 100%;
-      margin: $spacing-sm;
+      margin: $spacing-md;
       padding: 0;
       text-wrap: balance;
       font-family: $font-family-secondary;
       z-index: 2;
       position: relative;
       text-shadow: 0 2px 2px rgba($black, 0.14), 0 10px 20px rgba($black, 0.15), 0 20px 40px rgba($black, 0.1);
+
+      @media screen and (max-width: 768px){
+        font-size: 15vw;
+        text-wrap: balance;
+
+        span {
+          margin-bottom: 0.5rem;
+          display: block;
+        }
+      }
     }
   }
 
