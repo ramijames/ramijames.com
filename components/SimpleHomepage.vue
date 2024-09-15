@@ -5,53 +5,12 @@
     </div>
     <section class="mega-hero">
       <section class="intro-text">
-        <h3>Senior Product Designer</h3>
+        <!-- <h3>Senior Product Designer</h3> -->
         <p>
           <span class="mint">To delight with design & code,<br></span>
           <span class="blue">You must bring new ideas to life,<br></span>
           <span class="red">A new way of thinking, a new way of doing.</span>
         </p>
-      </section>
-      <section class="bottom-text">
-        <h1 v-if="whichText === 0">
-          <span>MUCH</span>
-          <span>W</span>
-          <span>O</span>
-          <span>W</span>
-        </h1>
-        <h1 v-if="whichText === 1">
-          <span>S</span>
-          <span>H</span>
-          <span>I</span>
-          <span>N</span>
-          <span>Y</span>
-        </h1>
-        <h1 v-if="whichText === 2">
-          <span>W</span>
-          <span>H</span>
-          <span>O</span>
-          <span>O</span>
-          <span>S</span>
-          <span>H</span>
-        </h1>
-        <h1 v-if="whichText === 3">
-          <span>W</span>
-          <span>E</span>
-          <span>E</span>
-          <span>E</span>
-          <span>E</span>
-          <span>E</span>
-        </h1>
-        <h1 v-if="whichText === 4">
-          <span>P</span>
-          <span>L</span>
-          <span>A</span>
-          <span>Y</span>
-          <span>T</span>
-          <span>I</span>
-          <span>M</span>
-          <span>E</span>
-        </h1>
       </section>
     </section>
     <MergedProjects />
@@ -82,12 +41,12 @@ onMounted(() => {
   perspective: 100rem;
 
   .mega-hero {
-    width: 100dvw;
     padding: $spacing-md;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    height: 80vh;
 
     .intro-text {
       display: flex;
@@ -99,66 +58,23 @@ onMounted(() => {
 
     p {
       animation: fadeInUp 0.5s forwards;
-      font-size: $font-size-lg;
+      font-size: 5.2vw;
+      line-height: 100%;
+      letter-spacing: -0.1rem;
+      text-wrap: nowrap;
+      font-family: $font-family-main;
       animation-delay: 1.4s;
       opacity: 0;
 
       @media screen and (max-width: 768px){
-        font-size: $font-size-sm;
+        font-size: 10vw;
+        text-wrap: balance;
+
+        span {
+          margin-bottom: 0.5rem;
+          display: block;
+        }
       }
-    }
-
-    .bottom-text {
-      width: 100%;
-    }
-
-    h1 {
-      font-size: 16.65vw;
-      line-height: 90%;
-      letter-spacing: -0.1rem;
-      text-wrap: nowrap;
-      margin-top: $spacing-lg;
-
-      @media screen and (max-width: 768px){
-        font-size: 15.25vw;
-      }
-
-      span {
-        opacity: 0;
-        display: inline-block;
-        animation: fadeInUp 0.5s forwards;
-      }
-
-      span:nth-child(1) { animation-delay: 0.1s; }
-      span:nth-child(2) { animation-delay: 0.2s; }
-      span:nth-child(3) { animation-delay: 0.3s; }
-      span:nth-child(4) { animation-delay: 0.4s; }
-      span:nth-child(5) { animation-delay: 0.5s; }
-      span:nth-child(6) { animation-delay: 0.6s; }
-      span:nth-child(7) { animation-delay: 0.7s; }
-      span:nth-child(8) { animation-delay: 0.8s; }
-      span:nth-child(9) { animation-delay: 0.9s; }
-    }
-
-    h3 {
-      font-size: $font-size-xl;
-      font-weight: 500;
-      opacity: 0;
-      animation: fadeInUp 1.6s forwards;
-      animation-delay: 1s;
-
-      @media screen and (max-width: 768px){
-        margin-left: 0;
-        font-size: $font-size-lg;
-      }
-    }
-  }
-
-  .hero-top {
-    padding: $spacing-xl $spacing-md $spacing-md;
-
-    @media screen and (max-width: 768px){
-      padding: $spacing-lg $spacing-md 0;
     }
   }
 
@@ -290,7 +206,7 @@ onMounted(() => {
       animation-delay: -#{$i * .125}s;
       width: 10dvw;
       height: 20dvw;
-      border: 1px solid rgba($color, 0.4);
+      border: 2px solid rgba($color, 0.4);
       border-radius: 2rem;
       align-self: center;
       justify-self: center;
@@ -307,7 +223,7 @@ onMounted(() => {
       transform: scale(0) rotate(0deg);
     }
     50% {
-      opacity: 0.8;
+      opacity: 1;
       transform: scale(2) rotate(180deg);
     }
     100% {

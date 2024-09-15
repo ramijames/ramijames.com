@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       meta: [
         { name: 'author', content: 'Rami James' },
-  { name: 'description', content: 'To delight with design & code, You must bring new ideas to life, A new way of thinking, a new way of doing.' }
+        { name: 'description', content: 'To delight with design & code, You must bring new ideas to life, A new way of thinking, a new way of doing.' }
       ],
     }
   },
