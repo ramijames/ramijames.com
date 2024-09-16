@@ -5,12 +5,13 @@
         v-for="product in products" 
         :key="product.title" 
         :to="product.slug" 
-        :style="{ backgroundColor: product.color }"
+        :style="{ backgroundColor: product.color, backgroundImage: `url(${product.bg})` }"
       >
-      <section class="image-wrapper">
+      <!-- <section class="image-wrapper">
         <img :src="product.image" :alt="product.title" />
-      </section>
-      <section class="info" :style="{ backgroundColor: product.color }">
+      </section> -->
+      <section :class="['info', product.class]">
+        <div class="tag">{{ product.type }}</div>
         <h3>{{ product.title }}</h3>
       </section>
     </nuxt-link>
@@ -29,41 +30,45 @@ export default {
           title: 'Scatter',
           description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
           image: '/products/scatter/scatter-thumb.png',
-          bg: '/scatter-bg.jpg',
+          bg: '/homepage/hp-scatter.png',
           status: 'past',
           slug: '/products/scatter',
           color: '#0899FE',
-          class: 'scatter'
+          class: 'scatter',
+          type: 'Product Case Study'
         },  
         {
           title: 'Ultra',
           description: 'Tokenized gaming platform',
           image: '/products/ultra/ultra-prime-thumb.png',
-          bg: '/ultra-bg.jpg',
+          bg: '/homepage/hp-ultra.png',
           status: 'past',
           slug: '/products/ultra',
           color: '#2E2667',
-          class: 'ultra'
+          class: 'ultra',
+          type: 'Product Case Study'
         },  
-        {
-          title: 'Food For Future',
-          description: 'Decentralized data for funding farmers',
-          image: '/products/food-for-future/fff-thumb.png',
-          bg: '/fff-bg.jpg',
-          status: 'past',
-          slug: '/products/food-for-future',
-          color: '#9446BD',
-          class: 'foodforfuture'
-        },
         {
           title: 'Doodledapp',
           description: 'No-code smart contract development and deployment',
           image: '/products/doodledapp/doodledapp-thumb.png',
-          bg: '/doodledapp-bg.jpg',
+          bg: '/homepage/hp-doodledapp.png',
           status: 'past',
           slug: '/products/doodledapp',
           color: '#3E74FF',
-          class: 'doodledapp'
+          class: 'doodledapp',
+          type: 'Product Case Study'
+        },
+        {
+          title: 'Food For Future',
+          description: 'Decentralized data for funding farmers',
+          image: '/products/food-for-future/fff-thumb.png',
+          bg: '/homepage/hp-fff.png',
+          status: 'past',
+          slug: '/products/food-for-future',
+          color: '#9446BD',
+          class: 'foodforfuture',
+          type: 'Product Case Study'
         },
         {
           title: 'Telos Open Block Explorer',
@@ -73,17 +78,19 @@ export default {
           status: 'past',
           slug: '/products/telos-obe',
           color: '#571AFF',
-          class: 'telos'
+          class: 'telos',
+          type: 'Product Case Study'
         },
         {
           title: 'Illustrations',
           description: 'Various illustrations during my journey',
           image: '/products/illustrations/illustrations-thumb.png',
-          bg: '/illustrations-bg.jpg',
+          bg: '/homepage/hp-illustrations.jpg',
           status: 'past',
           slug: '/products/illustrations',
           color: '#0899FE',
-          class: 'illustrations'
+          class: 'illustrations',
+          type: 'Skillset Showcase'
         },          
         // {
         //   title: 'Crisp Tools',
@@ -122,58 +129,46 @@ export default {
 
   .project {
     width: 100vw;
-    height: 80vh;
+    height: 56vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     text-decoration: none;
     position: relative;
+    background-size: cover;
 
-    &:hover {
-      .image-wrapper {
-        background: rgba(0,0,0,0);
-      }
-    }
-
-    .image-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      width: 100%;
-      border-radius: 6px 6px 0 0;
-      transition: all 0.38s ease-in-out;
-      overflow: hidden;
+    .info {
       display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      background: rgba(0,0,0,0.2);
+      flex-direction: column;
+      justify-content: flex-start;
 
-      img {
-        width: 50vw;
-        height: auto;
-        transition: all 0.38s ease-in-out;
-        position: relative;
-        overflow: hidden;
-        mask-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
-        transform: translateX(10vw) translateY(10vh) rotate(-20deg);
-        border-radius: $br-lg;
+      &.scatter,
+      &.doodledapp,
+      &.illustrations,
+      &.telos {
+        align-items: flex-end;
 
-        @media screen and (max-width: 768px){
-          width: 100vw;
-          transform: translateX(22vw) translateY(-10vh) rotate(-20deg) scale(1.2);
+        .tag {
+          align-self: flex-end;
         }
+      }
+
+      .tag {
+        color: $white;
+        margin: $spacing-md $spacing-md 0 $spacing-md;
+        padding: $spacing-xs $spacing-sm;
+        background: rgba($white, 0.2);
+        align-self: flex-start;
+        border-radius: 4px;
       }
     }
 
     h3 {
       color: $white;
-      font-size: 10vw;
+      font-size: 6vw;
       border: 0;
       line-height: 100%;
-      margin: $spacing-md;
+      margin: $spacing-sm $spacing-md $spacing-md $spacing-md;
       padding: 0;
       text-wrap: balance;
       font-family: $font-family-secondary;
