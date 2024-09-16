@@ -137,6 +137,18 @@ export default {
     position: relative;
     background-size: cover;
 
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70%;
+      background: linear-gradient(to bottom, rgba($black, 0) 0%, rgba($black, 1) 100%);
+      mix-blend-mode: multiply;
+      z-index: 1;
+    }
+
     .info {
       display: flex;
       flex-direction: column;
@@ -157,15 +169,19 @@ export default {
         color: $white;
         margin: $spacing-md $spacing-md 0 $spacing-md;
         padding: $spacing-xs $spacing-sm;
-        background: rgba($white, 0.2);
+        border: 2px solid $white;
         align-self: flex-start;
         border-radius: 4px;
+        z-index: 2;
+        font-size: $font-size-xs;
+        text-transform: uppercase;
+        mix-blend-mode: overlay;
       }
     }
 
     h3 {
       color: $white;
-      font-size: 6vw;
+      font-size: 5.2vw;
       border: 0;
       line-height: 100%;
       margin: $spacing-sm $spacing-md $spacing-md $spacing-md;
@@ -177,7 +193,7 @@ export default {
       text-shadow: 0 2px 2px rgba($black, 0.14), 0 10px 20px rgba($black, 0.15), 0 20px 40px rgba($black, 0.1);
 
       @media screen and (max-width: 768px){
-        font-size: 15vw;
+        font-size: 10vw;
         text-wrap: balance;
 
         span {
