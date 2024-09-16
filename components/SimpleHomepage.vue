@@ -193,7 +193,7 @@ onMounted(() => {
 
   // generate the colors with an HSL model
   @for $i from 0 through 160 {
-    $hue: ($i - 1) * (360 / 160);
+    $hue: ($i - 1) * (360 / 60);
     $color: hsl($hue, 100%, 50%);
     $mesh-colors: map-merge($mesh-colors, ($i: $color));
   }
@@ -202,11 +202,11 @@ onMounted(() => {
   @each $name, $color in $mesh-colors {
     $i: $i + 1;
     .element:nth-child(#{$i}) {
-      // background: linear-gradient(to bottom, rgba($color,0), rgba($color,0.25));
-      animation-delay: -#{$i * .125}s;
-      width: 10dvw;
+      background: linear-gradient(to bottom, rgba($color,0), rgba($color,0.25));
+      animation-delay: -#{$i * .25}s;
+      width: 2dvw;
       height: 20dvw;
-      border: 2px solid rgba($color, 0.4);
+      // border: 2px solid rgba($color, 0.4);
       border-radius: 2rem;
       align-self: center;
       justify-self: center;
