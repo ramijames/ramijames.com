@@ -137,6 +137,10 @@ export default {
     position: relative;
     background-size: cover;
 
+    &.ultra {
+      background-position: right center;
+    }
+
     &:after {
       content: '';
       position: absolute;
@@ -166,16 +170,16 @@ export default {
       }
 
       .tag {
-        color: $white;
+        color: $black;
         margin: $spacing-md $spacing-md 0 $spacing-md;
-        padding: $spacing-xs $spacing-sm;
-        border: 2px solid $white;
+        padding: $spacing-xxs $spacing-xs;
+        background: rgba($white, 1);
         align-self: flex-start;
         border-radius: 4px;
         z-index: 2;
         font-size: $font-size-xs;
         text-transform: uppercase;
-        mix-blend-mode: overlay;
+        font-weight: bold;
       }
     }
 
@@ -184,7 +188,7 @@ export default {
       font-size: 5.2vw;
       border: 0;
       line-height: 100%;
-      margin: $spacing-sm $spacing-md $spacing-md $spacing-md;
+      margin: $spacing-xs $spacing-md $spacing-md $spacing-md;
       padding: 0;
       text-wrap: balance;
       font-family: $font-family-secondary;
