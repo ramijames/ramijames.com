@@ -137,7 +137,8 @@ export default {
     position: relative;
     background-size: cover;
 
-    &.ultra {
+    &.ultra,
+    &.foodforfuture {
       background-position: right center;
     }
 
