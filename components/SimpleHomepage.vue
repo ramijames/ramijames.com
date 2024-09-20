@@ -184,7 +184,7 @@ onMounted(() => {
   top:0;
   left:0;
   right:0;
-  mask-image: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 90%);
+  // mask-image: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 90%);
 
   @media screen and (max-width: 768px){
   }
@@ -202,14 +202,15 @@ onMounted(() => {
   @each $name, $color in $mesh-colors {
     $i: $i + 1;
     .element:nth-child(#{$i}) {
-      background: linear-gradient(to bottom, rgba($color,0), rgba($color,0.25));
+      background: linear-gradient(to bottom, rgba($color,0) 55%, rgba($color,.8));
       animation-delay: -#{$i * .25}s;
-      width: 2dvw;
+      width: .8dvw;
       height: 20dvw;
       // border: 2px solid rgba($color, 0.4);
       border-radius: 2rem;
       align-self: center;
       justify-self: center;
+      box-shadow: -10rem 0 0 4rem rgba($color, 0.02);
     }
   }
 
