@@ -142,12 +142,9 @@ export default {
     background-size: cover;
     padding: $spacing-lg;
 
-    &:hover {
-      
-      &:after {
-        height: 0%;
-        opacity: 0;
-      }
+    @media screen and (max-width: 768px){
+      align-items: center;
+      justify-content: center;
     }
 
     &.ultra,
@@ -155,25 +152,29 @@ export default {
       background-position: right center;
     }
 
-    // &:after {
-    //   content: '';
-    //   position: absolute;
-    //   bottom: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 70%;
-    //   background: linear-gradient(to bottom, rgba($black, 0) 0%, rgba($black, 1) 100%);
-    //   mix-blend-mode: multiply;
-    //   z-index: 1;
-    //   opacity: .5;
-    //   transition: all 0.3s ease-in-out;
-    // }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70%;
+      background: linear-gradient(to bottom, rgba($black, 0) 0%, rgba($black, 1) 100%);
+      mix-blend-mode: multiply;
+      z-index: 1;
+      opacity: .5;
+      transition: all 0.3s ease-in-out;
+    }
 
     .info {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+
+      @media screen and (max-width: 768px){
+        align-items: center;
+      }
 
       .button {
         z-index: 2;
@@ -187,6 +188,12 @@ export default {
         z-index: 2;
         position: relative;
         height: 100%;
+        gap: $spacing-xs;
+
+        @media screen and (max-width: 768px){
+          align-items: center;
+          justify-content: center;
+        }
       }
 
       &.scatter,
@@ -195,8 +202,17 @@ export default {
       &.telos {
         align-items: flex-end;
 
+        @media screen and (max-width: 768px){
+          align-items: center;
+          justify-content: center;
+        }
+
         .tag {
           align-self: flex-end;
+
+          @media screen and (max-width: 768px){
+            align-self: center;
+          }
         }
       }
 
@@ -211,6 +227,10 @@ export default {
         font-size: $font-size-xs;
         text-transform: uppercase;
         font-weight: bold;
+
+        @media screen and (max-width: 768px){
+          align-self: center;
+        }
       }
     }
 
@@ -229,6 +249,7 @@ export default {
       @media screen and (max-width: 768px){
         font-size: 10vw;
         text-wrap: balance;
+        text-align: center;
 
         span {
           margin-bottom: 0.5rem;
