@@ -12,7 +12,7 @@
           <div class="tag">{{ product.type }}</div>
           <h3>{{ product.title }}</h3>
         </section>
-        <nuxt-link class="button" :to="product.slug">View project</nuxt-link>
+        <!-- <nuxt-link class="button" :to="product.slug">View project</nuxt-link> -->
       </section>
     </nuxt-link>
   </section>
@@ -133,14 +133,13 @@ export default {
 
   .project {
     width: 100vw;
-    height: 56vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     text-decoration: none;
     position: relative;
     background-size: cover;
-    padding: $spacing-lg;
+    padding: $spacing-xl $spacing-lg;
 
     @media screen and (max-width: 768px){
       align-items: center;
