@@ -8,8 +8,11 @@
         :style="{ backgroundColor: product.color, backgroundImage: `url(${product.bg})` }"
       >
       <section :class="['info', product.class]">
-        <div class="tag">{{ product.type }}</div>
-        <h3>{{ product.title }}</h3>
+        <section class="top">
+          <div class="tag">{{ product.type }}</div>
+          <h3>{{ product.title }}</h3>
+        </section>
+        <nuxt-link class="button" :to="product.slug">View project</nuxt-link>
       </section>
     </nuxt-link>
   </section>
@@ -123,6 +126,10 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 0.3s forwards ease-in-out;
+  animation-delay: 0.4s;
 
   .project {
     width: 100vw;
@@ -133,28 +140,54 @@ export default {
     text-decoration: none;
     position: relative;
     background-size: cover;
+    padding: $spacing-lg;
+
+    &:hover {
+      
+      &:after {
+        height: 0%;
+        opacity: 0;
+      }
+    }
 
     &.ultra,
     &.foodforfuture {
       background-position: right center;
     }
 
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 70%;
-      background: linear-gradient(to bottom, rgba($black, 0) 0%, rgba($black, 1) 100%);
-      mix-blend-mode: multiply;
-      z-index: 1;
-    }
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 70%;
+    //   background: linear-gradient(to bottom, rgba($black, 0) 0%, rgba($black, 1) 100%);
+    //   mix-blend-mode: multiply;
+    //   z-index: 1;
+    //   opacity: .5;
+    //   transition: all 0.3s ease-in-out;
+    // }
 
     .info {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
+      align-items: flex-start;
+
+      .button {
+        z-index: 2;
+      }
+
+      .top {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        z-index: 2;
+        position: relative;
+        height: 100%;
+      }
 
       &.scatter,
       &.doodledapp,
@@ -169,8 +202,8 @@ export default {
 
       .tag {
         color: $black;
-        margin: $spacing-md $spacing-md 0 $spacing-md;
         padding: $spacing-xxs $spacing-xs;
+        margin-bottom: $spacing-xs;
         background: rgba($white, 1);
         align-self: flex-start;
         border-radius: 4px;
@@ -186,7 +219,6 @@ export default {
       font-size: 5.2vw;
       border: 0;
       line-height: 100%;
-      margin: $spacing-xs $spacing-md $spacing-md $spacing-md;
       padding: 0;
       text-wrap: balance;
       font-family: $font-family-secondary;

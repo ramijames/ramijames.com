@@ -1,16 +1,19 @@
 <template>
   <main id="Hero">
-    <div id="mesh-gradient" class="sixteen-elements">
+    <!-- <div id="mesh-gradient" class="sixteen-elements">
       <div class="element" v-for="n in 160" :key="n"></div>
-    </div>
+    </div> -->
     <section class="mega-hero">
       <section class="intro-text">
         <!-- <h3>Senior Product Designer</h3> -->
         <p>
-          <span class="mint">To delight with design & code,<br></span>
-          <span class="blue">You must bring new ideas to life,<br></span>
-          <span class="red">A new way of thinking, a new way of doing.</span>
+          <span>Design, build, & ship your product</span>
         </p>
+        <p class="secondary">I am a product-minded designer and developer with founder experience. My core interest is in creating innovative tools with creative partners like you.</p>
+        <section class="home-buttons">
+          <nuxt-link class="button" to="/services">View services</nuxt-link>
+          <a class="button" href="mailto:ramijames@gmail.com">Send email</a>
+        </section>
       </section>
     </section>
     <MergedProjects />
@@ -41,12 +44,13 @@ onMounted(() => {
   perspective: 100rem;
 
   .mega-hero {
-    padding: $spacing-md;
+    padding: $spacing-lg $spacing-md $spacing-xl $spacing-md;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    height: 80vh;
+    animation: zoomBack 0.65s forwards ease-in;
+    opacity: 0;
 
     .intro-text {
       display: flex;
@@ -54,26 +58,54 @@ onMounted(() => {
       justify-content: space-between;
       align-items: flex-start;
       width: 100%;
+
+      .home-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: $spacing-sm;
+        margin-top: $spacing-md;
+
+        @media screen and (max-width: 600px){
+          flex-direction: column;
+          justify-content: flex-start;
+          width: 100%;
+
+          .button {
+            width: 100%;
+          }
+        }
+      }
     }
 
     p {
-      animation: fadeInUp 0.5s forwards;
-      font-size: 5.2vw;
-      line-height: 100%;
+      
+      font-size: 10vw;
+      line-height: 90%;
       letter-spacing: -0.1rem;
-      text-wrap: nowrap;
+      text-wrap: balance;
       font-family: $font-family-main;
-      animation-delay: 1.4s;
-      opacity: 0;
 
       @media screen and (max-width: 768px){
-        font-size: 10vw;
+        font-size: 16vw;
         text-wrap: balance;
 
         span {
           margin-bottom: 0.5rem;
           display: block;
         }
+      }
+    }
+
+    p.secondary {
+      font-size: $font-size-xl;
+      line-height: 140%;
+      text-wrap: balance;
+      letter-spacing: initial;
+      font-family: $font-family-secondary;
+
+      @media screen and (max-width: 768px){
+        font-size: $font-size-md;
       }
     }
   }

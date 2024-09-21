@@ -31,6 +31,19 @@
   }
 }
 
+@keyframes zoomBack {
+  from {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
 @keyframes clipReveal {
   from {
     opacity: 0;

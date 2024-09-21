@@ -130,6 +130,10 @@ export default {
   align-items: center;
   padding: $spacing-sm $spacing-md;
   position: relative;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.3s forwards ease-in-out;
+  animation-delay: 0.4s;
 
   .navigation {
     display: flex;
@@ -237,7 +241,7 @@ export default {
 
         &:hover {
           color: $white;
-          border: 2px solid $white;
+          border: 2px solid rgba($blue, 1);
         }
         
         &.router-link-exact-active {

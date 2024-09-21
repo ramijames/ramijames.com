@@ -36,6 +36,44 @@ body.dark {
   overflow: hidden;
 }
 
+/* Button */
+
+button,
+.button {
+    color: $white;
+    background: transparent;
+    border-radius: 0.2rem;
+    border: 2px solid rgba($white, .4);
+    text-align: center;
+    text-decoration: none;
+    padding: calc($spacing-xs + 2px) $spacing-md $spacing-xs;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: $font-size-md;
+    transition: all 0.2s ease;
+    font-family: $font-family-main;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: $spacing-xs;
+    align-items: center;
+
+    &:hover {
+        border: 2px solid rgba($white, 1);
+    }
+
+    &.clear {
+      background: rgba($blue, 0.5);
+      border: 2px solid rgba($blue, 0.6);
+      color: $white;
+
+      &:hover {
+        background: rgba($blue, 0.8);
+        border: 2px solid rgba($blue, 1);
+      }
+    }
+}
+
 
 /* Typography */
 
@@ -169,7 +207,6 @@ p {
   font-family: $font-family-secondary, sans-serif;
   line-height: $spacing-md;
   margin-bottom: 1rem;
-  opacity: 0.8;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-sm;
