@@ -184,9 +184,9 @@ onMounted(() => {
   top:0;
   left:0;
   right:0;
-  // mask-image: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 90%);
 
   @media screen and (max-width: 768px){
+    display: none;
   }
 
   $mesh-colors: ();
@@ -206,7 +206,6 @@ onMounted(() => {
       animation-delay: -#{$i * .25}s;
       width: .8dvw;
       height: 20dvw;
-      // border: 2px solid rgba($color, 0.4);
       border-radius: 2rem;
       align-self: center;
       justify-self: center;
