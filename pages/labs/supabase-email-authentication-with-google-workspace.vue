@@ -21,6 +21,16 @@
         <li>A <a href="https://workspace.google.com/">Google Workspace</a> account</li>
       </ul>
 
+      <p>If you're just looking for the quick low-down:</p>
+
+      <ol>
+        <li>Use SMTP Host: smtp-relay.gmail.com</li>
+        <li>Use SMTP Port: 465</li>
+        <li>Have 2fa enabled</li>
+        <li>Generate and use an app password</li>
+        <li>Use your admin account to authenticate with the above</li>
+      </ol>
+
       <h3>Google Workspace Account</h3>
 
       <p>For the Google account, you'll be managing the account settings via the Google Security section of your account. After you've signed in, you can access this from the dropdown that is in the top-right on a Google-related page (like Gmail, etc.), then "Manage your Google Account", and finally the Security tab on the left nav bar.</p>
