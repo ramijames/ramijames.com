@@ -220,7 +220,6 @@ li {
   line-height: $font-size-lg * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
   line-height: $spacing-md;
-  opacity: 0.8;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-sm;

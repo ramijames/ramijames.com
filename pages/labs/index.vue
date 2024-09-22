@@ -1,7 +1,7 @@
 <template>
   <section class="w-three-quarters page-top">
     <h1 class="">Labs</h1>
-    <h4 class="">Esoteric digital art in CSS, Vue, and GLSL</h4>
+    <h4 class="">Technical solutions for various problems that I've encountered over the years.</h4>
   </section>
   <section class="w-three-quarters">
     <main class="labs">
@@ -88,11 +88,9 @@ export default {
     display:flex;
     flex-direction: column;
     color: $white;
-    background: rgba($white,0);
-    backdrop-filter: blur(20px);
+    background: linear-gradient(to top, rgba($black, 0.8) 0%, rgba($black, 0) 100%);
     padding: $spacing-lg $spacing-lg $spacing-md;
     text-wrap: balance;
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 35%);
 
     .title {
       font-size: $font-size-xl;

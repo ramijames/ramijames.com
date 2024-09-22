@@ -1,10 +1,11 @@
 <template>
   <section id="PostsExtras">
     <section class="postContent">
-      <img src="/services/ai.png" alt="Rami James is a nice guy" />
-      <h3>I'm actively looking for work!</h3>
-      <p>If you need a product specialist, designer, or front-end developer, please reach out.</p>
-      <Button type="small" text="Email Me" to="mailto:ramijames@gmail.com" />
+      <img src="/vewrite.png" alt="Rami James is a nice guy" />
+      <h3>Join the Vewrite Beta</h3>
+      <p class="mint">Vewrite, project management tailored for technical writing teams, is launching soon. Make sure to sign up for the waitlist so that you can be notified when the product launches.</p>
+      <!-- <Button type="small" text="Open Website" to="https://vewrite.com/" /> -->
+       <a href="https://vewrite.com/" class="button">Open Website</a>
     </section>
   </section>
 </template>
@@ -14,13 +15,13 @@
 @import '/assets/variables.scss';
 
 #PostsExtras {
-  background: rgba(lighten($black, 1.5%), 0.4);
-  border-top: 1px solid $white;
+  background: rgba(lighten($black, 20.5%), 0.4);
   width: 100%;
-  padding: $spacing-lg $spacing-md;
+  padding: 0 0 $spacing-lg ;
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: $spacing-lg;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -39,8 +40,10 @@
     }
 
     img {
-      width: 100px;
+      width: 100%;
+      max-width: 800px;
       margin: 0 auto $spacing-md;
+      border-radius: 0 0 2rem 2rem;
     }
 
     h3 {
@@ -52,8 +55,9 @@
 
     p {
       font-size: $font-size-sm;
-      margin-bottom: $spacing-md;
+      margin: 0 $spacing-lg $spacing-md;
       line-height: 140%;
+      text-align: center;
 
       @media screen and (max-width: 768px) {
         text-align: center;
