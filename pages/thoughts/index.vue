@@ -88,11 +88,9 @@ export default {
     display:flex;
     flex-direction: column;
     color: $white;
-    background: rgba($white,0);
-    backdrop-filter: blur(20px);
     padding: $spacing-lg $spacing-lg $spacing-md;
     text-wrap: balance;
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 35%);
+    background: linear-gradient(to top, rgba($black, 0.8) 0%, rgba($black, 0) 100%);
 
     .title {
       font-size: $font-size-xl;
