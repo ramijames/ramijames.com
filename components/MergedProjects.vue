@@ -1,18 +1,15 @@
 <template>
   <section id="Products">
     <nuxt-link
-        :class="['project', product.class]"
+        :class="['project', 'w-three-quarters', product.class]"
         v-for="product in products" 
         :key="product.title" 
         :to="product.slug" 
         :style="{ backgroundColor: product.color, backgroundImage: `url(${product.bg})` }"
       >
       <section :class="['info', product.class]">
-        <section class="top">
-          <div class="tag">{{ product.type }}</div>
-          <h3>{{ product.title }}</h3>
-        </section>
-        <!-- <nuxt-link class="button" :to="product.slug">View project</nuxt-link> -->
+        <h3>{{ product.title }}</h3>
+        <p>View Product</p>
       </section>
     </nuxt-link>
   </section>
@@ -130,16 +127,37 @@ export default {
   transform: translateY(-20px);
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0.4s;
+  margin-bottom: $spacing-xl;
 
   .project {
-    width: 100vw;
+    width: 100%;
+    height: 40em;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     text-decoration: none;
     position: relative;
     background-size: cover;
-    padding: $spacing-xl $spacing-lg;
+    padding: $spacing-lg;
+    margin-top: 0;
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0.95);
+
+    &:hover {
+      opacity: 1;
+      box-shadow: 0 20px 20px rgba($black, 1);
+      transform: scale(1) rotate(0.5deg);
+
+      .info {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
 
     @media screen and (max-width: 768px){
       align-items: center;
@@ -157,12 +175,17 @@ export default {
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 70%;
-      background: linear-gradient(to bottom, rgba($black, 0) 0%, rgba($black, 1) 100%);
+      height: 100%;
+      background: linear-gradient(-120deg, rgba($black, 0) 50%, rgba($black, 1) 100%);
       mix-blend-mode: multiply;
-      z-index: 1;
-      opacity: .5;
+      z-index: 0;
+      opacity: .7;
       transition: all 0.3s ease-in-out;
+
+      @media screen and (max-width: 768px){
+        background: linear-gradient(-120deg, rgba($black, .6) 50%, rgba($black, 0.8) 100%);
+        opacity: 1;
+      }
     }
 
     .info {
@@ -170,80 +193,40 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      z-index: 1;
+      transform: translateY(100px);
 
       @media screen and (max-width: 768px){
         align-items: center;
+        opacity: 1;
+        transform: translateY(0);
       }
 
-      .button {
-        z-index: 2;
-      }
-
-      .top {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        z-index: 2;
+      p {
+        color: $white;
+        font-size: $font-size-sm;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
         position: relative;
-        height: 100%;
-        gap: $spacing-xs;
-
-        @media screen and (max-width: 768px){
-          align-items: center;
-          justify-content: center;
-        }
+        opacity: 0.6;
       }
 
-      &.scatter,
-      &.doodledapp,
-      &.illustrations,
-      &.telos {
-        align-items: flex-end;
-
-        @media screen and (max-width: 768px){
-          align-items: center;
-          justify-content: center;
-        }
-
-        .tag {
-          align-self: flex-end;
-
-          @media screen and (max-width: 768px){
-            align-self: center;
-          }
-        }
-      }
-
-      .tag {
-        color: $black;
-        padding: $spacing-xxs $spacing-xs;
-        margin-bottom: $spacing-xs;
-        background: rgba($white, 1);
-        align-self: flex-start;
-        border-radius: 4px;
-        z-index: 2;
-        font-size: $font-size-xs;
-        text-transform: uppercase;
-        font-weight: bold;
-
-        @media screen and (max-width: 768px){
-          align-self: center;
-        }
-      }
     }
 
     h3 {
       color: $white;
-      font-size: 5.2vw;
+      font-size: 3.2vw;
       border: 0;
+      font-weight: 900;
       line-height: 100%;
       padding: 0;
+      margin: 0;
       text-wrap: balance;
       font-family: $font-family-secondary;
-      z-index: 2;
       position: relative;
-      text-shadow: 0 2px 2px rgba($black, 0.14), 0 10px 20px rgba($black, 0.15), 0 20px 40px rgba($black, 0.1);
 
       @media screen and (max-width: 768px){
         font-size: 10vw;

@@ -4,10 +4,9 @@
       <div class="element" v-for="n in 160" :key="n"></div>
     </div> -->
     <section class="mega-hero">
-      <section class="intro-text">
-        <!-- <h3>Senior Product Designer</h3> -->
+      <section class="intro-text w-three-quarters">
         <p>
-          <span>Design, build, & ship your product</span>
+          <span>Design</span>, <span>build, </span><span>& ship your product</span>
         </p>
         <p class="secondary">I am a product-minded designer and developer with founder experience. My core interest is in creating innovative tools with creative partners like you.</p>
         <section class="home-buttons">
@@ -49,7 +48,7 @@ onMounted(() => {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    animation: zoomBack 0.65s forwards ease-in;
+    animation: zoomBack 0.65s forwards ease-in-out;
     opacity: 0;
 
     .intro-text {
@@ -80,7 +79,7 @@ onMounted(() => {
 
     p {
       
-      font-size: 10vw;
+      font-size: 8vw;
       line-height: 90%;
       letter-spacing: -0.1rem;
       text-wrap: balance;
