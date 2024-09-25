@@ -1,12 +1,14 @@
 <template>
   <main id="Hero">
-    <!-- <div id="mesh-gradient" class="sixteen-elements">
+    <div id="mesh-gradient" class="sixteen-elements">
       <div class="element" v-for="n in 160" :key="n"></div>
-    </div> -->
+    </div>
     <section class="mega-hero">
       <section class="intro-text w-three-quarters">
         <p>
-          <span>Design</span>, <span>build, </span><span>& ship your product</span>
+          <span>Design,&nbsp;</span>
+          <span>build, </span>
+          <span>& ship your product</span>
         </p>
         <p class="secondary">I am a product-minded designer and developer with founder experience. My core interest is in creating innovative tools with creative partners like you.</p>
         <section class="home-buttons">
@@ -48,8 +50,6 @@ onMounted(() => {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    animation: zoomBack 0.65s forwards ease-in-out;
-    opacity: 0;
 
     .intro-text {
       display: flex;
@@ -64,6 +64,9 @@ onMounted(() => {
         justify-content: flex-start;
         gap: $spacing-sm;
         margin-top: $spacing-md;
+        animation: fadeInUp 0.5s forwards ease-in-out;
+        opacity: 0;
+        animation-delay: 1.05s;
 
         @media screen and (max-width: 600px){
           flex-direction: column;
@@ -85,6 +88,24 @@ onMounted(() => {
       text-wrap: balance;
       font-family: $font-family-main;
 
+      span {
+        display: inline-block;
+        animation: zoomBack 0.5s forwards ease-in-out;
+        opacity: 0;
+
+        &:nth-child(1) {
+          animation-delay: 0.45s;
+        }
+
+        &:nth-child(2) {
+          animation-delay: .6s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: .75s;
+        }
+      }
+
       @media screen and (max-width: 768px){
         font-size: 16vw;
         text-wrap: balance;
@@ -102,6 +123,9 @@ onMounted(() => {
       text-wrap: balance;
       letter-spacing: initial;
       font-family: $font-family-secondary;
+      animation: fadeInUp 0.5s forwards ease-in-out;
+      opacity: 0;
+      animation-delay: 0.9s;
 
       @media screen and (max-width: 768px){
         font-size: $font-size-md;
@@ -233,14 +257,14 @@ onMounted(() => {
   @each $name, $color in $mesh-colors {
     $i: $i + 1;
     .element:nth-child(#{$i}) {
-      background: linear-gradient(to bottom, rgba($color,0) 55%, rgba($color,.8));
+      // background: linear-gradient(to bottom, rgba($color,0) 55%, rgba($color,.8));
+      border: 1px solid rgba($color, 0.3);
       animation-delay: -#{$i * .25}s;
       width: .8dvw;
       height: 20dvw;
       border-radius: 2rem;
       align-self: center;
       justify-self: center;
-      box-shadow: -10rem 0 0 4rem rgba($color, 0.02);
     }
   }
 

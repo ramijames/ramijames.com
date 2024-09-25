@@ -140,7 +140,7 @@ export default {
     background-size: cover;
     padding: $spacing-lg;
     margin-top: 0;
-    opacity: 0.8;
+    opacity: 1;
     transition: all 0.3s ease-in-out;
     transform: scale(0.95);
 
