@@ -1,13 +1,22 @@
 <template>
   <section id="example">
-    <div id="mesh-gradient" class="fired-up">
-      <div class="element" v-for="n in 16" :key="n"></div>
-    </div>
     <h2 class="special-title">Supabase SMTP Relay Setup with Google Workspace</h2>
   </section>
   <main class="general-main page-top">
 
     <section class="content">
+      <section class="summary">
+        <h3>TLDR Summary</h3>
+
+        <ol>
+          <li>Use SMTP Host: smtp-relay.gmail.com</li>
+          <li>Use SMTP Port: 465</li>
+          <li>Have 2fa enabled</li>
+          <li>Generate and use an app password</li>
+          <li>Use your admin account to authenticate with the above</li>
+        </ol>
+      </section>
+
       <p>I generally use Supabase to build with. I like that they provide excellent, accessible Postgres deployments plus authentication for just about every flavor that you can think of. It's the end of September 2024, and they have announced some changes to what is allowed with regards to sending emails via their platform. Basically, they are requiring everyone to use their own SMTP relays instead of Supabase's. I suppose that's reasonable.</p>
 
       <p>For <a href="https://vewrite.com/">Vewrite</a>, a technical writing project management service that I've been building, I have set up my deployment on Netlify, and rely on Google Workspace for our org's email, shared drives, and internal docs. There is a support email which I'd like to use for Vewrite, and I suppose it makes sense to rely on Google's outgoing SMTP relay for Supabase, too.</p>
@@ -20,16 +29,6 @@
         <li>A <a href="https://supabase.com/">Supabase</a> account</li>
         <li>A <a href="https://workspace.google.com/">Google Workspace</a> account</li>
       </ul>
-
-      <p>If you're just looking for the quick low-down:</p>
-
-      <ol>
-        <li>Use SMTP Host: smtp-relay.gmail.com</li>
-        <li>Use SMTP Port: 465</li>
-        <li>Have 2fa enabled</li>
-        <li>Generate and use an app password</li>
-        <li>Use your admin account to authenticate with the above</li>
-      </ol>
 
       <h3>Google Workspace Account</h3>
 
@@ -77,8 +76,8 @@
       <p>That's it! You should be all set up to send emails from Supabase via Google's SMTP relay.</p>
 
     </section>
-    <PostsExtras />
   </main>
+  <PostsExtras />
   <Footer />
 </template>
 

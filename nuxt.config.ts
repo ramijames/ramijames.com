@@ -65,6 +65,8 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/thoughts/on-ethical-pricing': { redirect: '/thoughts/how-to-make-product-decisions-based-on-business-needs' },
+    '/labs/css-mesh-gradients': { redirect: '/thoughts/css-mesh-gradients' },
+    '/labs/supabase-email-authentication-with-google-workspace': { redirect: '/thoughts/supabase-email-authentication-with-google-workspace' },
     '/illustrations': { redirect: '/products/illustrations' },
   },
 })

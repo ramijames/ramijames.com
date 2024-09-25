@@ -1,12 +1,32 @@
 [
   {
+    "title": "Supabase Email Authentication with Google Workspace",
+    "date": "2024-06-12",
+    "slug": "supabase-email-authentication-with-google-workspace",
+    "tags": [
+      "supabase", "email-authentication", "google-workspace", "oauth", "vue"
+    ],
+    "summary": "Supabase recently released a new feature that allows you to authenticate users with Google Workspace. Let's see how we can implement this in a Vue.js application.",
+    "image": "/labs/supabase-email-authentication.png"
+  },
+  {
+    "title": "CSS Mesh Gradients",
+    "date": "2024-06-12",
+    "slug": "css-mesh-gradients",
+    "tags": [
+      "css", "gradients", "mesh-gradients", "ios", "apple"
+    ],
+    "summary": "Apple recently released Mesh Gradients as a feature for iOS development. Let's see if we can replicate this in CSS.",
+    "image": "/labs/gradient-mesh.png"
+  },
+  {
     "title": "How to Make Product Decisions based on Business Needs",
     "date": "2024-06-20",
     "slug": "how-to-make-product-decisions-based-on-business-needs",
     "tags": [
       "product-first", "economics", "pricing"
     ],
-    "summary": "",
+    "summary": "It can be difficult to make moral decisions when it comes to developing your product. Let's talk about how to make product decisions based on business needs.",
     "image": "/articles/on-ethical-pricing.png"
   },
   {

@@ -1,5 +1,5 @@
 <template>
-  <div id="share">
+  <div id="share" class="w-three-quarters">
     Share article:
     <a v-for="social in socials" 
        :key="social.name" 
@@ -61,7 +61,6 @@ export default {
   align-items: center;
   justify-content: flex-start;
   gap: $spacing-md;
-  margin: $spacing-lg 0;
   color: rgba($white, 0.3);
 }
 
