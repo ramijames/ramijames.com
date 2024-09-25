@@ -61,6 +61,10 @@ const allArticles = articles.slice(1)
     max-width: 600px;
     object-fit: cover;
     border: 1px solid rgba($white, 0.1);
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+    }
   }
 
   .info {
@@ -72,6 +76,10 @@ const allArticles = articles.slice(1)
     text-wrap: balance;
     text-align: left;
     gap: $spacing-xs;
+
+    @media screen and (max-width: 768px) {
+      padding: $spacing-md 0;
+    }
 
     .latest {
       background: $white;
@@ -141,7 +149,7 @@ const allArticles = articles.slice(1)
 
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
-    height: 340px;
+    height: auto;
   }
 
   img {
