@@ -60,11 +60,6 @@ export default defineNuxtConfig({
     preconnect: true,
     preload: true,
   },
-  fonts: {
-    families: [
-      { name: 'AlmarenaNeue-DisplayRegular', provider: 'local' },
-    ],
-  },
   routeRules: {
     '/thoughts/on-ethical-pricing': { redirect: '/thoughts/how-to-make-product-decisions-based-on-business-needs' },
     '/labs/css-mesh-gradients': { redirect: '/thoughts/css-mesh-gradients' },
