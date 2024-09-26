@@ -25,10 +25,12 @@
 
 @keyframes skewIn {
   0% {
+    opacity: 0;
     transform: skewY(0deg) skewX(0deg) scale(0.6);
   }
   100% {
-    transform: skewY(-2.5deg) skewX(0deg) scale(1);
+    opacity: 1;
+    transform: skewY(-5.5deg) skewX(0deg) scale(1);
   }
 }
 
@@ -40,6 +42,24 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes shadowDrop {
+  0% {
+    text-shadow: 0 0 0 rgba($white, 0);
+  }
+  100% {
+    text-shadow: 2px 3px 0 rgba(lighten($blue, 20%), .6), 13px 20px 20px rgba($teal, .36), 13px 16px 0 rgba(darken($blue, 5%), .6), 13px 20px 20px rgba(black, .26);
+  }
+}
+
+@keyframes shadowDropMobile {
+  0% {
+    text-shadow: 0 0 0 rgba($white, 0);
+  }
+  100% {
+    text-shadow: 2px 4px 0 rgba(darken($blue, 5%), .6), 1px 2px 0 rgba(darken($mint, 10%), .1), 2px 10px 10px rgba(black, .6);
   }
 }
 

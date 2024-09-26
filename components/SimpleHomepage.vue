@@ -6,9 +6,12 @@
     <section class="mega-hero">
       <section class="intro-text w-three-quarters">
         <p class="small">
-          Solo founder, designer, & developer
+          Rami James
         </p>
-        <p class="teal">
+        <p class="small blue">
+          Founder, designer, & developer
+        </p>
+        <p>
           <span>D</span>
           <span>e</span>
           <span>s</span>
@@ -60,7 +63,7 @@
       </section>
     </section>
     <section id="RecentWork">
-      <h2>Recent Work</h2>
+      <h2 class="blue">Recent Work</h2>
       <MergedProjects />
     </section>
   </main>
@@ -90,7 +93,7 @@ onMounted(() => {
   perspective: 100rem;
 
   .mega-hero {
-    padding: $spacing-lg 0 $spacing-xl 0;
+    padding: $spacing-lg 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,13 +143,15 @@ onMounted(() => {
 
     p {
       font-size: 6vw;
-      line-height: 110%;
+      line-height: 100%;
       letter-spacing: -0.1rem;
       text-wrap: balance;
       font-family: $font-family-main;
       margin-bottom: $spacing-md;
       text-transform: uppercase;
       font-weight: 900;
+      animation: shadowDrop 0.5s forwards ease-in-out;
+      animation-delay: 0.4s;
 
       &.small {
         font-size: $font-size-md;
@@ -155,6 +160,7 @@ onMounted(() => {
         animation: fadeInUp 0.5s forwards ease-in-out;
         animation-delay: 1.05s;
         opacity: 0;
+        margin-bottom: $spacing-sm;
       }
 
       span {
@@ -172,8 +178,9 @@ onMounted(() => {
       }
 
       @media screen and (max-width: 768px){
-        font-size: 9vw;
+        font-size: 11vw;
         text-wrap: balance;
+        animation: shadowDropMobile 0.5s forwards ease-in-out;
       }
     }
 
@@ -229,10 +236,10 @@ onMounted(() => {
 }
 
 #RecentWork {
+  animation: fadeInUp 0.5s forwards ease-in-out;
+  transform: translateY(20px);
+  animation-delay: 0.4s;
   opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeInUp 0.3s forwards ease-in-out;
-  animation-delay: 1.2s;
   
   h2 {
     font-size: 10vw;
@@ -313,8 +320,8 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 1fr;
   z-index: -10;
   align-items: center;
   justify-content: center;;
@@ -324,6 +331,7 @@ onMounted(() => {
   top:0;
   left:0;
   right:0;
+  mask-image: linear-gradient( rgba(0,0,0,0) 5%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 80%);
 
   @media screen and (max-width: 768px){
     display: none;
@@ -332,7 +340,7 @@ onMounted(() => {
   $mesh-colors: ();
 
   // generate the colors with an HSL model
-  @for $i from 0 through 160 {
+  @for $i from 0 through 360 {
     $hue: ($i - 1) * (360 / 60);
     $color: hsl($hue, 100%, 50%);
     $mesh-colors: map-merge($mesh-colors, ($i: $color));
@@ -343,11 +351,11 @@ onMounted(() => {
     $i: $i + 1;
     .element:nth-child(#{$i}) {
       // background: linear-gradient(to bottom, rgba($color,0) 55%, rgba($color,.8));
-      border: 1px solid rgba(white, 0.1);
+      border: 1px solid rgba($color, .4);
       animation-delay: -#{$i * .25}s;
-      width: .8dvw;
+      width: 4dvw;
       height: 20dvw;
-      border-radius: 2rem;
+      border-radius: 50%;
       align-self: center;
       justify-self: center;
     }

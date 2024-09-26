@@ -3,11 +3,11 @@
     <section class="navigation">
       <nuxt-link to="/" class="logo-link"><img :src="`/logo-dark.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
-        <nuxt-link to="/" class="nav-link button">Home</nuxt-link>
-        <nuxt-link to="/services" class="nav-link button">Services</nuxt-link>
-        <nuxt-link to="/products" class="nav-link button">Recent Work</nuxt-link>
-        <nuxt-link to="/thoughts" class="nav-link button">Thoughts</nuxt-link>
-        <nuxt-link to="/about" class="nav-link button">About</nuxt-link>
+        <nuxt-link to="/" class="nav-link">Home</nuxt-link>
+        <nuxt-link to="/services" class="nav-link">Services</nuxt-link>
+        <nuxt-link to="/products" class="nav-link">Recent Work</nuxt-link>
+        <nuxt-link to="/thoughts" class="nav-link">Thoughts</nuxt-link>
+        <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
       <button 
         class="menu"
@@ -199,10 +199,27 @@ export default {
 
       .nav-link {
         text-decoration: none;
-        border: 2px solid transparent;
+        background: transparent;
+        color: $white;
+        padding: $spacing-xxs $spacing-xs;
+        border: 0;
         opacity: 0;
         animation: fadeInDown 0.2s ease-in-out forwards;
-        border: 2px solid rgba($white, 0);
+        transition: all 0.3s;
+        overflow: hidden;
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: $blue;
+          transition: all 0.3s;
+          transform: scaleX(0);
+          mix-blend-mode: screen;
+        }
 
         &:nth-child(1) {
           animation-delay: 0.1s;
@@ -233,11 +250,13 @@ export default {
         }
 
         &:hover {
-          border: 2px solid $white;
+          &:after {
+            transform: scaleX(1);
+          }
         }
         
         &.router-link-exact-active {
-          border: 2px solid $white;
+          background: $blue;
         }
       }
     }
