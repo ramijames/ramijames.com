@@ -54,9 +54,10 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Oswald': true,
+      'Teko': [400, 600, 900],
       'Roboto Sans': [400, 600, 700, 900],
-    }
+    },
+    preconnect: true,
   },
   fonts: {
     families: [

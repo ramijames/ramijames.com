@@ -6,9 +6,9 @@
     <section class="mega-hero">
       <section class="intro-text w-three-quarters">
         <p class="small">
-          Solo founder, designer, and developer
+          Solo founder, designer, & developer
         </p>
-        <p>
+        <p class="teal">
           <span>D</span>
           <span>e</span>
           <span>s</span>
@@ -103,6 +103,8 @@ onMounted(() => {
       align-items: center;
       width: 100%;
       text-align: center;
+      transform: skewY(0deg) scale(0.6);
+      animation: skewIn .9s forwards ease-in-out;
 
       .home-buttons {
         display: flex;
