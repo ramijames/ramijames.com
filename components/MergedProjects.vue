@@ -225,7 +225,6 @@ export default {
       padding: 0;
       margin: 0;
       text-wrap: balance;
-      font-family: $font-family-secondary;
       position: relative;
 
       @media screen and (max-width: 768px){

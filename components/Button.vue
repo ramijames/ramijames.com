@@ -34,101 +34,69 @@ export default {
 
 @import './assets/variables';
 
-.button {
-  position:relative;
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  cursor:pointer;
-  z-index: 0;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  overflow: hidden;
-  padding: $spacing-sm $spacing-md;
-  color: $white;
-  font-family: $font-family-main, sans-serif;
-  font-weight: 600;
-  font-size: $font-size-md;
-  white-space:nowrap;
-  text-decoration: none;
-  background: darken($blue, 10%);
-  border: 1px solid $blue;
-  border-radius: 4px;
+// .button {
+//   position:relative;
+//   display:flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   cursor:pointer;
+//   z-index: 0;
+//   transition: all 0.3s ease-in-out;
+//   text-decoration: none;
+//   overflow: hidden;
+//   padding: $spacing-sm $spacing-md;
+//   color: $white;
+//   font-family: $font-family-main, sans-serif;
+//   font-weight: 600;
+//   font-size: $font-size-md;
+//   white-space:nowrap;
+//   text-decoration: none;
+//   background: transparent;
+//   border: 1px solid $white;
+//   border-radius: 0;
 
-  &:hover {
-    background: $blue-dark;
-    color: $white;
-  }
+//   &:hover {
+//     background: $blue-dark;
+//     color: $white;
+//   }
 
-  @media screen and (max-width: 768px){
-    padding: $spacing-xs $spacing-sm;
-    font-size: $font-size-md;
-  }
+//   @media screen and (max-width: 768px){
+//     padding: $spacing-xs $spacing-sm;
+//     font-size: $font-size-md;
+//   }
 
-  &.small {
-    padding: $spacing-xs $spacing-sm!important;
-    font-size: $font-size-sm;
-    font-weight: 600;
+//   &.small {
+//     padding: $spacing-xs $spacing-sm!important;
+//     font-size: $font-size-sm;
+//     font-weight: 600;
 
-    @media screen and (max-width: 768px){
-      padding: $spacing-sm;
-    }
+//     @media screen and (max-width: 768px){
+//       padding: $spacing-sm;
+//     }
 
-    &:hover {
-      background: $teal-dark;
-      color: $white;
-    }
-  }
+//     &:hover {
+//       background: $teal-dark;
+//       color: $white;
+//     }
+//   }
 
-  &.text {
-    padding: $spacing-xs $spacing-sm!important;
-    font-size: $font-size-sm;
-    font-weight: 600;
-    background: transparent;
-    border-color: transparent;
+//   &.text {
+//     padding: $spacing-xs $spacing-sm!important;
+//     font-size: $font-size-sm;
+//     font-weight: 600;
+//     background: transparent;
+//     border-color: transparent;
 
-    @media screen and (max-width: 768px){
-      padding: $spacing-sm;
-    }
+//     @media screen and (max-width: 768px){
+//       padding: $spacing-sm;
+//     }
 
-    &:hover {
-      background: $teal-dark;
-      color: $white;
-    }
-  }
-}
-
-.dark .button {
-  color: $white;
-  border-color: $white;
-
-  &:hover {
-    background: $white;
-    color: $teal-dark;
-  }
-
-  &.small {
-
-    &:hover {
-      background: $white;
-      color: $teal-dark;
-    }
-  }
-
-  &.text {
-    background: transparent;
-    border-color: transparent;
-
-    @media screen and (max-width: 768px){
-      padding: $spacing-sm;
-    }
-
-    &:hover {
-      background: $white;
-      color: $teal-dark;
-    }
-  }
-}
+//     &:hover {
+//       background: $teal-dark;
+//       color: $white;
+//     }
+//   }
+// }
 
 </style>

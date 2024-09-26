@@ -5,19 +5,64 @@
     </div>
     <section class="mega-hero">
       <section class="intro-text w-three-quarters">
-        <p>
-          <span>Design,&nbsp;</span>
-          <span>build, </span>
-          <span>& ship your product</span>
+        <p class="small">
+          Solo founder, designer, and developer
         </p>
-        <p class="secondary">I am a product-minded designer and developer with founder experience. My core interest is in creating innovative tools with creative partners like you.</p>
+        <p>
+          <span>D</span>
+          <span>e</span>
+          <span>s</span>
+          <span>i</span>
+          <span>g</span>
+          <span>n</span>
+          <span>,</span>
+          <span>&nbsp;</span>
+          <span>b</span>
+          <span>u</span>
+          <span>i</span>
+          <span>l</span>
+          <span>d</span>
+          <span>,</span>
+          <span>&nbsp;</span>
+          <br>
+          <span>&</span>
+          <span>&nbsp;</span>
+          <span>s</span>
+          <span>h</span>
+          <span>i</span>
+          <span>p</span>
+          <span>&nbsp;</span>
+          <span>y</span>
+          <span>o</span>
+          <span>u</span>
+          <span>r</span>
+          <span>&nbsp;</span>
+          <span>p</span>
+          <span>r</span>
+          <span>o</span>
+          <span>d</span>
+          <span>u</span>
+          <span>c</span>
+          <span>t</span>
+        </p>
+        <!-- <p class="secondary">I am a product-minded designer and developer with founder experience. My core interest is in creating innovative tools with creative partners like you.</p> -->
         <section class="home-buttons">
           <nuxt-link class="button" to="/services">View services</nuxt-link>
           <a class="button" href="mailto:ramijames@gmail.com">Send email</a>
+          <div class="arrow-down">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22 42C33.0457 42 42 33.0457 42 22C42 10.9543 33.0457 2 22 2C10.9543 2 2 10.9543 2 22C2 33.0457 10.9543 42 22 42ZM22 44C34.1503 44 44 34.1503 44 22C44 9.84974 34.1503 0 22 0C9.84974 0 0 9.84974 0 22C0 34.1503 9.84974 44 22 44Z" fill="white" fill-opacity="0.2"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M21 30.5858V10H23V30.5858L27.6569 25.9289C28.0474 25.5384 28.6806 25.5384 29.0711 25.9289C29.4616 26.3195 29.4616 26.9526 29.0711 27.3431L22.7071 33.7071C22.3166 34.0976 21.6834 34.0976 21.2929 33.7071L14.9289 27.3431C14.5384 26.9526 14.5384 26.3195 14.9289 25.9289C15.3195 25.5384 15.9526 25.5384 16.3432 25.9289L21 30.5858Z" fill="white"/>
+            </svg>
+
+          </div>
         </section>
       </section>
     </section>
-    <MergedProjects />
+    <section id="RecentWork">
+      <h2>Recent Work</h2>
+      <MergedProjects />
+    </section>
   </main>
 </template>
 
@@ -45,28 +90,39 @@ onMounted(() => {
   perspective: 100rem;
 
   .mega-hero {
-    padding: $spacing-lg $spacing-md $spacing-xl $spacing-md;
+    padding: $spacing-lg 0 $spacing-xl 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
 
     .intro-text {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
+      justify-content: center;
+      align-items: center;
       width: 100%;
+      text-align: center;
 
       .home-buttons {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
-        gap: $spacing-sm;
+        gap: 0;
         margin-top: $spacing-md;
         animation: fadeInUp 0.5s forwards ease-in-out;
         opacity: 0;
         animation-delay: 1.05s;
+        width: 200px;
+
+        .arrow-down {
+          margin-top: $spacing-md;
+          animation: bounce 2s infinite ease-in-out;
+        }
+        
+        .button {
+          margin-top: -2px;
+        }
 
         @media screen and (max-width: 600px){
           flex-direction: column;
@@ -81,44 +137,46 @@ onMounted(() => {
     }
 
     p {
-      
-      font-size: 8vw;
-      line-height: 90%;
+      font-size: 6vw;
+      line-height: 110%;
       letter-spacing: -0.1rem;
       text-wrap: balance;
       font-family: $font-family-main;
+      margin-bottom: $spacing-md;
+      text-transform: uppercase;
+      font-weight: 900;
+
+      &.small {
+        font-size: $font-size-md;
+        letter-spacing: 0.1rem;
+        font-weight: 500;
+        animation: fadeInUp 0.5s forwards ease-in-out;
+        animation-delay: 1.05s;
+        opacity: 0;
+      }
 
       span {
         display: inline-block;
         animation: zoomBack 0.5s forwards ease-in-out;
         opacity: 0;
+        transition: all 0.35s ease-in-out;
 
-        &:nth-child(1) {
-          animation-delay: 0.45s;
-        }
-
-        &:nth-child(2) {
-          animation-delay: .6s;
-        }
-
-        &:nth-child(3) {
-          animation-delay: .75s;
+        // There are 35 letters, so let's iterate through them and delay each one
+        @for $i from 1 through 35 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 0.025s;
+          }
         }
       }
 
       @media screen and (max-width: 768px){
-        font-size: 16vw;
+        font-size: 9vw;
         text-wrap: balance;
-
-        span {
-          margin-bottom: 0.5rem;
-          display: block;
-        }
       }
     }
 
     p.secondary {
-      font-size: $font-size-xl;
+      font-size: $font-size-lg;
       line-height: 140%;
       text-wrap: balance;
       letter-spacing: initial;
@@ -164,6 +222,31 @@ onMounted(() => {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+  }
+}
+
+#RecentWork {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 0.3s forwards ease-in-out;
+  animation-delay: 1.2s;
+  
+  h2 {
+    font-size: 10vw;
+    font-weight: 100;
+    letter-spacing: -0.1rem;
+    text-wrap: balance;
+    font-family: $font-family-main;
+    margin-bottom: $spacing-lg;
+    text-transform: uppercase;
+    margin: 0 auto -5.5vw;
+    text-align: center;
+    color: lighten($black, 15%);
+
+    @media screen and (max-width: 768px){
+      font-size: 15vw;
+      margin: 0 auto -10vw;
     }
   }
 }
@@ -258,7 +341,7 @@ onMounted(() => {
     $i: $i + 1;
     .element:nth-child(#{$i}) {
       // background: linear-gradient(to bottom, rgba($color,0) 55%, rgba($color,.8));
-      border: 1px solid rgba($color, 0.3);
+      border: 1px solid rgba(white, 0.1);
       animation-delay: -#{$i * .25}s;
       width: .8dvw;
       height: 20dvw;

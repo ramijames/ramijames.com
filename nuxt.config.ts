@@ -54,7 +54,7 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Lexend Deca': [400, 600, 700],
+      'Oswald': true,
       'Roboto Sans': [400, 600, 700, 900],
     }
   },

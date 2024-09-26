@@ -83,7 +83,8 @@
 
     <section id="Rate">
       <h2 class="center">My rate is $65/h, and I book up to 160 hours of work monthly.</h2>
-      <Button text="Add your project" size="default" to="/booking" />
+      <!-- <Button text="Add your project" size="default" to="/booking" /> -->
+      <a class="button" href="mailto:ramijames@gmail.com">Add your project</a>
     </section>
 
   </section>

@@ -42,11 +42,11 @@ button,
 .button {
     color: $white;
     background: transparent;
-    border-radius: 0.2rem;
-    border: 2px solid rgba($white, .4);
+    border-radius: 0;
+    border: 2px solid rgba($white, 1);
     text-align: center;
     text-decoration: none;
-    padding: calc($spacing-xs + 2px) $spacing-md $spacing-xs;
+    padding: $spacing-xs $spacing-md $spacing-xs;
     cursor: pointer;
     font-weight: 500;
     font-size: $font-size-md;
@@ -57,9 +57,31 @@ button,
     justify-content: center;
     gap: $spacing-xs;
     align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      top: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($white, 1);
+      z-index: 0;
+      transition: all 0.2s ease;
+      mix-blend-mode: color;
+    }
 
     &:hover {
-        border: 2px solid rgba($white, 1);
+      color: $black;
+      border: 2px solid $white;
+
+      &:after {
+        top: 0;
+      }
     }
 
     &.clear {
@@ -91,10 +113,16 @@ a {
   transition: color 0.28s ease-in-out;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-main;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
 h1 { 
   font-size: $font-size-mega;
   line-height: $font-size-mega; 
-  font-family: $font-family-main, sans-serif;
   font-weight:500;
   margin-top: 0;
   margin-bottom: 0;
@@ -124,7 +152,6 @@ h1 {
 h2 { 
   font-size: $font-size-xxl;
   line-height: 140%; 
-  font-family: $font-family-secondary;
   margin-bottom:1rem;
   font-weight:400;
 
@@ -145,7 +172,6 @@ h2 {
 h3 { 
   font-size: $font-size-xl; 
   line-height: 140%; 
-  font-family: $font-family-main;
   margin-bottom:1rem;
   font-weight:400;
 
@@ -162,7 +188,6 @@ h3 {
 h4 { 
   font-size: $font-size-lg; 
   line-height: 140%;  
-  font-family: $font-family-main;
   margin: $spacing-md 0 $spacing-sm;
   font-weight:500;
 
