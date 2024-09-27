@@ -7,7 +7,7 @@
   </section>
   <main class="general-main page-top">
     <section class="content">
-      <p>Recently, I was playing with creating a CSS version of <nuxt-link to="/labs/css-mesh-gradients">mesh gradients</nuxt-link>. It occurred to me that it wouldn't be too hard to create a Vue component that allows these to be interactive. So, let's do that, but first a quick recap to explain what it is that a mesh gradient actually is so that we can understand what it is that we're building.</p>
+      <p>Recently, I was playing with creating a CSS version of <nuxt-link to="/thoughts/css-mesh-gradients">mesh gradients</nuxt-link>. It occurred to me that it wouldn't be too hard to create a Vue component that allows these to be interactive. So, let's do that, but first a quick recap to explain what it is that a mesh gradient actually is so that we can understand what it is that we're building.</p>
       <p>When you have a traditional gradient you will have a linear or radial progression of colors. You can think of it as a 2d line. It goes one way.</p>
       <img src="/labs/regular-gradient.png" alt="Gradient" />
       <p>With a mesh gradient, you have to think of it as a matrix. It has both width and height. It goes in two directions.</p>

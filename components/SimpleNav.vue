@@ -92,12 +92,6 @@ export default {
     isThoughtsSubPage() {
       return this.$route.path.startsWith('/thoughts/');
     },
-    isLabsPage() {
-      return this.$route.path === '/labs';
-    },
-    isLabsSubPage() {
-      return this.$route.path.startsWith('/labs/');
-    },
     isProductsPage() {
       return this.$route.path === '/products';
     },

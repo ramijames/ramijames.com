@@ -8,7 +8,7 @@
   <main class="general-main page-top">
 
     <section class="content">
-      <p>I was recently playing with creating a CSS version of <nuxt-link to="/labs/css-mesh-gradients">mesh gradients</nuxt-link>. The animation that came out of that was really pleasing to the eye, and i was excited to see what else I could do with the concepts there. In general, I like being able to take something highly structured, as html/css is, and use it to create something which feels wild and random.</p>
+      <p>I was recently playing with creating a CSS version of <nuxt-link to="/thoughts/css-mesh-gradients">mesh gradients</nuxt-link>. The animation that came out of that was really pleasing to the eye, and i was excited to see what else I could do with the concepts there. In general, I like being able to take something highly structured, as html/css is, and use it to create something which feels wild and random.</p>
       <p>There's nothing more wild and random than fire, so let's create that.</p>
       <p>We won't be using SVGs, but we will lean on filters and other layering effects to create the billowing, wild look that we're going for. Here it is inside of a phone simulator:</p>
     </section>

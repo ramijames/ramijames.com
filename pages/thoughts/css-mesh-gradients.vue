@@ -6,7 +6,7 @@
     </div>
   </section>
   <main>
-    <Share route="/labs/css-mesh-gradients" topic="CSS Mesh Gradients" />
+    <Share route="/thoughts/css-mesh-gradients" topic="CSS Mesh Gradients" />
     <section class="w-three-quarters">
       <p>On <a href="https://x.com/tonilijic/status/1800551272598364591">Twitter</a>, a guy named Toni Lijic was showing off how the new iOS version allows you to quickly and easily make mesh gradients as a background within iOS. It is a cool effect, and I wanted to see if I could recreate it using CSS.</p>
     </section>
