@@ -33,7 +33,6 @@
       </section>
     </section>
     <section class="w-half">
-      <section id="QuickServices">
         <section id="ServicesGrid">
           <section class="single-service product">
             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +107,6 @@
             <p>An extension of the product cycle is having smart analysis of the product that you have built. This means setting up analytics tools like Hotjar, and monitoring them with an intent to feed that output back into your product cycle. It's critical to iterate based on hard data and not intuition.</p>
           </section> -->
         </section>
-      </section>
 
       <section id="Rate">
         <h2 class="center">My rate is $45/h, and I book up to 160 hours of work monthly.</h2>
@@ -245,55 +243,56 @@ import Button from '/components/Button';
   }
 }
 
-#QuickServices {
+
+#ServicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  gap: $spacing-md;
 
   @media screen and (max-width: 768px){
-    margin-top: $spacing-lg;
+    grid-template-columns: 1fr;
   }
 
-  #ServicesGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-    gap: $spacing-md;
+  .single-service {
 
     @media screen and (max-width: 768px){
-      grid-template-columns: 1fr;
+      border-right: none;
+      margin-bottom: $spacing-md;
+      width: calc(100vw - $spacing-sm * 2);
     }
 
-    .single-service {
+    svg {
+      width: 60px;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0 0 $spacing-md;
+      display: flex;
+      flex-direction: row;
+      gap: $spacing-md;
 
       @media screen and (max-width: 768px){
-        border-right: none;
-        margin-bottom: $spacing-md;
+        flex-direction: column;
+        gap: $spacing-xxs;
+        margin-top: $spacing-sm;
       }
 
-      svg {
-        width: 60px;
-      }
-
-      h2 {
+      li {
         margin: 0;
+        padding: 0;
+        line-height: 180%;
+        font-size: $font-size-md;
       }
+    }
 
-      ul {
-        list-style: none;
-        margin: 0 0 $spacing-md;
-        display: flex;
-        flex-direction: row;
-        gap: $spacing-md;
-
-        li {
-          margin: 0;
-          padding: 0;
-          line-height: 180%;
-          font-size: $font-size-md;
-        }
-      }
-
-      p {
-        margin-bottom: $spacing-lg;
-      }
+    p {
+      margin-bottom: $spacing-lg;
     }
   }
 }
