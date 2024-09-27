@@ -174,7 +174,7 @@
 
       // generate the colors with an HSL model
       @for $i from 1 through 32 {
-        $hue: ($i - 1) * (360 / 32);
+        $hue: ($i - 1) * calc(360 / 32);
         $color: hsl($hue, 100%, 50%);
         $mesh-colors: map-merge($mesh-colors, ($i: $color));
       }
@@ -362,7 +362,7 @@ $apple-blue: #2E53F9;
 
   // generate the colors with an HSL model
   @for $i from 1 through 32 {
-    $hue: ($i - 1) * (360 / 32);
+    $hue: ($i - 1) * calc(360 / 32);
     $color: hsl($hue, 100%, 50%);
     $mesh-colors: map-merge($mesh-colors, ($i: $color));
   }

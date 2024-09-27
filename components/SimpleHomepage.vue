@@ -341,7 +341,7 @@ onMounted(() => {
 
   // generate the colors with an HSL model
   @for $i from 0 through 360 {
-    $hue: ($i - 1) * (360 / 60);
+    $hue: ($i - 1) * calc(360 / 60);
     $color: hsl($hue, 100%, 50%);
     $mesh-colors: map-merge($mesh-colors, ($i: $color));
   }

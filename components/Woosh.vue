@@ -55,7 +55,7 @@ export default {
 
     // generate the colors with an HSL model
     @for $i from 0 through 48 {
-      $hue: ($i - 1) * (360 / 48);
+      $hue: ($i - 1) * calc(360 / 48);
       $color: hsl($hue, 100%, 50%);
       $mesh-colors: map-merge($mesh-colors, ($i: $color));
     }
