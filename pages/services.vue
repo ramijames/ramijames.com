@@ -33,6 +33,9 @@
       </section>
     </section>
     <section class="w-half">
+      <h3 class="hello-text">I offer tailored design and development services to both startups and enterprise clients. The focus of my methodology is on creating user-friendly solutions with my personalized, collaborative approach.</h3>
+    </section>
+    <section class="w-half">
         <section id="ServicesGrid">
           <section class="single-service product">
             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +113,6 @@
 
       <section id="Rate">
         <h2 class="center">My rate is $45/h, and I book up to 160 hours of work monthly.</h2>
-        <!-- <Button text="Add your project" size="default" to="/booking" /> -->
         <a class="button" href="mailto:ramijames@gmail.com">Add your project</a>
       </section>
 
@@ -229,6 +231,14 @@ import Button from '/components/Button';
       animation: shadowDropMobile 0.5s forwards ease-in-out;
     }
   }
+}
+
+.hello-text {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards ease-in-out;
+  animation-delay: 1.05s;
 }
 
 #Rate {
