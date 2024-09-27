@@ -50,8 +50,8 @@
         </p>
         <!-- <p class="secondary">I am a product-minded designer and developer with founder experience. My core interest is in creating innovative tools with creative partners like you.</p> -->
         <section class="home-buttons">
-          <nuxt-link class="button" to="/services">View services</nuxt-link>
-          <a class="button" href="mailto:ramijames@gmail.com">Send email</a>
+          <nuxt-link class="button large" to="/services">Why work with me?</nuxt-link>
+          <a class="button large" href="mailto:ramijames@gmail.com">Say hello!</a>
           <div class="arrow-down">
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M22 42C33.0457 42 42 33.0457 42 22C42 10.9543 33.0457 2 22 2C10.9543 2 2 10.9543 2 22C2 33.0457 10.9543 42 22 42ZM22 44C34.1503 44 44 34.1503 44 22C44 9.84974 34.1503 0 22 0C9.84974 0 0 9.84974 0 22C0 34.1503 9.84974 44 22 44Z" fill="white" fill-opacity="0.2"/>
@@ -118,7 +118,6 @@ onMounted(() => {
         animation: fadeInUp 0.5s forwards ease-in-out;
         opacity: 0;
         animation-delay: 1.05s;
-        width: 200px;
 
         .arrow-down {
           margin-top: $spacing-md;
@@ -213,26 +212,6 @@ onMounted(() => {
     }
   }
 
-  .services {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: $spacing-md;
-    
-    li {
-      background: $black-dark;
-      height: 300px;
-      padding: $spacing-md;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
 }
 
 #RecentWork {

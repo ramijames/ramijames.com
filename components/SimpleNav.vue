@@ -201,6 +201,7 @@ export default {
         animation: fadeInDown 0.2s ease-in-out forwards;
         transition: all 0.3s;
         overflow: hidden;
+        border-radius: 0.2rem;
 
         &:after {
           content: '';

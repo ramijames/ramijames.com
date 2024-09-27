@@ -1,9 +1,32 @@
 <template>
-  <section class="w-three-quarters page-top">
-    <h1 class="">Services</h1>
-    <h4 class="">Valuable, business-oriented help for your startup or enterprise.</h4>
+  <section class="services-hero">
+    <section class="intro-text w-three-quarters">
+      <p class="small blue">
+        Why we're here
+      </p>
+      <p>
+        <span>S</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>i</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>
+      </p>
+      <section class="services-buttons">
+        <nuxt-link class="button large" to="/products">Seen the recent work?</nuxt-link>
+        <a class="button large" href="mailto:ramijames@gmail.com">Say hello!</a>
+        <div class="arrow-down">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M22 42C33.0457 42 42 33.0457 42 22C42 10.9543 33.0457 2 22 2C10.9543 2 2 10.9543 2 22C2 33.0457 10.9543 42 22 42ZM22 44C34.1503 44 44 34.1503 44 22C44 9.84974 34.1503 0 22 0C9.84974 0 0 9.84974 0 22C0 34.1503 9.84974 44 22 44Z" fill="white" fill-opacity="0.2"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M21 30.5858V10H23V30.5858L27.6569 25.9289C28.0474 25.5384 28.6806 25.5384 29.0711 25.9289C29.4616 26.3195 29.4616 26.9526 29.0711 27.3431L22.7071 33.7071C22.3166 34.0976 21.6834 34.0976 21.2929 33.7071L14.9289 27.3431C14.5384 26.9526 14.5384 26.3195 14.9289 25.9289C15.3195 25.5384 15.9526 25.5384 16.3432 25.9289L21 30.5858Z" fill="white"/>
+          </svg>
+        </div>
+      </section>
+    </section>
   </section>
-  <section class="w-three-quarters">
+  <section class="w-half">
     <section id="QuickServices">
       <section id="ServicesGrid">
         <section class="single-service product">
@@ -42,7 +65,7 @@
             <li>Wireframing</li>
             <li>Prototyping</li>
             <li>Mockups</li>
-            <li>Illustrations and Icons</li>
+            <li>Illustrations</li>
           </ul>
           <p>From user experience wireframes and prototypes to high-fidelity mockups, I excel at making simple looking, highly usable interfaces that stand out in our shared competitive market.</p>
         </section>
@@ -61,7 +84,7 @@
           </ul>
           <p>I have decades of experience building software used by hundreds of thousands of users around the world. I focus on creating fast, easy-to-use, and accessible frontends in modern JavaScript frameworks.</p>
         </section>
-        <section class="single-service analysis">
+        <!-- <section class="single-service analysis">
           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5 5V85C5 90.5228 9.47715 95 15 95H95" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
             <rect x="15" y="59" width="12" height="26" rx="6" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
@@ -77,12 +100,12 @@
             <li>Metrics Definition</li>
           </ul>
           <p>An extension of the product cycle is having smart analysis of the product that you have built. This means setting up analytics tools like Hotjar, and monitoring them with an intent to feed that output back into your product cycle. It's critical to iterate based on hard data and not intuition.</p>
-        </section>
+        </section> -->
       </section>
     </section>
 
     <section id="Rate">
-      <h2 class="center">My rate is $65/h, and I book up to 160 hours of work monthly.</h2>
+      <h2 class="center">My rate is $45/h, and I book up to 160 hours of work monthly.</h2>
       <!-- <Button text="Add your project" size="default" to="/booking" /> -->
       <a class="button" href="mailto:ramijames@gmail.com">Add your project</a>
     </section>
@@ -102,23 +125,95 @@ import Button from '/components/Button';
 
 @import './assets/variables';
 
-.services-gap {
-  gap: 0;
-}
+.services-hero {
+  padding: $spacing-lg 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 
-#Services {
-  display: grid;
-  gap: $spacing-lg;
-  grid-template-columns: 1fr 1fr;
-  margin-top: $spacing-xl;
-  width: 100%;
+  .intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    transform: skewY(0deg) scale(0.6);
+    animation: skewIn .9s forwards ease-in-out;
 
-  @media screen and (max-width: 768px){
-    grid-template-columns: 1fr;
+    .services-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0;
+      margin-top: $spacing-md;
+      animation: fadeInUp 0.5s forwards ease-in-out;
+      opacity: 0;
+      animation-delay: .65s;
+
+      .arrow-down {
+        margin-top: $spacing-md;
+        animation: bounce 2s infinite ease-in-out;
+      }
+      
+      .button {
+        margin-top: -2px;
+      }
+
+      @media screen and (max-width: 600px){
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+
+        .button {
+          width: 100%;
+        }
+      }
+    }
   }
 
-  .service {
-    text-align: center;
+  p {
+    font-size: 6vw;
+    line-height: 100%;
+    letter-spacing: -0.1rem;
+    text-wrap: balance;
+    font-family: $font-family-main;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+    font-weight: 900;
+    animation: shadowDrop 0.5s forwards ease-in-out;
+    animation-delay: 0.4s;
+
+    &.small {
+      font-size: $font-size-md;
+      letter-spacing: 0.1rem;
+      font-weight: 500;
+      animation: fadeInUp 0.5s forwards ease-in-out;
+      animation-delay: .65s;
+      opacity: 0;
+      margin-bottom: $spacing-sm;
+    }
+
+    span {
+      display: inline-block;
+      animation: zoomBack 0.5s forwards ease-in-out;
+      opacity: 0;
+      transition: all 0.35s ease-in-out;
+
+      // There are 35 letters, so let's iterate through them and delay each one
+      @for $i from 1 through 35 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.025s;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px){
+      font-size: 11vw;
+      text-wrap: balance;
+      animation: shadowDropMobile 0.5s forwards ease-in-out;
+    }
   }
 }
 
@@ -142,7 +237,7 @@ import Button from '/components/Button';
 
   #ServicesGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     width: 100%;
     gap: $spacing-md;
 
@@ -159,24 +254,24 @@ import Button from '/components/Button';
 
       svg {
         width: 60px;
-        margin-bottom: $spacing-md;
       }
 
-      h4 {
-        margin-top: 0;
-        margin-bottom: $spacing-xs;
+      h2 {
+        margin: 0;
       }
 
       ul {
         list-style: none;
-        padding: $spacing-md 0 0;
-        margin: $spacing-md 0;
+        margin: 0 0 $spacing-md;
+        display: flex;
+        flex-direction: row;
+        gap: $spacing-md;
 
         li {
           margin: 0;
           padding: 0;
           line-height: 180%;
-          font-size: $font-size-xl;
+          font-size: $font-size-md;
         }
       }
 
@@ -188,6 +283,10 @@ import Button from '/components/Button';
 }
 
 .design {
+  h2 {
+    color: $blue;
+  }
+
   svg {
     path, circle, rect {
       stroke: $blue;
@@ -195,7 +294,6 @@ import Button from '/components/Button';
   }
 
   ul {
-    border-top: 2px solid $blue;
 
     li {
       color: $blue;
@@ -204,6 +302,10 @@ import Button from '/components/Button';
 }
 
 .development {
+  h2 {
+    color: $red;
+  }
+
   svg {
     path, circle, rect {
       stroke: $red;
@@ -211,7 +313,6 @@ import Button from '/components/Button';
   }
 
   ul {
-    border-top: 2px solid $red;
 
     li {
       color: $red;
@@ -220,6 +321,10 @@ import Button from '/components/Button';
 }
 
 .product {
+  h2 {
+    color: $mint-dark;
+  }
+
   svg {
     path, circle, rect {
       stroke: $mint-dark;
@@ -227,7 +332,6 @@ import Button from '/components/Button';
   }
 
   ul {
-    border-top: 2px solid $mint-dark;
 
     li {
       color: $mint-dark;
@@ -236,6 +340,10 @@ import Button from '/components/Button';
 }
 
 .analysis {
+  h2 {
+    color: $purple;
+  }
+
   svg {
     path, circle, rect {
       stroke: $purple;
@@ -243,7 +351,6 @@ import Button from '/components/Button';
   }
 
   ul {
-    border-top: 2px solid $purple;
 
     li {
       color: $purple;

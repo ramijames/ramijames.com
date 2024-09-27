@@ -94,6 +94,11 @@ button,
         border: 2px solid rgba($blue, 1);
       }
     }
+
+    &.large {
+      padding: $spacing-sm $spacing-lg $spacing-sm;
+      font-size: $font-size-lg;
+    }
 }
 
 
@@ -223,7 +228,7 @@ h5 {
 }
 
 p { 
-  font-size: $font-size-lg; 
+  font-size: $font-size-md;
   line-height: $font-size-lg * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
   line-height: $spacing-md;
