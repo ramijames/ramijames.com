@@ -33,7 +33,8 @@
       </section>
     </section>
     <section class="w-half">
-      <h3 class="hello-text">I offer tailored design and development services to both startups and enterprise clients. The focus of my methodology is on creating user-friendly solutions with my personalized, collaborative approach.</h3>
+      <h2 class="hello-text">Why work with me?</h2>
+      <p class="hello-text">I offer product, design, and development services to clients that are looking for someone with a wide range of experience, a good eye, and a technical bent. The focus of my product creation methodology is to use a personalized, collaborative approach to solves hard problems on-time and on-budget.</p>
     </section>
     <section class="w-half">
         <section id="ServicesGrid">
@@ -112,8 +113,9 @@
         </section>
 
       <section id="Rate">
-        <h2 class="center">My rate is $45/h, and I book up to 160 hours of work monthly.</h2>
-        <a class="button" href="mailto:ramijames@gmail.com">Add your project</a>
+        <h2 class="center">My rate is $65/h, and I book up to 160 hours of work monthly.</h2>
+        <p>Retainer and contract rates are negotiable.</p>
+        <a class="button large" href="mailto:ramijames@gmail.com">Let's talk about your project</a>
       </section>
 
     </section>
