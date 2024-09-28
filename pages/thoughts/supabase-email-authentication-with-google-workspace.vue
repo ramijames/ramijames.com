@@ -1,9 +1,10 @@
 <template>
-  <section id="example">
-    <h2 class="special-title">Supabase SMTP Relay Setup with Google Workspace</h2>
-  </section>
-  <main class="general-main page-top">
-
+  <main class="w-three-quarters page-top">
+    <section class="article-extras">
+      <SectionTitle title="Supabase email authentication with Google Workspace" />
+      <Share route="/thoughts/neurodiversity-as-software-incompatibility" topic="Neurodiversity as software incompatibility" />
+      <AllPosts />
+    </section>
     <section class="content">
       <section class="summary">
         <h3>TLDR Summary</h3>
