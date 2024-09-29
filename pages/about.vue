@@ -1,66 +1,96 @@
 <template>
-  <section class="w-three-quarters page-top">
+  <!-- <section class="w-three-quarters page-top">
     <h1 class="">About</h1>
     <h4 class="">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h4>
-  </section>
+  </section> -->
 
   <!-- <section class="w-full">
     <img src="/interface-images.jpg" alt="Rami James"  class="single-product-image">
   </section> -->
   
-  <section class="w-three-quarters">
-    <section class="jobs">  
-      <section class="single-job">
-        <p class="job-title">Freelance</p>
-        <p class="job-subtitle">Product Design and Front-end implementation</p>
-        <p class="job-duration">Present</p>
-        <p class="job-descriptions">Currently I provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
-        <p class="job-descriptions">I have:</p>
-        <ul class="job-descriptions">
-          <li v-for="(description, index) in freelanceContractor" :key="index">
-            {{ description }}
-          </li>
-        </ul>
-      </section>
-      <section class="single-job">
-        <p class="job-title">Ultra</p>
-        <p class="job-duration">2020 - 2023</p>
-        <p class="job-subtitle">Head of Product for Developer Relations</p>
-        <ul class="job-descriptions">
-          <li v-for="(description, index) in ultraDevReldescriptions" :key="index">
-            {{ description }}
-          </li>
-        </ul>
-
-        <p class="job-subtitle">Technical Project Manager</p>
-        <ul class="job-descriptions">
-          <li v-for="(description, index) in ultraTechdescriptions" :key="index">
-            {{ description }}
-          </li>
-        </ul>
-      </section>
-      <section class="single-job">
-        <p class="job-title">Scatter</p>
-        <p class="job-duration">2018 - 2020</p>
-        <p class="job-subtitle">Co-founder and Head of Product</p>
-        <ul class="job-descriptions">
-          <li v-for="(description, index) in scatterProductdescriptions" :key="index">
-            {{ description }}
-          </li>
-        </ul>
-      </section>
-      <section class="single-job">
-        <p class="job-title">Qmarkets</p>
-        <p class="job-duration">2015 - 2019</p>
-        <p class="job-subtitle">Senior User Experience Designer and Developer</p>
-        <ul class="job-descriptions">
-          <li v-for="(description, index) in qmarketsdescription" :key="index">
-            {{ description }}
-          </li>
-        </ul>
+  <main id="About">
+    <div class="mask">
+      <div id="mesh-gradient" class="sixteen-elements">
+        <div class="element" v-for="n in 160" :key="n"></div>
+      </div>
+    </div>
+    <section class="about-hero">
+      <section class="intro-text w-three-quarters">
+        <p class="small blue">
+          Who is this guy?
+        </p>
+        <p>
+          <span>A</span>
+          <span>b</span>
+          <span>o</span>
+          <span>u</span>
+          <span>t</span>
+        </p>
+        <section class="about-buttons">
+          <a class="button large" href="mailto:ramijames@gmail.com">Say hello!</a>
+        </section>
       </section>
     </section>
-  </section>
+
+    <section class="w-half">
+      <h2 class="hello-text">Quick Intro</h2>
+      <p class="hello-text">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>. I'm always building something. These days I'm focused on building <a href="https://vewrite.com/">Vewrite</a>, a project management tool for developer relations, technical writing teams, and writers.</p>
+    </section>
+
+    <section class="w-half">
+      <section class="jobs">  
+        <section class="single-job">
+          <p class="job-title">Freelance</p>
+          <p class="job-subtitle">Product Design and Front-end implementation</p>
+          <p class="job-duration">Present</p>
+          <p class="job-descriptions">Currently I provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
+          <p class="job-descriptions">I have:</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in freelanceContractor" :key="index">
+              {{ description }}
+            </li>
+          </ul>
+        </section>
+        <section class="single-job">
+          <p class="job-title">Ultra</p>
+          <p class="job-duration">2020 - 2023</p>
+          <p class="job-subtitle">Head of Product for Developer Relations</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in ultraDevReldescriptions" :key="index">
+              {{ description }}
+            </li>
+          </ul>
+
+          <p class="job-subtitle">Technical Project Manager</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in ultraTechdescriptions" :key="index">
+              {{ description }}
+            </li>
+          </ul>
+        </section>
+        <section class="single-job">
+          <p class="job-title">Scatter</p>
+          <p class="job-duration">2018 - 2020</p>
+          <p class="job-subtitle">Co-founder and Head of Product</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in scatterProductdescriptions" :key="index">
+              {{ description }}
+            </li>
+          </ul>
+        </section>
+        <section class="single-job">
+          <p class="job-title">Qmarkets</p>
+          <p class="job-duration">2015 - 2019</p>
+          <p class="job-subtitle">Senior User Experience Designer and Developer</p>
+          <ul class="job-descriptions">
+            <li v-for="(description, index) in qmarketsdescription" :key="index">
+              {{ description }}
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+  </main>
   <PostsExtras />
   <Footer />
 </template>
@@ -111,6 +141,107 @@ export default {
 <style scoped lang="scss">
 
 @import './assets/variables';
+
+#About {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  perspective: 100rem;
+}
+
+.about-hero {
+  padding: $spacing-lg 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  .intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    transform: skewY(0deg) scale(0.6);
+    animation: skewIn .9s forwards ease-in-out;
+
+    .about-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0;
+      margin-top: $spacing-md;
+      animation: fadeInUp 0.5s forwards ease-in-out;
+      opacity: 0;
+      animation-delay: .65s;
+
+      .arrow-down {
+        margin-top: $spacing-md;
+        animation: bounce 2s infinite ease-in-out;
+      }
+      
+      .button {
+        margin-top: -2px;
+      }
+
+      @media screen and (max-width: 600px){
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+
+        .button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 6vw;
+    line-height: 100%;
+    letter-spacing: -0.1rem;
+    text-wrap: balance;
+    font-family: $font-family-main;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+    font-weight: 900;
+    animation: shadowDrop 0.5s forwards ease-in-out;
+    animation-delay: 0.4s;
+
+    &.small {
+      font-size: $font-size-md;
+      letter-spacing: 0.1rem;
+      font-weight: 500;
+      animation: fadeInUp 0.5s forwards ease-in-out;
+      animation-delay: .65s;
+      opacity: 0;
+      margin-bottom: $spacing-sm;
+    }
+
+    span {
+      display: inline-block;
+      animation: zoomBack 0.5s forwards ease-in-out;
+      opacity: 0;
+      transition: all 0.35s ease-in-out;
+
+      // There are 8 letters, so let's iterate through them and delay each one
+      @for $i from 1 through 8 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.025s;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px){
+      font-size: 11vw;
+      text-wrap: balance;
+      animation: shadowDropMobile 0.5s forwards ease-in-out;
+    }
+  }
+}
 
 .explanation {
   display: flex;
