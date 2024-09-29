@@ -1,13 +1,4 @@
 <template>
-  <!-- <section class="w-three-quarters page-top">
-    <h1 class="">About</h1>
-    <h4 class="">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h4>
-  </section> -->
-
-  <!-- <section class="w-full">
-    <img src="/interface-images.jpg" alt="Rami James"  class="single-product-image">
-  </section> -->
-  
   <main id="About">
     <div class="mask">
       <div id="mesh-gradient" class="sixteen-elements">
@@ -298,5 +289,92 @@ export default {
           font-size: $font-size-sm;
         }
 
+
+        .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
+  mask-image: linear-gradient( rgba(0,0,0,0) 5%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 80%);
+}
+
+#mesh-gradient.sixteen-elements {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  z-index: -10;
+  align-items: center;
+  justify-content: center;;
+  opacity: 1;
+  position: fixed;
+  pointer-events: none;
+  top:0;
+  left:0;
+  right:0;
+  animation: rotateGroup 120s linear infinite;
+
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+
+  $mesh-colors: ();
+
+  // generate the colors with an HSL model
+  @for $i from 0 through 360 {
+    $hue: ($i - 1) * calc(360 / 60);
+    $color: hsl($hue, 100%, 50%);
+    $mesh-colors: map-merge($mesh-colors, ($i: $color));
+  }
+
+  $i: 0;
+  @each $name, $color in $mesh-colors {
+    $i: $i + 1;
+    .element:nth-child(#{$i}) {
+      // background: linear-gradient(to bottom, rgba($color,0) 55%, rgba($color,.8));
+      border: 1px solid rgba($color, .4);
+      animation-delay: -#{$i * .15}s;
+      width: 10dvw;
+      height: 1dvw;
+      border-radius: 1rem;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+
+  .element {
+    animation: sixteen-elements 10s linear infinite;
+  }
+
+  @keyframes rotateGroup {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes sixteen-elements {
+    0% {
+      opacity:0;
+      transform: scale(0) rotate(0deg);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(2) rotate(180deg);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0) rotate(360deg);
+    }
+  }
+}
 
 </style>
