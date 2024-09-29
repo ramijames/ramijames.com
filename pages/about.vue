@@ -290,7 +290,7 @@ export default {
         }
 
 
-        .mask {
+.mask {
   position: absolute;
   top: 0;
   left: 0;
@@ -307,8 +307,8 @@ export default {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr ;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   z-index: -10;
   align-items: center;
   justify-content: center;;
@@ -318,7 +318,7 @@ export default {
   top:0;
   left:0;
   right:0;
-  animation: rotateGroup 120s linear infinite;
+  animation: rotateGroup 80s linear infinite;
 
   @media screen and (max-width: 768px){
     display: none;
@@ -328,7 +328,7 @@ export default {
 
   // generate the colors with an HSL model
   @for $i from 0 through 360 {
-    $hue: ($i - 1) * calc(360 / 60);
+    $hue: ($i - 1) * calc(360 / 220);
     $color: hsl($hue, 100%, 50%);
     $mesh-colors: map-merge($mesh-colors, ($i: $color));
   }
@@ -339,9 +339,9 @@ export default {
     .element:nth-child(#{$i}) {
       // background: linear-gradient(to bottom, rgba($color,0) 55%, rgba($color,.8));
       border: 1px solid rgba($color, .4);
-      animation-delay: -#{$i * .15}s;
-      width: 10dvw;
-      height: 1dvw;
+      animation-delay: -#{$i * .45}s;
+      width: 40dvw;
+      height: .05dvw;
       border-radius: 1rem;
       align-self: center;
       justify-self: center;
@@ -349,7 +349,7 @@ export default {
   }
 
   .element {
-    animation: sixteen-elements 10s linear infinite;
+    animation: sixteen-elements 30s linear infinite;
   }
 
   @keyframes rotateGroup {
@@ -368,7 +368,7 @@ export default {
     }
     50% {
       opacity: 1;
-      transform: scale(2) rotate(180deg);
+      transform: scale(1) rotate(180deg);
     }
     100% {
       opacity: 0;

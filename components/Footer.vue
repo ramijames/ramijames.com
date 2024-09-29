@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <section class="w-three-quarters">
+    <section class="w-half">
       <div class="footer-content ">
         <div class="footer-links">
           <nuxt-link href="/" v-if="notHome">Home</nuxt-link>
@@ -74,9 +74,7 @@ export default {
 
 footer {
   width: 100%;
-  font-size: $font-size-sm;
   font-family: $font-family-main;
-  font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,9 +132,8 @@ footer {
 
     a {
       text-decoration: none;
-      font-weight:500;
       color: $white;
-      font-size: $font-size-md;
+      font-size: $font-size-lg;
       border-bottom: 2px solid transparent;
       transition: all 0.5s ease-in-out;
 
