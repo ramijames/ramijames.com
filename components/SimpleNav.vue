@@ -5,8 +5,8 @@
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
         <nuxt-link to="/services" class="nav-link">Services</nuxt-link>
-        <nuxt-link to="/products" class="nav-link">Recent Work</nuxt-link>
-        <nuxt-link to="/thoughts" class="nav-link">Thoughts</nuxt-link>
+        <nuxt-link to="/products" :class="['nav-link', isProductsSubPage ? 'router-link-active' : '']">Recent Work</nuxt-link>
+        <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
       <button 
@@ -250,7 +250,8 @@ export default {
           }
         }
         
-        &.router-link-exact-active {
+        &.router-link-exact-active,
+        &.router-link-active {
           background: $blue;
         }
       }
