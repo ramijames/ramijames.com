@@ -1,6 +1,6 @@
 <template>
   <nav class="simple-nav-bar">
-    <section class="navigation">
+    <section :class="['navigation', mobileMenuOpen ? 'open' : '']">
       <nuxt-link to="/" class="logo-link"><img :src="`/logo-dark.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
@@ -10,20 +10,16 @@
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
       <button 
-        class="menu"
-        :class="`${mobileMenuOpen}`"
+        :class="['menu', mobileMenuOpen ]"
         @click="toggleMenu"
-        @touchstart="toggleMenu"
         tabindex="0"
         role="button"
       ></button>
     </section>
-    <section class="extras">
-      <!-- <ThemeSwitcher /> -->
-    </section>
   </nav>
 
   <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
+    <button class="close"@click="closeMenu"></button>
     <section class="mobile-nav-panel-links">
       <nuxt-link to="/" @click="closeMenu">Home</nuxt-link>
       <nuxt-link to="/services" @click="closeMenu">Services</nuxt-link>
@@ -37,7 +33,6 @@
 <script>
 import { useThemeStore } from '~/store/theme'
 import { reactive, computed, onMounted, watch } from 'vue';
-import { useRoute } from 'vue-router';
 import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
 import Button from '~/components/Button.vue'
 
@@ -63,11 +58,21 @@ export default {
     })
     const closeMenu = () => {
       state.mobileMenuOpen = false;
+      if (state.mobileMenuOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
     };
 
     const toggleMenu = () => {
       state.mobileMenuOpen = !state.mobileMenuOpen;
-      console.log('click');
+      if (state.mobileMenuOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+      
     };
 
     return {
@@ -126,6 +131,10 @@ export default {
   transform: translateY(-20px);
   animation: fadeInDown 0.3s forwards ease-in-out;
   animation-delay: 0.4s;
+
+  &.open {
+    pointer-events: none;
+  }
 
   .navigation {
     display: flex;
@@ -329,6 +338,39 @@ export default {
   backdrop-filter: blur(80px);
   animation: fade 0.24s ease-in-out;
 }
+
+    .close {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: $spacing-md;
+      right: $spacing-md;
+      padding: 0;
+      background: none;
+      border: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 2px;
+        background: $white;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 2px;
+        background: $white;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
 
     .mobile-nav-panel.open {
       display: flex;
