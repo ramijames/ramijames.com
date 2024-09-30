@@ -120,7 +120,7 @@ The point of this page is to explain:
       </section>
     </section> -->
     <section id="RecentWork" class="w-three-quarters">
-      <h2 class="blue">See Recent Work</h2>
+      <h2 class="blue">My Recent Work</h2>
       <MergedProjects />
     </section>
   </main>
@@ -386,6 +386,7 @@ onMounted(() => {
     transform: rotate(-5deg);
     border-radius: $br-md;
     transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(8px);
 
     @media screen and (max-width: 768px){
       font-size: $font-size-xl;
