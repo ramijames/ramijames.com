@@ -397,9 +397,7 @@ onMounted(() => {
       left: -40px;
 
       @media screen and (max-width: 768px){
-        top: -50px;
-        left: 60px;
-        transform: scale(0.8) rotate(55deg);
+        display: none;
       }
     }
 
