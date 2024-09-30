@@ -373,21 +373,27 @@ onMounted(() => {
   h2 {
     text-wrap: balance;
     font-family: $font-family-main;
+    font-size: $font-size-xl;
     margin: $spacing-lg auto 0;
     margin: 0 auto;
     text-align: center;
     color: $white;
     background: linear-gradient(180deg, rgba($blue, 0.3), rgba($blue, 0.1));
-    padding: $spacing-lg;
+    padding: $spacing-md $spacing-lg;
     position: absolute;
     left: 20px;
-    top: -80px;
+    top: -20px;
     transform: rotate(-5deg);
     border-radius: $br-md;
+    transition: all 0.3s ease-in-out;
 
     @media screen and (max-width: 768px){
       font-size: $font-size-xl;
-      top: -60px;
+      top: -20px;
+      left: 50%;
+      width: 79%;
+      transform: translateX(-50%);
+      padding: $spacing-md;
     }
   }
 }

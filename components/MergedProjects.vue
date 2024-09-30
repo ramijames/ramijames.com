@@ -130,6 +130,10 @@ export default {
   animation-delay: 0.4s;
   margin-bottom: $spacing-xl;
 
+  @media screen and (max-width: 768px){
+    padding: 0;
+  }
+
   .project {
     width: 100%;
     height: 30em;
@@ -164,6 +168,7 @@ export default {
     @media screen and (max-width: 768px){
       align-items: center;
       justify-content: center;
+      transform: scale(1);
     }
 
     &.ultra,
