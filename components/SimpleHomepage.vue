@@ -120,7 +120,12 @@ The point of this page is to explain:
       </section>
     </section> -->
     <section id="RecentWork" class="w-three-quarters">
-      <h2 class="blue">My Recent Work</h2>
+      <h2 class="blue">
+        <svg width="80" height="139" viewBox="0 0 80 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M66.1469 127.638C67.0518 127.005 67.2719 125.758 66.6385 124.853L56.3161 110.107C55.6827 109.202 54.4356 108.982 53.5307 109.615C52.6259 110.249 52.4058 111.496 53.0392 112.401L62.2146 125.508L49.1069 134.684C48.202 135.317 47.9819 136.564 48.6154 137.469C49.2488 138.374 50.4958 138.594 51.4007 137.961L66.1469 127.638ZM78.3774 0.0993819C20.1798 19.1641 -1.64208 47.6941 1.01012 73.951C3.6377 99.964 30.2043 121.89 64.6524 127.97L65.3476 124.03C31.7957 118.11 7.36229 97.036 4.98987 73.549C2.64208 50.3059 21.8203 22.8359 79.6226 3.90062L78.3774 0.0993819Z" fill="white"/>
+        </svg>
+        My Recent Work
+      </h2>
       <MergedProjects />
     </section>
   </main>
@@ -373,20 +378,30 @@ onMounted(() => {
   h2 {
     text-wrap: balance;
     font-family: $font-family-main;
-    font-size: $font-size-xl;
+    font-size: $font-size-max;
     margin: $spacing-lg auto 0;
     margin: 0 auto;
     text-align: center;
     color: $white;
-    background: linear-gradient(180deg, rgba($blue, 0.3), rgba($blue, 0.1));
     padding: $spacing-md $spacing-lg;
     position: absolute;
     left: 20px;
-    top: -20px;
+    top: -50px;
     transform: rotate(-5deg);
     border-radius: $br-md;
     transition: all 0.3s ease-in-out;
-    backdrop-filter: blur(8px);
+
+    svg {
+      position: absolute;
+      top: 70px;
+      left: -40px;
+
+      @media screen and (max-width: 768px){
+        top: -50px;
+        left: 60px;
+        transform: scale(0.8) rotate(55deg);
+      }
+    }
 
     @media screen and (max-width: 768px){
       font-size: $font-size-xl;
