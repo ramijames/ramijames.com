@@ -1,3 +1,17 @@
+<!-- 
+ 
+Objective 
+
+The point of this page is to explain:
+
+- Who I am
+- Talk a bit about problems that startups face when developing a product
+- Explain why my methodology is beneficial for those who are looking to build a product
+- Show some of my recent work
+- Show some of my recent blog posts
+
+-->
+
 <template>
   <main id="Hero">
     <div id="mesh-gradient" class="sixteen-elements">
@@ -62,8 +76,51 @@
         </section>
       </section>
     </section>
-    <section id="RecentWork">
-      <h2 class="blue">Recent Work</h2>
+    <!-- <section id="Problems" class="w-three-quarters">
+      <h2>Put your product in the right hands</h2>
+      <section id="Solutions">
+        <div class="single-solution">
+          <div class="icon">
+            <img src="/services/ai.png" alt="Idea icon" />
+          </div>
+          <div class="blue-box">
+            <h3>Problem</h3>
+            <p>Building a product is hard. It's even harder when you're not sure what to build. You might have a great idea, but how do you know if it's the right idea?</p>
+          </div>
+        </div>
+        <div class="single-solution">
+          <div class="icon">
+            <img src="/services/budget.png" alt="Idea icon" />
+          </div>
+          <div class="blue-box">
+            <h3>Affordable</h3>
+            <p>My preference is to work with small, agile, and fast-growing teams. They tend to be strapped for cash, and I'm happy to provide them with affordable services while they scale.</p>
+            <p><nuxt-link class="button clear" to="/services#rate">See rates</nuxt-link></p>
+          </div>
+        </div>
+        <div class="single-solution">
+          <div class="icon">
+            <img src="/services/iterate.png" alt="Idea icon" />
+          </div>
+          <div class="blue-box">
+            <h3>Fast</h3>
+            <p>My methodology focuses on fast iteration, so that's exactly what you get. Within a matter of hours your project gets started, and within weeks you'll have designs you can publicly validate.</p>
+          </div>
+        </div>
+        <div class="single-solution">
+          <div class="icon">
+            <img src="/services/team.png" alt="Idea icon" />
+          </div>
+          <div class="blue-box">
+            <h3>Team Player</h3>
+            <p>I'm friendly and work well within a team. Having </p>
+          </div>
+        </div>
+        
+      </section>
+    </section> -->
+    <section id="RecentWork" class="w-three-quarters">
+      <h2 class="blue">See Recent Work</h2>
       <MergedProjects />
     </section>
   </main>
@@ -214,6 +271,99 @@ onMounted(() => {
 
 }
 
+#Problems {
+  animation: fadeInUp 0.5s forwards ease-in-out;
+  transform: translateY(20px);
+  animation-delay: 1.05s;
+  opacity: 0;
+
+  h2 {
+    font-weight: 100;
+    text-wrap: balance;
+    font-family: $font-family-main;
+    margin: 0 auto $spacing-lg;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  #Solutions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: $spacing-lg;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 0.3s forwards ease-in-out;
+    animation-delay: 0.4s;
+    margin-bottom: $spacing-xl;
+
+    @media screen and (max-width: 1800px){
+      gap: $spacing-sm;
+    }
+
+    @media screen and (max-width: 1600px){
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-sm;
+    }
+
+    @media screen and (max-width: 768px){
+      grid-template-columns: 1fr;
+    }
+
+    .single-solution {
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        .icon {
+          background: linear-gradient(180deg, rgba($blue, 0.7), rgba($blue, 0.3));
+          transform: rotate(0deg) scale(1);
+        }
+      }
+
+      .blue-box {
+        border-radius: $br-md;
+        // border: 2px solid rgba($blue, .4);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        padding: 5rem $spacing-md $spacing-md $spacing-md;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $spacing-md;
+        background: linear-gradient(180deg, rgba($blue, 0.3), rgba($blue, 0.1));
+        backdrop-filter: blur(8px);
+        height: 100%;
+
+        p {
+          color: $white;
+          line-height: 140%;
+          opacity: 0.6;
+          font-size: $font-size-sm;
+        } 
+      }
+
+      .icon {
+        max-width: 100px;
+        margin-bottom: -4rem;
+        z-index: 1;
+        margin-left: $spacing-md;
+        padding: $spacing-sm;
+        background: linear-gradient(180deg, rgba($blue, 0.6), rgba($blue, 0.1));
+        box-shadow:inset -1px -1px 10px rgba($blue, 0.4);
+        transform: rotate(-5deg) scale(0.9);
+        backdrop-filter: blur(3px);
+        border-radius: $br-md;
+        transition: all 0.3s ease-in-out;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      
+    }
+  }
+}
+
 #RecentWork {
   animation: fadeInUp 0.5s forwards ease-in-out;
   transform: translateY(20px);
@@ -221,20 +371,23 @@ onMounted(() => {
   opacity: 0;
   
   h2 {
-    font-size: 10vw;
-    font-weight: 100;
-    letter-spacing: -0.1rem;
     text-wrap: balance;
     font-family: $font-family-main;
-    margin-bottom: $spacing-lg;
-    text-transform: uppercase;
-    margin: 0 auto -5.5vw;
+    margin: $spacing-lg auto 0;
+    margin: 0 auto;
     text-align: center;
-    color: lighten($black, 15%);
+    color: $white;
+    background: linear-gradient(180deg, rgba($blue, 0.3), rgba($blue, 0.1));
+    padding: $spacing-lg;
+    position: absolute;
+    left: 20px;
+    top: -80px;
+    transform: rotate(-5deg);
+    border-radius: $br-md;
 
     @media screen and (max-width: 768px){
-      font-size: 15vw;
-      margin: 0 auto -10vw;
+      font-size: $font-size-xl;
+      top: -60px;
     }
   }
 }
@@ -341,7 +494,7 @@ onMounted(() => {
   }
 
   .element {
-    animation: sixteen-elements 10s linear infinite;
+    animation: sixteen-elements 20s linear infinite;
   }
 
   @keyframes sixteen-elements {

@@ -85,14 +85,9 @@ button,
     }
 
     &.clear {
-      background: rgba($blue, 0.5);
-      border: 2px solid rgba($blue, 0.6);
-      color: $white;
-
-      &:hover {
-        background: rgba($blue, 0.8);
-        border: 2px solid rgba($blue, 1);
-      }
+      border: 2px solid rgba($blue, 0);
+      display: inline-block;
+      background: rgba($black, 0.4);
     }
 
     &.large {

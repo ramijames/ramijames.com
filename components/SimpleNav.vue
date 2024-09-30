@@ -211,6 +211,8 @@ export default {
         transition: all 0.3s;
         overflow: hidden;
         border-radius: 0.2rem;
+        font-size: $font-size-lg;
+        font-weight: 400;
 
         &:after {
           content: '';

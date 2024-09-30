@@ -2,6 +2,7 @@
   <main class="default-layout">
     <section class="default-main">
       <SimpleNav />
+      <Follow />
       <NuxtPage />
     </section>
   </main>

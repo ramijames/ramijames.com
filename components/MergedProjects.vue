@@ -1,5 +1,5 @@
 <template>
-  <section id="Products">
+  <section id="Products" class="w-three-quarters">
     <nuxt-link
         :class="['project', 'w-three-quarters', product.class]"
         v-for="product in products" 
@@ -118,12 +118,13 @@ export default {
 @import './assets/variables';
 
 #Products {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   position: relative;
   height: 100%;
-  width: 100%;
   opacity: 0;
+  gap: $spacing-lg;
   transform: translateY(-20px);
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0.4s;
@@ -131,7 +132,7 @@ export default {
 
   .project {
     width: 100%;
-    height: 40em;
+    height: 30em;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -139,10 +140,11 @@ export default {
     position: relative;
     background-size: cover;
     padding: $spacing-lg;
-    margin-top: 0;
+    margin: 0;
     opacity: 1;
     transition: all 0.3s ease-in-out;
     transform: scale(0.95);
+    border-radius: $br-md;
 
     &:hover {
       opacity: 1;
@@ -193,10 +195,10 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      opacity: 0;
+      opacity: 0.8;
       transition: all 0.3s ease-in-out;
       z-index: 1;
-      transform: translateY(100px);
+      transform: translateY(10px);
 
       @media screen and (max-width: 768px){
         align-items: center;
