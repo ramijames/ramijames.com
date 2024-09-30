@@ -85,8 +85,9 @@ onUnmounted(() => {
     position: absolute;
     width: 30px;
     height: 30px;
-    border: 1px solid rgba($blue, 0.5);
-    background-color: transparent;
+    // border: 1px solid rgba($blue, 0.5);
+    background-color: rgba($blue, 0.3);
+    mix-blend-mode: overlay;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -97,7 +98,6 @@ onUnmounted(() => {
     width: 10px;
     height: 10px;
     border: 1px solid rgba($white, 1);
-    background-color: $white;
   }
 }
 </style>
