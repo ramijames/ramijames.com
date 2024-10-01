@@ -67,6 +67,10 @@ onUnmounted(() => {
   pointer-events: none;
   z-index: 9999;
 
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+
   .mouse-follower {
     position: absolute;
     width: 60px;
