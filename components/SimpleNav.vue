@@ -350,6 +350,8 @@ export default {
       padding: 0;
       background: none;
       border: none;
+      margin-right: $spacing-xs;
+      margin-top: -8px;
 
       &::before {
         content: '';
