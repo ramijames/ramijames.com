@@ -224,7 +224,7 @@ h5 {
 
 p { 
   font-size: $font-size-md;
-  line-height: $font-size-lg * $multiplier; 
+  line-height: $font-size-md * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
   line-height: $spacing-md;
   margin-bottom: 1rem;
@@ -237,8 +237,8 @@ p {
 }
 
 li { 
-  font-size: $font-size-lg; 
-  line-height: $font-size-lg * $multiplier; 
+  font-size: $font-size-md;
+  line-height: $font-size-md * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
   line-height: $spacing-md;
 
