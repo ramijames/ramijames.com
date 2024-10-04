@@ -119,24 +119,29 @@ export default {
 
 #Products {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   position: relative;
   height: 100%;
   opacity: 0;
-  gap: $spacing-lg;
+  gap: $spacing-md;
   transform: translateY(-20px);
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0.4s;
   margin-bottom: $spacing-xl;
 
+  @media screen and (max-width: 1000px){
+    grid-template-columns: 1fr;
+  }
+
   @media screen and (max-width: 768px){
     padding: 0;
+    gap: $spacing-sm;
   }
 
   .project {
     width: 100%;
-    height: 30em;
+    height: 26em;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
