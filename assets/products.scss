@@ -9,13 +9,14 @@ $telos-color: #4526C3;
 
 .product-splash {
   width: 100%;
-  min-height: calc(100vh - 92px);
+  min-height: calc(65vh - 92px);
   display: flex;
   flex-direction: row;
+  margin-bottom: $spacing-xl;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    min-height: calc(200vh - 92px);
+    min-height: calc(100vh - 92px);
   }
 
   .product-teasers {
@@ -202,4 +203,20 @@ $telos-color: #4526C3;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.role {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  
+  span {
+    font-size: $font-size-lg;
+    height: 34px;
+    background-color: $blue;
+    border-radius: $br-sm;
+    padding: 0 $spacing-sm;
+    line-height: 34px;
+  }
 }

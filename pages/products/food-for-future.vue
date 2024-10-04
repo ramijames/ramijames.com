@@ -14,24 +14,12 @@
   </section>
 
   <section class="w-three-quarters">
-    <aside class="product-role">
-      <div class="single-role">
-        <h3>Created the visual brand, product concept, mockups, and clickable prototype.</h3>
-      </div>
-      <div class="single-role">
-        <ul class="roles">
-          <li>Branding</li>
-          <li>Iconography</li>
-          <li>Design</li>
-          <li>Mockups</li>
-          <li>Prototyping</li>
-        </ul>
-      </div>
-    </aside>
+    <h2 class="role"><span>Role</span>Principle Designer</h2>
+    <p>As the core creative talent, I created the visual brand, product concept, mockups, and clickable prototype.</p>
   </section>
 
   <section class="w-three-quarters">
-    <h3>About Food for Future</h3>
+    <h2>About Food for Future</h2>
     <p>Food for Future's vision was to provide funding for farmers by creating a transparent, accessible layer of data for those interested in investing.</p>
     <p>I was contracted to put together a brand and a set of mock-ups for the Food for Future project within a very short time-frame. These were in turn used to pitch the concept to interested parties within the UN.</p>
   </section>
@@ -69,6 +57,7 @@
     <img src="/products/food-for-future/fff-icons.png" alt="Food for Future icons" class="single-product-image">
   </section>
 
+  <hr />
   <MergedProjects />
   <Footer />
 </template>

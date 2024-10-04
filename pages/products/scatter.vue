@@ -14,33 +14,23 @@
     </section>
 
     <section class="w-three-quarters">
-      <aside class="product-role">
-        <div class="single-role">
-          <h3>I was the Head of Product and Co-founder at Scatter. I helped guide the product vision according to the business and market needs. I assisted in implementing the interface in Vue and Electron.</h3>
-        </div>
-        <div class="single-role">
-          <ul class="roles">
-            <li>Concept</li>
-            <li>Roadmap</li>
-            <li>Design</li>
-            <li>UI/UX</li>
-            <li>Prototyping</li>
-            <li>Mockups</li>
-            <li>Vue</li>
-          </ul>
-        </div>
-      </aside>
+      <h2 class="role"><span>Role</span>Head of Product and Co-founder</h2>
+      <p>I was the principle who guided the product vision, based on the business and market needs. I produced marketing materials, engaged with the community directly, and lead the support effort for both the retail and developer audiences. In addition, I assisted in implementing the interface in Vue and Electron.</p>
     </section>
-
+    
     <section class="w-three-quarters">
-      <h3>About Scatter</h3>
+      <h2>About Scatter</h2>
       <p>Scatter was started in 2017 by <a href="https://twitter.com/nsjames_">Nathan James</a> as a way for the EOSIO community to launch its Mainnet. I joined shortly after both as Head of Product and the COO. As with most startups, we all had to wear many hats.</p>
       <p>Scatter was a digital identity and wallet that allowed users to interact with the EOS blockchain. At first, it was simply a browser extension that allowed users to sign transactions and interact with apps in a secure way. Quickly the vision of the product evolved from a signing extension into a digital hub for EOS users to manage their signing keys, their digital identity, and the apps that they would find most useful.</p>
       <p>The first standalone application launched in 2018, and was based on the <span class="codehighlight">Vue.js</span> stack embedded in an <span class="codehighlight">Electron</span> app. Throughout 2018 and 2019, we iterated through many versions of the interface with the intense feedback of the quickly growing community of users. At our peak, we had around 150-200K DAU.</p>
     </section>
 
-    <section class="w-full">
-      <img src="/products/scatter/scatter-in-progress.png" alt="Scatter In Progress" class="single-product-image">
+    <section class="w-three-quarters">
+      <img src="/products/scatter/scatter-mobile.png" alt="Scatter In Progress" class="single-product-image">
+    </section>
+
+    <section class="w-three-quarters">
+      <img src="/products/scatter/inside_desktop.png" alt="Scatter In Progress" class="single-product-image">
     </section>
 
     <section class="w-three-quarters">
@@ -48,7 +38,11 @@
       <p>The utterly complex nature of the EOS blockchain was often a stumbling block for users, and it became our core challenge to simplify the user experience while still allowing users to interact with the blockchain in a secure way. We had to balance the needs of the power users with the needs of the new users, and it was a constant dance to keep everyone happy. I spent a lot of time tweaking and inventing new interfaces which, for example, made things like on-boarding new users straightforward and understandable.</p>
     </section>
 
-    <section class="w-full">
+    <section class="w-three-quarters">
+      <img src="/products/scatter/scatter-in-progress.png" alt="Scatter In Progress" class="single-product-image">
+    </section>
+
+    <section class="w-three-quarters">
       <img src="/products/scatter/better-on-boarding.png" alt="Scatter improves its on-boarding" class="single-product-image">
     </section>
 
@@ -65,7 +59,7 @@
       <p>We were constantly evolving the product, and it dramatically improved over the two years that we worked on it. It was a lot to manage, and we were always looking for ways to simplify our product offering while still providing value to our users.</p>
     </section>
     
-    <section class="w-full">
+    <section class="w-three-quarters">
       <img src="/products/scatter/scatter-evolves.png" alt="Scatter evolves" class="single-product-image">
     </section>
 

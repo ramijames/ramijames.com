@@ -14,18 +14,8 @@
     </section>
 
   <section class="w-three-quarters">
-    <aside class="product-role">
-      <div class="single-role">
-        <h3>I was the Technical Project Manager of the blockchain team during the critical period where Ultra developed many of its core features and deployed them to the public as they launched their gaming-focused networks. Following that I lead the product which became Ultra's Developer Relations unit.</h3>
-      </div>
-      <div class="single-role">
-        <ul class="roles">
-          <li>Strategy</li>
-          <li>Project Management</li>
-          <li>Design</li>
-        </ul>
-      </div>
-    </aside>
+    <h2 class="role"><span>Role</span>Technical Project Manager, Head of Developer Relations</h2>
+    <p>When I joined Ultra, I was the project manager for the blockchain team who built many of the foundational features that the wider product relied upon. Following this, I helped conceptualize and create the DevRel unit at Ultra which did both direct outreach to developers and produced many of the critical sets of documentation and examples that developers relied upon to use Ultra's technologies.</p>  
   </section>
 
   <section class="w-three-quarters">
