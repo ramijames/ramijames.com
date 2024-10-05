@@ -14,7 +14,7 @@
   </section>
 
   <section class="w-three-quarters">
-    <h2>Principle Designer</h2>
+    <h2 class="role"><span>Role</span>Principle Designer</h2>
     <p>I produced a large set of wireframes and designs which were used to implement the initial version of the Telos Open Block Explorer. I worked closely with both the stakeholders at the Telos Foundation, and with the development team to ensure that the final product was clean, clear, easy to use, and delivered on time.</p>
   </section>
 
@@ -36,7 +36,6 @@
     <img src="/products/telos/telos-obe-various.png" alt="Telos OBE Various Screens" class="single-product-image">
   </section>
 
-  <h2>More Projects</h2>
   <MergedProjects />
   <Footer />
 </template>
