@@ -345,6 +345,22 @@ p > strong {
   }
 }
 
+.w-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1000px;
+  width: 100%;
+  margin: $spacing-lg auto;
+  padding: 0 $spacing-md;
+
+  @media screen and (max-width: 1000px) {
+    margin: $spacing-lg auto;
+    padding: 0 $spacing-md;
+  }
+}
+
 .w-three-quarters {
   display: flex;
   flex-direction: column;
