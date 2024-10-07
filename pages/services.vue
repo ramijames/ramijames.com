@@ -32,11 +32,11 @@
         </section>
       </section>
     </section>
-    <section class="w-half">
+    <section class="w-content">
       <h2 class="hello-text">Why work with me?</h2>
       <p class="hello-text">I offer product, design, and development services to clients that are looking for someone with a wide range of experience, a good eye, and a technical bent. The focus of my product creation methodology is to use a personalized, collaborative approach to solves hard problems on-time and on-budget.</p>
     </section>
-    <section class="w-half">
+    <section class="w-content">
         <section id="ServicesGrid">
           <section class="single-service product">
             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -271,7 +271,7 @@ import Button from '/components/Button';
     @media screen and (max-width: 768px){
       border-right: none;
       margin-bottom: $spacing-md;
-      width: calc(100vw - $spacing-sm * 2);
+      width: calc(100vw - $spacing-md * 2);
     }
 
     svg {

@@ -170,9 +170,13 @@
   }
 
   img {
-    width: 80px;
+    width: 60px;
     opacity: 0.5;
     filter: invert(1);
+
+    @media screen and (max-width: 768px){
+      width: 40px;
+    }
   }
 }
 

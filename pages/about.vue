@@ -6,7 +6,7 @@
       </div>
     </div>
     <section class="about-hero">
-      <section class="intro-text w-three-quarters">
+      <section class="intro-text w-content">
         <p class="small blue">
           Who is this guy?
         </p>
@@ -23,12 +23,12 @@
       </section>
     </section>
 
-    <section class="w-half">
+    <section class="w-content">
       <h2 class="hello-text">Quick Intro</h2>
       <p class="hello-text">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>. I'm always building something. These days I'm focused on building <a href="https://vewrite.com/">Vewrite</a>, a project management tool for developer relations, technical writing teams, and writers.</p>
     </section>
 
-    <section class="w-half">
+    <section class="w-content">
       <section class="jobs">  
         <section class="single-job">
           <p class="job-title">Freelance</p>
