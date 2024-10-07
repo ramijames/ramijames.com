@@ -1,5 +1,5 @@
 <template>
-  <main class="w-three-quarters page-top">
+  <main class="w-content page-top">
     <section class="article-extras">
       <SectionTitle title="Peak software abuse" />
       <Share route="/thoughts/peak-software-abuse" topic="Peak software abuse" />

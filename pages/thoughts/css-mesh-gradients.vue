@@ -7,11 +7,11 @@
   </section>
   <main>
     <Share route="/thoughts/css-mesh-gradients" topic="CSS Mesh Gradients" />
-    <section class="w-three-quarters">
+    <section class="w-content">
       <p>On <a href="https://x.com/tonilijic/status/1800551272598364591">Twitter</a>, a guy named Toni Lijic was showing off how the new iOS version allows you to quickly and easily make mesh gradients as a background within iOS. It is a cool effect, and I wanted to see if I could recreate it using CSS.</p>
     </section>
 
-    <section class="w-three-quarters">
+    <section class="w-content">
       <h3>Positioned Elements</h3>
       <p>I think the first step is to try and create a mesh gradient using a combination of four elements with blurs, which we can control their color dominace in a similar fashion to a mesh gradient.</p>
       <div class="code-type">HTML</div>
@@ -231,7 +231,7 @@
     </code>
       </pre>
     </section>
-    <section class="w-three-quarters">
+    <section class="w-content">
       <h3>Conclusion</h3>
       <p>So, this is a fun little experiment that I think could be used in a lot of different ways. I think it would be cool to see this used in a more subtle way as a background for a site. I think it could also be used as a loading animation or a background for a hero section. I think the possibilities are endless.</p>
     </section>

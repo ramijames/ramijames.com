@@ -1,5 +1,5 @@
 <template>
-  <main class="w-three-quarters page-top">
+  <main class="w-content page-top">
     <section class="article-extras">
       <SectionTitle title="Neurodiversity as software incompatibility" />
       <Share route="/thoughts/neurodiversity-as-software-incompatibility" topic="Neurodiversity as software incompatibility" />

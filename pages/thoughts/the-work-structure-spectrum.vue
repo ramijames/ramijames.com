@@ -1,5 +1,5 @@
 <template>
-  <main class="w-three-quarters page-top">
+  <main class="w-content page-top">
     <section class="article-extras">
       <SectionTitle title="The Work Structure Spectrum" />
       <Share route="/thoughts/the-work-structure-spectrum" topic="The Work Structure Spectrum" />
