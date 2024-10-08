@@ -160,7 +160,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: $spacing-lg;
+  gap: $spacing-md;
   width: 100%;
 
   .images {
