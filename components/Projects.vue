@@ -160,13 +160,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: $spacing-md;
+  gap: $spacing-lg;
   width: 100%;
 
   .images {
     display: flex;
     flex-direction: row;
-    gap: $spacing-md;
+    gap: $spacing-lg;
   }
 
   img {
