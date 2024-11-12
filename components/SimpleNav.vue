@@ -209,7 +209,7 @@ export default {
       .nav-link {
         text-decoration: none;
         background: transparent;
-        color: $red;
+        color: $blue;
         padding: $spacing-xxs $spacing-xs;
         border: 0;
         opacity: 0;
@@ -227,7 +227,7 @@ export default {
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba($red, 0.2);
+          background: rgba($blue, 0.2);
           transition: all 0.3s;
           transform: scaleX(0);
           mix-blend-mode: screen;
@@ -300,7 +300,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba($red, 1);
+  background: rgba($blue, 1);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
