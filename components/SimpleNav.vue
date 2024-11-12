@@ -9,18 +9,18 @@
         <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
-      <nuxt-link class="button large primary" to="/booking">Contact</nuxt-link>
-      <button 
+      <nuxt-link class="button large primary contact" to="/booking">Contact</nuxt-link>
+      <div 
         :class="['menu', mobileMenuOpen ]"
         @click="toggleMenu"
         tabindex="0"
         role="button"
-      ></button>
+      ></div>
     </section>
   </nav>
 
   <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
-    <button class="close"@click="closeMenu"></button>
+    <div class="close"@click="closeMenu"></div>
     <section class="mobile-nav-panel-links">
       <nuxt-link to="/" @click="closeMenu">Home</nuxt-link>
       <nuxt-link to="/services" @click="closeMenu">Services</nuxt-link>
@@ -149,6 +149,14 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
+    .contact {
+      
+
+      @media screen and (max-width: 1000px){
+        display: none;
+      }
+    }
 
     .menu {
       width: 40px;
