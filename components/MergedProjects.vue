@@ -175,9 +175,22 @@ export default {
       transition: all 0.3s ease-in-out;
 
       @media screen and (max-width: 768px){
-        background: linear-gradient(-120deg, rgba($black, .6) 50%, rgba($black, 0.8) 100%);
+        background: $black;
         opacity: 1;
       }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(30deg, rgba($black, 0.6) 70%, rgba($black, 0.0) 100%);
+      z-index: 1;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
     }
 
     .info {
