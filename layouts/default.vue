@@ -13,6 +13,7 @@
 .default-layout {
   display: flex;
   flex-direction: row;
+  margin-top: 94.5px;
 }
 
 .default-main {

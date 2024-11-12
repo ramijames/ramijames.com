@@ -624,6 +624,10 @@ img.in-article {
   margin: 0 $spacing-md 2rem;
 }
 
+.product-title {
+  color: $white;
+}
+
     @media screen and (max-width: 768px) {
       .product-main {
         margin: 4rem auto;
