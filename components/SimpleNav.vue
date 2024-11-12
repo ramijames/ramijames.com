@@ -9,6 +9,7 @@
         <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
+      <nuxt-link class="button" to="/booking">Contact</nuxt-link>
       <button 
         :class="['menu', mobileMenuOpen ]"
         @click="toggleMenu"
@@ -204,34 +205,21 @@ export default {
 
     .nav-links {
       display: flex;
-      gap: $spacing-sm;
+      gap: $spacing-md;
 
       .nav-link {
         text-decoration: none;
         background: transparent;
-        color: $blue;
-        padding: $spacing-xxs $spacing-xs;
+        color: rgba($black, 0.5);
+        padding: $spacing-xs 0;
         border: 0;
         opacity: 0;
         animation: fadeInDown 0.2s ease-in-out forwards;
         transition: all 0.3s;
         overflow: hidden;
-        border-radius: 0.2rem;
         font-size: $font-size-md;
         font-weight: 400;
-
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba($blue, 0.2);
-          transition: all 0.3s;
-          transform: scaleX(0);
-          mix-blend-mode: screen;
-        }
+        border-bottom: 2px solid transparent;
 
         &:nth-child(1) {
           animation-delay: 0.1s;
@@ -262,14 +250,13 @@ export default {
         }
 
         &:hover {
-          &:after {
-            transform: scaleX(1);
-          }
+          border-bottom: 2px solid rgba($black, 0.5);
         }
         
         &.router-link-exact-active,
         &.router-link-active {
           color: $black;
+          border-bottom: 2px solid $black;
         }
       }
     }
