@@ -9,7 +9,7 @@
         <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
-      <nuxt-link class="button" to="/booking">Contact</nuxt-link>
+      <nuxt-link class="button large primary" to="/booking">Contact</nuxt-link>
       <button 
         :class="['menu', mobileMenuOpen ]"
         @click="toggleMenu"

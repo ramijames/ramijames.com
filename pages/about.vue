@@ -1,10 +1,5 @@
 <template>
   <main id="About">
-    <!-- <div class="mask">
-      <div id="mesh-gradient" class="sixteen-elements">
-        <div class="element" v-for="n in 160" :key="n"></div>
-      </div>
-    </div> -->
     <section class="about-hero">
       <section class="intro-text w-content">
         <p>
@@ -15,7 +10,7 @@
           <span>t</span>
         </p>
         <section class="about-buttons">
-          <a class="button large" href="mailto:ramijames@gmail.com">Say hello!</a>
+          <a class="button large primary" href="mailto:ramijames@gmail.com">Say hello!</a>
         </section>
       </section>
     </section>

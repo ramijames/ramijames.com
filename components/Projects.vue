@@ -17,13 +17,7 @@
         </p>
         <section class="products-buttons">
           <nuxt-link class="button large" to="/services">What can I do for you?</nuxt-link>
-          <a class="button large" href="mailto:ramijames@gmail.com">Say hello!</a>
-          <div class="arrow-down">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M22 42C33.0457 42 42 33.0457 42 22C42 10.9543 33.0457 2 22 2C10.9543 2 2 10.9543 2 22C2 33.0457 10.9543 42 22 42ZM22 44C34.1503 44 44 34.1503 44 22C44 9.84974 34.1503 0 22 0C9.84974 0 0 9.84974 0 22C0 34.1503 9.84974 44 22 44Z" fill="white" fill-opacity="0.2"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M21 30.5858V10H23V30.5858L27.6569 25.9289C28.0474 25.5384 28.6806 25.5384 29.0711 25.9289C29.4616 26.3195 29.4616 26.9526 29.0711 27.3431L22.7071 33.7071C22.3166 34.0976 21.6834 34.0976 21.2929 33.7071L14.9289 27.3431C14.5384 26.9526 14.5384 26.3195 14.9289 25.9289C15.3195 25.5384 15.9526 25.5384 16.3432 25.9289L21 30.5858Z" fill="white"/>
-            </svg>
-          </div>
+          <a class="button large primary" href="mailto:ramijames@gmail.com">Say hello!</a>
         </section>
       </section>
     </section>
@@ -61,9 +55,9 @@
 
     .products-buttons {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: flex-start;
-      gap: 0;
+      gap: $spacing-sm;
       margin-top: $spacing-md;
       animation: fadeInUp 0.5s forwards ease-in-out;
       opacity: 0;

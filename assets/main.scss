@@ -40,45 +40,41 @@ body.dark {
 button,
 .button {
     color: $black;
-    background: transparent;
-    border-radius: 0;
-    border: 2px solid rgba($black, 1);
+    background: rgba($white, .35);
+    border-radius: $br-md;
+    border: $border;
     text-align: center;
     text-decoration: none;
-    padding: $spacing-xs $spacing-md $spacing-xs;
+    padding: $spacing-xxxs $spacing-xs;
     cursor: pointer;
+    font-size: $font-size-xs;
+    font-weight: 500;
     transition: all 0.2s ease;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: $spacing-xs;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
     font-family: $font-family-main;
+    display: flex;
+    justify-content: center;
+    gap: calc($spacing-xxs - 2px);
+    align-items: center;
+    text-transform: capitalize;
+    min-height: 24px;
+    outline: 0px solid rgba($black, 0.4);
+    outline-offset: 0px;
+    box-shadow: $small-shadow;
+    overflow: hidden;
+    
+    &.primary {
+      background: $blue;
+      color: $white;
 
-    &:after {
-      content: '';
-      position: absolute;
-      height: 100%;
-      top: 100%;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba($black, 1);
-      z-index: 0;
-      transition: all 0.2s ease;
-      mix-blend-mode: color;
+      &:hover {
+        background: $blue-dark;
+      }
     }
 
     &:hover {
-      color: $white;
-      border: 2px solid $black;
-
-      &:after {
-        top: 0;
-      }
+        border: 1px solid rgba($black-dark, 1);
+        background-color: rgba($black, 0.05);
+        outline: 4px solid rgba($black, 0.05);
     }
 
     &.clear {
@@ -88,7 +84,7 @@ button,
     }
 
     &.large {
-      padding: $spacing-sm $spacing-lg $spacing-sm;
+      padding: $spacing-sm $spacing-md;
     }
 }
 
