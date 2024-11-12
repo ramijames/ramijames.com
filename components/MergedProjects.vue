@@ -144,6 +144,10 @@ export default {
     padding: 0;
     overflow: hidden;
 
+    @media screen and (max-width: 768px){
+      height: 400px;
+    }
+
     .preview {
       position: absolute;
       bottom: -200px;
@@ -151,6 +155,11 @@ export default {
       transform: translateX(-50%);
       z-index: 1;
       transition: all 0.3s ease;
+
+      @media screen and (max-width: 768px){
+        width: 80%;
+        bottom: -100px;
+      }
     }
 
     &:hover {
