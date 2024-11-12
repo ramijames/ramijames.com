@@ -7,9 +7,6 @@
     </div> -->
     <section class="about-hero">
       <section class="intro-text w-content">
-        <p class="small blue">
-          Who is this guy?
-        </p>
         <p>
           <span>A</span>
           <span>b</span>
@@ -24,7 +21,6 @@
     </section>
 
     <section class="w-content">
-      <h2 class="hello-text">Quick Intro</h2>
       <p class="hello-text">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>. I'm always building something. These days I'm focused on building <a href="https://vewrite.com/">Vewrite</a>, a project management tool for developer relations, technical writing teams, and writers.</p>
     </section>
 
@@ -156,8 +152,8 @@ export default {
     align-items: center;
     width: 100%;
     text-align: center;
-    transform: skewY(0deg) scale(0.6);
-    animation: skewIn .9s forwards ease-in-out;
+    // transform: skewY(0deg) scale(0.6);
+    // animation: skewIn .9s forwards ease-in-out;
 
     .about-buttons {
       display: flex;
@@ -199,7 +195,7 @@ export default {
     margin-bottom: $spacing-md;
     text-transform: uppercase;
     font-weight: 900;
-    color: $red;
+    color: $black;
 
     &.small {
       font-size: $font-size-md;
@@ -228,7 +224,6 @@ export default {
     @media screen and (max-width: 768px){
       font-size: 11vw;
       text-wrap: balance;
-      animation: shadowDropMobile 0.5s forwards ease-in-out;
     }
   }
 }
@@ -263,7 +258,7 @@ export default {
         .job-title {
           font-family: $font-family-main;
           font-weight: 500;
-          font-size: $font-size-xxl;
+          font-size: $font-size-xl;
           line-height: 120%;
         }
 

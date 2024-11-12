@@ -3,7 +3,7 @@
     <section class="postContent">
       <img src="/vewrite.png" alt="Rami James is a nice guy" />
       <h3>Join the Vewrite Beta</h3>
-      <p class="mint">Vewrite, project management tailored for technical writing teams, is launching soon. Make sure to sign up for the waitlist so that you can be notified when the product launches.</p>
+      <p class="red">Vewrite, project management tailored for technical writing teams, is launching soon. Make sure to sign up for the waitlist so that you can be notified when the product launches.</p>
       <!-- <Button type="small" text="Open Website" to="https://vewrite.com/" /> -->
        <a href="https://vewrite.com/" class="button">Open Website</a>
     </section>
@@ -15,7 +15,7 @@
 @import '/assets/variables.scss';
 
 #PostsExtras {
-  background: rgba(lighten($black, 20.5%), 0.4);
+  background: $black;
   width: 100%;
   padding: 0 0 $spacing-lg ;
   display: flex;
@@ -43,7 +43,6 @@
       width: 100%;
       max-width: 800px;
       margin: 0 auto $spacing-md;
-      border-radius: 0 0 2rem 2rem;
     }
 
     h3 {

@@ -1,5 +1,5 @@
 <template>
-  <section id="Products" class="w-full">
+  <section id="Products" class="w-three-quarters">
     <nuxt-link
         :class="['project', 'w-full', product.class]"
         v-for="product in products" 
@@ -168,10 +168,10 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(-120deg, rgba($black, 0) 50%, rgba($black, 1) 100%);
-      mix-blend-mode: multiply;
+      background: $black;
+      mix-blend-mode: color;
       z-index: 0;
-      opacity: .7;
+      opacity: 1;
       transition: all 0.3s ease-in-out;
 
       @media screen and (max-width: 768px){

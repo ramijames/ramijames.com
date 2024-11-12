@@ -1,8 +1,8 @@
 <template>
   <main id="Hero">
-    <div id="mesh-gradient" class="sixteen-elements">
+    <!-- <div id="mesh-gradient" class="sixteen-elements">
       <div class="element" v-for="n in 160" :key="n"></div>
-    </div>
+    </div> -->
     <section class="mega-hero">
       <section class="intro-text w-three-quarters">
         <p>
@@ -47,7 +47,7 @@
           <span>c</span>
           <span>t</span> -->
         </p>
-        <!-- <p class="secondary">I am a product-minded designer and developer with founder experience. My core interest is in creating innovative tools with creative partners like you.</p> -->
+        <p class="secondary">I am a product-minded designer and developer with founder experience. My core interest is in creating innovative tools with creative partners like you.</p>
         <section class="home-buttons">
           <nuxt-link class="button large" to="/about">Who am I?</nuxt-link>
           <nuxt-link class="button large" to="/services">Why work with me?</nuxt-link>
@@ -103,8 +103,8 @@ onMounted(() => {
       align-items: center;
       width: 100%;
       text-align: center;
-      transform: skewY(0deg) scale(0.6);
-      animation: skewIn .9s forwards ease-in-out;
+      // transform: skewY(0deg) scale(0.6);
+      // animation: skewIn .9s forwards ease-in-out;
 
       .home-buttons {
         display: flex;
@@ -146,7 +146,7 @@ onMounted(() => {
       margin-bottom: $spacing-md;
       text-transform: uppercase;
       font-weight: 700;
-      color: $red;
+      color: $black;
 
       &.small {
         font-size: $font-size-md;
@@ -175,12 +175,14 @@ onMounted(() => {
       @media screen and (max-width: 768px){
         font-size: 8vw;
         text-wrap: balance;
-        animation: shadowDropMobile 0.5s forwards ease-in-out;
       }
     }
 
     p.secondary {
-      font-size: $font-size-lg;
+      font-size: $font-size-md;
+      text-transform: none;
+      font-weight: normal;
+      max-width: 300px;
       line-height: 140%;
       text-wrap: balance;
       letter-spacing: initial;

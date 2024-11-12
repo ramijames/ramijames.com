@@ -85,8 +85,8 @@ const allArticles = articles.slice(1)
     align-items: center;
     width: 100%;
     text-align: center;
-    transform: skewY(0deg) scale(0.6);
-    animation: skewIn .9s forwards ease-in-out;
+    // transform: skewY(0deg) scale(0.6);
+    // animation: skewIn .9s forwards ease-in-out;
 
     .thoughts-buttons {
       display: flex;
@@ -128,7 +128,7 @@ const allArticles = articles.slice(1)
     margin-bottom: $spacing-md;
     text-transform: uppercase;
     font-weight: 900;
-    color: $red;
+    color: $black;
 
     &.small {
       font-size: $font-size-md;
@@ -157,7 +157,6 @@ const allArticles = articles.slice(1)
     @media screen and (max-width: 768px){
       font-size: 11vw;
       text-wrap: balance;
-      animation: shadowDropMobile 0.5s forwards ease-in-out;
     }
   }
 }

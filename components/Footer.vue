@@ -79,7 +79,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-color: $black-dark;
+  background-color: $black;
 
   @media screen and (max-width: 768px){
     align-items: center;
@@ -133,7 +133,7 @@ footer {
     a {
       text-decoration: none;
       color: $white;
-      font-size: $font-size-lg;
+      font-size: $font-size-sm;
       border-bottom: 2px solid transparent;
       transition: all 0.5s ease-in-out;
 

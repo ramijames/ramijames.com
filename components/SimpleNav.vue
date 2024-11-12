@@ -163,7 +163,7 @@ export default {
         right: 0px;
         width: 50px;
         height: 2px;
-        background: $white;
+        background: $black;
         transition: all 0.3s;
       }
 
@@ -174,7 +174,7 @@ export default {
         right: 0px;
         width: 50px;
         height: 2px;
-        background: $white;
+        background: $black;
         transition: all 0.3s;
       }
 
@@ -203,7 +203,7 @@ export default {
       .nav-link {
         text-decoration: none;
         background: transparent;
-        color: rgba($black, 0.4);
+        color: $red;
         padding: $spacing-xxs $spacing-xs;
         border: 0;
         opacity: 0;
@@ -263,7 +263,7 @@ export default {
         
         &.router-link-exact-active,
         &.router-link-active {
-          color: $red;
+          color: $black;
         }
       }
     }
@@ -294,7 +294,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba($black, 0.8);
+  background: rgba($red, 1);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -323,7 +323,7 @@ export default {
         left: 50%;
         width: 40px;
         height: 2px;
-        background: $red;
+        background: $white;
         transform: translate(-50%, -50%) rotate(45deg);
       }
 
@@ -334,7 +334,7 @@ export default {
         left: 50%;
         width: 40px;
         height: 2px;
-        background: $red;
+        background: $white;
         transform: translate(-50%, -50%) rotate(-45deg);
       }
     }
