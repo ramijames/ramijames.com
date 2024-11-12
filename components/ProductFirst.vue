@@ -1,10 +1,10 @@
 <template>
 
-  <section id="ProductFirstIntro" class="general-main">
+  <section id="ProductFirstTitle" class="w-full">
+    <h1 class="center">Are you building the right thing?</h1>
+  </section>
 
-    <section id="ProductFirstTitle" class="w-two-thirds">
-      <h1 class="center">Are you building the right thing?</h1>
-    </section>
+  <section id="ProductFirstIntro" class="general-main">
 
     <section class="w-two-thirds">
       <h2 class="center">Let's improve how you build your product</h2>
@@ -127,12 +127,13 @@
   }
 }
 
-#ProductFirstIntro {
+#ProductFirstTitle h1 {
+  font-size: 10vw;
+  line-height: 1;
+  margin-top: $spacing-xxl;
+}
 
-  #ProductFirstTitle h1 {
-    font-size: 10vw;
-    line-height: 1;
-  }
+#ProductFirstIntro {
 
   img.product-team {
     width: 100%;
