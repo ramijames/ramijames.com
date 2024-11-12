@@ -1,17 +1,3 @@
-<!-- 
- 
-Objective 
-
-The point of this page is to explain:
-
-- Who I am
-- Talk a bit about problems that startups face when developing a product
-- Explain why my methodology is beneficial for those who are looking to build a product
-- Show some of my recent work
-- Show some of my recent blog posts
-
--->
-
 <template>
   <main id="Hero">
     <div id="mesh-gradient" class="sixteen-elements">
@@ -19,12 +5,6 @@ The point of this page is to explain:
     </div>
     <section class="mega-hero">
       <section class="intro-text w-three-quarters">
-        <p class="small">
-          Rami James
-        </p>
-        <p class="small blue">
-          Founder, designer, & developer
-        </p>
         <p>
           <span>D</span>
           <span>e</span>
@@ -76,59 +56,8 @@ The point of this page is to explain:
         </section>
       </section>
     </section>
-    <!-- <section id="Problems" class="w-three-quarters">
-      <h2>Put your product in the right hands</h2>
-      <section id="Solutions">
-        <div class="single-solution">
-          <div class="icon">
-            <img src="/services/ai.png" alt="Idea icon" />
-          </div>
-          <div class="blue-box">
-            <h3>Problem</h3>
-            <p>Building a product is hard. It's even harder when you're not sure what to build. You might have a great idea, but how do you know if it's the right idea?</p>
-          </div>
-        </div>
-        <div class="single-solution">
-          <div class="icon">
-            <img src="/services/budget.png" alt="Idea icon" />
-          </div>
-          <div class="blue-box">
-            <h3>Affordable</h3>
-            <p>My preference is to work with small, agile, and fast-growing teams. They tend to be strapped for cash, and I'm happy to provide them with affordable services while they scale.</p>
-            <p><nuxt-link class="button clear" to="/services#rate">See rates</nuxt-link></p>
-          </div>
-        </div>
-        <div class="single-solution">
-          <div class="icon">
-            <img src="/services/iterate.png" alt="Idea icon" />
-          </div>
-          <div class="blue-box">
-            <h3>Fast</h3>
-            <p>My methodology focuses on fast iteration, so that's exactly what you get. Within a matter of hours your project gets started, and within weeks you'll have designs you can publicly validate.</p>
-          </div>
-        </div>
-        <div class="single-solution">
-          <div class="icon">
-            <img src="/services/team.png" alt="Idea icon" />
-          </div>
-          <div class="blue-box">
-            <h3>Team Player</h3>
-            <p>I'm friendly and work well within a team. Having </p>
-          </div>
-        </div>
-        
-      </section>
-    </section> -->
-    <section id="RecentWork" class="w-three-quarters">
-      <h2 class="blue">
-        <svg width="80" height="139" viewBox="0 0 80 139" fill="none" xmlns="http://www.w3.org/2000/svg">
-         <path d="M66.1469 127.638C67.0518 127.005 67.2719 125.758 66.6385 124.853L56.3161 110.107C55.6827 109.202 54.4356 108.982 53.5307 109.615C52.6259 110.249 52.4058 111.496 53.0392 112.401L62.2146 125.508L49.1069 134.684C48.202 135.317 47.9819 136.564 48.6154 137.469C49.2488 138.374 50.4958 138.594 51.4007 137.961L66.1469 127.638ZM78.3774 0.0993819C20.1798 19.1641 -1.64208 47.6941 1.01012 73.951C3.6377 99.964 30.2043 121.89 64.6524 127.97L65.3476 124.03C31.7957 118.11 7.36229 97.036 4.98987 73.549C2.64208 50.3059 21.8203 22.8359 79.6226 3.90062L78.3774 0.0993819Z" fill="white"/>
-        </svg>
-        My Recent Work
-      </h2>
-      <MergedProjects />
-    </section>
   </main>
+  <MergedProjects />
 </template>
 
 <script setup>
@@ -153,9 +82,9 @@ onMounted(() => {
   justify-content: center;
   position: relative;
   perspective: 100rem;
+  min-height: 80vh;
 
   .mega-hero {
-    padding: $spacing-lg 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -203,14 +132,14 @@ onMounted(() => {
     }
 
     p {
-      font-size: 6vw;
+      font-size: 5vw;
       line-height: 100%;
       letter-spacing: -0.1rem;
       text-wrap: balance;
       font-family: $font-family-main;
       margin-bottom: $spacing-md;
       text-transform: uppercase;
-      font-weight: 900;
+      font-weight: 700;
       animation: shadowDrop 0.5s forwards ease-in-out;
       animation-delay: 0.4s;
 

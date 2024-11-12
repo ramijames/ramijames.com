@@ -54,7 +54,7 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Teko': [400, 600, 900],
+      'Host Grotesk': [400, 500, 600, 700],
       'Roboto Sans': [400, 600, 700, 900],
     },
     preconnect: true,

@@ -198,12 +198,12 @@ export default {
 
     .nav-links {
       display: flex;
-      gap: $spacing-xs;
+      gap: $spacing-sm;
 
       .nav-link {
         text-decoration: none;
         background: transparent;
-        color: $white;
+        color: $blue;
         padding: $spacing-xxs $spacing-xs;
         border: 0;
         opacity: 0;
@@ -211,7 +211,7 @@ export default {
         transition: all 0.3s;
         overflow: hidden;
         border-radius: 0.2rem;
-        font-size: $font-size-lg;
+        font-size: $font-size-md;
         font-weight: 400;
 
         &:after {
@@ -221,7 +221,7 @@ export default {
           left: 0;
           width: 100%;
           height: 100%;
-          background: $blue;
+          background: rgba($blue, 0.2);
           transition: all 0.3s;
           transform: scaleX(0);
           mix-blend-mode: screen;
@@ -263,7 +263,7 @@ export default {
         
         &.router-link-exact-active,
         &.router-link-active {
-          background: $blue;
+          color: $white;
         }
       }
     }

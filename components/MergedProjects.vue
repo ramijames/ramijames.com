@@ -1,7 +1,7 @@
 <template>
-  <section id="Products" class="w-three-quarters">
+  <section id="Products" class="w-full">
     <nuxt-link
-        :class="['project', 'w-three-quarters', product.class]"
+        :class="['project', 'w-full', product.class]"
         v-for="product in products" 
         :key="product.title" 
         :to="product.slug" 
@@ -89,15 +89,6 @@ export default {
           class: 'illustrations',
           type: 'Skillset Showcase'
         },          
-        // {
-        //   title: 'Crisp Tools',
-        //   description: 'A collection of useful tools for designers and developers',
-        //   image: '/crisp-tools.png',
-        //   bg: '/crisp-tools-bg.jpg',
-        //   status: 'current',
-        //   slug: '/products/crisp-tools',
-        //   color: '#D5E7FD'
-        // },
       ]
     }
   },
@@ -119,20 +110,12 @@ export default {
 
 #Products {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   position: relative;
-  height: 100%;
   opacity: 0;
-  gap: $spacing-md;
-  transform: translateY(-20px);
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0.4s;
-  margin-bottom: $spacing-xl;
-
-  @media screen and (max-width: 1000px){
-    grid-template-columns: 1fr;
-  }
 
   @media screen and (max-width: 768px){
     padding: 0;
@@ -141,7 +124,7 @@ export default {
 
   .project {
     width: 100%;
-    height: 26em;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -152,13 +135,9 @@ export default {
     margin: 0;
     opacity: 1;
     transition: all 0.3s ease-in-out;
-    transform: scale(0.95);
-    border-radius: $br-md;
 
     &:hover {
       opacity: 1;
-      box-shadow: 0 20px 20px rgba($black, 1);
-      transform: scale(1) rotate(0.5deg);
 
       .info {
         opacity: 1;
