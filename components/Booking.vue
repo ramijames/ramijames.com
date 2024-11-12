@@ -1,9 +1,7 @@
 <template>
   <section class="w-three-quarters" id="booking">
-    <h1 class="">Book a Call</h1>
-    <h4 class="">I provide a variety of valuable <nuxt-link to="/services">services</nuxt-link> for reasonable prices. If you haven't done so already, you should <nuxt-link to="products">check out the work</nuxt-link> that I have done in the past.</h4>
-      
-    <h4>Perhaps you're not sure yet what you need. That's ok, too. Let's have a quick call to discuss it.</h4>
+    <h1 class="center">Book a Call</h1>
+    
     <CalendlyInlineWidget v-bind="options" />
   </section>
 </template>
