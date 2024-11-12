@@ -35,7 +35,7 @@
         </section>
       </section>
     </section>
-    <section id="projects" class="w-full" ref="projects">
+    <!-- <section id="projects" class="w-full" ref="projects">
       <section id="company-logos">
         <img src="/social-proof/wix.png" alt="Wix" />
         <img src="/social-proof/ibm.png" alt="IBM" />
@@ -45,7 +45,7 @@
         <img src="/social-proof/telos.png" alt="Telos" />
         <img src="/social-proof/ultra.png" alt="Ultra" />
       </section>
-    </section>
+    </section> -->
   </main> 
   <MergedProjects />
 </template>
