@@ -1,5 +1,5 @@
 <template>
-  <div id="share" class="w-content">
+  <div id="share" class="">
     Share article:
     <a v-for="social in socials" 
        :key="social.name" 
@@ -22,25 +22,19 @@ export default {
       socials: [
         {
           name: 'Twitter',
-          icon: 'twitter-dark',
+          icon: 'twitter-light',
           url: 'https://twitter.com/intent/tweet?url=',
           message: 'Check out this article by @ramijames on'
         },
         {
           name: 'LinkedIn',
-          icon: 'linkedin-dark',
+          icon: 'linkedin-light',
           url: 'https://www.linkedin.com/feed/?shareActive=true&text=',
           message: 'Check out this article by @ramijames on'
         },
         {
-          name: 'Facebook',
-          icon: 'facebook-dark',
-          url: 'https://www.facebook.com/sharer/sharer.php?u=',
-          message: 'Check out this article on'
-        },
-        {
           name: 'Email',
-          icon: 'mail-dark',
+          icon: 'mail-light',
           url: 'mailto:?body=',
           message: 'Check out this article by Rami James on'
         }
@@ -61,7 +55,7 @@ export default {
   align-items: center;
   justify-content: flex-start;
   gap: $spacing-md;
-  color: rgba($white, 0.3);
+  color: rgba($black, 0.5);
 }
 
 </style>

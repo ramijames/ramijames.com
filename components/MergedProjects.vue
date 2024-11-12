@@ -113,6 +113,7 @@ export default {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   position: relative;
+  gap: $spacing-lg;
   opacity: 0;
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0.4s;

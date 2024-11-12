@@ -22,8 +22,8 @@ body {
 
 body,
 body.light {
-  color: $white;
-  background: $black;
+  color: rgba($black, 0.5);
+  background: $white;
 }
 
 body.dark {
@@ -40,10 +40,10 @@ body.dark {
 
 button,
 .button {
-    color: $white;
+    color: $red;
     background: transparent;
     border-radius: 0;
-    border: 2px solid rgba($white, 1);
+    border: 2px solid rgba($red, 1);
     text-align: center;
     text-decoration: none;
     padding: $spacing-xs $spacing-md $spacing-xs;
@@ -69,15 +69,15 @@ button,
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba($white, 1);
+      background: rgba($red, 1);
       z-index: 0;
       transition: all 0.2s ease;
       mix-blend-mode: color;
     }
 
     &:hover {
-      color: $black;
-      border: 2px solid $white;
+      color: $white;
+      border: 2px solid $red;
 
       &:after {
         top: 0;
@@ -121,8 +121,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { 
-  font-size: $font-size-mega;
-  line-height: $font-size-mega; 
+  font-size: $font-size-max;
+  line-height: $font-size-max; 
   font-weight:500;
   margin-top: 0;
   margin-bottom: 0;
@@ -518,7 +518,7 @@ input {
     }
 
     .summary {
-      background-color: $black-dark;
+      background-color: $white-dark;
       border-radius: $br-lg;
       width: 100%;
       padding: $spacing-lg;

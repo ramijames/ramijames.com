@@ -1,7 +1,7 @@
 <template>
   <nav class="simple-nav-bar">
     <section :class="['navigation', mobileMenuOpen ? 'open' : '']">
-      <nuxt-link to="/" class="logo-link"><img :src="`/logo-dark.svg`" alt="Rami James" /></nuxt-link>
+      <nuxt-link to="/" class="logo-link"><img :src="`/logo-light.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
         <nuxt-link to="/services" class="nav-link">Services</nuxt-link>
@@ -203,7 +203,7 @@ export default {
       .nav-link {
         text-decoration: none;
         background: transparent;
-        color: $blue;
+        color: rgba($black, 0.4);
         padding: $spacing-xxs $spacing-xs;
         border: 0;
         opacity: 0;
@@ -221,7 +221,7 @@ export default {
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba($blue, 0.2);
+          background: rgba($red, 0.2);
           transition: all 0.3s;
           transform: scaleX(0);
           mix-blend-mode: screen;
@@ -263,7 +263,7 @@ export default {
         
         &.router-link-exact-active,
         &.router-link-active {
-          color: $white;
+          color: $red;
         }
       }
     }
@@ -273,43 +273,6 @@ export default {
     width: 56px;
     cursor: pointer;
   }
-}
-
-.dark .simple-nav-bar {
-  .menu {
-    &::before {
-      background: $white;
-    }
-
-    &::after {
-      background: $white;
-    }
-  }
-
-  .navigation {
-    .nav-link {
-      color: $white-light;
-
-      &.router-link-exact-active {
-          color: $white;
-          border-color: $white;
-      }
-
-      &:hover {
-        color: $white;
-        border-color: rgba($white,0.4);
-      }
-    }
-  }
-}
-
-.dark .simple-nav-bar {
-  background: rgba($black, 0.48);
-  backdrop-filter: blur(6px);
-}
-
-.dark .mobile-nav-panel.open {
-  background: rgba($black, 0.2);
 }
 
 .extras {
@@ -360,7 +323,7 @@ export default {
         left: 50%;
         width: 40px;
         height: 2px;
-        background: $white;
+        background: $red;
         transform: translate(-50%, -50%) rotate(45deg);
       }
 
@@ -371,7 +334,7 @@ export default {
         left: 50%;
         width: 40px;
         height: 2px;
-        background: $white;
+        background: $red;
         transform: translate(-50%, -50%) rotate(-45deg);
       }
     }

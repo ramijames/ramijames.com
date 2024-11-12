@@ -72,7 +72,7 @@ const allArticles = articles.slice(1)
 }
 
 .thoughts-hero {
-  padding: $spacing-lg 0 0 0;
+  padding: $spacing-lg 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,8 +128,7 @@ const allArticles = articles.slice(1)
     margin-bottom: $spacing-md;
     text-transform: uppercase;
     font-weight: 900;
-    animation: shadowDrop 0.5s forwards ease-in-out;
-    animation-delay: 0.4s;
+    color: $red;
 
     &.small {
       font-size: $font-size-md;
@@ -184,7 +183,7 @@ const allArticles = articles.slice(1)
     width: 100%;
     max-width: 600px;
     object-fit: cover;
-    border: 1px solid rgba($white, 0.1);
+    border: 1px solid rgba($black, 0.5);
 
     @media screen and (max-width: 768px) {
       max-width: 100%;
@@ -194,7 +193,7 @@ const allArticles = articles.slice(1)
   .info {
     display:flex;
     flex-direction: column;
-    color: $white;
+    color: $black;
     padding: $spacing-md;
     align-items: flex-start;
     text-wrap: balance;
@@ -292,13 +291,13 @@ const allArticles = articles.slice(1)
     width: 100%;
     display:flex;
     flex-direction: column;
-    color: $white;
+    color: $black;
     padding: $spacing-md 0;
     text-wrap: balance;
     text-align: left;
 
     .title {
-      font-size: $font-size-xl;
+      font-size: $font-size-lg;
       font-family: $font-family-main;
     }
 

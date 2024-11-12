@@ -200,8 +200,7 @@ import Button from '/components/Button';
     margin-bottom: $spacing-md;
     text-transform: uppercase;
     font-weight: 900;
-    animation: shadowDrop 0.5s forwards ease-in-out;
-    animation-delay: 0.4s;
+    color: $red;
 
     &.small {
       font-size: $font-size-md;
@@ -238,9 +237,6 @@ import Button from '/components/Button';
 .hello-text {
   margin: 0;
   padding: 0;
-  opacity: 0;
-  animation: fadeInUp 0.5s forwards ease-in-out;
-  animation-delay: 1.05s;
 }
 
 #Rate {

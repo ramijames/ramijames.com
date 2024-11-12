@@ -120,8 +120,7 @@
     margin-bottom: $spacing-md;
     text-transform: uppercase;
     font-weight: 900;
-    animation: shadowDrop 0.5s forwards ease-in-out;
-    animation-delay: 0.4s;
+    color: $red;
 
     &.small {
       font-size: $font-size-md;
