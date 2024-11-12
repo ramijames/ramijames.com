@@ -1,10 +1,5 @@
 <template>
   <main id="ProjectsMain">
-    <!-- <div class="mask">
-      <div id="mesh-gradient" class="sixteen-elements">
-        <div class="element" v-for="n in 160" :key="n"></div>
-      </div>
-    </div> -->
     <section class="products-hero">
       <section class="intro-text w-three-quarters">
         <p>
@@ -32,17 +27,6 @@
         </section>
       </section>
     </section>
-    <!-- <section id="projects" class="w-full" ref="projects">
-      <section id="company-logos">
-        <img src="/social-proof/wix.png" alt="Wix" />
-        <img src="/social-proof/ibm.png" alt="IBM" />
-        <img src="/social-proof/spiral.png" alt="Spiral" />
-        <img src="/social-proof/wpt.png" alt="WPT" />
-        <img src="/social-proof/qmarkets.png" alt="Qmarkets" />
-        <img src="/social-proof/telos.png" alt="Telos" />
-        <img src="/social-proof/ultra.png" alt="Ultra" />
-      </section>
-    </section> -->
   </main> 
   <MergedProjects />
 </template>
@@ -74,8 +58,6 @@
     align-items: center;
     width: 100%;
     text-align: center;
-    // transform: skewY(0deg) scale(0.6);
-    // animation: skewIn .9s forwards ease-in-out;
 
     .products-buttons {
       display: flex;

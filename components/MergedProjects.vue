@@ -132,10 +132,10 @@ export default {
     text-decoration: none;
     position: relative;
     background-size: cover;
-    padding: $spacing-lg;
     margin: 0;
     opacity: 1;
     transition: all 0.3s ease-in-out;
+    padding: 0;
 
     &:hover {
       opacity: 1;
@@ -198,21 +198,23 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      opacity: 0.8;
+      opacity: 1;
       transition: all 0.3s ease-in-out;
       z-index: 1;
-      transform: translateY(10px);
+      background: rgba($black, 0.6);
+      backdrop-filter: blur(10px);
+      padding: $spacing-md;
+      width: 50%;
 
       @media screen and (max-width: 768px){
         align-items: center;
         opacity: 1;
-        transform: translateY(0);
+        width: 100%;
       }
 
       p {
         color: $white;
         font-size: $font-size-sm;
-        font-weight: 500;
         margin: 0;
         padding: 0;
         position: relative;
@@ -222,10 +224,8 @@ export default {
     }
 
     h3 {
-      color: $white;
-      font-size: 3.2vw;
+      color: $red;
       border: 0;
-      font-weight: 900;
       line-height: 100%;
       padding: 0;
       margin: 0;
