@@ -11,11 +11,10 @@
 }
 
 html {
-  background: $black-dark;
+  background: $black;
 }
 
 body {
-  margin: 0;
   padding: 0;
   font-family: $font-family-main, sans-serif;
 }
@@ -48,10 +47,7 @@ button,
     text-decoration: none;
     padding: $spacing-xs $spacing-md $spacing-xs;
     cursor: pointer;
-    font-weight: 500;
-    font-size: $font-size-md;
     transition: all 0.2s ease;
-    font-family: $font-family-main;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -60,6 +56,7 @@ button,
     position: relative;
     z-index: 1;
     overflow: hidden;
+    font-family: $font-family-main;
 
     &:after {
       content: '';
@@ -92,7 +89,6 @@ button,
 
     &.large {
       padding: $spacing-sm $spacing-lg $spacing-sm;
-      font-size: $font-size-lg;
     }
 }
 

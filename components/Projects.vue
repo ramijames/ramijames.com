@@ -7,9 +7,6 @@
     </div> -->
     <section class="products-hero">
       <section class="intro-text w-three-quarters">
-        <p class="small blue">
-          Love for products
-        </p>
         <p>
           <span>R</span>
           <span>e</span>
@@ -118,8 +115,6 @@
     text-wrap: balance;
     font-family: $font-family-main;
     margin-bottom: $spacing-md;
-    text-transform: uppercase;
-    font-weight: 900;
     color: $black;
 
     &.small {

@@ -126,7 +126,13 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: $spacing-sm $spacing-md;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  background: rgba($white, 0.6);
+  border-bottom: 1px solid rgba($white, 0.1);
+  backdrop-filter: blur(14px);
+  z-index: 1000;
+  top: 0;
   opacity: 0;
   transform: translateY(-20px);
   animation: fadeInDown 0.3s forwards ease-in-out;

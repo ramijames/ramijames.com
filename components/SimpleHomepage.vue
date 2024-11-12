@@ -11,41 +11,7 @@
           <span>l</span>
           <span>l</span>
           <span>o</span>
-          <!-- <span>D</span>
-          <span>e</span>
-          <span>s</span>
-          <span>i</span>
-          <span>g</span>
-          <span>n</span>
-          <span>,</span>
-          <span>&nbsp;</span>
-          <span>b</span>
-          <span>u</span>
-          <span>i</span>
-          <span>l</span>
-          <span>d</span>
-          <span>,</span>
-          <span>&nbsp;</span>
-          <br>
-          <span>&</span>
-          <span>&nbsp;</span>
-          <span>s</span>
-          <span>h</span>
-          <span>i</span>
-          <span>p</span>
-          <span>&nbsp;</span>
-          <span>y</span>
-          <span>o</span>
-          <span>u</span>
-          <span>r</span>
-          <span>&nbsp;</span>
-          <span>p</span>
-          <span>r</span>
-          <span>o</span>
-          <span>d</span>
-          <span>u</span>
-          <span>c</span>
-          <span>t</span> -->
+          <span>.</span>
         </p>
         <p class="secondary">I am a product-minded designer and developer with founder experience. My core interest is in creating innovative tools with creative partners like you. I'm currently building <a href="https://www.vewrite.com">Vewrite</a>, a project management tool for technical writing teams.</p>
         <section class="home-buttons">
@@ -103,8 +69,6 @@ onMounted(() => {
       align-items: center;
       width: 100%;
       text-align: center;
-      // transform: skewY(0deg) scale(0.6);
-      // animation: skewIn .9s forwards ease-in-out;
 
       .home-buttons {
         display: flex;
@@ -138,14 +102,12 @@ onMounted(() => {
     }
 
     p {
-      font-size: 4vw;
+      font-size: 10vw;
       line-height: 100%;
       letter-spacing: -0.1rem;
       text-wrap: balance;
       font-family: $font-family-main;
       margin-bottom: $spacing-md;
-      text-transform: uppercase;
-      font-weight: 700;
       color: $black;
 
       &.small {
@@ -173,7 +135,7 @@ onMounted(() => {
       }
 
       @media screen and (max-width: 768px){
-        font-size: 8vw;
+        font-size: 12vw;
         text-wrap: balance;
       }
     }

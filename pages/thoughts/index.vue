@@ -5,26 +5,6 @@
         <div class="element" v-for="n in 160" :key="n"></div>
       </div>
     </div> -->
-    <section class="thoughts-hero">
-      <section class="intro-text w-three-quarters">
-        <p class="small blue">
-          Articles on product design, development, and entrepreneurship
-        </p>
-        <p>
-          <span>T</span>
-          <span>h</span>
-          <span>o</span>
-          <span>u</span>
-          <span>g</span>
-          <span>h</span>
-          <span>t</span>
-          <span>s</span>
-        </p>
-        <section class="thoughts-buttons">
-          <a class="button large" href="mailto:ramijames@gmail.com">Suggest an article</a>
-        </section>
-      </section>
-    </section>
     <section class="w-three-quarters">
       <nuxt-link :to="`/thoughts/${firstArticle.slug}`" class="first-article">
         <img :src="firstArticle.image" :alt="firstArticle.title" />
@@ -69,6 +49,7 @@ const allArticles = articles.slice(1)
   justify-content: center;
   position: relative;
   perspective: 100rem;
+  margin-top: $spacing-lg;
 }
 
 .thoughts-hero {
@@ -85,8 +66,6 @@ const allArticles = articles.slice(1)
     align-items: center;
     width: 100%;
     text-align: center;
-    // transform: skewY(0deg) scale(0.6);
-    // animation: skewIn .9s forwards ease-in-out;
 
     .thoughts-buttons {
       display: flex;
@@ -126,8 +105,6 @@ const allArticles = articles.slice(1)
     text-wrap: balance;
     font-family: $font-family-main;
     margin-bottom: $spacing-md;
-    text-transform: uppercase;
-    font-weight: 900;
     color: $black;
 
     &.small {

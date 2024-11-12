@@ -7,9 +7,6 @@
     </div> -->
     <section class="services-hero">
       <section class="intro-text w-three-quarters">
-        <p class="small blue">
-          Why we're here
-        </p>
         <p>
           <span>S</span>
           <span>e</span>
@@ -33,7 +30,6 @@
       </section>
     </section>
     <section class="w-content">
-      <h2 class="hello-text">Why work with me?</h2>
       <p class="hello-text">I offer product, design, and development services to clients that are looking for someone with a wide range of experience, a good eye, and a technical bent. The focus of my product creation methodology is to use a personalized, collaborative approach to solves hard problems on-time and on-budget.</p>
     </section>
     <section class="w-content">
@@ -198,8 +194,6 @@ import Button from '/components/Button';
     text-wrap: balance;
     font-family: $font-family-main;
     margin-bottom: $spacing-md;
-    text-transform: uppercase;
-    font-weight: 900;
     color: $black;
 
     &.small {

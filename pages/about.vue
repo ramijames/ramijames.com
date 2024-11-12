@@ -193,8 +193,6 @@ export default {
     text-wrap: balance;
     font-family: $font-family-main;
     margin-bottom: $spacing-md;
-    text-transform: uppercase;
-    font-weight: 900;
     color: $black;
 
     &.small {
