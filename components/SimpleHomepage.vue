@@ -132,7 +132,7 @@ onMounted(() => {
     }
 
     p {
-      font-size: 5vw;
+      font-size: 4vw;
       line-height: 100%;
       letter-spacing: -0.1rem;
       text-wrap: balance;
@@ -168,7 +168,7 @@ onMounted(() => {
       }
 
       @media screen and (max-width: 768px){
-        font-size: 11vw;
+        font-size: 8vw;
         text-wrap: balance;
         animation: shadowDropMobile 0.5s forwards ease-in-out;
       }

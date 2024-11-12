@@ -1,10 +1,10 @@
 <template>
   <main id="About">
-    <div class="mask">
+    <!-- <div class="mask">
       <div id="mesh-gradient" class="sixteen-elements">
         <div class="element" v-for="n in 160" :key="n"></div>
       </div>
-    </div>
+    </div> -->
     <section class="about-hero">
       <section class="intro-text w-content">
         <p class="small blue">
@@ -191,7 +191,7 @@ export default {
   }
 
   p {
-    font-size: 6vw;
+    font-size: 4vw;
     line-height: 100%;
     letter-spacing: -0.1rem;
     text-wrap: balance;

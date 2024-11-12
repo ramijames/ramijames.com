@@ -1,10 +1,10 @@
 <template>
   <main id="Services">
-    <div class="mask">
+    <!-- <div class="mask">
       <div id="mesh-gradient" class="sixteen-elements">
         <div class="element" v-for="n in 160" :key="n"></div>
       </div>
-    </div>
+    </div> -->
     <section class="services-hero">
       <section class="intro-text w-three-quarters">
         <p class="small blue">
@@ -192,7 +192,7 @@ import Button from '/components/Button';
   }
 
   p {
-    font-size: 6vw;
+    font-size: 4vw;
     line-height: 100%;
     letter-spacing: -0.1rem;
     text-wrap: balance;

@@ -23,7 +23,7 @@ body {
 body,
 body.light {
   color: $white;
-  background: linear-gradient(-120deg, rgba($blue, 0.45) 0%, $black 30%);
+  background: $black;
 }
 
 body.dark {
