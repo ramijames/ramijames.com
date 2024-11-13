@@ -47,7 +47,6 @@ onMounted(() => {
   justify-content: center;
   position: relative;
   perspective: 100rem;
-  min-height: 80vh;
 
   .mega-hero {
     display: flex;
@@ -150,10 +149,6 @@ onMounted(() => {
         font-size: $font-size-md;
       }
     }
-  }
-
-  @media screen and (max-width: 768px){
-    min-height: 80dvh;
   }
 
   h2 {
