@@ -1,8 +1,8 @@
 <template>
-  <section id="Products" class="w-three-quarters">
+  <section id="Products" class="w-three-quarters" v-if="filteredProjects">
     <nuxt-link
         :class="['project', 'w-full', product.class]"
-        v-for="product in products" 
+        v-for="product in filteredProjects" 
         :key="product.title" 
         :to="product.slug" 
         :style="{ backgroundColor: product.color }"
@@ -16,97 +16,81 @@
   </section>
 </template>
 
-<script>
+<script setup>
+
+const props = ['product'];
 
 import { useRoute } from 'vue-router';
+const route = useRoute();
 
-export default {
-  data() {
-    return {
-      products: [
-        {
-          title: 'Scatter',
-          description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
-          image: '/products/scatter/scatter-thumb.png',
-          logo: '/products/scatter/scatter-logo.png',
-          bg: '/homepage/hp-scatter.png',
-          status: 'past',
-          slug: '/products/scatter',
-          color: '#0899FE',
-          class: 'scatter',
-          type: 'Product Case Study'
-        },  
-        {
-          title: 'Ultra',
-          description: 'Tokenized gaming platform',
-          image: '/products/ultra/ultra-prime-thumb.png',
-          logo: '/products/ultra/ultra-logo.svg',
-          bg: '/homepage/hp-ultra.png',
-          status: 'past',
-          slug: '/products/ultra',
-          color: '#2E2667',
-          class: 'ultra',
-          type: 'Product Case Study'
-        },  
-        {
-          title: 'Doodledapp',
-          description: 'No-code smart contract development and deployment',
-          image: '/products/doodledapp/doodledapp-thumb.png',
-          logo: '/products/doodledapp/doodledapp-logo.svg',
-          bg: '/homepage/hp-doodledapp.png',
-          status: 'past',
-          slug: '/products/doodledapp',
-          color: '#3E74FF',
-          class: 'doodledapp',
-          type: 'Product Case Study'
-        },
-        {
-          title: 'Food For Future',
-          description: 'Decentralized data for funding farmers',
-          image: '/products/food-for-future/fff-thumb.png',
-          logo: '/products/food-for-future/fff-logo.svg',
-          bg: '/homepage/hp-fff.png',
-          status: 'past',
-          slug: '/products/food-for-future',
-          color: '#9446BD',
-          class: 'foodforfuture',
-          type: 'Product Case Study'
-        },
-        {
-          title: 'Telos Open Block Explorer',
-          description: 'The best way to view transactions and manage your wallets',
-          image: '/products/telos/telos-thumb.png',
-          logo: '/products/telos/telos-logo.png',
-          bg: '/homepage/hp-telos.png',
-          status: 'past',
-          slug: '/products/telos-obe',
-          color: '#571AFF',
-          class: 'telos',
-          type: 'Product Case Study'
-        },
-        // {
-        //   title: 'Illustrations',
-        //   description: 'Various illustrations during my journey',
-        //   image: '/products/illustrations/illustrations-thumb.png',
-        //   bg: '/homepage/hp-illustrations.jpg',
-        //   status: 'past',
-        //   slug: '/products/illustrations',
-        //   color: '#0899FE',
-        //   class: 'illustrations',
-        //   type: 'Skillset Showcase'
-        // },          
-      ]
-    }
-  },
-  setup() {
-    const route = useRoute();
-    const notHome = computed(() => route.path !== '/');
+const filteredProjects = ref(null);
 
-    return {
-      notHome,
-    }
-  }
-}
+onMounted(() => {
+  filteredProjects.value = products.filter(product => product.slug !== route.path);
+})
+
+const products = [
+                  {
+                    title: 'Scatter',
+                    description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
+                    image: '/products/scatter/scatter-thumb.png',
+                    logo: '/products/scatter/scatter-logo.png',
+                    bg: '/homepage/hp-scatter.png',
+                    status: 'past',
+                    slug: '/products/scatter/',
+                    color: '#0899FE',
+                    class: 'scatter',
+                    type: 'Product Case Study'
+                  },  
+                  {
+                    title: 'Ultra',
+                    description: 'Tokenized gaming platform',
+                    image: '/products/ultra/ultra-prime-thumb.png',
+                    logo: '/products/ultra/ultra-logo.svg',
+                    bg: '/homepage/hp-ultra.png',
+                    status: 'past',
+                    slug: '/products/ultra/',
+                    color: '#2E2667',
+                    class: 'ultra',
+                    type: 'Product Case Study'
+                  },  
+                  {
+                    title: 'Doodledapp',
+                    description: 'No-code smart contract development and deployment',
+                    image: '/products/doodledapp/doodledapp-thumb.png',
+                    logo: '/products/doodledapp/doodledapp-logo.svg',
+                    bg: '/homepage/hp-doodledapp.png',
+                    status: 'past',
+                    slug: '/products/doodledapp/',
+                    color: '#3E74FF',
+                    class: 'doodledapp',
+                    type: 'Product Case Study'
+                  },
+                  {
+                    title: 'Food For Future',
+                    description: 'Decentralized data for funding farmers',
+                    image: '/products/food-for-future/fff-thumb.png',
+                    logo: '/products/food-for-future/fff-logo.svg',
+                    bg: '/homepage/hp-fff.png',
+                    status: 'past',
+                    slug: '/products/food-for-future/',
+                    color: '#9446BD',
+                    class: 'foodforfuture',
+                    type: 'Product Case Study'
+                  },
+                  {
+                    title: 'Telos Open Block Explorer',
+                    description: 'The best way to view transactions and manage your wallets',
+                    image: '/products/telos/telos-thumb.png',
+                    logo: '/products/telos/telos-logo.png',
+                    bg: '/homepage/hp-telos.png',
+                    status: 'past',
+                    slug: '/products/telos-obe/',
+                    color: '#571AFF',
+                    class: 'telos',
+                    type: 'Product Case Study'
+                  }      
+                ];
 
 </script>
 
