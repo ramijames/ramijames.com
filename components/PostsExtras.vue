@@ -1,11 +1,10 @@
 <template>
   <section id="PostsExtras">
     <section class="postContent">
-      <img src="/vewrite.png" alt="Rami James is a nice guy" />
-      <h3>Join the Vewrite Beta</h3>
-      <p class="red">Vewrite, project management tailored for technical writing teams, is launching soon. Make sure to sign up for the waitlist so that you can be notified when the product launches.</p>
-      <!-- <Button type="small" text="Open Website" to="https://vewrite.com/" /> -->
-       <a href="https://vewrite.com/" class="button">Open Website</a>
+      <img src="/vewrite.png" alt="Vewrite - project management for technical writers" />
+      <h3>Project Management for Technical Writers</h3>
+      <p>Vewrite, project management tailored for technical writing teams, is launching soon. Make sure to sign up for the waitlist so that you can be notified when the product launches.</p>
+      <a href="https://vewrite.com/" class="button large">Check it out</a>
     </section>
   </section>
 </template>
@@ -15,13 +14,12 @@
 @import '/assets/variables.scss';
 
 #PostsExtras {
-  background: $black;
+  background: $white;
   width: 100%;
   padding: 0 0 $spacing-lg ;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: $spacing-lg;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -41,7 +39,7 @@
 
     img {
       width: 100%;
-      max-width: 800px;
+      border-radius: 0;
       margin: 0 auto $spacing-md;
     }
 

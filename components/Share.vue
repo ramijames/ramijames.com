@@ -56,6 +56,7 @@ export default {
   justify-content: flex-start;
   gap: $spacing-md;
   color: rgba($black, 0.5);
+  margin-bottom: $spacing-md;
 }
 
 </style>
