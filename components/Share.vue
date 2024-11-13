@@ -1,5 +1,5 @@
 <template>
-  <div id="share" class="">
+  <div id="share" class="w-content">
     Share article:
     <a v-for="social in socials" 
        :key="social.name" 

@@ -1,6 +1,6 @@
 <template>
   <section id="PostsExtras">
-    <section class="postContent">
+    <section class="w-content">
       <img src="/vewrite.png" alt="Vewrite - project management for technical writers" />
       <h3>Project Management for Technical Writers</h3>
       <p>Vewrite, project management tailored for technical writing teams, is launching soon. Make sure to sign up for the waitlist so that you can be notified when the product launches.</p>
@@ -26,16 +26,10 @@
     align-items: center;
   }
 
-  .postContent {
+  .w-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-
-    @media screen and (max-width: 1000px) {
-        align-items: center;
-        width: 100%;
-    }
 
     img {
       width: 100%;
