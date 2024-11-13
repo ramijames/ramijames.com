@@ -52,7 +52,95 @@ $telos-color: #4526C3;
         height: 100%;
       }
   
-      
+      &.scatter-mobile {
+        background-color: $scatter-color;
+        background: url(/products/scatter/scatter-mobile.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.scatter-marketplace {
+        background-color: $scatter-color;
+        background: url(/products/scatter/scatter-marketplace.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+
+      &.doodledapp-website-show {
+        background-color: $doodledapp-color;
+        background: url(/products/doodledapp/doodledapp-website-show.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.doodledapp-new {
+        background-color: $doodledapp-color;
+        background: url(/products/doodledapp/doodledapp-new.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+
+      &.ultra-show {
+        background-color: $ultra-color;
+        background: url(/products/ultra/ultra-show.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.ultra-devdocs {
+        background-color: $ultra-color;
+        background: url(/products/ultra/ultra-devdocs.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+
+      &.fff-show {
+        background-color: $ultra-color;
+        background: url(/products/food-for-future/fff-show.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.fff-new {
+        background-color: $ultra-color;
+        background: url(/products/food-for-future/fff-new.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+
+      &.telos-show {
+        background-color: $ultra-color;
+        background: url(/products/telos/telos-show.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.telos-new {
+        background-color: $ultra-color;
+        background: url(/products/telos/telos-new.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
 
     }
   }
