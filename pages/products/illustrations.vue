@@ -4,7 +4,7 @@
     <h3 class="center">Many of my works have an illustrative element. Here is a selection of my favorite ones from over the years.</h3>
   </section>
   <hr>
-  <section id="illustrations">
+  <section id="illustrations" class="w-content">
     <div class="single-illustration">
       <img src="/illustrations/hummingbird.png" alt="Personal Brand Hummingbird Illustration" />
       <div class="info">
