@@ -1,8 +1,5 @@
 <template>
   <main id="Hero">
-    <!-- <div id="mesh-gradient" class="sixteen-elements">
-      <div class="element" v-for="n in 160" :key="n"></div>
-    </div> -->
     <section class="mega-hero">
       <section class="intro-text w-three-quarters">
         <p>

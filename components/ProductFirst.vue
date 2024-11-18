@@ -1,41 +1,39 @@
 <template>
 
   <section id="ProductFirstTitle" class="w-full">
-    <h1 class="center">Are you building the right thing?</h1>
+    <h2 class="center">Are you building the right thing?</h2>
   </section>
 
-  <section id="ProductFirstIntro" class="general-main">
+  <section id="ProductFirstIntro" class="w-three-quarters">
 
-    <section class="w-two-thirds">
-      <h2 class="center">Let's improve how you build your product</h2>
-      <p class="center">To get your vision into the hands of users, you need a clear idea of what you are building, why you are building it, a roadmap for how you want to get there, and a clear process that keeps you out of trouble.</p>
+    <section class="left">
+      <h3>Improve your product process</h3>
+      <p>To get your vision into the hands of users, you need a clear idea of what you are building, why you are building it, a roadmap for how you want to get there, and a clear process that gets you there. I can help you with:</p>
+      <ul>
+        <li>Comprehensive Product Vision</li>
+        <li>Thoughtful Roadmap Building</li>
+        <li>User-focused Feature Definition</li>
+        <li>Excellent Design & Development</li>
+      </ul>
+      <Button text="Get started" to="/booking" class="large primary" />
     </section>
-    <section class="w-full flow-diagram">
-
+    <section class="flow-diagram">
       <div class="flow-diagram-item">
         <img class="product-team center" src="/services/add.png" alt="Product team illustration" />
-        <h5>Comprehensive Product Vision</h5>
       </div>
-
       <div class="flow-diagram-item">
         <img class="product-team center" src="/services/calendar.png" alt="Product team illustration" />
-        <h5>Thoughtful Roadmap Building</h5>
       </div>
-
       <div class="flow-diagram-item">
         <img class="product-team center" src="/services/ok.png" alt="Product team illustration" />
-        <h5>User-focused Feature Definition</h5>
       </div>
-
       <div class="flow-diagram-item">
         <img class="product-team center" src="/services/iterate.png" alt="Product team illustration" />
-        <h5>Excellent Design & Development</h5>
       </div>
-
     </section>
   </section>
 
-  <section id="BuildTheRightThing" class="general-main">
+  <!-- <section id="BuildTheRightThing" class="general-main">
     
     <section class="service w-full">
       <img class="centered" src="/services/success.png" alt="Subscribe and request as many designs as you need.">
@@ -47,7 +45,7 @@
       <Button class="centered large" text="Let's define your Product Vision" to="/booking" />
     </section>
 
-    <section class="service w-two-thirds">
+    <section class="service w-full">
       <img class="centered" src="/services/budget.png" alt="Calculator illustration">
       <section>
         <h2 class="center">Be Data-driven</h2>
@@ -84,24 +82,11 @@
         <h3 class="center">Hassle-free design for your app, website, or landing page</h3>
         <p class="center w-two-thirds">I provide top-tier user-experience, design, and front-end development services. With a solid Product-first process, and access to the right talent, your product will shine.</p>
       </section>
-      <!-- <section class="create-a-product">
-        <div>
-          <img src="/services/bulb.png" alt="Bright ideas">
-          <h4>Fresh concepts</h4>
-        </div>
-        <div>
-          <img src="/services/iterate.png" alt="Iterate">
-          <h4>Iterative Approach</h4>
-        </div>
-        <div>
-          <img src="/services/calendar.png" alt="Always on-time">
-          <h4>Always On-time</h4>
-        </div>
-      </section> -->
+
       <Button class="centered large" text="Start creating now" to="/booking" />
     </section>
 
-  </section>
+  </section> -->
 </template>
 
 <style scoped lang="scss">
@@ -131,23 +116,47 @@
   opacity: 0;
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0.8s;
-}
 
-#ProductFirstTitle h1 {
-  font-size: 10vw;
-  line-height: 1;
-  margin-top: $spacing-xxl;
+  h2 {
+    font-size: 6vw;
+    line-height: 1;
+    margin-top: $spacing-lg;
+    max-width: 1120px;
+  }
 }
 
 #ProductFirstIntro {
   opacity: 0;
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 1.2s;
+  display: flex;
+  flex-direction: row;
+  background: rgba($black, 0.05);
+  border-radius: $br-lg;
+  padding:0;
+  min-height: 600px;
+  margin-bottom: $spacing-xxl;
 
-  img.product-team {
-    width: 100%;
-    margin-bottom: $spacing-md;
-  } 
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    padding: $spacing-lg;
+    height: 100%;
+    min-height: 600px;
+
+    h3 {
+      margin: 0;
+      text-align: left;
+    }
+
+    p {
+      margin: $spacing-md 0;
+      text-align: left;
+    }
+  }
 
   .flow-diagram {
     display: grid;
@@ -155,7 +164,11 @@
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
     margin: 0 auto;
-    gap: $spacing-md;
+    width: 50%;
+    padding: $spacing-lg;
+    min-height: 600px;
+    background: rgba($black, 1);
+    border-radius: 0 $br-lg $br-lg 0;
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -172,15 +185,11 @@
       }
 
       img {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         margin-bottom: $spacing-xs;
       }
 
-      h5 {
-        text-align: center;
-        margin: $spacing-sm 0 0;
-      }
     }
 
     .arrow {
@@ -204,8 +213,10 @@
 
   .service {
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: $spacing-md;
+    background: rgba($black, 0.05);
+    border-radius: $br-lg;
 
     img.steps {
       width: 100%;
