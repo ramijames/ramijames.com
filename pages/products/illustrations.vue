@@ -1,9 +1,8 @@
 <template>
-  <section class="w-three-quarters page-top">
+  <section class="w-content page-top">
     <h1 class="center">Illustrations</h1>
     <h3 class="center">Many of my works have an illustrative element. Here is a selection of my favorite ones from over the years.</h3>
   </section>
-  <hr>
   <section id="illustrations" class="w-content">
     <div class="single-illustration">
       <img src="/illustrations/hummingbird.png" alt="Personal Brand Hummingbird Illustration" />
@@ -64,16 +63,20 @@
 @import './assets/variables';
 
 #illustrations {
-  margin: 0 $spacing-md;
+  margin: $spacing-xl auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xl;
 
   .single-illustration {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: $spacing-xl;
 
     img {
       width: 100%;
+      max-width: 800px;
     }
 
     .info {

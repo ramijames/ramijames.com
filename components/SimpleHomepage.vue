@@ -118,10 +118,9 @@ onMounted(() => {
         opacity: 0;
         transition: all 0.35s ease-in-out;
 
-        // There are 35 letters, so let's iterate through them and delay each one
-        @for $i from 1 through 35 {
+        @for $i from 1 through 6 {
           &:nth-child(#{$i}) {
-            animation-delay: $i * 0.025s;
+            animation-delay: $i * 0.15s;
           }
         }
       }
@@ -136,7 +135,7 @@ onMounted(() => {
       font-size: $font-size-md;
       text-transform: none;
       font-weight: normal;
-      max-width: 300px;
+      max-width: 400px;
       line-height: 140%;
       text-wrap: balance;
       letter-spacing: initial;
@@ -147,6 +146,7 @@ onMounted(() => {
 
       @media screen and (max-width: 768px){
         font-size: $font-size-md;
+        max-width: 100%;
       }
     }
   }
@@ -163,10 +163,7 @@ onMounted(() => {
 }
 
 #Problems {
-  animation: fadeInUp 0.5s forwards ease-in-out;
-  transform: translateY(20px);
-  animation-delay: 1.05s;
-  opacity: 0;
+  
 
   h2 {
     font-weight: 100;

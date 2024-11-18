@@ -127,6 +127,12 @@
   }
 }
 
+#ProductFirstTitle {
+  opacity: 0;
+  animation: fadeInUp 0.3s forwards ease-in-out;
+  animation-delay: 0.8s;
+}
+
 #ProductFirstTitle h1 {
   font-size: 10vw;
   line-height: 1;
@@ -134,6 +140,9 @@
 }
 
 #ProductFirstIntro {
+  opacity: 0;
+  animation: fadeInUp 0.3s forwards ease-in-out;
+  animation-delay: 1.2s;
 
   img.product-team {
     width: 100%;

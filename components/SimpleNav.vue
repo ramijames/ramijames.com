@@ -225,7 +225,7 @@ export default {
         animation: fadeInDown 0.2s ease-in-out forwards;
         transition: all 0.3s;
         overflow: hidden;
-        font-size: $font-size-md;
+        font-size: $font-size-sm;
         font-weight: 400;
         border-bottom: 2px solid transparent;
 

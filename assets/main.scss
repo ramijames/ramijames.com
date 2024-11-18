@@ -45,7 +45,7 @@ button,
     border: $border;
     text-align: center;
     text-decoration: none;
-    padding: $spacing-xxxs $spacing-xs;
+    padding: $spacing-xs $spacing-sm;
     cursor: pointer;
     font-size: $font-size-xs;
     font-weight: 500;
@@ -56,31 +56,21 @@ button,
     gap: calc($spacing-xxs - 2px);
     align-items: center;
     text-transform: capitalize;
-    min-height: 24px;
-    outline: 0px solid rgba($black, 0.4);
-    outline-offset: 0px;
-    box-shadow: $small-shadow;
+    min-height: 34px;
     overflow: hidden;
     
     &.primary {
-      background: $blue;
+      background: $black;
       color: $white;
 
       &:hover {
-        background: $blue-dark;
+        background: rgba($black, 0.8);
       }
     }
 
     &:hover {
-        border: 1px solid rgba($black-dark, 1);
-        background-color: rgba($black, 0.05);
-        outline: 4px solid rgba($black, 0.05);
-    }
-
-    &.clear {
-      border: 2px solid rgba($blue, 0);
-      display: inline-block;
-      background: rgba($black, 0.4);
+        border: 1px solid rgba($black, .25);
+        background: rgba($black, 0.05);
     }
 
     &.large {
