@@ -4,7 +4,7 @@
       <img src="/vewrite.png" alt="Vewrite - project management for technical writers" />
       <h3>Project Management for Content Writers</h3>
       <p>Vewrite, project management tailored for writing teams, is launching soon. Make sure to sign up for the waitlist so that you can be notified when the product launches.</p>
-      <a href="https://vewrite.com/" class="button large">Check it out</a>
+      <a href="https://vewrite.com/" class="button primary large">Check it out</a>
     </section>
   </section>
 </template>
