@@ -137,6 +137,13 @@
   min-height: 600px;
   margin-bottom: $spacing-xxl;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    margin: 0 $spacing-md $spacing-xxl $spacing-md;
+    width: calc(100% - 2*$spacing-md);
+    min-height: 0;
+  }
+
   .left {
     display: flex;
     flex-direction: column;
@@ -146,15 +153,29 @@
     padding: $spacing-lg;
     height: 100%;
     min-height: 600px;
+    
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      padding: $spacing-md;
+      align-items: center;
+    }
 
     h3 {
       margin: 0;
       text-align: left;
+
+      @media screen and (max-width: 768px) {
+        text-align: center;
+      }
     }
 
     p {
       margin: $spacing-md 0;
       text-align: left;
+
+      @media screen and (max-width: 768px) {
+        text-align: center;
+      }
     }
   }
 
@@ -173,6 +194,10 @@
     @media screen and (max-width: 768px) {
         flex-direction: column;
         align-items: center;   
+        width: 100%;
+        border-radius: $br-lg $br-lg 0 0;
+        padding: $spacing-lg $spacing-md;
+        min-height: 0;
     }
 
     .flow-diagram-item {
@@ -188,6 +213,11 @@
         width: 80px;
         height: 80px;
         margin-bottom: $spacing-xs;
+
+        @media screen and (max-width: 768px) {
+          width: 60px;
+          height: 60px;
+        }
       }
 
     }
