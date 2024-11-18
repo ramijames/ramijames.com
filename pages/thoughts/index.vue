@@ -155,11 +155,12 @@ const allArticles = articles.slice(1)
   }
 
   img {
-    height: 320px;
+    height: 400px;
     width: 100%;
     max-width: 600px;
     object-fit: cover;
     border: 1px solid rgba($black, 0.5);
+    border-radius: $br-lg;
 
     @media screen and (max-width: 768px) {
       max-width: 100%;
@@ -205,7 +206,7 @@ const allArticles = articles.slice(1)
 
 .articles {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: $spacing-md;
   width: 100%;
   margin-top: $spacing-lg;
@@ -234,7 +235,7 @@ const allArticles = articles.slice(1)
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1rem;
+  font-size: $font-size-lg;
   text-align: center;
   margin-bottom: $spacing-lg;
   transition: all 0.35s ease-in-out;
@@ -252,11 +253,12 @@ const allArticles = articles.slice(1)
   }
 
   img {
-    height: 240px;
+    height: 400px;
     width: 100%;
     object-fit: cover;
     transition: all 0.15s ease-in-out;
     border: 1px solid rgba($white, 0.1);
+    border-radius: $br-lg;
 
     @media screen and (max-width: 768px) {
       height: 320px;

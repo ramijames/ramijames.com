@@ -2,8 +2,8 @@
   <section id="PostsExtras">
     <section class="w-content">
       <img src="/vewrite.png" alt="Vewrite - project management for technical writers" />
-      <h3>Project Management for Technical Writers</h3>
-      <p>Vewrite, project management tailored for technical writing teams, is launching soon. Make sure to sign up for the waitlist so that you can be notified when the product launches.</p>
+      <h3>Project Management for Content Writers</h3>
+      <p>Vewrite, project management tailored for writing teams, is launching soon. Make sure to sign up for the waitlist so that you can be notified when the product launches.</p>
       <a href="https://vewrite.com/" class="button large">Check it out</a>
     </section>
   </section>
@@ -33,7 +33,8 @@
 
     img {
       width: 100%;
-      border-radius: 0;
+      border-radius: $br-lg;
+      border: 1px solid $gray;
       margin: 0 auto $spacing-md;
     }
 
@@ -55,10 +56,6 @@
       }
     }
   }
-}
-
-.dark #PostsExtras {
-  background: $black-dark;
 }
 
 </style>
