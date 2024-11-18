@@ -136,6 +136,7 @@
   padding:0;
   min-height: 600px;
   margin-bottom: $spacing-xxl;
+  width: calc(100% - 2*$spacing-md);
 
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
@@ -172,6 +173,7 @@
     p {
       margin: $spacing-md 0;
       text-align: left;
+      line-height: 1.2;
 
       @media screen and (max-width: 768px) {
         text-align: center;
