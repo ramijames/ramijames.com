@@ -30,6 +30,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0;
 
     img {
       width: 100%;
@@ -47,8 +48,7 @@
 
     p {
       font-size: $font-size-sm;
-      margin: 0 $spacing-lg $spacing-md;
-      line-height: 140%;
+      margin: 0 auto $spacing-md;
       text-align: center;
 
       @media screen and (max-width: 768px) {
