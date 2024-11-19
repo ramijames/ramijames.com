@@ -71,6 +71,18 @@ const products = [
                     type: 'Product Case Study'
                   },
                   {
+                    title: 'Climbing Monster',
+                    description: 'Training application for rock climbers',
+                    image: '/products/climbingmonster/cm-mobile-example.png',
+                    logo: '/products/climbingmonster/climbingmonster-logo.png',
+                    bg: '/homepage/hp-climbingmonster.png',
+                    status: 'past',
+                    slug: '/products/climbingmonster/',
+                    color: '#990000',
+                    class: 'climbingmonster',
+                    type: 'Product Case Study'
+                  },
+                  {
                     title: 'Food For Future',
                     description: 'Decentralized data for funding farmers',
                     image: '/products/food-for-future/fff-thumb.png',
@@ -104,7 +116,7 @@ const products = [
 
 #Products {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   position: relative;
   gap: $spacing-md;
@@ -115,11 +127,12 @@ const products = [
   @media screen and (max-width: 768px){
     padding: 0;
     gap: $spacing-md;
+    grid-template-columns: 1fr;
   }
 
   .project {
     width: 100%;
-    height: 600px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -141,15 +154,17 @@ const products = [
 
     .preview {
       position: absolute;
-      bottom: -200px;
+      bottom: -60px;
       left: 50%;
+      max-width: 60%;
       transform: translateX(-50%);
       z-index: 1;
       transition: all 0.3s ease;
+      border-radius: $br-sm;
 
       @media screen and (max-width: 768px){
         width: 80%;
-        bottom: -100px;
+        bottom: 0px;
       }
     }
 
@@ -157,7 +172,7 @@ const products = [
       opacity: 1;
 
       img.preview {
-        bottom: -100px;
+        bottom: -40px;
         opacity: 1;
       }
 
@@ -193,14 +208,14 @@ const products = [
       opacity: 1;
       transition: all 0.3s ease-in-out;
       z-index: 1;
-      padding: $spacing-md;
+      padding: $spacing-sm;
       width: 100%;
       height: 100%;
 
       img.logo {
         width: 100%;
         max-width: 100px;
-        margin-top: $spacing-lg;
+        margin-top: $spacing-sm;
       }
 
       @media screen and (max-width: 768px){

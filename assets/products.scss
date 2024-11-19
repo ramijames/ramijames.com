@@ -5,6 +5,7 @@ $doodledapp-color: #4431CD;
 $ultra-color: #7F4EC8;
 $fff-color: #9446BD;
 $telos-color: #4526C3;
+$climbingmonster-color: #990000;
 
 
 .product-splash {
@@ -64,6 +65,24 @@ $telos-color: #4526C3;
       &.scatter-marketplace {
         background-color: $scatter-color;
         background: url(/products/scatter/scatter-marketplace.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+
+      &.climbingmonster-website-show {
+        background-color: $climbingmonster-color;
+        background: url(/products/climbingmonster/climbingmonster-website-show.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.climbingmonster-new {
+        background-color: $climbingmonster-color;
+        background: url(/products/climbingmonster/climbingmonster-new.png) no-repeat center center;
         background-size: cover;
         animation: clipReveal 0.44s forwards;
         animation-delay: 0.6s;
@@ -172,6 +191,10 @@ $telos-color: #4526C3;
 
       &.scatter {
         background-color: $scatter-color;
+      }
+
+      &.climbingmonster {
+        background-color: $climbingmonster-color;
       }
 
       &.doodledapp {

@@ -130,8 +130,7 @@ export default {
   padding: $spacing-sm $spacing-md;
   position: fixed;
   width: 100%;
-  background: rgba($white, 0.6);
-  border-bottom: 1px solid rgba($white, 0.1);
+  background: rgba($white, 0.92);
   backdrop-filter: blur(14px);
   z-index: 1000;
   top: 0;
@@ -152,7 +151,6 @@ export default {
     width: 100%;
 
     .contact {
-      
 
       @media screen and (max-width: 1000px){
         display: none;
@@ -165,10 +163,8 @@ export default {
       position: relative;
       display:none;
       background: none;
-      border: none;
       color: $black;
       text-transform: uppercase;
-      border-radius: 0.5rem;
       margin-right: $spacing-xs;
       padding: 0;
 
@@ -221,14 +217,12 @@ export default {
         background: transparent;
         color: rgba($black, 0.5);
         padding: $spacing-xs 0;
-        border: 0;
         opacity: 0;
         animation: fadeInDown 0.2s ease-in-out forwards;
         transition: all 0.3s;
         overflow: hidden;
         font-size: $font-size-sm;
-        font-weight: 400;
-        border-bottom: 2px solid transparent;
+        font-weight: 500;
 
         &:nth-child(1) {
           animation-delay: 0.1s;
@@ -259,13 +253,12 @@ export default {
         }
 
         &:hover {
-          border-bottom: 2px solid rgba($black, 0.5);
+          color: $black;
         }
         
         &.router-link-exact-active,
         &.router-link-active {
           color: $black;
-          border-bottom: 2px solid $black;
         }
       }
     }
