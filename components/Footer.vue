@@ -5,7 +5,7 @@
         <div class="footer-links">
           <nuxt-link href="/" v-if="notHome">Home</nuxt-link>
           <nuxt-link href="/thoughts">Thoughts</nuxt-link>
-          <nuxt-link href="/illustrations">Illustrations</nuxt-link>
+          <!-- <nuxt-link href="/illustrations">Illustrations</nuxt-link> -->
           <nuxt-link href="/products">Recent Work</nuxt-link>
           <nuxt-link href="/about">About</nuxt-link>
         </div>
