@@ -6,6 +6,7 @@ $ultra-color: #7F4EC8;
 $fff-color: #9446BD;
 $telos-color: #4526C3;
 $climbingmonster-color: #990000;
+$vewrite-color: #0D1E38;
 
 
 .product-splash {
@@ -51,6 +52,24 @@ $climbingmonster-color: #990000;
 
       @media (max-width: 768px) {
         height: 100%;
+      }
+
+      &.vewrite-website-show {
+        background-color: $vewrite-color;
+        background: url(/products/vewrite/vewrite-website-show.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+
+      &.vewrite-new {
+        background-color: $vewrite-color;
+        background: url(/products/vewrite/vewrite-new.png) no-repeat center center;
+        background-size: cover;
+        animation: clipReveal 0.44s forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
       }
   
       &.scatter-mobile {
@@ -187,6 +206,10 @@ $climbingmonster-color: #990000;
       @media (max-width: 768px) {
         width: 100%;
         height: calc(100vh - 92px);
+      }
+
+      &.vewrite {
+        background-color: $vewrite-color;
       }
 
       &.scatter {

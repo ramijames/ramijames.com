@@ -810,6 +810,14 @@ img.in-article {
   margin: 0 auto;
 }
 
+    .product-images.two-across {
+      grid-template-columns: 1fr 1fr;
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .product-images.three-across {
       grid-template-columns: 1fr 1fr 1fr;
 
