@@ -27,6 +27,7 @@
       <nuxt-link to="/products" @click="closeMenu">Recent Work</nuxt-link>
       <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
       <nuxt-link to="/about" @click="closeMenu">About</nuxt-link>
+      <nuxt-link to="/booking" @click="closeMenu">Book a Call</nuxt-link>
     </section>
   </section>
 </template>

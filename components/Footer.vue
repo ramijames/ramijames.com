@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <section class="w-half">
+    <section class="w-three-quarters">
       <div class="footer-content ">
         <div class="footer-links">
           <nuxt-link href="/" v-if="notHome">Home</nuxt-link>
