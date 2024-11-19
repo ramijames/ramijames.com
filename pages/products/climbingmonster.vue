@@ -17,7 +17,7 @@
     <h2>Product Vision</h2>
     <p>The product vision of Climbing Monster was to allow climbing trainers and athelets to build structured workouts that could be tracked, analyzed, and improved. The business model was focused on providing benefit for gyms that would increase loyalty through athletic improvement.</p>
     <h3>My Role as Head of Product</h3>
-    <p>I was the Head of Product for the POC. It was my job to produce high-fidelity mockups for the mobile application (iOS), </p>
+    <p>I was the Head of Product for the POC. It was my job to produce high-fidelity mockups for the mobile application (iOS), for the web-based training app, for advertising purposes, and the pitch decks that we used to try and get funding.</p>
   </section>
 
   <section class="w-three-quarters">
