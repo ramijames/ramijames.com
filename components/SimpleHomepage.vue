@@ -19,7 +19,7 @@
     </section>
   </main>
   <MergedProjects />
-  <ProductFirst />
+  <!-- <ProductFirst /> -->
 </template>
 
 <script setup>
