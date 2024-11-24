@@ -8,7 +8,7 @@
         <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
-      <nuxt-link class="button contact" to="/booking">Book a call</nuxt-link>
+      <nuxt-link class="button primary contact" to="/booking">Book a call</nuxt-link>
       <div 
         :class="['menu', mobileMenuOpen ]"
         @click="toggleMenu"
@@ -44,18 +44,7 @@ export default {
       mobileMenuOpen: false,
     });
 
-    onMounted(() => {
-      watch(
-        () => themeStore.currentTheme,
-        (newTheme, oldTheme) => {
-          if (typeof document !== 'undefined') {
-            document.body.classList.remove(`${oldTheme}`)
-            document.body.classList.add(`${newTheme}`)
-          }
-        },
-        { immediate: true }
-      )
-    })
+
     const closeMenu = () => {
       state.mobileMenuOpen = false;
       if (state.mobileMenuOpen) {
@@ -125,17 +114,17 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-sm $spacing-md;
+  padding: $spacing-xs $spacing-md;
   position: fixed;
   width: 100%;
-  background: rgba($white, 0.92);
-  backdrop-filter: blur(14px);
+  max-width: 1220px;
+  border-radius: $br-xl;
+  background: linear-gradient(to bottom, rgba($white, 0.2) 0%, rgba($white, .6) 50%, rgba($white, 1) 100%);
+  backdrop-filter: blur(28px);
   z-index: 1000;
-  top: 0;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeInDown 0.3s forwards ease-in-out;
-  animation-delay: 0.4s;
+  top: $spacing-xs;
+  left: 50%;
+  transform: translateX(-50%);
 
   &.open {
     pointer-events: none;

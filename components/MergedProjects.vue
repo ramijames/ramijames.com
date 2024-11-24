@@ -13,6 +13,7 @@
         <h3>{{ product.title }}</h3>
       </section>
       <img :src="product.image" alt="preview screenshot" class="preview" />
+      <section class="bg" :style="{ backgroundImage: 'url(' + product.bg + ')' }"></section>
     </nuxt-link>
   </section>
 </template>
@@ -180,6 +181,39 @@ const products = [
       }
     }
 
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      opacity: 0.2;
+      mix-blend-mode: luminosity;
+      transform: scale(1);
+      transition: all 0.3s ease;
+    }
+
+    &.scatter {
+      .bg {
+        background-position: center left;
+      }
+    }
+
+    &.foodforfuture {
+      .bg {
+        background-position: center right;
+      }
+    }
+
+    &.telos {
+      .bg {
+        background-position: center left;
+      }
+    }
+
     &:hover {
       opacity: 1;
 
@@ -188,13 +222,18 @@ const products = [
         opacity: 1;
       }
 
+      .bg {
+        opacity: 0.1;
+        transform: scale(1.1);
+      }
+
       .info {
         opacity: 1;
         transform: translateY(0);
       }
 
       &:before {
-        background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0, 0, 0, 0.25) 100%);
+        background: radial-gradient(circle, rgba(255,255,255,0.6) 20%, rgba(0, 0, 0, 0.5) 100%);
         opacity: 1;
       }
     }
@@ -206,10 +245,11 @@ const products = [
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle, rgba(0,0,0,0.1) 40%, rgba(0, 0, 0, 0.25) 100%);
+      background: radial-gradient(circle, rgba(255,255,255,0.6) 20%, rgba(0, 0, 0, 0.25) 100%);
       z-index: 1;
       opacity: .6;
       transition: all 0.3s ease;
+      mix-blend-mode: soft-light;
     }
 
     .info {
