@@ -13,7 +13,6 @@
         <p class="secondary">I am a product-first designer and developer with founder experience. My core interest is in creating innovative tools with creative partners like you. I'm currently building <a href="https://www.vewrite.com">Vewrite</a>, a project management tool for technical writing teams.</p>
         <section class="home-buttons">
           <nuxt-link class="button large primary" to="/about">Who am I?</nuxt-link>
-          <nuxt-link class="button large" to="/services">Why work with me?</nuxt-link>
         </section>
       </section>
     </section>
