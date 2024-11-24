@@ -135,7 +135,7 @@ h1 {
 h2 { 
   font-size: $font-size-xxl;
   line-height: 140%; 
-  margin-bottom:1rem;
+  margin-bottom: $spacing-md;
   font-weight:400;
 
   @media screen and (max-width: 1000px) {

@@ -4,7 +4,6 @@
       <nuxt-link to="/" class="logo-link"><img :src="`/logo-light.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
-        <nuxt-link to="/services" class="nav-link">Services</nuxt-link>
         <nuxt-link to="/products" :class="['nav-link', isProductsSubPage ? 'router-link-active' : '']">Recent Work</nuxt-link>
         <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
@@ -23,7 +22,6 @@
     <div class="close"@click="closeMenu"></div>
     <section class="mobile-nav-panel-links">
       <nuxt-link to="/" @click="closeMenu">Home</nuxt-link>
-      <nuxt-link to="/services" @click="closeMenu">Services</nuxt-link>
       <nuxt-link to="/products" @click="closeMenu">Recent Work</nuxt-link>
       <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
       <nuxt-link to="/about" @click="closeMenu">About</nuxt-link>
