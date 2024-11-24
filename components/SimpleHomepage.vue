@@ -1,7 +1,7 @@
 <template>
   <main id="Hero">
     <section class="mega-hero">
-      <section class="intro-text w-three-quarters">
+      <section class="intro-text w-full">
         <p>
           <span>H</span>
           <span>e</span>
@@ -49,13 +49,13 @@ onMounted(() => {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    
 
     .intro-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 100%;
       text-align: center;
 
       .home-buttons {
