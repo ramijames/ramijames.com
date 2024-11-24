@@ -16,7 +16,7 @@
           <span>k</span>
         </p>
         <section class="products-buttons">
-          <nuxt-link class="button large" to="/services">What can I do for you?</nuxt-link>
+          <nuxt-link class="button large" to="/about">Who am I?</nuxt-link>
           <a class="button large primary" href="mailto:ramijames@gmail.com">Say hello!</a>
         </section>
       </section>
