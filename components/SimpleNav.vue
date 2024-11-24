@@ -1,6 +1,6 @@
 <template>
-  <nav class="simple-nav-bar">
-    <section :class="['navigation', mobileMenuOpen ? 'open' : '']">
+  <nav :class="['simple-nav-bar', { hidden: isMenuHidden }]">
+    <section :class="['navigation', state.mobileMenuOpen ? 'open' : '']">
       <nuxt-link to="/" class="logo-link"><img :src="`/logo-light.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
@@ -10,7 +10,7 @@
       </div>
       <nuxt-link class="button primary contact" to="/booking">Book a call</nuxt-link>
       <div 
-        :class="['menu', mobileMenuOpen ]"
+        :class="['menu', state.mobileMenuOpen ]"
         @click="toggleMenu"
         tabindex="0"
         role="button"
@@ -18,8 +18,8 @@
     </section>
   </nav>
 
-  <section class="mobile-nav-panel" :class="mobileMenuOpen ? 'open' : ''">
-    <div class="close"@click="closeMenu"></div>
+  <section class="mobile-nav-panel" :class="state.mobileMenuOpen ? 'open' : ''">
+    <div class="close" @click="closeMenu"></div>
     <section class="mobile-nav-panel-links">
       <nuxt-link to="/" @click="closeMenu">Home</nuxt-link>
       <nuxt-link to="/products" @click="closeMenu">Recent Work</nuxt-link>
@@ -30,78 +30,72 @@
   </section>
 </template>
 
-<script>
-import { useThemeStore } from '~/store/theme'
-import { reactive, computed, onMounted, watch } from 'vue';
-import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
-import Button from '~/components/Button.vue'
+<script setup>
+import { ref, reactive, computed, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
 
-export default {
-  setup() {
-    const themeStore = useThemeStore();
+const route = useRoute();
 
-    const state = reactive({
-      mobileMenuOpen: false,
-    });
+const state = reactive({
+  mobileMenuOpen: false,
+});
 
+const isMenuHidden = ref(false);
+let lastScrollY = 0;
 
-    const closeMenu = () => {
-      state.mobileMenuOpen = false;
-      if (state.mobileMenuOpen) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = 'auto';
-      }
-    };
+const handleScroll = () => {
+  const currentScrollY = window.scrollY;
+  if (currentScrollY > lastScrollY) {
+    isMenuHidden.value = true; // Hide menu on scroll down
+  } else {
+    isMenuHidden.value = false; // Show menu on scroll up
+  }
+  lastScrollY = currentScrollY;
+};
 
-    const toggleMenu = () => {
-      state.mobileMenuOpen = !state.mobileMenuOpen;
-      if (state.mobileMenuOpen) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = 'auto';
-      }
-      
-    };
+onMounted(() => {
+  lastScrollY = window.scrollY; // Initialize lastScrollY on mount
+  window.addEventListener('scroll', handleScroll);
+});
 
-    return {
-      currentTheme: computed(() => themeStore.currentTheme),
-      closeMenu,
-      toggleMenu,
-      mobileMenuOpen: computed(() => state.mobileMenuOpen),
-      ...toRefs(state),
-    }
-  },
-  components: {
-    ThemeSwitcher,
-    Button
-  },
-  computed: {
-    notHome() {
-      return this.$route.path !== '/';
-    },
-    isThoughtsPage() {
-      return this.$route.path === '/thoughts';
-    },
-    isThoughtsSubPage() {
-      return this.$route.path.startsWith('/thoughts/');
-    },
-    isProductsPage() {
-      return this.$route.path === '/products';
-    },
-    isProductsSubPage() {
-      return this.$route.path.startsWith('/products/');
-    },
-    routeName() {
-      let pathParts = this.$route.path.split('/');
-      pathParts = pathParts.map(part => part.replace(/-/g, ' '));
-      return pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
-    },
-    routeArray() {
-      return this.$route.path.split('/');
-    }
-  },
-}
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+
+const closeMenu = () => {
+  state.mobileMenuOpen = false;
+  document.body.style.overflow = 'auto';
+};
+
+const toggleMenu = () => {
+  state.mobileMenuOpen = !state.mobileMenuOpen;
+  if (state.mobileMenuOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
+};
+
+const isThoughtsSubPage = computed(() => {
+  return route.path.startsWith('/thoughts/');
+});
+
+const isProductsSubPage = computed(() => {
+  return route.path.startsWith('/products/');
+});
+
+const isProductsPage = computed(() => {
+  return route.path === '/products';
+});
+
+const isThoughtsPage = computed(() => {
+  return route.path === '/thoughts';
+});
+
+const notHome = computed(() => {
+  return route.path !== '/';
+});
+
 </script>
 
 <style scoped lang="scss">
@@ -116,15 +110,21 @@ export default {
   align-items: center;
   padding: $spacing-xs $spacing-md;
   position: fixed;
-  width: 100%;
+  width: calc(100% - $spacing-xs * 2);
+  margin: 0 $spacing-xs;
   max-width: 1220px;
   border-radius: $br-xl;
   background: linear-gradient(to bottom, rgba($white, 0.2) 0%, rgba($white, .6) 50%, rgba($white, 1) 100%);
   backdrop-filter: blur(28px);
   z-index: 1000;
   top: $spacing-xs;
-  left: 50%;
+  left: calc(50% - $spacing-xs);
   transform: translateX(-50%);
+  transition: all 0.3s;
+
+  &.hidden {
+    transform: translateY(-120%) translateX(-50%);
+  }
 
   &.open {
     pointer-events: none;
@@ -276,13 +276,13 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba($blue, 1);
+  background: rgba($black, .6);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   z-index: 10000;
   padding: $spacing-lg;
-  backdrop-filter: blur(80px);
+  backdrop-filter: blur(20px);
   animation: fade 0.24s ease-in-out;
 }
 
