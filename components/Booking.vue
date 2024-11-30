@@ -1,7 +1,7 @@
 <template>
   <section class="w-three-quarters" id="booking">
     <h1 class="center">Book a Call</h1>
-    <p>Calendly can take a moment to load, please wait.</p>
+    <p class="center">Calendly can take a moment to load, please wait.</p>
     <CalendlyInlineWidget v-bind="options" />
   </section>
 </template>
