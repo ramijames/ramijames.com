@@ -1,5 +1,6 @@
 <template>
   <main id="Hero">
+    <spline-viewer class="mega-rotate" url="https://prod.spline.design/9UnGpupziB04gPII/scene.splinecode"></spline-viewer>
     <section class="mega-hero">
       <section class="intro-text w-full">
         <p>
@@ -42,7 +43,11 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  perspective: 100rem;
+
+  .mega-rotate {
+    width: 100%;
+    height: 50vh;
+  }
 
   .mega-hero {
     display: flex;
@@ -57,6 +62,7 @@ onMounted(() => {
       justify-content: center;
       align-items: center;
       text-align: center;
+      margin-top: 0;
 
       .home-buttons {
         display: flex;
