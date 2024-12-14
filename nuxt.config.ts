@@ -60,6 +60,14 @@ export default defineNuxtConfig({
     preconnect: true,
     preload: true,
   },
+  plugins: ['~/plugins/spline-viewer.client.ts'],
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => {
+        return tag === 'spline-viewer';
+      }
+    }
+  },
   routeRules: {
     '/thoughts/on-ethical-pricing': { redirect: '/thoughts/how-to-make-product-decisions-based-on-business-needs' },
     '/labs/css-mesh-gradients': { redirect: '/thoughts/css-mesh-gradients' },
