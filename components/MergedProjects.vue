@@ -20,8 +20,6 @@
 
 <script setup>
 
-const props = ['product'];
-
 import { useRoute } from 'vue-router';
 const route = useRoute();
 
