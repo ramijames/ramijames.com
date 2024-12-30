@@ -1,6 +1,6 @@
 <template>
   <main id="Hero">
-    <spline-viewer class="mega-rotate" url="https://prod.spline.design/9UnGpupziB04gPII/scene.splinecode"></spline-viewer>
+    <!-- <spline-viewer class="mega-rotate" url="https://prod.spline.design/9UnGpupziB04gPII/scene.splinecode"></spline-viewer> -->
     <section class="mega-hero">
       <section class="intro-text w-full">
         <p>
