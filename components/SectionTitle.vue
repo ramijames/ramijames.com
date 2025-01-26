@@ -33,9 +33,10 @@ export default {
 .section-title {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   margin-bottom: $spacing-md;
+  width: 100%;
 
   &.centered {
     h2, h4 {

@@ -470,6 +470,10 @@ input {
   }
 }
 
+.article-extras {
+  width:100%;
+}
+
     @media screen and (max-width: 1000px) {
       .single-article {
         flex-direction: column;
@@ -478,7 +482,6 @@ input {
 
       .article-extras {
         width:100%;
-        padding-right: 0rem;
       }
 
       .article-extras .posts {
