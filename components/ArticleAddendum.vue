@@ -1,5 +1,5 @@
 <template>
-  <div class="w-content" v-if="isThoughtsSubPage">
+  <div class="w-content addendum" v-if="isThoughtsSubPage">
     <h3>Article Addendum</h3>
     <p>I hope you enjoyed this article!</p>
     <p>Without direct feedback it can be hard to iterate, and I value your thoughts immensely. Please <a href="mailto:ramijames@gmail.com">send me an email</a> if you find a typo or disagree with the content. I'm always up for a vigorous and lively debate!</p>
@@ -53,6 +53,11 @@ export default {
 <style scoped lang="scss">
 
 @import './assets/variables';
+
+.addendum {
+  padding-top: $spacing-xl;
+  border-top: 1px solid rgba($black,0.1);
+}
 
 .footer-summary {
   border-top: 1px dashed rgba($black,0.2);

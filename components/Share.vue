@@ -1,6 +1,5 @@
 <template>
   <div id="share" class="w-content">
-    Share article:
     <a v-for="social in socials" 
        :key="social.name" 
        :href="social.url + encodeURIComponent('https://www.ramijames.com' + route)">
@@ -53,10 +52,13 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: $spacing-md;
   color: rgba($black, 0.5);
-  margin-bottom: $spacing-md;
+  margin: $spacing-lg auto;
+  padding:  $spacing-sm 0;
+  border-top: 1px solid rgba($black, 0.1);
+  border-bottom: 1px solid rgba($black, 0.1);
 }
 
 </style>

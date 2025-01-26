@@ -97,7 +97,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-main;
-  font-weight: 500;
+  font-weight: bold;
   margin: 0;
   padding: 0;
 }
@@ -105,7 +105,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 { 
   font-size: $font-size-max;
   line-height: $font-size-max; 
-  font-weight:500;
   margin-top: 0;
   margin-bottom: 0;
   padding:0.5rem 0;
@@ -136,7 +135,6 @@ h2 {
   font-size: $font-size-xxl;
   line-height: 140%; 
   margin-bottom: $spacing-md;
-  font-weight:400;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
@@ -156,7 +154,6 @@ h3 {
   font-size: $font-size-xl; 
   line-height: 140%; 
   margin-bottom:1rem;
-  font-weight:400;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-lg;
@@ -172,7 +169,6 @@ h4 {
   font-size: $font-size-lg; 
   line-height: 140%;  
   margin: $spacing-md 0 $spacing-sm;
-  font-weight:500;
 
   .highlight {
     color: $red-dark;
@@ -182,6 +178,11 @@ h4 {
     font-size: $font-size-md;
     line-height: $font-size-md * $multiplier;
   }
+}
+
+.article-extras .section-title h1 {
+  text-align: center;
+  line-height: 120%;
 }
 
 .article-extras .section-title h4 {
@@ -196,7 +197,6 @@ h5 {
   font-family: $font-family-main;
   margin-top: $spacing-md;
   margin-bottom: $spacing-sm;
-  font-weight:500;
   line-height: $spacing-md;
 
   @media screen and (max-width: 1000px) {
