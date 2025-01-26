@@ -6,16 +6,8 @@
       </div>
     </div> -->
     <section class="w-three-quarters">
-      <nuxt-link :to="`/thoughts/${firstArticle.slug}`" class="first-article">
-        <img :src="firstArticle.image" :alt="firstArticle.title" />
-        <section class="info">
-          <span class="latest">Latest</span>
-          <span class="title">{{ firstArticle.title }}</span>
-          <span class="description">{{ firstArticle.summary }}</span>
-        </section>
-      </nuxt-link>
       <main class="articles">
-        <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in allArticles" :key="article.slug">
+        <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug">
           <img :src="article.image" :alt="article.title" />
           <section class="info">
             <span class="title">{{ article.title }}</span>
@@ -31,11 +23,6 @@
 
 <script setup>
 import articles from '~/assets/articles.json'
-
-const firstArticle = articles[0]
-
-const allArticles = articles.slice(1)
-
 </script>
 
 <style scoped lang="scss">
@@ -155,11 +142,10 @@ const allArticles = articles.slice(1)
   }
 
   img {
-    height: 400px;
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
     object-fit: cover;
-    border: 1px solid rgba($black, 0.5);
+    outline: 1px solid rgba($black, 0.1);
     border-radius: $br-lg;
 
     @media screen and (max-width: 768px) {
@@ -257,7 +243,7 @@ const allArticles = articles.slice(1)
     width: 100%;
     object-fit: cover;
     transition: all 0.15s ease-in-out;
-    border: 1px solid rgba($white, 0.1);
+    outline: 1px solid rgba($black, 0.1);
     border-radius: $br-lg;
 
     @media screen and (max-width: 768px) {
