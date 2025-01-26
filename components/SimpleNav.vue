@@ -110,14 +110,12 @@ const notHome = computed(() => {
   align-items: center;
   padding: $spacing-xs $spacing-md;
   position: fixed;
-  width: calc(100% - $spacing-xs * 2);
+  width: 100%;
   margin: 0 $spacing-xs;
-  max-width: 1220px;
-  border-radius: $br-xl;
-  background: linear-gradient(to bottom, rgba($white, 0.2) 0%, rgba($white, .6) 50%, rgba($white, 1) 100%);
+  background: rgba($white, .8);
   backdrop-filter: blur(28px);
   z-index: 1000;
-  top: $spacing-xs;
+  top: 0;
   left: calc(50% - $spacing-xs);
   transform: translateX(-50%);
   transition: all 0.3s;
