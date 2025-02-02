@@ -1,8 +1,9 @@
 <template>
   <main class="w-content page-top">
     <section class="article-extras">
+      <img class="article-image-top" src="/labs/supabase-email-authentication.png" alt="Supabase Email Authentication with Google Workspace" />
       <SectionTitle title="Supabase email authentication with Google Workspace" />
-      <Share route="/thoughts/neurodiversity-as-software-incompatibility" topic="Neurodiversity as software incompatibility" />
+      <Share route="/thoughts/supabase-email-authentication-with-google-workspace" topic="Supabase Email Authentication with Google Workspace" />
       <AllPosts />
     </section>
     <section class="content">

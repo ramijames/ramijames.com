@@ -1,5 +1,15 @@
 [
   {
+    "title": "Quick Walkthrough on Using Supabase Migrations",
+    "date": "2025-01-26",
+    "slug": "quick-walkthrough-using-supabase-migrations",
+    "tags": [
+      "icloud", "storage", "apple", "dropbox"
+    ],
+    "summary": "Migrations are the traditional way to manage the structure of your database. Supabase has a great way to manage migrations and we'll see how to use them in this article.",
+    "image": "/articles/supabase-migrations.png"
+  },
+  {
     "title": "On Using iCloud Drive for Storage",
     "date": "2025-01-26",
     "slug": "on-using-icloud-drive-for-storage",

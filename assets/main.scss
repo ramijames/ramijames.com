@@ -142,10 +142,6 @@ h2 {
 
 }
 
-    .page-top h2 {
-      margin-bottom: 0;
-    }
-
 .content h2 {
   margin-top: $spacing-lg;
 }
@@ -341,6 +337,14 @@ p > strong {
     margin: $spacing-lg auto;
     padding: 0 $spacing-md;
   }
+
+  pre {
+    margin: $spacing-md 0;
+    padding: $spacing-md;
+    border-radius: $br-md;
+    background: $black-dark;
+    color: $white;
+  }
 }
 
 .w-three-quarters {
@@ -425,7 +429,7 @@ p > strong {
 }
 
 .page-top {
-  padding-top: $spacing-xl;
+  padding-top: $spacing-md;
   margin: $spacing-sm auto 0;
 }
 
@@ -470,8 +474,18 @@ input {
   }
 }
 
+.article-image-top {
+  margin: 0 auto $spacing-md;
+  outline: 1px solid rgba(0,0,0,0.1);
+  outline-offset: -1px;
+  border-radius: $br-lg;
+}
+
 .article-extras {
   width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
     @media screen and (max-width: 1000px) {
@@ -496,6 +510,7 @@ input {
 
     .content {
       width: 100%;
+      margin-bottom: $spacing-xxl;
 
       #PostsExtras {
         margin: $spacing-lg 0;

@@ -1,9 +1,9 @@
 <template>
   <main class="w-content page-top">
     <section class="article-extras">
+      <img class="article-image-top" src="/articles/using-icloud.png" alt="On Using iCloud Drive for Storage" />
       <SectionTitle title="On Using iCloud Drive for Storage" />
-      <Share route="/thoughts/on-using-icloud-drive-for-storage" topic="Package dependency hell" />
-      <AllPosts />
+      <Share route="/thoughts/on-using-icloud-drive-for-storage" topic="On Using iCloud Drive for Storage" />
     </section>
     <section class="content">
       <p>iCloud is a good way to replicate your files remotes so that, in the case of a catastrophe, you will not have complete data loss. It allows you to:</p>
