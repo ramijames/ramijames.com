@@ -1,7 +1,17 @@
 [
   {
+    "title": "Why Comments in Code Matter",
+    "date": "2025-02-04",
+    "slug": "why-comments-in-code-matter",
+    "tags": [
+      "comments", "code", "documentation", "software development"
+    ],
+    "summary": "Migrations are the traditional way to manage the structure of your database. Supabase has a great way to manage migrations and we'll see how to use them in this article.",
+    "image": "/articles/comments-in-code.png"
+  },
+  {
     "title": "Quick Walkthrough on Using Supabase Migrations",
-    "date": "2025-01-26",
+    "date": "2025-02-01",
     "slug": "quick-walkthrough-using-supabase-migrations",
     "tags": [
       "icloud", "storage", "apple", "dropbox"
