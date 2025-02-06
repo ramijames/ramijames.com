@@ -1,0 +1,83 @@
+[
+  
+  {
+    "title": "Docs Deserve More Respect",
+    "date": "2023-12-27",
+    "slug": "docs-deserve-more-respect",
+    "tags": [
+      "documentation",
+      "technical writing",
+      "software development"
+    ],
+    "summary": "A plea for more respect for documentation and technical writing in the software development industry.",
+    "image": "/articles/docs-deserve-respect.png"
+  },
+  {
+    "title": "Asking for help is a core developer skill",
+    "date": "2024-04-03",
+    "slug": "asking-for-help-is-a-core-skill",
+    "tags": [
+      "software development"
+    ],
+    "summary": "Intentionally or otherwise, I've been blowing up my life since last summer. It’s been less than ideal. We'll get to why in a second, but first, let's talk about everyone's favorite awful programming language and the impact of package managers, their packages, and the endless toil they create.",
+    "image": "/articles/ask-for-help.png"
+  },
+  {
+    "title": "Package dependency hell",
+    "date": "2024-02-26",
+    "slug": "package-dependency-hell",
+    "tags": [
+      "personal",
+      "kids",
+      "software development"
+    ],
+    "summary": "Intentionally or otherwise, I've been blowing up my life since last summer. It’s been less than ideal. We'll get to why in a second, but first, let's talk about everyone's favorite awful programming language and the impact of package managers, their packages, and the endless toil they create.",
+    "image": "/articles/package-dependency-hell.png"
+  },
+  {
+    "title": "The Work Structure Spectrum",
+    "date": "2024-01-10",
+    "slug": "the-work-structure-spectrum",
+    "tags": [
+      "startups",
+      "agile",
+      "software development"
+    ],
+    "summary": "Working on an Agile team can really suck. But, why? No structure at all sucks way more. We should talk about that, too.",
+    "image": "/articles/work-structure-spectrum.png"
+  },
+  {
+    "title": "Are your docs good?",
+    "date": "2024-01-10",
+    "slug": "quantifying-your-documentations-success",
+    "tags": [
+      "documentation",
+      "technical writing",
+      "software development"
+    ],
+    "summary": "The primary challenge faced by technical writers often boils down to how to evaluate the effectiveness of what you write. You build some documentation and you think it is great. How do you know if you are right? How do you prove it to upper management? How do you really, really know?",
+    "image": "/articles/quantifying.png"
+  },
+  {
+    "title": "Neurodiversity as software incompatibility",
+    "date": "2024-01-06",
+    "slug": "neurodiversity-as-software-incompatibility",
+    "tags": [
+      "parenting",
+      "kids",
+      "software development"
+    ],
+    "summary": "My days are taken up by thinking about two things: my kids and software. With neurodiverse kids, I think that they way we interact with them is akin to an API without documentation.",
+    "image": "/articles/neurodiversity.png"
+  },
+  {
+    "title": "Why Comments in Code Matter",
+    "date": "2025-02-04",
+    "slug": "why-comments-in-code-matter",
+    "tags": [
+      "comments", "code", "documentation", "software development"
+    ],
+    "summary": "Migrations are the traditional way to manage the structure of your database. Supabase has a great way to manage migrations and we'll see how to use them in this article.",
+    "image": "/articles/comments-in-code.png"
+  }
+]

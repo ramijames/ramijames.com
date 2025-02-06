@@ -14,18 +14,18 @@
     </section>
 
   <section class="w-three-quarters">
-    <h2>Product Vision</h2>
-    <p>The product vision of Vewrite is to provide the optimal project management experience for teams of content creators who are focused on providing written content to clients.</p>
-    <h3>My Role as Founder</h3>
-    <p>I am the Founder and sole developer of Vewrite. I lead the product concept, create the user experience, craft the user interface, and implement everything with Nuxt and Supabase. Vewrite is currently in <a href="https://github.com/ramijames/vewrite/">active development</a>.</p>
+    <h2>Better writing through structured workflows</h2>
+    <p>The product vision of Vewrite is to provide the optimal project management experience for teams of content creators who are focused on providing written content to clients. As someone who has worked extensively with teams of writers to produce content both within a budget and tight timelines, I know how hard it can be to juggle the status of many deliverables which are in-progress. Vewrite's goal is to take all of the tedious parts of the process and automate them away so that you and your team can focus on writing the best content possible.</p>
+    <p>Vewrite is currently in <a href="https://github.com/ramijames/vewrite/">active development</a>.</p>
+    <p><a class="button primary" href="https://vewrite.com/">Open Website</a></p>
   </section>
 
-  <section class="w-three-quarters">
+  <!-- <section class="w-three-quarters">
     <h2>Branding</h2>
     <p>As part of the product development, I created a modern, fresh brand for use within the application, the website, and for uses like advertising and marketing. It is simple, memorable, and professional. The colors were selected to represent the transition from incomplete to complete, as an expression of the work that Vewrite's users do.</p>
     <img src="/products/vewrite/ve-brand.png" alt="Vewrite Brand" class="single-product-image">
     <img src="/products/vewrite/ve-palette.png" alt="Vewrite Brand" class="single-product-image">
-  </section>
+  </section> -->
 
   <section class="w-three-quarters">
     <h2>Product Features</h2>

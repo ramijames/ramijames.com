@@ -14,12 +14,12 @@
     </section>
 
   <section class="w-three-quarters">
-    <h2>Product Vision</h2>
+    <h2>About Doodledapp and my work there</h2>
     <p>The product vision of Doodledapp was to allow anyone to create and deploy smart contracts to public networks quickly and easily. These smart contracts should be built up from components, all within a no-code editor, in your browser.</p>
     <p>The project was broken up into a few discrete parts. Initially, we targeted smart contract developers working in Solidity, and provided them a comfortable environment to build their contracts with a node-based editor. These developers created complex, vetted components that any other user could then import into their smart contracts to extend.</p>
     <p>Following this, we intended to allow users to sell these components on an open marketplace, while also providing adjacent services such as security auditing and peer reviews.</p>
-    <h3>My Role as Head of Product</h3>
-    <p>I was the Head of Product for the POC and launch, which I worked on with Nathan James, my counterpart at Scatter. I converted his vision of a no-code smart contract editor into a full product concept and implemented a set of designs and Iconography.</p>
+    <hr>
+    <p>I was the Head of Product for the POC and launch, which I worked on with Nathan James, my counterpart at Scatter. I converted his vision of a no-code smart contract editor into a full product concept and implemented a set of designs and Iconography. Our initial outreach with the wider developer community was largely exploratory, involving many calls to discuss their different pain-points so that we could understand where our product could fit into their workflows.</p>
   </section>
 
   <section class="w-three-quarters">

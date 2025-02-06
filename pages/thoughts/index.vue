@@ -1,10 +1,5 @@
 <template>
   <main id="Thoughts">
-    <!-- <div class="mask">
-      <div id="mesh-gradient" class="sixteen-elements">
-        <div class="element" v-for="n in 160" :key="n"></div>
-      </div>
-    </div> -->
     <section class="w-three-quarters">
       <main class="articles">
         <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in articles" :key="article.slug">
@@ -22,7 +17,9 @@
 </template>
 
 <script setup>
+
 import articles from '~/assets/articles.json'
+
 </script>
 
 <style scoped lang="scss">
@@ -125,71 +122,6 @@ import articles from '~/assets/articles.json'
   }
 }
 
-.first-article {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  border: none;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
-
-  &:hover {
-    img {
-      opacity: 0.8;
-    }
-  }
-
-  img {
-    width: 100%;
-    max-width: 400px;
-    object-fit: cover;
-    outline: 1px solid rgba($black, 0.1);
-    border-radius: $br-lg;
-
-    @media screen and (max-width: 768px) {
-      max-width: 100%;
-    }
-  }
-
-  .info {
-    display:flex;
-    flex-direction: column;
-    color: $black;
-    padding: $spacing-md;
-    align-items: flex-start;
-    text-wrap: balance;
-    text-align: left;
-    gap: $spacing-xs;
-
-    @media screen and (max-width: 768px) {
-      padding: $spacing-md 0;
-    }
-
-    .latest {
-      background: $white;
-      color: $black;
-      padding: $spacing-xxs;
-      font-size: $font-size-xs;
-      font-weight: 700;
-    }
-
-    .title {
-      font-size: $font-size-xl;
-      font-family: $font-family-main;
-      text-decoration: none;
-    }
-
-    .description {
-      font-size: $font-size-sm;
-      margin-top: $spacing-sm;
-      opacity: 0.6;
-      text-decoration: none;
-    }
-  }
-}
-
 .articles {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -202,7 +134,7 @@ import articles from '~/assets/articles.json'
       .articles {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: $spacing-sm;
+        gap: $spacing-md;
       }
     }
 
@@ -222,6 +154,7 @@ import articles from '~/assets/articles.json'
   flex-direction: column;
   align-items: center;
   font-size: $font-size-lg;
+  font-weight: bold;
   text-align: center;
   margin-bottom: $spacing-lg;
   transition: all 0.35s ease-in-out;
@@ -269,93 +202,6 @@ import articles from '~/assets/articles.json'
       font-size: $font-size-sm;
       margin-top: $spacing-sm;
       opacity: 0.6;
-    }
-  }
-}
-
-.mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.5);
-  z-index: -1;
-  mask-image: linear-gradient( rgba(0,0,0,0) 5%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 80%);
-}
-
-#mesh-gradient.sixteen-elements {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-  z-index: -10;
-  align-items: center;
-  justify-content: center;;
-  opacity: 1;
-  position: fixed;
-  pointer-events: none;
-  top:0;
-  left:0;
-  right:0;
-  animation: rotateGroup 120s linear infinite;
-
-  @media screen and (max-width: 768px){
-    display: none;
-  }
-
-  $mesh-colors: ();
-
-  // generate the colors with an HSL model
-  @for $i from 0 through 120 {
-    $hue: ($i - 1) * calc(360 / 60);
-    $color: hsl($hue, 100%, 50%);
-    $mesh-colors: map-merge($mesh-colors, ($i: $color));
-  }
-
-  $i: 0;
-  @each $name, $color in $mesh-colors {
-    $i: $i + 1;
-    .element:nth-child(#{$i}) {
-      // background: linear-gradient(to bottom, rgba($color,0) 55%, rgba($color,.8));
-      border: 1px solid rgba($color, .4);
-      animation-delay: -#{$i * .15}s;
-      width: 1dvw;
-      height: 1dvw;
-      border-radius: 1rem;
-      align-self: center;
-      justify-self: center;
-    }
-  }
-
-  .element {
-    animation: sixteen-elements 10s linear infinite;
-  }
-
-  @keyframes rotateGroup {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes sixteen-elements {
-    0% {
-      opacity:0;
-      transform: scale(0) rotate(0deg);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(2) rotate(180deg);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(0) rotate(360deg);
     }
   }
 }

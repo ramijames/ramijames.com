@@ -1,28 +1,25 @@
 <template>
 
   <section class="product-splash">
-      <section class="product-intro">
-        <div class="product-intro-brand ultra">
-          <img src="/products/ultra/ultra-logo.svg" alt="Ultra Logo" class="product-logo">
-          <h2 class="product-title">Ultra</h2>
-        </div>
-      </section>
-      <section class="product-teasers">
-        <section class="product-teaser ultra-show"></section>
-        <section class="product-teaser ultra-devdocs"></section>
-      </section>
+    <section class="product-intro">
+      <div class="product-intro-brand ultra">
+        <img src="/products/ultra/ultra-logo.svg" alt="Ultra Logo" class="product-logo">
+        <h2 class="product-title">Ultra</h2>
+      </div>
     </section>
-
-  <section class="w-three-quarters">
-    <h2 class="role"><span>Role</span>Technical Project Manager, Head of Developer Relations</h2>
-    <p>When I joined Ultra, I was the project manager for the blockchain team who built many of the foundational features that the wider product relied upon. Following this, I helped conceptualize and create the DevRel unit at Ultra which did both direct outreach to developers and produced many of the critical sets of documentation and examples that developers relied upon to use Ultra's technologies.</p>  
+    <section class="product-teasers">
+      <section class="product-teaser ultra-show"></section>
+      <section class="product-teaser ultra-devdocs"></section>
+    </section>
   </section>
 
   <section class="w-three-quarters">
-    <h3>About Ultra</h3>
+    <h2>About Ultra and my work there</h2>
     <p>Ultra is a blockchain-based platform that allows game developers to mint and sell tokenized game licenses and digital items. The platform is based on a fork of the EOSIO blockchain and is designed to be a scalable, secure, and user-friendly platform for game developers and players.</p>
+    <hr>
     <p>In January of 2020, after closing up shop at <nuxt-link to="/products/scatter">Scatter</nuxt-link>, my co-founder and I migrated to Ultra's blockchain team. Over the next two years, as the Technical Project Manager, I helped the team define, organize, develop, and deploy many key components while we ramped up to the Mainnet launch.</p>
     <p>As part of the work that I did there, I interacted with many other teams and spread critical knowledge about how the blockchain worked to those who were attempting to craft the company's marketing and business strategies.</p>
+    <p>When I joined Ultra, I was the project manager for the blockchain team who built many of the foundational features that the wider product relied upon. Following this, I helped conceptualize and create the DevRel unit at Ultra which did both direct outreach to developers and produced many of the critical sets of documentation and examples that developers relied upon to use Ultra's technologies.</p>  
   </section>
   
   <section class="w-full">

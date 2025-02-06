@@ -19,7 +19,7 @@
       <p class="center">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>. I'm always building something. These days I'm focused on building <a href="https://vewrite.com/">Vewrite</a>, a project management tool for developer relations, technical writing teams, and writers.</p>
     </section>
 
-    <section class="w-three-quarters">
+    <!-- <section class="w-three-quarters">
       <section id="ServicesGrid">
           <section class="single-service product">
             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,16 +94,16 @@
             <p>An extension of the product cycle is having smart analysis of the product that you have built. This means setting up analytics tools like Hotjar, and monitoring them with an intent to feed that output back into your product cycle. It's critical to iterate based on hard data and not intuition.</p>
           </section>
         </section>
-    </section>
+    </section> -->
 
     <section class="w-content">
       <h2>Experience</h2>
       <section class="jobs">  
         <section class="single-job">
           <p class="job-title">Freelance</p>
-          <p class="job-subtitle">Product Design and Front-end implementation</p>
+          <p class="job-subtitle">Contractor</p>
           <p class="job-duration">Present</p>
-          <p class="job-descriptions">Currently I provide a variety of product design and development services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
+          <p class="job-descriptions">Currently I provide a variety of product, development, and devrel services as a solo contractor. If you need those kinds of services, you can email me directly at <a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a>.</p>
           <p class="job-descriptions">I have:</p>
           <ul class="job-descriptions">
             <li v-for="(description, index) in freelanceContractor" :key="index">
@@ -162,10 +162,10 @@ export default {
   data() {
     return {
       freelanceContractor :[
-        'Worked with multiple teams to produce beautiful, usable, and accessible interfaces for web and mobile',
-        'Provided key insights to small teams as they developed their product strategy, vision, user experiences, and designs',
-        'Helped fine-tune product processes in companies as they experienced growing pains',
-        'Implemented front-end interfaces in a variety of modern javascript frameworks like Vue and Nuxt'
+        'Worked with multiple teams to produce usable and accessible products for web and mobile',
+        'Provided key insights to small teams as they developed their strategy, vision, and roadmap',
+        'Helped fine-tune processes in companies as they experienced growing pains',
+        'Implemented products in a variety of modern javascript frameworks like Vue and Nuxt'
       ],
       ultraDevReldescriptions: [
         'Grew the developer pool from zero to dozens of active developers',

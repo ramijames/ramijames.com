@@ -12,17 +12,14 @@
         <section class="product-teaser scatter-marketplace"></section>
       </section>
     </section>
-
-    <section class="w-three-quarters">
-      <h2 class="role"><span>Role</span>Head of Product and Co-founder</h2>
-      <p>I was the principle who guided the product vision, based on the business and market needs. I produced marketing materials, engaged with the community directly, and lead the support effort for both the retail and developer audiences. In addition, I assisted in implementing the interface in Vue and Electron.</p>
-    </section>
     
     <section class="w-three-quarters">
-      <h2>About Scatter</h2>
+      <h2>About Scatter and my work there</h2>
       <p>Scatter was started in 2017 by <a href="https://twitter.com/nsjames_">Nathan James</a> as a way for the EOSIO community to launch its Mainnet. I joined shortly after both as Head of Product and the COO. As with most startups, we all had to wear many hats.</p>
       <p>Scatter was a digital identity and wallet that allowed users to interact with the EOS blockchain. At first, it was simply a browser extension that allowed users to sign transactions and interact with apps in a secure way. Quickly the vision of the product evolved from a signing extension into a digital hub for EOS users to manage their signing keys, their digital identity, and the apps that they would find most useful.</p>
       <p>The first standalone application launched in 2018, and was based on the <span class="codehighlight">Vue.js</span> stack embedded in an <span class="codehighlight">Electron</span> app. Throughout 2018 and 2019, we iterated through many versions of the interface with the intense feedback of the quickly growing community of users. At our peak, we had around 150-200K DAU.</p>
+      <hr>
+      <p>A large part of my work at Scatter was directly interfacing with the community of retail users and developers to understand their needs and translate that back into our product cycle. We produced a large number of developer-focused articles and other peripheral content which helped on-board them into our ecosystem.</p>
     </section>
 
     <section class="w-three-quarters">

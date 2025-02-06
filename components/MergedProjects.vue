@@ -81,42 +81,42 @@ const products = [
                     class: 'doodledapp',
                     type: 'Product Case Study'
                   },
-                  {
-                    title: 'Climbing Monster',
-                    description: 'Training application for rock climbers',
-                    image: '/products/climbingmonster/cm-mobile-example.png',
-                    logo: '/products/climbingmonster/climbingmonster-logo.png',
-                    bg: '/homepage/hp-climbingmonster.png',
-                    status: 'past',
-                    slug: '/products/climbingmonster/',
-                    color: '#990000',
-                    class: 'climbingmonster',
-                    type: 'Product Case Study'
-                  },
-                  {
-                    title: 'Food For Future',
-                    description: 'Decentralized data for funding farmers',
-                    image: '/products/food-for-future/fff-thumb.png',
-                    logo: '/products/food-for-future/fff-logo.svg',
-                    bg: '/homepage/hp-fff.png',
-                    status: 'past',
-                    slug: '/products/food-for-future/',
-                    color: '#9446BD',
-                    class: 'foodforfuture',
-                    type: 'Product Case Study'
-                  },
-                  {
-                    title: 'Telos Open Block Explorer',
-                    description: 'The best way to view transactions and manage your wallets',
-                    image: '/products/telos/telos-thumb.png',
-                    logo: '/products/telos/telos-logo.png',
-                    bg: '/homepage/hp-telos.png',
-                    status: 'past',
-                    slug: '/products/telos-obe/',
-                    color: '#571AFF',
-                    class: 'telos',
-                    type: 'Product Case Study'
-                  }      
+                  // {
+                  //   title: 'Climbing Monster',
+                  //   description: 'Training application for rock climbers',
+                  //   image: '/products/climbingmonster/cm-mobile-example.png',
+                  //   logo: '/products/climbingmonster/climbingmonster-logo.png',
+                  //   bg: '/homepage/hp-climbingmonster.png',
+                  //   status: 'past',
+                  //   slug: '/products/climbingmonster/',
+                  //   color: '#990000',
+                  //   class: 'climbingmonster',
+                  //   type: 'Product Case Study'
+                  // },
+                  // {
+                  //   title: 'Food For Future',
+                  //   description: 'Decentralized data for funding farmers',
+                  //   image: '/products/food-for-future/fff-thumb.png',
+                  //   logo: '/products/food-for-future/fff-logo.svg',
+                  //   bg: '/homepage/hp-fff.png',
+                  //   status: 'past',
+                  //   slug: '/products/food-for-future/',
+                  //   color: '#9446BD',
+                  //   class: 'foodforfuture',
+                  //   type: 'Product Case Study'
+                  // },
+                  // {
+                  //   title: 'Telos Open Block Explorer',
+                  //   description: 'The best way to view transactions and manage your wallets',
+                  //   image: '/products/telos/telos-thumb.png',
+                  //   logo: '/products/telos/telos-logo.png',
+                  //   bg: '/homepage/hp-telos.png',
+                  //   status: 'past',
+                  //   slug: '/products/telos-obe/',
+                  //   color: '#571AFF',
+                  //   class: 'telos',
+                  //   type: 'Product Case Study'
+                  // }      
                 ];
 
 </script>
