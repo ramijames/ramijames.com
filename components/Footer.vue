@@ -1,25 +1,23 @@
 <template>
   <footer>
-    <section class="w-three-quarters">
-      <div class="footer-content ">
-        <div class="footer-links">
-          <nuxt-link href="/" v-if="notHome">Home</nuxt-link>
-          <nuxt-link href="/thoughts">Thoughts</nuxt-link>
-          <!-- <nuxt-link href="/illustrations">Illustrations</nuxt-link> -->
-          <nuxt-link href="/products">Recent Work</nuxt-link>
-          <nuxt-link href="/about">About</nuxt-link>
-        </div>
-        <div class="footer-links" v-if="notHome">
-          <nuxt-link href="/privacy-policy" class="dim">Privacy Policy</nuxt-link>
-          <nuxt-link href="/terms-and-conditions" class="dim">Terms & Conditions</nuxt-link>
-        </div>
-        <section class="footer-social">
-          <a href="https://github.com/ramijames"><img src="/github-dark.svg" alt="Github" /></a>
-          <a href="https://www.linkedin.com/in/rami-james/"><img src="/linkedin-dark.svg" alt="LinkedIn" /></a>
-          <a href="mailto:ramijames@gmail.com"><img src="/mail-dark.svg" alt="Send Rami an email" /></a>
-        </section>
+    <div class="footer-content ">
+      <div class="footer-links">
+        <nuxt-link href="/" v-if="notHome">Home</nuxt-link>
+        <nuxt-link href="/thoughts">Thoughts</nuxt-link>
+        <!-- <nuxt-link href="/illustrations">Illustrations</nuxt-link> -->
+        <nuxt-link href="/products">Recent Work</nuxt-link>
+        <nuxt-link href="/about">About</nuxt-link>
       </div>
-    </section>
+      <div class="footer-links" v-if="notHome">
+        <nuxt-link href="/privacy-policy" class="dim">Privacy Policy</nuxt-link>
+        <nuxt-link href="/terms-and-conditions" class="dim">Terms & Conditions</nuxt-link>
+      </div>
+      <section class="footer-social">
+        <a href="https://github.com/ramijames"><img src="/github-dark.svg" alt="Github" /></a>
+        <a href="https://www.linkedin.com/in/rami-james/"><img src="/linkedin-dark.svg" alt="LinkedIn" /></a>
+        <a href="mailto:ramijames@gmail.com"><img src="/mail-dark.svg" alt="Send Rami an email" /></a>
+      </section>
+    </div>
   </footer>
 </template>
 
@@ -101,6 +99,7 @@ footer {
     align-items: flex-start;
     padding: $spacing-lg 0;
     width: 100%;
+    gap: $spacing-lg;
 
     @media screen and (max-width: 768px){
       align-items: center;
@@ -113,7 +112,7 @@ footer {
     justify-content: space-between;
     gap: $spacing-lg;
     margin-bottom: $spacing-lg;
-    width: 100%;
+    margin: 0 auto;
     opacity: 0.5;
     transition: opacity 0.5s ease-in-out;
     
@@ -148,7 +147,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     gap: $spacing-lg;
-    width: 100%;
+    margin: 0 auto;
     opacity: 0.5;
     transition: opacity 0.5s ease-in-out;
     
