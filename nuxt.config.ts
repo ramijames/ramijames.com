@@ -12,11 +12,11 @@ export default defineNuxtConfig({
       htmlAttrs: {
           lang: 'en',
       },
-      title: 'Rami James - Product Designer',
+      title: 'Developer, Advocate, and DevRel Expertise from Rami James',
       charset: 'utf-8',
       meta: [
         { name: 'author', content: 'Rami James' },
-        { name: 'description', content: 'To delight with design & code, You must bring new ideas to life, A new way of thinking, a new way of doing.' }
+        { name: 'description', content: 'My core focus over the last decade has been building technical tools that are easy to use and loved by developers. Much of that work has been developer advocacy and relations. I have developed some strong opinions on the right and wrong way to do things. You can read more about them here.' }
       ],
     }
   },
