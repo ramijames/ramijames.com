@@ -80,9 +80,9 @@
     "image": "/articles/neurodiversity.png"
   },
   {
-    "title": "Why Comments in Code Matter",
+    "title": "Use Verbose Comments",
     "date": "2025-02-04",
-    "slug": "why-comments-in-code-matter",
+    "slug": "use-verbose-comments",
     "tags": [
       "comments", "code", "documentation", "software development"
     ],
