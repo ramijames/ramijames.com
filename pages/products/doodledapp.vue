@@ -80,4 +80,21 @@ onMounted(() => {
   });
 });
 
+useHead({
+  title: () => `Doodledapp`
+})
+
+useSeoMeta({
+  title: 'Doodledapp',
+  ogTitle: 'Doodledapp',
+  description: 'Doodledapp was a no-code smart contract editor that allowed users to create and deploy smart contracts to public networks quickly and easily. The project was broken up into a few discrete parts. Initially, we targeted smart contract developers working in Solidity, and provided them a comfortable environment to build their contracts with a node-based editor. These developers created complex, vetted components that any other user could then import into their smart contracts to extend.',
+  ogDescription: 'Doodledapp was a no-code smart contract editor that allowed users to create and deploy smart contracts to public networks quickly and easily. The project was broken up into a few discrete parts. Initially, we targeted smart contract developers working in Solidity, and provided them a comfortable environment to build their contracts with a node-based editor. These developers created complex, vetted components that any other user could then import into their smart contracts to extend.',
+  ogImage: '',
+  url: 'https://www.ramijames.com/products/vewrite',
+  twitterTitle: 'Doodledapp',
+  twitterDescription: 'Doodledapp was a no-code smart contract editor that allowed users to create and deploy smart contracts to public networks quickly and easily. The project was broken up into a few discrete parts. Initially, we targeted smart contract developers working in Solidity, and provided them a comfortable environment to build their contracts with a node-based editor. These developers created complex, vetted components that any other user could then import into their smart contracts to extend.',
+  twitterImage: '',
+  twitterCard: 'summary_large_image',
+})
+
 </script>

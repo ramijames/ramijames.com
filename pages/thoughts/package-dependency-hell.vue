@@ -42,3 +42,24 @@
   <TypesOfDesigns />
   <Footer />
 </template>
+
+<script setup>
+
+useHead({
+  title: () => "Package dependency hell"
+})
+
+useSeoMeta({
+  title: "Package dependency hell",
+  ogTitle: "Package dependency hell",
+  description: "Intentionally or otherwise, I've been blowing up my life since last summer. It’s been less than ideal. We'll get to why in a second, but first, let's talk about everyone's favorite awful programming language and the impact of package managers, their packages, and the endless toil they create.",
+  ogDescription: "Intentionally or otherwise, I've been blowing up my life since last summer. It’s been less than ideal. We'll get to why in a second, but first, let's talk about everyone's favorite awful programming language and the impact of package managers, their packages, and the endless toil they create.",
+  ogImage: "/articles/package-dependency-hell.png",
+  url: 'https://www.ramijames.com/thoughts/package-dependency-hell',
+  twitterTitle: "Package dependency hell",
+  twitterDescription: "Intentionally or otherwise, I've been blowing up my life since last summer. It’s been less than ideal. We'll get to why in a second, but first, let's talk about everyone's favorite awful programming language and the impact of package managers, their packages, and the endless toil they create.",
+  twitterImage: "/articles/package-dependency-hell.png",
+  twitterCard: 'summary_large_image',
+})
+
+</script>

@@ -43,3 +43,24 @@
   <TypesOfDesigns />
   <Footer />
 </template>
+
+<script setup>
+
+useHead({
+  title: () => "Peak Software Abuse"
+})
+
+useSeoMeta({
+  title: "Peak Software Abuse",
+  ogTitle: "Peak Software Abuse",
+  description: "My thoughts on how software gets worse because of profit incentives, and how the core reason NFTs are a failure is that they are used badly by the businesses that use them.",
+  ogDescription: "My thoughts on how software gets worse because of profit incentives, and how the core reason NFTs are a failure is that they are used badly by the businesses that use them.",
+  ogImage: "/articles/peak-software-abuse.png",
+  url: 'https://www.ramijames.com/thoughts/peak-software-abuse',
+  twitterTitle: "Peak Software Abuse",
+  twitterDescription: "My thoughts on how software gets worse because of profit incentives, and how the core reason NFTs are a failure is that they are used badly by the businesses that use them.",
+  twitterImage: "/articles/peak-software-abuse.png",
+  twitterCard: 'summary_large_image',
+})
+
+</script>

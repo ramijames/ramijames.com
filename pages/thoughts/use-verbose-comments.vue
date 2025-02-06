@@ -57,3 +57,25 @@ celsius_temp = (fahrenheit_temp - <span class="hljs-number">32</span>) * <span c
   <TypesOfDesigns />
   <Footer />
 </template>
+
+<script setup>
+
+useHead({
+  title: () => `Use Verbose Comments`
+})
+
+useSeoMeta({
+  title: 'Use Verbose Comments',
+  ogTitle: 'Use Verbose Comments',
+  description: 'The idea that code should be entirely self-explanatory is a utopian fantasy. Comments provide context, explain intent, and offer guidance to future developers—including your future self.',
+  ogDescription: 'The idea that code should be entirely self-explanatory is a utopian fantasy. Comments provide context, explain intent, and offer guidance to future developers—including your future self.',
+  ogImage: '/articles/comments-in-code.png',
+  url: 'https://www.ramijames.com/thoughts/use-verbose-comments',
+  twitterTitle: 'Use Verbose Comments',
+  twitterDescription: 'The idea that code should be entirely self-explanatory is a utopian fantasy. Comments provide context, explain intent, and offer guidance to future developers—including your future self.',
+  twitterImage: '/articles/comments-in-code.png',
+  twitterCard: 'summary_large_image',
+})
+
+
+</script>

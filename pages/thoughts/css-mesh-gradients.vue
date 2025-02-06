@@ -489,3 +489,24 @@ $apple-blue: #2E53F9;
 
 
 </style>
+
+<script setup>
+
+useHead({
+  title: 'CSS Mesh Gradients'
+})
+
+useSeoMeta({
+  title: 'CSS Mesh Gradients',
+  ogTitle: 'CSS Mesh Gradients',
+  description: 'Apple recently released Mesh Gradients as a feature for iOS development. Let us see if we can replicate this in CSS.',
+  ogDescription: 'Apple recently released Mesh Gradients as a feature for iOS development. Let us see if we can replicate this in CSS.',
+  ogImage: '/labs/gradient-mesh.png',
+  url: 'https://www.ramijames.com/thoughts/css-mesh-gradients',
+  twitterTitle: 'CSS Mesh Gradients',
+  twitterDescription: 'Apple recently released Mesh Gradients as a feature for iOS development. Let us see if we can replicate this in CSS.',
+  twitterImage: '/labs/gradient-mesh.png',
+  twitterCard: 'summary_large_image'
+})
+
+</script>

@@ -12,7 +12,11 @@ export default defineNuxtConfig({
       htmlAttrs: {
           lang: 'en',
       },
-      title: 'Developer, Advocate, and DevRel Expertise from Rami James',
+      titleTemplate: '%s %separator %siteName',
+      templateParams: {
+        separator: '—',
+        siteName: 'Rami James'
+      },
       charset: 'utf-8',
       meta: [
         { name: 'author', content: 'Rami James' },

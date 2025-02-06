@@ -93,3 +93,24 @@
   <TypesOfDesigns />
   <Footer />
 </template>
+
+<script setup>
+
+useHead({
+  title: () => "How To Iterate Relentlessly"
+})
+
+useSeoMeta({
+  title: "How To Iterate Relentlessly",
+  ogTitle: "How To Iterate Relentlessly",
+  description: "It is immensely hard to get traction for your product, and that is often because you have built the wrong thing and nobody wants to use that. Here is a better process.",
+  ogDescription: "It is immensely hard to get traction for your product, and that is often because you have built the wrong thing and nobody wants to use that. Here is a better process.",
+  ogImage: "/articles/iterate-relentlessly.png",
+  url: 'https://www.ramijames.com/thoughts/how-to-iterate-relentlessly',
+  twitterTitle: "How To Iterate Relentlessly",
+  twitterDescription: "It is immensely hard to get traction for your product, and that is often because you have built the wrong thing and nobody wants to use that. Here is a better process.",
+  twitterImage: "/articles/iterate-relentlessly.png",
+  twitterCard: 'summary_large_image',
+})
+
+</script>

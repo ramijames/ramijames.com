@@ -90,4 +90,21 @@ onMounted(() => {
   });
 });
 
+useHead({
+  title: () => `Scatter`
+})
+
+useSeoMeta({
+  title: 'Scatter',
+  ogTitle: 'Scatter',
+  description: 'Scatter was a digital identity and wallet that allowed users to interact with the EOS blockchain. At first, it was simply a browser extension that allowed users to sign transactions and interact with apps in a secure way. Quickly the vision of the product evolved from a signing extension into a digital hub for EOS users to manage their signing keys, their digital identity, and the apps that they would find most useful.',
+  ogDescription: 'Scatter was a digital identity and wallet that allowed users to interact with the EOS blockchain. At first, it was simply a browser extension that allowed users to sign transactions and interact with apps in a secure way. Quickly the vision of the product evolved from a signing extension into a digital hub for EOS users to manage their signing keys, their digital identity, and the apps that they would find most useful.',
+  ogImage: '',
+  url: 'https://www.ramijames.com/products/scatter',
+  twitterTitle: 'Scatter',
+  twitterDescription: 'Scatter was a digital identity and wallet that allowed users to interact with the EOS blockchain. At first, it was simply a browser extension that allowed users to sign transactions and interact with apps in a secure way. Quickly the vision of the product evolved from a signing extension into a digital hub for EOS users to manage their signing keys, their digital identity, and the apps that they would find most useful.', 
+  twitterImage: '',
+  twitterCard: 'summary_large_image',
+})
+
 </script>

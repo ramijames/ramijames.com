@@ -122,6 +122,25 @@ supabase db push
 
 @import './assets/variables';
 
-
-
 </style>
+
+<script setup>
+
+useHead({
+  title: () => "Quick Walkthrough on Using Supabase Migrations"
+})
+
+useSeoMeta({
+  title: "Quick Walkthrough on Using Supabase Migrations",
+  ogTitle: "Quick Walkthrough on Using Supabase Migrations",
+  description: "Migrations are the traditional way to manage the structure of your database. Supabase has a great way to manage migrations and we'll see how to use them in this article.",
+  ogDescription: "Migrations are the traditional way to manage the structure of your database. Supabase has a great way to manage migrations and we'll see how to use them in this article.",
+  ogImage: "/articles/supabase-migrations.png",
+  url: 'https://www.ramijames.com/thoughts/',
+  twitterTitle: "Quick Walkthrough on Using Supabase Migrations",
+  twitterDescription:"Migrations are the traditional way to manage the structure of your database. Supabase has a great way to manage migrations and we'll see how to use them in this article.",
+  twitterImage: "/articles/supabase-migrations.png",
+  twitterCard: 'summary_large_image',
+})
+
+</script>

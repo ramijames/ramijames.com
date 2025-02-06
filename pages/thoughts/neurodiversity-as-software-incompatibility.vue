@@ -38,3 +38,24 @@
   <TypesOfDesigns />
   <Footer />
 </template>
+
+<script setup>
+
+useHead({
+  title: () => "Neurodiversity as software incompatibility"
+})
+
+useSeoMeta({
+  title: "Neurodiversity as software incompatibility",
+  ogTitle: "Neurodiversity as software incompatibility",
+  description: "My days are taken up by thinking about two things: my kids and software. With neurodiverse kids, I think that they way we interact with them is akin to an API without documentation.",
+  ogDescription: "My days are taken up by thinking about two things: my kids and software. With neurodiverse kids, I think that they way we interact with them is akin to an API without documentation.",
+  ogImage: "/articles/neurodiversity.png",
+  url: 'https://www.ramijames.com/thoughts/neurodiversity-as-software-incompatibility',
+  twitterTitle: "Neurodiversity as software incompatibility",
+  twitterDescription: "My days are taken up by thinking about two things: my kids and software. With neurodiverse kids, I think that they way we interact with them is akin to an API without documentation.",
+  twitterImage: "/articles/neurodiversity.png",
+  twitterCard: 'summary_large_image',
+})
+
+</script>

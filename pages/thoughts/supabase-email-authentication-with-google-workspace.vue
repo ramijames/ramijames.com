@@ -113,3 +113,24 @@
 }
 
 </style>
+
+<script setup>
+
+useHead({
+  title: () => ``
+})
+
+useSeoMeta({
+  title: '',
+  ogTitle: '',
+  description: '',
+  ogDescription: '',
+  ogImage: '',
+  url: 'https://www.ramijames.com/thoughts/',
+  twitterTitle: '',
+  twitterDescription: '',
+  twitterImage: '',
+  twitterCard: '',
+})
+
+</script>

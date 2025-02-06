@@ -52,3 +52,24 @@
   <TypesOfDesigns />
   <Footer />
 </template>
+
+<script setup>
+
+useHead({
+  title: () => "Why Developer Relations Matters",
+})
+
+useSeoMeta({
+  title: "Why Developer Relations Matters",
+  ogTitle: "Why Developer Relations Matters",
+  description: "Developer Relations is a key part of any software company's growth strategy. Let's talk about how to build a successful DevRel program.",
+  ogDescription: "Developer Relations is a key part of any software company's growth strategy. Let's talk about how to build a successful DevRel program.",
+  ogImage: "/articles/devrel-matters.png",
+  url: 'https://www.ramijames.com/thoughts/why-developer-relations-matters',
+  twitterTitle: "Why Developer Relations Matters",
+  twitterDescription: "Developer Relations is a key part of any software company's growth strategy. Let's talk about how to build a successful DevRel program.",
+  twitterImage: "/articles/devrel-matters.png",
+  twitterCard: 'summary_large_image',
+})
+
+</script>

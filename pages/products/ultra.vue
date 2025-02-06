@@ -65,4 +65,21 @@ onMounted(() => {
   });
 });
 
+useHead({
+  title: () => `Ultra`
+})
+
+useSeoMeta({
+  title: 'Ultra',
+  ogTitle: 'Ultra',
+  description: 'Ultra is a blockchain-based platform that allows game developers to mint and sell tokenized game licenses and digital items. The platform is based on a fork of the EOSIO blockchain and is designed to be a scalable, secure, and user-friendly platform for game developers and players.',
+  ogDescription: 'Ultra is a blockchain-based platform that allows game developers to mint and sell tokenized game licenses and digital items. The platform is based on a fork of the EOSIO blockchain and is designed to be a scalable, secure, and user-friendly platform for game developers and players.',
+  ogImage: '',
+  url: 'https://www.ramijames.com/products/ultra',
+  twitterTitle: 'Ultra',
+  twitterDescription: 'Ultra is a blockchain-based platform that allows game developers to mint and sell tokenized game licenses and digital items. The platform is based on a fork of the EOSIO blockchain and is designed to be a scalable, secure, and user-friendly platform for game developers and players.',
+  twitterImage: '',
+  twitterCard: 'summary_large_image',
+})
+
 </script>

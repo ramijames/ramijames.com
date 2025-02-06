@@ -76,3 +76,24 @@
   <TypesOfDesigns />
   <Footer />
 </template>
+
+<script setup>
+
+useHead({
+  title: () => "On Using iCloud Drive for Storage"
+})
+
+useSeoMeta({
+  title:  "On Using iCloud Drive for Storage",
+  ogTitle:  "On Using iCloud Drive for Storage",
+  description: "iCloud is a good way to replicate your files remotes so that, in the case of a catastrophe, you will not have complete data loss. For Mac users it has great integration and I recommend using it.",
+  ogDescription: "iCloud is a good way to replicate your files remotes so that, in the case of a catastrophe, you will not have complete data loss. For Mac users it has great integration and I recommend using it.",
+  ogImage: "/articles/using-icloud.png",
+  url: 'https://www.ramijames.com/thoughts/on-using-icloud-drive-for-storage',
+  twitterTitle:  "On Using iCloud Drive for Storage",
+  twitterDescription: "iCloud is a good way to replicate your files remotes so that, in the case of a catastrophe, you will not have complete data loss. For Mac users it has great integration and I recommend using it.",
+  twitterImage: "/articles/using-icloud.png",
+  twitterCard: 'summary_large_image',
+})
+
+</script>

@@ -46,3 +46,24 @@
   <TypesOfDesigns />
   <Footer />
 </template>
+
+<script setup>
+
+useHead({
+  title: () => "Are your docs good?"
+})
+
+useSeoMeta({
+  title: "Are your docs good?",
+  ogTitle: "Are your docs good?",
+  description: "The primary challenge faced by technical writers often boils down to how to evaluate the effectiveness of what you write. You build some documentation and you think it is great. How do you know if you are right? How do you prove it to upper management? How do you really, really know?",
+  ogDescription: "The primary challenge faced by technical writers often boils down to how to evaluate the effectiveness of what you write. You build some documentation and you think it is great. How do you know if you are right? How do you prove it to upper management? How do you really, really know?",
+  ogImage: "/articles/quantifying.png",
+  url: 'https://www.ramijames.com/thoughts/',
+  twitterTitle: "Are your docs good?",
+  twitterDescription: "The primary challenge faced by technical writers often boils down to how to evaluate the effectiveness of what you write. You build some documentation and you think it is great. How do you know if you are right? How do you prove it to upper management? How do you really, really know?",
+  twitterImage: "/articles/quantifying.png",
+  twitterCard: 'summary_large_image',
+})
+
+</script>

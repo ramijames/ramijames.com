@@ -85,6 +85,10 @@ import selected_articles from '~/assets/selected_articles.json'
 
       h1 {
         font-size: $font-size-max;
+
+        @media screen and (max-width: 768px){
+          font-size: $font-size-xxl;
+        }
       }
 
       @media screen and (max-width: 768px){
@@ -136,7 +140,7 @@ import selected_articles from '~/assets/selected_articles.json'
   min-height: 600px;
 
   @media screen and (max-width: 768px){
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: $spacing-md;
   }
   

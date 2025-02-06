@@ -40,3 +40,24 @@
   <TypesOfDesigns />
   <Footer />
 </template>
+
+<script setup>
+
+useHead({
+  title: () => ``
+})
+
+useSeoMeta({
+  title: 'Asking for help is a core developer skill',
+  ogTitle: 'Asking for help is a core developer skill',
+  description: 'Intentionally or otherwise, I have been blowing up my life since last summer. It has been less than ideal. We will get to why in a second, but first, let us talk about javascript and the impact of package managers, their packages, and the endless toil they create.',
+  ogDescription: 'Intentionally or otherwise, I have been blowing up my life since last summer. It has been less than ideal. We will get to why in a second, but first, let us talk about javascript and the impact of package managers, their packages, and the endless toil they create.',
+  ogImage: "/articles/ask-for-help.png",
+  url: 'https://www.ramijames.com/thoughts/asking-for-help-is-a-core-skill',
+  twitterTitle: 'Asking for help is a core developer skill',
+  twitterDescription: 'Intentionally or otherwise, I have been blowing up my life since last summer. It has been less than ideal. We will get to why in a second, but first, let us talk about javascript and the impact of package managers, their packages, and the endless toil they create.',
+  twitterImage: "/articles/ask-for-help.png",
+  twitterCard: 'summary_large_image',
+})
+
+</script>

@@ -111,13 +111,8 @@ h1 {
   line-height: 120%;
 
   @media screen and (max-width: 1200px) {
-    font-size: $font-size-max;
-    line-height: $font-size-max;
-  }
-
-  @media screen and (max-width: 768px) {
-    font-size: 12vw;
-    line-height: 12vw;
+    font-size: $font-size-xl;
+    line-height: 100%;
   }
 
 }

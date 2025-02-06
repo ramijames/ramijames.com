@@ -81,4 +81,20 @@ onMounted(() => {
   });
 });
 
+useHead({
+  title: () => `Vewrite`
+})
+
+useSeoMeta({
+  title: 'Vewrite',
+  ogTitle: 'Vewrite',
+  description: 'Better writing through structured workflows',
+  ogDescription: 'Better writing through structured workflows',
+  url: 'https://www.ramijames.com/products/vewrite/',
+  twitterTitle: 'Vewrite',
+  twitterDescription: 'Better writing through structured workflows',
+  twitterImage: '/products/vewrite/ve-projects.png',
+  twitterCard: 'summary_large_image',
+})
+
 </script>
