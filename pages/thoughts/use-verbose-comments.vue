@@ -1,9 +1,9 @@
 <template>
   <main class="w-content page-top">
     <section class="article-extras">
-      <img class="article-image-top" src="/articles/comments-in-code.png" alt="Why Comments in Code Matter" />
-      <SectionTitle title="Why Comments in Code Matter" />
-      <Share route="/thoughts/why-comments-in-code-matter" topic="Why Comments in Code Matter" />
+      <img class="article-image-top" src="/articles/comments-in-code.png" alt="Use Verbose Comments" />
+      <SectionTitle title="Use Verbose Comments" />
+      <Share route="/thoughts/why-comments-in-code-matter" topic="Use Verbose Comments" />
     </section>
     <section class="content">
 
