@@ -1,8 +1,18 @@
 [
   {
-    "title": "Why Comments in Code Matter",
+    "title": "Why Developer Relations Matters",
+    "date": "2025-02-06",
+    "slug": "why-developer-relations-matters",
+    "tags": [
+      "software development", "developer relations", "growth", "engagement", "devrel"
+    ],
+    "summary": "Developer Relations is a key part of any software company's growth strategy. Let's talk about how to build a successful DevRel program.",
+    "image": "/articles/devrel-matters.png"
+  },
+  {
+    "title": "Use Verbose Comments",
     "date": "2025-02-04",
-    "slug": "why-comments-in-code-matter",
+    "slug": "use-verbose-comments",
     "tags": [
       "comments", "code", "documentation", "software development"
     ],
