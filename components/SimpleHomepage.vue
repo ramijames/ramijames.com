@@ -32,6 +32,8 @@
       <h2>Recent Work</h2>
       <p>Over the past decade, I've founded or co-founded multiple startups, and have held leadership positions that helped guide products and teams towards success. Below you'll find some more in-depth descriptions of what those startups were, what they were trying to achieve, and my place within those contexts.</p>
     </section>
+  </section>
+  <section class="home-projects">
     <MergedProjects />
   </section>
   
@@ -73,6 +75,7 @@ import selected_articles from '~/assets/selected_articles.json'
     @media screen and (max-width: 768px){
       flex-direction: column-reverse;
       gap: $spacing-md;
+      padding: 0;
     }
     
     .intro-left {
@@ -142,6 +145,7 @@ import selected_articles from '~/assets/selected_articles.json'
   @media screen and (max-width: 768px){
     flex-direction: column;
     gap: $spacing-md;
+    padding: 0 $spacing-md;
   }
   
   .writing-intro {
@@ -266,6 +270,10 @@ import selected_articles from '~/assets/selected_articles.json'
     justify-content: center;
     align-items: flex-start;
     padding: 0 $spacing-md;
+
+    @media screen and (max-width: 768px){
+      padding: 0;
+    }
   }
 
   h3 {
@@ -273,6 +281,13 @@ import selected_articles from '~/assets/selected_articles.json'
   }
   
   
+}
+
+.home-projects {
+
+  @media screen and (max-width: 768px){
+    padding: 0;
+  }
 }
 
 </style>
