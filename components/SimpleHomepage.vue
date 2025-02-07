@@ -57,6 +57,10 @@ import selected_articles from '~/assets/selected_articles.json'
   justify-content: center;
   position: relative;
 
+  @media screen and (max-width: 768px){
+    margin-top: 0;
+  }
+
   .mega-rotate {
     width: 100%;
     height: 50vh;
@@ -74,8 +78,9 @@ import selected_articles from '~/assets/selected_articles.json'
 
     @media screen and (max-width: 768px){
       flex-direction: column-reverse;
-      gap: $spacing-md;
+      gap: $spacing-sm;
       padding: 0;
+      margin-top: 0;
     }
     
     .intro-left {
@@ -96,6 +101,7 @@ import selected_articles from '~/assets/selected_articles.json'
 
       @media screen and (max-width: 768px){
         width: 100%;
+        margin: 0 auto;
       }
     }
 
@@ -108,7 +114,8 @@ import selected_articles from '~/assets/selected_articles.json'
       gap: $spacing-md;
 
       @media screen and (max-width: 768px){
-        width: 100%;
+        width: 80%;
+        align-self: flex-start;
       }
 
       img {
