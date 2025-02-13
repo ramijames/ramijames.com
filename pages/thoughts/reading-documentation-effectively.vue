@@ -9,8 +9,10 @@
 
       <h3>On Reading Docs</h3>
       <p>As a developer, documentation is both your greatest ally and your worst nemesis. It's the key to unlocking the power of libraries, frameworks, APIs, and even entire programming languages. Yet, many developers struggle to effectively navigate and extract the information they need from documentation. It's a skill that can be learned, and it's one that can make a huge difference in your productivity and the quality of your work. New developers often lack this critical skill, and find themselves stopped in their progress towards becoming a better dev because of it.</p>
+
+      <p>I'm currently writing the docs for <a href="https://vewrite.com">Vewrite</a>, a project management tool for writing teams. It occurs to me that I've been writing documentation for a long time, and I've gotten pretty good at it. I've also gotten pretty good at reading documentation, and I think that this is a skill that is often overlooked.</p>
         
-      <p>Let's talk about how to equip you with the skills to become a documentation ninja, turning this often daunting task into a smooth and efficient process.</p>
+      <p>Let's talk about how to equip you with the skills to read documentation better, turning this often daunting task into a smooth and efficient process.</p>
 
       <h3>Why is reading documentation challenging?</h3>
       <p>I've talked, at length, about how I think that <nuxt-link to="/thoughts/docs-deserver-more-respect">Docs Deserve More Respect</nuxt-link> and how you can <nuxt-link to="/thoughts/quantifying-your-documentations-success.vue">Quantify Your Documentation's Success</nuxt-link>.</p>
