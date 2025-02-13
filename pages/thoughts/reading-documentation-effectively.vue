@@ -98,12 +98,12 @@ useHead({
 useSeoMeta({
   title:  "Reading Documentation Effectively",
   ogTitle:  "Reading Documentation Effectively",
-  description: "Reading documentation is a skill that can be learned. Let's talk about how to read documentation effectively.",
-  ogDescription: "Reading documentation is a skill that can be learned. Let's talk about how to read documentation effectively.",
+  description: "Reading documentation is a skill that can be learned. Let's talk about how to do it effectively so that you retain the most knowledge in the shortest amount of time.",
+  ogDescription: "Reading documentation is a skill that can be learned. Let's talk about how to do it effectively so that you retain the most knowledge in the shortest amount of time.",
   ogImage: "/articles/reading-documentation-effectively.png",
   url: 'https://www.ramijames.com/thoughts/reading-documentation-effectively',
   twitterTitle:  "Reading Documentation Effectively",
-  twitterDescription: "Reading documentation is a skill that can be learned. Let's talk about how to read documentation effectively.",
+  twitterDescription: "Reading documentation is a skill that can be learned. Let's talk about how to do it effectively so that you retain the most knowledge in the shortest amount of time.",
   twitterImage: "/articles/reading-documentation-effectively.png",
   twitterCard: 'summary_large_image',
 })
