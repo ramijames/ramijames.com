@@ -15,7 +15,7 @@
       <p>Let's talk about how to equip you with the skills to read documentation better, turning this often daunting task into a smooth and efficient process.</p>
 
       <h3>Why is reading documentation challenging?</h3>
-      <p>I've talked, at length, about how I think that <nuxt-link to="/thoughts/docs-deserver-more-respect">Docs Deserve More Respect</nuxt-link> and how you can <nuxt-link to="/thoughts/quantifying-your-documentations-success.vue">Quantify Your Documentation's Success</nuxt-link>.</p>
+      <p>I've talked, at length, about how I think that <nuxt-link to="/thoughts/docs-deserve-more-respect">Docs Deserve More Respect</nuxt-link> and how you can <nuxt-link to="/thoughts/quantifying-your-documentations-success">Quantify Your Documentation's Success</nuxt-link>.</p>
         
       <p>Good documentation is essential. It provides the definitive guide to how software works, saving you countless hours of pointless, frustrating trial and error. Bad documentation is a nightmare. It's like trying to navigate a maze blindfolded, with no map and no sense of direction, guided by a liar.</p>
         
