@@ -1,5 +1,15 @@
 [
   {
+    "title": "Reading Documentation Effectively",
+    "date": "2025-02-06",
+    "slug": "reading-documentation-effectively",
+    "tags": [
+      "software development", "documentation", "technical writing"
+    ],
+    "summary": "Reading documentation is a skill that can be learned. Let's talk about how to read documentation effectively.",
+    "image": "/articles/reading-documentation-effectively.png"
+  },
+  {
     "title": "Why Developer Relations Matters",
     "date": "2025-02-06",
     "slug": "why-developer-relations-matters",
