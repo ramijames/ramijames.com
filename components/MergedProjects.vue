@@ -1,6 +1,6 @@
 <template>
   <Loading v-if="loading" />
-  <section id="Products" class="w-three-quarters" v-if="filteredProjects && loading == false">
+  <section id="Products" v-if="filteredProjects && loading == false">
     <nuxt-link
         :class="['project', 'w-full', product.class]"
         v-for="product in filteredProjects" 
@@ -130,7 +130,6 @@ const products = [
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   position: relative;
-  gap: $spacing-md;
   opacity: 0;
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0s;
@@ -143,7 +142,7 @@ const products = [
 
   .project {
     width: 100%;
-    height: 400px;
+    height: 720px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -155,7 +154,6 @@ const products = [
     transition: all 0.3s ease-in-out;
     padding: 0;
     overflow: hidden;
-    border-radius: $br-lg;
 
     @media screen and (max-width: 768px){
       height: 400px;
