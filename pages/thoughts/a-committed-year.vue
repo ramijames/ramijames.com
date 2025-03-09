@@ -103,11 +103,11 @@ useSeoMeta({
   ogTitle: 'A Committed Year',
   description: "A year ago, I committed to writing a bit of code every day. It's been a wild ride. Let's talk about what I've learned.",
   ogDescription: "A year ago, I committed to writing a bit of code every day. It's been a wild ride. Let's talk about what I've learned.",
-  ogImage: "/articles/ask-for-help.png",
+  ogImage: "/articles/a-committed-year.png",
   url: 'https://www.ramijames.com/thoughts/a-committed-year',
   twitterTitle: 'A Committed Year',
   twitterDescription: "A year ago, I committed to writing a bit of code every day. It's been a wild ride. Let's talk about what I've learned.",
-  twitterImage: "/articles/ask-for-help.png",
+  twitterImage: "/articles/a-committed-year.png",
   twitterCard: 'summary_large_image',
 })
 
