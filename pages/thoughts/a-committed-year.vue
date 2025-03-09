@@ -14,7 +14,7 @@
 
       <p>I've found that the only way for me to really get good at something is to do it obsessively. This was true for me of rock climbing, running, and yoga. In particular, yoga has a 'daily practice' concept that I found really helpful in building the structure that I needed to progress.</p>
 
-      <p>So, a year ago, I committed to writing a bit of code every day. A daily practice for my mind with the hope that, in time, I could grant myself a deep enough understanding of how computers work to build something that I'm really proud of. I made it through the year and I wanted to share with you some of my insights.</p>
+      <p>So, a year ago, I committed to <a href="https://github.com/ramijames">writing a bit of code every day and publishing to Github</a>. A daily practice for my mind with the hope that, in time, I could grant myself a deep enough understanding of how computers work to build something that I'm really proud of. I made it through the year and I wanted to share with you some of my insights.</p>
 
       <img src="/articles/one-year-of-github.png" alt="One Year" />
 
