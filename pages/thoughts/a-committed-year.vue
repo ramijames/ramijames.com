@@ -26,7 +26,9 @@
 
       <p>There are a few things that I've learned over the past year that I think are worth sharing.</p>
       
-      <p><strong>Development is really hard, but you can do it if you stick with it</strong> - I'm not as good at this as I thought I would be. Web development in particular has advanced to the point where you have to have a really deep understanding of how servers and protocols work to be able to build anything of significant complexity. This is true for companies, but at a single-person scale this means that you really have to learn how to do everything from:</p>
+      <h4>Development is really hard, but you can do it if you stick with it</h4>
+      
+      <p>I'm not as good at this as I thought I would be. Web development in particular has advanced to the point where you have to have a really deep understanding of how servers and protocols work to be able to build anything of significant complexity. This is true for companies, but at a single-person scale this means that you really have to learn how to do everything from:</p>
       
       <ul>
         <li>deploy servers</li>
