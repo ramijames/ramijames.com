@@ -8,18 +8,6 @@
     </section>
     <section class="content">
 
-      <h3>Exploring computers</h3>
-
-      <p>Computers often feel like physical exploration. Our ancestors would lose themselves in vast forests or savannahs, and today you can lose yourself in an endless digital space. There is so much to do, and so much untapped potential. It can be both overwhelming and, at the same time, invigorating. I really love computers.</p>
-
-      <p>For better or for worse, computers have been a part of my life since the 80s, when our family got a Commodore 64. It was this cute, little machine that we hooked up to the living room TV and we could make it do all sorts of things. We could, of course, play games, but you could also write and run programs in BASIC. I distinctly remember the first little programs that I got to run on it. They didn't do much beyond enforcing the idea that there was more here to explore, and so, I did. I copied programs out of magazines, and I edited the ones that I could get ahold of. I didn't really know what I was doing, but it was fun to make the computer do things that it wasn't supposed to.</p>
-
-      <img src="/articles/c64.jpg" alt="Commodore 64" />
-
-      <p>As I grew up, I was exposed to half a dozen other systems. PCs, Macs, Ataris, etc. Most were eventually connected to the internet, and that's where much of my development knowledge came from. As early as 1996 I was building websites for local businesses. None of it was complicated, but back then expectations for what a website could do were really low. If you could build a CGI script to gather the information from a form, you were a golden god.</p>
-      
-      <p>I never managed to get a formal education. We were poor and I had to work. So, I did. The money was in web design back then, and I became more and more interested in how things looked and felt. My career shifted toward design and product and less of my time was devoted to development work. By the time the 2000s rolled around, I was barely writing any code at all. Aside from a few years from 2013-2017 where I learned PHP and Ruby, and built some small things for some small companies, I feel like I didn't progress much as a developer. By this point, I had a growing family to feed, and it felt like my responsibility to focus on what I was already good at.</p>
-
       <h3>A year of daily practice</h3>
 
       <p>Not diving as deep as I could into software development was something that I've always regretted, and a year ago today, I decided that I wanted to do something about it. I have to admit that it feels like a bad time to be a mediocre developer, but it is what it is. The heart wants what it wants.</p>
