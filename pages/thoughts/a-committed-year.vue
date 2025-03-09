@@ -8,7 +8,7 @@
     </section>
     <section class="content">
 
-      <h3>A year of daily practice</h3>
+      <h2>A year of daily practice</h2>
 
       <p>Not diving as deep as I could into software development was something that I've always regretted, and a year ago today, I decided that I wanted to do something about it. I have to admit that it feels like a bad time to be a mediocre developer, but it is what it is. The heart wants what it wants.</p>
 
@@ -22,7 +22,7 @@
       
       <p>I wrote about 100kloc, with the bulk of it being for <a href="https://vewrite.com/">Vewrite</a>. I started building that project in the summer of 2024, and it has made being consistent much, much easier. At this point there are a long list of issues that I'd like to work through, and when I'm in doubt about what to do next, I can simply select something from the backlog and get on with it.</p>
 
-      <h3>What I've learned</h3>
+      <h2>What I've learned</h2>
 
       <p>There are a few things that I've learned over the past year that I think are worth sharing.</p>
       
@@ -43,31 +43,31 @@
       
       <p>It's a lot and I'm sure that I've forgotten to list a lot of stuff that I've managed to get running the last year. Frankly, I'm not sure whether any one person can do everything, or even if they should. All you have to do is try.</p>
 
-      <h4>Iteration at the personal and development level is key</h4>
+      <h3>Iteration at the personal and development level is key</h3>
         
       <p>I'm not as bad at this as I thought I was. I've built a lot of things that I'm proud of, especially over the last six months. I've made a lot of mistakes, but I've learned from them. I don't make them twice. I've built a lot of things that I'm not proud of, but I've learned from them too and I've made them better over time. That's no small thing that I really want to emphasize. The stuff that you build doesn't need to be perfect. It needs to work and it needs to be reliable. It needs to get better over time, as you do.</p>
 
-      <h4>Confidence is built over time</h4>
+      <h3>Confidence is built over time</h3>
         
       <p>At first, I was scared of just about everything. It all seemed like too much to cram into my dumb, little skull. Every new concept that I encountered seemed like a mountain that I would never be able to climb. But I did. I climbed a lot of technical mountains. I'm still climbing them. I'm not scared of them anymore. I know that I can do it. I know that I can learn anything that I need to learn.</p>
 
-      <h4>You have to let yourself rest</h4>
+      <h3>You have to let yourself rest</h3>
         
       <p>A year of this has left me really tired. There are some days where I can only manage one or two small commits before my brain just refuses to make any progress anymore. At first, I mostly tried to ignore it and plow forward. It wasn't healthy for me physically or mentally, and I've definitely stepped back from that. A few days of rest will make a lot of difference in the amount of work that you can confidently complete, and what the quality will be.</p>
 
-      <h4>It's okay to ask for help</h4>
+      <h3>It's okay to ask for help</h3>
         
       <p>I wrote about this a while ago, and I stand by it. <nuxt-link to="/thoughts/asking-for-help-is-a-core-skill">Asking for help is a core developer skill</nuxt-link>. I've been really lucky to have a few people in my life that I can ask for help when I need it, and I've come to rely on them to make sure that I can progress the way that I want.</p>
 
-      <h4>If you want to get better, build harder stuff</h4>
+      <h3>If you want to get better, build harder stuff</h3>
         
       <p>This is really a truism for life in general. If you aren't challenging yourself, you aren't going to get anywhere at all. I found that the hard stuff is much like the easy stuff (just harder). You have to take it one piece at a time, understand it really deeply, and then move forward to the next piece. Eventually, you'll get there.</p>
 
-      <h4>It's okay to fail</h4>
+      <h3>It's okay to fail</h3>
         
       <p>I've failed a lot over the past year. I've failed to build things that I wanted to build. I've failed to understand things that I wanted to understand. I've failed to make progress on things that I wanted to make progress on. But I've learned from all of it. I've learned that failure is just a part of the process. It's not the end of the world. It's just a step on the way to success.</p>
 
-      <h3>What's next?</h3>
+      <h2>What's next?</h2>
 
       <p>I think that I'm going to keep going. I like having the daily practice as part of my life. In a world which feels very out of control, it feels good to have something that I can directly impact. <a href="https://github.com/vewrite/vewrite/">Vewrite</a> is at v1.0.0 (as of this morning) and I'll be releasing it in the coming week or so. There are a lot of features that I'd like to add to it, and I'm excited to get started on them. I'm also excited to start building other things. I have a few ideas that I'd like to explore, and I'm excited to see where they go.</p>
 
