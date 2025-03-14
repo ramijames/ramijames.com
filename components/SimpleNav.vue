@@ -8,7 +8,7 @@
         <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
-      <nuxt-link class="button primary contact" to="/booking">Book a call</nuxt-link>
+      <a class="button primary contact" href="mailto:ramijames@gmail.com">Contact</a>
       <div 
         :class="['menu', state.mobileMenuOpen ]"
         @click="toggleMenu"
@@ -25,7 +25,7 @@
       <nuxt-link to="/products" @click="closeMenu">Recent Work</nuxt-link>
       <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
       <nuxt-link to="/about" @click="closeMenu">About</nuxt-link>
-      <nuxt-link to="/booking" @click="closeMenu">Book a Call</nuxt-link>
+      <a href="mailto:ramijames@gmail.com" @click="closeMenu">Contact</a>
     </section>
   </section>
 </template>

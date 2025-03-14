@@ -1,29 +1,10 @@
 <template>
-  <!-- <section id="types-of-designs" class="w-three-quarters" :class="!notHome ? 'drop-top' : ''">
-    <h2>Hassle-free designs for your apps, websites, landing pages, & more</h2>
-    <div class="types">
-      <div class="single-type"><span>Branding</span></div>
-      <div class="single-type"><span>Design Systems</span></div>
-      <div class="single-type"><span>Online apps</span></div>
-      <div class="single-type"><span>Mobile apps</span></div>
-      <div class="single-type"><span>Iconography</span></div>
-      <div class="single-type"><span>Illustrations</span></div>
-      <div class="single-type"><span>Pitch decks</span></div>
-    </div>
-
-    <section class="things">
-      <Button text="Say hello" to="/booking" />
-      <Button text="See my work" to="/products" />
-    </section>
-
-  </section> -->
   <MergedProjects />
 </template>
 
 <script>
 import { useThemeStore } from '~/store/theme'
-import { reactive, computed, onMounted, watch } from 'vue';
-import { useRoute } from 'vue-router';
+import { computed } from 'vue';
 
 export default {
   setup() {
