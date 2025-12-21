@@ -16,7 +16,7 @@
     </section>
 
     <section class="w-half">
-      <p class="center">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://twitter.com/ramijames">Twitter</a>, <a href="https://github.com/ramijames">Github</a>, and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>. I'm always building something. These days I'm focused on building <a href="https://vewrite.com/">Vewrite</a>, a project management tool for developer relations, technical writing teams, and writers.</p>
+      <p class="center">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://github.com/ramijames">Github</a> and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</p>
     </section>
 
     <section class="w-content">
@@ -191,7 +191,7 @@ export default {
     text-wrap: balance;
     font-family: $font-family-main;
     margin-bottom: $spacing-md;
-    color: $black;
+    color: $white;
 
     &.small {
       font-size: $font-size-md;
