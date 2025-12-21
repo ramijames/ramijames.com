@@ -1,6 +1,6 @@
 <template>
   <main id="ProjectsMain">
-    <section class="products-hero">
+    <!-- <section class="products-hero">
       <section class="intro-text w-three-quarters">
         <p>
           <span>R</span>
@@ -20,7 +20,7 @@
           <a class="button large primary" href="mailto:ramijames@gmail.com">Say hello!</a>
         </section>
       </section>
-    </section>
+    </section> -->
   </main> 
   <MergedProjects />
 </template>
@@ -91,7 +91,7 @@
     text-wrap: balance;
     font-family: $font-family-main;
     margin-bottom: $spacing-md;
-    color: $black;
+    color: $white;
 
     &.small {
       font-size: $font-size-md;

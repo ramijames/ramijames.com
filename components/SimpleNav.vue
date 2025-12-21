@@ -4,7 +4,7 @@
       <nuxt-link to="/" class="logo-link"><img :src="`/logo-light.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
-        <nuxt-link to="/products" :class="['nav-link', isProductsSubPage ? 'router-link-active' : '']">Recent Work</nuxt-link>
+        <nuxt-link to="/products" :class="['nav-link', isProductsSubPage ? 'router-link-active' : '']">Work</nuxt-link>
         <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
@@ -105,23 +105,38 @@ const notHome = computed(() => {
 
 .simple-nav-bar {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-xs $spacing-md;
+  padding: $spacing-sm 0;
   position: fixed;
-  width: 100%;
-  margin: 0 $spacing-xs;
-  background: rgba($white, .8);
+  width: 120px;
+  background: rgba($black, .8);
   backdrop-filter: blur(28px);
   z-index: 1000;
   top: 0;
-  left: calc(50% - $spacing-xs);
-  transform: translateX(-50%);
+  left: 0;
+  bottom: 0;
+  opacity:1;
   transition: all 0.3s;
 
+  @media screen and (max-width: 1000px){
+    top: 0;
+    left:0;
+    right:0;
+    width: 100%;
+    height: 80px;
+    flex-direction: row;
+    padding: $spacing-sm;
+  }
+
+  &:hover {
+    opacity:1 !important;
+  }
+
   &.hidden {
-    transform: translateY(-120%) translateX(-50%);
+    opacity:0.25;
+    mix-blend-mode:luminosity;
   }
 
   &.open {
@@ -130,10 +145,17 @@ const notHome = computed(() => {
 
   .navigation {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 1000px){
+      width: 100%;
+      height: 80px;
+      flex-direction: row;
+    }
 
     .contact {
 
@@ -148,7 +170,6 @@ const notHome = computed(() => {
       position: relative;
       display:none;
       background: none;
-      color: $black;
       text-transform: uppercase;
       margin-right: $spacing-xs;
       padding: 0;
@@ -160,7 +181,7 @@ const notHome = computed(() => {
         right: 0px;
         width: 50px;
         height: 2px;
-        background: $black;
+        background: $white;
         transition: all 0.3s;
       }
 
@@ -171,7 +192,7 @@ const notHome = computed(() => {
         right: 0px;
         width: 50px;
         height: 2px;
-        background: $black;
+        background: $white;
         transition: all 0.3s;
       }
 
@@ -195,18 +216,19 @@ const notHome = computed(() => {
 
     .nav-links {
       display: flex;
-      gap: $spacing-md;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       .nav-link {
         text-decoration: none;
         background: transparent;
-        color: rgba($black, 0.5);
         padding: $spacing-xs 0;
         opacity: 0;
         animation: fadeInDown 0.2s ease-in-out forwards;
         transition: all 0.3s;
         overflow: hidden;
-        font-size: $font-size-sm;
+        font-size: $font-size-md;
         font-weight: 500;
 
         &:nth-child(1) {
@@ -238,12 +260,12 @@ const notHome = computed(() => {
         }
 
         &:hover {
-          color: $black;
+          color: $white;
         }
         
         &.router-link-exact-active,
         &.router-link-active {
-          color: $black;
+          color: $white;
         }
       }
     }
@@ -274,7 +296,7 @@ const notHome = computed(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba($black, .6);
+  background: rgba($white, .6);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;

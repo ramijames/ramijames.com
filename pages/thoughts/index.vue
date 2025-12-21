@@ -48,7 +48,6 @@ useSeoMeta({
   justify-content: center;
   position: relative;
   perspective: 100rem;
-  margin-top: $spacing-lg;
 }
 
 .thoughts-hero {
@@ -104,7 +103,7 @@ useSeoMeta({
     text-wrap: balance;
     font-family: $font-family-main;
     margin-bottom: $spacing-md;
-    color: $black;
+    color: $white;
 
     &.small {
       font-size: $font-size-md;
@@ -164,7 +163,7 @@ useSeoMeta({
 
 .articles a {
   text-decoration: none;
-  color: $black;
+  color: $white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -191,8 +190,8 @@ useSeoMeta({
     width: 100%;
     object-fit: cover;
     transition: all 0.15s ease-in-out;
-    outline: 1px solid rgba($black, 0.1);
-    border-radius: $br-lg;
+    outline: 1px solid rgba($blue, 1);
+    border-radius: $br-sm;
 
     @media screen and (max-width: 768px) {
       height: 320px;
@@ -203,20 +202,26 @@ useSeoMeta({
     width: 100%;
     display:flex;
     flex-direction: column;
-    color: $black;
+    color: $white;
     padding: $spacing-md 0;
     text-wrap: balance;
     text-align: left;
 
     .title {
-      font-size: $font-size-lg;
+      font-size: $font-size-xl;
+      font-weight: normal;
+      color: $blue;
       font-family: $font-family-main;
     }
 
     .description {
       font-size: $font-size-sm;
-      margin-top: $spacing-sm;
+      font-family: $font-family-secondary;
+      line-height: $font-size-md * $multiplier; 
+      color: $white;
+      margin-top: $spacing-xs;
       opacity: 0.6;
+      font-weight: normal;
     }
   }
 }

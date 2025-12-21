@@ -13,13 +13,19 @@
 .default-layout {
   display: flex;
   flex-direction: row;
-  margin-top: 94.5px;
+  margin-left: 120px;
+
+  @media screen and (max-width: 1000px){
+    margin-left: 0px;
+    margin-top: 80px;
+  }
 }
 
 .default-main {
   display: flex;
   flex-direction: column;
   width: 100%;
+  border-left: 1px solid rgba(255,255,255, 0.1);
 }
 
 </style>

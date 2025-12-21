@@ -77,6 +77,7 @@ footer {
   justify-content: center;
   align-items: flex-start;
   background-color: $black;
+  border-top: $border;
 
   @media screen and (max-width: 768px){
     align-items: center;

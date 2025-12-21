@@ -1,6 +1,6 @@
 <template>
   <div id="share" class="w-content">
-    <a v-for="social in socials" 
+    <a v-for="social in socials" class="button" 
        :key="social.name" 
        :href="social.url + encodeURIComponent('https://www.ramijames.com' + route)">
       <img :src="'/' + social.icon + '.svg'" alt="social.name" />
@@ -21,19 +21,19 @@ export default {
       socials: [
         {
           name: 'Twitter',
-          icon: 'twitter-light',
+          icon: 'twitter-dark',
           url: 'https://twitter.com/intent/tweet?url=',
           message: 'Check out this article by @ramijames on'
         },
         {
           name: 'LinkedIn',
-          icon: 'linkedin-light',
+          icon: 'linkedin-dark',
           url: 'https://www.linkedin.com/feed/?shareActive=true&text=',
           message: 'Check out this article by @ramijames on'
         },
         {
           name: 'Email',
-          icon: 'mail-light',
+          icon: 'mail-dark',
           url: 'mailto:?body=',
           message: 'Check out this article by Rami James on'
         }
@@ -59,6 +59,10 @@ export default {
   padding:  $spacing-sm 0;
   border-top: 1px solid rgba($black, 0.1);
   border-bottom: 1px solid rgba($black, 0.1);
+
+  img {
+    outline: none;
+  }
 }
 
 </style>

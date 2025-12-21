@@ -39,10 +39,12 @@ $teal: #82A0CE;
 $teal-dark: #507ABA;
 $teal-light: #A7BDDD;
 
-$border: 1px solid rgba($black, 0.1);
+$border: 1px solid rgba($white, 0.1);
+$border-hover: 1px solid $white;
+
 
 /* Fonts */
-$font-family-main: 'Host Grotesk', sans-serif;
+$font-family-main: 'Rokkitt', sans-serif;
 $font-family-secondary: 'Roboto Sans', sans-serif;
 $font-size-base: 12px;
 $font-size-xs: 12px;
@@ -54,7 +56,7 @@ $font-size-xxl: 44px;
 $font-size-max: 68px;
 $font-size-mega: 82px;
 
-$multiplier: 1.4;
+$multiplier: 1.6;
 $multiplier-sm: 1.14;
 
 /* Border-radius */

@@ -21,8 +21,8 @@ body {
 
 body,
 body.light {
-  color: $black;
-  background: $white;
+  color: $white;
+  background: $black;
 }
 
 body.dark {
@@ -39,38 +39,40 @@ body.dark {
 
 button,
 .button {
-    color: $black;
-    background: rgba($white, .35);
+    color: $white;
+    background: rgba($blue,0.1);
     border-radius: 4rem;
-    border: $border;
+    border: $border-hover;
     text-align: center;
     text-decoration: none;
-    padding: $spacing-xs $spacing-sm;
+    padding: 12px $spacing-sm 10px;
     cursor: pointer;
-    font-size: $font-size-sm;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    font-family: $font-family-main;
+    font-size: 11px;
+    letter-spacing:1px;
+    line-height:100%;
+    margin:0;
+    font-weight: normal;
+    transition: all 0.42s ease-in-out;
+    font-family: $font-family-secondary;
     display: flex;
     justify-content: center;
     gap: calc($spacing-xxs - 2px);
     align-items: center;
-    text-transform: capitalize;
-    min-height: 34px;
+    text-transform: uppercase;
     overflow: hidden;
+    box-shadow: 0 0 200px 20px rgba($blue, 0.1);
     
     &.primary {
-      background: $black;
       color: $white;
 
       &:hover {
-        background: rgba($black, 0.8);
+        border: $border-hover;
       }
     }
 
     &:hover {
-        border: 1px solid rgba($black, .25);
-        background: rgba($black, 0.05);
+        border: $border-hover;
+        box-shadow: 0 0 200px 20px rgba($blue, 0.6), 0 0 20px 0px rgba($blue, 0.6);
     }
 
     &.large {
@@ -97,7 +99,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-main;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0;
   padding: 0;
 }
@@ -201,8 +203,8 @@ p {
   font-size: $font-size-md;
   line-height: $font-size-md * $multiplier; 
   font-family: $font-family-secondary, sans-serif;
-  line-height: $spacing-md;
   margin-bottom: 1rem;
+  opacity: 0.7;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-sm;
@@ -288,7 +290,9 @@ ol {
 hr {
   margin: $spacing-lg auto;
   width:100%;
-  border:1px solid rgba($blue,0.26);
+  border:0;
+  border-top: $border;
+  height: 1px;
 }
 
 p > strong {
@@ -483,6 +487,12 @@ input {
   display:flex;
   flex-direction: column;
   align-items: center;
+
+  img {
+    width: 100%;
+    outline: 1px solid rgba($blue, 1);
+    border-radius: $br-sm;
+  }
 }
 
     @media screen and (max-width: 1000px) {
