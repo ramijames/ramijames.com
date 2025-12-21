@@ -1,7 +1,7 @@
 <template>
   <nav :class="['simple-nav-bar', { hidden: isMenuHidden }]">
     <section :class="['navigation', state.mobileMenuOpen ? 'open' : '']">
-      <nuxt-link to="/" class="logo-link"><img :src="`/logo-light.svg`" alt="Rami James" /></nuxt-link>
+      <nuxt-link to="/" class="logo-link"><img :src="`/logo-dark.svg`" alt="Rami James" /></nuxt-link>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">Home</nuxt-link>
         <nuxt-link to="/products" :class="['nav-link', isProductsSubPage ? 'router-link-active' : '']">Work</nuxt-link>
