@@ -1,14 +1,16 @@
 <template>
   <main id="Hero">
     <section class="mega-hero w-three-quarters">
-      <h1>Interface Designer</h1>
+      <h1>Interface<br>Designer</h1>
       <section class="mega-content">
         <p>My name is Rami James and I work as a freelance user interface, user experience, interaction, and design professional.</p>
-        <a href="mailto:ramijames@gmail.com" class="button">Become a client</a>
       </section>
     </section>  
+    <img src="/hummingbird.png" class="hummingbird" />
     <section id="Clients" class="w-three-quarters">
+      <h4>I've been luck to work with</h4>
       <img src="/clients.png" />
+      <a href="mailto:ramijames@gmail.com" class="button">Become a client</a>
     </section>
   </main>
 
@@ -51,21 +53,60 @@ import selected_articles from '~/assets/selected_articles.json'
   justify-content: center;
   position: relative;
   padding: 0 $spacing-md;
-  background: linear-gradient(-20deg, transparent 50%, rgba($blue, 0.05));
+  background: linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15));
+
+  .hummingbird {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 55vw;
+    transition: all 0.4s ease-in-out;
+
+    @media screen and (min-width: 1800px){
+      width: 50vw;
+      max-width: 1000px;
+      top: 50%;
+      right: 5%;
+    }
+
+    @media screen and (max-width: 1400px){
+      width: 70vw;
+      top: 50%;
+      right: -15%;
+    }
+
+    @media screen and (max-width: 1180px){
+      width: 70vw;
+      top: 45%;
+      right: -15%;
+    }
+    
+    @media screen and (max-width: 768px){
+      width: 80vw;
+      top: 30%;
+      right: -30%;
+    }
+  }
 
   @media screen and (max-width: 768px){
     margin-top: 0;
   }
 
   #Clients {
-    padding: $spacing-sm;
+    padding: 0 $spacing-md;
     margin: $spacing-lg auto;
-    opacity:0.25;
+    opacity:0.85;
     transition: all 0.2s ease-in-out;
     max-width: 1200px;
 
     img {
       max-width: 100%;
+      width: 600px;
+      padding: $spacing-sm 0;
+      border-top: $border;
+      background: rgba($black, 0.25);
     }
 
     &:hover {
@@ -80,17 +121,18 @@ import selected_articles from '~/assets/selected_articles.json'
 
   .mega-hero {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     max-width: 1200px;
-    gap: $spacing-lg;
+    gap: $spacing-sm;
     padding: 0 $spacing-md;
+    position: relative;
 
     h1 {
         font-size: 8vw;
         line-height: 80%;
-        text-shadow: -20px -100px 800px rgba($blue, 0.4), 80px 100px 200px rgba($red, 0.4), 2px 4px 2px rgba($black, 1);
+        z-index: 1;
+        text-shadow: -20px -100px 800px rgba($red, 0.4), 2px 4px 2px rgba($black, 1);
 
         @media screen and (max-width: 768px){
           font-size: 18vw;
@@ -103,10 +145,19 @@ import selected_articles from '~/assets/selected_articles.json'
       }
 
       p {
-        font-size: $font-size-lg;
+        font-size: $font-size-xl;
+        line-height: $font-size-xl;
         font-family: $font-family-main;
+        font-weight: 200;
         max-width: 600px;
         text-wrap: balance;
+        color: $red;
+        opacity: 1;
+        text-shadow: -20px -100px 800px rgba($red, 0.4), 1px 1px 2px rgba($black, 1);
+
+        @media screen and (max-width: 1180px){
+          max-width: 500px;
+        }
       }
 
       .mega-content {
@@ -115,6 +166,7 @@ import selected_articles from '~/assets/selected_articles.json'
         justify-content: flex-start;
         align-items: flex-start;
         gap: $spacing-sm;
+        z-index: 1;
       }
 
     @media screen and (max-width: 768px){

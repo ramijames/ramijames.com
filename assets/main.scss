@@ -40,9 +40,10 @@ body.dark {
 button,
 .button {
     color: $white;
-    background: rgba($blue,0.1);
-    border-radius: 4rem;
-    border: $border-hover;
+    background: rgba($red,0.5);
+    backdrop-filter: blur(4px);
+    border-radius: $br-xs;
+    border: 1px solid $red;
     text-align: center;
     text-decoration: none;
     padding: 12px $spacing-sm 10px;
@@ -60,7 +61,7 @@ button,
     align-items: center;
     text-transform: uppercase;
     overflow: hidden;
-    box-shadow: 0 0 200px 20px rgba($blue, 0.1);
+    box-shadow: 0 0 200px 20px rgba($blue, 0.6), 0 0 20px 0px rgba($blue, 0.6);
     
     &.primary {
       color: $white;
@@ -72,7 +73,7 @@ button,
 
     &:hover {
         border: $border-hover;
-        box-shadow: 0 0 200px 20px rgba($blue, 0.6), 0 0 20px 0px rgba($blue, 0.6);
+        box-shadow: 0 0 200px 20px rgba($blue, 0.9), 0 0 20px 0px rgba($blue, 0.72);
     }
 
     &.large {
