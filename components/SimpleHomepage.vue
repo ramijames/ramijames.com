@@ -7,6 +7,9 @@
         <a href="mailto:ramijames@gmail.com" class="button">Become a client</a>
       </section>
     </section> 
+    <section id="Clients">
+      <img src="/clients.png" />
+    </section>
   </main>
 
   <section class="home-projects">
@@ -51,6 +54,17 @@ import selected_articles from '~/assets/selected_articles.json'
 
   @media screen and (max-width: 768px){
     margin-top: 0;
+  }
+
+  #Clients {
+    padding: $spacing-md;
+    margin: $spacing-lg 0;
+    opacity:0.25;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      opacity:1;
+    }
   }
 
   .mega-rotate {
