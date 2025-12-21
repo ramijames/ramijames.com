@@ -8,7 +8,7 @@
     </section>  
     <img src="/hummingbird.png" class="hummingbird" />
     <section id="Clients" class="w-three-quarters">
-      <h4>I've been luck to work with</h4>
+      <h4>I've been lucky to work with</h4>
       <img src="/clients.png" />
       <a href="mailto:ramijames@gmail.com" class="button">Become a client</a>
     </section>
