@@ -1,13 +1,13 @@
 <template>
-  <main id="Hero" class="w-three-quarters">
-    <section class="mega-hero">
-      <section class="intro-left">
-        <h1>Interface Designer</h1>
+  <main id="Hero">
+    <section class="mega-hero w-three-quarters">
+      <h1>Interface Designer</h1>
+      <section class="mega-content">
         <p>My name is Rami James and I work as a freelance user interface, user experience, interaction, and design professional.</p>
         <a href="mailto:ramijames@gmail.com" class="button">Become a client</a>
       </section>
-    </section> 
-    <section id="Clients">
+    </section>  
+    <section id="Clients" class="w-three-quarters">
       <img src="/clients.png" />
     </section>
   </main>
@@ -16,11 +16,11 @@
     <MergedProjects />
   </section>
 
-  <section id="Writing" class="w-three-quarters">
-    <section class="writing-intro">
-      <h2>Thoughts</h2>
+  <section id="Writing">
+    <section class="writing-intro w-three-quarters">
+      <h1>Thoughts</h1>
     </section>
-    <main class="articles">
+    <main class="articles w-half">
       <nuxt-link :to="`/thoughts/${article.slug}`" v-for="article in selected_articles" :key="article.slug">
         <section class="info">
           <span class="title">{{ article.title }}</span>
@@ -45,22 +45,28 @@ import selected_articles from '~/assets/selected_articles.json'
 
 #Hero {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   padding: 0 $spacing-md;
-  margin: $spacing-lg auto;
+  background: linear-gradient(-20deg, transparent 50%, rgba($blue, 0.05));
 
   @media screen and (max-width: 768px){
     margin-top: 0;
   }
 
   #Clients {
-    padding: $spacing-md;
-    margin: $spacing-lg 0;
+    padding: $spacing-sm;
+    margin: $spacing-lg auto;
     opacity:0.25;
     transition: all 0.2s ease-in-out;
+    max-width: 1200px;
+
+    img {
+      max-width: 100%;
+    }
 
     &:hover {
       opacity:1;
@@ -81,26 +87,13 @@ import selected_articles from '~/assets/selected_articles.json'
     gap: $spacing-lg;
     padding: 0 $spacing-md;
 
-    @media screen and (max-width: 768px){
-      flex-direction: column-reverse;
-      gap: $spacing-sm;
-      padding: 0;
-      margin-top: 0;
-    }
-    
-    .intro-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: $spacing-sm;
-
-      h1 {
+    h1 {
         font-size: 8vw;
         line-height: 80%;
+        text-shadow: -20px -100px 800px rgba($blue, 0.4), 80px 100px 200px rgba($red, 0.4), 2px 4px 2px rgba($black, 1);
 
         @media screen and (max-width: 768px){
-          font-size: $font-size-xxl;
+          font-size: 18vw;
         }
       }
 
@@ -115,25 +108,21 @@ import selected_articles from '~/assets/selected_articles.json'
         max-width: 600px;
         text-wrap: balance;
       }
-    }
 
-    .intro-right {
-      width: 50%;
-      display: flex;
+      .mega-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: $spacing-sm;
+      }
+
+    @media screen and (max-width: 768px){
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: $spacing-md;
-
-      @media screen and (max-width: 768px){
-        width: 80%;
-        align-self: flex-start;
-      }
-
-      img {
-        width: 100%;
-        height: auto;
-      }
+      align-items: flex-start;
+      gap: $spacing-sm;
+      padding: 0;
+      margin-top: 0;
     }
 
     
@@ -155,11 +144,8 @@ import selected_articles from '~/assets/selected_articles.json'
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: $spacing-lg auto;
   padding: $spacing-lg;
-  border-radius: $br-lg;
-  min-height: 600px;
-  max-width: 800px;
+  background: rgba($blue, 0.1);
 
   @media screen and (max-width: 768px){
     flex-direction: column;
