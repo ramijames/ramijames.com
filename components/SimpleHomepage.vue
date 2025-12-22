@@ -1,17 +1,29 @@
 <template>
   <main id="Hero">
-    <section class="mega-hero w-three-quarters">
-      <h1>Interface<br>Designer</h1>
-      <section class="mega-content">
+    <section class="mega-hero">
+      <section class="mega-title">
+        <h1>Interface<br>Designer</h1>
         <p>My name is Rami James and I work as a freelance user interface, user experience, interaction, and design professional.</p>
       </section>
+      <section class="mega-content">
+        <h4>I've been lucky to work with</h4>
+        <section class="clients">
+          <img src="/clients/ibm.png" />
+          <img src="/clients/wpt.png" />
+          <img src="/clients/microsoft.png" />
+          <img src="/clients/nvidia.png" />
+          <img src="/clients/wix.png" />
+          <img src="/clients/ultra.png" />
+          <img src="/clients/fromental.png" />
+          <img src="/clients/equitick.png" />
+          <img src="/clients/zivav.png" />
+          <img src="/clients/microgaming.png" />
+          <img src="/clients/qmarkets.png" />
+          <img src="/clients/tonara.png" />
+        </section>
+        <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button large">Become a client</a>  
+      </section>
     </section>  
-    <img src="/hummingbird.png" class="hummingbird" />
-    <section id="Clients" class="w-three-quarters">
-      <h4>I've been lucky to work with</h4>
-      <img src="/clients.png" />
-      <a href="mailto:ramijames@gmail.com" class="button">Become a client</a>
-    </section>
   </main>
 
   <section class="home-projects">
@@ -47,92 +59,35 @@ import selected_articles from '~/assets/selected_articles.json'
 
 #Hero {
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   position: relative;
-  padding: 0 $spacing-md;
   background: linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15));
+  background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/desktop.jpg') no-repeat top right;
+  background-size: contain;
+  border-bottom: $border;
 
-  .hummingbird {
-    position: absolute;
-    z-index: 0;
-    right: 0;
-    top: 55%;
-    transform: translateY(-50%);
-    width: 55vw;
-    transition: all 0.4s ease-in-out;
-
-    @media screen and (min-width: 1800px){
-      width: 50vw;
-      max-width: 1000px;
-      top: 50%;
-      right: 5%;
-    }
-
-    @media screen and (max-width: 1400px){
-      width: 70vw;
-      top: 50%;
-      right: -15%;
-    }
-
-    @media screen and (max-width: 1180px){
-      width: 70vw;
-      top: 45%;
-      right: -15%;
-    }
-    
-    @media screen and (max-width: 768px){
-      width: 80vw;
-      top: 30%;
-      right: -30%;
-    }
+  @media screen and (max-width: 1280px){
+    background-size: cover;
   }
 
-  @media screen and (max-width: 768px){
-    margin-top: 0;
-  }
-
-  #Clients {
-    padding: 0 $spacing-md;
-    margin: $spacing-lg auto;
-    opacity:0.85;
-    transition: all 0.2s ease-in-out;
-    max-width: 1200px;
-
-    img {
-      max-width: 100%;
-      width: 600px;
-      padding: $spacing-sm 0;
-      border-top: $border;
-      background: rgba($black, 0.25);
-    }
-
-    &:hover {
-      opacity:1;
-    }
-  }
-
-  .mega-rotate {
-    width: 100%;
-    height: 50vh;
+  @media screen and (max-width: 1024px){
+    background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/mobile.jpg') no-repeat top right;
+    background-size: cover;
   }
 
   .mega-hero {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 1200px;
     gap: $spacing-sm;
-    padding: 0 $spacing-md;
+    padding: $spacing-md;
     position: relative;
+    height: 100vh;
 
     h1 {
-        font-size: 8vw;
+        font-size: 6rem;
         line-height: 80%;
         z-index: 1;
-        text-shadow: -20px -100px 800px rgba($red, 0.4), 2px 4px 2px rgba($black, 1);
+        text-shadow: -12px -20px 68px rgba($white, .36), 6px 10px 8px rgba($black, .6), 2px 4px 2px rgba($black, .6);
 
         @media screen and (max-width: 768px){
           font-size: 18vw;
@@ -160,22 +115,75 @@ import selected_articles from '~/assets/selected_articles.json'
         }
       }
 
-      .mega-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: $spacing-sm;
-        z-index: 1;
+      .mega-title {
+        position: absolute;
+        top: $spacing-xl;
+        left: $spacing-xl;
+
+        @media screen and (max-width: 1024px){
+          top: $spacing-md;
+          left: $spacing-md;
+        }
       }
 
-    @media screen and (max-width: 768px){
-      flex-direction: column;
-      align-items: flex-start;
-      gap: $spacing-sm;
-      padding: 0;
-      margin-top: 0;
-    }
+      .mega-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: $spacing-md;
+        gap: $spacing-md;
+        width: 100%;
+        background: rgba($black, 0.85);
+        border-top: $border;
+
+        &:after {
+          content: '';
+          height: 100%;
+          width: 35%;
+          background: linear-gradient(90deg, transparent, $black);
+          display: block;
+          position: absolute;
+          z-index: 1;
+          right: 0;
+          backdrop-filter:blur(10px);
+          mask-image: linear-gradient(90deg, transparent 0%, $black 40%);
+          pointer-events: none;
+        }
+
+        h4 {
+          margin: 0;
+          text-wrap: nowrap;
+        }
+
+        .clients {
+          display: flex;
+          flex-direction: row;
+          gap: $spacing-md;
+
+          img {
+            height: 22px;
+            opacity: 0.4;
+            transition: 0.2s all ease-in-out;
+            mix-blend-mode:luminosity;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+
+        .button {
+          position: absolute;
+          z-index: 2;
+          right: $spacing-md;
+
+        }
+      }
 
     
   }

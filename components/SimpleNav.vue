@@ -8,7 +8,7 @@
         <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']">Thoughts</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
       </div>
-      <a class="button primary contact" href="mailto:ramijames@gmail.com">Contact</a>
+      <a class="button blue contact" href="mailto:ramijames@gmail.com?subject=Set up a call">Contact</a>
       <div 
         :class="['menu', state.mobileMenuOpen ]"
         @click="toggleMenu"
@@ -110,7 +110,7 @@ const notHome = computed(() => {
   align-items: center;
   padding: $spacing-sm 0;
   position: fixed;
-  width: 120px;
+  width: 140px;
   background: rgba($black, .8);
   backdrop-filter: blur(28px);
   z-index: 1000;
@@ -219,17 +219,26 @@ const notHome = computed(() => {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: $spacing-xs;
 
       .nav-link {
         text-decoration: none;
         background: transparent;
-        padding: $spacing-xs 0;
+        padding: 6px 0 4px;
         opacity: 0;
         animation: fadeInDown 0.2s ease-in-out forwards;
         transition: all 0.3s;
         overflow: hidden;
-        font-size: $font-size-md;
+        font-size: 11px;
         font-weight: 500;
+        width: 100px;
+        border-radius: $br-lg;
+        text-align: center;
+        border: $border;
+        color: rgba($white, 0.7);
+        font-family: $font-family-secondary;
+        text-transform: uppercase;
+        letter-spacing: 1px;
 
         &:nth-child(1) {
           animation-delay: 0.1s;
@@ -261,11 +270,14 @@ const notHome = computed(() => {
 
         &:hover {
           color: $white;
+          background: rgba($blue,0.25);
         }
         
         &.router-link-exact-active,
         &.router-link-active {
           color: $white;
+          border: 1px solid $red;
+          background: rgba($red,0.5);
         }
       }
     }

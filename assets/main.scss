@@ -63,6 +63,13 @@ button,
     overflow: hidden;
     box-shadow: 0 0 200px 20px rgba($blue, 0.6), 0 0 20px 0px rgba($blue, 0.6);
     
+    &.blue {
+      background: rgba($red,0);
+      border: $border;
+      box-shadow: none;
+      color: $white;
+    }
+
     &.primary {
       color: $white;
 
@@ -78,6 +85,7 @@ button,
 
     &.large {
       padding: $spacing-sm $spacing-md;
+      font-size: 16px;
     }
 }
 

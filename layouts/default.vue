@@ -13,7 +13,7 @@
 .default-layout {
   display: flex;
   flex-direction: row;
-  margin-left: 120px;
+  margin-left: 140px;
 
   @media screen and (max-width: 1000px){
     margin-left: 0px;
