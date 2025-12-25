@@ -37,6 +37,12 @@ body.dark {
 
 /* Button */
 
+@property --gradient_rotate {
+syntax: "<angle>";
+initial-value: 0deg;
+inherits: false;
+}  
+
 button,
 .button {
     color: $white;
@@ -62,6 +68,66 @@ button,
     text-transform: uppercase;
     overflow: hidden;
     box-shadow: 0 0 200px 20px rgba($blue, 0.6), 0 0 20px 0px rgba($blue, 0.6);
+
+    &.shiny {
+      --gradient_rotate: 0deg; 
+
+      --border_width: 1px; 
+
+      --metal_01: #E79752;  
+      --metal_02: #E79752; 
+      --metal_03: #3d51a0; 
+      --metal_04: #A7B8FC; 
+      --metal_05: #E79752; 
+      --metal_06: #E79752;  
+
+      position: relative;
+      border: var(--border_width) solid transparent; 
+      background: linear-gradient(0deg,
+                  rgb(128 86 60 / 1.0),
+                  rgb(128 86 60 / 1.0)) padding-box, 
+                  conic-gradient(from var(--gradient_rotate),
+                  rgb(from var(--metal_01) r g b / 0.85),
+                  rgb(from var(--metal_01) r g b / 1.0),
+                  rgb(from var(--metal_06) r g b / 1.0),
+                  rgb(from var(--metal_06) r g b / 1.0),
+                  rgb(from var(--metal_03) r g b / 0.65),
+                  rgb(from var(--metal_04) r g b / 1.0),
+                  rgb(from var(--metal_04) r g b / 0.5),
+                  rgb(from var(--metal_01) r g b / 0.85)) border-box;
+
+      animation: button_gradient_rotate 10s linear infinite;
+
+      :before {
+        content: "";
+        position: absolute; 
+        inset: calc(-1 * var(--border_width));
+        z-index: -1; 
+        border-radius: inherit; 
+        background:conic-gradient( from var(--gradient_rotate),
+                  rgb(from var(--metal_03) r g b / 1.0),
+                  rgb(from var(--metal_01) r g b / 1.0),
+                  rgb(from var(--metal_01) r g b / 1.0),
+                  rgb(from var(--metal_06) r g b / 1.0),
+                  rgb(from var(--metal_02) r g b / 1.0),
+                  rgb(from var(--metal_05) r g b / 1.0),
+                  rgb(from var(--metal_04) r g b / 1.0),
+                  rgb(from var(--metal_03) r g b / 1.0)) padding-box,
+                  conic-gradient( from 0deg,
+                  rgb(from var(--metal_03) r g b / 1.0),
+                  rgb(from var(--metal_01) r g b / 1.0),
+                  rgb(from var(--metal_01) r g b / 1.0),
+                  rgb(from var(--metal_06) r g b / 1.0),
+                  rgb(from var(--metal_02) r g b / 1.0),
+                  rgb(from var(--metal_05) r g b / 1.0),
+                  rgb(from var(--metal_04) r g b / 1.0),
+                  rgb(from var(--metal_03) r g b / 1.0)) border-box;
+        animation: button_gradient_rotate 4s linear infinite reverse; 
+        border: 0.25rem solid transparent;
+      }
+    }
+
+
     
     &.blue {
       background: rgba($red,0);
@@ -88,6 +154,11 @@ button,
       font-size: 16px;
     }
 }
+
+@keyframes button_gradient_rotate{
+  from { --gradient_rotate: 0deg;  }
+  to   { --gradient_rotate: 360deg;} 
+} 
 
 
 /* Typography */

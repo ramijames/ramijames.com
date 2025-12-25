@@ -128,6 +128,7 @@ const notHome = computed(() => {
     height: 80px;
     flex-direction: row;
     padding: $spacing-sm;
+    border-bottom: $border;
   }
 
   &:hover {
