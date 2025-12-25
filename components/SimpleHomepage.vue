@@ -530,6 +530,12 @@ onUnmounted(() => {
   border-top: $border;
   position: relative;
 
+  @media screen and (max-width: 1000px){
+    flex-direction: column;
+    height: auto;
+    padding: $spacing-xl $spacing-lg;
+  }
+
   &:after {
     content: '';
     height: 100%;
@@ -542,6 +548,10 @@ onUnmounted(() => {
     backdrop-filter:blur(10px);
     mask-image: linear-gradient(90deg, transparent 0%, $black 40%);
     pointer-events: none;
+
+    @media screen and (max-width: 1000px){
+      display: none;
+    }
   }
 
   h4 {
@@ -553,6 +563,11 @@ onUnmounted(() => {
     display: flex;
     flex-direction: row;
     gap: $spacing-md;
+
+    @media screen and (max-width: 1000px){
+      flex-wrap:wrap;
+      justify-content: center;
+    }
 
     img {
       height: 22px;
@@ -570,6 +585,12 @@ onUnmounted(() => {
     position: absolute;
     z-index: 2;
     right: $spacing-md;
+
+    @media screen and (max-width: 1000px){
+      position: relative;
+      right: auto;
+      z-index: initial;
+    }
 
   }
 }
