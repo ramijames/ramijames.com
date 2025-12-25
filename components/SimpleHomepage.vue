@@ -29,7 +29,7 @@
             opacity: item.opacity
           }"
         >
-          <svg :style="{ width: '100%', height: '100%' }">
+          <svg :style="{ width: '50%', height: '50%' }">
             <defs>
               <mask :id="`mask-${index}`">
                 <image :href="item.svg" width="100%" height="100%" />
@@ -85,7 +85,7 @@ import selected_articles from '~/assets/selected_articles.json'
 
 import { ref, onMounted, onUnmounted, reactive, nextTick } from 'vue'
 
-const COLUMNS = ref(24)
+const COLUMNS = ref(32)
 const GAP = 0
 const gridItems = ref([])
 const colors = ['374B22', '404AA4', '507ABA', '7D4793', 'ABC48C', 'B5803D', 'CDC7D5', 'ED6932']
@@ -112,7 +112,7 @@ function updateColumns() {
     COLUMNS.value = 16 // Small desktop
     isMobile.value = false
   } else {
-    COLUMNS.value = 24 // Large desktop
+    COLUMNS.value = 22 // Large desktop
     isMobile.value = false
   }
 }
@@ -337,8 +337,8 @@ onUnmounted(() => {
 #Hero {
   width: 100%;
   position: relative;
-  background: linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15));
-  background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/desktop.jpg') no-repeat top right;
+  background: linear-gradient(120deg, transparent 30%, rgba($blue, 0.55));
+  // background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/desktop.jpg') no-repeat top right;
   background-size: cover;
   border-bottom: $border;
 
@@ -347,7 +347,7 @@ onUnmounted(() => {
   }
 
   @media screen and (max-width: 1024px){
-    background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/mobile.jpg') no-repeat top right;
+    // background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/mobile.jpg') no-repeat top right;
     background-size: cover;
   }
 
@@ -361,7 +361,7 @@ onUnmounted(() => {
     height: calc(100vh - 100px); // Minus the height of mega-content
 
     @media screen and (max-width: 768px){
-      height: calc(100vh - 80px);
+      height: 600px;
     }
 
     .grid-background {
@@ -374,6 +374,7 @@ onUnmounted(() => {
       z-index: 0;
       transform-style: preserve-3d;
       transition: transform 0.3s ease-out;
+      mix-blend-mode: luminosity;
 
       .grid-item {
         position: absolute;
@@ -431,7 +432,7 @@ onUnmounted(() => {
         text-shadow: -12px -20px 68px rgba($white, .36), 6px 10px 8px rgba($black, .6), 2px 4px 2px rgba($black, .6);
 
         @media screen and (max-width: 768px){
-          font-size: 10vw;
+          font-size: $font-size-xl;
         }
       }
 
@@ -447,14 +448,14 @@ onUnmounted(() => {
         font-weight: 200;
         max-width: 600px;
         text-wrap: balance;
-        color: $red;
-        opacity: 1;
+        color: $white;
+        opacity: 0.6;
         text-shadow: -20px -100px 800px rgba($red, 0.4), 1px 1px 2px rgba($black, 1);
 
         @media screen and (max-width: 1180px){
           max-width: 65%;
-          font-size: $font-size-lg;
-          line-height: $font-size-lg;
+          font-size: $font-size-md;
+          line-height: $font-size-md;
         }
       }
 
@@ -471,7 +472,7 @@ onUnmounted(() => {
         }
 
         @media screen and (max-width: 768px){
-          bottom: calc($spacing-md + 100px);
+          bottom: $spacing-md;
           top: initial;
           left: $spacing-md;
         }
