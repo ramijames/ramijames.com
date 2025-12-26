@@ -10,9 +10,9 @@
       >
       <section :class="['info', product.class]">
         <img :src="product.logo" alt="Logo" class="logo" />
-        <h3>{{ product.title }}</h3>
+        <!-- <h3>{{ product.title }}</h3> -->
       </section>
-      <img :src="product.image" alt="preview screenshot" class="preview" />
+      <!-- <img :src="product.image" alt="preview screenshot" class="preview" /> -->
       <section class="bg" :style="{ backgroundImage: 'url(' + product.bg + ')' }"></section>
     </nuxt-link>
   </section>
@@ -127,25 +127,28 @@ const products = [
 
 #Products {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   position: relative;
   opacity: 0;
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0s;
 
+  @media screen and (max-width: 1180px){
+    grid-template-columns: 1fr 1fr;
+  }
+  
   @media screen and (max-width: 768px){
     padding: 0;
-    gap: $spacing-md;
     grid-template-columns: 1fr;
   }
 
   .project {
     width: 100%;
-    height: 720px;
+    height: 320px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     text-decoration: none;
     position: relative;
     background-size: cover;
@@ -154,12 +157,6 @@ const products = [
     transition: all 0.3s ease-in-out;
     padding: 0;
     overflow: hidden;
-
-    @media screen and (max-width: 768px){
-      height: 400px;
-      margin: 0 $spacing-md;
-      width: calc(100% - #{$spacing-md} * 2);
-    }
 
     .preview {
       position: absolute;
@@ -170,11 +167,6 @@ const products = [
       z-index: 1;
       transition: all 0.3s ease;
       border-radius: $br-sm;
-
-      @media screen and (max-width: 768px){
-        width: 80%;
-        bottom: 0px;
-      }
     }
 
     .bg {
@@ -251,7 +243,7 @@ const products = [
     .info {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       opacity: 1;
       transition: all 0.3s ease-in-out;
@@ -263,7 +255,6 @@ const products = [
       img.logo {
         width: 100%;
         max-width: 100px;
-        margin-top: $spacing-sm;
       }
 
       @media screen and (max-width: 768px){

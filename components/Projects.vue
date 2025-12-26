@@ -1,26 +1,5 @@
 <template>
   <main id="ProjectsMain">
-    <!-- <section class="products-hero">
-      <section class="intro-text w-three-quarters">
-        <p>
-          <span>R</span>
-          <span>e</span>
-          <span>c</span>
-          <span>e</span>
-          <span>n</span>
-          <span>t</span>
-          <span>&nbsp;</span>
-          <span>W</span>
-          <span>o</span>
-          <span>r</span>
-          <span>k</span>
-        </p>
-        <section class="products-buttons">
-          <nuxt-link class="button large" to="/about">Who am I?</nuxt-link>
-          <a class="button large primary" href="mailto:ramijames@gmail.com">Say hello!</a>
-        </section>
-      </section>
-    </section> -->
   </main> 
   <MergedProjects />
 </template>

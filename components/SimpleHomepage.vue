@@ -186,10 +186,10 @@ function updateScales(item) {
     
     // Set base scale and opacity based on distance
     if (distance === 0) {
-      item.baseScale = 1.4 // Center item (the one being hovered)
+      item.baseScale = 2.4 // Center item (the one being hovered)
       item.baseOpacity = 1
     } else if (distance === 1) {
-      item.baseScale = 1.2 // First ring
+      item.baseScale = 1.8 // First ring
       item.baseOpacity = 0.8
     } else if (distance === 2) {
       item.baseScale = 1.15 // Second ring
@@ -375,6 +375,10 @@ onUnmounted(() => {
       transform-style: preserve-3d;
       transition: transform 0.3s ease-out;
       mix-blend-mode: luminosity;
+      -webkit-mask-image: linear-gradient(
+                  to top, transparent 0%, black 60%);
+            mask-image: linear-gradient(
+                  to top, transparent 0%, black 60%);
 
       .grid-item {
         position: absolute;
