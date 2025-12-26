@@ -248,54 +248,54 @@ function handleMouseMove(e) {
   tiltX.value = ((centerY - mouseY) / centerY) * maxTilt
 }
 
-function handleDeviceOrientation(e) {
-  // beta is the front-to-back tilt in degrees (-180 to 180)
-  // gamma is the left-to-right tilt in degrees (-90 to 90)
-  const beta = e.beta || 0
-  const gamma = e.gamma || 0
+// function handleDeviceOrientation(e) {
+//   // beta is the front-to-back tilt in degrees (-180 to 180)
+//   // gamma is the left-to-right tilt in degrees (-90 to 90)
+//   const beta = e.beta || 0
+//   const gamma = e.gamma || 0
   
-  console.log('Device orientation:', { beta, gamma, isMobile: isMobile.value })
+//   console.log('Device orientation:', { beta, gamma, isMobile: isMobile.value })
   
-  // Normalize and constrain the tilt values
-  const maxTilt = 15 // More pronounced for device tilt
+//   // Normalize and constrain the tilt values
+//   const maxTilt = 15 // More pronounced for device tilt
   
-  // Map beta (front-back) to tiltX (clamped to reasonable range)
-  // For portrait mode on Android, adjust the mapping
-  tiltX.value = Math.max(-maxTilt, Math.min(maxTilt, (beta - 60) / 3))
+//   // Map beta (front-back) to tiltX (clamped to reasonable range)
+//   // For portrait mode on Android, adjust the mapping
+//   tiltX.value = Math.max(-maxTilt, Math.min(maxTilt, (beta - 60) / 3))
   
-  // Map gamma (left-right) to tiltY
-  tiltY.value = Math.max(-maxTilt, Math.min(maxTilt, gamma / 3))
+//   // Map gamma (left-right) to tiltY
+//   tiltY.value = Math.max(-maxTilt, Math.min(maxTilt, gamma / 3))
   
-  console.log('Calculated tilt:', { tiltX: tiltX.value, tiltY: tiltY.value })
-}
+//   console.log('Calculated tilt:', { tiltX: tiltX.value, tiltY: tiltY.value })
+// }
 
-async function requestOrientationPermission() {
-  console.log('Requesting orientation permission...')
-  if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-    // iOS 13+ requires permission
-    try {
-      const permission = await DeviceOrientationEvent.requestPermission()
-      console.log('iOS permission result:', permission)
-      if (permission === 'granted') {
-        window.addEventListener('deviceorientation', handleDeviceOrientation)
-        showOrientationButton.value = false
-      }
-    } catch (error) {
-      console.log('Device orientation permission denied', error)
-      showOrientationButton.value = false
-    }
-  } else {
-    // No permission needed (Android or older iOS)
-    console.log('Adding deviceorientation listener (Android/older iOS)')
-    window.addEventListener('deviceorientation', handleDeviceOrientation, true)
-    showOrientationButton.value = false
+// async function requestOrientationPermission() {
+//   console.log('Requesting orientation permission...')
+//   if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+//     // iOS 13+ requires permission
+//     try {
+//       const permission = await DeviceOrientationEvent.requestPermission()
+//       console.log('iOS permission result:', permission)
+//       if (permission === 'granted') {
+//         window.addEventListener('deviceorientation', handleDeviceOrientation)
+//         showOrientationButton.value = false
+//       }
+//     } catch (error) {
+//       console.log('Device orientation permission denied', error)
+//       showOrientationButton.value = false
+//     }
+//   } else {
+//     // No permission needed (Android or older iOS)
+//     console.log('Adding deviceorientation listener (Android/older iOS)')
+//     window.addEventListener('deviceorientation', handleDeviceOrientation, true)
+//     showOrientationButton.value = false
     
-    // Test if events are firing
-    setTimeout(() => {
-      console.log('Current tilt values after 2s:', { tiltX: tiltX.value, tiltY: tiltY.value })
-    }, 2000)
-  }
-}
+//     // Test if events are firing
+//     setTimeout(() => {
+//       console.log('Current tilt values after 2s:', { tiltX: tiltX.value, tiltY: tiltY.value })
+//     }, 2000)
+//   }
+// }
 
 onMounted(() => {
   nextTick(() => {
@@ -304,15 +304,15 @@ onMounted(() => {
     animateWaves() // Start wave animation
     
     // Request orientation permission for mobile devices
-    if (isMobile.value) {
-      // Check if this is iOS and needs permission
-      if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-        showOrientationButton.value = true
-      } else {
-        // Android or older iOS - just enable it
-        requestOrientationPermission()
-      }
-    }
+    // if (isMobile.value) {
+    //   // Check if this is iOS and needs permission
+    //   if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+    //     showOrientationButton.value = true
+    //   } else {
+    //     // Android or older iOS - just enable it
+    //     requestOrientationPermission()
+    //   }
+    // }
   })
   window.addEventListener('resize', calculateGridItems)
   window.addEventListener('mousemove', handleMouseMove)
@@ -321,7 +321,7 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', calculateGridItems)
   window.removeEventListener('mousemove', handleMouseMove)
-  window.removeEventListener('deviceorientation', handleDeviceOrientation)
+  // window.removeEventListener('deviceorientation', handleDeviceOrientation)
   if (waveAnimationFrame) {
     cancelAnimationFrame(waveAnimationFrame)
   }
