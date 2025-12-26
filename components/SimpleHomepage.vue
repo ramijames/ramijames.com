@@ -49,9 +49,8 @@
         <img src="/clients/nvidia.png" />
         <img src="/clients/wix.png" />
         <img src="/clients/ultra.png" />
-        <img src="/clients/fromental.png" />
         <img src="/clients/equitick.png" />
-        <img src="/clients/zivav.png" />
+        <!-- <img src="/clients/zivav.png" /> -->
         <img src="/clients/microgaming.png" />
         <img src="/clients/qmarkets.png" />
         <img src="/clients/tonara.png" />
@@ -531,7 +530,7 @@ onUnmounted(() => {
   gap: $spacing-md;
   width: 100%;
   height: 100px;
-  background: rgba($black, 0.85);
+  background: $black;
   border-top: $border;
   position: relative;
 
