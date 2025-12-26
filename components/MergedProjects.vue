@@ -10,9 +10,7 @@
       >
       <section :class="['info', product.class]">
         <img :src="product.logo" alt="Logo" class="logo" />
-        <!-- <h3>{{ product.title }}</h3> -->
       </section>
-      <!-- <img :src="product.image" alt="preview screenshot" class="preview" /> -->
       <section class="bg" :style="{ backgroundImage: 'url(' + product.bg + ')' }"></section>
     </nuxt-link>
   </section>
@@ -115,6 +113,30 @@ const products = [
                     slug: '/products/telos-obe/',
                     color: '#571AFF',
                     class: 'telos',
+                    type: 'Product Case Study'
+                  },
+                  {
+                    title: 'TouchSpin',
+                    description: 'A new way to play',
+                    image: '/products/telos/telos-thumb.png',
+                    logo: '/products/touchspin/touchspin-logo.svg',
+                    bg: '/products/touchspin/touchspin-bg.png',
+                    status: 'past',
+                    slug: '/products/touchspin/',
+                    color: '#17265F',
+                    class: 'touchspin',
+                    type: 'Product Case Study'
+                  },
+                  {
+                    title: 'Tonara',
+                    description: 'Interactive sheet music',
+                    image: '/products/telos/telos-thumb.png',
+                    logo: '/products/tonara/tonara-logo.png',
+                    bg: '/products/touchspin/tonara-bg.png',
+                    status: 'past',
+                    slug: '/products/tonara/',
+                    color: '#4B6FFF',
+                    class: 'tonara',
                     type: 'Product Case Study'
                   }      
                 ];
@@ -251,6 +273,7 @@ const products = [
       padding: $spacing-sm;
       width: 100%;
       height: 100%;
+      mix-blend-mode: plus-lighter;
 
       img.logo {
         width: 100%;

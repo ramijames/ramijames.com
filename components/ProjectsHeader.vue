@@ -11,7 +11,7 @@
   </section>
   <section class="project-details">
     <img :src="logo" :alt="project" />
-    <span>{{ project }}</span>
+    <!-- <span>{{ project }}</span> -->
   </section>
   
  </section>
@@ -54,7 +54,7 @@ const props = defineProps({
     gap: $spacing-xs;
 
     img {
-      width: 54px;
+      max-height: 44px;
     }
 
     span {

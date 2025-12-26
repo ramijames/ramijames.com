@@ -1,11 +1,17 @@
 <template>
 
-  <ProjectsHeader project="Telos OBE" logo="/products/telos/telos-logo.png" />
+  <ProjectsHeader project="Tonara" logo="tonara-logo.png" />
 
   <section class="w-full">
-    <img src="/products/telos/telos-mobile.png" alt="Telos OBE Home" class="single-product-image">
-    <img src="/products/telos/telos-obe-home.png" alt="Telos OBE Home" class="single-product-image">
-    <img src="/products/telos/telos-obe-various.png" alt="Telos OBE Various Screens" class="single-product-image">
+    <section class="product-images three-across">
+    <img src="/products/tonara/screen1.png" alt="TouchSpin" class="single-product-image">
+    <img src="/products/tonara/screen2.png" alt="TouchSpin" class="single-product-image">
+    <img src="/products/tonara/screen3.png" alt="TouchSpin" class="single-product-image">
+    </section>
+    <section class="product-images two-across">
+      <img src="/products/tonara/website.png" alt="" class="single-product-image">
+      <img src="/products/tonara/website2.png" alt="" class="single-product-image">
+    </section>
   </section>
 
   <MergedProjectsHeader />
