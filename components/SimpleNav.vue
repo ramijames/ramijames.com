@@ -112,13 +112,13 @@ const notHome = computed(() => {
   position: fixed;
   width: 140px;
   background: rgba($black, .8);
-  backdrop-filter: blur(28px);
+  backdrop-filter: blur(8px);
   z-index: 1000;
   top: 0;
   left: 0;
   bottom: 0;
   opacity:1;
-  transition: all 0.3s;
+  transition: background, opacity 0.6s ease-in-out;
 
   @media screen and (max-width: 1000px){
     top: 0;
@@ -136,8 +136,7 @@ const notHome = computed(() => {
   }
 
   &.hidden {
-    opacity:0.25;
-    mix-blend-mode:luminosity;
+    opacity: 1;
   }
 
   &.open {
@@ -178,9 +177,9 @@ const notHome = computed(() => {
       &::before {
         content: '';
         position: absolute;
-        top: 10px;
+        top: 12px;
         right: 0px;
-        width: 50px;
+        width: 30px;
         height: 2px;
         background: $white;
         transition: all 0.3s;
@@ -189,9 +188,9 @@ const notHome = computed(() => {
       &::after {
         content: '';
         position: absolute;
-        top: 20px;
+        top: 24px;
         right: 0px;
-        width: 50px;
+        width: 30px;
         height: 2px;
         background: $white;
         transition: all 0.3s;
@@ -200,11 +199,11 @@ const notHome = computed(() => {
       &:hover {
         
         &::before {
-          top: 6px;
+          top: 10px;
         }
 
         &::after {
-          top: 24px;
+          top: 28px;
         }
       }
 
@@ -309,7 +308,7 @@ const notHome = computed(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba($white, .6);
+  background: rgba($black, .6);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -323,13 +322,13 @@ const notHome = computed(() => {
       width: 40px;
       height: 40px;
       position: absolute;
-      top: $spacing-md;
-      right: $spacing-md;
+      top: $spacing-sm;
+      right: $spacing-sm;
       padding: 0;
       background: none;
       border: none;
-      margin-right: $spacing-xs;
-      margin-top: -8px;
+      margin-right: 6px;
+      margin-top: 6px;
 
       &::before {
         content: '';

@@ -3,7 +3,7 @@
     <section class="mega-hero">
       <section class="mega-title">
         <h1>Interface<br>Designer</h1>
-        <p>My name is Rami James and I work as a freelance user interface, user experience, interaction, and design professional.</p>
+        <p>My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.</p>
       </section>
       <button v-if="showOrientationButton" @click="requestOrientationPermission" class="orientation-button">
         Enable Tilt Effect
@@ -374,7 +374,7 @@ onUnmounted(() => {
       z-index: 0;
       transform-style: preserve-3d;
       transition: transform 0.3s ease-out;
-      mix-blend-mode: luminosity;
+      // mix-blend-mode: luminosity;
       -webkit-mask-image: linear-gradient(
                   to top, transparent 0%, black 60%);
             mask-image: linear-gradient(

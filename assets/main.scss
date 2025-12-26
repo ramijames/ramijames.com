@@ -368,8 +368,8 @@ ol {
 }
 
 hr {
-  margin: $spacing-lg auto;
-  width:100%;
+  margin: $spacing-lg + $spacing-sm $spacing-lg $spacing-lg;
+  width:calc(100% - $spacing-lg - $spacing-lg);
   border:0;
   border-top: $border;
   height: 1px;
@@ -723,6 +723,9 @@ img.in-article {
 .product-title {
   color: $white;
   text-align: center;
+  line-height: $font-size-lg;
+  font-size: $font-size-lg;
+  margin-top: -8px;
 }
 
     @media screen and (max-width: 768px) {
@@ -896,11 +899,11 @@ img.in-article {
     }
 
 .single-product-image {
-    margin: $spacing-lg 0;
+    margin: $spacing-sm $spacing-sm 0 $spacing-sm;
     outline: 1px solid rgba(0,0,0,0.06);
     outline-offset: -1px;
     border-radius: $br-sm;
-    width: 100%;
+    width: calc(100% - $spacing-sm - $spacing-sm);
 }
 
     .dark .single-product-image {
