@@ -111,7 +111,7 @@ function updateColumns() {
     COLUMNS.value = 16 // Small desktop
     isMobile.value = false
   } else {
-    COLUMNS.value = 22 // Large desktop
+    COLUMNS.value = 32 // Large desktop
     isMobile.value = false
   }
 }
@@ -336,19 +336,10 @@ onUnmounted(() => {
 #Hero {
   width: 100%;
   position: relative;
-  background: linear-gradient(120deg, transparent 30%, rgba($blue, 0.55));
-  // background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/desktop.jpg') no-repeat top right;
+  background-color: $black;
+  background: url('/desktop.jpg') no-repeat top right;
   background-size: cover;
   border-bottom: $border;
-
-  @media screen and (max-width: 1280px){
-    background-size: cover;
-  }
-
-  @media screen and (max-width: 1024px){
-    // background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/mobile.jpg') no-repeat top right;
-    background-size: cover;
-  }
 
   .mega-hero {
     display: flex;
@@ -373,11 +364,6 @@ onUnmounted(() => {
       z-index: 0;
       transform-style: preserve-3d;
       transition: transform 0.3s ease-out;
-      // mix-blend-mode: luminosity;
-      -webkit-mask-image: linear-gradient(
-                  to top, transparent 0%, black 60%);
-            mask-image: linear-gradient(
-                  to top, transparent 0%, black 60%);
 
       .grid-item {
         position: absolute;
@@ -395,44 +381,10 @@ onUnmounted(() => {
       }
     }
 
-    .blur {
-      position: absolute;
-      z-index: 0;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: blur(20px);
-      background: rbga($black, 0.1);
-
-       /* Default mask position (center) */
-      --mx: 50%;
-      --my: 50%;
-
-      /* Soft circular reveal */
-      -webkit-mask-image: radial-gradient(
-        circle 320px at var(--mx) var(--my),
-        rgba(0,0,0,0) 0%,
-        rgba(0,0,0,0.1) 40%,
-        rgba(0,0,0,0.2) 65%,
-        rgba(0,0,0,1) 80%
-      );
-
-      mask-image: radial-gradient(
-        circle 320px at var(--mx) var(--my),
-        rgba(0,0,0,0) 0%,
-        rgba(0,0,0,0.2) 15%,
-        rgba(0,0,0,1) 80%
-      );
-
-      pointer-events: none;
-    }
-
     h1 {
         font-size: 6rem;
         line-height: 80%;
         z-index: 1;
-        text-shadow: -12px -20px 68px rgba($white, .36), 6px 10px 8px rgba($black, .6), 2px 4px 2px rgba($black, .6);
 
         @media screen and (max-width: 768px){
           font-size: 3rem;
