@@ -173,7 +173,7 @@ function updateScales(item) {
     // Reset to base values (which will be overridden by wave animation)
     gridItems.value.forEach(item => {
       item.baseScale = 1
-      item.baseOpacity = 0.1
+      item.baseOpacity = 0.5
     })
     return
   }
@@ -339,7 +339,6 @@ onUnmounted(() => {
   height: calc(90dvh - 100px);
   position: relative;
   background: linear-gradient(120deg, transparent 30%, rgba($blue, 0.55));
-  // background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/desktop.jpg') no-repeat top right;
   background-size: cover;
   border-bottom: $border;
   outline: rgba(0,0,0,0.2) solid;
@@ -379,11 +378,6 @@ onUnmounted(() => {
       z-index: 0;
       transform-style: preserve-3d;
       transition: transform 0.3s ease-out;
-      // mix-blend-mode: luminosity;
-      -webkit-mask-image: linear-gradient(
-                  to top, transparent 0%, black 60%);
-            mask-image: linear-gradient(
-                  to top, transparent 0%, black 60%);
 
       .grid-item {
         position: absolute;
