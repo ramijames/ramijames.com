@@ -2,7 +2,7 @@
   <main id="Hero">
     <section class="mega-hero">
       <section class="mega-title">
-        <h1>Senior<br>Interface<br>Designer</h1>
+        <h1>Interface<br>Designer</h1>
         <p>My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.</p>
       </section>
       <button v-if="showOrientationButton" @click="requestOrientationPermission" class="orientation-button">
@@ -40,25 +40,24 @@
         </div>
       </section>
     </section>  
-  </main>
-
-  <section class="mega-content">
-    <h4>I've been lucky to work with</h4>
-    <section class="clients">
-      <img src="/clients/ibm.png" />
-      <img src="/clients/wpt.png" />
-      <img src="/clients/microsoft.png" />
-      <img src="/clients/nvidia.png" />
-      <img src="/clients/wix.png" />
-      <img src="/clients/ultra.png" />
-      <img src="/clients/equitick.png" />
-      <!-- <img src="/clients/zivav.png" /> -->
-      <img src="/clients/microgaming.png" />
-      <img src="/clients/qmarkets.png" />
-      <img src="/clients/tonara.png" />
+    <section class="mega-content">
+      <h4>I've been lucky to work with</h4>
+      <section class="clients">
+        <img src="/clients/ibm.png" />
+        <img src="/clients/wpt.png" />
+        <img src="/clients/microsoft.png" />
+        <img src="/clients/nvidia.png" />
+        <img src="/clients/wix.png" />
+        <img src="/clients/ultra.png" />
+        <img src="/clients/equitick.png" />
+        <!-- <img src="/clients/zivav.png" /> -->
+        <img src="/clients/microgaming.png" />
+        <img src="/clients/qmarkets.png" />
+        <img src="/clients/tonara.png" />
+      </section>
+      <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button shiny large">Become a client</a>  
     </section>
-    <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button shiny large">Become a client</a>  
-  </section>
+  </main>
 
   <section class="home-projects">
     <MergedProjects />
@@ -173,7 +172,7 @@ function updateScales(item) {
     // Reset to base values (which will be overridden by wave animation)
     gridItems.value.forEach(item => {
       item.baseScale = 1
-      item.baseOpacity = 0.5
+      item.baseOpacity = 0.1
     })
     return
   }
@@ -336,22 +335,18 @@ onUnmounted(() => {
 
 #Hero {
   width: 100%;
-  height: calc(90dvh - 100px);
   position: relative;
   background: linear-gradient(120deg, transparent 30%, rgba($blue, 0.55));
+  // background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/desktop.jpg') no-repeat top right;
   background-size: cover;
   border-bottom: $border;
-  outline: rgba(0,0,0,0.2) solid;
-  outline-width: 1px;
-  outline-width: 1px;
-  outline-offset: -$spacing-md;
 
   @media screen and (max-width: 1280px){
     background-size: cover;
   }
 
   @media screen and (max-width: 1024px){
-    outline-offset: -$spacing-sm;
+    // background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/mobile.jpg') no-repeat top right;
     background-size: cover;
   }
 
@@ -378,6 +373,11 @@ onUnmounted(() => {
       z-index: 0;
       transform-style: preserve-3d;
       transition: transform 0.3s ease-out;
+      // mix-blend-mode: luminosity;
+      -webkit-mask-image: linear-gradient(
+                  to top, transparent 0%, black 60%);
+            mask-image: linear-gradient(
+                  to top, transparent 0%, black 60%);
 
       .grid-item {
         position: absolute;
