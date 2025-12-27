@@ -149,13 +149,17 @@ const products = [
 
 #Products {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   position: relative;
   opacity: 0;
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0s;
 
+  @media screen and (max-width: 1600px){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
   @media screen and (max-width: 1180px){
     grid-template-columns: 1fr 1fr;
   }
