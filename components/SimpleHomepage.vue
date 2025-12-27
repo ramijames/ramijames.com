@@ -2,7 +2,7 @@
   <main id="Hero">
     <section class="mega-hero">
       <section class="mega-title">
-        <h1>Senior<br>Interface<br>Designer</h1>
+        <h1>Principal<br>Product<br>Designer</h1>
         <p>My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.</p>
       </section>
       <button v-if="showOrientationButton" @click="requestOrientationPermission" class="orientation-button">
