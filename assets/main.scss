@@ -605,8 +605,8 @@ input {
     }
 
     .summary {
-      background-color: $white-dark;
-      border-radius: $br-lg;
+      border: $border;
+      border-radius: $br-md;
       width: 100%;
       padding: $spacing-lg;
       margin: $spacing-lg 0;

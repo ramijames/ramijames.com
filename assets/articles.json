@@ -4,7 +4,7 @@
     "date": "2025-03-09",
     "slug": "a-committed-year",
     "tags": [
-      "software development", "personal"
+      "technical"
     ],
     "summary": "A year ago, I committed to writing a bit of code every day. It's been a wild ride. Let's talk about what I've learned.",
     "image": "/articles/a-committed-year.png"
@@ -14,7 +14,7 @@
     "date": "2025-02-06",
     "slug": "reading-documentation-effectively",
     "tags": [
-      "software development", "documentation", "technical writing"
+      "technical"
     ],
     "summary": "Reading documentation is a skill that can be learned. Let's talk about how to do it effectively so that you retain the most knowledge in the shortest amount of time.",
     "image": "/articles/reading-documentation-effectively.png"
@@ -24,7 +24,7 @@
     "date": "2025-02-06",
     "slug": "why-developer-relations-matters",
     "tags": [
-      "software development", "developer relations", "growth", "engagement", "devrel"
+      "technical"
     ],
     "summary": "Developer Relations is a key part of any software company's growth strategy. Let's talk about how to build a successful DevRel program.",
     "image": "/articles/devrel-matters.png"
@@ -34,7 +34,7 @@
     "date": "2025-02-04",
     "slug": "use-verbose-comments",
     "tags": [
-      "comments", "code", "documentation", "software development"
+      "technical"
     ],
     "summary": "Migrations are the traditional way to manage the structure of your database. Supabase has a great way to manage migrations and we'll see how to use them in this article.",
     "image": "/articles/comments-in-code.png"
@@ -44,7 +44,7 @@
     "date": "2025-02-01",
     "slug": "quick-walkthrough-using-supabase-migrations",
     "tags": [
-      "icloud", "storage", "apple", "dropbox"
+      "technical"
     ],
     "summary": "Migrations are the traditional way to manage the structure of your database. Supabase has a great way to manage migrations and we'll see how to use them in this article.",
     "image": "/articles/supabase-migrations.png"
@@ -54,7 +54,7 @@
     "date": "2025-01-26",
     "slug": "on-using-icloud-drive-for-storage",
     "tags": [
-      "icloud", "storage", "apple", "dropbox"
+      "technical"
     ],
     "summary": "iCloud is a good way to replicate your files remotes so that, in the case of a catastrophe, you will not have complete data loss. For Mac users it has great integration and I recommend using it.",
     "image": "/articles/using-icloud.png"
@@ -64,7 +64,7 @@
     "date": "2024-06-12",
     "slug": "supabase-email-authentication-with-google-workspace",
     "tags": [
-      "supabase", "email-authentication", "google-workspace", "oauth", "vue"
+      "technical"
     ],
     "summary": "Supabase recently released a new feature that allows you to authenticate users with Google Workspace. Let's see how we can implement this in a Vue.js application.",
     "image": "/labs/supabase-email-authentication.png"
@@ -74,7 +74,7 @@
     "date": "2024-06-12",
     "slug": "css-mesh-gradients",
     "tags": [
-      "css", "gradients", "mesh-gradients", "ios", "apple"
+      "technical"
     ],
     "summary": "Apple recently released Mesh Gradients as a feature for iOS development. Let's see if we can replicate this in CSS.",
     "image": "/labs/gradient-mesh.png"
@@ -84,7 +84,7 @@
     "date": "2024-06-20",
     "slug": "how-to-make-product-decisions-based-on-business-needs",
     "tags": [
-      "product-first", "economics", "pricing"
+      "design"
     ],
     "summary": "It can be difficult to make moral decisions when it comes to developing your product. Let's talk about how to make product decisions based on business needs.",
     "image": "/articles/on-ethical-pricing.png"
@@ -94,7 +94,7 @@
     "date": "2024-04-03",
     "slug": "asking-for-help-is-a-core-skill",
     "tags": [
-      "software development"
+      "technical"
     ],
     "summary": "Intentionally or otherwise, I've been blowing up my life since last summer. It’s been less than ideal. We'll get to why in a second, but first, let's talk about everyone's favorite awful programming language and the impact of package managers, their packages, and the endless toil they create.",
     "image": "/articles/ask-for-help.png"
@@ -104,9 +104,7 @@
     "date": "2024-02-26",
     "slug": "package-dependency-hell",
     "tags": [
-      "personal",
-      "kids",
-      "software development"
+      "personal"
     ],
     "summary": "Intentionally or otherwise, I've been blowing up my life since last summer. It’s been less than ideal. We'll get to why in a second, but first, let's talk about everyone's favorite awful programming language and the impact of package managers, their packages, and the endless toil they create.",
     "image": "/articles/package-dependency-hell.png"
@@ -116,8 +114,7 @@
     "date": "2024-02-13",
     "slug": "peak-software-abuse",
     "tags": [
-      "web3",
-      "software development"
+      "technical"
     ],
     "summary": "My thoughts on how software gets worse because of profit incentives, and how the core reason NFTs are a failure is that they are used badly by the businesses that use them.",
     "image": "/articles/peak-software-abuse.png"
@@ -127,9 +124,7 @@
     "date": "2024-01-10",
     "slug": "the-work-structure-spectrum",
     "tags": [
-      "startups",
-      "agile",
-      "software development"
+      "technical"
     ],
     "summary": "Working on an Agile team can really suck. But, why? No structure at all sucks way more. We should talk about that, too.",
     "image": "/articles/work-structure-spectrum.png"
@@ -139,9 +134,7 @@
     "date": "2024-01-10",
     "slug": "quantifying-your-documentations-success",
     "tags": [
-      "documentation",
-      "technical writing",
-      "software development"
+      "technical"
     ],
     "summary": "The primary challenge faced by technical writers often boils down to how to evaluate the effectiveness of what you write. You build some documentation and you think it is great. How do you know if you are right? How do you prove it to upper management? How do you really, really know?",
     "image": "/articles/quantifying.png"
@@ -151,9 +144,7 @@
     "date": "2024-01-06",
     "slug": "neurodiversity-as-software-incompatibility",
     "tags": [
-      "parenting",
-      "kids",
-      "software development"
+      "personal"
     ],
     "summary": "My days are taken up by thinking about two things: my kids and software. With neurodiverse kids, I think that they way we interact with them is akin to an API without documentation.",
     "image": "/articles/neurodiversity.png"
@@ -163,9 +154,7 @@
     "date": "2024-01-05",
     "slug": "types-of-interview-scams",
     "tags": [
-      "scams",
-      "job hunt",
-      "security"
+      "personal"
     ],
     "summary": "There are many ways that scammers are using sites like LinkedIn and Twitter to attack desperate job seekers. I got scammed and here’s a detailed set of warnings and defenses.",
     "image": "/articles/types-of-interview-scams.png"
@@ -175,8 +164,7 @@
     "date": "2024-01-02",
     "slug": "how-to-iterate-relentlessly",
     "tags": [
-      "startups",
-      "product development"
+      "design"
     ],
     "summary": "It’s immensely hard to get traction for your product, and that is often because you’ve built the wrong thing and nobody wants to use that. Here’s a better process.",
     "image": "/articles/iterate-relentlessly.png"
@@ -186,9 +174,7 @@
     "date": "2023-12-27",
     "slug": "docs-deserve-more-respect",
     "tags": [
-      "documentation",
-      "technical writing",
-      "software development"
+      "technical"
     ],
     "summary": "A plea for more respect for documentation and technical writing in the software development industry.",
     "image": "/articles/docs-deserve-respect.png"
