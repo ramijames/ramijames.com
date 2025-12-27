@@ -40,24 +40,25 @@
         </div>
       </section>
     </section>  
-    <section class="mega-content">
-      <h4>I've been lucky to work with</h4>
-      <section class="clients">
-        <img src="/clients/ibm.png" />
-        <img src="/clients/wpt.png" />
-        <img src="/clients/microsoft.png" />
-        <img src="/clients/nvidia.png" />
-        <img src="/clients/wix.png" />
-        <img src="/clients/ultra.png" />
-        <img src="/clients/equitick.png" />
-        <!-- <img src="/clients/zivav.png" /> -->
-        <img src="/clients/microgaming.png" />
-        <img src="/clients/qmarkets.png" />
-        <img src="/clients/tonara.png" />
-      </section>
-      <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button shiny large">Become a client</a>  
-    </section>
   </main>
+
+  <section class="mega-content">
+    <h4>I've been lucky to work with</h4>
+    <section class="clients">
+      <img src="/clients/ibm.png" />
+      <img src="/clients/wpt.png" />
+      <img src="/clients/microsoft.png" />
+      <img src="/clients/nvidia.png" />
+      <img src="/clients/wix.png" />
+      <img src="/clients/ultra.png" />
+      <img src="/clients/equitick.png" />
+      <!-- <img src="/clients/zivav.png" /> -->
+      <img src="/clients/microgaming.png" />
+      <img src="/clients/qmarkets.png" />
+      <img src="/clients/tonara.png" />
+    </section>
+    <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button shiny large">Become a client</a>  
+  </section>
 
   <section class="home-projects">
     <MergedProjects />
@@ -335,18 +336,23 @@ onUnmounted(() => {
 
 #Hero {
   width: 100%;
+  height: calc(90dvh - 100px);
   position: relative;
   background: linear-gradient(120deg, transparent 30%, rgba($blue, 0.55));
   // background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/desktop.jpg') no-repeat top right;
   background-size: cover;
   border-bottom: $border;
+  outline: rgba(0,0,0,0.2) solid;
+  outline-width: 1px;
+  outline-width: 1px;
+  outline-offset: -$spacing-md;
 
   @media screen and (max-width: 1280px){
     background-size: cover;
   }
 
   @media screen and (max-width: 1024px){
-    // background:  linear-gradient(-120deg, transparent 80%, rgba($blue, 0.15)), url('/mobile.jpg') no-repeat top right;
+    outline-offset: -$spacing-sm;
     background-size: cover;
   }
 
@@ -357,10 +363,10 @@ onUnmounted(() => {
     gap: $spacing-sm;
     padding: $spacing-md;
     position: relative;
-    height: calc(100vh - 100px); // Minus the height of mega-content
+    height: calc(90dvh - 100px); // Minus the height of mega-content
 
     @media screen and (max-width: 768px){
-      height: 600px;
+      height: 500px;
     }
 
     .grid-background {
@@ -435,7 +441,7 @@ onUnmounted(() => {
         text-shadow: -12px -20px 68px rgba($white, .36), 6px 10px 8px rgba($black, .6), 2px 4px 2px rgba($black, .6);
 
         @media screen and (max-width: 768px){
-          font-size: $font-size-xl;
+          font-size: 3rem;
         }
       }
 
@@ -445,20 +451,20 @@ onUnmounted(() => {
       }
 
       p {
-        font-size: $font-size-xl;
-        line-height: $font-size-xl;
+        font-size: $font-size-lg;
+        line-height: $font-size-lg;
         font-family: $font-family-main;
         font-weight: 200;
         max-width: 600px;
         text-wrap: balance;
         color: $white;
-        opacity: 0.6;
+        opacity: 0.8;
         text-shadow: -20px -100px 800px rgba($red, 0.4), 1px 1px 2px rgba($black, 1);
 
         @media screen and (max-width: 1180px){
           max-width: 65%;
-          font-size: $font-size-md;
-          line-height: $font-size-md;
+          font-size: $font-size-lg;
+          line-height: $font-size-lg;
         }
       }
 
@@ -537,7 +543,7 @@ onUnmounted(() => {
   @media screen and (max-width: 1000px){
     flex-direction: column;
     height: auto;
-    padding: $spacing-xl $spacing-lg;
+    padding: $spacing-lg $spacing-md;
   }
 
   &:after {
@@ -561,6 +567,12 @@ onUnmounted(() => {
   h4 {
     margin: 0;
     text-wrap: nowrap;
+    opacity: 0.8;
+    font-size: $font-size-lg;
+
+    @media screen and (max-width: 1000px){
+      display: none;
+    }
   }
 
   .clients {

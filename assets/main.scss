@@ -398,8 +398,8 @@ p > strong {
   padding: 0 $spacing-md;
 
   @media screen and (max-width: 1000px) {
-    margin: $spacing-lg auto;
-    padding: 0 $spacing-md;
+    margin: 0 auto;
+    padding: 0;
   }
 }
 

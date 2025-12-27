@@ -162,7 +162,6 @@ const products = [
   
   @media screen and (max-width: 768px){
     padding: 0;
-    grid-template-columns: 1fr;
   }
 
   .project {
@@ -179,6 +178,10 @@ const products = [
     transition: all 0.3s ease-in-out;
     padding: 0;
     overflow: hidden;
+
+    @media screen and (max-width: 1024px){
+      height: 200px;
+    }
 
     .preview {
       position: absolute;
@@ -278,6 +281,10 @@ const products = [
       img.logo {
         width: 100%;
         max-width: 100px;
+
+        @media screen and (max-width: 1024px){
+          max-width: 60px;
+        }
       }
 
       @media screen and (max-width: 768px){
