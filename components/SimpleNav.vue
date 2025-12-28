@@ -133,7 +133,7 @@ const notHome = computed(() => {
   position: fixed;
   width: 140px;
   background: linear-gradient(120deg, transparent 30%, rgba($blue, 0.1));
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(58px);
   z-index: 1000;
   top: 0;
   left: 0;

@@ -1,7 +1,28 @@
 <template>
   <main id="Hero">
+    <img 
+      src="/homepage/figure1.png" 
+      class="figure-one"
+      :style="{ transform: `translateY(${parallaxOffsets.figure1}px)` }"
+    >
+    <img 
+      src="/homepage/figure2.png" 
+      class="figure-two"
+      :style="{ transform: `translateY(${parallaxOffsets.figure2}px)` }"
+    >
+    <img 
+      src="/homepage/figure3.png" 
+      class="figure-three"
+      :style="{ transform: `translateY(${parallaxOffsets.figure3}px)` }"
+    >
+    <img 
+      src="/homepage/figure4.png" 
+      class="figure-four"
+      :style="{ transform: `translateY(${parallaxOffsets.figure4}px)` }"
+    >
     <section class="mega-hero">
       <section class="mega-title">
+        <img src="/homepage/rami-intro.png">
         <h1>Principal<br>Product<br>Designer</h1>
         <p>My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.</p>
         <section class="button-set">
@@ -75,6 +96,14 @@ const tiltX = ref(0)
 const tiltY = ref(0)
 const isMobile = ref(false)
 const showOrientationButton = ref(false)
+
+// Parallax scroll offsets
+const parallaxOffsets = reactive({
+  figure1: 0,
+  figure2: 0,
+  figure3: 0,
+  figure4: 0
+})
 
 // Calculate responsive column count
 function updateColumns() {
@@ -226,6 +255,19 @@ function handleMouseMove(e) {
   tiltX.value = ((centerY - mouseY) / centerY) * maxTilt
 }
 
+// Parallax scroll handler
+function handleScroll() {
+  const scrollY = window.scrollY
+  
+  // Different parallax speeds for each figure
+  // Negative values move up, positive values move down
+  // Higher absolute values = faster movement
+  parallaxOffsets.figure1 = scrollY * 0.3  // Moves down slowly
+  parallaxOffsets.figure2 = scrollY * -0.2 // Moves up slowly
+  parallaxOffsets.figure3 = scrollY * 0.4  // Moves down faster
+  parallaxOffsets.figure4 = scrollY * -0.15 // Moves up very slowly
+}
+
 onMounted(() => {
   nextTick(() => {
     updateColumns()
@@ -234,11 +276,13 @@ onMounted(() => {
   })
   window.addEventListener('resize', calculateGridItems)
   window.addEventListener('mousemove', handleMouseMove)
+  window.addEventListener('scroll', handleScroll, { passive: true })
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', calculateGridItems)
   window.removeEventListener('mousemove', handleMouseMove)
+  window.removeEventListener('scroll', handleScroll)
   if (waveAnimationFrame) {
     cancelAnimationFrame(waveAnimationFrame)
   }
@@ -258,6 +302,72 @@ onUnmounted(() => {
   background-size: cover;
   border-bottom: $border;
 
+  .figure-one {
+    position: absolute;
+    top: -200px;
+    right: 200px;
+    z-index:10;
+    width: 15%;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+    max-width: 200px;
+    filter:blur(15px);
+    pointer-events: none;
+
+    @media screen and (max-width: 1000px){
+      display: none;
+    }
+  }
+
+  .figure-two {
+    position: absolute;
+    top: 24%;
+    right: 12%;
+    z-index:10;
+    width: 20%;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+    max-width: 200px;
+    pointer-events: none;
+
+    @media screen and (max-width: 1000px){
+      display: none;
+    }
+  }
+
+  .figure-three {
+    position: absolute;
+    top: 20%;
+    right: 40px;
+    z-index:9;
+    width: 20%;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+    max-width: 200px;
+    filter:blur(15px);
+    pointer-events: none;
+
+    @media screen and (max-width: 1000px){
+      display: none;
+    }
+  }
+
+  .figure-four {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    z-index:10;
+    width: 25%;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+    max-width: 200px;
+    pointer-events: none;
+
+    @media screen and (max-width: 1000px){
+      display: none;
+    }
+  }
+
   .mega-hero {
     display: flex;
     flex-direction: column;
@@ -269,7 +379,7 @@ onUnmounted(() => {
     overflow: hidden;
 
     @media screen and (max-width: 768px){
-      height: 500px;
+      height: calc(100dvh - 120px);
     }
 
     .grid-background {
@@ -339,6 +449,14 @@ onUnmounted(() => {
         bottom: $spacing-xl;
         left: $spacing-xl;
         z-index:1;
+
+        img {
+          width: 200px;
+
+          @media screen and (max-width: 768px){
+            width: 120px;
+          }
+        }
 
         @media screen and (max-width: 1200px){
           bottom: $spacing-lg;
