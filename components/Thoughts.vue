@@ -1,8 +1,6 @@
 <template>
   
   <div class="thoughts-container">
-    <h2>Thoughts</h2>
-    <hr>
     <div v-for="(articles, category) in categorizedArticles" :key="category" class="category-section">
       <h3 class="category-title">{{ category }}</h3>
       <div class="articles-grid">

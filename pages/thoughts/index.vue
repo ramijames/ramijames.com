@@ -1,4 +1,5 @@
 <template>
+  <PageHeader title="Thoughts" />
   <Thoughts :articles="articles" />
   <PostsExtras />
   <Footer />

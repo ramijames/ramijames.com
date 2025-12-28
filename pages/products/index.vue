@@ -1,4 +1,5 @@
 <template>
+  <PageHeader title="Product Case Studies" tagline="Get a deeper understanding of how I can help you through previous work that I've done." />
   <Projects />
   <Footer />
 </template>

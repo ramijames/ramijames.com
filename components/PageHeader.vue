@@ -1,17 +1,10 @@
 <template>
-  <main id="Hero">
+  <main class="page-header">
     <section class="mega-hero">
       <section class="mega-title">
-        <h1>Principal<br>Product<br>Designer</h1>
-        <p>My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.</p>
-        <section class="button-set">
-          <nuxt-link to="/products" class="button blue">Browse case studies</nuxt-link>  
-          <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button shiny">Become a client</a>  
-        </section>
+        <h2>{{ title }}</h2>
+        <p>{{ tagline }}</p>
       </section>
-      <button v-if="showOrientationButton" @click="requestOrientationPermission" class="orientation-button">
-        Enable Tilt Effect
-      </button>
       <section 
         class="grid-background"
         :style="{
@@ -43,24 +36,19 @@
           </svg>
         </div>
       </section>
-    </section>  
-    
-    <Clients />
-
-    <section id="Reasons">
-      <VisibleThought />
-      <PartnerNotVendor />
     </section>
 
-    <Testimonials />
-
   </main>
-  
 </template>
 
 <script setup>
 
 import { ref, onMounted, onUnmounted, reactive, nextTick } from 'vue'
+
+const props = defineProps({
+  title: String,
+  tagline: String
+});
 
 const COLUMNS = ref(32)
 const GAP = 0
@@ -250,7 +238,7 @@ onUnmounted(() => {
 @import './assets/variables';
 @import './assets/animation';
 
-#Hero {
+.page-header {
   width: 100%;
   position: relative;
   background-color: $black;
@@ -265,7 +253,7 @@ onUnmounted(() => {
     gap: $spacing-sm;
     padding: $spacing-md;
     position: relative;
-    height: calc(100dvh - 80px);
+    height: calc(50dvh - 80px);
     overflow: hidden;
 
     @media screen and (max-width: 768px){
@@ -301,19 +289,29 @@ onUnmounted(() => {
       }
     }
 
-    h1 {
-        font-size: 6rem;
-        line-height: 80%;
-        z-index: 1;
+    .mega-title {
+      position: absolute;
+      bottom: $spacing-xl;
+      left: $spacing-xl;
+      z-index: 1;
 
-        @media screen and (max-width: 768px){
-          font-size: 3rem;
-        }
+      @media screen and (max-width: 1200px) {
+        bottom: $spacing-lg;
+        left: $spacing-lg;
+      }
+      
+      @media screen and (max-width: 768px) {
+        bottom: $spacing-md;
+        left: $spacing-md;
       }
 
-      @media screen and (max-width: 768px){
-        width: 100%;
-        margin: 0 auto;
+      h1 {
+        font-size: 6rem;
+        line-height: 80%;
+
+        @media screen and (max-width: 768px) {
+          font-size: 3rem;
+        }
       }
 
       p {
@@ -327,82 +325,19 @@ onUnmounted(() => {
         opacity: 0.8;
         text-shadow: -20px -100px 800px rgba($red, 0.4), 1px 1px 2px rgba($black, 1);
 
-        @media screen and (max-width: 1180px){
+        @media screen and (max-width: 1180px) {
           max-width: 65%;
           font-size: $font-size-lg;
           line-height: $font-size-lg;
         }
       }
 
-      .mega-title {
-        position: absolute;
-        bottom: $spacing-xl;
-        left: $spacing-xl;
-        z-index:1;
-
-        @media screen and (max-width: 1200px){
-          bottom: $spacing-lg;
-          left: $spacing-lg;
-        }
-        
-        @media screen and (max-width: 768px){
-          bottom: $spacing-md;
-          left: $spacing-md;
-        }
-
-        .button-set {
-          display: flex;
-          flex-direction: row;
-          gap: $spacing-sm;
-        }
-      }
-
-    .orientation-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 100;
-      padding: $spacing-md $spacing-lg;
-      background: rgba($white, 0.9);
-      color: $black;
-      border: 2px solid $blue;
-      border-radius: $br-md;
-      font-size: $font-size-md;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      pointer-events: all;
-
-      &:hover {
-        background: $blue;
-        color: $white;
-        transform: translate(-50%, -50%) scale(1.05);
-      }
-
-      &:active {
-        transform: translate(-50%, -50%) scale(0.95);
+      .button-set {
+        display: flex;
+        flex-direction: row;
+        gap: $spacing-sm;
       }
     }
-  }
-
-  h2 {
-    margin-top: 0;
-    line-height: 140%;
-
-    @media screen and (max-width: 768px){
-      font-size: $font-size-lg;
-    }
-  }
-
-}
-
-#Reasons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  @media screen and (max-width: 1000px) {
-    grid-template-columns: 1fr;
   }
 }
 
