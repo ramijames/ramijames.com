@@ -15,12 +15,12 @@ export default defineNuxtConfig({
       titleTemplate: '%s %separator %siteName',
       templateParams: {
         separator: '—',
-        siteName: 'Rami James'
+        siteName: 'Rami James - Principal Product Designer'
       },
       charset: 'utf-8',
       meta: [
         { name: 'author', content: 'Rami James' },
-        { name: 'description', content: 'My core focus over the last decade has been building technical tools that are easy to use and loved by developers. Much of that work has been developer advocacy and relations. I have developed some strong opinions on the right and wrong way to do things. You can read more about them here.' }
+        { name: 'description', content: 'My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.' }
       ],
     }
   },
