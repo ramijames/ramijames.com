@@ -1,6 +1,6 @@
 <template>
   <section id="Testimonials">
-    <div class="single-testimonial">
+    <div class="single-testimonial hide">
       <div class="user-image">
         <img src="/homepage/testimonials/jodi.png">
       </div>
@@ -9,7 +9,7 @@
         <div class="user-name">Jodi Benjamin</div>
       </div>
     </div>
-    <div class="single-testimonial">
+    <div class="single-testimonial hide">
       <div class="user-image">
         <img src="/homepage/testimonials/francine.png">
       </div>
@@ -27,7 +27,7 @@
         <div class="user-name">Dani Koesterich</div>
       </div>
     </div>
-    <div class="single-testimonial">
+    <div class="single-testimonial hide">
       <div class="user-image">
         <img src="/homepage/testimonials/michael.png">
       </div>
@@ -45,7 +45,7 @@
         <div class="user-name">Tamar Schoppik</div>
       </div>
     </div>
-    <div class="single-testimonial">
+    <div class="single-testimonial hide">
       <div class="user-image">
         <img src="/homepage/testimonials/gabe.png">
       </div>
@@ -54,7 +54,7 @@
         <div class="user-name">Gabriel Ehrlich</div>
       </div>
     </div>
-    <div class="single-testimonial">
+    <div class="single-testimonial hide">
       <div class="user-image">
         <img src="/homepage/testimonials/julian.png">
       </div>
@@ -63,7 +63,7 @@
         <div class="user-name">Julian Bewley</div>
       </div>
     </div>
-    <div class="single-testimonial">
+    <div class="single-testimonial hide">
       <div class="user-image">
         <img src="/homepage/testimonials/gopal.png">
       </div>
@@ -90,7 +90,7 @@
         <div class="user-name">Nicolas Bouillet</div>
       </div>
     </div>
-    <div class="single-testimonial">
+    <div class="single-testimonial hide">
       <div class="user-image">
         <img src="/homepage/testimonials/anna.png">
       </div>
@@ -116,7 +116,12 @@
   padding: $spacing-xl;
   background: rgba($blue, 0.05);
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1200px) {
+    padding: $spacing-md;
+    gap: 0;
+  }
+
+  @media screen and (max-width: 768px) {
     padding: $spacing-sm;
     gap: 0;
   }
@@ -130,6 +135,10 @@
 
     @media screen and (max-width: 1000px) {
       min-height: auto;
+
+      &.hide {
+        display: none;
+      }
     }
 
     .user-image img {
