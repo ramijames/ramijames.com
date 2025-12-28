@@ -1,6 +1,25 @@
 <template>
   
   <div class="thoughts-container">
+    <!-- Category Filter Pills -->
+    <div class="filter-container">
+      <button 
+        @click="selectedCategory = null"
+        :class="['filter-pill', { active: selectedCategory === null }]"
+      >
+        All
+      </button>
+      <button 
+        v-for="category in availableCategories" 
+        :key="category"
+        @click="selectedCategory = category"
+        :class="['filter-pill', { active: selectedCategory === category }]"
+      >
+        {{ category }}
+        <span class="count">{{ categorizedArticles[category].length }}</span>
+      </button>
+    </div>
+
     <div class="search-container">
       <input 
         v-model="searchQuery" 
@@ -17,7 +36,7 @@
           <path d="m21 21-4.35-4.35"></path>
         </svg>
         <h3>No articles found</h3>
-        <p>Try adjusting your search query</p>
+        <p>Try adjusting your search query or selected category</p>
       </div>
     </div>
 
@@ -44,6 +63,7 @@ const props = defineProps({
 });
 
 const searchQuery = ref('');
+const selectedCategory = ref(null);
 
 // Categorize articles by their tags
 const categorizedArticles = computed(() => {
@@ -73,16 +93,31 @@ const categorizedArticles = computed(() => {
   return categories;
 });
 
-// Filter articles based on search query
+// Get list of available categories sorted alphabetically
+const availableCategories = computed(() => {
+  return Object.keys(categorizedArticles.value).sort();
+});
+
+// Filter articles based on search query and selected category
 const filteredArticles = computed(() => {
+  let result = categorizedArticles.value;
+
+  // Filter by selected category first
+  if (selectedCategory.value) {
+    result = {
+      [selectedCategory.value]: result[selectedCategory.value]
+    };
+  }
+
+  // Then filter by search query
   if (!searchQuery.value.trim()) {
-    return categorizedArticles.value;
+    return result;
   }
 
   const query = searchQuery.value.toLowerCase();
   const filtered = {};
 
-  Object.entries(categorizedArticles.value).forEach(([category, articles]) => {
+  Object.entries(result).forEach(([category, articles]) => {
     // Check if category matches the search
     const categoryMatches = category.toLowerCase().includes(query);
     
@@ -155,6 +190,51 @@ const formatDate = (dateString) => {
 
 }
 
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-sm;
+}
+
+.filter-pill {
+  padding: 6px $spacing-xs 4px;
+  border: $border;
+  border-radius: $br-sm;
+  background: rgba($blue, 0.05);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  box-shadow: none;
+  color: rgba($white, 0.7);
+  font-family: $font-family-secondary;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &:hover {
+    background: rgba($blue, 0.1);
+    border-color: rgba($blue, 0.3);
+    color: $white;
+  }
+
+  &.active {
+    background: rgba($blue, 0.3);
+    border-color: rgba($blue, 0.5);
+    color: $white;
+  }
+
+  .count {
+    font-size: $font-size-xs;
+    background: rgba($white, 0.1);
+    padding: 2px 6px;
+    border-radius: 9999px;
+    min-width: 20px;
+    text-align: center;
+  }
+}
+
 .search-container {
   margin-bottom: $spacing-lg;
   width: 100%;
@@ -178,7 +258,6 @@ const formatDate = (dateString) => {
     outline: none;
     background: rgba($blue, 0.1);
     border-color: rgba($blue, 0.5);
-    box-shadow: 0 0 0 3px rgba($blue, 0.1);
   }
 }
 
@@ -247,7 +326,6 @@ const formatDate = (dateString) => {
 .article-card:hover {
   transform: translateY(-4px);
   background: rgba($blue, 0.2);
-  box-shadow: 0 10px 20px rgba($black, .8);
 }
 
 .article-content {
@@ -299,6 +377,6 @@ const formatDate = (dateString) => {
   padding: 0.25rem 0.75rem;
   background-color: #f3f4f6;
   color: #374151;
-  border-radius: 9999px;
+  border-radius: $br-sm;
 }
 </style>

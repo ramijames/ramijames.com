@@ -29,7 +29,7 @@
           <span>About</span>
         </nuxt-link>
       </div>
-      <a class="button blue contact" href="mailto:ramijames@gmail.com?subject=Set up a call">Contact</a>
+      <a class="button contact" href="mailto:ramijames@gmail.com?subject=Set up a call">Contact</a>
       <div 
         :class="['menu', state.mobileMenuOpen ]"
         @click="toggleMenu"
