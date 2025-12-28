@@ -116,12 +116,21 @@
   padding: $spacing-xl;
   background: rgba($blue, 0.05);
 
+  @media screen and (max-width: 1000px) {
+    padding: $spacing-sm;
+    gap: 0;
+  }
+
   .single-testimonial {
     min-height: 200px;
     padding: $spacing-sm;
     display: flex;
     flex-direction: row;
     gap: $spacing-sm;
+
+    @media screen and (max-width: 1000px) {
+      min-height: auto;
+    }
 
     .user-image img {
       width: 60px;
@@ -141,6 +150,10 @@
       font-size: $font-size-sm;
       line-height: 140%;
       max-width: 300px;
+
+      @media screen and (max-width: 1000px) {
+        max-width: 100%;
+      }
       
       .testimonial {
         opacity: 0.4;
