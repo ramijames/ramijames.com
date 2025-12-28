@@ -354,6 +354,12 @@ onUnmounted(() => {
           display: flex;
           flex-direction: row;
           gap: $spacing-sm;
+
+          @media screen and (max-width: 768px){
+            flex-direction: column;
+            gap: $spacing-xs;
+            align-items: flex-start;
+          }
         }
       }
 

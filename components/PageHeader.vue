@@ -3,7 +3,7 @@
     <section class="mega-hero">
       <section class="mega-title">
         <h2>{{ title }}</h2>
-        <p>{{ tagline }}</p>
+        <p v-if="tagline">{{ tagline }}</p>
       </section>
       <section 
         class="grid-background"
@@ -253,11 +253,11 @@ onUnmounted(() => {
     gap: $spacing-sm;
     padding: $spacing-md;
     position: relative;
-    height: calc(50dvh - 80px);
+    min-height: 40dvh;
     overflow: hidden;
 
-    @media screen and (max-width: 768px){
-      height: 500px;
+    @media screen and (max-width: 768px) {
+      min-height: 35dvh;
     }
 
     .grid-background {
@@ -301,8 +301,8 @@ onUnmounted(() => {
       }
       
       @media screen and (max-width: 768px) {
-        bottom: $spacing-md;
-        left: $spacing-md;
+        bottom: $spacing-sm;
+        left: $spacing-sm;
       }
 
       h1 {
@@ -312,6 +312,11 @@ onUnmounted(() => {
         @media screen and (max-width: 768px) {
           font-size: 3rem;
         }
+      }
+
+      h2 {
+        margin: 0;
+        line-height: 100%;
       }
 
       p {
@@ -327,8 +332,8 @@ onUnmounted(() => {
 
         @media screen and (max-width: 1180px) {
           max-width: 65%;
-          font-size: $font-size-lg;
-          line-height: $font-size-lg;
+          font-size: $font-size-md;
+          line-height: $font-size-md;
         }
       }
 

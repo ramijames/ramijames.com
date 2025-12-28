@@ -195,6 +195,10 @@ const formatDate = (dateString) => {
   flex-wrap: wrap;
   gap: $spacing-xs;
   margin-bottom: $spacing-sm;
+
+  @media screen and (max-width: 768px) {
+    gap: 4px;
+  }
 }
 
 .filter-pill {
@@ -212,6 +216,12 @@ const formatDate = (dateString) => {
   font-family: $font-family-secondary;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 11px;
+
+  @media screen and (max-width: 768px) {
+    letter-spacing: initial;
+    text-transform: initial;
+  }
 
   &:hover {
     background: rgba($blue, 0.1);
@@ -228,15 +238,17 @@ const formatDate = (dateString) => {
   .count {
     font-size: $font-size-xs;
     background: rgba($white, 0.1);
-    padding: 2px 6px;
+    padding: 3px 5px;
     border-radius: 9999px;
-    min-width: 20px;
+    min-width: 16px;
     text-align: center;
   }
 }
 
 .search-container {
-  margin-bottom: $spacing-lg;
+  margin-bottom: $spacing-sm;
+  padding-bottom: $spacing-sm;
+  border-bottom: $border;
   width: 100%;
 }
 
@@ -298,7 +310,7 @@ const formatDate = (dateString) => {
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
+    gap: $spacing-sm;
   }
 }
 
