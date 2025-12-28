@@ -4,6 +4,10 @@
       <section class="mega-title">
         <h1>Principal<br>Product<br>Designer</h1>
         <p>My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.</p>
+        <section class="button-set">
+          <nuxt-link to="/products" class="button blue">Browse case studies</nuxt-link>  
+          <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button shiny">Become a client</a>  
+        </section>
       </section>
       <button v-if="showOrientationButton" @click="requestOrientationPermission" class="orientation-button">
         Enable Tilt Effect
@@ -40,28 +44,21 @@
         </div>
       </section>
     </section>  
-    <section class="mega-content">
-      <h4>I've been lucky to work with</h4>
-      <section class="clients">
-        <img src="/clients/ibm.png" />
-        <img src="/clients/wpt.png" />
-        <img src="/clients/microsoft.png" />
-        <img src="/clients/nvidia.png" />
-        <img src="/clients/wix.png" />
-        <img src="/clients/ultra.png" />
-        <img src="/clients/equitick.png" />
-        <!-- <img src="/clients/zivav.png" /> -->
-        <img src="/clients/microgaming.png" />
-        <img src="/clients/qmarkets.png" />
-        <img src="/clients/tonara.png" />
-      </section>
-      <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button shiny large">Become a client</a>  
+    
+    <Clients />
+
+    <section id="Reasons">
+      <VisibleThought />
+      <PartnerNotVendor />
     </section>
+
+    <Testimonials />
+
   </main>
 
-  <MergedProjects />
+  <!-- <MergedProjects /> -->
 
-  <Thoughts :articles="selected_articles" />
+  <!-- <Thoughts :articles="selected_articles" /> -->
   
 </template>
 
@@ -88,16 +85,16 @@ const showOrientationButton = ref(false)
 function updateColumns() {
   const width = window.innerWidth
   if (width < 768) {
-    COLUMNS.value = 8 // Phone
+    COLUMNS.value = 6 // Phone
     isMobile.value = true
   } else if (width < 1024) {
-    COLUMNS.value = 12 // Tablet
+    COLUMNS.value = 8 // Tablet
     isMobile.value = true
   } else if (width < 1440) {
-    COLUMNS.value = 16 // Small desktop
+    COLUMNS.value = 12 // Small desktop
     isMobile.value = false
   } else {
-    COLUMNS.value = 32 // Large desktop
+    COLUMNS.value = 22 // Large desktop
     isMobile.value = false
   }
 }
@@ -190,7 +187,7 @@ function updateScales(item) {
 }
 
 function animateWaves() {
-  waveTime += 0.05 // Slow increment for ocean-like movement
+  waveTime += 0.025 // Slow increment for ocean-like movement
   
   gridItems.value.forEach(item => {
     // Create multiple overlapping sine waves for ocean effect
@@ -269,11 +266,12 @@ onUnmounted(() => {
   .mega-hero {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: $spacing-sm;
     padding: $spacing-md;
     position: relative;
-    height: calc(90dvh - 100px); // Minus the height of mega-content
+    height: calc(100dvh - 80px);
+    overflow: hidden;
 
     @media screen and (max-width: 768px){
       height: 500px;
@@ -289,6 +287,8 @@ onUnmounted(() => {
       z-index: 0;
       transform-style: preserve-3d;
       transition: transform 0.3s ease-out;
+      -webkit-mask-image: linear-gradient(black, transparent);
+      mask-image: linear-gradient(black, transparent);
 
       .grid-item {
         position: absolute;
@@ -341,20 +341,24 @@ onUnmounted(() => {
 
       .mega-title {
         position: absolute;
-        top: $spacing-xl;
+        bottom: $spacing-xl;
         left: $spacing-xl;
         z-index:1;
-        pointer-events: none;
 
-        @media screen and (max-width: 1024px){
-          top: $spacing-md;
+        @media screen and (max-width: 1200px){
+          bottom: $spacing-lg;
+          left: $spacing-lg;
+        }
+        
+        @media screen and (max-width: 768px){
+          bottom: $spacing-md;
           left: $spacing-md;
         }
 
-        @media screen and (max-width: 768px){
-          bottom: $spacing-md;
-          top: initial;
-          left: $spacing-md;
+        .button-set {
+          display: flex;
+          flex-direction: row;
+          gap: $spacing-sm;
         }
       }
 
@@ -398,215 +402,9 @@ onUnmounted(() => {
 
 }
 
-.mega-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: $spacing-md;
-  gap: $spacing-md;
-  width: 100%;
-  height: 100px;
-  background: $black;
-  border-top: $border;
-  position: relative;
-
-  @media screen and (max-width: 1000px){
-    flex-direction: column;
-    height: auto;
-    padding: $spacing-lg $spacing-md;
-  }
-
-  &:after {
-    content: '';
-    height: 100%;
-    width: 35%;
-    background: linear-gradient(90deg, transparent, $black);
-    display: block;
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    backdrop-filter:blur(10px);
-    mask-image: linear-gradient(90deg, transparent 0%, $black 40%);
-    pointer-events: none;
-
-    @media screen and (max-width: 1000px){
-      display: none;
-    }
-  }
-
-  h4 {
-    margin: 0;
-    text-wrap: nowrap;
-    opacity: 0.8;
-    font-size: $font-size-lg;
-
-    @media screen and (max-width: 1000px){
-      display: none;
-    }
-  }
-
-  .clients {
-    display: flex;
-    flex-direction: row;
-    gap: $spacing-md;
-
-    @media screen and (max-width: 1000px){
-      flex-wrap:wrap;
-      justify-content: center;
-    }
-
-    img {
-      height: 22px;
-      opacity: 0.4;
-      transition: 0.2s all ease-in-out;
-      mix-blend-mode:luminosity;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-
-  .button {
-    position: absolute;
-    z-index: 2;
-    right: $spacing-md;
-
-    @media screen and (max-width: 1000px){
-      position: relative;
-      right: auto;
-      z-index: initial;
-    }
-
-  }
-}
-
-#Writing {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: $spacing-lg;
-  background: rgba($blue, 0.1);
-
-  @media screen and (max-width: 768px){
-    flex-direction: column;
-    gap: $spacing-md;
-    padding: 0 $spacing-md;
-  }
-  
-  .writing-intro {
-    display: flex;
-    flex-direction: column;
-
-    ul {
-
-      li {
-        list-style: none;
-        margin-bottom: $spacing-md;
-
-        a {
-          text-decoration: none;
-          font-weight: bold;
-          font-size: $font-size-md;
-          color: $black;
-        }
-      }
-    }
-  }
-
-  .articles {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $spacing-sm;
-    width: 100%;
-  }
-
-      @media screen and (max-width: 1120px) {
-        .articles {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: $spacing-md;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-        .articles {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: $spacing-sm;
-          margin-bottom: $spacing-md;
-        }
-      }
-
-  .articles a {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: $font-size-lg;
-    text-align: center;
-    transition: all 0.35s ease-in-out;
-    position: relative;
-
-    .info {
-      width: 100%;
-      display:flex;
-      flex-direction: column;
-      padding: $spacing-sm 0;
-      text-wrap: balance;
-      text-align: left;
-
-      .title {
-        font-size: $font-size-lg;
-        font-family: $font-family-main;
-      }
-
-      .description {
-        font-size: $font-size-sm;
-        font-family: $font-family-secondary;
-        line-height: $font-size-md * $multiplier; 
-        color: $white;
-        margin-top: $spacing-xs;
-        opacity: 0.6;
-        font-weight: normal;
-      }
-    }
-  }
-
-  
-}
-
-#RecentWork {
-  display: flex;
-  flex-direction: column;
-  margin: $spacing-lg auto;
-
-  .work-intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0 $spacing-md;
-
-    @media screen and (max-width: 768px){
-      padding: 0;
-    }
-  }
-
-  h3 {
-    padding: 0 $spacing-md;
-  }
-  
-  
-}
-
-.home-projects {
-
-  @media screen and (max-width: 768px){
-    padding: 0;
-  }
+#Reasons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 </style>

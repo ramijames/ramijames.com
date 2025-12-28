@@ -13,7 +13,7 @@
           <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.38586 0.690968C8.68521 -0.230343 9.98862 -0.230344 10.288 0.690966L11.8066 5.36473C11.9404 5.77675 12.3244 6.05571 12.7576 6.05571H17.6719C18.6406 6.05571 19.0434 7.29533 18.2597 7.86473L14.284 10.7533C13.9335 11.0079 13.7868 11.4593 13.9207 11.8713L15.4393 16.5451C15.7386 17.4664 14.6842 18.2325 13.9004 17.6631L9.9247 14.7746C9.57421 14.5199 9.09962 14.5199 8.74913 14.7746L4.77339 17.6631C3.98968 18.2325 2.9352 17.4664 3.23455 16.5451L4.75314 11.8713C4.88702 11.4593 4.74036 11.0079 4.38987 10.7533L0.414135 7.86473C-0.369579 7.29533 0.0331966 6.05571 1.00192 6.05571H5.9162C6.34943 6.05571 6.73339 5.77675 6.86726 5.36473L8.38586 0.690968Z" fill="white"/>
           </svg>
-          <span>Work</span>
+          <span>Products</span>
         </nuxt-link>
         <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']">
           <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@
     <div class="close" @click="closeMenu"></div>
     <section class="mobile-nav-panel-links">
       <nuxt-link to="/" @click="closeMenu">Home</nuxt-link>
-      <nuxt-link to="/products" @click="closeMenu">Recent Work</nuxt-link>
+      <nuxt-link to="/products" @click="closeMenu">Products</nuxt-link>
       <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
       <nuxt-link to="/about" @click="closeMenu">About</nuxt-link>
       <a href="mailto:ramijames@gmail.com" @click="closeMenu">Contact</a>
@@ -250,7 +250,7 @@ const notHome = computed(() => {
         animation: fadeInDown 0.2s ease-in-out forwards;
         transition: all 0.3s;
         overflow: hidden;
-        font-size: 11px;
+        font-size: 9px;
         font-weight: 500;
         width: 100px;
         border-radius: $br-sm;
@@ -310,8 +310,8 @@ const notHome = computed(() => {
         &.router-link-exact-active,
         &.router-link-active {
           color: $white;
-          border: 1px solid $red;
-          background: rgba($red,0.5);
+          border: 1px solid $blue;
+          background: rgba($blue,0.75);
         }
       }
     }

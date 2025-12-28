@@ -1,21 +1,21 @@
 <template>
   <footer>
-    <div class="footer-content ">
+    <div class="footer-content w-full">
       <div class="footer-links">
-        <nuxt-link href="/" v-if="notHome">Home</nuxt-link>
-        <nuxt-link href="/thoughts">Thoughts</nuxt-link>
-        <!-- <nuxt-link href="/illustrations">Illustrations</nuxt-link> -->
-        <nuxt-link href="/products">Recent Work</nuxt-link>
-        <nuxt-link href="/about">About</nuxt-link>
+        <section class="footer-social">
+          <a href="https://github.com/ramijames"><img src="/github-dark.svg" alt="Github" /></a>
+          <a href="https://www.linkedin.com/in/rami-james/"><img src="/linkedin-dark.svg" alt="LinkedIn" /></a>
+          <a href="mailto:ramijames@gmail.com"><img src="/mail-dark.svg" alt="Send Rami an email" /></a>
+        </section>
+        <nuxt-link class="link" href="/" v-if="notHome">Home</nuxt-link>
+        <nuxt-link class="link" href="/thoughts">Thoughts</nuxt-link>
+        <nuxt-link class="link" href="/products">Recent Work</nuxt-link>
+        <nuxt-link class="link" href="/about">About</nuxt-link>
+        <nuxt-link class="link" href="/privacy-policy">Privacy</nuxt-link>
+        <nuxt-link class="link" href="/terms-and-conditions">Terms</nuxt-link>
       </div>
-      <div class="footer-links" v-if="notHome">
-        <nuxt-link href="/privacy-policy" class="dim">Privacy Policy</nuxt-link>
-        <nuxt-link href="/terms-and-conditions" class="dim">Terms & Conditions</nuxt-link>
-      </div>
-      <section class="footer-social">
-        <a href="https://github.com/ramijames"><img src="/github-dark.svg" alt="Github" /></a>
-        <a href="https://www.linkedin.com/in/rami-james/"><img src="/linkedin-dark.svg" alt="LinkedIn" /></a>
-        <a href="mailto:ramijames@gmail.com"><img src="/mail-dark.svg" alt="Send Rami an email" /></a>
+      <section class="copyright">
+        <span>&copy; Rami James 2003-2025</span>
       </section>
     </div>
   </footer>
@@ -71,51 +71,52 @@ export default {
 
 footer {
   width: 100%;
-  font-family: $font-family-main;
+  font-family: $font-family-secondary;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: flex-start;
   background-color: $black;
-  border-top: $border;
+  border-bottom: $border;
 
   @media screen and (max-width: 768px){
     align-items: center;
-  }
-
-  .general-main {
-    padding-top: 0;
-    position: relative;
-
-    @media screen and (max-width: 768px){
-      border-left: none;
-      border-right: none;
-    }
+    flex-direction: column;
+    border-bottom: none;
   }
 
   .footer-content {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: $spacing-lg 0;
-    width: 100%;
-    gap: $spacing-lg;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
 
     @media screen and (max-width: 768px){
       align-items: center;
+      flex-direction: column;
     }
+  }
+
+  .copyright {
+    font-size: 11px;
+    opacity: 0.3;
+    padding: $spacing-sm;
   }
 
   .footer-links {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: $spacing-lg;
-    margin-bottom: $spacing-lg;
-    margin: 0 auto;
-    opacity: 0.5;
-    transition: opacity 0.5s ease-in-out;
+    align-items: center;
+    gap: $spacing-md;
+    opacity: 0.7;
+    
+    @media screen and (max-width: 768px){
+      .link {
+        display: none;
+      }
+    }
     
     &:hover {
       opacity: 1;
@@ -127,17 +128,23 @@ footer {
       align-items: center;
       gap: $spacing-sm;
       opacity: 1;
+      width: 100%;
     }
 
     a {
       text-decoration: none;
       color: $white;
       font-size: $font-size-sm;
-      border-bottom: 2px solid transparent;
       transition: all 0.5s ease-in-out;
+      font-size: 9px;
+      font-weight: 500;
+      color: rgba($white, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: $spacing-sm 0;
 
       &:hover {
-        border-bottom: 2px solid $blue;
+        color: rgba($white, 1);
       }
 
     }
@@ -147,21 +154,20 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: $spacing-lg;
-    margin: 0 auto;
-    opacity: 0.5;
+    gap: $spacing-md;
     transition: opacity 0.5s ease-in-out;
+    border-right: $border;
+    padding-right: $spacing-md;
+
+    @media screen and (max-width: 768px){
+      border-right: none;
+      padding: 0 $spacing-md;
+      border-bottom: $border;
+      width: 100%;
+    }
     
     &:hover {
       opacity: 1;
-    }
-
-    @media screen and (max-width: 1000px){
-      opacity: 1;
-    }
-
-    @media screen and (max-width: 768px){
-      gap: 10vw;
     }
 
     a {

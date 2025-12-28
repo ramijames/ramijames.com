@@ -74,18 +74,18 @@ button,
 
       --border_width: 1px; 
 
-      --metal_01: #E79752;  
-      --metal_02: #E79752; 
+      --metal_01: #7a52e7;  
+      --metal_02: #fad2b0; 
       --metal_03: #3d51a0; 
       --metal_04: #A7B8FC; 
-      --metal_05: #E79752; 
-      --metal_06: #E79752;  
+      --metal_05: #5295e7; 
+      --metal_06: #7a52e7;  
 
       position: relative;
       border: var(--border_width) solid transparent; 
       background: linear-gradient(0deg,
-                  rgb(128 86 60 / 1.0),
-                  rgb(128 86 60 / 1.0)) padding-box, 
+                  rgb(89,98,151),
+                  rgb(110,124,189)) padding-box, 
                   conic-gradient(from var(--gradient_rotate),
                   rgb(from var(--metal_01) r g b / 0.85),
                   rgb(from var(--metal_01) r g b / 1.0),
@@ -210,8 +210,8 @@ h1 {
 
 h2 { 
   font-size: $font-size-xxl;
-  line-height: 140%; 
-  margin-bottom: $spacing-md;
+  line-height: $font-size-xxl;
+  margin-bottom: $spacing-xs;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
