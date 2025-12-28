@@ -242,7 +242,6 @@ onUnmounted(() => {
   width: 100%;
   position: relative;
   background-color: $black;
-  background: url('/desktop.jpg') no-repeat top right;
   background-size: cover;
   border-bottom: $border;
 

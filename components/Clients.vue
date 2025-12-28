@@ -33,6 +33,7 @@
   height: 100px;
   background: $black;
   border-top: $border;
+  border-bottom: $border;
   position: relative;
   margin-bottom:-1px;
 

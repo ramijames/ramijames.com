@@ -127,9 +127,9 @@ function calculateGridItems() {
         row: row,
         col: col,
         scale: 1,
-        opacity: 0.1,
+        opacity: 0.5,
         baseScale: 1,
-        baseOpacity: 0.1,
+        baseOpacity: 0.5,
         left: col * (itemWidth + GAP),
         top: row * (itemHeight + GAP),
         width: itemWidth,
@@ -173,7 +173,7 @@ function updateScales(item) {
       item.baseOpacity = 0.5
     } else if (distance === 3) {
       item.baseScale = 1 // Third ring
-      item.baseOpacity = 0.3
+      item.baseOpacity = 0.6
     } else {
       item.baseScale = 1 // Everything else
       item.baseOpacity = 0.1
@@ -254,7 +254,7 @@ onUnmounted(() => {
   width: 100%;
   position: relative;
   background-color: $black;
-  background: url('/desktop.jpg') no-repeat top right;
+  // background: url('/desktop.jpg') no-repeat top right;
   background-size: cover;
   border-bottom: $border;
 

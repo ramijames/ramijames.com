@@ -156,6 +156,7 @@ const products = [
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0s;
   border-bottom: $border;
+  background-color: $blue;
 
   @media screen and (max-width: 1600px){
     grid-template-columns: 1fr 1fr 1fr;
@@ -212,6 +213,7 @@ const products = [
       mix-blend-mode: luminosity;
       transform: scale(1);
       transition: all 0.3s ease;
+      background-color: $blue;
     }
 
     &.scatter {
