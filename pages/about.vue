@@ -13,6 +13,16 @@
       <section class="resume">
         <section class="jobs">  
           <section class="single-job">
+            <p class="job-title">Rami James Design</p>
+            <p class="job-duration">2005 - Present</p>
+            <p class="job-subtitle">Contractor</p>
+            <ul class="job-descriptions">
+              <li v-for="(description, index) in contractor" :key="index">
+                {{ description }}
+              </li>
+            </ul>
+          </section>
+          <section class="single-job">
             <p class="job-title">Vewrite</p>
             <p class="job-duration">2024 - 2025</p>
             <p class="job-subtitle">Founder</p>
@@ -73,6 +83,12 @@ import Button from '/components/Button';
 export default {
   data() {
     return {
+      contractor :[
+        'Worked with multiple teams to produce beautiful, usable, and accessible interfaces for web and mobile',
+        'Provided key insights to small teams as they develop their product strategy, vision, user experiences, and designs',
+        'Helped fine-tune product processes in companies as they experience growing pains',
+        'Implemented front-end interfaces in a variety of modern frameworks'
+      ],
       vewrite :[
         'Building a project management tool for developer relations, technical writing teams, and writers',
         'Designing and implementing the product',
@@ -222,16 +238,17 @@ export default {
 .jobs {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
     .single-job {
       margin: 0;
       position: relative;
-      margin-bottom: $spacing-lg;
       display:flex;
       flex-direction: column;
       align-items: flex-start;
+      border-bottom: $border;
+      padding-bottom: $spacing-sm;
+      margin-bottom: $spacing-md;
     }
 
         .job-title {
@@ -254,6 +271,7 @@ export default {
           margin-bottom: $spacing-sm;
           font-size: $font-size-xs;
           line-height: 140%;
+          opacity: 0.6;
         }
 
         .job-descriptions li {
