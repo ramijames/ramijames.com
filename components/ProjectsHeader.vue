@@ -7,7 +7,7 @@
         <path d="M0.83252 7.36841H17.3454" stroke="white"/>
       </svg>
     </button>
-    <button class="small" @click="navigateTo('/products')">All projects</button>
+    <button class="small" @click="navigateTo('/products')">View all</button>
   </section>
   <section class="project-details">
     <img :src="logo" :alt="project" />

@@ -21,12 +21,6 @@ export default {
     return {
       socials: [
         {
-          name: 'Twitter',
-          icon: 'twitter-dark',
-          url: 'https://twitter.com/intent/tweet?url=',
-          message: 'Check out this article by @ramijames on'
-        },
-        {
           name: 'LinkedIn',
           icon: 'linkedin-dark',
           url: 'https://www.linkedin.com/feed/?shareActive=true&text=',

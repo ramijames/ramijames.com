@@ -7,7 +7,7 @@
         <path d="M0.83252 7.36841H17.3454" stroke="white"/>
       </svg>
     </button>
-    <button class="small" @click="navigateTo('/thoughts')">All thoughts</button>
+    <button class="small" @click="navigateTo('/thoughts')">View all</button>
   </section>
   <section class="thought-details">
     <Share :route="slug" :topic="title" />
