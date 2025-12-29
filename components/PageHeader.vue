@@ -330,7 +330,7 @@ onUnmounted(() => {
         text-shadow: -20px -100px 800px rgba($red, 0.4), 1px 1px 2px rgba($black, 1);
 
         @media screen and (max-width: 1180px) {
-          max-width: 65%;
+          max-width: 100%;
           font-size: $font-size-md;
           line-height: $font-size-md;
         }

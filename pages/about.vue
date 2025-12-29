@@ -1,80 +1,69 @@
 <template>
   <main id="About">
-    <section class="about-hero">
-      <section class="intro-text w-content">
-        <p>
-          <span>A</span>
-          <span>b</span>
-          <span>o</span>
-          <span>u</span>
-          <span>t</span>
-        </p>
-        <section class="about-buttons">
-          <a class="button large primary" href="mailto:ramijames@gmail.com">Say hello!</a>
-        </section>
+
+    <PageHeader title="About" tagline="Principle Product Designer" />
+
+    <section class="about-container">
+
+      <section class="who-am-i">
+        <img src="/rami_small_white.png">
+        <h3>My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://github.com/ramijames">Github</a> and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h3>
       </section>
-    </section>
 
-    <section class="w-half">
-      <p class="center">My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://github.com/ramijames">Github</a> and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</p>
-    </section>
+      <section class="resume">
+        <section class="jobs">  
+          <section class="single-job">
+            <p class="job-title">Vewrite</p>
+            <p class="job-duration">2024 - 2025</p>
+            <p class="job-subtitle">Founder</p>
+            <ul class="job-descriptions">
+              <li v-for="(description, index) in vewrite" :key="index">
+                {{ description }}
+              </li>
+            </ul>
+          </section>
+          <section class="single-job">
+            <p class="job-title">Ultra</p>
+            <p class="job-duration">2020 - 2023</p>
+            <p class="job-subtitle">Head of Product for Developer Relations</p>
+            <ul class="job-descriptions">
+              <li v-for="(description, index) in ultraDevReldescriptions" :key="index">
+                {{ description }}
+              </li>
+            </ul>
 
-    <section class="w-content">
-      <h2>Experience</h2>
-      <section class="jobs">  
-        <section class="single-job">
-          <p class="job-title">Vewrite</p>
-          <p class="job-subtitle">Founder</p>
-          <p class="job-duration">2024 - Present</p>
-          <p class="job-descriptions">Currently I'm the founder, product and development lead at Vewrite.</p>
-          <p class="job-descriptions">My day to day includes</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in vewrite" :key="index">
-              {{ description }}
-            </li>
-          </ul>
-        </section>
-        <section class="single-job">
-          <p class="job-title">Ultra</p>
-          <p class="job-duration">2020 - 2023</p>
-          <p class="job-subtitle">Head of Product for Developer Relations</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in ultraDevReldescriptions" :key="index">
-              {{ description }}
-            </li>
-          </ul>
-
-          <p class="job-subtitle">Technical Project Manager</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in ultraTechdescriptions" :key="index">
-              {{ description }}
-            </li>
-          </ul>
-        </section>
-        <section class="single-job">
-          <p class="job-title">Scatter</p>
-          <p class="job-duration">2018 - 2020</p>
-          <p class="job-subtitle">Co-founder and Head of Product</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in scatterProductdescriptions" :key="index">
-              {{ description }}
-            </li>
-          </ul>
-        </section>
-        <section class="single-job">
-          <p class="job-title">Qmarkets</p>
-          <p class="job-duration">2015 - 2019</p>
-          <p class="job-subtitle">Senior User Experience Designer and Developer</p>
-          <ul class="job-descriptions">
-            <li v-for="(description, index) in qmarketsdescription" :key="index">
-              {{ description }}
-            </li>
-          </ul>
+            <p class="job-subtitle">Technical Project Manager</p>
+            <ul class="job-descriptions">
+              <li v-for="(description, index) in ultraTechdescriptions" :key="index">
+                {{ description }}
+              </li>
+            </ul>
+          </section>
+          <section class="single-job">
+            <p class="job-title">Scatter</p>
+            <p class="job-duration">2018 - 2020</p>
+            <p class="job-subtitle">Co-founder and Head of Product</p>
+            <ul class="job-descriptions">
+              <li v-for="(description, index) in scatterProductdescriptions" :key="index">
+                {{ description }}
+              </li>
+            </ul>
+          </section>
+          <section class="single-job">
+            <p class="job-title">Qmarkets</p>
+            <p class="job-duration">2015 - 2019</p>
+            <p class="job-subtitle">Senior User Experience Designer and Developer</p>
+            <ul class="job-descriptions">
+              <li v-for="(description, index) in qmarketsdescription" :key="index">
+                {{ description }}
+              </li>
+            </ul>
+          </section>
         </section>
       </section>
     </section>
   </main>
-  <PostsExtras />
+
   <Footer />
 </template>
 
@@ -136,92 +125,86 @@ export default {
   perspective: 100rem;
 }
 
-.about-hero {
-  padding: $spacing-lg 0 0 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba($blue, 0.05);
 
-  .intro-text {
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
+
+  .who-am-i {
+    padding: $spacing-xl;
+    background: rgba($black, 0.05);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: $spacing-md;
+    height: 100%;
+    justify-content: flex-start;
+
+    @media screen and (max-width: 1400px) {
+      padding: $spacing-lg;
+    }
+
+    @media screen and (max-width: 1000px) {
+      padding: $spacing-md;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: $spacing-lg $spacing-sm;
+    }
+    
+    img {
+      max-width: 300px;
+      border-radius: $br-sm;
+    }
+  }
+
+  .resume {
+    padding: $spacing-xl;
+    background: rgba($blue, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+    height: 100%;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1400px) {
+      padding: $spacing-lg;
+    }
+
+    @media screen and (max-width: 1000px) {
+      padding: $spacing-md;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: $spacing-lg $spacing-sm;
+    }
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
+
+    @media screen and (max-width: 768px) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  h4 {
+    color: rgba($white, 0.3);
+    margin: 0;
+  }
+
+  hr {
     width: 100%;
-    text-align: center;
-    // transform: skewY(0deg) scale(0.6);
-    // animation: skewIn .9s forwards ease-in-out;
-
-    .about-buttons {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 0;
-      margin-top: $spacing-md;
-      animation: fadeInUp 0.5s forwards ease-in-out;
-      opacity: 0;
-      animation-delay: .65s;
-
-      .arrow-down {
-        margin-top: $spacing-md;
-        animation: bounce 2s infinite ease-in-out;
-      }
-      
-      .button {
-        margin-top: -2px;
-      }
-
-      @media screen and (max-width: 600px){
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 100%;
-
-        .button {
-          width: 100%;
-        }
-      }
-    }
+    margin: $spacing-md 0;
   }
 
-  p {
-    font-size: 4vw;
-    line-height: 100%;
-    letter-spacing: -0.1rem;
-    text-wrap: balance;
-    font-family: $font-family-main;
-    margin-bottom: $spacing-md;
-    color: $white;
-
-    &.small {
-      font-size: $font-size-md;
-      letter-spacing: 0.1rem;
-      font-weight: 500;
-      animation: fadeInUp 0.5s forwards ease-in-out;
-      animation-delay: .65s;
-      opacity: 0;
-      margin-bottom: $spacing-sm;
-    }
-
-    span {
-      display: inline-block;
-      animation: zoomBack 0.5s forwards ease-in-out;
-      opacity: 0;
-      transition: all 0.35s ease-in-out;
-
-      // There are 8 letters, so let's iterate through them and delay each one
-      @for $i from 1 through 8 {
-        &:nth-child(#{$i}) {
-          animation-delay: $i * 0.025s;
-        }
-      }
-    }
-
-    @media screen and (max-width: 768px){
-      font-size: 11vw;
-      text-wrap: balance;
-    }
-  }
 }
 
 .explanation {
@@ -254,16 +237,14 @@ export default {
         .job-title {
           font-family: $font-family-main;
           font-size: $font-size-xl;
-          line-height: 120%;
         }
 
         .job-subtitle {
-          font-weight:500;
-          font-size: $font-size-lg;
+          font-size: $font-size-md;
         }
 
         .job-duration {
-          font-size: $font-size-sm;
+          font-size: $font-size-xs;
           border-radius: $br-sm;
           opacity: 0.3;
         }
@@ -271,11 +252,14 @@ export default {
         .job-descriptions {
           margin-top: 0;
           margin-bottom: $spacing-sm;
+          font-size: $font-size-xs;
+          line-height: 140%;
         }
 
         .job-descriptions li {
-          margin-bottom: 0;
-          font-size: $font-size-sm;
+          margin-bottom: $spacing-xs;
+          font-size: $font-size-xs;
+          line-height: 140%;
         }
 
 #ServicesGrid {
