@@ -3,7 +3,7 @@
     <section class="reason-content">
       <h2>A Partner, Not a Vendor</h2>
       <p>Over the years, it's been my pleasure to act as a partner to teams who are building innovative and interesting projects. </p>
-      <button class="blue" to="/thoughts/a-partner-not-a-vendor">Learn more</button>
+      <nuxt-link class="button blue" to="/thoughts/a-partner-not-a-vendor">Learn more</nuxt-link>
     </section>
     <svg viewBox="0 0 3102 1075" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M2296 0H1221V1075H2296V0ZM2027.25 268.75H1489.75V806.25H2027.25V268.75Z" fill="#A7BDDD"/>
@@ -32,6 +32,9 @@
   .reason-content {
     margin: $spacing-xl auto $spacing-sm;
     max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   @media screen and (max-width: 1200px) {
