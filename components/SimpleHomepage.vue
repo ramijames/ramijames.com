@@ -313,6 +313,7 @@ onUnmounted(() => {
     max-width: 200px;
     filter:blur(15px);
     pointer-events: none;
+    opacity:0.6;
 
     @media screen and (max-width: 1000px){
       display: none;
@@ -346,6 +347,7 @@ onUnmounted(() => {
     max-width: 200px;
     filter:blur(15px);
     pointer-events: none;
+    opacity:0.6;
 
     @media screen and (max-width: 1000px){
       display: none;
