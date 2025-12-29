@@ -1,6 +1,27 @@
 <template>
   
   <div class="thoughts-container">
+    <!-- Featured Articles Section -->
+    <div v-if="props.featuredArticles && props.featuredArticles.length > 0" class="featured-section">
+      <div class="featured-grid">
+        <nuxt-link 
+          v-for="article in props.featuredArticles" 
+          :key="article.slug"
+          :to="`/thoughts/${article.slug}`" 
+          class="featured-card"
+        >
+          <div class="featured-content">
+            <div class="featured-text">
+              <span class="featured-label">Featured</span>
+              <h2 class="featured-title">{{ article.title }}</h2>
+              <p class="featured-date">{{ formatDate(article.date) }}</p>
+            </div>
+            <img v-if="article.image" :src="article.image" :alt="article.title" class="featured-image" />
+          </div>
+        </nuxt-link>
+      </div>
+    </div>
+
     <!-- Category Filter Pills -->
     <div class="filter-container">
       <button 
@@ -59,6 +80,7 @@
 import { computed, ref } from 'vue';
 
 const props = defineProps({
+  featuredArticles: Array,
   articles: Array
 });
 
@@ -188,6 +210,100 @@ const formatDate = (dateString) => {
     margin: $spacing-md 0;
   }
 
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-sm;
+
+  @media screen and (max-width: 768px) {
+    gap: 4px;
+  }
+}
+
+.featured-section {
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-lg;
+  border-bottom: $border;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-card {
+  border: $border;
+  border-radius: $br-sm;
+  background: rgba($blue, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  overflow: hidden;
+  min-height: 280px;
+
+  &:hover {
+    transform: translateY(-6px);
+    background: rgba($blue, 0.2);
+    border-color: rgba($blue, 0.5);
+    box-shadow: 0 8px 24px rgba($blue, 0.2);
+  }
+}
+
+.featured-content {
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: $spacing-md;
+}
+
+.featured-text {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.featured-label {
+  font-family: $font-family-secondary;
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba($blue, 0.8);
+  font-weight: 600;
+}
+
+.featured-title {
+  font-size: $font-size-xxl;
+  line-height: 1.3;
+  margin: 0;
+  color: $white;
+
+  @media screen and (max-width: 768px) {
+    font-size: $font-size-xl;
+  }
+}
+
+.featured-date {
+  font-size: $font-size-sm;
+  color: rgba($white, 0.5);
+  margin: 0;
+}
+
+.featured-image {
+  width: 100%;
+  height: auto;
+  border-radius: $br-xs;
+  border: $border;
+  object-fit: cover;
+  max-height: 200px;
 }
 
 .filter-container {

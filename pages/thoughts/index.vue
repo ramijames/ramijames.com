@@ -1,6 +1,6 @@
 <template>
   <PageHeader title="Thoughts" />
-  <Thoughts :articles="articles" />
+  <Thoughts :featured-articles="featuredArticles" :articles="regularArticles" />
   <PostsExtras />
   <Footer />
 </template>
@@ -8,6 +8,12 @@
 <script setup>
 
 import articles from '~/assets/articles.json'
+
+// Get the two latest articles as featured
+const featuredArticles = computed(() => articles.slice(0, 2))
+
+// Get remaining articles (excluding the first two)
+const regularArticles = computed(() => articles.slice(2))
 
 useHead({
   title: () => `Thoughts`
