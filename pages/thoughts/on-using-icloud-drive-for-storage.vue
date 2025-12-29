@@ -1,11 +1,10 @@
 <template>
+  <ThoughtsHeader title="On Using iCloud Drive for Storage" slug="/thoughts/on-using-icloud-drive-for-storage" />
+  <PageHeader title="On Using iCloud Drive for Storage" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <img class="article-image-top" src="/articles/using-icloud.png" alt="On Using iCloud Drive for Storage" />
-      <SectionTitle title="On Using iCloud Drive for Storage" />
-      <Share route="/thoughts/on-using-icloud-drive-for-storage" topic="On Using iCloud Drive for Storage" />
-    </section>
     <section class="content">
+      <img src="/articles/time-machine.png" />
+
       <p>iCloud is a good way to replicate your files remotes so that, in the case of a catastrophe, you will not have complete data loss. It allows you to:</p>
       <ul>
         <li>Set specific folders or applications to store remotely  </li>
@@ -17,8 +16,6 @@
       <p>iCloud is not perfect and is not a 100% guarantee that your files are safe. Shit always has the potential to happen.</p>
       <p>You should ALSO be using local backups with MacOS’ backup solution and an SSD. I <a href="https://amzn.to/4hwr1GA">recommend these Samsung SSDs</a> as they have a long shelf-life, good storage capacity, and a reasonable price. I have two and I intermittently swap between them just in case something happens. It’s better to be paranoid than to lose your data.</p>
       <p>You can do this by going to MacOS Settings and searching for “Time Machine”. There is a little “+” button which will allow you to add a backup disk. I just leave mine plugged in all the time and it does rolling backups of any changes on my computer.</p>
-      
-      <img src="/articles/time-machine.png" />
 
       <h3 id="-answering-specific-questions-">Answering Specific Questions</h3>
       <h4>Can I safely delete important files from my computer to free up storage space if I put them in iCloud?</h4>
@@ -70,10 +67,9 @@
 
       <h3>Conclusion</h3>
       <p>I hope that someone out there found this helpful. It was originally written for my father-in-law, who is a sweet man.</p>
+      <ArticleAddendum />
     </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
   <Footer />
 </template>
 

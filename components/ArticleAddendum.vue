@@ -1,5 +1,6 @@
 <template>
-  <div class="w-content addendum" v-if="isThoughtsSubPage">
+  <div class="addendum" v-if="isThoughtsSubPage">
+    <hr>
     <h3>Article Addendum</h3>
     <p>I hope you enjoyed this article!</p>
     <p>Without direct feedback it can be hard to iterate, and I value your thoughts immensely. Please <a href="mailto:ramijames@gmail.com">send me an email</a> if you find a typo or disagree with the content. I'm always up for a vigorous and lively debate!</p>
@@ -55,7 +56,7 @@ export default {
 @import './assets/variables';
 
 .addendum {
-  padding-top: $spacing-xl;
+  padding-top: 0;
   border-top: 1px solid rgba($black,0.1);
 }
 

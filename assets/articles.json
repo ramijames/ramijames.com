@@ -1,5 +1,15 @@
 [
   {
+    "title": "A Partner, Not a Vendor",
+    "date": "2025-12-29",
+    "slug": "a-partner-not-a-vendor",
+    "tags": [
+      "product & design"
+    ],
+    "summary": "A detailed breakdown of why long-term product and design engagements are preferrable for companies over short-term freelance gigs.",
+    "image": "/articles/docs-deserve-respect.png"
+  },
+  {
     "title": "A Committed Year",
     "date": "2025-03-09",
     "slug": "a-committed-year",
@@ -84,7 +94,7 @@
     "date": "2024-06-20",
     "slug": "how-to-make-product-decisions-based-on-business-needs",
     "tags": [
-      "design"
+      "product & design"
     ],
     "summary": "It can be difficult to make moral decisions when it comes to developing your product. Let's talk about how to make product decisions based on business needs.",
     "image": "/articles/on-ethical-pricing.png"
@@ -164,7 +174,7 @@
     "date": "2024-01-02",
     "slug": "how-to-iterate-relentlessly",
     "tags": [
-      "design"
+      "product & design"
     ],
     "summary": "It’s immensely hard to get traction for your product, and that is often because you’ve built the wrong thing and nobody wants to use that. Here’s a better process.",
     "image": "/articles/iterate-relentlessly.png"

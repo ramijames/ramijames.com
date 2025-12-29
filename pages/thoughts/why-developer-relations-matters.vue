@@ -1,10 +1,7 @@
 <template>
+  <ThoughtsHeader title="Why Developer Relations Matters" slug="/thoughts/why-developer-relations-matters" />
+  <PageHeader title="Why Developer Relations Matters" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <img class="article-image-top" src="/articles/devrel-matters.png" alt="Why Developer Relations Matters" />
-      <SectionTitle title="Why Developer Relations Matters" />
-      <Share route="/thoughts/why-developer-relations-matters" topic="Why Developer Relations Matters" />
-    </section>
     <section class="content">
       
       <h2 id="what-is-developer-relations-">What is Developer Relations?</h2>
@@ -45,11 +42,10 @@
       <p>Developer Relations is not just a nice-to-have. It’s a strategic investment. Developer Relations should be seen as a core part of your company strategy. It plays a fundamental role in ensuring developers remain engaged, empowered, and invested in your ecosystem.</p>
       <p>You're likely already investing for developers to create your technology. It's critical that you do the same for the team that will make sure that people use it, love it, and sing its praises to the world.</p>
 
-
+      <ArticleAddendum />
     </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
+  
   <Footer />
 </template>
 

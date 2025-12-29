@@ -1,10 +1,7 @@
 <template>
+  <ThoughtsHeader title="Reading Documentation Effectively" slug="/thoughts/reading-documentation-effectively" />
+  <PageHeader title="Reading Documentation Effectively" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <img class="article-image-top" src="/articles/reading-documentation-effectively.png" alt="Reading Documentation Effectively" />
-      <SectionTitle title="Reading Documentation Effectively" />
-      <Share route="/thoughts/reading-documentation-effectively" topic="Reading Documentation Effectively" />
-    </section>
     <section class="content">
 
       <h3>On Reading Docs</h3>
@@ -81,11 +78,10 @@
 
       <h3>You can do it</h3>
       <p>Reading documentation is a skill that improves with practice. By adopting these strategies and actively engaging with the material, you can transform documentation from a source of frustration into a powerful tool for learning and development. So, embrace the documentation, and unlock the full potential of the software you're working with!</p>
-
-</section>
+      <ArticleAddendum />
+    </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
+  
   <Footer />
 </template>
 

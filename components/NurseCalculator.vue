@@ -61,10 +61,10 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  background: white;
+  background: rgba($blue, 0.1);
   padding: $spacing-md;
   margin:$spacing-md 0;
-  border-radius: $br-lg;
+  border-radius: $br-sm;
   width: 100%;
 
   .nurse-calc-row {
@@ -82,8 +82,9 @@ export default {
     input {
       width: 50%;
       padding: $spacing-sm;
-      border: 1px solid $gray;
-      border-radius: $br-md;
+      border: $border;
+      border-radius: $br-sm;
+      color: white;
     }
   }
 

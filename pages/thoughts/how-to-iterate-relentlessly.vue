@@ -1,15 +1,13 @@
 <template>
+  <ThoughtsHeader title="Iterate relentlessly" slug="/thoughts/how-to-iterate-relentlessly" />
+  <PageHeader title="Iterate relentlessly" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <SectionTitle title="Iterate relentlessly" />
-      <Share route="/thoughts/" topic="" />
-      <AllPosts />
-    </section>
     <section class="content">
+
+      <img src="/articles/iterate-relentlessly.png" alt="Iterate relentlessly" />
+
       <p>How do you get your product to market and ensure that it matches a market need? This is the problem that every founder, every team, and every company of every size encounters when they attempt to develop a product.</p>
       <p>If you’re building a product, you likely have some vision for what it is and you need some plan for how to get it into the user&#39;s hands. You must also be aware of the fact that your product doesn’t exist in a vacuum. At the end of the day your product’s success is entirely dependent on whether or not you’ll find users, partners, and a market for it. Typically this is called Product-Market fit. I’m not a huge fan of that terminology because it insinuates that you and your team are somehow not an integrated part of the market, but are adjacent to it. But, what can you do? That’s what it is called.</p>
-
-      <PostsExtras />
 
       <p>Finding Product-Market fit can be a frustrating, demoralizing, and fruitless effort if you do not have the right feedback cycle to support the decisions that you make. Alternatively, it can be a fast-paced, exciting ride that changes your career and your professional life. It&#39;s up to you and your team to decide which of the two experiences you&#39;ll have and isn&#39;t a simple happenstance.</p>
       <p>You’re probably not going to get it right the first time, so your process needs to be built around getting there in as few steps as possible.</p>
@@ -17,13 +15,10 @@
       
       <p>Hopefully these ideas can help you and yours have a better time getting your house in order as you ship your great new thing.</p>
 
-      <br>
-      <img src="/articles/iterate-relentlessly.png" alt="Iterate relentlessly" />
-
       <h3 id="figure-out-your-products-answer-to-why">Figure out your product’s answer to “Why?”</h3>
       <p>At the foundation of a software product is the deceptively simple question of “why are we doing this?”. Fundamentally, that question and its answers are what sets good products apart from bad ones.</p>
       <p>If you can competently, coherently, and confidently express why you’re building what you’re building, then you’ll be able to decide what you want to build and who you’ll want to build it for.</p>
-      <h3 id="getting-started">Getting Started</h3>
+      <h2 id="getting-started">Getting Started</h2>
       <p><strong>Define your product’s vision.</strong> This doesn’t have to be exact, and in my experience will change over time as you speak to people who are using your stuff. The idea here is that you have to have some current product vision in your head so that when you have some tough choice to make, there is some guiding principle that shines a light on the right way forward.</p>
       <p><strong>Roughly outline your software product and its feature goals.</strong> Roughly is the key word. You want big, bulky sets of concepts and not detailed, fully planned out sets of features. Remember that you shouldn’t be making assumptions, and that if you invest tons of time figuring out every detail, you’ll end up having to throw a lot of that work away.</p>
       <p><strong>Explicitly state how your product supports your business via revenue.</strong> This is of course only relevant if your product’s continued existence hinges on that revenue. If not, carry on. Revenue generation as part of your product ensures that you can keep building, and your users can keep using.</p>
@@ -66,7 +61,7 @@
       <p>The core value of this methodology is that it isn’t intermittent, but is instead constant. The feedback that you are getting from the market is always the most up to date, and the most relevant to your product and to your business.</p>
       <p>If you’re embedded in the community of users who are using your product, then the teams who build it are not directly insulated from the users that are impacted by their decisions. This is a fundamentally different way of working which creates a level of personal responsibility that is missing in more formal methodologies.</p>
       <p>I’m sure that you can see the value of this latter way of working.</p>
-      <h3 id="caveats">Caveats</h3>
+      <h2 id="caveats">Caveats</h2>
       <h3 id="dont-believe-everything-you-hear">Don’t believe everything you hear</h3>
       <p>This is tricky to write about because it is not a straightforward do-this, do-that kind of thing. Understanding what is valuable feedback versus what is not is an intuitive sense that a team builds up over time.</p>
       <p>It’s dangerous to take every bit of feedback at face-value, both from external users and from internal stakeholders. It is a balancing act that can be difficult to manage.</p>
@@ -87,10 +82,11 @@
       Iterate.</p>
       <p>Then, do it again.</p>
 
+      <ArticleAddendum />
+
     </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
+  
   <Footer />
 </template>
 

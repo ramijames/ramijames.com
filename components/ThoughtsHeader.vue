@@ -1,5 +1,5 @@
 <template>
- <section class="single-project-header">
+ <section class="single-thought-header">
   <section class="navigation">
     <button class="small blue" @click="$router.back()">
       <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -7,11 +7,10 @@
         <path d="M0.83252 7.36841H17.3454" stroke="white"/>
       </svg>
     </button>
-    <button class="small" @click="navigateTo('/products')">All projects</button>
+    <button class="small" @click="navigateTo('/thoughts')">All thoughts</button>
   </section>
-  <section class="project-details">
-    <img :src="logo" :alt="project" />
-    <!-- <span>{{ project }}</span> -->
+  <section class="thought-details">
+    <Share :route="slug" :topic="title" />
   </section>
   
  </section>
@@ -21,7 +20,9 @@
 
 const props = defineProps({
   project: String,
-  logo: String
+  logo: String,
+  slug: String,
+  title: String
 });
 
 </script>
@@ -29,7 +30,7 @@ const props = defineProps({
 <style scoped lang="scss">
 @import './assets/variables';
 
-.single-project-header {
+.single-thought-header {
   background: linear-gradient(180deg, transparent 67%, rgba($blue, 0.05));
   border-bottom: $border;
   padding: $spacing-xs $spacing-sm;
@@ -47,7 +48,7 @@ const props = defineProps({
     gap: $spacing-xs;
   }
 
-  .project-details {
+  .thought-details {
     display: flex;
     flex-direction: row;
     align-items: center;

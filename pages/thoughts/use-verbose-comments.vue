@@ -1,10 +1,7 @@
 <template>
+  <ThoughtsHeader title="Use Verbose Comments" slug="/thoughts/use-verbose-comments" />
+  <PageHeader title="Use Verbose Comments" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <img class="article-image-top" src="/articles/comments-in-code.png" alt="Use Verbose Comments" />
-      <SectionTitle title="Use Verbose Comments" />
-      <Share route="/thoughts/use-verbose-comments" topic="Use Verbose Comments" />
-    </section>
     <section class="content">
 
       <p>There’s a growing sentiment in software development that code should be self-documenting, that comments are a crutch for unclear code, and that they should be kept to an absolute minimum. The prevailing wisdom suggests that well-written code should be so obvious that comments become redundant. But here’s the problem: code is rarely as obvious as we think it is.</p>
@@ -50,11 +47,9 @@ celsius_temp = (fahrenheit_temp - <span class="hljs-number">32</span>) * <span c
       <h2 id="let-s-normalize-commenting-again">Let’s Normalize Verbose Commenting</h2>
       <p>The idea that comments are a sign of weak code is misguided. Good code and good comments are not mutually exclusive—they complement each other. Rather than discouraging comments, we should encourage developers to use them wisely, ensuring that our codebases remain accessible, maintainable, and easy to understand.</p>
       <p>So go ahead—leave that comment. Future developers (including you) will thank you.</p>
-
+      <ArticleAddendum />
     </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
   <Footer />
 </template>
 

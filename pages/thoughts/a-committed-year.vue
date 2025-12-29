@@ -1,12 +1,10 @@
 <template>
+  <ThoughtsHeader title="A Committed Year" slug="/thoughts/a-committed-year" />
+  <PageHeader title="A Committed Year" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <SectionTitle title="A Committed Year" />
-      <img src="/articles/a-committed-year.png" alt="A Committed Year" />
-      <Share route="/thoughts/a-committed-year" topic="A Committed Year" />
-      <AllPosts />
-    </section>
     <section class="content">
+
+      <img src="/articles/a-committed-year.png" alt="A Committed Year" />
 
       <h2>A year of daily practice</h2>
 
@@ -75,10 +73,10 @@
 
       <p>Thanks for reading.</p>
 
+      <ArticleAddendum />
     </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
+  
   <Footer />
 </template>
 

@@ -1,21 +1,15 @@
 <template>
+  <ThoughtsHeader title="Types of Interview Scams" slug="/thoughts/types-of-interview-scams" />
+  <PageHeader title="Types of Interview Scams" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <SectionTitle title="Types of Interview Scams" />
-      <Share route="/thoughts/types-of-interview-scams" topic="Types of Interview Scams" />
-      <AllPosts />
-    </section>
     <section class="content">
+      <img src="/articles/types-of-interview-scams.png">
       <p>I think scams are a genuinely interesting phenomenon and I have a personal catalogue in Google Docs where I take notes of the ones that I come across personally. It keeps me amused.</p>
       <p>I’ve been actively looking for a job for a couple of months now. After spending so many years working in crypto, I have a fine sense for scams (bleh). Unfortunately, that fine sense has also been honed through being dumb enough to be compromised by one of the more sophisticated ones, which I go into detail about towards the end of this piece. If that’s what you’re after, you should skip to that.</p>
-      
-      <PostsExtras />
-      
+
       <p>LinkedIn, Twitter, and other social job sites are great for finding work, but they are also rife with scammers who are taking advantage of desperate people like me who need work. </p>
       <p>Since I’ve already catalogued some of them, I’ll share some of the most common scams that I have personally encountered, detail how they work, how you can identify them for avoidance, and how you can defend against them.</p>
-      
-      <img src="/articles/types-of-interview-scams.png">
-      
+
       <p>Be careful out there though, because this is not a complete list by any means and scammers are actively updating and adapting their methodologies.</p>
       <h3 id="whatsapp-number-request-scam">WhatsApp Number Request Scam</h3>
       <h4 id="the-scam">The Scam</h4>
@@ -80,11 +74,9 @@
       <li><p>If you absolutely must install stuff that isn’t verified, do it inside of a virtual machine which is 100% clean.</p>
       </li>
       </ul>
-
+      <ArticleAddendum />
     </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
   <Footer />
 </template>
 

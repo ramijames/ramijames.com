@@ -1,12 +1,9 @@
 <template>
+  <ThoughtsHeader title="Quick Walkthrough on Using Supabase Migrations" slug="/thoughts/quick-walkthrough-using-supabase-migrations" />
+  <PageHeader title="Quick Walkthrough on Using Supabase Migrations" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <img class="article-image-top" src="/articles/supabase-migrations.png" alt="Quick Walkthrough on Using Supabase Migrations" />
-      <SectionTitle title="Quick Walkthrough on Using Supabase Migrations" />
-      <Share route="/thoughts/quick-walkthrough-using-supabase-migrations" topic="Quick Walkthrough on Using Supabase Migrations" />
-      <AllPosts />
-    </section>
     <section class="content">
+
         <h2>Why use Supabase Migrations?</h2>
         <h3>Introduction</h3>
         <p>Supabase is a great way to off-load a lot of your DevOps onto an external provider. Out of the box, they give you a Postgres database, user authentication and management, logging and analytics, and a bunch of other useful tools. This allows you to focus on building critical feature sets, instead of having to also juggle setting up servers, manage updates, and all of that other stuff that is usually necessary as you scale from 0-10K users. I like not having to worry about that stuff too early.</p>

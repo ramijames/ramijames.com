@@ -1,11 +1,9 @@
 <template>
+  <ThoughtsHeader title="Docs Deserve More Respect" slug="/thoughts/docs-deserve-more-respect" />
+  <PageHeader title="Docs Deserve More Respect" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <SectionTitle title="Docs Deserve More Respect" />
-      <Share route="/thoughts/" topic="" />
-      <AllPosts />
-    </section>
     <section class="content">
+
       <p>I've been doing technical writing of one sort or another since 1999, when I was doing QA for Altec Lansing's R&amp;D branch in Kfar Saba in Israel. Back then we would put out innovative, new audio related devices like (gasp) USB audio devices that worked on Windows ME and 2000. They were buggy and setting them up wasn't the straightforward thing that it is today.</p>
       <p>We needed docs.</p>
       <p>We had some hoops that users had to jump through, and we needed a way to document what they were, what the edge cases were, and how to diagnose and fix all of that stuff. It needed to be nicely packaged, cleanly formatted, and accessible to users who installed our helper application. I found the Robohelp application, which is used for creating standard help applications on Windows, and added a help file to our install.</p>
@@ -44,10 +42,11 @@
       <p>I'll sum up by simply underscoring how critically important docs are. Without them, your users are on their own and must fend for themselves.</p>
       <p>This will always mean fewer success cases, poorer views of your product within your ecosystem, more unhappy developers or users, and a negative impact on your brand or company.</p>
       <p>Docs are a serious sub-product in their own right, are an investment, and must be part of your wider product strategy.</p>
+    
+      <ArticleAddendum />
     </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
+  
   <Footer />
 </template>
 

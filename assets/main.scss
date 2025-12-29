@@ -220,7 +220,10 @@ h2 {
 }
 
 .content h2 {
-  margin-top: $spacing-lg;
+  margin: $spacing-lg auto $spacing-md;
+  padding-bottom: $spacing-md;
+  border-bottom: $border;
+
 }
 
 h3 { 
@@ -368,10 +371,10 @@ ol {
 }
 
 hr {
-  margin: $spacing-lg + $spacing-sm $spacing-lg $spacing-lg;
-  width:calc(100% - $spacing-lg - $spacing-lg);
+  margin: $spacing-xl auto;
+  width: 100%;
   border:0;
-  border-top: $border;
+  border-top: 1px solid $blue;
   height: 1px;
 }
 
@@ -408,10 +411,11 @@ p > strong {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  max-width: 1000px;
+  gap: $spacing-md;
   width: 100%;
   margin: $spacing-lg auto;
   padding: 0 $spacing-md;
+  background: rgba($blue, 0.05);
 
   @media screen and (max-width: 1000px) {
     margin: $spacing-lg auto;
@@ -425,6 +429,13 @@ p > strong {
     background: $black-dark;
     color: $white;
   }
+
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: $spacing-xl;
+  }
+
 }
 
 .w-three-quarters {
@@ -510,7 +521,7 @@ p > strong {
 
 .page-top {
   padding-top: $spacing-md;
-  margin: $spacing-sm auto 0;
+  margin: 0 auto;
 }
 
 /* Standard elements */
@@ -570,7 +581,7 @@ input {
 
   img {
     width: 100%;
-    outline: 1px solid rgba($blue, 1);
+    outline: $border;
     border-radius: $br-sm;
   }
 }
@@ -606,11 +617,12 @@ input {
 
     .summary {
       border: $border;
-      border-radius: $br-md;
+      border-radius: $br-sm;
       width: 100%;
-      padding: $spacing-lg;
+      padding: $spacing-md;
       margin: $spacing-lg 0;
       font-weight: 400;
+      background: rgba($blue, 0.1);
 
       @media screen and (max-width: 1000px){
         padding: $spacing-md;
@@ -633,10 +645,10 @@ input {
       }
 
     .content img {
-      margin: $spacing-lg 0;
+      margin: 0 auto $spacing-lg 0;
       width: 100%;
       border:0;
-      border-radius: $br-md;
+      border-radius: $br-sm;
     }
 
     .dark .content img {

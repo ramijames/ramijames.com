@@ -1,11 +1,9 @@
 <template>
+  <ThoughtsHeader title="Asking for help is a core developer skill" slug="/thoughts/asking-for-help-is-a-core-skill" />
+  <PageHeader title="Asking for help is a core developer skill" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <SectionTitle title="Asking for help is a core developer skill" />
-      <Share route="/thoughts/asking-for-help-is-a-core-skill" topic="Asking for help is a core developer skill" />
-      <AllPosts />
-    </section>
     <section class="content">
+
       <p>On Reddit, in the /r/learnprogramming forum, there was <a href="https://www.reddit.com/r/learnprogramming/comments/1buc15f/got_greedy_and_now_getting_fked_up_real_bad/">a post that I wanted to highlight</a>. The original poster is still in his junior phase and is experiencing the pain of the learning curve. He got stuck, and stayed stuck for three weeks. His anxiety in the post is about how he is failing and what is going to happen to him when his boss finds out. He is stressed about having taken on something too hard and not finishing it. I think he is looking at it wrong.</p>
       <p>Let's take a look at why that is.</p>
       <PostsExtras />
@@ -34,10 +32,11 @@
       <p>We teach kids that who they are is tied to whether or not they can succeed as individuals. The problem is that this is not a good reflection of how the world actually works. I am nobody without my wife&#39;s support. I am nobody without my friends. I am nobody without the knowledge of the group that I work within.</p>
       <p><strong>Successful software is not about you and the puzzles you can solve.</strong> </p>
       <p>Asking for help is a core skill. It can help ensure that the product you are building sees the light of day, and more importantly, it can ensure that you continue to progress as a developer.</p>
+
+      <ArticleAddendum />
     </section>
+
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
   <Footer />
 </template>
 

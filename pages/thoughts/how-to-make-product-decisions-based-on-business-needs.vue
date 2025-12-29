@@ -1,11 +1,9 @@
 <template>
+  <ThoughtsHeader title="How to Make Product Decisions based on Business Needs" slug="/thoughts/how-to-make-product-decisions-based-on-business-needs" />
+  <PageHeader title="How to Make Product Decisions based on Business Needs" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <SectionTitle title="How to Make Product Decisions based on Business Needs" />
-      <Share route="/thoughts/how-to-make-product-decisions-based-on-business-needs" topic="How to Make Product Decisions based on Business Needs" />
-      <AllPosts />
-    </section>
     <section class="content">
+
       <section class="summary">
         <h3>TLDR Summary</h3>
         <p>A company must be careful when their primary goal is to squeeze profits out of the staff who provide the core value proposition of their product.</p>
@@ -126,10 +124,10 @@
 
       <p>Boards, and the companies that they run, have an ethical obligation to maximize profits for their company. But, they must do so in a way that maintains a long term perspective on what promotes growth of their ecosystem, and quality of life for those who participate in it. <strong>Short term gains must not trump longevity and viability of a market as a whole.</strong></p>
 
+      <ArticleAddendum />
     </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
+  
   <Footer />
 </template>
 

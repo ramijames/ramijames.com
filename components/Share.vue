@@ -1,6 +1,7 @@
 <template>
-  <div id="share" class="w-content">
-    <a v-for="social in socials" class="button" 
+  <div id="share">
+    <span>Share on:</span>
+    <a v-for="social in socials" class="button small blue" 
        :key="social.name" 
        :href="social.url + encodeURIComponent('https://www.ramijames.com' + route)">
       <img :src="'/' + social.icon + '.svg'" alt="social.name" />
@@ -53,15 +54,25 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: $spacing-md;
-  color: rgba($black, 0.5);
-  margin: $spacing-lg auto;
-  padding:  $spacing-sm 0;
-  border-top: 1px solid rgba($black, 0.1);
-  border-bottom: 1px solid rgba($black, 0.1);
+  gap: $spacing-xs;
+
+  span {
+    font-size: $font-size-sm;
+    margin-right: $spacing-xs;
+    color: $blue;
+
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  .button {
+    padding: $spacing-xs;
+  }
 
   img {
     outline: none;
+    width:20px;
   }
 }
 

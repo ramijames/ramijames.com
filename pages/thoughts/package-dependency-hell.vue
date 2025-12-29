@@ -1,11 +1,9 @@
 <template>
+  <ThoughtsHeader title="Package dependency hell" slug="/thoughts/package-dependency-hell" />
+  <PageHeader title="Package dependency hell" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <SectionTitle title="Package dependency hell" />
-      <Share route="/thoughts/package-dependency-hell" topic="Package dependency hell" />
-      <AllPosts />
-    </section>
     <section class="content">
+
       <p>Intentionally or otherwise, I&#39;ve been blowing up my life since last summer. <strong>It’s been less than ideal</strong>. We&#39;ll get to why in a second, but first, let&#39;s talk about everyone&#39;s favorite awful programming language and the impact of package managers, their packages, and the endless toil they create.</p>
       <p>In truth, I like Javascript just fine. It&#39;s clean, clear, and sensible. It has a lot of valuable built-in features. I like JSON. It&#39;s neat that you can use the same language to build everywhere, from backend services to web and mobile applications. Its portability is crazy and admirable. There is, however, a lot to dislike about the broader ecosystem that enables that incredible flexibility. </p>
       <p>Package managers like npm give you quick and easy access to their ecosystem of functionality. Unfortunately, the ease with which you can quickly add packages to a project inflates the complexity you inherit. You save some time by using someone else’s code, but you pay an unknown price in the future. It’s up to the upstream package maintainer. If they update and break something in your stack, it’s on you to update it. Your code may work today, but the likelihood that it will work as-is in five years is fairly low. With enough packages imported, you will spend a lot of energy trying to stay up-to-date. It’s a nightmare. The energy you spend doing maintenance is instead of creating new functionality. A pretty high price, I would argue.</p>
@@ -36,10 +34,10 @@
       <p>I feel like I gave it everything I had, and now I’m just stuck. I’m no longer building anything that fulfills me. I’m a slave to dependency hell. </p>
       <p>The question is, how do you slim things down when you are already drowning? How do you remove the right dependencies without sowing chaos?</p>
       <p>I’m not sure what the answer to this is. I have some ideas, but they are half-formed, and I’m not ready to write about them publicly. I’d love to hear your thoughts if you have any.</p>
+      <ArticleAddendum />
     </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
+  
   <Footer />
 </template>
 

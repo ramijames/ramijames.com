@@ -1,12 +1,9 @@
 <template>
+  <ThoughtsHeader title="Supabase email authentication with Google Workspace" slug="/thoughts/supabase-email-authentication-with-google-workspace" />
+  <PageHeader title="Supabase email authentication with Google Workspace" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <img class="article-image-top" src="/labs/supabase-email-authentication.png" alt="Supabase Email Authentication with Google Workspace" />
-      <SectionTitle title="Supabase email authentication with Google Workspace" />
-      <Share route="/thoughts/supabase-email-authentication-with-google-workspace" topic="Supabase Email Authentication with Google Workspace" />
-      <AllPosts />
-    </section>
     <section class="content">
+
       <section class="summary">
         <h3>TLDR Summary</h3>
 
@@ -79,7 +76,6 @@
 
     </section>
   </main>
-  <PostsExtras />
   <Footer />
 </template>
 

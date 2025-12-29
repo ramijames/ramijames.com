@@ -34,9 +34,13 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-bottom: $spacing-md;
+  justify-content: flex-start;
   width: 100%;
+  
+  h1 {
+    line-height: 100%;
+    text-align: left;
+  }
 
   &.centered {
     h2, h4 {

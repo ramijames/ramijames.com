@@ -1,17 +1,13 @@
 <template>
+  <ThoughtsHeader title="Quantifying your documentation's success" slug="/thoughts/quantifying-your-documentations-success" />
+  <PageHeader title="Quantifying your documentation's success" />
   <main class="w-content page-top">
-    <section class="article-extras">
-      <SectionTitle title="Quantifying your documentation's success" />
-      <Share route="/thoughts/quantifying-your-documentations-success" topic="Quantifying your documentation's success" />
-      <AllPosts />
-    </section>
     <section class="content">
+
       <img src="/articles/quantifying.png" alt="Quantifying your documentation's success">
       <p>The primary challenge faced by technical writers often boils down to how to evaluate the effectiveness of what you write. </p>
       <p>You build some documentation and you think it is great. How do you know if you are right? How do you prove it to upper management? How do you really, really know?</p>
-      
-      <PostsExtras />
-      
+
       <p>I’d like to talk quickly about an <a href="https://passo.uno/docs-observability-do11y/">approach that I came</a> across called &quot;documentation observability&quot; (<a href="https://www.linkedin.com/in/fabrizioferri/">grazie, Fabrizio!</a>) that I think is an excellent candidate solution for those whose documentation is part of a larger product strategy, and who need to know if they are hitting the mark or not. </p>
       <p>This methodology isn’t for the faint of heart and does require substantial extra integration efforts. I’d like to convince you that it is worth it.</p>
       <h3 id="how-do-we-measure-docs-success-today">How do we measure docs&#39; success today?</h3>
@@ -39,11 +35,10 @@
       <p>If your product depends on developers or other advanced end-users to use it, and there is a high probability that they will fail, my instinct says that better documentation should trump development of new features. </p>
       <p>You and your team have to know for certain that people can reliably use the features that you already have. That means documentation and some methodology for quantifying the success of them.</p>
       <p>I am emphasizing the need to view documentation as an essential part of the user journey and product, and it encourages a mindset shift in how documentation is planned, designed, and measured for success when speaking to my clientele. I encourage you to do the same.</p>
-
+      <ArticleAddendum />
     </section>
   </main>
-  <ArticleAddendum />
-  <TypesOfDesigns />
+  
   <Footer />
 </template>
 
