@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       titleTemplate: '%s %separator %siteName',
       templateParams: {
         separator: '—',
-        siteName: 'Rami James - Principle Product Designer'
+        siteName: 'Rami James - Principal Product Designer'
       },
       charset: 'utf-8',
       meta: [

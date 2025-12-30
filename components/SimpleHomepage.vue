@@ -23,7 +23,7 @@
     <section class="mega-hero">
       <section class="mega-title">
         <img src="/homepage/rami-intro.png">
-        <h1>Principle<br>Product<br>Designer</h1>
+        <h1>Principal<br>Product<br>Designer</h1>
         <p>My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.</p>
         <section class="button-set">
           <nuxt-link to="/products" class="button blue">Browse case studies</nuxt-link>  
