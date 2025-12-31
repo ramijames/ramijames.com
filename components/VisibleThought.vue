@@ -2,7 +2,7 @@
   <section id="VisibleThought">
     <section class="reason-content">
       <h2>Visible Thought</h2>
-      <p>A successful design process is transparent, apparent, and obvious. My job as a Principle is to ensure that everyone's needs are accounted for, from executive stakeholders to developers who will implement the final design.</p>
+      <p>A successful design process is transparent, apparent, and obvious. My job as a Principal is to ensure that everyone's needs are accounted for, from executive stakeholders to developers who will implement the final design.</p>
     </section>
     <svg viewBox="0 0 3102 1072" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M2531 -2.67029e-05L3102 -5.16621e-05L3102 268L2816.5 268L2816.5 804L3102 804L3102 1072L2531 1072L2531 -2.67029e-05Z" fill="#D9D9D9"/>

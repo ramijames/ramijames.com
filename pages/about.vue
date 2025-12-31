@@ -1,7 +1,7 @@
 <template>
   <main id="About">
 
-    <PageHeader title="About" tagline="Principle Product Designer" />
+    <PageHeader title="About" tagline="Principal Product Designer" />
 
     <section class="about-container">
 
