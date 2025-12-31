@@ -37,7 +37,7 @@
       <h3>Every handoff introduces loss, delay, and distortion</h3>
 
       <p>
-        I think that we can frame this as a basic organizational physics problem. Every step along the way requires some interpretation, re-framing, and justification. These things all have an inherent risk of introducing loops in a group of people where nobody wants to take ownership (or blame!) and the end effect is a grueling, endless process that doesn’t end up with a satisfying decision that moves the project forward.
+        I think that we can frame this as a basic organizational physics problem. Every step along the way requires some interpretation, re-framing, and justification. These things all have an inherent risk of introducing loops in a group of people where nobody wants to take ownership and the end effect is a grueling, endless process that doesn’t end up with a satisfying decision that moves the project forward.
       </p>
 
       <p>
@@ -47,7 +47,7 @@
       <img src="/articles/typical.png" alt="The typical agile nonsense" />
 
       <p>
-        As you can imagine (or have unfortunately experienced), this doesn’t work very well in practice. Each step through the chain is basically playing the children’s game of telephone. Misunderstanding, reinterpretation, and incompetence lead to the original intent of the stakeholder being diluted and/or mangled along the way. The structure of meetings that is required to make this “work” is a type of inflicted insanity.
+        As you can imagine (or have unfortunately experienced), this doesn’t work very well in practice. Each step through the chain is basically playing the children’s game of telephone. Misunderstanding, reinterpretation, and incompetence lead to the original intent of the stakeholder being diluted and/or mangled along the way. The structure of meetings that is required to make this “work” is a type of inflicted insanity: too many of them that have to run on a regular basis as a way to keep a team in sync. It's a huge waste of manpower and screams inefficiency.
       </p>
 
       <h2>Solving the right problems</h2>
@@ -107,7 +107,7 @@
       </div>
 
       <p>
-        There’s a lot to argue about which specific descriptors that I’ve used here, but let’s not get distracted by that too much. What I think that this table really highlights is that Product is a column that stands out as an odd duck. They don’t really fit with the business units, nor do they fit with the design or engineering units. 
+        What I think that this table really highlights is that Product is a column that stands out as an odd duck. They don’t really fit with the business unit, nor do they fit with the design or engineering unit.
       </p>
 
       <p>They are the translation layer, and I think that organizations would do better if they were eliminated entirely.</p>
@@ -199,7 +199,7 @@
       <p>Organizations do not separate roles because the work demands it. They separate roles because they do not trust individuals with end-to-end ownership.</p>
       <p>I’m arguing here that Product roles emerged largely as a compensatory mechanism. At some point, stakeholders had poor experiences (missed targets, misunderstood priorities, features that were elegant but commercially irrelevant) and concluded that designers and engineers could not be trusted to internalize business context. Rather than fixing how ownership and accountability were established, and taking the initiative to teach designers and engineers to integrate business context into their work, organizations introduced intermediaries whose job was to translate intent into artifacts.</p>
       <p>That translation layer feels like control to stakeholders, but it is actually an admission of failure. It signals that the organization does not know how to create conditions where people can be trusted with decisions, so it substitutes process for judgment. </p>
-      <p>Roadmaps, PRDs, prioritization frameworks, and review ceremonies proliferate not because they add clarity, but because they are a shortcut.</p>
+      <p>⁠Roadmaps, PRDs, prioritization frameworks, and review ceremonies proliferate not because they add clarity, but because they allow for superiors to closely track work.</p>
       <p>Unfortunately, over time, these processes harden into structure. What began as a safeguard becomes a role, and what became a role becomes unquestionable. The organization stops asking whether translation is necessary and instead optimizes how efficiently it can be performed. The result is a system where accountability is fragmented, intent is diluted, and decision-making slows under the weight of alignment rituals.</p>
       <p>At its core, this is not a product problem or a design problem. It is a cultural one. The negative impacts of this system of management are burn out, turnover, and product failure.</p>
       <p>Healthy organizations confront ownership directly by investing in senior talent capable of holding business, user, and technical constraints simultaneously. </p>
