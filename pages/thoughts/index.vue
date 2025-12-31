@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Thoughts" />
+  <PageHeader title="Thoughts" tagline="On Life, Management, Product & Design, and Development" />
   <Thoughts :featured-articles="featuredArticles" :articles="regularArticles" />
   <PostsExtras />
   <Footer />
