@@ -434,6 +434,44 @@ p > strong {
     max-width: 800px;
     margin: 0 auto;
     padding-bottom: $spacing-xl;
+
+    img {
+      margin: $spacing-sm auto $spacing-md;
+    }
+
+    table {
+      border: 0;
+      width: 100%;
+      font-family: $font-family-secondary;
+      margin: $spacing-sm auto $spacing-md;
+
+      @media screen and (max-width: 1000px) {
+        min-width: 800px;
+        overflow: scroll;
+      }
+
+      th {
+        border: 0;
+        background: $blue;
+        font-family: $font-family-main;
+        font-weight: normal;
+        padding: $spacing-sm;
+        text-align:left;
+      }
+
+      td {
+        border: 0;
+        background: rgba($blue, 0.1);
+        font-weight: normal;
+        padding: $spacing-sm;
+        font-size: $font-size-sm;
+        text-align:left;
+      }
+      
+      .highlight-cell {
+        background: rgba($blue, 0.4);
+      }
+    }
   }
 
 }
@@ -604,15 +642,6 @@ input {
 
     .article-extras .article-meta {
       margin-bottom: 2rem;
-    }
-
-    .content {
-      width: 100%;
-      margin-bottom: $spacing-xxl;
-
-      #PostsExtras {
-        margin: $spacing-lg 0;
-      }
     }
 
     .summary {

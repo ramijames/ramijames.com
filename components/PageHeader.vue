@@ -301,7 +301,7 @@ onUnmounted(() => {
       
       @media screen and (max-width: 768px) {
         bottom: $spacing-sm;
-        left: $spacing-sm;
+        left: $spacing-md;
       }
 
       h1 {
@@ -325,7 +325,7 @@ onUnmounted(() => {
         font-weight: 200;
         max-width: 600px;
         text-wrap: balance;
-        color: $white;
+        color: $blue;
         opacity: 0.8;
         text-shadow: -20px -100px 800px rgba($red, 0.4), 1px 1px 2px rgba($black, 1);
 

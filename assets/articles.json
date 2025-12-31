@@ -1,5 +1,15 @@
 [
   {
+    "title": "The Cost of Translation",
+    "date": "2025-12-31",
+    "slug": "the-cost-of-translation",
+    "tags": [
+      "management"
+    ],
+    "summary": "A detailed breakdown of why long-term product and design engagements are preferrable for companies over short-term freelance gigs.",
+    "image": "/articles/the-cost-of-translation.png"
+  },
+  {
     "title": "A Partner, Not a Vendor",
     "date": "2025-12-29",
     "slug": "a-partner-not-a-vendor",
@@ -134,7 +144,7 @@
     "date": "2024-01-10",
     "slug": "the-work-structure-spectrum",
     "tags": [
-      "technical"
+      "management"
     ],
     "summary": "Working on an Agile team can really suck. But, why? No structure at all sucks way more. We should talk about that, too.",
     "image": "/articles/work-structure-spectrum.png"
