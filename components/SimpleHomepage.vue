@@ -419,7 +419,7 @@ onUnmounted(() => {
         z-index: 1;
 
         @media screen and (max-width: 768px){
-          font-size: 3rem;
+          font-size: 2.4rem;
         }
       }
 
@@ -444,6 +444,12 @@ onUnmounted(() => {
           font-size: $font-size-lg;
           line-height: $font-size-lg;
         }
+
+        @media screen and (max-width: 768px){
+          max-width: 100%;
+          font-size: $font-size-lg;
+          line-height: $font-size-lg;
+        }
       }
 
       .mega-title {
@@ -456,7 +462,7 @@ onUnmounted(() => {
           width: 200px;
 
           @media screen and (max-width: 768px){
-            width: 120px;
+            width: 80px;
           }
         }
 
