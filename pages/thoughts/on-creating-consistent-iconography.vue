@@ -90,18 +90,18 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'The Cost of Translation',
-  ogTitle: 'The Cost of Translation',
-  description: "How Product teams assist in product failure, and how your organization can retool to improve ownership.",
-  ogDescription: "How Product teams assist in product failure, and how your organization can retool to improve ownership.",
-  ogImage: "/articles/the-cost-of-translation.png",
-  url: 'https://www.ramijames.com/thoughts/the-cost-of-translation',
-  twitterTitle: 'The Cost of Translation',
-  twitterDescription: "How Product teams assist in product failure, and how your organization can retool to improve ownership.",
-  twitterImage: "/articles/the-cost-of-translation.png",
+  title: 'On Creating Consistent Iconography',
+  ogTitle: 'On Creating Consistent Iconography',
+  description: "How a few simple rules can help your designs pop through consistent, beautiful iconography",
+  ogDescription: "How a few simple rules can help your designs pop through consistent, beautiful iconography",
+  ogImage: "/articles/consistent-iconography.png",
+  url: 'https://www.ramijames.com/thoughts/on-creating-consistent-iconography',
+  twitterTitle: 'On Creating Consistent Iconography',
+  twitterDescription: "How a few simple rules can help your designs pop through consistent, beautiful iconography",
+  twitterImage: "/articles/consistent-iconography.png",
   twitterCard: 'summary_large_image',
 })
 
 </script>
 
-<PageHeader title="The Cost of Translation" tagline="How Product teams assist in product failure" />
+<PageHeader title="On Creating Consistent Iconography" tagline="How a few simple rules can help your designs pop through consistent, beautiful iconography" />
