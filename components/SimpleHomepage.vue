@@ -445,8 +445,8 @@ onUnmounted(() => {
         }
 
         @media screen and (max-width: 768px){
-          max-width: 100%;
-          font-size: $font-size-lg;
+          max-width: calc(100% - $spacing-md);
+          font-size: 16px;
           line-height: $font-size-lg;
         }
       }
@@ -456,14 +456,6 @@ onUnmounted(() => {
         bottom: $spacing-xl;
         left: $spacing-xl;
         z-index:1;
-
-        img {
-          width: 200px;
-
-          @media screen and (max-width: 768px){
-            width: 80px;
-          }
-        }
 
         @media screen and (max-width: 1200px){
           bottom: $spacing-lg;
@@ -484,6 +476,10 @@ onUnmounted(() => {
             flex-direction: column;
             gap: $spacing-xs;
             align-items: flex-start;
+
+            .button {
+              width: calc(100% - $spacing-md);
+            }
           }
         }
       }
