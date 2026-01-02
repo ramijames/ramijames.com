@@ -367,7 +367,8 @@ small {
 
 ul,
 ol {
-  margin: 0 $spacing-sm $spacing-md $spacing-md;
+  margin: $spacing-md;
+  opacity:0.7;
 }
 
 hr {
@@ -676,8 +677,8 @@ input {
     .content img {
       margin: 0 auto $spacing-lg 0;
       width: 100%;
-      border:0;
       border-radius: $br-sm;
+      outline: 1px solid rgba(255,255,255,0.2);
     }
 
     .dark .content img {
