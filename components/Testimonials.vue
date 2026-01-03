@@ -166,7 +166,6 @@
       height: 60px;
       border-radius: 50%;
       border: $border;
-      box-shadow: 0 10px 20px rgba($black, .8);
     }
 
     .testimonial-card {
