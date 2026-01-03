@@ -109,7 +109,6 @@
 .dark {
   #Testimonials {
     color: $white;
-    border-top: 1px solid rgba($white, 0.2);
 
     .single-testimonial {
 
@@ -139,7 +138,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: $spacing-sm;
-  border-top: 1px solid rgba($black, 0.2);
   font-family: $font-family-secondary;
   padding: $spacing-xl;
 
