@@ -150,6 +150,7 @@ const notHome = computed(() => {
   .simple-nav-bar {
     border: 1px solid rgba($white, 0.2);
     background: rgba($black, 0.1);
+    box-shadow: 0 0 40px 40px rgba($black,0.3), 0 0 30px 10px $black;
 
     .nav-links {
 
@@ -208,6 +209,7 @@ const notHome = computed(() => {
   border: 1px solid rgba($black, 0.2);
   border-radius: $br-md;
   padding: $spacing-md $spacing-xs;
+  box-shadow: 0 0 30px 10px white;
 
   @media screen and (max-width: 1000px){
     top: $spacing-xs;
@@ -216,6 +218,7 @@ const notHome = computed(() => {
     height: 68px;
     flex-direction: row;
     padding: 0 $spacing-sm;
+    box-shadow: 0 0 40px 40px rgba($white,0.1), 0 0 30px 10px rgba($white,0.1);
   }
 
   &:hover {
@@ -455,8 +458,8 @@ const notHome = computed(() => {
       width: 40px;
       height: 40px;
       position: absolute;
-      top: $spacing-sm;
-      right: $spacing-sm;
+      top: 22px;
+      right: 38px;
       padding: 0;
       background: none;
       border: none;
@@ -490,8 +493,8 @@ const notHome = computed(() => {
       width: 40px;
       height: 40px;
       position: absolute;
-      top: $spacing-sm;
-      right: $spacing-sm;
+      top: 22px;
+      right: 38px;
       padding: 0;
       background: none;
       border: none;
