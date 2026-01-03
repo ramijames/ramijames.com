@@ -58,9 +58,9 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'Host Grotesk': [400, 500, 600, 700],
+      'Libre Baskerville': [400, 500, 600, 700],
       'Roboto Sans': [400, 600, 700, 900],
-      'Rokkitt': [400, 600, 700, 900],
+      'Figtree': [400, 600, 700, 900],
     },
     preconnect: true,
     preload: true,

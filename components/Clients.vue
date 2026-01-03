@@ -29,13 +29,13 @@
   align-items: center;
   padding: $spacing-md;
   gap: $spacing-md;
-  width: 100%;
+  width: calc(100% - $spacing-md - $spacing-md);
   height: 100px;
   background: $black;
-  border-top: $border;
-  border-bottom: $border;
+  border-radius: $br-md;
+  overflow: hidden;
   position: relative;
-  margin-bottom:-1px;
+  margin: $spacing-md;
 
   @media screen and (max-width: 1000px){
     flex-direction: column;

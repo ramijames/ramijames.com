@@ -3,8 +3,8 @@
     <section :class="['navigation', state.mobileMenuOpen ? 'open' : '']">
       <div class="top">
         <nuxt-link to="/" class="logo-link">
-          <img :src="`/logo-light.svg`" alt="Rami James" v-if="currentTheme == 'dark'" />
-          <img :src="`/logo-dark.svg`" alt="Rami James" v-else />
+          <img :src="`/logo-dark.svg`" alt="Rami James" v-if="currentTheme == 'dark'" />
+          <img :src="`/logo-light.svg`" alt="Rami James" v-else />
         </nuxt-link>
       </div>
       <div class="nav-links">
@@ -148,7 +148,7 @@ const notHome = computed(() => {
 .dark {
 
   .simple-nav-bar {
-    border-right: 1px solid rgba($white, 0.2);
+    border: 1px solid rgba($white, 0.2);
     background: rgba($black, 0.1);
 
     .nav-links {
@@ -196,28 +196,26 @@ const notHome = computed(() => {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-sm 0;
   position: fixed;
-  width: 140px;
   background: rgba($white, 0.1);
-  backdrop-filter: blur(58px);
+  backdrop-filter: blur(8px);
   z-index: 1000;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  top: $spacing-sm;
+  left: $spacing-sm;
+  bottom: $spacing-sm;
   opacity:1;
   transition: background 0.6s ease-in-out;
-  border-right: 1px solid rgba($black, 0.2);
+  border: 1px solid rgba($black, 0.2);
+  border-radius: $br-md;
+  padding: $spacing-md $spacing-xs;
 
   @media screen and (max-width: 1000px){
-    top: 0;
-    left:0;
-    right:0;
-    width: 100%;
-    height: 80px;
+    top: $spacing-xs;
+    left:$spacing-sm;
+    right:$spacing-sm;
+    height: 68px;
     flex-direction: row;
-    padding: $spacing-sm;
-    border-bottom: $border;
+    padding: 0 $spacing-sm;
   }
 
   &:hover {
@@ -241,8 +239,6 @@ const notHome = computed(() => {
     height: 100%;
 
     @media screen and (max-width: 1000px){
-      width: 100%;
-      height: 80px;
       flex-direction: row;
     }
 
@@ -251,6 +247,12 @@ const notHome = computed(() => {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      .logo-link {
+        img {
+          width: 44px;
+        }
+      }
     }
 
     .contact {
@@ -333,7 +335,7 @@ const notHome = computed(() => {
         overflow: hidden;
         font-size: 9px;
         font-weight: 500;
-        width: 100px;
+        width: 86px;
         border-radius: $br-sm;
         text-align: center;
         border: rgba($black,0.1);

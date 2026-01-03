@@ -410,7 +410,8 @@ onUnmounted(() => {
 
       h1 {
           font-size: 6rem;
-          line-height: 80%;
+          line-height: 100%;
+          margin-bottom: $spacing-sm;
           z-index: 1;
 
           @media screen and (max-width: 768px){
@@ -641,7 +642,8 @@ onUnmounted(() => {
 
     h1 {
         font-size: 6rem;
-        line-height: 80%;
+        line-height: 100%;
+        margin: 0 0 $spacing-sm -0.5rem;
         z-index: 1;
 
         @media screen and (max-width: 768px){
