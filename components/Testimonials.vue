@@ -109,7 +109,7 @@
 .dark {
   #Testimonials {
     color: $white;
-    background: rgba($blue, 0.05);
+    border-top: 1px solid rgba($white, 0.2);
 
     .single-testimonial {
 
@@ -120,8 +120,15 @@
 
       .testimonial-card {
         .user-name {
-          color: $blue;
-          border-top: $border;
+          padding: 6px 10px 4px;
+          background: rgba($blue, 1);
+          line-height: 100%;
+          border-radius: $br-lg;
+          text-transform: uppercase;
+          font-size: 10px;
+          font-weight: bold;
+          letter-spacing: 1px;
+          color: rgba($white, 1);
         }
       }
     }
@@ -132,7 +139,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: $spacing-sm;
-  border-top: $border;
+  border-top: 1px solid rgba($black, 0.2);
   font-family: $font-family-secondary;
   padding: $spacing-xl;
 
@@ -175,6 +182,7 @@
       display: flex;
       gap: $spacing-xs;
       flex-direction: column;
+      align-items: flex-start;
       font-size: $font-size-sm;
       line-height: 140%;
       max-width: 300px;
@@ -182,15 +190,17 @@
       @media screen and (max-width: 1000px) {
         max-width: 100%;
       }
-      
-      .testimonial {
-        opacity: 0.4;
-      }
 
       .user-name {
-        color: $blue;
-        border-top: $border;
-        padding-top: $spacing-xs;
+        padding: 6px 10px 4px;
+        background: rgba($black, 1);
+        line-height: 100%;
+        border-radius: $br-lg;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: rgba($white, 1);
       }
     }
   }
