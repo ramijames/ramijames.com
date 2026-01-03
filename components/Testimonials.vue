@@ -106,15 +106,35 @@
 
 @import './assets/variables';
 
+.dark {
+  #Testimonials {
+    color: $white;
+    background: rgba($blue, 0.05);
+
+    .single-testimonial {
+
+      .user-image img {
+        border: $border;
+        box-shadow: 0 10px 20px rgba($black, .8);
+      }
+
+      .testimonial-card {
+        .user-name {
+          color: $blue;
+          border-top: $border;
+        }
+      }
+    }
+  }
+}
+
 #Testimonials {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: $spacing-sm;
-  color: $white;
   border-top: $border;
   font-family: $font-family-secondary;
   padding: $spacing-xl;
-  background: rgba($blue, 0.05);
 
   @media screen and (max-width: 1200px) {
     padding: $spacing-md;

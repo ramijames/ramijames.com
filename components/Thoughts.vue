@@ -175,10 +175,101 @@ const formatDate = (dateString) => {
 @import './assets/variables';
 @import './assets/animation';
 
+.dark {
+
+  .featured-card {
+    border: $border;
+    border-radius: $br-sm;
+    background: rgba($blue, 0.1);
+
+    &:hover {
+      background: rgba($blue, 0.2);
+      border-color: rgba($blue, 0.5);
+      box-shadow: 0 8px 24px rgba($blue, 0.2);
+    }
+  }
+
+  .featured-label {
+    color: rgba($blue, 0.8);
+  }
+
+  .featured-title {
+    color: $white;
+  }
+
+  .featured-image {
+    border: $border;
+  }
+
+  .filter-pill {
+    border: $border;
+    background: rgba($blue, 0.05);
+    color: rgba($white, 0.7);
+
+    &:hover {
+      background: rgba($blue, 0.1);
+      border-color: rgba($blue, 0.3);
+    }
+
+    &.active {
+      background: rgba($blue, 0.3);
+      border-color: rgba($blue, 0.5);
+    }
+
+    .count {
+      background: rgba($white, 0.1);
+    }
+  }
+
+  .search-container {
+    border-bottom: $border;
+  }
+
+  .search-input {
+    border: $border;
+    background: rgba($blue, 0.05);
+
+    &::placeholder {
+      color: rgba($white, 0.3);
+    }
+
+    &:focus {
+      outline: none;
+      background: rgba($blue, 0.1);
+      border-color: rgba($blue, 0.5);
+    }
+  }
+
+  .empty-state-content {
+    color: rgba($white, 0.5);
+    
+    h3 {
+      color: $white;
+    }
+  }
+
+  .article-card {
+    border: $border;
+    background: rgba($blue, 0.05);
+  }
+
+  .article-card:hover {
+    background: rgba($blue, 0.2);
+  }
+
+  .article-image {
+    border: $border;
+  }
+
+  .article-date {
+    color: rgba($white, 0.3);
+  }
+
+}
+
 .thoughts-container {
   display: grid;
   padding: $spacing-xl;
-  background: rgba($blue, 0.05);
 
   @media screen and (max-width: 1200px) {
     padding: $spacing-md;
@@ -201,7 +292,7 @@ const formatDate = (dateString) => {
   }
 
   h4 {
-    color: rgba($white, 0.3);
+    color: rgba($black, 0.3);
     margin: 0;
   }
 
@@ -226,7 +317,7 @@ const formatDate = (dateString) => {
 .featured-section {
   margin-bottom: $spacing-lg;
   padding-bottom: $spacing-lg;
-  border-bottom: $border;
+  border-bottom: 1px solid rgba($black, 0.2);
 }
 
 .featured-grid {
@@ -240,7 +331,7 @@ const formatDate = (dateString) => {
 }
 
 .featured-card {
-  border: $border;
+  border: 1px solid rgba($black, 0.2);
   border-radius: $br-sm;
   background: rgba($blue, 0.1);
   transition: all 0.3s ease;
@@ -282,9 +373,9 @@ const formatDate = (dateString) => {
 
 .featured-title {
   font-size: $font-size-xxl;
-  line-height: 1.3;
+  line-height: 1;
   margin: 0;
-  color: $white;
+  color: $black;
 
   @media screen and (max-width: 768px) {
     font-size: $font-size-xl;
@@ -293,7 +384,7 @@ const formatDate = (dateString) => {
 
 .featured-date {
   font-size: $font-size-sm;
-  color: rgba($white, 0.5);
+  opacity: 0.5;
   margin: 0;
 }
 
@@ -301,7 +392,7 @@ const formatDate = (dateString) => {
   width: 100%;
   height: auto;
   border-radius: $br-xs;
-  border: $border;
+  border: 1px solid rgba($black, 0.2);
   object-fit: cover;
   max-height: 200px;
 }
@@ -319,7 +410,7 @@ const formatDate = (dateString) => {
 
 .filter-pill {
   padding: 6px $spacing-xs 4px;
-  border: $border;
+  border: 1px solid rgba($black, 0.2);
   border-radius: $br-sm;
   background: rgba($blue, 0.05);
   cursor: pointer;
@@ -328,7 +419,7 @@ const formatDate = (dateString) => {
   align-items: center;
   gap: $spacing-xs;
   box-shadow: none;
-  color: rgba($white, 0.7);
+  color: rgba($black, 0.7);
   font-family: $font-family-secondary;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -342,18 +433,16 @@ const formatDate = (dateString) => {
   &:hover {
     background: rgba($blue, 0.1);
     border-color: rgba($blue, 0.3);
-    color: $white;
   }
 
   &.active {
     background: rgba($blue, 0.3);
     border-color: rgba($blue, 0.5);
-    color: $white;
   }
 
   .count {
     font-size: $font-size-xs;
-    background: rgba($white, 0.1);
+    background: rgba($black, 0.1);
     padding: 3px 5px;
     border-radius: 9999px;
     min-width: 16px;
@@ -372,14 +461,13 @@ const formatDate = (dateString) => {
   width: 100%;
   padding: $spacing-sm $spacing-md;
   font-size: $font-size-md;
-  border: $border;
+  border: 1px solid rgba($black, 0.2);
   border-radius: $br-sm;
   background: rgba($blue, 0.05);
-  color: $white;
   transition: all 0.2s;
 
   &::placeholder {
-    color: rgba($white, 0.3);
+    color: rgba($black, 0.3);
   }
 
   &:focus {
@@ -399,12 +487,12 @@ const formatDate = (dateString) => {
 
 .empty-state-content {
   text-align: center;
-  color: rgba($white, 0.5);
+  color: rgba($black, 0.5);
   
   h3 {
     margin-top: $spacing-md;
     margin-bottom: $spacing-sm;
-    color: $white;
+    color: $black;
   }
 
   p {
@@ -446,7 +534,7 @@ const formatDate = (dateString) => {
   border-radius: $br-sm;
   transition: transform 0.2s, box-shadow 0.2s;
   text-decoration: none;
-  border: $border;
+  border: 1px solid rgba($black, 0.2);
   min-height: 200px;
   background: rgba($blue, 0.05);
 }
@@ -472,7 +560,7 @@ const formatDate = (dateString) => {
   right: $spacing-sm;
   bottom: $spacing-sm;
   border-radius: $br-xs;
-  border: $border;
+  border: 1px solid rgba($black, 0.2);
 }
 
 .article-title {
@@ -483,28 +571,7 @@ const formatDate = (dateString) => {
 
 .article-date {
   font-size: $font-size-xs;
-  color: rgba($white, 0.3);
+  color: rgba($black, 0.4);
   margin: 0;
-}
-
-.article-summary {
-  font-size: 0.938rem;
-  color: #4b5563;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.article-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tag {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.75rem;
-  background-color: #f3f4f6;
-  color: #374151;
-  border-radius: $br-sm;
 }
 </style>

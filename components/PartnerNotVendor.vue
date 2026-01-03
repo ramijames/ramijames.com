@@ -1,5 +1,5 @@
 <template>
-  <section id="VisibleThought">
+  <section id="PartnerNotVendor">
     <section class="reason-content">
       <h2>A Partner, Not a Vendor</h2>
       <p>Over the years, it's been my pleasure to act as a partner to teams who are building innovative and interesting projects. </p>
@@ -21,8 +21,23 @@
 
 @import './assets/variables';
 
-#VisibleThought {
-  background: rgba($black, 0.05);
+.dark {
+  #PartnerNotVendor {
+
+    svg {
+      opacity: 0.1;
+    }
+
+    &:hover {
+      svg {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+#PartnerNotVendor {
+  background: rgba($blue, 0.05);
   display: flex;
   flex-direction: column;
   gap: $spacing-lg;
@@ -50,7 +65,7 @@
   svg {
     width: 100%;
     margin: 0;
-    opacity: 0.1;
+    opacity: 0.4;
     transition: all 0.62s ease-in-out;
     -webkit-mask-image: linear-gradient(black, transparent);
     mask-image: linear-gradient(black, transparent);
@@ -58,7 +73,7 @@
 
   &:hover {
     svg {
-      opacity: 0.6;
+      opacity: 1;
     }
   }
 }

@@ -20,6 +20,21 @@
 
 @import './assets/variables';
 
+.dark {
+  #VisibleThought {
+
+    svg {
+      opacity: 0.1;
+    }
+
+    &:hover {
+      svg {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
 #VisibleThought {
   background: rgba($blue, 0.05);
   display: flex;
@@ -46,7 +61,7 @@
   svg {
     width: 100%;
     margin: 0;
-    opacity: 0.1;
+    opacity: 0.4;
     transition: all 0.62s ease-in-out;
     -webkit-mask-image: linear-gradient(black, transparent);
     mask-image: linear-gradient(black, transparent);
@@ -54,7 +69,7 @@
 
   &:hover {
     svg {
-      opacity: 0.6;
+      opacity: 1;
     }
   }
 }

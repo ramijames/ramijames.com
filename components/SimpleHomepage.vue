@@ -293,11 +293,238 @@ onUnmounted(() => {
 @import './assets/variables';
 @import './assets/animation';
 
+.dark {
+  #Hero {
+    background-color: $black;
+
+    .figure-one {
+      position: absolute;
+      top: -200px;
+      right: 200px;
+      z-index:10;
+      width: 15%;
+      will-change: transform;
+      transition: transform 0.1s ease-out;
+      max-width: 200px;
+      filter:blur(15px);
+      pointer-events: none;
+      opacity:0.6;
+
+      @media screen and (max-width: 1000px){
+        display: none;
+      }
+    }
+
+    .figure-two {
+      position: absolute;
+      top: 24%;
+      right: 12%;
+      z-index:10;
+      width: 20%;
+      will-change: transform;
+      transition: transform 0.1s ease-out;
+      max-width: 200px;
+      pointer-events: none;
+
+      @media screen and (max-width: 1000px){
+        display: none;
+      }
+    }
+
+    .figure-three {
+      position: absolute;
+      top: 20%;
+      right: 40px;
+      z-index:9;
+      width: 20%;
+      will-change: transform;
+      transition: transform 0.1s ease-out;
+      max-width: 200px;
+      filter:blur(15px);
+      pointer-events: none;
+      opacity:0.6;
+
+      @media screen and (max-width: 1000px){
+        display: none;
+      }
+    }
+
+    .figure-four {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      z-index:10;
+      width: 25%;
+      will-change: transform;
+      transition: transform 0.1s ease-out;
+      max-width: 200px;
+      pointer-events: none;
+
+      @media screen and (max-width: 1000px){
+        display: none;
+      }
+    }
+
+    .mega-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: $spacing-sm;
+      padding: $spacing-md;
+      position: relative;
+      height: calc(100dvh - 80px);
+      overflow: hidden;
+
+      @media screen and (max-width: 768px){
+        height: calc(100dvh - 120px);
+      }
+
+      .grid-background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: all;
+        z-index: 0;
+        transform-style: preserve-3d;
+        transition: transform 0.3s ease-out;
+        -webkit-mask-image: linear-gradient(black, transparent);
+        mask-image: linear-gradient(black, transparent);
+
+        .grid-item {
+          position: absolute;
+          background: transparent;
+          border-radius: $br-sm;
+          transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform-origin: center center;
+
+          svg {
+            display: block;
+          }
+        }
+      }
+
+      h1 {
+          font-size: 6rem;
+          line-height: 80%;
+          z-index: 1;
+
+          @media screen and (max-width: 768px){
+            font-size: 2.4rem;
+          }
+        }
+
+        @media screen and (max-width: 768px){
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        p {
+          font-size: $font-size-lg;
+          line-height: $font-size-lg;
+          font-family: $font-family-main;
+          font-weight: 200;
+          max-width: 600px;
+          text-wrap: balance;
+          color: $white;
+          opacity: 0.8;
+          text-shadow: -20px -100px 800px rgba($red, 0.4), 1px 1px 2px rgba($black, 1);
+
+          @media screen and (max-width: 1180px){
+            max-width: 65%;
+            font-size: $font-size-lg;
+            line-height: $font-size-lg;
+          }
+
+          @media screen and (max-width: 768px){
+            max-width: calc(100% - $spacing-md);
+            font-size: 16px;
+            line-height: $font-size-lg;
+          }
+        }
+
+        .mega-title {
+          position: absolute;
+          bottom: $spacing-xl;
+          left: $spacing-xl;
+          z-index:1;
+
+          @media screen and (max-width: 1200px){
+            bottom: $spacing-lg;
+            left: $spacing-lg;
+          }
+          
+          @media screen and (max-width: 768px){
+            bottom: $spacing-md;
+            left: $spacing-md;
+          }
+
+          .button-set {
+            display: flex;
+            flex-direction: row;
+            gap: $spacing-sm;
+
+            @media screen and (max-width: 768px){
+              flex-direction: column;
+              gap: $spacing-xs;
+              align-items: flex-start;
+
+              .button {
+                width: calc(100% - $spacing-md);
+              }
+            }
+          }
+        }
+
+      .orientation-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        padding: $spacing-md $spacing-lg;
+        background: rgba($white, 0.9);
+        color: $black;
+        border: 2px solid $blue;
+        border-radius: $br-md;
+        font-size: $font-size-md;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        pointer-events: all;
+
+        &:hover {
+          background: $blue;
+          color: $white;
+          transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        &:active {
+          transform: translate(-50%, -50%) scale(0.95);
+        }
+      }
+    }
+
+    h2 {
+      margin-top: 0;
+      line-height: 140%;
+
+      @media screen and (max-width: 768px){
+        font-size: $font-size-lg;
+      }
+    }
+
+  }
+}
+
 #Hero {
   width: 100%;
   position: relative;
-  background-color: $black;
-  // background: url('/desktop.jpg') no-repeat top right;
+  background-color: $white;
   background-size: cover;
   border-bottom: $border;
 
@@ -434,9 +661,7 @@ onUnmounted(() => {
         font-weight: 200;
         max-width: 600px;
         text-wrap: balance;
-        color: $white;
         opacity: 0.8;
-        text-shadow: -20px -100px 800px rgba($red, 0.4), 1px 1px 2px rgba($black, 1);
 
         @media screen and (max-width: 1180px){
           max-width: 65%;
@@ -527,6 +752,7 @@ onUnmounted(() => {
 #Reasons {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid rgba($black, 0.2);
 
   @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr;

@@ -1,7 +1,7 @@
 <template>
   <div id="share">
     <span>Share on:</span>
-    <a v-for="social in socials" class="button small blue" 
+    <a v-for="social in socials" class="button small" 
        :key="social.name" 
        :href="social.url + encodeURIComponent('https://www.ramijames.com' + route)">
       <img :src="'/' + social.icon + '.svg'" alt="social.name" />
@@ -53,7 +53,7 @@ export default {
   span {
     font-size: $font-size-sm;
     margin-right: $spacing-xs;
-    color: $blue;
+    font-family: $font-family-secondary;
 
     @media screen and (max-width: 1000px) {
       display: none;

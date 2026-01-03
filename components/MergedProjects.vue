@@ -31,18 +31,18 @@ onMounted(() => {
 })
 
 const products = [
-                  {
-                    title: 'Vewrite',
-                    description: 'Open-source project management for content creators',
-                    image: '/products/vewrite/ve-thumb.png',
-                    logo: '/products/vewrite/ve-logo.svg',
-                    bg: '/homepage/hp-vewrite.png',
-                    status: 'past',
-                    slug: '/products/vewrite/',
-                    color: '#0D1E38',
-                    class: 'vewrite',
-                    type: 'Product Case Study'
-                  }, 
+                  // {
+                  //   title: 'Vewrite',
+                  //   description: 'Open-source project management for content creators',
+                  //   image: '/products/vewrite/ve-thumb.png',
+                  //   logo: '/products/vewrite/ve-logo.svg',
+                  //   bg: '/homepage/hp-vewrite.png',
+                  //   status: 'past',
+                  //   slug: '/products/vewrite/',
+                  //   color: '#0D1E38',
+                  //   class: 'vewrite',
+                  //   type: 'Product Case Study'
+                  // }, 
                   {
                     title: 'Scatter',
                     description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',

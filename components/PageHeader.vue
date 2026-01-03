@@ -2,7 +2,7 @@
   <main class="page-header">
     <section class="mega-hero">
       <section class="mega-title">
-        <h2>{{ title }}</h2>
+        <h1>{{ title }}</h1>
         <p v-if="tagline">{{ tagline }}</p>
       </section>
       <section 
@@ -238,12 +238,19 @@ onUnmounted(() => {
 @import './assets/variables';
 @import './assets/animation';
 
+.dark {
+  .page-header {
+    background-color: $black;
+    border-bottom: $border;
+  }
+}
+
 .page-header {
   width: 100%;
   position: relative;
-  background-color: $black;
+  background-color: $white;
   background-size: cover;
-  border-bottom: $border;
+  border-bottom: 1px solid rgba($black, 0.2);
 
   .mega-hero {
     display: flex;
@@ -305,29 +312,18 @@ onUnmounted(() => {
       }
 
       h1 {
-        font-size: 6rem;
-        line-height: 80%;
-
-        @media screen and (max-width: 768px) {
-          font-size: 3rem;
-        }
-      }
-
-      h2 {
-        margin: 0;
+        margin: 0 0 $spacing-xs;
         line-height: 100%;
       }
 
       p {
-        font-size: $font-size-lg;
-        line-height: $font-size-lg;
+        font-size: $font-size-xl;
+        line-height: $font-size-xl;
         font-family: $font-family-main;
         font-weight: 200;
         max-width: 600px;
         text-wrap: balance;
-        color: $blue;
-        opacity: 0.8;
-        text-shadow: -20px -100px 800px rgba($red, 0.4), 1px 1px 2px rgba($black, 1);
+        margin: 0;
 
         @media screen and (max-width: 1180px) {
           max-width: 100%;

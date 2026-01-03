@@ -46,14 +46,14 @@
   &:after {
     content: '';
     height: 100%;
-    width: 35%;
-    background: linear-gradient(90deg, transparent, $black);
+    width: 15%;
+    background: linear-gradient(90deg, transparent 0%, $black);
     display: block;
     position: absolute;
     z-index: 1;
     right: 0;
     backdrop-filter:blur(10px);
-    mask-image: linear-gradient(90deg, transparent 0%, $black 40%);
+    mask-image: linear-gradient(90deg, transparent 20%, $black 100%);
     pointer-events: none;
 
     @media screen and (max-width: 1000px){
@@ -66,6 +66,7 @@
     text-wrap: nowrap;
     opacity: 0.8;
     font-size: $font-size-lg;
+    color: $white;
 
     @media screen and (max-width: 1000px){
       display: none;

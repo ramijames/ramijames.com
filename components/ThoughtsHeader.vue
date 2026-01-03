@@ -1,17 +1,18 @@
 <template>
  <section class="single-thought-header">
   <section class="navigation">
-    <button class="small blue" @click="$router.back()">
-      <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- <button class="small blue" @click="$router.back()"> -->
+      <!-- Back -->
+      <!-- <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8.37094 0.368408L0.739746 7.36842L8.37094 14.3684" stroke="white"/>
         <path d="M0.83252 7.36841H17.3454" stroke="white"/>
-      </svg>
-    </button>
-    <button class="small" @click="navigateTo('/thoughts')">View all</button>
+      </svg> -->
+    <!-- </button> -->
+    <button class="small blue" @click="navigateTo('/thoughts')">View all thoughts</button>
   </section>
-  <section class="thought-details">
+  <!-- <section class="thought-details">
     <Share :route="slug" :topic="title" />
-  </section>
+  </section> -->
   
  </section>
 </template>

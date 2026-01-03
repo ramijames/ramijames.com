@@ -1,7 +1,12 @@
 <template>
   <nav :class="['simple-nav-bar', { hidden: isMenuHidden }]">
     <section :class="['navigation', state.mobileMenuOpen ? 'open' : '']">
-      <nuxt-link to="/" class="logo-link"><img :src="`/logo-dark.svg`" alt="Rami James" /></nuxt-link>
+      <div class="top">
+        <nuxt-link to="/" class="logo-link">
+          <img :src="`/logo-light.svg`" alt="Rami James" v-if="currentTheme == 'dark'" />
+          <img :src="`/logo-dark.svg`" alt="Rami James" v-else />
+        </nuxt-link>
+      </div>
       <div class="nav-links">
         <nuxt-link to="/" class="nav-link">
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,8 +33,17 @@
           </svg>
           <span>About</span>
         </nuxt-link>
+        <a class="nav-link" href="mailto:ramijames@gmail.com?subject=Set up a call">
+          <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.6377 6.76758C7.813 7.26379 9.14379 7.23798 10.2988 6.69629L16 4.02148V10.2354C16 11.3399 15.1046 12.2354 14 12.2354H1C0.447737 12.2353 3.08465e-05 11.7876 0 11.2354V3.96484L6.6377 6.76758Z" fill="white"/>
+            <path d="M14 0C15.1046 0 16 0.895431 16 2V2.91602L9.875 5.79102C8.97653 6.21252 7.94064 6.23271 7.02637 5.84668L0 2.87891V2C7.05425e-06 0.895457 0.895465 3.53405e-05 2 0H14Z" fill="white"/>
+          </svg>
+          <span>Contact</span>
+        </a>
       </div>
-      <a class="button contact" href="mailto:ramijames@gmail.com?subject=Set up a call">Contact</a>
+      <div class="theme-switcher-box">
+        <theme-switcher />
+      </div>
       <div 
         :class="['menu', state.mobileMenuOpen ]"
         @click="toggleMenu"
@@ -47,6 +61,8 @@
       <nuxt-link to="/thoughts" @click="closeMenu">Thoughts</nuxt-link>
       <nuxt-link to="/about" @click="closeMenu">About</nuxt-link>
       <a href="mailto:ramijames@gmail.com" @click="closeMenu">Contact</a>
+      <hr>
+      <theme-switcher />
     </section>
   </section>
 </template>
@@ -54,6 +70,11 @@
 <script setup>
 import { ref, reactive, computed, onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
+import ThemeSwitcher from './ThemeSwitcher.vue';
+import { useThemeStore } from '~/store/theme';
+
+const themeStore = useThemeStore()
+const currentTheme = computed(() => themeStore.currentTheme)
 
 const route = useRoute();
 
@@ -124,6 +145,52 @@ const notHome = computed(() => {
 @import './assets/variables';
 @import './assets/animation';
 
+.dark {
+
+  .simple-nav-bar {
+    border-right: 1px solid rgba($white, 0.2);
+    background: rgba($black, 0.1);
+
+    .nav-links {
+
+      .nav-link {
+          border: rgba(255,255,255,0.2);
+          color: rgba($white, 0.4) !important;
+
+          svg {
+
+            path, circle {
+              fill: $white !important;
+            }
+          }
+
+          &:hover {
+            color: $white !important;
+            background: rgba($white,0.1) !important;
+          }
+          
+          &.router-link-exact-active,
+          &.router-link-active {
+            color: $white !important;
+            border: 1px solid rgba($white, 0.2) !important;
+          }
+        }
+    }
+  }
+
+  .menu {
+
+    &::before {
+      background: $white !important;
+    }
+
+    &::after {
+      background: $white !important;
+    }
+
+  }
+}
+
 .simple-nav-bar {
   display: flex;
   flex-direction: column;
@@ -132,7 +199,7 @@ const notHome = computed(() => {
   padding: $spacing-sm 0;
   position: fixed;
   width: 140px;
-  background: linear-gradient(120deg, transparent 30%, rgba($blue, 0.1));
+  background: rgba($white, 0.1);
   backdrop-filter: blur(58px);
   z-index: 1000;
   top: 0;
@@ -140,6 +207,7 @@ const notHome = computed(() => {
   bottom: 0;
   opacity:1;
   transition: background 0.6s ease-in-out;
+  border-right: 1px solid rgba($black, 0.2);
 
   @media screen and (max-width: 1000px){
     top: 0;
@@ -178,8 +246,21 @@ const notHome = computed(() => {
       flex-direction: row;
     }
 
+    .top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
     .contact {
 
+      @media screen and (max-width: 1000px){
+        display: none;
+      }
+    }
+
+    .theme-switcher-box {
       @media screen and (max-width: 1000px){
         display: none;
       }
@@ -202,7 +283,7 @@ const notHome = computed(() => {
         right: 0px;
         width: 30px;
         height: 2px;
-        background: $white;
+        background: $black;
         transition: all 0.3s;
       }
 
@@ -213,7 +294,7 @@ const notHome = computed(() => {
         right: 0px;
         width: 30px;
         height: 2px;
-        background: $white;
+        background: $black;
         transition: all 0.3s;
       }
 
@@ -255,8 +336,8 @@ const notHome = computed(() => {
         width: 100px;
         border-radius: $br-sm;
         text-align: center;
-        border: rgba(255,255,255,0);
-        color: rgba($white, 0.7);
+        border: rgba($black,0.1);
+        color: rgba($black, 0.4);
         font-family: $font-family-secondary;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -271,7 +352,11 @@ const notHome = computed(() => {
         }
 
         svg {
-          opacity: 0.2;
+          opacity: 0.4;
+
+          path, circle {
+            fill: $black;
+          }
         }
 
         &:nth-child(1) {
@@ -303,15 +388,19 @@ const notHome = computed(() => {
         }
 
         &:hover {
-          color: $white;
-          background: rgba($blue,0.25);
+          color: $black;
+          background: rgba($black,0.1);
         }
         
         &.router-link-exact-active,
         &.router-link-active {
-          color: $white;
-          border: 1px solid $blue;
-          background: rgba($blue,0.75);
+          color: $black;
+          border: 1px solid rgba($black, 0.2);
+          background: transparent;
+
+          svg {
+            opacity: 1;
+          }
         }
       }
     }
@@ -322,6 +411,8 @@ const notHome = computed(() => {
     cursor: pointer;
   }
 }
+
+
 
 .extras {
   display: flex;
@@ -335,6 +426,12 @@ const notHome = computed(() => {
 
 }
 
+.dark {
+  .mobile-nav-panel {
+    background: rgba($black, .6);
+  }
+}
+
 .mobile-nav-panel {
   display:none;
   position: fixed;
@@ -342,17 +439,52 @@ const notHome = computed(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba($black, .6);
+  background: rgba($white, .6);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   z-index: 10000;
   padding: $spacing-lg;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   animation: fade 0.24s ease-in-out;
 }
 
     .close {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: $spacing-sm;
+      right: $spacing-sm;
+      padding: 0;
+      background: none;
+      border: none;
+      margin-right: 6px;
+      margin-top: 6px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 2px;
+        background: $black;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 2px;
+        background: $black;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
+    .dark .close {
       width: 40px;
       height: 40px;
       position: absolute;
@@ -415,9 +547,14 @@ const notHome = computed(() => {
       height:100%;
       justify-content: center;
       gap:1rem;
+
+      hr {
+        margin: $spacing-md auto;
+        width: 120px;
+      }
     }
 
-        .mobile-nav-panel-links a {
+        .dark .mobile-nav-panel-links a {
           display:flex;
           flex-direction: column;
           justify-content: center;
@@ -456,49 +593,43 @@ const notHome = computed(() => {
           }
         }
 
-        .dark .mobile-nav-panel-links a {
-          color: $white;
+        .mobile-nav-panel-links a {
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: $spacing-sm;
+          color: $black;
+          font-size: 8dvw;
+          font-weight:500;
+          text-decoration: none;
+          text-align: center;
+          border-bottom: none;
+          opacity: 0;
+          animation: fadeInUp 0.2s ease-in-out forwards;
+
+          &:nth-child(1) {
+            animation-delay: 0.1s;
+          }
+
+          &:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+
+          &:nth-child(3) {
+            animation-delay: 0.3s;
+          }
+
+          &:nth-child(4) {
+            animation-delay: 0.4s;
+          }
+
+          &:nth-child(5) {
+            animation-delay: 0.5s;
+          }
+
+          &:nth-child(6) {
+            animation-delay: 0.6s;
+          }
         }
-
-.dark .bread-crumbs {
-  border-top: 1px solid rgba($white-dark, 0.2);
-  padding: $spacing-md;
-  display: flex;
-  flex-direction: row;
-  gap: $spacing-sm;
-  text-transform: capitalize;
-  font-weight: 600;
-  font-size: $font-size-xs;
-  color: $white-dark;
-
-  .bread-crumb {
-    position: relative;
-    text-decoration: none;
-    color: $white-dark;
-    text-decoration: underline;
-
-    &:after {
-      content: '/';
-      position: absolute;
-      right: -10px;
-      color: rgba($white-dark, 0.2);
-    }
-  }
-
-  .current {
-    color: $white-light;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  a {
-    transition: color 0.3s;
-
-    &:hover {
-      color: $white;
-    }
-  }
-}
 
 </style>

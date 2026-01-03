@@ -21,8 +21,8 @@ body {
 
 body,
 body.light {
-  color: $white;
-  background: $black;
+  color: $black;
+  background: $white;
 }
 
 body.dark {
@@ -43,13 +43,52 @@ initial-value: 0deg;
 inherits: false;
 }  
 
+.dark {
+  button,
+  .button {
+      color: $black;
+      background: rgba($white,0.9);
+      border: 1px solid rgba($white, 0.2);
+
+      svg path {
+        fill: $white;
+      }
+      
+      &.blue {
+        background: transparent;
+        border: 1px solid rgba($white, 0.2);
+        box-shadow: none;
+        color: $white;
+      }
+
+      &.primary {
+        color: $white;
+
+        &:hover {
+          border: $border-hover;
+        }
+      }
+
+      &:hover {
+          background: $white;
+          color: $black;
+          transform: scale(1.05);
+      }
+
+      &.large {
+        padding: $spacing-sm $spacing-md;
+        font-size: 16px;
+      }
+  }
+}
+
 button,
 .button {
     color: $white;
-    background: rgba($red,0.5);
+    background: rgba($black,0.9);
     backdrop-filter: blur(4px);
     border-radius: $br-xs;
-    border: 1px solid $red;
+    border: 1px solid rgba($black, 0.2);
     text-align: center;
     text-decoration: none;
     padding: 12px $spacing-sm 10px;
@@ -67,73 +106,12 @@ button,
     align-items: center;
     text-transform: uppercase;
     overflow: hidden;
-    box-shadow: 0 0 200px 20px rgba($blue, 0.6), 0 0 20px 0px rgba($blue, 0.6);
-
-    &.shiny {
-      --gradient_rotate: 0deg; 
-
-      --border_width: 1px; 
-
-      --metal_01: #7a52e7;  
-      --metal_02: #fad2b0; 
-      --metal_03: #3d51a0; 
-      --metal_04: #A7B8FC; 
-      --metal_05: #5295e7; 
-      --metal_06: #7a52e7;  
-
-      position: relative;
-      border: var(--border_width) solid transparent; 
-      background: linear-gradient(0deg,
-                  rgb(89,98,151),
-                  rgb(110,124,189)) padding-box, 
-                  conic-gradient(from var(--gradient_rotate),
-                  rgb(from var(--metal_01) r g b / 0.85),
-                  rgb(from var(--metal_01) r g b / 1.0),
-                  rgb(from var(--metal_06) r g b / 1.0),
-                  rgb(from var(--metal_06) r g b / 1.0),
-                  rgb(from var(--metal_03) r g b / 0.65),
-                  rgb(from var(--metal_04) r g b / 1.0),
-                  rgb(from var(--metal_04) r g b / 0.5),
-                  rgb(from var(--metal_01) r g b / 0.85)) border-box;
-
-      animation: button_gradient_rotate 10s linear infinite;
-
-      :before {
-        content: "";
-        position: absolute; 
-        inset: calc(-1 * var(--border_width));
-        z-index: -1; 
-        border-radius: inherit; 
-        background:conic-gradient( from var(--gradient_rotate),
-                  rgb(from var(--metal_03) r g b / 1.0),
-                  rgb(from var(--metal_01) r g b / 1.0),
-                  rgb(from var(--metal_01) r g b / 1.0),
-                  rgb(from var(--metal_06) r g b / 1.0),
-                  rgb(from var(--metal_02) r g b / 1.0),
-                  rgb(from var(--metal_05) r g b / 1.0),
-                  rgb(from var(--metal_04) r g b / 1.0),
-                  rgb(from var(--metal_03) r g b / 1.0)) padding-box,
-                  conic-gradient( from 0deg,
-                  rgb(from var(--metal_03) r g b / 1.0),
-                  rgb(from var(--metal_01) r g b / 1.0),
-                  rgb(from var(--metal_01) r g b / 1.0),
-                  rgb(from var(--metal_06) r g b / 1.0),
-                  rgb(from var(--metal_02) r g b / 1.0),
-                  rgb(from var(--metal_05) r g b / 1.0),
-                  rgb(from var(--metal_04) r g b / 1.0),
-                  rgb(from var(--metal_03) r g b / 1.0)) border-box;
-        animation: button_gradient_rotate 4s linear infinite reverse; 
-        border: 0.25rem solid transparent;
-      }
-    }
-
-
     
     &.blue {
-      background: rgba($red,0);
-      border: $border;
+      background: rgba($blue,0);
+      border: 1px solid rgba($black, 0.2);
       box-shadow: none;
-      color: $white;
+      color: $black;
     }
 
     &.primary {
@@ -145,8 +123,9 @@ button,
     }
 
     &:hover {
-        border: $border-hover;
-        box-shadow: 0 0 200px 20px rgba($blue, 0.9), 0 0 20px 0px rgba($blue, 0.72);
+        background: $black;
+        color: $white;
+        transform: scale(1.05);
     }
 
     &.large {
@@ -193,7 +172,7 @@ h1 {
   line-height: 120%;
 
   @media screen and (max-width: 1200px) {
-    font-size: $font-size-xl;
+    font-size: $font-size-xxl;
     line-height: 100%;
   }
 
@@ -221,9 +200,6 @@ h2 {
 
 .content h2 {
   margin: $spacing-lg auto $spacing-md;
-  padding-bottom: $spacing-md;
-  border-bottom: $border;
-
 }
 
 h3 { 
@@ -407,6 +383,20 @@ p > strong {
   }
 }
 
+.w-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: $spacing-md;
+  width: 100%;
+  max-width: 1000px;
+  margin: $spacing-lg auto;
+  padding: 0 $spacing-md;
+
+  
+}
+
 .w-content {
   display: flex;
   flex-direction: column;
@@ -416,7 +406,6 @@ p > strong {
   width: 100%;
   margin: $spacing-lg auto;
   padding: 0 $spacing-md;
-  background: rgba($blue, 0.05);
 
   @media screen and (max-width: 1000px) {
     margin: $spacing-lg auto;
@@ -678,11 +667,11 @@ input {
       margin: 0 auto $spacing-lg 0;
       width: 100%;
       border-radius: $br-sm;
-      outline: 1px solid rgba(255,255,255,0.2);
+      outline: 1px solid rgba($black,0.2);
     }
 
     .dark .content img {
-      background-color: $black-dark;
+      outline: 1px solid rgba($white,0.2);
     }
 
 .single-article p {
@@ -941,16 +930,12 @@ img.in-article {
     }
 
 .single-product-image {
-    margin: $spacing-sm $spacing-sm 0 $spacing-sm;
+    margin: $spacing-sm 0;
     outline: 1px solid rgba(0,0,0,0.06);
     outline-offset: -1px;
     border-radius: $br-sm;
-    width: calc(100% - $spacing-sm - $spacing-sm);
+    width: calc(100% - $spacing-md);
 }
-
-    .dark .single-product-image {
-      background: $black-dark;
-    }
 
 .product-images {
   display:grid;

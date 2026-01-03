@@ -132,6 +132,14 @@ export default {
 
 @import './assets/variables';
 
+.dark {
+  #About {
+    .resume {
+      border-left: $border;
+    }
+  }
+}
+
 #About {
   width: 100%;
   display: flex;
@@ -144,7 +152,6 @@ export default {
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: rgba($blue, 0.05);
 
   @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr;
@@ -179,7 +186,7 @@ export default {
 
   .resume {
     padding: $spacing-xl;
-    background: rgba($blue, 0.05);
+    border-left: 1px solid rgba($black, 0.2);
     display: flex;
     flex-direction: column;
     gap: $spacing-lg;
@@ -246,7 +253,6 @@ export default {
       display:flex;
       flex-direction: column;
       align-items: flex-start;
-      border-bottom: $border;
       padding-bottom: $spacing-sm;
       margin-bottom: $spacing-md;
     }

@@ -5,40 +5,34 @@
     >
       <img :src="`/${currentTheme}.svg`" alt="theme icon" />
     </div>
+    <div class="label">{{ currentTheme }}</div>
   </div>
 </template>
 
-<script>
-import { ref, onMounted, watch, computed } from 'vue';
-import { useThemeStore } from '~/store/theme';
+<script setup>
+import { onMounted, watch, computed } from 'vue'
+import { useThemeStore } from '~/store/theme'
 
-export default {
-  setup() {
-    const themeStore = useThemeStore();
+const themeStore = useThemeStore()
 
-    function toggleTheme() {
-      themeStore.toggleTheme();
-    }
+const currentTheme = computed(() => themeStore.currentTheme)
 
-    onMounted(() => {
-      watch(
-        () => themeStore.currentTheme,
-        (newTheme, oldTheme) => {
-          if (typeof document !== 'undefined') {
-            document.body.classList.remove(`${oldTheme}`);
-            document.body.classList.add(`${newTheme}`);
-          }
-        },
-        { immediate: true }
-      );
-    });
+function toggleTheme() {
+  themeStore.toggleTheme()
+}
 
-    return {
-      toggleTheme,
-      currentTheme: computed(() => themeStore.currentTheme)
-    };
-  },
-};
+onMounted(() => {
+  watch(
+    () => themeStore.currentTheme,
+    (newTheme, oldTheme) => {
+      if (typeof document !== 'undefined') {
+        document.body.classList.remove(`${oldTheme}`)
+        document.body.classList.add(`${newTheme}`)
+      }
+    },
+    { immediate: true }
+  )
+})
 </script>
 
 <style scoped lang="scss">
@@ -51,6 +45,8 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 
   span {
     background: $white-dark;
@@ -62,10 +58,19 @@ export default {
     color: rgba($black,0.4);
   }
 
+  .label {
+    color: rgba($black, 0.7);
+    font-family: $font-family-secondary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 9px;
+    font-weight: 500;
+    margin-top: $spacing-xs;
+  }
+
   .theme-switcher {
     position: relative;
     width: 40px;
-    border: 2px solid $black;
     border-radius: 30px;
     height: 26px;
     transition: all 0.3s ease-in-out;
@@ -78,21 +83,24 @@ export default {
       border-radius: 50%;
       position: absolute;
       transition: all 0.3s ease-in-out;
+      margin-top: 2px;
     }
 
     &.light { 
-      background: linear-gradient(to right, $gray-light 50%, $orange 150%);
+      background: $black;
 
       img {
-        left: 0;
+        left: 2px;
+        top: 1px;
       }
     }
 
     &.dark {
-      background: linear-gradient(to left, $black 50%, $blue 150%);
+      background: $white;
 
       img {
-        left: 12px;
+        left: 16px;
+        top: 1px;
       }
     }
   }
@@ -100,8 +108,8 @@ export default {
 
 .dark .theme-switcher-box {
 
-  .theme-switcher {
-    border: 2px solid $white;
+  .label {
+    color: rgba($white, 0.7);
   }
 }
 

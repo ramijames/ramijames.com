@@ -2,7 +2,17 @@
 
   <ProjectsHeader project="vewrite" logo="ve-logo.svg" />
 
-  <section class="w-full">
+  <section class="w-project">
+
+    <ProjectsOverview
+      title="Vewrite"
+      tagline="A better way for writers to work together"
+      overview="test"
+      goal="test"
+      outcome="test"
+      services="test"
+    />
+
     <img src="/products/vewrite/ve-homepage.png" alt="" class="single-product-image">
     <hr>
     <img src="/products/vewrite/ve-projects.png" alt="" class="single-product-image">
