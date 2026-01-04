@@ -148,7 +148,7 @@ const notHome = computed(() => {
 .dark {
 
   .simple-nav-bar {
-    border: 1px solid rgba($white, 0.2);
+    border: 1px solid rgba($white, .2);
     background: rgba($black, 0.1);
     box-shadow: 0 0 40px 40px rgba($black,0.3), 0 0 30px 10px $black;
 
@@ -215,7 +215,7 @@ const notHome = computed(() => {
   bottom: $spacing-sm;
   opacity:1;
   transition: background 0.6s ease-in-out;
-  border: 1px solid rgba($black, 0.2);
+  border: 1px solid rgba($black, .2);
   border-radius: $br-md;
   padding: $spacing-md $spacing-xs;
   box-shadow: 0 0 30px 10px white;
@@ -348,7 +348,7 @@ const notHome = computed(() => {
         font-size: 9px;
         font-weight: 500;
         width: 86px;
-        border-radius: $br-sm;
+        border-radius: $br-md;
         text-align: center;
         border: rgba($black,0.1);
         color: rgba($black, 0.4);

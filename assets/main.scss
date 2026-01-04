@@ -87,7 +87,7 @@ button,
     color: $white;
     background: rgba($black,0.9);
     backdrop-filter: blur(4px);
-    border-radius: $br-xs;
+    border-radius: $br-md;
     border: 1px solid rgba($black, 0.2);
     text-align: center;
     text-decoration: none;
@@ -347,11 +347,17 @@ ol {
   opacity:0.7;
 }
 
+.dark {
+  hr {
+    border-top: 1px solid $white;
+  }
+}
+
 hr {
   margin: $spacing-xl auto;
   width: 100%;
   border:0;
-  border-top: 1px solid $blue;
+  border-top: 1px solid $black;
   height: 1px;
 }
 
