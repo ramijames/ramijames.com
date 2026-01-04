@@ -765,6 +765,8 @@ onUnmounted(() => {
 #Reasons {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background: rgba($blue, 0.05);
+  margin-top: $spacing-lg;
 
   @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr;
