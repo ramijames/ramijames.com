@@ -172,8 +172,17 @@ const notHome = computed(() => {
           
           &.router-link-exact-active,
           &.router-link-active {
-            color: $white !important;
-            border: 1px solid rgba($white, 0.2) !important;
+            color: $black !important;
+            border: 1px solid rgba($white, 1);
+            background: $white !important;
+
+            svg {
+              opacity: 1;
+              
+              path, circle {
+                fill: $black !important;
+              }
+            }
           }
         }
     }
@@ -399,12 +408,16 @@ const notHome = computed(() => {
         
         &.router-link-exact-active,
         &.router-link-active {
-          color: $black;
-          border: 1px solid rgba($black, 0.2);
-          background: transparent;
+          color: $white;
+          border: 1px solid rgba($black, 1);
+          background: $black;
 
           svg {
             opacity: 1;
+            
+            path, circle {
+              fill: white;
+            }
           }
         }
       }
