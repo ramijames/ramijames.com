@@ -405,11 +405,21 @@ p > strong {
       gap: $spacing-md;
       position: relative;
       align-items: flex-start;
+      margin-bottom: $spacing-xl;
+
+      .discuss-images {
+        display: flex;
+        flex-direction: row;
+        gap: $spacing-sm;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
 
       @media screen and (max-width: 1000px) {
         display: flex;
         flex-direction: column;
-        margin: $spacing-sm;
+        margin: $spacing-sm $spacing-sm $spacing-md $spacing-sm;
       }
 
       h3 {
@@ -712,7 +722,6 @@ input {
       }
 
     .content img {
-      margin: 0 auto $spacing-lg 0;
       width: 100%;
       border-radius: $br-sm;
       outline: 1px solid rgba($black,0.2);
@@ -983,6 +992,7 @@ img.in-article {
     outline-offset: -1px;
     border-radius: $br-sm;
     width: calc(100% - $spacing-md);
+    max-width: 1000px;
 }
 
 .product-images {
