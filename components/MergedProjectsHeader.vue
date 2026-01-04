@@ -7,12 +7,12 @@
 <style scoped lang="scss">
 @import './assets/variables';
 
-.projects-header {
-  background: linear-gradient(184deg, transparent 67%, rgba(0,0,0, 0.3));
-}
-
 h3 {
-  margin: $spacing-sm;
+  margin: $spacing-md $spacing-md 0 $spacing-md;
+
+  @media screen and (max-width: 1000px) {
+    margin: $spacing-sm $spacing-sm 0 $spacing-sm;
+  }
 }
 
 </style>

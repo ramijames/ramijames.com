@@ -160,6 +160,10 @@ const products = [
   border-radius: $br-md;
   overflow: hidden;
 
+  @media screen and (max-width: 1000px) {
+    margin: $spacing-sm;
+  }
+
   @media screen and (max-width: 1600px){
     grid-template-columns: 1fr 1fr 1fr;
   }

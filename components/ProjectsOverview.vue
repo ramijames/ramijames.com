@@ -1,16 +1,17 @@
 <template>
-  <section class="projects-intro">
-        <h1>{{ title }}</h1>
-        <h2>{{ tagline }}</h2>
-      </section>
+  
   <section class="projects-overview">
+    <section class="projects-intro">
+      <h1>{{ title }}</h1>
+      <h3>{{ tagline }}</h3>
+    </section>
     <section class="projects-content">
       <div class="project-column">
-        <h3>Overview</h3>
-        <div>{{ overview }}</div>
+        <h4>Overview</h4>
+        <p>{{ overview }}</p>
       </div>
       <div class="project-column">
-        <h3>Services</h3>
+        <h4>Services</h4>
         <ul class="services">
           <li v-for="service in services" class="single-service">
             {{ service }}
@@ -44,9 +45,11 @@
 
   h1 {
     margin: 0;
+    padding: 0;
+    line-height: 100%;
   }
 
-  h2 {
+  h3 {
     margin: 0;
     opacity: 0.7;
   }
@@ -54,11 +57,6 @@
 
 .dark {
   .projects-overview {
-    background: rgba($blue, 0.1);
-
-    .projects-intro {
-      border-right: $border;
-    }
 
     .projects-content {
 
@@ -67,8 +65,8 @@
         .services {
 
           .single-service {
-            background: rgba($blue, 1);
-            color: rgba($white, 1);
+            background: rgba($white, 1);
+            color: rgba($black, 1);
           }
         }
       }
@@ -77,17 +75,19 @@
 }
 
 .projects-overview {
-  gap: spacing-md;
-  background: rgba($black, 0.12);
-  border-radius: $br-sm;
-  margin: 0 0 $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-md;
+  border-radius: $br-md;
+  margin: $spacing-lg $spacing-md $spacing-md $spacing-md;
 
-  .projects-intro {
-    border-right: $border;
+  @media screen and (max-width: 1000px) {
+    margin: $spacing-sm;
+    padding: 0;
   }
 
   .projects-content {
-    padding: $spacing-md;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -105,12 +105,14 @@
         gap: $spacing-xs;
       }
 
-      h3 {
+      h4 {
         margin: 0;
+        opacity: 0.4;
       }
 
       p {
         margin:0;
+        max-width: 600px;
       }
 
       div {
@@ -123,17 +125,19 @@
         gap: $spacing-xs;
         list-style: none;
         margin: 10px 0 0 0;
+        opacity: 1;
+        flex-wrap: wrap;
 
         .single-service {
           padding: 6px 10px 4px;
-          background: rgba($black, 1);
+          background: $black;
           line-height: 100%;
           border-radius: $br-lg;
           text-transform: uppercase;
           font-size: 10px;
           font-weight: bold;
           letter-spacing: 1px;
-          color: rgba($white, 1);
+          color: $white;
         }
       }
     }

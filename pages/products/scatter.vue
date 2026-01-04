@@ -1,21 +1,47 @@
 <template>
   <ProjectsHeader project="scatter" logo="scatter-logo.png" />
 
-  <section class="w-content">
+  <ProjectsOverview
+    title="Scatter"
+    tagline="A better wallet experience"
+    overview="I helped co-found and run the primary wallet in the EOS ecosystem for three years. Our goal with Scatter was to create a retail and developer ecosystem that allowed for easy access to web3 assets anywhere that they user happened to be. We aimed for deep integration into games, websites, and day to day use applications."
+    :services="['Art Direction', 'Design', 'UX', 'Iconography']"
+  />
 
+  <section class="w-full">
     <section class="content">
-      <ProjectsOverview
-        title="Scatter"
-        tagline="A better wallet experience"
-        overview="I helped co-found and run the primary wallet in the EOS ecosystem for three years. Our goal with Scatter was to create a retail and developer ecosystem that allowed for easy access to web3 assets anywhere that they user happened to be. We aimed for deep integration into games, websites, and day to day use applications."
-        :services="['Art Direction', 'Design', 'UX', 'Iconography']"
-      />
 
-      <img src="/products/scatter/scatter-mobile.png" alt="Scatter In Progress" class="single-product-image">
-      <img src="/products/scatter/inside_desktop.png" alt="Scatter In Progress" class="single-product-image">
-      <img src="/products/scatter/scatter-in-progress.png" alt="Scatter In Progress" class="single-product-image">
-      <img src="/products/scatter/better-on-boarding.png" alt="Scatter improves its on-boarding" class="single-product-image">
-      <img src="/products/scatter/scatter-evolves.png" alt="Scatter evolves" class="single-product-image">
+      <section class="discuss">
+        <div class="with-line">
+          <h3>Scatter Desktop</h3>
+          <p>Our primary product, with a peak active user base of 250k. We iterated over many versions that culminated in our "Scatter Simple" brand.</p>
+        </div>
+        <div>
+          <img src="/products/scatter/scatter-simple.png" alt="Scatter In Progress" class="single-product-image">
+          <img src="/products/scatter/inside_desktop.png" alt="Scatter In Progress" class="single-product-image">
+        </div>
+      </section>
+
+      <section class="discuss">
+        <div class="with-line">
+          <h3>Complex UX simplified</h3>
+          <p>A big part of my job was trying to simplify the difficult technical concepts into something that was easy for every day, non-technical users to understand.</p>
+        </div>
+        <div>
+          <img src="/products/scatter/scatter-in-progress.png" alt="Scatter In Progress" class="single-product-image">
+          <img src="/products/scatter/better-on-boarding.png" alt="Scatter improves its on-boarding" class="single-product-image">
+        </div>
+      </section>
+
+      <section class="discuss">
+        <div class="with-line">
+          <h3>Scatter Mobile</h3>
+          <p>I was tasked with bringing our popular Desktop experience to mobile. There were many UX and design compromises that needed to happen to bring this to fruition.</p>
+        </div>
+        <img src="/products/scatter/scatter-mobile.png" alt="Scatter In Progress" class="single-product-image">
+      </section>
+
+
     </section>
   </section>
   
