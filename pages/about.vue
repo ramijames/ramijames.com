@@ -159,7 +159,6 @@ export default {
 
   .who-am-i {
     padding: $spacing-xl;
-    background: rgba($black, 0.05);
     display: flex;
     flex-direction: column;
     gap: $spacing-md;
