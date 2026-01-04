@@ -414,6 +414,10 @@ p > strong {
         align-items: flex-start;
         justify-content: flex-start;
         flex-wrap: wrap;
+
+        img {
+          box-shadow: $big-shadow;
+        }
       }
 
       @media screen and (max-width: 1000px) {
@@ -987,7 +991,6 @@ img.in-article {
     }
 
 .single-product-image {
-    margin: $spacing-sm 0;
     outline: 1px solid rgba(0,0,0,0.06);
     outline-offset: -1px;
     border-radius: $br-sm;
