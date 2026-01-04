@@ -13,12 +13,12 @@
 .default-layout {
   display: flex;
   flex-direction: row;
-  margin-left: 132px;
+  padding-left: 132px;
   min-height: 100vh;
 
   @media screen and (max-width: 1000px){
-    margin-left: 0px;
-    margin-top: 80px;
+    padding-left: 0px;
+    padding-top: 80px;
   }
 }
 

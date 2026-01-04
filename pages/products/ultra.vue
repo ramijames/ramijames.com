@@ -1,13 +1,48 @@
 <template>
 
   <ProjectsHeader project="Ultra" logo="ultra-logo.svg" />
+
+  <ProjectsOverview
+    title="Ultra"
+    tagline="Bringing web3 gaming to the masses"
+    overview="I wore many hats at my time at Ultra, from Technical PM, Marketing Advisor, to Head of Developer Relations. Each of these roles had intrinsic design considerations that I used my extensive experience to help create the best products possible for."
+    :services="['Design', 'UX', 'Project Management']"
+  />
+
+  <section class="w-full">
+    <section class="content">
+
+      <section class="discuss">
+        <div class="with-line">
+          <h3>Developer Relations as a Product</h3>
+          <p>During my two year stint at Ultra.io as the Head of Developer Relations, I helped create a few distinct products that the developer community we worked with relied directly on. The primary example of my work there was the <a href="https://developers.ultra.io">developers.ultra.io</a> project, which I both designed and helped implement. I personally designed and project managed Ultra Prime during my time working with the Marketing team.</p>
+        </div>
+        <div>
+          <img src="/products/ultra/build-on-ultra.png" alt="Ultra's documentation platform" class="single-product-image">
+          <img src="/products/ultra/ultra-documentation-1.png" alt="Ultra's documentation platform" class="single-product-image">
+          <img src="/products/ultra/ultra-documentation-2.png" alt="Ultra's documentation platform" class="single-product-image">
+        </div>
+      </section>
+
+      <section class="discuss">
+        <div class="with-line">
+          <h3>Making Marketing Calendars Public</h3>
+          <p>My core contribution to the Marketing effort from a product perspective was Ultra Prime. The concept was to allow the Marketing team to produce a public schedule which the community could engage with. By making everything transparent, we allowed Ultra to build a repoire with those who were more interested in what we were creating.</p>
+        </div>
+        <div>
+          <img src="/products/ultra/ultra-prime-1.png" alt="Ultra Prime" class="single-product-image">
+          <img src="/products/ultra/ultra-prime-2.png" alt="Ultra Prime" class="single-product-image">
+        </div>
+      </section>
+
+
+    </section>
+  </section>
   
   <section class="w-full">
-    <img src="/products/ultra/ultra-documentation-1.png" alt="Ultra's documentation platform" class="single-product-image">
-    <img src="/products/ultra/ultra-documentation-2.png" alt="Ultra's documentation platform" class="single-product-image">
+    
     <hr>
-    <img src="/products/ultra/ultra-prime-1.png" alt="Ultra Prime" class="single-product-image">
-    <img src="/products/ultra/ultra-prime-2.png" alt="Ultra Prime" class="single-product-image">
+    
   </section>
 
   <MergedProjectsHeader />

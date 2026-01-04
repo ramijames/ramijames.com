@@ -11,7 +11,7 @@
 }
 
 html {
-  background: $black;
+  background: $white;
 }
 
 body {
@@ -28,11 +28,6 @@ body.light {
 body.dark {
   background-color: $black;
   color: $white;
-}
-
-/* Fix for overflow bug */
-#__nuxt {
-  overflow: hidden;
 }
 
 /* Button */
@@ -408,6 +403,8 @@ p > strong {
       display: grid;
       grid-template-columns: 300px 1fr;
       gap: $spacing-md;
+      position: relative;
+      align-items: flex-start;
 
       @media screen and (max-width: 1000px) {
         display: flex;
@@ -423,6 +420,12 @@ p > strong {
       div.with-line {
         border-top: 1px solid rgba($black, 0.2);
         padding-top: $spacing-md;
+        position: sticky;
+        top: 0;
+
+        @media screen and (max-width: 1000px) {
+          position: relative;
+        }
       }
     }
   }

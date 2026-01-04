@@ -321,7 +321,7 @@ onUnmounted(() => {
         line-height: $font-size-xl;
         font-family: $font-family-main;
         font-weight: 200;
-        max-width: 600px;
+        max-width: 75%;
         text-wrap: balance;
         margin: 0;
 
