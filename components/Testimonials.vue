@@ -1,4 +1,5 @@
 <template>
+  <!-- <h2>Testimonials</h2> -->
   <section id="Testimonials">
     <div class="single-testimonial hide">
       <div class="user-image">

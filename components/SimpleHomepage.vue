@@ -65,12 +65,15 @@
       </section>
     </section>  
     
+    <FeaturedThoughts :featured-articles="featuredArticles" :articles="regularArticles" />
+
     <Clients />
 
     <section id="Reasons">
       <VisibleThought />
       <PartnerNotVendor />
     </section>
+
 
     <Testimonials />
 
@@ -81,6 +84,14 @@
 <script setup>
 
 import { ref, onMounted, onUnmounted, reactive, nextTick } from 'vue'
+
+import articles from '~/assets/articles.json'
+
+// Get the two latest articles as featured
+const featuredArticles = computed(() => articles.slice(0, 4))
+
+// Get remaining articles (excluding the first two)
+const regularArticles = computed(() => articles.slice(4))
 
 const COLUMNS = ref(32)
 const GAP = 0
@@ -754,7 +765,6 @@ onUnmounted(() => {
 #Reasons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid rgba($black, 0.2);
 
   @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr;
