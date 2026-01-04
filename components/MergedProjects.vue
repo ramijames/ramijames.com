@@ -156,6 +156,9 @@ const products = [
   animation: fadeInUp 0.3s forwards ease-in-out;
   animation-delay: 0s;
   border-bottom: $border;
+  margin: $spacing-md;
+  border-radius: $br-md;
+  overflow: hidden;
 
   @media screen and (max-width: 1600px){
     grid-template-columns: 1fr 1fr 1fr;
