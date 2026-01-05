@@ -25,13 +25,10 @@
         <h1>Principal<br>Product<br>Designer</h1>
         <p>My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.</p>
         <section class="button-set">
-          <nuxt-link to="/products" class="button blue">Browse case studies</nuxt-link>  
-          <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button shiny">Become a client</a>  
+          <nuxt-link to="/products" class="button shiny">Browse case studies</nuxt-link>  
+          <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button blue">Become a client</a>  
         </section>
       </section>
-      <button v-if="showOrientationButton" @click="requestOrientationPermission" class="orientation-button">
-        Enable Tilt Effect
-      </button>
       <section 
         class="grid-background"
         :style="{
@@ -66,16 +63,13 @@
     </section>  
     
     <FeaturedThoughts :featured-articles="featuredArticles" :articles="regularArticles" />
-
     <Clients />
+    <Testimonials />
 
-    <section id="Reasons">
+    <!-- <section id="Reasons">
       <VisibleThought />
       <PartnerNotVendor />
-    </section>
-
-
-    <Testimonials />
+    </section> -->
 
   </main>
   
