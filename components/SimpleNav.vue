@@ -207,8 +207,8 @@ const notHome = computed(() => {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  background: rgba($white, 0.1);
-  backdrop-filter: blur(8px);
+  background: rgba($white, 0.6);
+  backdrop-filter: blur(18px);
   z-index: 1000;
   top: $spacing-sm;
   left: $spacing-sm;
@@ -219,6 +219,8 @@ const notHome = computed(() => {
   border-radius: $br-md;
   padding: $spacing-md $spacing-xs;
   box-shadow: 0 0 30px 10px white;
+  outline: 1px solid rgba($white, 0.6);
+  outline-offset:-2px;
 
   @media screen and (max-width: 1000px){
     top: $spacing-xs;
@@ -457,7 +459,9 @@ const notHome = computed(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba($white, .6);
+  background: rgba($white, .85);
+  outline: 1px solid rgba($white, 0.6);
+  outline-offset:-2px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
