@@ -30,7 +30,7 @@
 
           <section class="discuss">
             <div class="with-line">
-              <h3>Mobile reaady</h3>
+              <h3>Mobile ready</h3>
               <p>An interested side-effect of designing the block explorer meant that we were able to implement many features for the first time for mobile users.</p>
             </div>
             <div class="discuss-images">
