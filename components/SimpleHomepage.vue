@@ -62,6 +62,7 @@
       </section>
     </section>  
     
+    <LatestWork />
     <FeaturedThoughts :featured-articles="featuredArticles" :articles="regularArticles" />
     <Clients />
     <Testimonials />
@@ -609,7 +610,7 @@ onUnmounted(() => {
     gap: $spacing-sm;
     padding: $spacing-md;
     position: relative;
-    height: calc(100dvh - 80px);
+    height: calc(80dvh - 80px);
     overflow: hidden;
 
     @media screen and (max-width: 768px){

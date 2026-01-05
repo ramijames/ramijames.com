@@ -128,7 +128,7 @@ const formatDate = (dateString) => {
   padding: $spacing-xl;
 
   @media screen and (max-width: 1200px) {
-    padding: $spacing-md;
+    padding: $spacing-lg;
   }
 
   @media screen and (max-width: 768px) {
@@ -136,7 +136,7 @@ const formatDate = (dateString) => {
   }
 
   h2 {
-    margin: 0 0 $spacing-lg;
+    margin: 0 0 $spacing-md;
   }
 
   h3 {
