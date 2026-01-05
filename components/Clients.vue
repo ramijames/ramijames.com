@@ -40,7 +40,9 @@
   @media screen and (max-width: 1000px){
     flex-direction: column;
     height: auto;
-    padding: $spacing-lg $spacing-md;
+    padding: $spacing-md;
+    margin: $spacing-sm;
+    width: calc(100% - $spacing-sm - $spacing-sm);
   }
 
   &:after {
@@ -67,10 +69,6 @@
     opacity: 0.8;
     font-size: $font-size-lg;
     color: $white;
-
-    @media screen and (max-width: 1000px){
-      display: none;
-    }
   }
 
   .clients {
