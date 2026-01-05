@@ -150,6 +150,7 @@ const products = [
 #Products {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: $spacing-sm;
   grid-template-rows: 1fr;
   position: relative;
   opacity: 0;
@@ -157,8 +158,6 @@ const products = [
   animation-delay: 0s;
   border-bottom: $border;
   margin: $spacing-md;
-  border-radius: $br-md;
-  overflow: hidden;
 
   @media screen and (max-width: 1000px) {
     margin: $spacing-sm;
@@ -190,6 +189,7 @@ const products = [
     transition: all 0.3s ease-in-out;
     padding: 0;
     overflow: hidden;
+    border-radius: $br-sm;
 
     @media screen and (max-width: 1024px){
       height: 200px;

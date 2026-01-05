@@ -241,7 +241,6 @@ onUnmounted(() => {
 .dark {
   .page-header {
     background-color: $black;
-    border-bottom: $border;
   }
 }
 
@@ -250,7 +249,6 @@ onUnmounted(() => {
   position: relative;
   background-color: $white;
   background-size: cover;
-  border-bottom: 1px solid rgba($black, 0.2);
 
   .mega-hero {
     display: flex;

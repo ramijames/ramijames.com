@@ -173,7 +173,6 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  border-top: 1px solid rgba($black, 0.2);
 
   @media screen and (max-width: 1000px){
     align-items: center;
