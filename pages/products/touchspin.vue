@@ -1,23 +1,45 @@
 <template>
 
-  <ProjectsHeader project="TouchSpin" logo="touchspin-logo.svg" />
+  <main class="w-product-page">
+    <MergedProjects vertical="true" />
 
-  <section class="w-full">
-    <section class="product-images two-across">
-      <img src="/products/touchspin/image4.png" alt="" class="single-product-image">
-      <img src="/products/touchspin/image5.png" alt="" class="single-product-image">
-    </section>
-  </section>
+    <div>
 
-  <section class="w-full">
-    <img src="/products/touchspin/image1.png" alt="TouchSpin" class="single-product-image">
-    <img src="/products/touchspin/image2.png" alt="TouchSpin" class="single-product-image">
-    <img src="/products/touchspin/image3.png" alt="TouchSpin" class="single-product-image">
-  </section>
+      <ProjectsHeader project="TouchSpin" logo="touchspin-logo.svg" />
 
-  <MergedProjectsHeader />
-  <MergedProjects />
-  <Footer />
+      <ProjectsOverview
+        title="Touchspin"
+        tagline="iGaming on your iPad"
+        overview="I generated custom illustrations and game designs for the Touchspin group as they were seeking funding."
+        :services="['Design', 'UX', 'Concept']"
+      />
+
+      <section class="w-full">
+        <section class="content">
+
+          <section class="discuss">
+            <div class="with-line">
+              <h3>Custom gaming designs</h3>
+              <p>The core challenge with Touchspin was creating a clean layout that was mobile friendly.</p>
+            </div>
+            <div class="discuss-images">
+              <img src="/products/touchspin/image1.png" alt="TouchSpin" class="single-product-image">
+              <img src="/products/touchspin/image2.png" alt="TouchSpin" class="single-product-image">
+              <img src="/products/touchspin/image3.png" alt="TouchSpin" class="single-product-image">
+              <img src="/products/touchspin/image4.png" alt="" class="single-product-image">
+              <img src="/products/touchspin/image5.png" alt="" class="single-product-image">
+            </div>
+          </section>
+
+        </section>
+      </section>
+    </div>
+  
+  </main>
+
+  <MergedProjectsHeader mobile="true" />
+  <MergedProjects mobile="true" />
+
 </template>
 
 <script setup>
