@@ -163,6 +163,18 @@ const products = [
                     color: '#4B6FFF',
                     class: 'tonara',
                     type: 'Product Case Study'
+                  },
+                  {
+                    title: 'Qmarkets',
+                    description: 'Stop Wasting Time on Innovation Without Impact',
+                    image: '/products/telos/telos-thumb.png',
+                    logo: '/products/qmarkets/qmarkets-logo.svg',
+                    bg: '/products/touchspin/tonara-bg.png',
+                    status: 'past',
+                    slug: '/products/qmarkets/',
+                    color: '#182043',
+                    class: 'qmarkets',
+                    type: 'Product Case Study'
                   }      
                 ];
 
@@ -174,7 +186,7 @@ const products = [
 
 #Products {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: $spacing-sm;
   grid-template-rows: 1fr;
   position: relative;
