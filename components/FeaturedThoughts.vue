@@ -187,7 +187,7 @@ const formatDate = (dateString) => {
 
 .featured-card {
   border: 1px solid rgba($black, 0.2);
-  border-radius: $br-sm;
+  border-radius: $br-md;
   background: rgba($blue, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
