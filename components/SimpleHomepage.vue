@@ -378,7 +378,6 @@ onUnmounted(() => {
       gap: $spacing-sm;
       padding: $spacing-md;
       position: relative;
-      height: calc(100dvh - 80px);
       overflow: hidden;
 
       @media screen and (max-width: 768px){
