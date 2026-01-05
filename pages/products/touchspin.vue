@@ -26,8 +26,9 @@
               <img src="/products/touchspin/image1.png" alt="TouchSpin" class="single-product-image">
               <img src="/products/touchspin/image2.png" alt="TouchSpin" class="single-product-image">
               <img src="/products/touchspin/image3.png" alt="TouchSpin" class="single-product-image">
-              <img src="/products/touchspin/image4.png" alt="" class="single-product-image">
-              <img src="/products/touchspin/image5.png" alt="" class="single-product-image">
+              <img src="/products/touchspin/image4.png" alt="TouchSpin" class="single-product-image">
+              <img src="/products/touchspin/image5.png" alt="TouchSpin" class="single-product-image">
+              <img src="/products/touchspin/image6.jpg" alt="TouchSpin" class="single-product-image">
             </div>
           </section>
 
