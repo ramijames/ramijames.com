@@ -95,7 +95,7 @@
 
     .project-column {
       display: grid;
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 1fr 10fr;
       align-items: flex-start;
       gap: $spacing-md;
       width: 100%;

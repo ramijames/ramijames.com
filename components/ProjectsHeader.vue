@@ -34,11 +34,16 @@ const props = defineProps({
   background: linear-gradient(180deg, transparent 67%, rgba($blue, 0.05));
   border-bottom: $border;
   padding: $spacing-xs $spacing-sm;
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: $spacing-sm;
+
+  display: none;
+
+  @media screen and (max-width: 1000px) {
+    display: flex;
+  }
 
   .navigation {
     display: flex;

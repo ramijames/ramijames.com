@@ -1,6 +1,7 @@
 <template>
   <Loading v-if="loading" />
-  <section id="Products" v-if="filteredProjects && loading == false">
+
+  <section id="Products" v-if="filteredProjects && loading == false && !vertical" :class="mobile ? 'mobile-only' : ''">
     <nuxt-link
         :class="['project', 'w-full', product.class]"
         v-for="product in filteredProjects" 
@@ -14,6 +15,23 @@
       <section class="bg" :style="{ backgroundImage: 'url(' + product.bg + ')' }"></section>
     </nuxt-link>
   </section>
+
+  <section id="ProductsVertical" v-if="products && loading == false && vertical">
+    <!-- <h3>Products</h3> -->
+    <nuxt-link
+        :class="['vertical-project', 'w-full', product.class, { selected: product.title === matchingProject.title }]"
+        v-for="product in products" 
+        :key="product.title" 
+        :to="product.slug" 
+      >
+      <section :class="['vertical-info', product.class]">
+        <h4>{{ product.title }}</h4>
+        <p>{{ product.description }}</p>
+      </section>
+    </nuxt-link>
+  </section>
+
+
 </template>
 
 <script setup>
@@ -21,12 +39,19 @@
 import { useRoute } from 'vue-router';
 const route = useRoute();
 
+const props = defineProps({
+  vertical: Boolean,
+  mobile: Boolean
+});
+
 const filteredProjects = ref(null);
+const matchingProject = ref(null);
 
 const loading = ref(true);
 
 onMounted(() => {
   filteredProjects.value = products.filter(product => product.slug !== route.path);
+  matchingProject.value = products.filter(product => product.slug == route.path)
   loading.value = false;
 })
 
@@ -45,7 +70,7 @@ const products = [
                   // }, 
                   {
                     title: 'Scatter',
-                    description: 'Open-source web3 wallet for EOS, Ethereum, and Tron',
+                    description: 'Open-source web3 wallet',
                     image: '/products/scatter/scatter-thumb.png',
                     logo: '/products/scatter/scatter-logo.png',
                     bg: '/homepage/hp-scatter.png',
@@ -69,7 +94,7 @@ const products = [
                   },  
                   {
                     title: 'Doodledapp',
-                    description: 'No-code smart contract development and deployment',
+                    description: 'No-code smart contract builder',
                     image: '/products/doodledapp/doodledapp-thumb.png',
                     logo: '/products/doodledapp/doodledapp-logo.svg',
                     bg: '/homepage/hp-doodledapp.png',
@@ -104,8 +129,8 @@ const products = [
                     type: 'Product Case Study'
                   },
                   {
-                    title: 'Telos Open Block Explorer',
-                    description: 'The best way to view transactions and manage your wallets',
+                    title: 'Telos OBE',
+                    description: 'Open source block explorer',
                     image: '/products/telos/telos-thumb.png',
                     logo: '/products/telos/telos-logo.png',
                     bg: '/homepage/hp-telos.png',
@@ -117,7 +142,7 @@ const products = [
                   },
                   {
                     title: 'TouchSpin',
-                    description: 'A new way to play',
+                    description: 'iGaming on your iPad',
                     image: '/products/telos/telos-thumb.png',
                     logo: '/products/touchspin/touchspin-logo.svg',
                     bg: '/products/touchspin/touchspin-bg.png',
@@ -153,11 +178,15 @@ const products = [
   gap: $spacing-sm;
   grid-template-rows: 1fr;
   position: relative;
-  opacity: 0;
-  animation: fadeInUp 0.3s forwards ease-in-out;
-  animation-delay: 0s;
-  border-bottom: $border;
   margin: $spacing-md;
+
+  &.mobile-only {
+    display: none;
+
+    @media screen and (max-width: 1000px){
+      display: grid;
+    }
+  }
 
   @media screen and (max-width: 1000px) {
     margin: $spacing-sm;
@@ -335,6 +364,102 @@ const products = [
         }
       }
     }
+  }
+}
+
+#ProductsVertical {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: $spacing-xs;
+  position: relative;
+  position: fixed;
+  top: $spacing-sm;
+  bottom: $spacing-sm;
+  left: 140px;
+  overflow-y: auto;
+  width: 400px;
+  padding: $spacing-sm;
+
+  @media screen and (max-width: 1600px){
+    width: 300px;
+  }
+
+  @media screen and (max-width: 1400px){
+    width: 200px;
+  }
+
+  @media screen and (max-width: 1000px){
+    display: none;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  .vertical-project {
+    width: 100%;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-decoration: none;
+    position: relative;
+    background-size: cover;
+    transition: all 0.3s ease-in-out;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    color: $black;
+    border-left: 1px solid $black;
+    border-radius: 0 $br-md $br-md 0;
+
+    @media screen and (max-width: 1600px){
+      min-height: auto;
+    }
+
+    &.router-link-active, 
+    &.router-link-exact-active,
+    &:hover {
+      opacity: 1;
+      background: $black;
+      color: $white;
+      border-left: 4px solid $blue;
+    }
+
+    .vertical-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+      z-index: 1;
+      padding: $spacing-sm;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: plus-lighter;
+
+      h4 {
+        margin: 0;
+
+        @media screen and (max-width: 1400px){
+          font-size: $font-size-sm;
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: $font-size-sm;
+
+        @media screen and (max-width: 1600px){
+          display: none;
+        }
+      }
+
+    }
+
   }
 }
 

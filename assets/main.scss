@@ -400,8 +400,8 @@ p > strong {
   .content {
 
     .discuss {
-      display: grid;
-      grid-template-columns: 300px 1fr;
+      display: flex;
+      flex-direction: row-reverse;
       gap: $spacing-md;
       position: relative;
       align-items: flex-start;
@@ -409,11 +409,10 @@ p > strong {
 
       .discuss-images {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: $spacing-sm;
         align-items: flex-start;
         justify-content: flex-start;
-        flex-wrap: wrap;
 
         img {
           box-shadow: $big-shadow;
@@ -436,9 +435,11 @@ p > strong {
         padding-top: $spacing-md;
         position: sticky;
         top: -1px;
+        max-width: 300px;
 
         @media screen and (max-width: 1000px) {
           position: relative;
+          max-width: 100%;
         }
       }
     }
@@ -454,9 +455,26 @@ p > strong {
   width: 100%;
   max-width: 1000px;
   margin: $spacing-lg auto;
-  padding: 0 $spacing-md;
+  padding: 0 $spacing-md; 
+}
 
-  
+.w-product-page {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
+  padding-left: 400px;
+
+  @media screen and (max-width: 1600px){
+    padding-left: 300px;
+  }
+
+  @media screen and (max-width: 1400px){
+    padding-left: 200px;
+  }
+
+  @media screen and (max-width: 1000px){
+    padding-left: 0px;
+  }
 }
 
 .w-content {
@@ -995,7 +1013,7 @@ img.in-article {
     outline-offset: -1px;
     border-radius: $br-sm;
     width: calc(100% - $spacing-md);
-    max-width: 1000px;
+    max-width: 1200px;
 }
 
 .product-images {

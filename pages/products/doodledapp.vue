@@ -1,63 +1,66 @@
 <template>
 
-  <ProjectsHeader project="doodledapp" logo="doodledapp-logo.svg" />
+  <main class="w-product-page">
+    <MergedProjects vertical="true" />
 
-  <ProjectsOverview
-    title="Doodledapp"
-    tagline="Easily create and deploy smart contracts"
-    overview="I helped co-found and run product for Doodledapp. The goal was to allow anyone to create and deploy smart contracts with chunks of pre-made functionality."
-    :services="['Design', 'UX', 'Concept']"
-  />
+    <div>
 
-  <section class="w-full">
-    <section class="content">
+      <ProjectsHeader project="doodledapp" logo="doodledapp-logo.svg" />
 
-      <section class="discuss">
-        <div class="with-line">
-          <h3>A complex visual programming stack</h3>
-          <p>The core challenge with Doodledapp was how to present programming concepts as something that anybody could pick up and learn. We leant hard on the visual concepts that were developer by the team that created Blueprints for Unreal Engine, and developed our own unique style and visual concepts.</p>
-        </div>
-        <div class="discuss-images">
-          <img src="/products/doodledapp/flow.png" alt="Early Doodledapp" class="single-product-image">
-          <img src="/products/doodledapp/example-function.png" alt="Early Doodledapp" class="single-product-image">
-        </div>
+      <ProjectsOverview
+        title="Doodledapp"
+        tagline="Easily create and deploy smart contracts"
+        overview="I helped co-found and run product for Doodledapp. The goal was to allow anyone to create and deploy smart contracts with chunks of pre-made functionality."
+        :services="['Design', 'UX', 'Concept']"
+      />
+
+      <section class="w-full">
+        <section class="content">
+
+          <section class="discuss">
+            <div class="with-line">
+              <h3>A complex visual programming stack</h3>
+              <p>The core challenge with Doodledapp was how to present programming concepts as something that anybody could pick up and learn. We leant hard on the visual concepts that were developer by the team that created Blueprints for Unreal Engine, and developed our own unique style and visual concepts.</p>
+            </div>
+            <div class="discuss-images">
+              <img src="/products/doodledapp/flow.png" alt="Early Doodledapp" class="single-product-image">
+              <img src="/products/doodledapp/example-function.png" alt="Early Doodledapp" class="single-product-image">
+            </div>
+          </section>
+
+          <section class="discuss">
+            <div class="with-line">
+              <h3>Smart Contract Project Management</h3>
+              <p>A big part of the functionality for Doodledapp was how users would create the projects that would house their smart contracts as many deployed projects leverage multiple smart contracts at once. Then, of course, we developed the user-interface and functionality for deploying these smart contracts easily across multiple networks.</p>
+            </div>
+            <div class="discuss-images">
+              <img src="/products/doodledapp/firstproject.png" alt="Doodledapp Project Management" class="single-product-image">
+              <img src="/products/doodledapp/oneproj-populated.png" alt="Doodledapp Project Management" class="single-product-image">
+              <img src="/products/doodledapp/deploy.png" alt="Doodledapp Deployment" class="single-product-image">
+            </div>
+          </section>
+
+          <section class="discuss">
+            <div class="with-line">
+              <h3>Marketing Website</h3>
+              <p>As part of our attempt to break into the wider web3 market, I designed, implemented, and deployed a slick, responsive marketing website for Doodledapp.</p>
+            </div>
+            <div class="discuss-images">
+              <img src="/products/doodledapp/doodledapp-website.png" alt="Doodledapp Website" class="single-product-image">
+              <img src="/products/doodledapp/good-stuff.png" alt="Doodledapp Website" class="single-product-image">
+            </div>
+          </section>
+
+
+        </section>
       </section>
+    </div>
+  
+  </main>
 
-      <section class="discuss">
-        <div class="with-line">
-          <h3>Smart Contract Project Management</h3>
-          <p>A big part of the functionality for Doodledapp was how users would create the projects that would house their smart contracts as many deployed projects leverage multiple smart contracts at once. Then, of course, we developed the user-interface and functionality for deploying these smart contracts easily across multiple networks.</p>
-        </div>
-        <div class="discuss-images">
-          <img src="/products/doodledapp/firstproject.png" alt="Doodledapp Project Management" class="single-product-image">
-          <img src="/products/doodledapp/oneproj-populated.png" alt="Doodledapp Project Management" class="single-product-image">
-          <img src="/products/doodledapp/deploy.png" alt="Doodledapp Deployment" class="single-product-image">
-        </div>
-      </section>
-
-      <section class="discuss">
-        <div class="with-line">
-          <h3>Marketing Website</h3>
-          <p>As part of our attempt to break into the wider web3 market, I designed, implemented, and deployed a slick, responsive marketing website for Doodledapp.</p>
-        </div>
-        <div class="discuss-images">
-          <img src="/products/doodledapp/doodledapp-website.png" alt="Doodledapp Website" class="single-product-image">
-          <img src="/products/doodledapp/good-stuff.png" alt="Doodledapp Website" class="single-product-image">
-        </div>
-      </section>
-
-
-    </section>
-  </section>
-
-  <section class="w-full">
-    
-    <hr>
-    
-  </section>
-
-  <MergedProjects />
-  <Footer />
+  <MergedProjectsHeader mobile="true" />
+  <MergedProjects mobile="true" />
+  
 </template>
 
 <script setup>

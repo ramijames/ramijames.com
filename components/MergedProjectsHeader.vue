@@ -7,6 +7,14 @@
 <style scoped lang="scss">
 @import './assets/variables';
 
+.projects-header {
+  display: none;
+
+  @media screen and (max-width: 1000px) {
+    display: block;
+  }
+}
+
 h3 {
   margin: $spacing-md $spacing-md 0 $spacing-md;
 
