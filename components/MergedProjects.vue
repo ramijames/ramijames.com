@@ -367,6 +367,23 @@ const products = [
   }
 }
 
+.dark {
+
+  .vertical-project {
+    color: $white !important;
+    border-left: 1px solid rgba($white,0.2) !important;
+
+    &.router-link-active, 
+    &.router-link-exact-active,
+    &:hover {
+      background: $white !important;
+      color: $black !important;
+      border-left: 4px solid $blue !important;
+    }
+
+  }
+}
+
 #ProductsVertical {
   display: grid;
   grid-template-columns: 1fr;
@@ -396,6 +413,10 @@ const products = [
 
   h3 {
     margin: 0;
+  }
+
+  p {
+    opacity:0.4;
   }
 
   .vertical-project {
@@ -439,7 +460,6 @@ const products = [
       padding: $spacing-sm;
       width: 100%;
       height: 100%;
-      mix-blend-mode: plus-lighter;
 
       h4 {
         margin: 0;
