@@ -58,7 +58,7 @@ const regularArticles = computed(() => articles.slice(4))
 
   .mega-hero {
     height: 80dvh;
-    width: 100dvw;
+    width: calc(100dvw - $spacing-sm);
     display: flex;
     flex-direction: column;
     align-items: center;
