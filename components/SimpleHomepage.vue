@@ -58,11 +58,16 @@ const regularArticles = computed(() => articles.slice(4))
 
   .mega-hero {
     height: 80dvh;
-    width: calc(100dvw - $spacing-sm);
+    width: 100dvw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: calc(100px  + $spacing-md);
+
+    @media screen and (max-width: 1000px) {
+      padding-top: calc(68px + $spacing-sm);
+    }
 
     .mega-content {
       display: flex;
@@ -77,7 +82,7 @@ const regularArticles = computed(() => articles.slice(4))
 
       .developer {
         font-size: 6dvw;
-        font-weight: 900;
+        font-weight: 700;
         text-transform: uppercase;
         position: relative;
         letter-spacing: -.2dvw;
@@ -91,6 +96,11 @@ const regularArticles = computed(() => articles.slice(4))
           line-height: 100%;
         }
 
+        @media screen and (max-width: 768px) {
+          font-size: 18dvw;
+          align-items: center;
+        }
+        
         @media screen and (max-width: 1200px) {
           font-size: 12dvw;
           align-items: center;
@@ -119,7 +129,7 @@ const regularArticles = computed(() => articles.slice(4))
 
       .designer {
         font-size: 6dvw;
-        font-weight: 900;
+        font-weight: 700;
         text-transform: uppercase;
         position: relative;
         letter-spacing: -.2dvw;
@@ -133,6 +143,11 @@ const regularArticles = computed(() => articles.slice(4))
           line-height: 100%;
         }
 
+        @media screen and (max-width: 768px) {
+          font-size: 18dvw;
+          align-items: center;
+        }
+        
         @media screen and (max-width: 1200px) {
           font-size: 12dvw;
           align-items: center;

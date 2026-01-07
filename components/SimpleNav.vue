@@ -230,7 +230,7 @@ const notHome = computed(() => {
     transform: translateX(0%);
     height: 68px;
     flex-direction: row;
-    padding: 0 $spacing-sm;
+    padding: 0 calc($spacing-sm + .15rem);
     box-shadow: 0 0 40px 40px rgba($white,0.02);
   }
 
@@ -269,13 +269,6 @@ const notHome = computed(() => {
         img {
           width: 44px;
         }
-      }
-    }
-
-    .contact {
-
-      @media screen and (max-width: 1000px){
-        display: none;
       }
     }
 
@@ -341,6 +334,10 @@ const notHome = computed(() => {
       justify-content: center;
       align-items: center;
       gap: $spacing-xs;
+
+      @media screen and (max-width: 1000px){
+        display: none;
+      }
 
       .nav-link {
         text-decoration: none;

@@ -35,6 +35,10 @@
   padding-top: calc(100px + $spacing-sm);
   position: relative;
 
+  @media screen and (max-width: 1000px){
+    padding-top: 0;
+  }
+
   &:after {
     content:'';
     width: 100dvw;
@@ -46,6 +50,11 @@
     background: linear-gradient(to bottom, rgba($white, 1), rgba($white, 0));
     backdrop-filter: blur(8px);
     mask-image: linear-gradient(to top, transparent 0%, $black 90%);
+    pointer-events: none;
+
+    @media screen and (max-width: 1000px){
+      height: 100px;
+    }
   }
 }
 

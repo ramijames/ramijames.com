@@ -83,6 +83,12 @@ const products = [
     width: 100%;
     margin: $spacing-sm 0;
   }
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-xl;
+  }
   
   @media screen and (max-width: 768px){
     padding: 0;
