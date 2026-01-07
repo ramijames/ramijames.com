@@ -39,9 +39,7 @@
   @media screen and (max-width: 1000px){
     flex-direction: column;
     height: auto;
-    padding: $spacing-md;
-    margin: $spacing-sm;
-    width: calc(100% - $spacing-sm - $spacing-sm);
+    padding: $spacing-lg $spacing-md calc($spacing-lg + 1.5rem);
   }
 
   &:after {

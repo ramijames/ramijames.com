@@ -1,5 +1,4 @@
 <template>
-  <Loading v-if="loading" />
 
   <div class="work-container">
     <h2>Latest Work</h2>
