@@ -453,6 +453,7 @@ p > strong {
         @media screen and (max-width: 1200px) {
           position: relative;
           max-width: 100%;
+          top: initial;
         }
       }
     }

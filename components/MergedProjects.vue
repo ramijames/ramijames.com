@@ -185,7 +185,7 @@ const products = [
 
 #Products {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: $spacing-sm;
   grid-template-rows: 1fr;
   position: relative;
@@ -200,10 +200,7 @@ const products = [
 
   @media screen and (max-width: 1000px) {
     margin: $spacing-sm;
-  }
-
-  @media screen and (max-width: 1600px){
-    grid-template-columns: 1fr 1fr 1fr;
+    width: calc(100% - $spacing-md);
   }
   
   @media screen and (max-width: 1180px){
