@@ -3,7 +3,7 @@
 
     <PageHeader title="About" tagline="Principal Product Designer" />
 
-    <section class="about-container">
+    <section class="about-container w-consistent">
 
       <section class="who-am-i">
         <img src="/dude.png">
@@ -135,7 +135,7 @@ export default {
 .dark {
   #About {
     .resume {
-      border-left: $border;
+      border: $border;
     }
   }
 }
@@ -150,30 +150,22 @@ export default {
 }
 
 .about-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 1600px;
-  margin: 0 auto;
-
-  @media screen and (max-width: 1600px){
-    max-width: 1200px;
-  }
-
-  @media screen and (max-width: 1200px){
-    max-width: 100%;
-  }
+  display: flex;
+  flex-direction: column;
 
   @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr;
   }
 
   .who-am-i {
-    padding: $spacing-xl;
     display: flex;
     flex-direction: column;
     gap: $spacing-md;
     height: 100%;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: balance;
 
     @media screen and (max-width: 1400px) {
       padding: $spacing-lg;
@@ -195,12 +187,15 @@ export default {
 
   .resume {
     padding: $spacing-xl;
-    border-left: 1px solid rgba($black, 0.2);
+    border: 1px solid rgba($black, 0.2);
+    border-radius: $br-md;
+    box-shadow: $big-shadow;
     display: flex;
     flex-direction: column;
     gap: $spacing-lg;
     height: 100%;
     justify-content: space-between;
+    margin: $spacing-lg;
 
     @media screen and (max-width: 1400px) {
       padding: $spacing-lg;

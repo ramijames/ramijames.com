@@ -77,7 +77,10 @@
 .projects-overview {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: $spacing-xl;
   gap: $spacing-md;
   border-radius: $br-md;
   margin: $spacing-md;
@@ -88,10 +91,10 @@
   }
 
   .projects-content {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: $spacing-md;
+    margin-bottom: $spacing-lg;
 
     .project-column {
       display: grid;

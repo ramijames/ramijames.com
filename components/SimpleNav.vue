@@ -208,7 +208,8 @@ const notHome = computed(() => {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  background: rgba($white, 0.6);
+  background: rgba($white, 0.2);
+  border: 1px solid rgba($white, 0.3);
   backdrop-filter: blur(18px);
   z-index: 1000;
   top: $spacing-sm;
@@ -216,17 +217,15 @@ const notHome = computed(() => {
   transform: translateX(-50%);
   opacity:1;
   transition: background 0.6s ease-in-out;
-  border: 1px solid rgba($black, .2);
   border-radius: $br-xl;
   padding: $spacing-xs calc($spacing-md + $spacing-sm);
-  box-shadow: 0 0 30px 10px rgba($white, 0.1);
-  outline: 1px solid rgba($white, 0.6);
+  box-shadow: $big-shadow;
   outline-offset:-2px;
 
   @media screen and (max-width: 1000px){
     top: $spacing-xs;
-    left:$spacing-sm;
-    right:$spacing-sm;
+    left:$spacing-xs;
+    right:$spacing-xs;
     transform: translateX(0%);
     height: 68px;
     flex-direction: row;
@@ -266,8 +265,13 @@ const notHome = computed(() => {
       justify-content: center;
 
       .logo-link {
+
+        width: 44px;
+        height: 44px;
+
         img {
           width: 44px;
+          height: 44px;
         }
       }
     }

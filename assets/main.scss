@@ -488,6 +488,23 @@ p > strong {
   }
 }
 
+.w-consistent {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: $spacing-lg $spacing-md;
+  width: 100%;
+
+  @media screen and (max-width: 1600px){
+    max-width: 1200px;
+    padding: $spacing-md;
+  }
+
+  @media screen and (max-width: 1200px){
+    max-width: 100%;
+    padding: $spacing-sm;
+  }
+}
+
 .w-content {
   display: flex;
   flex-direction: column;

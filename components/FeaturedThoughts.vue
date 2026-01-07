@@ -1,6 +1,6 @@
 <template>
   
-  <div class="thoughts-container">
+  <div class="thoughts-container w-consistent">
     <h2>Featured Articles</h2>
     <!-- Featured Articles Section -->
     <div v-if="props.featuredArticles && props.featuredArticles.length > 0" class="featured-section">
@@ -12,11 +12,11 @@
           class="featured-card"
         >
           <div class="featured-content">
+            <img v-if="article.image" :src="article.image" :alt="article.title" class="featured-image" />
             <div class="featured-text">
               <h3 class="featured-title">{{ article.title }}</h3>
               <p class="featured-date">{{ formatDate(article.date) }}</p>
             </div>
-            <img v-if="article.image" :src="article.image" :alt="article.title" class="featured-image" />
           </div>
         </nuxt-link>
       </div>
@@ -125,19 +125,6 @@ const formatDate = (dateString) => {
 
 .thoughts-container {
   display: grid;
-  padding: $spacing-xl;
-
-  @media screen and (max-width: 1200px) {
-    padding: $spacing-lg;
-  }
-
-  @media screen and (max-width: 1000px) {
-    padding: $spacing-sm;
-  }
-  
-  @media screen and (max-width: 768px) {
-    padding: $spacing-sm;
-  }
 
   h2 {
     margin: 0 0 $spacing-md;
@@ -177,7 +164,7 @@ const formatDate = (dateString) => {
 
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: $spacing-md;
 
   @media screen and (max-width: 1400px) {
@@ -191,8 +178,6 @@ const formatDate = (dateString) => {
 
 .dark {
   .featured-card {
-    border: 1px solid rgba($white, 0.1);
-    border-radius: $br-sm;
     transition: all 0.3s ease;
     text-decoration: none;
     overflow: hidden;
@@ -208,12 +193,19 @@ const formatDate = (dateString) => {
 }
 
 .featured-card {
-  border: 1px solid rgba($black, 0.2);
-  border-radius: $br-sm;
   transition: all 0.3s ease;
   text-decoration: none;
   overflow: hidden;
   min-height: 280px;
+}
+
+.featured-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: $spacing-md;
+  
 
   &:hover {
     transform: translateY(-6px);
@@ -221,15 +213,6 @@ const formatDate = (dateString) => {
     border-color: rgba($blue, 0.5);
     box-shadow: 0 8px 24px rgba($blue, 0.2);
   }
-}
-
-.featured-content {
-  padding: $spacing-md;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  gap: $spacing-md;
 
   @media screen and (max-width: 1600px) {
     padding: $spacing-md;
@@ -252,6 +235,7 @@ const formatDate = (dateString) => {
 
 .featured-title {
   font-size: $font-size-xxl;
+  color: $black;
   line-height: 1;
   margin: 0;
 
@@ -269,10 +253,10 @@ const formatDate = (dateString) => {
 .featured-image {
   width: 100%;
   height: auto;
-  border-radius: $br-xs;
+  border-radius: $br-sm;
   border: 1px solid rgba($black, 0.2);
   object-fit: cover;
-  max-height: 200px;
+  max-height: 300px;
 }
 
 

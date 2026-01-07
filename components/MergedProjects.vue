@@ -1,7 +1,7 @@
 <template>
   <Loading v-if="loading" />
 
-  <section id="Products" v-if="filteredProjects && loading == false && !vertical" :class="mobile ? 'mobile-only' : ''">
+  <section id="Products" v-if="filteredProjects && loading == false && !vertical" :class="['w-consistent'], mobile ? 'mobile-only' : ''">
     <nuxt-link
         :class="['project', 'w-full', product.class]"
         v-for="product in filteredProjects" 
@@ -189,7 +189,6 @@ const products = [
   gap: $spacing-sm;
   grid-template-rows: 1fr;
   position: relative;
-  margin: $spacing-md;
 
   &.mobile-only {
     display: none;

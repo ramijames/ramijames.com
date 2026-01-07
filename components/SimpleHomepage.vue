@@ -271,7 +271,6 @@ onUnmounted(() => {
 
   .mega-hero {
     height: 80dvh;
-    width: calc(100dvw - $spacing-sm);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -313,14 +312,15 @@ onUnmounted(() => {
           line-height: 100%;
         }
 
-        @media screen and (max-width: 768px) {
-          font-size: 18dvw;
-          align-items: center;
-        }
-        
         @media screen and (max-width: 1200px) {
           font-size: 12dvw;
           align-items: center;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 18dvw;
+          align-items: center;
+          margin: 0;
         }
 
         small {
@@ -340,7 +340,7 @@ onUnmounted(() => {
         border-radius: $br-sm;
 
         @media screen and (max-width: 1200px) {
-          max-width: 35dvw;
+          max-width: 55dvw;
         }
       }
 
@@ -360,14 +360,15 @@ onUnmounted(() => {
           line-height: 100%;
         }
 
-        @media screen and (max-width: 768px) {
-          font-size: 18dvw;
-          align-items: center;
-        }
-        
         @media screen and (max-width: 1200px) {
           font-size: 12dvw;
           align-items: center;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 18dvw;
+          align-items: center;
+          margin: 0;
         }
 
         small {

@@ -1,6 +1,6 @@
 <template>
 
-  <div class="work-container">
+  <div class="work-container w-consistent">
     <h2>Latest Work</h2>
     <section id="LatestWork">
       <nuxt-link
@@ -56,15 +56,6 @@ const products = [
 @import './assets/variables';
 
 .work-container {
-  margin: 0 $spacing-xl $spacing-md;
-
-  @media screen and (max-width: 1200px) {
-    margin: 0 $spacing-lg $spacing-md;
-  }
-
-  @media screen and (max-width: 1000px) {
-    margin: 0 $spacing-sm $spacing-md;
-  }
 
   h2 {
     margin: 0 0 $spacing-md;

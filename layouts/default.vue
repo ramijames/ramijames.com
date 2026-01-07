@@ -22,7 +22,7 @@
   .default-main {
 
     &:after {
-      background: linear-gradient(to bottom, rgba($black, 1), rgba($black, 0));
+      background: linear-gradient(to bottom, rgba($yellow, 1), rgba($black, 0));
     }
   }
 }
@@ -37,6 +37,25 @@
 
   @media screen and (max-width: 1000px){
     padding-top: 0;
+  }
+
+  &:after {
+    content:'';
+    width: 100dvw;
+    height: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba($yellow, 1), rgba($yellow, 0));
+    backdrop-filter: blur(8px);
+    mask-image: linear-gradient(to top, transparent 0%, $black 90%);
+    pointer-events: none;
+    opacity: 0.2;
+
+    @media screen and (max-width: 1000px){
+      height: 100px;
+    }
   }
 }
 
