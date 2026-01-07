@@ -177,18 +177,14 @@ const formatDate = (dateString) => {
 }
 
 .dark {
-  .featured-card {
-    transition: all 0.3s ease;
-    text-decoration: none;
-    overflow: hidden;
-    min-height: 280px;
+  color: $white;
+  
+  .featured-title {
+    color: $yellow;
+  }
 
-    &:hover {
-      transform: translateY(-6px);
-      background: rgba($blue, 0.2);
-      border-color: rgba($blue, 0.5);
-      box-shadow: 0 8px 24px rgba($blue, 0.2);
-    }
+  .featured-image {
+    border: 1px solid rgba($white, 0.2);
   }
 }
 
@@ -205,18 +201,14 @@ const formatDate = (dateString) => {
   justify-content: space-between;
   height: 100%;
   gap: $spacing-md;
+  transition: all 0.3s ease;
   
 
   &:hover {
     transform: translateY(-6px);
-    background: rgba($blue, 0.2);
-    border-color: rgba($blue, 0.5);
-    box-shadow: 0 8px 24px rgba($blue, 0.2);
+    z-index:1;
   }
 
-  @media screen and (max-width: 1600px) {
-    padding: $spacing-md;
-  }
 }
 
 .featured-text {

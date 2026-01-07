@@ -266,7 +266,6 @@ onUnmounted(() => {
 #Hero {
   position: relative;
   background-size: cover;
-  border-bottom: $border;
   overflow: hidden;
 
   .mega-hero {
@@ -280,6 +279,8 @@ onUnmounted(() => {
 
     @media screen and (max-width: 1000px) {
       padding-top: calc(68px + $spacing-sm);
+      height: 100dvh;
+      min-height: 100vh;
     }
 
     .mega-content {

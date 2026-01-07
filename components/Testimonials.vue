@@ -109,19 +109,20 @@
 
 .dark {
   #Testimonials {
-    color: $white;
+    color: $black;
+    background: $yellow;
 
     .single-testimonial {
+      color: $black;
 
       .user-image img {
         border: $border;
-        box-shadow: 0 10px 20px rgba($black, .8);
       }
 
       .testimonial-card {
         .user-name {
           padding: 6px 10px 4px;
-          background: rgba($blue, 1);
+          background: rgba($black, 1);
           line-height: 100%;
           border-radius: $br-lg;
           text-transform: uppercase;
@@ -141,6 +142,8 @@
   gap: $spacing-sm;
   font-family: $font-family-secondary;
   padding: $spacing-xl;
+  background: $black;
+  margin-top: $spacing-lg;
 
   @media screen and (max-width: 1200px) {
     padding: $spacing-md;
@@ -158,6 +161,7 @@
     display: flex;
     flex-direction: row;
     gap: $spacing-sm;
+    color: $white;
 
     @media screen and (max-width: 1000px) {
       min-height: auto;
@@ -192,14 +196,14 @@
 
       .user-name {
         padding: 6px 10px 4px;
-        background: rgba($black, 1);
+        background: rgba($yellow, 1);
         line-height: 100%;
         border-radius: $br-lg;
         text-transform: uppercase;
         font-size: 10px;
         font-weight: bold;
         letter-spacing: 1px;
-        color: rgba($white, 1);
+        color: rgba($black, 1);
       }
     }
   }
