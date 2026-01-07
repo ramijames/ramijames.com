@@ -475,20 +475,16 @@ p > strong {
   display: flex;
   flex-direction: row;
   gap: $spacing-md;
-  max-width: 1200px;
+  max-width: 1800px;
   margin: $spacing-lg auto;
   position: relative;
 
   @media screen and (max-width: 1600px){
-    padding-left: 300px;
+    max-width: 1200px;
   }
 
-  @media screen and (max-width: 1400px){
-    padding-left: 200px;
-  }
-
-  @media screen and (max-width: 1000px){
-    padding-left: 0px;
+  @media screen and (max-width: 1200px){
+    max-width: 100%;
   }
 }
 
