@@ -34,7 +34,7 @@
   background: black;
   overflow: hidden;
   position: relative;
-  margin: $spacing-xl 0;
+  margin: 0 0 $spacing-xl 0;
 
   @media screen and (max-width: 1000px){
     flex-direction: column;

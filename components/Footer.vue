@@ -66,6 +66,7 @@ onMounted(() => {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    background: $black;
 
     @media screen and (max-width: 768px){
       align-items: center;
@@ -99,6 +100,7 @@ onMounted(() => {
       align-items: center;
       gap: $spacing-md;
       opacity: 0.7;
+      color: $yellow !important;
       
       @media screen and (max-width: 768px){
         .link {
@@ -125,7 +127,7 @@ onMounted(() => {
         transition: all 0.5s ease-in-out;
         font-size: 9px;
         font-weight: 500;
-        color: rgba($white, 0.4);
+        color: $yellow !important;
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: $spacing-sm 0;
@@ -173,6 +175,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  background: $yellow;
 
   @media screen and (max-width: 1000px){
     align-items: center;

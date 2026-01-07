@@ -410,15 +410,15 @@ const notHome = computed(() => {
         
         &.router-link-exact-active,
         &.router-link-active {
-          color: $white;
-          border: 1px solid rgba($black, 1);
-          background: $black;
+          color: $black;
+          border: 1px solid rgba($yellow, 1);
+          background: $yellow;
 
           svg {
             opacity: 1;
             
             path, circle {
-              fill: white;
+              fill: $black;
             }
           }
         }

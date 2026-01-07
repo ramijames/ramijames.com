@@ -6,7 +6,7 @@
     <section class="about-container">
 
       <section class="who-am-i">
-        <img src="/rami_small_white.png">
+        <img src="/dude.png">
         <h3>My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://github.com/ramijames">Github</a> and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h3>
       </section>
 
@@ -188,7 +188,7 @@ export default {
     }
     
     img {
-      max-width: 300px;
+      max-width: 400px;
       border-radius: $br-sm;
     }
   }
