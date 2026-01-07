@@ -1,6 +1,6 @@
 <template>
   <section class="mega-content">
-    <h4>I've been lucky to work with</h4>
+    <h4>Previous clients</h4>
     <section class="clients">
       <img src="/clients/ibm.png" />
       <img src="/clients/wpt.png" />
@@ -25,17 +25,16 @@
 .mega-content {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: $spacing-md;
   gap: $spacing-md;
-  width: calc(100% - $spacing-md - $spacing-md);
+  width: 100%;
   height: 100px;
-  background: $black;
-  border-radius: $br-md;
+  background: black;
   overflow: hidden;
   position: relative;
-  margin: $spacing-md;
+  margin: $spacing-xl 0;
 
   @media screen and (max-width: 1000px){
     flex-direction: column;
@@ -67,7 +66,6 @@
     margin: 0;
     text-wrap: nowrap;
     opacity: 0.8;
-    font-size: $font-size-lg;
     color: $white;
   }
 

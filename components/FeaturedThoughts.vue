@@ -185,10 +185,27 @@ const formatDate = (dateString) => {
   }
 }
 
+.dark {
+  .featured-card {
+    border: 1px solid rgba($white, 0.1);
+    border-radius: $br-sm;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    overflow: hidden;
+    min-height: 280px;
+
+    &:hover {
+      transform: translateY(-6px);
+      background: rgba($blue, 0.2);
+      border-color: rgba($blue, 0.5);
+      box-shadow: 0 8px 24px rgba($blue, 0.2);
+    }
+  }
+}
+
 .featured-card {
   border: 1px solid rgba($black, 0.2);
-  border-radius: $br-md;
-  background: rgba($blue, 0.1);
+  border-radius: $br-sm;
   transition: all 0.3s ease;
   text-decoration: none;
   overflow: hidden;

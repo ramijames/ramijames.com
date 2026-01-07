@@ -151,9 +151,20 @@ a {
   transition: color 0.28s ease-in-out;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
   font-family: $font-family-main;
-  font-weight: normal;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+h5, h6 {
+  font-family: $font-family-secondary;
+  font-weight: 500;
   margin: 0;
   padding: 0;
 }
@@ -167,7 +178,7 @@ h1 {
   line-height: 120%;
 
   @media screen and (max-width: 1200px) {
-    font-size: $font-size-xxl;
+    font-size: $font-size-max;
     line-height: 100%;
   }
 
@@ -186,6 +197,7 @@ h2 {
   font-size: $font-size-xxl;
   line-height: $font-size-xxl;
   margin-bottom: $spacing-xs;
+  font-weight: 500;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
@@ -198,10 +210,11 @@ h2 {
 }
 
 h3 { 
-  font-size: $font-size-lg * 1.1; 
+  font-size: $font-size-lg * 1.2; 
   line-height: 140%; 
   margin-top: $spacing-md;
   margin-bottom: $spacing-sm;
+  font-weight: 500;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-lg;
@@ -214,7 +227,7 @@ h3 {
 }
 
 h4 { 
-  font-size: $font-size-md * 1.1; 
+  font-size: $font-size-md; 
   line-height: 140%;  
   margin: $spacing-md 0 $spacing-sm;
 
@@ -223,7 +236,7 @@ h4 {
   }
 
   @media screen and (max-width: 1000px) {
-    font-size: $font-size-md;
+    font-size: $font-size-md; 
     line-height: $font-size-md * $multiplier;
   }
 }
@@ -434,7 +447,7 @@ p > strong {
         border-top: 1px solid rgba($black, 0.2);
         padding-top: $spacing-md;
         position: sticky;
-        top: -1px;
+        top: calc(100px + $spacing-md);
         max-width: 300px;
 
         @media screen and (max-width: 1200px) {
@@ -462,7 +475,9 @@ p > strong {
   display: flex;
   flex-direction: row;
   gap: $spacing-md;
-  padding-left: 400px;
+  max-width: 1200px;
+  margin: $spacing-lg auto;
+  position: relative;
 
   @media screen and (max-width: 1600px){
     padding-left: 300px;

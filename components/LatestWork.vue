@@ -35,7 +35,19 @@ const products = [
                     color: '#0899FE',
                     class: 'scatter',
                     type: 'Product Case Study'
-                  }   
+                  },
+                  {
+                    title: 'Doodledapp',
+                    description: 'No-code smart contract builder',
+                    image: '/products/doodledapp/doodledapp-thumb.png',
+                    logo: '/products/doodledapp/doodledapp-logo.svg',
+                    bg: '/homepage/hp-doodledapp.png',
+                    status: 'past',
+                    slug: '/products/doodledapp/',
+                    color: '#3E74FF',
+                    class: 'doodledapp',
+                    type: 'Product Case Study'
+                  },
                 ];
 
 </script>
@@ -61,9 +73,12 @@ const products = [
 }
 
 #LatestWork {
-  width: 50%;
+  width: 100%;
   position: relative;
   margin: $spacing-md 0 0;
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
 
   @media screen and (max-width: 1400px) {
     width: 100%;

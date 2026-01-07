@@ -80,7 +80,7 @@
   align-items: flex-start;
   gap: $spacing-md;
   border-radius: $br-md;
-  margin: $spacing-lg $spacing-md $spacing-md $spacing-md;
+  margin: $spacing-md;
 
   @media screen and (max-width: 1000px) {
     margin: $spacing-sm;

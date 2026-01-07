@@ -10,15 +10,20 @@
 
 <style lang="scss">
 
+@import './assets/variables';
+
 .default-layout {
   display: flex;
   flex-direction: row;
-  padding-left: 132px;
   min-height: 100vh;
+}
 
-  @media screen and (max-width: 1000px){
-    padding-left: 0px;
-    padding-top: 80px;
+.dark {
+  .default-main {
+
+    &:after {
+      background: linear-gradient(to bottom, rgba($black, 1), rgba($black, 0));
+    }
   }
 }
 
@@ -27,6 +32,21 @@
   flex-direction: column;
   width: 100%;
   position: relative;
+  padding-top: calc(100px + $spacing-sm);
+  position: relative;
+
+  &:after {
+    content:'';
+    width: 100dvw;
+    height: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba($white, 1), rgba($white, 0));
+    backdrop-filter: blur(8px);
+    mask-image: linear-gradient(to top, transparent 0%, $black 90%);
+  }
 }
 
 </style>

@@ -3,7 +3,7 @@
     <section class="mega-hero">
       <section class="mega-title">
         <h1>{{ title }}</h1>
-        <p v-if="tagline">{{ tagline }}</p>
+        <h2 v-if="tagline">{{ tagline }}</h2>
       </section>
       <section 
         class="grid-background"
@@ -253,7 +253,8 @@ onUnmounted(() => {
   .mega-hero {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
     gap: $spacing-sm;
     padding: $spacing-md;
     position: relative;
@@ -294,39 +295,25 @@ onUnmounted(() => {
     }
 
     .mega-title {
-      position: absolute;
-      bottom: $spacing-xl;
-      left: $spacing-xl;
-      z-index: 1;
-
-      @media screen and (max-width: 1200px) {
-        bottom: $spacing-lg;
-        left: $spacing-lg;
-      }
-      
-      @media screen and (max-width: 768px) {
-        bottom: $spacing-sm;
-        left: $spacing-md;
-      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
       h1 {
         margin: 0 0 $spacing-xs;
         line-height: 100%;
+        text-align: center;
       }
 
-      p {
-        font-size: $font-size-xl;
-        line-height: $font-size-xl;
-        font-family: $font-family-main;
-        font-weight: 200;
-        max-width: 75%;
+      h2 {
         text-wrap: balance;
         margin: 0;
+        text-align: center;
+        text-transform: initial;
 
         @media screen and (max-width: 1180px) {
           max-width: 100%;
-          font-size: $font-size-md;
-          line-height: $font-size-md;
         }
       }
 

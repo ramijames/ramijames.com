@@ -1,70 +1,22 @@
 <template>
   <main id="Hero">
-    <img 
-      src="/homepage/figure1.png" 
-      class="figure-one"
-      :style="{ transform: `translateY(${parallaxOffsets.figure1}px)` }"
-    >
-    <img 
-      src="/homepage/figure2.png" 
-      class="figure-two"
-      :style="{ transform: `translateY(${parallaxOffsets.figure2}px)` }"
-    >
-    <img 
-      src="/homepage/figure3.png" 
-      class="figure-three"
-      :style="{ transform: `translateY(${parallaxOffsets.figure3}px)` }"
-    >
-    <img 
-      src="/homepage/figure4.png" 
-      class="figure-four"
-      :style="{ transform: `translateY(${parallaxOffsets.figure4}px)` }"
-    >
+    
     <section class="mega-hero">
-      <section class="mega-title">
-        <h1>Principal<br>Product<br>Designer</h1>
-        <p>My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.</p>
-        <section class="button-set">
-          <nuxt-link to="/products" class="button shiny">Browse case studies</nuxt-link>  
-          <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button blue">Become a client</a>  
-        </section>
-      </section>
-      <section 
-        class="grid-background"
-        :style="{
-          transform: `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`
-        }"
-      >
-        <div 
-          v-for="(item, index) in gridItems" 
-          :key="index"
-          class="grid-item"
-          @mouseenter="!isMobile && updateScales(item)"
-          @mouseleave="!isMobile && updateScales(null)"
-          :style="{
-            left: `${item.left}px`,
-            top: `${item.top}px`,
-            width: `${item.width}px`,
-            height: `${item.height}px`,
-            transform: `scale(${item.scale})`,
-            opacity: item.opacity
-          }"
-        >
-          <svg :style="{ width: '50%', height: '50%' }">
-            <defs>
-              <mask :id="`mask-${index}`">
-                <image :href="item.svg" width="100%" height="100%" />
-              </mask>
-            </defs>
-            <rect width="100%" height="100%" :fill="`#${item.color}`" :mask="`url(#mask-${index})`" />
-          </svg>
+      <section class="mega-content">
+        <div>
+          <span>Rami</span>
+        </div>
+        <img src="/rami_small_white.png">
+        <div>
+          <span>James</span>
+          <small>Product Designer</small>
         </div>
       </section>
     </section>  
+    <Clients />
     
     <LatestWork />
     <FeaturedThoughts :featured-articles="featuredArticles" :articles="regularArticles" />
-    <Clients />
     <Testimonials />
 
     <!-- <section id="Reasons">
@@ -299,458 +251,50 @@ onUnmounted(() => {
 @import './assets/variables';
 @import './assets/animation';
 
-.dark {
-  #Hero {
-    background-color: $black;
 
-    .figure-one {
-      position: absolute;
-      top: -200px;
-      right: 200px;
-      z-index:10;
-      width: 15%;
-      will-change: transform;
-      transition: transform 0.1s ease-out;
-      max-width: 200px;
-      filter:blur(15px);
-      pointer-events: none;
-      opacity:0.6;
-
-      @media screen and (max-width: 1000px){
-        display: none;
-      }
-    }
-
-    .figure-two {
-      position: absolute;
-      top: 24%;
-      right: 12%;
-      z-index:10;
-      width: 20%;
-      will-change: transform;
-      transition: transform 0.1s ease-out;
-      max-width: 200px;
-      pointer-events: none;
-
-      @media screen and (max-width: 1000px){
-        display: none;
-      }
-    }
-
-    .figure-three {
-      position: absolute;
-      top: 20%;
-      right: 40px;
-      z-index:9;
-      width: 20%;
-      will-change: transform;
-      transition: transform 0.1s ease-out;
-      max-width: 200px;
-      filter:blur(15px);
-      pointer-events: none;
-      opacity:0.6;
-
-      @media screen and (max-width: 1000px){
-        display: none;
-      }
-    }
-
-    .figure-four {
-      position: absolute;
-      top: 5%;
-      right: 5%;
-      z-index:10;
-      width: 25%;
-      will-change: transform;
-      transition: transform 0.1s ease-out;
-      max-width: 200px;
-      pointer-events: none;
-
-      @media screen and (max-width: 1000px){
-        display: none;
-      }
-    }
-
-    .mega-hero {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: $spacing-sm;
-      padding: $spacing-md;
-      position: relative;
-      overflow: hidden;
-
-      @media screen and (max-width: 768px){
-        height: calc(100dvh - 120px);
-      }
-
-      .grid-background {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: all;
-        z-index: 0;
-        transform-style: preserve-3d;
-        transition: transform 0.3s ease-out;
-        -webkit-mask-image: linear-gradient(black, transparent);
-        mask-image: linear-gradient(black, transparent);
-
-        .grid-item {
-          position: absolute;
-          background: transparent;
-          border-radius: $br-sm;
-          transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transform-origin: center center;
-
-          svg {
-            display: block;
-          }
-        }
-      }
-
-      h1 {
-          font-size: 6rem;
-          line-height: 100%;
-          margin-bottom: $spacing-sm;
-          z-index: 1;
-
-          @media screen and (max-width: 768px){
-            font-size: 2.4rem;
-          }
-        }
-
-        @media screen and (max-width: 768px){
-          width: 100%;
-          margin: 0 auto;
-        }
-
-        p {
-          font-size: $font-size-lg;
-          line-height: $font-size-lg;
-          font-family: $font-family-main;
-          font-weight: 200;
-          max-width: 600px;
-          text-wrap: balance;
-          color: $white;
-          opacity: 0.8;
-          text-shadow: -20px -100px 800px rgba($red, 0.4), 1px 1px 2px rgba($black, 1);
-
-          @media screen and (max-width: 1180px){
-            max-width: 65%;
-            font-size: $font-size-lg;
-            line-height: $font-size-lg;
-          }
-
-          @media screen and (max-width: 768px){
-            max-width: calc(100% - $spacing-md);
-            font-size: 16px;
-            line-height: $font-size-lg;
-          }
-        }
-
-        .mega-title {
-          position: absolute;
-          bottom: $spacing-xl;
-          left: $spacing-xl;
-          z-index:1;
-
-          @media screen and (max-width: 1200px){
-            bottom: $spacing-lg;
-            left: $spacing-lg;
-          }
-          
-          @media screen and (max-width: 768px){
-            bottom: $spacing-md;
-            left: $spacing-md;
-          }
-
-          .button-set {
-            display: flex;
-            flex-direction: row;
-            gap: $spacing-sm;
-
-            @media screen and (max-width: 768px){
-              flex-direction: column;
-              gap: $spacing-xs;
-              align-items: flex-start;
-
-              .button {
-                width: calc(100% - $spacing-md);
-              }
-            }
-          }
-        }
-
-      .orientation-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 100;
-        padding: $spacing-md $spacing-lg;
-        background: rgba($white, 0.9);
-        color: $black;
-        border: 2px solid $blue;
-        border-radius: $br-md;
-        font-size: $font-size-md;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        pointer-events: all;
-
-        &:hover {
-          background: $blue;
-          color: $white;
-          transform: translate(-50%, -50%) scale(1.05);
-        }
-
-        &:active {
-          transform: translate(-50%, -50%) scale(0.95);
-        }
-      }
-    }
-
-    h2 {
-      margin-top: 0;
-      line-height: 140%;
-
-      @media screen and (max-width: 768px){
-        font-size: $font-size-lg;
-      }
-    }
-
-  }
-}
 
 #Hero {
-  width: 100%;
   position: relative;
-  background-color: $white;
   background-size: cover;
   border-bottom: $border;
 
-  .figure-one {
-    position: absolute;
-    top: -200px;
-    right: 200px;
-    z-index:10;
-    width: 15%;
-    will-change: transform;
-    transition: transform 0.1s ease-out;
-    max-width: 200px;
-    filter:blur(15px);
-    pointer-events: none;
-    opacity:0.6;
-
-    @media screen and (max-width: 1000px){
-      display: none;
-    }
-  }
-
-  .figure-two {
-    position: absolute;
-    top: 24%;
-    right: 12%;
-    z-index:10;
-    width: 20%;
-    will-change: transform;
-    transition: transform 0.1s ease-out;
-    max-width: 200px;
-    pointer-events: none;
-
-    @media screen and (max-width: 1000px){
-      display: none;
-    }
-  }
-
-  .figure-three {
-    position: absolute;
-    top: 20%;
-    right: 40px;
-    z-index:9;
-    width: 20%;
-    will-change: transform;
-    transition: transform 0.1s ease-out;
-    max-width: 200px;
-    filter:blur(15px);
-    pointer-events: none;
-    opacity:0.6;
-
-    @media screen and (max-width: 1000px){
-      display: none;
-    }
-  }
-
-  .figure-four {
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    z-index:10;
-    width: 25%;
-    will-change: transform;
-    transition: transform 0.1s ease-out;
-    max-width: 200px;
-    pointer-events: none;
-
-    @media screen and (max-width: 1000px){
-      display: none;
-    }
-  }
-
   .mega-hero {
+    height: 80dvh;
+    width: calc(100dvw - $spacing-sm);
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: $spacing-sm;
-    padding: $spacing-md;
-    position: relative;
-    height: calc(80dvh - 80px);
-    overflow: hidden;
+    align-items: center;
+    justify-content: center;
 
-    @media screen and (max-width: 768px){
-      height: calc(100dvh - 120px);
-    }
+    .mega-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: $spacing-sm;
 
-    .grid-background {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: all;
-      z-index: 0;
-      transform-style: preserve-3d;
-      transition: transform 0.3s ease-out;
-      -webkit-mask-image: linear-gradient(black, transparent);
-      mask-image: linear-gradient(black, transparent);
+      div {
+        font-size: 6dvw;
+        font-weight: 900;
+        text-transform: uppercase;
+        position: relative;
+        letter-spacing: -.2dvw;
 
-      .grid-item {
-        position: absolute;
-        background: transparent;
+        small {
+          position: absolute;
+          bottom: .4dvw;
+          right: 4px;
+          font-size: 1.3dvw;
+          letter-spacing: initial;
+          font-weight: 500;
+          opacity: 0.5;
+          text-transform: Capitalize;
+        }
+      }
+
+      img {
+        max-width: 15dvw;
         border-radius: $br-sm;
-        transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform-origin: center center;
-
-        svg {
-          display: block;
-        }
       }
-    }
-
-    h1 {
-        font-size: 6rem;
-        line-height: 100%;
-        margin: 0 0 $spacing-sm -0.5rem;
-        z-index: 1;
-
-        @media screen and (max-width: 768px){
-          font-size: 2.4rem;
-        }
-      }
-
-      @media screen and (max-width: 768px){
-        width: 100%;
-        margin: 0 auto;
-      }
-
-      p {
-        font-size: $font-size-lg;
-        line-height: $font-size-lg;
-        font-family: $font-family-main;
-        font-weight: 200;
-        max-width: 600px;
-        text-wrap: balance;
-        opacity: 0.8;
-
-        @media screen and (max-width: 1180px){
-          max-width: 65%;
-          font-size: $font-size-lg;
-          line-height: $font-size-lg;
-        }
-
-        @media screen and (max-width: 768px){
-          max-width: calc(100% - $spacing-md);
-          font-size: 16px;
-          line-height: $font-size-lg;
-        }
-      }
-
-      .mega-title {
-        position: absolute;
-        bottom: $spacing-xl;
-        left: $spacing-xl;
-        z-index:1;
-
-        @media screen and (max-width: 1200px){
-          bottom: $spacing-lg;
-          left: $spacing-lg;
-        }
-        
-        @media screen and (max-width: 768px){
-          bottom: $spacing-md;
-          left: $spacing-md;
-        }
-
-        .button-set {
-          display: flex;
-          flex-direction: row;
-          gap: $spacing-sm;
-
-          @media screen and (max-width: 768px){
-            flex-direction: column;
-            gap: $spacing-xs;
-            align-items: flex-start;
-
-            .button {
-              width: calc(100% - $spacing-md);
-            }
-          }
-        }
-      }
-
-    .orientation-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 100;
-      padding: $spacing-md $spacing-lg;
-      background: rgba($white, 0.9);
-      color: $black;
-      border: 2px solid $blue;
-      border-radius: $br-md;
-      font-size: $font-size-md;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      pointer-events: all;
-
-      &:hover {
-        background: $blue;
-        color: $white;
-        transform: translate(-50%, -50%) scale(1.05);
-      }
-
-      &:active {
-        transform: translate(-50%, -50%) scale(0.95);
-      }
-    }
-  }
-
-  h2 {
-    margin-top: 0;
-    line-height: 140%;
-
-    @media screen and (max-width: 768px){
-      font-size: $font-size-lg;
     }
   }
 

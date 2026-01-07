@@ -26,7 +26,6 @@
       >
       <section :class="['vertical-info', product.class]">
         <h4>{{ product.title }}</h4>
-        <p>{{ product.description }}</p>
       </section>
     </nuxt-link>
   </section>
@@ -404,20 +403,12 @@ const products = [
   gap: $spacing-xs;
   position: relative;
   position: fixed;
-  top: $spacing-sm;
+  top: calc(100px + $spacing-md);
   bottom: $spacing-sm;
-  left: 140px;
+  left: 0px;
   overflow-y: auto;
-  width: 400px;
+  width: 200px;
   padding: $spacing-sm;
-
-  @media screen and (max-width: 1600px){
-    width: 300px;
-  }
-
-  @media screen and (max-width: 1400px){
-    width: 200px;
-  }
 
   @media screen and (max-width: 1000px){
     display: none;
@@ -433,7 +424,6 @@ const products = [
 
   .vertical-project {
     width: 100%;
-    min-height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -447,10 +437,6 @@ const products = [
     color: $black;
     border-left: 1px solid $black;
     border-radius: 0 $br-md $br-md 0;
-
-    @media screen and (max-width: 1600px){
-      min-height: auto;
-    }
 
     &.router-link-active, 
     &.router-link-exact-active,
@@ -478,15 +464,6 @@ const products = [
 
         @media screen and (max-width: 1400px){
           font-size: $font-size-sm;
-        }
-      }
-
-      p {
-        margin: 0;
-        font-size: $font-size-sm;
-
-        @media screen and (max-width: 1600px){
-          display: none;
         }
       }
 

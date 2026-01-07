@@ -1,7 +1,6 @@
 <template>
 
   <main class="w-product-page">
-    <MergedProjects vertical="true" />
 
     <div>
 
@@ -57,7 +56,8 @@
     </main>
 
   <MergedProjectsHeader />
-  <MergedProjects mobile="true" />
+  <MergedProjects />
+  <Footer />
 
 </template>
 

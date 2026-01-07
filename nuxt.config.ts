@@ -60,7 +60,7 @@ export default defineNuxtConfig({
     families: {
       'Libre Baskerville': [400, 500, 600, 700],
       'Roboto Sans': [400, 600, 700, 900],
-      'Figtree': [400, 600, 700, 900],
+      'Poppins': [400, 500, 600, 700, 800, 900],
     },
     preconnect: true,
     preload: true,

@@ -149,8 +149,9 @@ const notHome = computed(() => {
 
   .simple-nav-bar {
     border: 1px solid rgba($white, .2);
-    background: rgba($black, 0.1);
-    box-shadow: 0 0 40px 40px rgba($black,0.3), 0 0 30px 10px $black;
+    background: rgba($black, 0.8);
+    box-shadow: 0 20px 40px 10px rgba($black,0.3);
+    outline: 1px solid rgba($black, 1);
 
     .nav-links {
 
@@ -203,7 +204,7 @@ const notHome = computed(() => {
 
 .simple-nav-bar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -211,14 +212,14 @@ const notHome = computed(() => {
   backdrop-filter: blur(18px);
   z-index: 1000;
   top: $spacing-sm;
-  left: $spacing-sm;
-  bottom: $spacing-sm;
+  left: 50%;
+  transform: translateX(-50%);
   opacity:1;
   transition: background 0.6s ease-in-out;
   border: 1px solid rgba($black, .2);
-  border-radius: $br-md;
-  padding: $spacing-md $spacing-xs;
-  box-shadow: 0 0 30px 10px white;
+  border-radius: $br-xl;
+  padding: $spacing-xs calc($spacing-md + $spacing-sm);
+  box-shadow: 0 0 30px 10px rgba($white, 0.1);
   outline: 1px solid rgba($white, 0.6);
   outline-offset:-2px;
 
@@ -226,10 +227,11 @@ const notHome = computed(() => {
     top: $spacing-xs;
     left:$spacing-sm;
     right:$spacing-sm;
+    transform: translateX(0%);
     height: 68px;
     flex-direction: row;
     padding: 0 $spacing-sm;
-    box-shadow: 0 0 40px 40px rgba($white,0.1), 0 0 30px 10px rgba($white,0.1);
+    box-shadow: 0 0 40px 40px rgba($white,0.02);
   }
 
   &:hover {
@@ -246,9 +248,10 @@ const notHome = computed(() => {
 
   .navigation {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: $spacing-xl;
     width: 100%;
     height: 100%;
 
@@ -334,7 +337,7 @@ const notHome = computed(() => {
 
     .nav-links {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
       gap: $spacing-xs;
@@ -350,10 +353,10 @@ const notHome = computed(() => {
         font-size: 9px;
         font-weight: 500;
         width: 86px;
-        border-radius: $br-md;
+        border-radius: $br-sm;
         text-align: center;
         border: rgba($black,0.1);
-        color: rgba($black, 0.4);
+        color: rgba($black, 0.8);
         font-family: $font-family-secondary;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -368,7 +371,7 @@ const notHome = computed(() => {
         }
 
         svg {
-          opacity: 0.4;
+          opacity: 0.8;
 
           path, circle {
             fill: $black;
