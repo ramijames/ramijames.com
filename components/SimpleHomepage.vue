@@ -231,7 +231,7 @@ function handleMouseMove(e) {
   
   // Calculate tilt based on mouse position relative to center
   // Range: -1 to 1, then multiply by max tilt angle
-  const maxTilt = 1.5 // degrees
+  const maxTilt = 5 // degrees
   tiltY.value = ((mouseX - centerX) / centerX) * maxTilt
   tiltX.value = ((centerY - mouseY) / centerY) * maxTilt
 }
@@ -390,7 +390,7 @@ onUnmounted(() => {
       left: 0;
       top: 0;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       pointer-events: all;
       z-index: 0;
       transform-style: preserve-3d;
