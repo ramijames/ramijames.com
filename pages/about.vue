@@ -152,6 +152,16 @@ export default {
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1600px){
+    max-width: 1200px;
+  }
+
+  @media screen and (max-width: 1200px){
+    max-width: 100%;
+  }
 
   @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr;
@@ -274,14 +284,12 @@ export default {
         .job-descriptions {
           margin-top: 0;
           margin-bottom: $spacing-sm;
-          font-size: $font-size-xs;
           line-height: 140%;
           opacity: 0.6;
         }
 
         .job-descriptions li {
           margin-bottom: $spacing-xs;
-          font-size: $font-size-xs;
           line-height: 140%;
         }
 
