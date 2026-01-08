@@ -22,7 +22,8 @@
   .default-main {
 
     &:after {
-      background: linear-gradient(to bottom, rgba($yellow, 1), rgba($black, 0));
+      background: linear-gradient(to bottom, rgba($white, 1), rgba($black, 0));
+      opacity: 0.08;
     }
   }
 }
@@ -46,8 +47,8 @@
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1;
-    background: linear-gradient(to bottom, rgba($yellow, 1), rgba($yellow, 0));
+    z-index: 3;
+    background: linear-gradient(to bottom, rgba($black, 1), transparent);
     backdrop-filter: blur(8px);
     mask-image: linear-gradient(to top, transparent 0%, $black 90%);
     pointer-events: none;

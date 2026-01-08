@@ -82,7 +82,7 @@ button,
     color: $white;
     background: rgba($black,0.9);
     backdrop-filter: blur(4px);
-    border-radius: $br-md;
+    border-radius: $br-lg;
     border: 1px solid rgba($black, 0.2);
     text-align: center;
     text-decoration: none;
@@ -151,9 +151,13 @@ a {
   transition: color 0.28s ease-in-out;
 }
 
+.dark a {
+  color: $yellow;
+}
+
 h1, h2, h3, h4 {
   font-family: $font-family-main;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0;
   padding: 0;
 }

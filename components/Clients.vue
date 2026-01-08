@@ -35,6 +35,8 @@
   overflow: hidden;
   position: relative;
   margin: 0 0 $spacing-xl 0;
+  border-top: 1px solid rgba($white, 0.2);
+  border-bottom: 1px solid rgba($white, 0.2);
 
   @media screen and (max-width: 1000px){
     flex-direction: column;

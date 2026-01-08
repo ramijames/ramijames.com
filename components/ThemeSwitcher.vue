@@ -46,7 +46,9 @@ onMounted(() => {
   flex-direction: row;
   align-items: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  gap: 6px;
+  margin: 0 auto;
 
   span {
     background: $white-dark;
@@ -59,13 +61,12 @@ onMounted(() => {
   }
 
   .label {
-    color: rgba($black, 0.7);
+    color: rgba($white, 0.7);
     font-family: $font-family-secondary;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 9px;
     font-weight: 500;
-    margin-top: $spacing-xs;
   }
 
   .theme-switcher {
@@ -87,7 +88,7 @@ onMounted(() => {
     }
 
     &.light { 
-      background: $black;
+      background: $yellow;
 
       img {
         left: 2px;

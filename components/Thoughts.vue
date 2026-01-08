@@ -1,6 +1,6 @@
 <template>
   
-  <div class="thoughts-container">
+  <div class="thoughts-container w-consistent">
     <!-- Featured Articles Section -->
     <div v-if="props.featuredArticles && props.featuredArticles.length > 0" class="featured-section">
       <div class="featured-grid">
@@ -222,7 +222,7 @@ const formatDate = (dateString) => {
   }
 
   .search-container {
-    border-bottom: $border;
+    border-bottom: none;
   }
 
   .search-input {
@@ -269,15 +269,6 @@ const formatDate = (dateString) => {
 
 .thoughts-container {
   display: grid;
-  padding: $spacing-xl;
-
-  @media screen and (max-width: 1200px) {
-    padding: $spacing-md;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: $spacing-sm;
-  }
 
   h2 {
     margin: 0;
@@ -509,7 +500,7 @@ const formatDate = (dateString) => {
 .category-section {
   margin-bottom: 4rem;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 400px 1fr;
 
   @media screen and (max-width: 768px) {
     display: flex;

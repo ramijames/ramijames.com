@@ -2,17 +2,22 @@
   <main id="Hero">
     
     <section class="mega-hero">
-      <section class="mega-content">
-        <div class="developer">
-          <small>Developer</small>
-          <span>Rami</span>
-        </div>
+      <section class="name">
         <img src="/dude.png">
-        <div class="designer">
-          <span>James</span>
-          <small>Product Designer</small>
+        <div>This is the personal portfolio site of Rami James.</div>
+      </section>
+      <section class="actions">
+        <div>
+          <img src="/elements/1.svg"> Product Design
+        </div>
+        <div>
+          <img src="/elements/7.svg"> Development
+        </div>
+        <div>
+          <img src="/elements/14.svg"> Writing
         </div>
       </section>
+
       <section 
         class="grid-background"
         :style="{
@@ -45,18 +50,16 @@
         </div>
       </section>
     </section>  
+
+  </main>
+
+  <section class="homepage-content">
     <Clients />
-    
     <LatestWork />
     <FeaturedThoughts :featured-articles="featuredArticles" :articles="regularArticles" />
     <Testimonials />
-
-    <!-- <section id="Reasons">
-      <VisibleThought />
-      <PartnerNotVendor />
-    </section> -->
-
-  </main>
+    <Footer />
+  </section>
   
 </template>
 
@@ -264,126 +267,96 @@ onUnmounted(() => {
 
 
 #Hero {
-  position: relative;
+  position: fixed;
   background-size: cover;
   overflow: hidden;
+  top: 0;
+  width: 100%;
 
   .mega-hero {
-    height: 80dvh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-top: calc(100px  + $spacing-md);
-    background: $yellow;
+    background: rgba($black, .96);
+    transition: all 0.2s ease-in-out;
 
     @media screen and (max-width: 1000px) {
-      padding-top: calc(68px + $spacing-sm);
-      height: 100dvh;
-      min-height: 100vh;
+      padding: $spacing-sm;
+      align-items: flex-start;
+      justify-content: flex-end;
+      gap: $spacing-md;
     }
 
-    .mega-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: $spacing-sm;
-      position: relative;
+    .name {
+      font-size: 3dvw;
+      font-weight: 400;
+      position: absolute;
       z-index: 10;
-      pointer-events: none;
-
-      @media screen and (max-width: 1200px) {
-        flex-direction: column;
-        gap: 0;
-      }
-
-      .developer {
-        font-size: 6dvw;
-        font-weight: 700;
-        text-transform: uppercase;
-        position: relative;
-        letter-spacing: -.2dvw;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        margin-bottom: 23px;
-
-        span { 
-          line-height: 100%;
-        }
-
-        @media screen and (max-width: 1200px) {
-          font-size: 12dvw;
-          align-items: center;
-        }
-
-        @media screen and (max-width: 768px) {
-          font-size: 18dvw;
-          align-items: center;
-          margin: 0;
-        }
-
-        small {
-          font-size: 1.3dvw;
-          letter-spacing: initial;
-          font-weight: 500;
-          opacity: 0.7;
-
-          @media screen and (max-width: 1200px) {
-            font-size: 3dvw;
-          }
-        }
-      }
+      left: $spacing-md;
+      bottom: $spacing-md;
+      line-height: 100%;
+      color: $white;
+      text-wrap: balance;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: $spacing-sm;
 
       img {
-        max-width: 15dvw;
-        border-radius: $br-sm;
-
-        @media screen and (max-width: 1200px) {
-          max-width: 55dvw;
-        }
+        width: 10dvw;
       }
 
-      .designer {
-        font-size: 6dvw;
-        font-weight: 700;
-        text-transform: uppercase;
+      @media screen and (max-width: 1000px) {
+        font-size: 5dvw;
         position: relative;
-        letter-spacing: -.2dvw;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 0;
-        margin-top: 23px;
-
-        span { 
-          line-height: 100%;
-        }
-
-        @media screen and (max-width: 1200px) {
-          font-size: 12dvw;
-          align-items: center;
-        }
-
-        @media screen and (max-width: 768px) {
-          font-size: 18dvw;
-          align-items: center;
-          margin: 0;
-        }
-
-        small {
-          font-size: 1.3dvw;
-          letter-spacing: initial;
-          font-weight: 500;
-          opacity: 0.7;
-
-          @media screen and (max-width: 1200px) {
-            font-size: 3dvw;
-          }
-        }
+        left: initial;
+        bottom: initial;
+        position: relative;
       }
     }
+
+    .actions {
+      right: $spacing-md;
+      bottom: $spacing-md;
+      position: absolute;
+      z-index: 10;
+      padding: $spacing-sm 0 $spacing-sm;
+      font-size: 1.5dvw;
+      font-weight: 500;
+      border-top: 1px solid $white;
+      border-bottom: 1px solid $white;
+      color: $white;
+
+      @media screen and (max-width: 1000px) {
+        position: relative;
+        right: initial;
+        bottom: initial;
+        margin: 0;
+        font-size: 3dvw;
+        width: calc(100%);
+        padding: $spacing-sm 0;
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+        gap: $spacing-sm;
+      }
+    }
+
+    img {
+      width: 1dvw;
+
+      @media screen and (max-width: 1000px) {
+        width: 3dvw;
+      }
+    }
+
   }
 
   .grid-background {
@@ -391,13 +364,14 @@ onUnmounted(() => {
       left: 0;
       top: 0;
       width: 100%;
-      height: 100vh;
+      height: 100dvh;
       pointer-events: all;
       z-index: 0;
       transform-style: preserve-3d;
       transition: transform 0.3s ease-out;
-      -webkit-mask-image: linear-gradient(black, transparent);
-      mask-image: linear-gradient(black, transparent);
+      -webkit-mask-image: radial-gradient(black, transparent);
+      mask-image: radial-gradient(black, transparent );
+      opacity: 0.5;
 
       .grid-item {
         position: absolute;
@@ -417,15 +391,16 @@ onUnmounted(() => {
 
 }
 
-#Reasons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: rgba($blue, 0.05);
-  margin-top: $spacing-lg;
+.dark .homepage-content {
+  background: $black;
+}
 
-  @media screen and (max-width: 1000px) {
-    grid-template-columns: 1fr;
-  }
+.homepage-content {
+  background: $white;
+  position: absolute;
+  z-index: 2;
+  top: 100dvh;
+  width: 100%;
 }
 
 </style>

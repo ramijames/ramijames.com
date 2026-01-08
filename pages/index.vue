@@ -1,7 +1,6 @@
 <template>
   <main>
     <SimpleHomepage />
-    <Footer />
   </main>
 </template>
 
