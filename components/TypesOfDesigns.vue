@@ -169,7 +169,7 @@ export default {
       height: 100%;
       max-height: 600px;
       object-fit: cover;
-      border-radius: $br-lg;
+      border-radius: $br-sm;
     }
   }
 
@@ -184,38 +184,38 @@ export default {
       width: calc(50% - $spacing-md / 2);
       height: 200px;
       background-color: $white-dark;
-      border-radius: $br-lg;
+      border-radius: $br-sm;
     }
   }
 
   div:nth-child(1) { 
     grid-area: one-top; 
     background-color: $white-dark;
-    border-radius: $br-lg;
+    border-radius: $br-sm;
   }
 
   div:nth-child(2) { 
     grid-area: one-bottom; 
     background-color: $white-dark;
-    border-radius: $br-lg;
+    border-radius: $br-sm;
   }
 
   div:nth-child(3) { 
     grid-area: two-top; 
     background-color: $white-dark;
-    border-radius: $br-lg;
+    border-radius: $br-sm;
   }
 
   div:nth-child(4) { 
     grid-area: two-bottom; 
     background-color: $white-dark;
-    border-radius: $br-lg;
+    border-radius: $br-sm;
   }
 
   div:nth-child(5) { 
     grid-area: three-top; 
     background-color: $white-dark;
-    border-radius: $br-lg;
+    border-radius: $br-sm;
     
     @media screen and (max-width: 1000px){
       display:none;
@@ -225,7 +225,7 @@ export default {
   div:nth-child(6) { 
     grid-area: three-bottom; 
     background-color: $white-dark;
-    border-radius: $br-lg;
+    border-radius: $br-sm;
     
     @media screen and (max-width: 1000px){
       display:none;
@@ -235,7 +235,7 @@ export default {
   div:nth-child(7) { 
     grid-area: four-top; 
     background-color: $white-dark;
-    border-radius: $br-lg;
+    border-radius: $br-sm;
     
     @media screen and (max-width: 1000px){
       display:none;
@@ -245,7 +245,7 @@ export default {
   div:nth-child(8) { 
     grid-area: four-bottom; 
     background-color: $white-dark;
-    border-radius: $br-lg;
+    border-radius: $br-sm;
     
     @media screen and (max-width: 1000px){
       display:none;

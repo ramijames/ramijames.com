@@ -321,7 +321,7 @@ li {
 
   .type {
     background-color: $black-dark;
-    border-radius: $br-md;
+    border-radius: $br-sm;
     position: absolute;
     right: $spacing-sm;
     top: $spacing-sm;
@@ -528,7 +528,7 @@ p > strong {
   pre {
     margin: $spacing-md 0;
     padding: $spacing-md;
-    border-radius: $br-md;
+    border-radius: $br-sm;
     background: $black-dark;
     color: $white;
   }
@@ -710,7 +710,7 @@ input {
   margin: 0 auto $spacing-md;
   outline: 1px solid rgba(0,0,0,0.1);
   outline-offset: -1px;
-  border-radius: $br-lg;
+  border-radius: $br-sm;
   max-width: 100%;
 }
 
@@ -990,7 +990,7 @@ img.in-article {
     .main-product-image video {
       width: 100%;
       height: auto;
-      border-radius: $br-lg;
+      border-radius: $br-sm;
       position: relative;
       z-index: 9;
       border:0;

@@ -124,7 +124,7 @@
           padding: 6px 10px 4px;
           background: rgba($black, 1);
           line-height: 100%;
-          border-radius: $br-lg;
+          border-radius: $br-sm;
           text-transform: uppercase;
           font-size: 10px;
           font-weight: bold;
@@ -198,7 +198,7 @@
         padding: 6px 10px 4px;
         background: rgba($yellow, 1);
         line-height: 100%;
-        border-radius: $br-lg;
+        border-radius: $br-sm;
         text-transform: uppercase;
         font-size: 10px;
         font-weight: bold;

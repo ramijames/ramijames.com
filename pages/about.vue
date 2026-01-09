@@ -188,7 +188,7 @@ export default {
   .resume {
     padding: $spacing-xl;
     border: 1px solid rgba($black, 0.2);
-    border-radius: $br-md;
+    border-radius: $br-sm;
     box-shadow: $big-shadow;
     display: flex;
     flex-direction: column;
@@ -301,7 +301,7 @@ export default {
   .single-service {
     padding: $spacing-md;
     background: $white-dark;
-    border-radius: $br-lg;
+    border-radius: $br-sm;
 
     @media screen and (max-width: 768px){
       border-right: none;

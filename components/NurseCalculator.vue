@@ -92,7 +92,7 @@ export default {
     width: 100%;
     padding: $spacing-sm;
     background-color: rgba($blue, 0.1);
-    border-radius: $br-md;
+    border-radius: $br-sm;
     display:flex;
     flex-direction: row;
     justify-content: space-between;

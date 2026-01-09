@@ -82,7 +82,7 @@
   text-align: center;
   padding-top: $spacing-xl;
   gap: $spacing-md;
-  border-radius: $br-md;
+  border-radius: $br-sm;
   margin: $spacing-md;
 
   @media screen and (max-width: 1000px) {
@@ -135,7 +135,7 @@
           padding: 6px 10px 4px;
           background: $black;
           line-height: 100%;
-          border-radius: $br-lg;
+          border-radius: $br-sm;
           text-transform: uppercase;
           font-size: 10px;
           font-weight: bold;

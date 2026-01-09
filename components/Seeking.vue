@@ -23,7 +23,7 @@ export default {
 @import './assets/variables';
 
 .actively-seeking {
-  border-radius: $br-md;
+  border-radius: $br-sm;
   background: $blue linear-gradient(40deg, $black 0%, $blue 50%);
   padding: $spacing-sm * 1.5;
   margin: ($spacing-sm * 1.5) 0;

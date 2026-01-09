@@ -72,7 +72,7 @@ export default {
   bottom: 0;
   background: rgba($white-dark, 0.6);
   backdrop-filter: blur(10px);
-  border-radius: $br-md $br-md 0 0;
+  border-radius: $br-sm $br-sm 0 0;
   padding: $spacing-xs;
   box-shadow: 0 10px 10px rgba($black, 0.24);
   border-top: 1px solid rgba($white, 0.3);

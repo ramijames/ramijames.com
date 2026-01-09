@@ -432,7 +432,7 @@ const products = [
     overflow: hidden;
     color: $black;
     border-left: 1px solid $black;
-    border-radius: 0 $br-md $br-md 0;
+    border-radius: 0 $br-sm $br-sm 0;
 
     &.router-link-active, 
     &.router-link-exact-active,

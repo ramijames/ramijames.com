@@ -1,7 +1,13 @@
 <template>
   <main id="Hero">
     
-    <section class="mega-hero">
+    <section 
+      class="mega-hero"
+      :style="{
+        transform: `scale(${1 - scrollProgress * 0.1})`,
+        opacity: 1 - scrollProgress * 1
+      }"
+    >
       <section class="name">
         <img src="/dude.png">
         <div>This is the personal portfolio site of Rami James.</div>
@@ -88,6 +94,9 @@ const tiltX = ref(0)
 const tiltY = ref(0)
 const isMobile = ref(false)
 const showOrientationButton = ref(false)
+
+// Scroll effect
+const scrollProgress = ref(0)
 
 // Calculate responsive column count
 function updateColumns() {
@@ -239,6 +248,15 @@ function handleMouseMove(e) {
   tiltX.value = ((centerY - mouseY) / centerY) * maxTilt
 }
 
+function handleScroll() {
+  // Calculate scroll progress (0 to 1) based on viewport height
+  const scrolled = window.scrollY
+  const viewportHeight = window.innerHeight
+  
+  // Progress will be 0 at top, 1 at 1 viewport height scrolled
+  scrollProgress.value = Math.min(scrolled / viewportHeight, 1)
+}
+
 onMounted(() => {
   nextTick(() => {
     updateColumns()
@@ -247,11 +265,13 @@ onMounted(() => {
   })
   window.addEventListener('resize', calculateGridItems)
   window.addEventListener('mousemove', handleMouseMove)
+  window.addEventListener('scroll', handleScroll)
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', calculateGridItems)
   window.removeEventListener('mousemove', handleMouseMove)
+  window.removeEventListener('scroll', handleScroll)
   if (waveAnimationFrame) {
     cancelAnimationFrame(waveAnimationFrame)
   }
@@ -269,14 +289,18 @@ onUnmounted(() => {
 
     .mega-hero {
       background: rgba($black, .96);
+      box-shadow: 0 0 400px 100px $black inset;
+
+      @media screen and (max-width: 1000px) {
+        box-shadow: 0 0 100px 10px $black inset;
+      }
 
       .name {
         color: $white;
       }
 
       .actions {
-        border-top: 1px solid $white;
-        border-bottom: 1px solid $white;
+        border-top: 1px solid rgba($white,0.2);
         color: $white;
       }
     }
@@ -299,12 +323,14 @@ onUnmounted(() => {
     padding-top: calc(100px  + $spacing-md);
     background: rgba($black, .19);
     transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 400px 100px $white inset;
 
     @media screen and (max-width: 1000px) {
       padding: $spacing-sm;
       align-items: flex-start;
       justify-content: flex-end;
       gap: $spacing-md;
+      box-shadow: 0 0 100px 10px $white inset;
     }
 
     .name {
@@ -326,6 +352,10 @@ onUnmounted(() => {
 
       img {
         width: 10dvw;
+
+        @media screen and (max-width: 1000px) {
+          width: 30dvw;
+        }
       }
 
       @media screen and (max-width: 1000px) {
@@ -345,8 +375,7 @@ onUnmounted(() => {
       padding: $spacing-sm 0 $spacing-sm;
       font-size: 1.5dvw;
       font-weight: 500;
-      border-top: 1px solid $black;
-      border-bottom: 1px solid $black;
+      border-top: 1px solid rgba($black,0.2);
       color: $black;
 
       @media screen and (max-width: 1000px) {
@@ -357,6 +386,7 @@ onUnmounted(() => {
         font-size: 3dvw;
         width: calc(100%);
         padding: $spacing-sm 0;
+        border-bottom: 1px solid transparent;
       }
 
       div {
