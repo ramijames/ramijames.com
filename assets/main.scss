@@ -103,10 +103,15 @@ button,
     overflow: hidden;
     
     &.blue {
-      background: rgba($blue,0);
-      border: 1px solid rgba($black, 0.2);
+      background: rgba($black,0.2);
       box-shadow: none;
       color: $black;
+    }
+
+    &.white {
+      background: rgba($white,0.2);
+      box-shadow: none;
+      color: $white;
     }
 
     &.primary {
@@ -160,10 +165,6 @@ h1, h2, h3, h4 {
   font-weight: 500;
   margin: 0;
   padding: 0;
-}
-
-h1, h2 {
-  text-transform: uppercase;
 }
 
 h5, h6 {

@@ -203,6 +203,8 @@ export default {
 
     @media screen and (max-width: 1000px) {
       padding: $spacing-md;
+      margin: 0;
+      border: 0;
     }
 
     @media screen and (max-width: 768px) {

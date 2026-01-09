@@ -1,20 +1,27 @@
 <template>
 
   <div class="work-container w-consistent">
-    <h2>Latest Work</h2>
+    <div class="section-title">I've worked on a lot of interesting products over the years.</div>
     <section id="LatestWork">
       <nuxt-link
           :class="['project', 'w-full', product.class]"
           v-for="product in products" 
           :key="product.title" 
-          :to="product.slug" 
-          :style="{ backgroundColor: product.color }"
+          :to="product.slug"
+          :style="{ background: product.color }"
         >
+        <img :src="product.image" alt="Logo" class="preview" />
         <section :class="['info', product.class]">
           <img :src="product.logo" alt="Logo" class="logo" />
+          <section class="info-content">
+            <div class="info-title">{{ product.title }}</div>
+            <div class="info-description">{{ product.description }}</div>
+          </section>
         </section>
-        <section class="bg" :style="{ backgroundImage: 'url(' + product.bg + ')' }"></section>
+        <div class="button white large">View product</div>
+        <!-- <section class="bg" :style="{ backgroundImage: 'url(' + product.bg + ')' }"></section> -->
       </nuxt-link>
+      <nuxt-link class="button large" to="/products">View more</nuxt-link>
     </section>
   </div>
 
@@ -56,9 +63,28 @@ const products = [
 @import './assets/variables';
 
 .work-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: $spacing-xl 0;
+  min-height: 100dvh;
+  align-items: center;
 
-  h2 {
-    margin: 0 0 $spacing-md;
+  @media screen and (max-width: 1000px) {
+    padding: $spacing-md;
+  }
+
+  .section-title {
+    font-size: 3dvw;
+    font-weight: 400;
+    line-height: 100%;
+    text-wrap: balance;
+    text-align: center;
+    padding: $spacing-xl 0;
+    opacity: 0.4;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 4dvw;
+    }
   }
 }
 
@@ -67,8 +93,9 @@ const products = [
   position: relative;
   margin: $spacing-md 0 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: $spacing-md;
+  align-items: center;
 
   @media screen and (max-width: 1400px) {
     width: 100%;
@@ -87,19 +114,34 @@ const products = [
 
   .project {
     width: 100%;
-    height: 600px;
+    height: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     text-decoration: none;
     position: relative;
-    background-size: cover;
     margin: 0;
-    opacity: 1;
     transition: all 0.3s ease-in-out;
-    padding: 0;
+    padding: $spacing-md;
     overflow: hidden;
     border-radius: $br-sm;
+    background: $black;
+    outline: 1px solid rgba($black, 0.2);
+    outline-offset: -1px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba($black,0.6) 20%, rgba($black, 0.25) 100%);
+      z-index: 1;
+      opacity: .6;
+      transition: all 0.3s ease;
+      mix-blend-mode: soft-light;
+    }
 
     @media screen and (max-width: 1024px){
       height: 400px;
@@ -107,45 +149,13 @@ const products = [
 
     .preview {
       position: absolute;
-      bottom: -60px;
-      left: 50%;
-      max-width: 60%;
-      transform: translateX(-50%);
+      bottom: -100px;
+      right: -10%;
+      width: 50%;
+      transform: rotate(-15deg);
       z-index: 1;
       transition: all 0.3s ease;
       border-radius: $br-sm;
-    }
-
-    .bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.2;
-      transform: scale(1);
-      transition: all 0.3s ease;
-    }
-
-    &.scatter {
-      .bg {
-        background-position: center left;
-      }
-    }
-
-    &.foodforfuture {
-      .bg {
-        background-position: center right;
-      }
-    }
-
-    &.telos {
-      .bg {
-        background-position: center left;
-      }
     }
 
     &:hover {
@@ -155,49 +165,18 @@ const products = [
         bottom: -40px;
         opacity: 1;
       }
-
-      .bg {
-        opacity: 0.1;
-        transform: scale(1.1);
-      }
-
-      .info {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      &:before {
-        background: radial-gradient(circle, rgba(255,255,255,0.6) 20%, rgba(0, 0, 0, 0.5) 100%);
-        opacity: 1;
-      }
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(255,255,255,0.6) 20%, rgba(0, 0, 0, 0.25) 100%);
-      z-index: 1;
-      opacity: .6;
-      transition: all 0.3s ease;
-      mix-blend-mode: soft-light;
     }
 
     .info {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: flex-start;
       align-items: center;
       opacity: 1;
       transition: all 0.3s ease-in-out;
       z-index: 1;
       padding: $spacing-sm;
-      width: 100%;
-      height: 100%;
-      mix-blend-mode: plus-lighter;
+      gap: $spacing-sm;
 
       img.logo {
         width: 100%;
@@ -208,43 +187,35 @@ const products = [
         }
       }
 
-      @media screen and (max-width: 768px){
-        align-items: center;
-        opacity: 1;
-        width: 100%;
-      }
+      .info-content {
 
-      p {
-        color: $white;
-        font-size: $font-size-sm;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        opacity: 0.6;
-      }
+        .info-title {
+          font-size: $font-size-lg;
+          color: $white;
+        }
 
-    }
-
-    h3 {
-      color: $white;
-      border: 0;
-      line-height: 100%;
-      padding: 0;
-      margin: 0;
-      text-wrap: balance;
-      position: relative;
-
-      @media screen and (max-width: 768px){
-        font-size: 6vw;
-        text-wrap: balance;
-        text-align: center;
-
-        span {
-          margin-bottom: 0.5rem;
-          display: block;
+        .info-description {
+          font-size: $font-size-sm;
+          color: $white;
         }
       }
+
     }
+
+    .button {
+      opacity: 0;
+    }
+
+    &:hover {
+      .info {
+        gap: $spacing-md;
+      }
+      
+      .button {
+        opacity: 1;
+      }
+    }
+
   }
 }
 

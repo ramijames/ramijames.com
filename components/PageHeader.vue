@@ -258,11 +258,11 @@ onUnmounted(() => {
     gap: $spacing-sm;
     padding: $spacing-md;
     position: relative;
-    min-height: 40dvh;
+    min-height: 400px;
     overflow: hidden;
 
     @media screen and (max-width: 768px) {
-      min-height: 35dvh;
+      padding-top: $spacing-xl;
     }
 
     .grid-background {
@@ -311,6 +311,7 @@ onUnmounted(() => {
         margin: 0;
         text-align: center;
         text-transform: initial;
+        opacity: 0.4;
 
         @media screen and (max-width: 1180px) {
           max-width: 100%;

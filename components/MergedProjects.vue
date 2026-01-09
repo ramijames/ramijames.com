@@ -185,7 +185,7 @@ const products = [
 
 #Products {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: $spacing-sm;
   grid-template-rows: 1fr;
   position: relative;
@@ -213,7 +213,7 @@ const products = [
 
   .project {
     width: 100%;
-    height: 320px;
+    height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: center;

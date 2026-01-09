@@ -1,7 +1,7 @@
 <template>
   
-  <div class="thoughts-container w-consistent">
-    <h2>Featured Articles</h2>
+  <div class="thoughts-container">
+    <div class="section-title">Featured Articles</div>
     <!-- Featured Articles Section -->
     <div v-if="props.featuredArticles && props.featuredArticles.length > 0" class="featured-section">
       <div class="featured-grid">
@@ -125,31 +125,62 @@ const formatDate = (dateString) => {
 
 .thoughts-container {
   display: grid;
+  grid-template-columns: 1fr 1fr;
 
-  h2 {
-    margin: 0 0 $spacing-md;
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
   }
 
-  h3 {
-    margin: 0;
-    font-size: $font-size-lg;
+  .section-title {
+    font-size: 2dvw;
+    font-weight: 400;
+    line-height: 100%;
+    text-wrap: balance;
+    position: sticky;
+    top: $spacing-md;
+    opacity: 0.4;
+    padding: $spacing-xl $spacing-md;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 
-    @media screen and (max-width: 768px) {
-      font-size: $font-size-lg;
+    @media screen and (max-width: 1000px) {
+      font-size: 4dvw;
+      padding: $spacing-md;
     }
   }
-
-  h4 {
-    color: rgba($black, 0.3);
-    margin: 0;
-  }
-
-  hr {
-    width: 100%;
-    margin: $spacing-md 0;
-  }
-
 }
+
+// .thoughts-container {
+//   display: grid;
+
+//   h2 {
+//     margin: 0 0 $spacing-md;
+//   }
+
+//   h3 {
+//     margin: 0;
+//     font-size: $font-size-lg;
+
+//     @media screen and (max-width: 768px) {
+//       font-size: $font-size-lg;
+//     }
+//   }
+
+//   h4 {
+//     color: rgba($black, 0.3);
+//     margin: 0;
+//   }
+
+//   hr {
+//     width: 100%;
+//     margin: $spacing-md 0;
+//   }
+
+// }
 
 .filter-container {
   display: flex;
@@ -165,7 +196,7 @@ const formatDate = (dateString) => {
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: $spacing-md;
+  gap: $spacing-sm;
 
   @media screen and (max-width: 1400px) {
     grid-template-columns: repeat(2, 1fr);

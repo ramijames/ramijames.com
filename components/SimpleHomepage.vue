@@ -20,7 +20,10 @@
           <img src="/elements/7.svg"> Development
         </div>
         <div>
-          <img src="/elements/14.svg"> Writing
+          <img src="/elements/2.svg"> UX Copy
+        </div>
+        <div>
+          <img src="/elements/14.svg"> Technical Writing
         </div>
       </section>
 
@@ -62,7 +65,7 @@
   <section class="homepage-content">
     <Clients />
     <LatestWork />
-    <FeaturedThoughts :featured-articles="featuredArticles" :articles="regularArticles" />
+    <!-- <FeaturedThoughts :featured-articles="featuredArticles" :articles="regularArticles" /> -->
     <Testimonials />
     <Footer />
   </section>
@@ -288,8 +291,8 @@ onUnmounted(() => {
   #Hero {
 
     .mega-hero {
-      background: rgba($black, .96);
-      box-shadow: 0 0 400px 100px $black inset;
+      background: rgba(#222222, .96);
+      box-shadow: 0 0 400px 100px #111111 inset;
 
       @media screen and (max-width: 1000px) {
         box-shadow: 0 0 100px 10px $black inset;
@@ -359,7 +362,7 @@ onUnmounted(() => {
       }
 
       @media screen and (max-width: 1000px) {
-        font-size: 5dvw;
+        font-size: 8dvw;
         position: relative;
         left: initial;
         bottom: initial;
@@ -383,7 +386,7 @@ onUnmounted(() => {
         right: initial;
         bottom: initial;
         margin: 0;
-        font-size: 3dvw;
+        font-size: 4dvw;
         width: calc(100%);
         padding: $spacing-sm 0;
         border-bottom: 1px solid transparent;
