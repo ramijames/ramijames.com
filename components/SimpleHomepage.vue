@@ -264,7 +264,24 @@ onUnmounted(() => {
 @import './assets/variables';
 @import './assets/animation';
 
+.dark {
+  #Hero {
 
+    .mega-hero {
+      background: rgba($black, .96);
+
+      .name {
+        color: $white;
+      }
+
+      .actions {
+        border-top: 1px solid $white;
+        border-bottom: 1px solid $white;
+        color: $white;
+      }
+    }
+  }
+}
 
 #Hero {
   position: fixed;
@@ -280,7 +297,7 @@ onUnmounted(() => {
     align-items: center;
     justify-content: center;
     padding-top: calc(100px  + $spacing-md);
-    background: rgba($black, .96);
+    background: rgba($black, .19);
     transition: all 0.2s ease-in-out;
 
     @media screen and (max-width: 1000px) {
@@ -298,7 +315,7 @@ onUnmounted(() => {
       left: $spacing-md;
       bottom: $spacing-md;
       line-height: 100%;
-      color: $white;
+      color: $black;
       text-wrap: balance;
       max-width: 600px;
       display: flex;
@@ -328,9 +345,9 @@ onUnmounted(() => {
       padding: $spacing-sm 0 $spacing-sm;
       font-size: 1.5dvw;
       font-weight: 500;
-      border-top: 1px solid $white;
-      border-bottom: 1px solid $white;
-      color: $white;
+      border-top: 1px solid $black;
+      border-bottom: 1px solid $black;
+      color: $black;
 
       @media screen and (max-width: 1000px) {
         position: relative;
