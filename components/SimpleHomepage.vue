@@ -346,7 +346,7 @@ onUnmounted(() => {
       line-height: 100%;
       color: $black;
       text-wrap: balance;
-      max-width: 600px;
+      max-width: 1000px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;

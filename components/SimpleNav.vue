@@ -153,7 +153,7 @@ const notHome = computed(() => {
   background: rgba($black, 1);
   border: 1px solid rgba($white, 0.1);
   border-top: 0;
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(208px);
   z-index: 1000;
   top: $spacing-xs;
   left: 50%;
@@ -164,6 +164,24 @@ const notHome = computed(() => {
   padding: $spacing-xs calc($spacing-md);
   box-shadow: $big-shadow;
   outline-offset:-2px;
+  transition: all 0.42s ease;
+  animation-timing-function: linear;
+
+  &.hidden {
+    background: rgba($black, .2);
+    box-shadow: none;
+
+    .navigation {
+      gap: $spacing-lg;
+
+      .nav-links {
+        .nav-link {
+          padding: $spacing-xs;
+          width: 80px;
+        }
+      }
+    }
+  }
 
   @media screen and (max-width: 1000px){
     top:  0;
@@ -200,6 +218,8 @@ const notHome = computed(() => {
     gap: $spacing-xl;
     width: 100%;
     height: 100%;
+    transition: all 0.42s ease;
+    animation-timing-function: linear;
 
     @media screen and (max-width: 1000px){
       flex-direction: row;
