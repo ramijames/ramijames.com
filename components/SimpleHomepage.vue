@@ -24,6 +24,7 @@
         <!-- <img src="/dude.png" /> -->
         <h3>Hello there.</h3>
         <p class="intro-text">I'm a passionate Product Designer with a development background. I enjoy creating unique, user-friendly interfaces for both native and web applications across a range of platforms and use-cases.</p>
+        <a href="mailto:ramijames@gmail.com" class="button">Hire me today</a>
       </section>
       <section class="links">
         <a href="https://github.com/ramijames">
