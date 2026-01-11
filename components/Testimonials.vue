@@ -196,7 +196,7 @@
 
       .user-name {
         padding: 6px 10px 4px;
-        background: rgba($yellow, 1);
+        background: rgba($blue, 1);
         line-height: 100%;
         border-radius: $br-sm;
         text-transform: uppercase;

@@ -88,7 +88,7 @@ onMounted(() => {
     }
 
     &.light { 
-      background: $yellow;
+      background: $blue;
 
       img {
         left: 2px;

@@ -8,14 +8,7 @@
         opacity: 1 - scrollProgress * 1
       }"
     >
-      <!-- <img class="hummingbird" src="/hummingbird.png" /> -->
       <section class="name">
-        <!-- <svg viewBox="0 0 500 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="180" cy="40" r="40" fill="#F8C802"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM40 60C51.0457 60 60 51.0457 60 40C60 28.9543 51.0457 20 40 20C28.9543 20 20 28.9543 20 40C20 51.0457 28.9543 60 40 60Z" fill="#F8C802"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M500 0H420V80H500V0ZM480 20H440V60H480V20Z" fill="#F8C802"/>
-          <path d="M320 0L360 80H280L320 0Z" fill="#F8C802"/>
-        </svg> -->
         <img src="/dude.png" />
         <div class="rami">Rami James</div>
         <div class="occupation">Product Designer</div>
@@ -113,7 +106,7 @@ const regularArticles = computed(() => articles.slice(4))
 const COLUMNS = ref(32)
 const GAP = 0
 const gridItems = ref([])
-const colors = ['F8C802']
+const colors = ['F8C802', 'F8C802', 'F8C802', 'F8C802', 'F8C802', '82A0CE']
 let waveAnimationFrame = null
 let waveTime = 0
 let hoveredItem = null
@@ -409,8 +402,9 @@ onUnmounted(() => {
       }
 
       p {
-        margin: 0;
+        margin: 0 0 $spacing-xs;
         opacity: 0.6;
+        font-family: $font-family-main;
       }
 
       @media screen and (max-width: 1000px) {
@@ -495,7 +489,7 @@ onUnmounted(() => {
       bottom: $spacing-md;
       position: absolute;
       z-index: 10;
-      padding: $spacing-sm 0 $spacing-sm;
+      padding: $spacing-sm 0 0;
       font-size: $font-size-sm;
       font-weight: 400;
       border-top: 1px solid rgba($black,0.2);
