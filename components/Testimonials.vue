@@ -146,7 +146,6 @@
 .testimonials-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 60dvh;
   background: #ccc;
 
   @media screen and (max-width: 1000px) {
@@ -158,8 +157,6 @@
     font-weight: 400;
     line-height: 100%;
     text-wrap: balance;
-    position: sticky;
-    top: $spacing-md;
     opacity: 0.4;
     padding: $spacing-xl $spacing-md;
     justify-content: space-evenly;
@@ -183,6 +180,18 @@
   font-family: $font-family-secondary;
   padding: $spacing-xl;
   background: $black;
+
+  @media screen and (max-width: 1200px) {
+    padding: $spacing-lg;
+  }
+
+  @media screen and (max-width: 1000px) {
+    padding: $spacing-md;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: $spacing-sm;
+  }
 
   .single-testimonial {
     min-height: 200px;

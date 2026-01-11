@@ -48,8 +48,6 @@
     font-weight: 400;
     line-height: 100%;
     text-wrap: balance;
-    position: sticky;
-    top: $spacing-md;
     opacity: 0.4;
     padding: $spacing-xl $spacing-md;
     justify-content: space-evenly;

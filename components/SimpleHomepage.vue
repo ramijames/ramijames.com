@@ -4,7 +4,6 @@
     <section 
       class="mega-hero"
       :style="{
-        top: `-${scrollProgress * 100}px`,
         opacity: 1 - scrollProgress * 1
       }"
     >
@@ -353,8 +352,12 @@ onUnmounted(() => {
   top: 0;
   width: 100%;
 
+  @media screen and (max-width: 768px) {
+    position: relative;
+  }
+
   .mega-hero {
-    height: 100dvh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -365,7 +368,9 @@ onUnmounted(() => {
     width: 100%;
 
     @media screen and (max-width: 1000px) {
-      justify-content: flex-end;
+      justify-content: space-between;
+      margin-top: 84px;
+      height: calc(100% - 84px);
       align-items: flex-start;
       gap: $spacing-md;
     }
@@ -383,6 +388,23 @@ onUnmounted(() => {
       align-items: flex-start;
       justify-content: flex-start;
       gap: $spacing-sm;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 8dvw;
+        position: relative;
+        left: initial;
+        bottom: initial;
+        position: relative;
+        margin: 0 $spacing-md;
+        width: auto;
+        padding: $spacing-sm 0;
+        max-width: initial;
+        gap: $spacing-xs;
+      }
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
 
       img {
         width: 10dvw;
@@ -407,18 +429,6 @@ onUnmounted(() => {
         font-family: $font-family-main;
       }
 
-      @media screen and (max-width: 1000px) {
-        font-size: 8dvw;
-        position: relative;
-        left: initial;
-        bottom: initial;
-        position: relative;
-        margin: 0 $spacing-md;
-        width: calc(100% - $spacing-md - $spacing-md);
-        padding: $spacing-sm 0;
-        max-width: initial;
-        gap: $spacing-xs;
-      }
     }
 
     .name {
@@ -443,7 +453,7 @@ onUnmounted(() => {
         }
 
         @media screen and (max-width: 768px) {
-          width: 22dvw;
+          width: 40dvw;
           margin-bottom: $spacing-sm;
         }
       }
@@ -452,6 +462,10 @@ onUnmounted(() => {
         font-size: 8dvw;
         line-height: 100%;
         font-weight: 500;
+
+        @media screen and (max-width: 768px) {
+          font-size: 12dvw;
+        }
       }
 
       .occupation {
@@ -474,8 +488,6 @@ onUnmounted(() => {
       @media screen and (max-width: 1000px) {
         font-size: 8dvw;
         position: relative;
-        // right: initial;
-        // top: initial;
         position: relative;
         margin: 0 $spacing-md;
         width: calc(100% - $spacing-md - $spacing-md);

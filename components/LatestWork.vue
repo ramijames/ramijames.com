@@ -76,11 +76,15 @@ const products = [
   display: grid;
   grid-template-columns: 1fr;
   padding: $spacing-xl 0;
-  min-height: 100dvh;
+  min-height: 100vh;
   align-items: center;
 
   @media screen and (max-width: 1200px) {
     padding: $spacing-md;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: $spacing-sm;
   }
 
   .section-title {
