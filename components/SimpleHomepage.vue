@@ -464,7 +464,7 @@ onUnmounted(() => {
         font-weight: 500;
         font-style: italic;
         font-family: $font-family-serif;
-        color: rgba($black, 0.2);
+        opacity: 0.2;
       }
 
       svg {
