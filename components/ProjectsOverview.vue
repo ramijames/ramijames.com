@@ -50,8 +50,11 @@
   }
 
   h3 {
-    margin: 0;
-    opacity: 0.7;
+    margin-top: $spacing-xs;
+    opacity: 0.4;
+    font-family: $font-family-serif;
+    font-weight: 400;
+    font-style: italic;
   }
 }
 
