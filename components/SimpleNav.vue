@@ -230,6 +230,12 @@ const notHome = computed(() => {
           background: rgba($yellow,1);
           text-shadow: 1px 1px 0px rgba($black, 0);
 
+          &:hover {
+            color: $black !important;
+            background: rgba($yellow,1) !important;
+            text-shadow: 1px 1px 0px rgba($black, 0);
+          }
+
           svg {
             opacity: 1;
             

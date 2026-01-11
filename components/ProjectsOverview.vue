@@ -1,10 +1,7 @@
 <template>
   
+  <PageHeader :title="title" :tagline="tagline" />
   <section class="projects-overview">
-    <section class="projects-intro">
-      <h1>{{ title }}</h1>
-      <h3>{{ tagline }}</h3>
-    </section>
     <section class="projects-content">
       <div class="project-column">
         <h4>Overview</h4>
@@ -38,25 +35,6 @@
 <style scoped lang="scss">
 
 @import './assets/variables';
-
-.projects-intro {
-
-  margin: 0 0 $spacing-lg;
-
-  h1 {
-    margin: 0;
-    padding: 0;
-    line-height: 100%;
-  }
-
-  h3 {
-    margin-top: $spacing-xs;
-    opacity: 0.4;
-    font-family: $font-family-serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-}
 
 .dark {
   .projects-overview {

@@ -241,6 +241,10 @@ onUnmounted(() => {
 .dark {
   .page-header {
     background-color: $black;
+    background: linear-gradient(to bottom, rgba($black, 1), rgba($black, 1));
+  }
+  .grid-background {
+    opacity: 0.6;
   }
 }
 

@@ -1,17 +1,15 @@
 <template>
 
-  <main class="w-product-page">
+  <ProjectsOverview
+    title="Doodledapp"
+    tagline="Easily create and deploy smart contracts"
+    overview="I helped co-found and run product for Doodledapp. The goal was to allow anyone to create and deploy smart contracts with chunks of pre-made functionality."
+    :services="['Design', 'UX', 'Concept']"
+  />
+
+  <main class="w-consistent">
 
     <div>
-
-      <ProjectsHeader project="doodledapp" logo="doodledapp-logo.svg" />
-
-      <ProjectsOverview
-        title="Doodledapp"
-        tagline="Easily create and deploy smart contracts"
-        overview="I helped co-found and run product for Doodledapp. The goal was to allow anyone to create and deploy smart contracts with chunks of pre-made functionality."
-        :services="['Design', 'UX', 'Concept']"
-      />
 
       <section class="w-full">
         <section class="content">

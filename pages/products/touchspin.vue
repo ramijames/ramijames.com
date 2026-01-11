@@ -1,17 +1,15 @@
 <template>
 
-  <main class="w-product-page">
+  <ProjectsOverview
+    title="Touchspin"
+    tagline="iGaming on your iPad"
+    overview="I generated custom illustrations and game designs for the Touchspin group as they were seeking funding."
+    :services="['Design', 'UX', 'Concept']"
+  />
+
+  <main class="w-consistent">
 
     <div>
-
-      <ProjectsHeader project="TouchSpin" logo="touchspin-logo.svg" />
-
-      <ProjectsOverview
-        title="Touchspin"
-        tagline="iGaming on your iPad"
-        overview="I generated custom illustrations and game designs for the Touchspin group as they were seeking funding."
-        :services="['Design', 'UX', 'Concept']"
-      />
 
       <section class="w-full">
         <section class="content">

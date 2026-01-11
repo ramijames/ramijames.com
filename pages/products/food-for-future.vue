@@ -1,17 +1,15 @@
 <template>
 
-  <main class="w-product-page">
+  <ProjectsOverview
+    title="Food For Future"
+    tagline="Decentralized data for funding farmers"
+    overview="I designed the POC which was presented to the UN."
+    :services="['Design', 'UX', 'Branding']"
+  />
+
+  <main class="w-consistent">
 
     <div>
-
-  <ProjectsHeader project="Food For Future" logo="fff-logo.svg" />
-
-  <ProjectsOverview
-        title="Food For Future"
-        tagline="Decentralized data for funding farmers"
-        overview="I designed the POC which was presented to the UN."
-        :services="['Design', 'UX', 'Branding']"
-      />
 
       <section class="w-full">
         <section class="content">

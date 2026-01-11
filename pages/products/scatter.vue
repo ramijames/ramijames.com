@@ -1,17 +1,15 @@
 <template>
+  
+  <ProjectsOverview
+    title="Scatter"
+    tagline="A better wallet experience"
+    overview="I helped co-found and run the primary wallet in the EOS ecosystem for three years. Our goal with Scatter was to create a retail and developer ecosystem that allowed for easy access to web3 assets anywhere that they user happened to be. We aimed for deep integration into games, websites, and day to day use applications."
+    :services="['Art Direction', 'Design', 'UX', 'Iconography']"
+  />
 
-  <main class="w-product-page">
+  <main class="w-consistent">
 
     <div>
-
-      <ProjectsHeader project="doodledapp" logo="scatter-logo.png" />
-
-      <ProjectsOverview
-        title="Scatter"
-        tagline="A better wallet experience"
-        overview="I helped co-found and run the primary wallet in the EOS ecosystem for three years. Our goal with Scatter was to create a retail and developer ecosystem that allowed for easy access to web3 assets anywhere that they user happened to be. We aimed for deep integration into games, websites, and day to day use applications."
-        :services="['Art Direction', 'Design', 'UX', 'Iconography']"
-      />
 
       <section class="w-full">
         <section class="content">

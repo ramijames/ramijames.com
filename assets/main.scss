@@ -481,17 +481,8 @@ p > strong {
   display: flex;
   flex-direction: row;
   gap: $spacing-md;
-  max-width: 1800px;
-  margin: $spacing-lg auto;
+  margin: 0 auto;
   position: relative;
-
-  @media screen and (max-width: 1600px){
-    max-width: 1200px;
-  }
-
-  @media screen and (max-width: 1200px){
-    max-width: 100%;
-  }
 }
 
 .w-consistent {

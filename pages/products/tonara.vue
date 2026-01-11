@@ -1,17 +1,15 @@
 <template>
 
-  <main class="w-product-page">
+  <ProjectsOverview
+    title="Tonara"
+    tagline="Interactive sheet music"
+    overview="I created the initial concepts, the user-experience, and the designs for Tonara's interactive sheet music applications. Then I worked hand in hand with the engineers to implement them."
+    :services="['Design', 'UX', 'Branding']"
+  />
+
+  <main class="w-consistent">
 
     <div>
-
-      <ProjectsHeader project="Tonara" logo="tonara-logo.png" />
-
-      <ProjectsOverview
-        title="Tonara"
-        tagline="Interactive sheet music"
-        overview="I created the initial concepts, the user-experience, and the designs for Tonara's interactive sheet music applications. Then I worked hand in hand with the engineers to implement them."
-        :services="['Design', 'UX', 'Branding']"
-      />
 
       <section class="w-full">
         <section class="content">

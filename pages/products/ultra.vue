@@ -1,17 +1,15 @@
 <template>
 
-  <main class="w-product-page">
+  <ProjectsOverview
+    title="Ultra"
+    tagline="Bringing web3 gaming to the masses"
+    overview="I wore many hats at my time at Ultra, from Technical PM, Marketing Advisor, to Head of Developer Relations. Each of these roles had intrinsic design considerations that I used my extensive experience to help create the best products possible for."
+    :services="['Design', 'UX', 'Project Management']"
+  />
+
+  <main class="w-consistent">
 
     <div>
-
-      <ProjectsHeader project="doodledapp" logo="ultra-logo.svg" />
-
-      <ProjectsOverview
-        title="Ultra"
-        tagline="Bringing web3 gaming to the masses"
-        overview="I wore many hats at my time at Ultra, from Technical PM, Marketing Advisor, to Head of Developer Relations. Each of these roles had intrinsic design considerations that I used my extensive experience to help create the best products possible for."
-        :services="['Design', 'UX', 'Project Management']"
-      />
 
       <section class="w-full">
         <section class="content">

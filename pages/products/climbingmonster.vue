@@ -1,17 +1,15 @@
 <template>
 
-  <main class="w-product-page">
+  <ProjectsOverview
+    title="Climbing Monster"
+    tagline="Effectively track your rock climbing training regimen"
+    overview="I was the Head of Product for the POC. It was my job to produce high-fidelity mockups for the mobile application (iOS), for the web-based training app, for advertising purposes, and the pitch decks that we used to try and get funding."
+    :services="['Design', 'UX', 'Branding']"
+  />
+
+  <main class="w-consistent">
 
     <div>
-
-      <ProjectsHeader project="Climbing Monster" logo="climbingmonster-logo.png" />
-
-      <ProjectsOverview
-        title="Climbing Monster"
-        tagline="Effectively track your rock climbing training regimen"
-        overview="I was the Head of Product for the POC. It was my job to produce high-fidelity mockups for the mobile application (iOS), for the web-based training app, for advertising purposes, and the pitch decks that we used to try and get funding."
-        :services="['Design', 'UX', 'Branding']"
-      />
 
       <section class="w-full">
         <section class="content">

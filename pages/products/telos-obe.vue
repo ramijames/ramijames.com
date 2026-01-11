@@ -1,17 +1,15 @@
 <template>
 
-  <main class="w-product-page">
+  <ProjectsOverview
+    title="Telos OBE"
+    tagline="Open source block explorer"
+    overview="I created the UX and designed the Telos Open Block explorer as part of my wider participation in the Telos ecosystem."
+    :services="['Design', 'UX']"
+  />
+
+  <main class="w-consistent">
 
     <div>
-
-      <ProjectsHeader project="Telos OBE" logo="/products/telos/telos-logo.png" />
-
-      <ProjectsOverview
-        title="Telos OBE"
-        tagline="Open source block explorer"
-        overview="I created the UX and designed the Telos Open Block explorer as part of my wider participation in the Telos ecosystem."
-        :services="['Design', 'UX']"
-      />
 
       <section class="w-full">
         <section class="content">

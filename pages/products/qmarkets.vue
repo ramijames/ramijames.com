@@ -1,17 +1,15 @@
 <template>
 
-  <main class="w-product-page">
+  <ProjectsOverview
+    title="Qmarkets"
+    tagline="Stop Wasting Time on Innovation Without Impact"
+    overview="I was the in-house designer and user-experience expert at Qmarkets."
+    :services="['Design', 'UX', 'Drupal']"
+  />
+
+  <main class="w-consistent">
 
     <div>
-
-      <ProjectsHeader project="Qmarkets" logo="qmarkets-logo.svg" />
-
-      <ProjectsOverview
-        title="Qmarkets"
-        tagline="Stop Wasting Time on Innovation Without Impact"
-        overview="I was the in-house designer and user-experience expert at Qmarkets."
-        :services="['Design', 'UX', 'Drupal']"
-      />
 
       <section class="w-full">
         <section class="content">
