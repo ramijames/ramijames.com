@@ -247,7 +247,8 @@ onUnmounted(() => {
 .page-header {
   width: 100%;
   position: relative;
-  background-color: $white;
+  background: linear-gradient(to bottom, rgba(#ccc, 1), rgba($white, 1));
+  margin-top: 84px;
   background-size: cover;
 
   .mega-hero {
@@ -256,14 +257,11 @@ onUnmounted(() => {
     align-items: center;
     justify-content: center;
     gap: $spacing-sm;
-    padding: $spacing-md;
     position: relative;
-    min-height: 400px;
+    min-height: 500px;
     overflow: hidden;
-
-    @media screen and (max-width: 768px) {
-      padding-top: $spacing-xl;
-    }
+    padding: 0 $spacing-md;
+    margin-top: 84px;
 
     .grid-background {
       position: absolute;
@@ -312,6 +310,9 @@ onUnmounted(() => {
         text-align: center;
         text-transform: initial;
         opacity: 0.4;
+        font-weight: 500;
+        font-style: italic;
+        font-family: $font-family-serif;
 
         @media screen and (max-width: 1180px) {
           max-width: 100%;

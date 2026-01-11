@@ -4,27 +4,52 @@
     <section 
       class="mega-hero"
       :style="{
-        transform: `scale(${1 - scrollProgress * 0.1})`,
+        top: `-${scrollProgress * 100}px`,
         opacity: 1 - scrollProgress * 1
       }"
     >
+      <!-- <img class="hummingbird" src="/hummingbird.png" /> -->
       <section class="name">
-        <img src="/dude.png">
-        <div>This is the personal portfolio site of Rami James.</div>
+        <!-- <svg viewBox="0 0 500 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="180" cy="40" r="40" fill="#F8C802"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM40 60C51.0457 60 60 51.0457 60 40C60 28.9543 51.0457 20 40 20C28.9543 20 20 28.9543 20 40C20 51.0457 28.9543 60 40 60Z" fill="#F8C802"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M500 0H420V80H500V0ZM480 20H440V60H480V20Z" fill="#F8C802"/>
+          <path d="M320 0L360 80H280L320 0Z" fill="#F8C802"/>
+        </svg> -->
+        <img src="/dude.png" />
+        <div class="rami">Rami James</div>
+        <div class="occupation">Product Designer</div>
       </section>
-      <section class="actions">
-        <div>
-          <img src="/elements/1.svg"> Product Design
-        </div>
-        <div>
-          <img src="/elements/7.svg"> Development
-        </div>
-        <div>
-          <img src="/elements/2.svg"> UX Copy
-        </div>
-        <div>
-          <img src="/elements/14.svg"> Technical Writing
-        </div>
+      <section class="explainer">
+        <!-- <img src="/dude.png" /> -->
+        <h3>Hello there.</h3>
+        <p class="intro-text">I'm a passionate Product Designer with a development background. I enjoy creating unique, user-friendly interfaces for both native and web applications across a range of platforms and use-cases.</p>
+      </section>
+      <section class="links">
+        <a href="https://github.com/ramijames">
+          Github
+          <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.71319 -6.09502e-05L11.1396 7.42639L3.7132 14.8528L-3.10162e-05 11.1396L3.7132 7.42639L-3.16422e-05 3.71317L3.71319 -6.09502e-05Z" fill="white"/>
+          </svg>
+        </a>
+        <a href="https://github.com/ramijames/ramijames.com">
+          Source
+          <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.71319 -6.09502e-05L11.1396 7.42639L3.7132 14.8528L-3.10162e-05 11.1396L3.7132 7.42639L-3.16422e-05 3.71317L3.71319 -6.09502e-05Z" fill="white"/>
+          </svg>
+        </a>
+        <a href="https://dribbble.com/ramijames">
+          Dribbble
+          <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.71319 -6.09502e-05L11.1396 7.42639L3.7132 14.8528L-3.10162e-05 11.1396L3.7132 7.42639L-3.16422e-05 3.71317L3.71319 -6.09502e-05Z" fill="white"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/rami-james/">
+          LinkedIn
+          <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.71319 -6.09502e-05L11.1396 7.42639L3.7132 14.8528L-3.10162e-05 11.1396L3.7132 7.42639L-3.16422e-05 3.71317L3.71319 -6.09502e-05Z" fill="white"/>
+          </svg>
+        </a>
       </section>
 
       <section 
@@ -87,7 +112,7 @@ const regularArticles = computed(() => articles.slice(4))
 const COLUMNS = ref(32)
 const GAP = 0
 const gridItems = ref([])
-const colors = ['FFFFFF']
+const colors = ['F8C802']
 let waveAnimationFrame = null
 let waveTime = 0
 let hoveredItem = null
@@ -291,20 +316,37 @@ onUnmounted(() => {
   #Hero {
 
     .mega-hero {
-      background: rgba(#222222, .96);
-      box-shadow: 0 0 400px 100px #111111 inset;
-
-      @media screen and (max-width: 1000px) {
-        box-shadow: 0 0 100px 10px $black inset;
-      }
+      background: linear-gradient(to top, rgba(#222222, 1), rgba($black, .19));
 
       .name {
         color: $white;
       }
 
-      .actions {
+      .links {
         border-top: 1px solid rgba($white,0.2);
         color: $white;
+
+        a {
+          color: $white;
+
+          svg {
+
+            path {
+              fill: rgba($white, 0.2);
+            }
+          }
+
+          &:hover {
+            color: $yellow;
+
+            svg {
+
+              path {
+                fill: rgba($yellow, 1);
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -323,30 +365,25 @@ onUnmounted(() => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: calc(100px  + $spacing-md);
-    background: rgba($black, .19);
+    background: linear-gradient(to bottom, rgba(#ccc, 1), rgba($white, 1));
     transition: all 0.2s ease-in-out;
-    box-shadow: 0 0 400px 100px $white inset;
+    position: fixed;
+    width: 100%;
 
     @media screen and (max-width: 1000px) {
-      padding: $spacing-sm;
-      align-items: flex-start;
       justify-content: flex-end;
+      align-items: flex-start;
       gap: $spacing-md;
-      box-shadow: 0 0 100px 10px $white inset;
     }
 
-    .name {
-      font-size: 3dvw;
-      font-weight: 400;
+    .explainer {
       position: absolute;
       z-index: 10;
       left: $spacing-md;
       bottom: $spacing-md;
       line-height: 100%;
-      color: $black;
       text-wrap: balance;
-      max-width: 1000px;
+      max-width: 600px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -356,9 +393,23 @@ onUnmounted(() => {
       img {
         width: 10dvw;
 
-        @media screen and (max-width: 1000px) {
-          width: 30dvw;
+        @media screen and (max-width: 1600px) {
+          width: 20dvw;
         }
+        
+        @media screen and (max-width: 1000px) {
+          display: none;
+        }
+      }
+
+      h3 {
+        margin: 0;
+        font-weight: 400;
+      }
+
+      p {
+        margin: 0;
+        opacity: 0.6;
       }
 
       @media screen and (max-width: 1000px) {
@@ -367,35 +418,140 @@ onUnmounted(() => {
         left: initial;
         bottom: initial;
         position: relative;
+        margin: 0 $spacing-md;
+        width: calc(100% - $spacing-md - $spacing-md);
+        padding: $spacing-sm 0;
+        max-width: initial;
+        gap: $spacing-xs;
       }
     }
 
-    .actions {
+    .name {
+      z-index: 10;
+      color: $black;
+      text-wrap: nowrap;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 18dvw;
+        margin-bottom: $spacing-md;
+
+        @media screen and (max-width: 1600px) {
+          width: 20dvw;
+        }
+
+        @media screen and (max-width: 1000px) {
+          width: 40dvw;
+        }
+
+        @media screen and (max-width: 768px) {
+          width: 22dvw;
+          margin-bottom: $spacing-sm;
+        }
+      }
+
+      .rami {
+        font-size: 8dvw;
+        line-height: 100%;
+        font-weight: 500;
+      }
+
+      .occupation {
+        font-size: 4dvw;
+        font-weight: 500;
+        font-style: italic;
+        font-family: $font-family-serif;
+        color: rgba($black, 0.2);
+      }
+
+      svg {
+        width: 18dvw;
+        margin-bottom: 1dvw;
+
+        path, circle {
+          fill: $yellow;
+        }
+      }
+
+      @media screen and (max-width: 1000px) {
+        font-size: 8dvw;
+        position: relative;
+        // right: initial;
+        // top: initial;
+        position: relative;
+        margin: 0 $spacing-md;
+        width: calc(100% - $spacing-md - $spacing-md);
+        padding: $spacing-sm 0;
+        justify-content: center;
+      }
+    }
+
+    .links {
       right: $spacing-md;
       bottom: $spacing-md;
       position: absolute;
       z-index: 10;
       padding: $spacing-sm 0 $spacing-sm;
-      font-size: 1.5dvw;
-      font-weight: 500;
+      font-size: $font-size-sm;
+      font-weight: 400;
       border-top: 1px solid rgba($black,0.2);
-      color: $black;
+      display: flex;
+      flex-direction: column;
+      min-width: 120px;
+      
+      a {
+        color: rgba($black, 1);
+        text-decoration: none;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: 1000px) {
+          font-size: $font-size-lg;
+          font-weight: 400;
+        }
+
+        svg {
+          width: 6px;
+
+          @media screen and (max-width: 1000px) {
+            width: 10px;
+          }
+
+          path {
+            fill: rgba($black, 0.2);
+
+            @media screen and (max-width: 1000px) {
+              fill: rgba($black, 1);
+            }
+          }
+        }
+
+        &:hover {
+            color: rgba($black, 1);
+
+            svg {
+
+              path {
+                fill: rgba($yellow, 1);
+              }
+            }
+          }
+      }
 
       @media screen and (max-width: 1000px) {
         position: relative;
         right: initial;
         bottom: initial;
-        margin: 0;
-        font-size: 4dvw;
-        width: calc(100%);
+        margin: 0 $spacing-md;
+        width: calc(100% - $spacing-md - $spacing-md);
         padding: $spacing-sm 0;
-        border-bottom: 1px solid transparent;
-      }
-
-      div {
-        display: flex;
-        flex-direction: row;
-        gap: $spacing-sm;
+        border: none;
       }
     }
 
@@ -421,7 +577,7 @@ onUnmounted(() => {
       transition: transform 0.3s ease-out;
       -webkit-mask-image: radial-gradient(black, transparent);
       mask-image: radial-gradient(black, transparent );
-      opacity: 0.5;
+      opacity: 0.6;
 
       .grid-item {
         position: absolute;

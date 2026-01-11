@@ -61,7 +61,7 @@ onMounted(() => {
   }
 
   .label {
-    color: rgba($white, 0.7);
+    color: rgba($black, 0.7);
     font-family: $font-family-secondary;
     text-transform: uppercase;
     letter-spacing: 1px;
