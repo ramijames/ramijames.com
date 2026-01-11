@@ -309,7 +309,7 @@ onUnmounted(() => {
         margin: 0;
         text-align: center;
         text-transform: initial;
-        opacity: 0.4;
+        opacity: 0.2;
         font-weight: 500;
         font-style: italic;
         font-family: $font-family-serif;

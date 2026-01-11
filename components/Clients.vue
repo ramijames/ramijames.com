@@ -24,6 +24,15 @@
 @import './assets/variables';
 @import './assets/animation';
 
+.dark {
+
+  .clients-container {
+    background: #222;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+  }
+}
+
 .clients-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
