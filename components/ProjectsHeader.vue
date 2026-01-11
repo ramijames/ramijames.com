@@ -1,6 +1,6 @@
 <template>
- <section class="single-project-header">
-  <section class="navigation">
+ <!-- <section class="single-project-header">
+  <section class="navigation"> -->
     <!-- <button class="small blue" @click="$router.back()">
       Back -->
       <!-- <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -8,14 +8,14 @@
         <path d="M0.83252 7.36841H17.3454" stroke="white"/>
       </svg> -->
     <!-- </button> -->
-    <button class="small blue" @click="navigateTo('/products')">View all products</button>
+    <!-- <button class="small blue" @click="navigateTo('/products')">View all products</button>
   </section>
   <section class="project-details">
-    <img :src="logo" :alt="project" />
+    <img :src="logo" :alt="project" /> -->
     <!-- <span>{{ project }}</span> -->
-  </section>
+  <!-- </section>
   
- </section>
+ </section> -->
 </template>
 
 <script setup>
