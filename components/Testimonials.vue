@@ -1,6 +1,6 @@
 <template>
   <div class="testimonials-container">
-    <div class="section-title">Some people have been kind enough to say some really nice things about me and my work.</div>
+    <div class="section-title">Some people have said some really nice things about my work.</div>
     <section id="Testimonials">
       <div class="single-testimonial hide">
         <div class="user-image">
