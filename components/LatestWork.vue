@@ -26,9 +26,9 @@
         <section class="thumbnails">
           <img v-for="image in product.thumbnails" :src="image" />
         </section>
-        <!-- <div class="button large">View product</div> -->
+        <div class="button large">View {{ product.title }}</div>
       </nuxt-link>
-      <nuxt-link class="button large" to="/products">View more</nuxt-link>
+      <nuxt-link class="button large blue" to="/products">View all products</nuxt-link>
     </section>
   </div>
 
@@ -97,7 +97,8 @@ const products = [
     opacity: 0.4;
 
     @media screen and (max-width: 1000px) {
-      font-size: 4dvw;
+      font-size: 6dvw;
+      padding: $spacing-md;
     }
   }
 }
@@ -128,12 +129,11 @@ const products = [
 
   .project {
     width: 100%;
-    height: 800px;
     text-decoration: none;
     position: relative;
     margin: 0;
     transition: all 0.3s ease-in-out;
-    padding: $spacing-md;
+    padding: $spacing-xl $spacing-lg;
     overflow: hidden;
     border-radius: $br-md;
     background: $black;
@@ -144,6 +144,11 @@ const products = [
     text-align: center;
     align-items: center;
     justify-content: flex-end;
+    gap: $spacing-sm;
+
+    @media screen and (max-width: 1200px){
+      padding: $spacing-lg $spacing-sm;
+    }
 
     img.logo {
         width: 100%;
@@ -151,7 +156,7 @@ const products = [
         padding: 24px;
         background: $black;
         border-radius: $br-sm;
-        position: absolute;
+        position: relative;
         top: -5px;
         z-index: 11;
 
@@ -160,11 +165,6 @@ const products = [
           padding: 12px;
         }
       }
-
-    @media screen and (max-width: 1200px){
-      height: 600px;
-      padding: $spacing-sm;
-    }
 
     &:before {
       content: '';
@@ -180,31 +180,22 @@ const products = [
     }
 
     .thumbnails {
-      width: 100%;
       display: flex;
       flex-direction: row;
       gap: $spacing-xs;
-      align-items: flex-end;
-      justify-content: flex-end;
+      align-items: center;
+      justify-content: center;
+      position: relative;
       z-index: 10;
-      max-width: 85%;
       transition: all 0.3s ease-in-out;
 
       @media screen and (max-width: 1200px){
-        max-width: 100%;
-        gap: 1px;
-        border-radius: $br-sm;
-        overflow: hidden;
+        flex-direction: column;
       }
 
       img {
-        width: 33.333%;
         border-radius: $br-sm;
         width: 100%;
-
-        @media screen and (max-width: 1200px){
-          border-radius: 0;
-        }
       }
     }
 

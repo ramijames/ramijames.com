@@ -167,7 +167,7 @@
     text-align: center;
 
     @media screen and (max-width: 1000px) {
-      font-size: 4dvw;
+      font-size: 6dvw;
       padding: $spacing-md;
     }
   }

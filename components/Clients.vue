@@ -44,12 +44,12 @@
   }
 
   .section-title {
-    font-size: 2dvw;
+    font-size: 3dvw;
     font-weight: 400;
     line-height: 100%;
     text-wrap: balance;
     opacity: 0.4;
-    padding: $spacing-xl $spacing-md;
+    padding: $spacing-md;
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
@@ -58,7 +58,7 @@
     text-align: center;
 
     @media screen and (max-width: 1000px) {
-      font-size: 4dvw;
+      font-size: 6dvw;
       padding: $spacing-md;
     }
   }
