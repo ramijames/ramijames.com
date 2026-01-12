@@ -1,28 +1,73 @@
 <template>
   
-  <div class="clients-container">
-    <div class="section-title">These great companies have been some of my favorite clients.</div>
-    <section class="clients">
-      <img src="/clients/ibm.png" />
-      <img src="/clients/wpt.png" />
-      <img src="/clients/microsoft.png" />
-      <img src="/clients/nvidia.png" />
-      <img src="/clients/wix.png" />
-      <img src="/clients/ultra.png" />
-      <img src="/clients/equitick.png" />
-      <img src="/clients/zivav.png" />
-      <img src="/clients/microgaming.png" />
-      <img src="/clients/qmarkets.png" />
-      <img src="/clients/tonara.png" />
-    </section>
-    <!-- <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button blue large">Become a client</a>   -->
-  </div>
+  <!-- <div class="open-wrapper"> -->
+    <!-- <Open :hasLogo="false" /> -->
+
+    <div class="clients-container">
+      <div class="section-title">These great companies have been some of my favorite clients.</div>
+      <section class="clients" ref="clientsSection" :class="{ 'is-visible': isVisible }">
+        <img src="/clients/ibm.png" />
+        <img src="/clients/wpt.png" />
+        <img src="/clients/microsoft.png" />
+        <img src="/clients/nvidia.png" />
+        <img src="/clients/wix.png" />
+        <img src="/clients/ultra.png" />
+        <img src="/clients/equitick.png" />
+        <img src="/clients/zivav.png" />
+        <img src="/clients/microgaming.png" />
+        <img src="/clients/qmarkets.png" />
+        <img src="/clients/tonara.png" />
+      </section>
+      <!-- <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button blue large">Become a client</a>   -->
+    </div>
+  <!-- </div> -->
 </template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const clientsSection = ref(null)
+const isVisible = ref(false)
+let observer = null
+
+onMounted(() => {
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !isVisible.value) {
+          isVisible.value = true
+          // Optional: disconnect observer after first trigger
+          // observer.disconnect()
+        }
+      })
+    },
+    {
+      threshold: 0.2, // Trigger when 20% of the element is visible
+      rootMargin: '0px' // Adjust this to trigger earlier/later
+    }
+  )
+
+  if (clientsSection.value) {
+    observer.observe(clientsSection.value)
+  }
+})
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect()
+  }
+})
+</script>
 
 <style lang="scss" scoped>
 
 @import './assets/variables';
 @import './assets/animation';
+
+.open-wrapper {
+  position: relative;
+  height: 100%;
+}
 
 .dark {
 
@@ -86,47 +131,55 @@
     transition: 0.2s all ease-in-out;
     mix-blend-mode:luminosity;
     opacity: 0;
-    animation: fadeInDown 0.35s ease-in-out forwards;
-
-    &:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-    &:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-    &:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-    &:nth-child(4) {
-      animation-delay: 0.4s;
-    }
-    &:nth-child(5) {
-      animation-delay: 0.5s;
-    }
-    &:nth-child(6) {
-      animation-delay: 0.6s;
-    }
-    &:nth-child(7) {
-      animation-delay: 0.7s;
-    }
-    &:nth-child(8) {
-      animation-delay: 0.8s;
-    }
-    &:nth-child(9) {
-      animation-delay: 0.9s;
-    }
-    &:nth-child(10) {
-      animation-delay: 1.0s;
-    }
-    &:nth-child(11) {
-      animation-delay: 1.1s;
-    }
-    &:nth-child(12) {
-      animation-delay: 1.2s;
-    }
+    // Animation removed from default state
+    animation: none;
 
     &:hover {
       opacity: 1;
+    }
+  }
+
+  // Only apply animation when visible
+  &.is-visible {
+    img {
+      animation: fadeInDown 0.35s ease-in-out forwards;
+
+      &:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      &:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+      &:nth-child(7) {
+        animation-delay: 0.7s;
+      }
+      &:nth-child(8) {
+        animation-delay: 0.8s;
+      }
+      &:nth-child(9) {
+        animation-delay: 0.9s;
+      }
+      &:nth-child(10) {
+        animation-delay: 1.0s;
+      }
+      &:nth-child(11) {
+        animation-delay: 1.1s;
+      }
+      &:nth-child(12) {
+        animation-delay: 1.2s;
+      }
     }
   }
 }

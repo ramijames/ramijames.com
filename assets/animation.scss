@@ -23,6 +23,17 @@
   }
 }
 
+@keyframes openSesame {
+  0% {
+    width: 50%;
+    background: #ccc;
+  }
+  100% {
+    width:0%;
+    background: #5c5c5c;
+  }
+}
+
 @keyframes skewIn {
   0% {
     opacity: 0;

@@ -186,11 +186,11 @@
   }
 
   @media screen and (max-width: 1000px) {
-    padding: $spacing-md;
+    padding: $spacing-lg $spacing-md;
   }
 
   @media screen and (max-width: 768px) {
-    padding: $spacing-sm;
+    padding: $spacing-md $spacing-sm;
   }
 
   .single-testimonial {

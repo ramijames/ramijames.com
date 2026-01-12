@@ -103,7 +103,7 @@ button,
     overflow: hidden;
     
     &.blue {
-      background: rgba($black,0.2);
+      background: rgba($black, 0);
       box-shadow: none;
       color: $black;
     }
@@ -362,15 +362,15 @@ ol {
 
 .dark {
   hr {
-    border-top: 1px solid $white;
+    border-top: 1px solid rgba($white, 0.2);
   }
 }
 
 hr {
-  margin: $spacing-xl auto;
+  margin: $spacing-lg auto;
   width: 100%;
   border:0;
-  border-top: 1px solid $black;
+  border-top: 1px solid rgba($black, 0.2);
   height: 1px;
 }
 

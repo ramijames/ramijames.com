@@ -1,6 +1,6 @@
 <template>
-  <ThoughtsHeader title="CSS Mesh Gradients" slug="/thoughts/a-partner-not-a-vendor" />
-  <PageHeader title="CSS Mesh Gradients" />
+
+  <PageHeader title="CSS Mesh Gradients" tagline="Neat things that you can do with filter blur" />
 
   <main class="w-content page-top">
     <section class="content">
@@ -252,8 +252,9 @@ $apple-blue: #2E53F9;
   height: 800px;
   overflow: hidden;
   position: relative;
-  background: $black linear-gradient(180deg, $black 40%, $gray-dark 120%);
+  background: $white linear-gradient(180deg, $white 40%, $gray-dark 120%);
   border-radius: $br-sm;
+  border: 1px solid rgba($black, 0.2);
   margin-bottom: $spacing-lg;
 
   .special-title {
