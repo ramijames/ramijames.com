@@ -21,6 +21,8 @@
     "nuxt-module-hotjar": "^1.2.6",
     "nuxt-newsletter": "^0.2.0",
     "pinia": "^2.1.7",
+    "three": "^0.182.0",
+    "three-stdlib": "^2.36.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
