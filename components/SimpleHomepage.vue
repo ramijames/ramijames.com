@@ -7,16 +7,15 @@
         opacity: 1 - scrollProgress * 1
       }"
     >
-      <section class="name">
+      <!-- <section class="name">
         <img src="/dude.png" />
         <div class="rami">Rami James</div>
         <div class="occupation">Product Designer</div>
-      </section>
+      </section> -->
       <section class="explainer">
-        <!-- <img src="/dude.png" /> -->
-        <h3>Hello there.</h3>
+        <h3>My name is <span class="blue">Rami James</span> and I'm a <span>Product Designer</span>.</h3>
         <p class="intro-text">I'm a passionate Product Designer with a development background. I enjoy creating unique, user-friendly interfaces for both native and web applications across a range of platforms and use-cases.</p>
-        <a href="mailto:ramijames@gmail.com" class="button">Hire me today</a>
+        <a href="mailto:ramijames@gmail.com" class="button">Say "Hello"</a>
       </section>
       <section class="links">
         <a href="https://github.com/ramijames">
@@ -210,10 +209,10 @@ function updateScales(item) {
       item.baseOpacity = 1
     } else if (distance === 1) {
       item.baseScale = 1.8 // First ring
-      item.baseOpacity = 0.8
+      item.baseOpacity = 1
     } else if (distance === 2) {
       item.baseScale = 1.15 // Second ring
-      item.baseOpacity = 0.5
+      item.baseOpacity = 0.8
     } else if (distance === 3) {
       item.baseScale = 1 // Third ring
       item.baseOpacity = 0.3
@@ -359,30 +358,29 @@ onUnmounted(() => {
   .mega-hero {
     height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
     background: linear-gradient(to bottom, rgba(#ccc, 1), rgba($white, 1));
     transition: all 0.2s ease-in-out;
     position: fixed;
     width: 100%;
+    padding: $spacing-lg;
 
     @media screen and (max-width: 1000px) {
-      justify-content: space-between;
+      flex-direction: column;
       margin-top: 84px;
       height: calc(100% - 84px);
-      align-items: flex-start;
+      align-items: center;
+      justify-content: center;
       gap: $spacing-md;
+      padding: 0;
     }
 
     .explainer {
-      position: absolute;
       z-index: 10;
-      left: $spacing-md;
-      bottom: $spacing-md;
       line-height: 100%;
       text-wrap: balance;
-      max-width: 600px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -402,10 +400,6 @@ onUnmounted(() => {
         gap: $spacing-xs;
       }
 
-      @media screen and (max-width: 768px) {
-        display: none;
-      }
-
       img {
         width: 10dvw;
 
@@ -421,12 +415,24 @@ onUnmounted(() => {
       h3 {
         margin: 0;
         font-weight: 400;
+        font-size: 6dvw;
+        line-height: 100%;
+
+        span.blue {
+          color: $blue;
+        }
+
+        span {
+          color: $yellow;
+        }
       }
 
       p {
         margin: 0 0 $spacing-xs;
         opacity: 0.6;
         font-family: $font-family-main;
+        max-width: 600px;
+        text-wrap: balance;
       }
 
     }
@@ -497,9 +503,6 @@ onUnmounted(() => {
     }
 
     .links {
-      right: $spacing-md;
-      bottom: $spacing-md;
-      position: absolute;
       z-index: 10;
       padding: $spacing-sm 0 0;
       font-size: $font-size-sm;
@@ -584,7 +587,7 @@ onUnmounted(() => {
       transition: transform 0.3s ease-out;
       -webkit-mask-image: radial-gradient(black, transparent);
       mask-image: radial-gradient(black, transparent );
-      opacity: 0.6;
+      opacity: 1;
 
       .grid-item {
         position: absolute;
