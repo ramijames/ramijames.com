@@ -128,10 +128,10 @@ function updateColumns() {
     COLUMNS.value = 8 // Tablet
     isMobile.value = true
   } else if (width < 1440) {
-    COLUMNS.value = 12 // Small desktop
+    COLUMNS.value = 22 // Small desktop
     isMobile.value = false
   } else {
-    COLUMNS.value = 22 // Large desktop
+    COLUMNS.value = 36 // Large desktop
     isMobile.value = false
   }
 }
@@ -212,7 +212,7 @@ function updateScales(item) {
       item.baseOpacity = 1
     } else if (distance === 2) {
       item.baseScale = 1.15 // Second ring
-      item.baseOpacity = 0.8
+      item.baseOpacity = 0.8  
     } else if (distance === 3) {
       item.baseScale = 1 // Third ring
       item.baseOpacity = 0.3
