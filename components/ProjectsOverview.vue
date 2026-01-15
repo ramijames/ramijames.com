@@ -112,6 +112,11 @@
         opacity: 1;
         flex-wrap: wrap;
 
+        @media screen and (max-width: 768px){
+          align-items: center;
+          justify-content: center;
+        }
+
         .single-service {
           padding: 6px 10px 4px;
           background: $black;
