@@ -1,17 +1,8 @@
 <template>
   <main id="Hero">
     
-    <section 
-      class="mega-hero"
-      :style="{
-        opacity: 1 - scrollProgress * 1
-      }"
-    >
-      <!-- <section class="name">
-        <img src="/dude.png" />
-        <div class="rami">Rami James</div>
-        <div class="occupation">Product Designer</div>
-      </section> -->
+    <section class="mega-hero">
+      
       <section class="explainer">
         <h3>My name is <span class="blue">Rami James</span> and I'm a <span>Product Designer</span>.</h3>
         <p class="intro-text">I'm a passionate Product Designer with a development background. I enjoy creating unique, user-friendly interfaces for both native and web applications across a range of platforms and use-cases.</p>
@@ -48,37 +39,6 @@
         <ThreeScene />
       </section>
 
-      <!-- <section 
-        class="grid-background"
-        :style="{
-          transform: `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`
-        }"
-      >
-        <div 
-          v-for="(item, index) in gridItems" 
-          :key="index"
-          class="grid-item"
-          @mouseenter="!isMobile && updateScales(item)"
-          @mouseleave="!isMobile && updateScales(null)"
-          :style="{
-            left: `${item.left}px`,
-            top: `${item.top}px`,
-            width: `${item.width}px`,
-            height: `${item.height}px`,
-            transform: `scale(${item.scale})`,
-            opacity: item.opacity
-          }"
-        >
-          <svg :style="{ width: '50%', height: '50%' }">
-            <defs>
-              <mask :id="`mask-${index}`">
-                <image :href="item.svg" width="100%" height="100%" />
-              </mask>
-            </defs>
-            <rect width="100%" height="100%" :fill="`#${item.color}`" :mask="`url(#mask-${index})`" />
-          </svg>
-        </div>
-      </section> -->
     </section>  
 
   </main>
