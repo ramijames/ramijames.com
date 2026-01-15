@@ -5,40 +5,33 @@
 
       <section class="explainer">
         <h3>
-          <span 
-            v-gsap.from="{ autoAlpha: 0, y: 30, duration: 0.5, ease: 'power3.out' }">
+          <span>
             My name is 
           </span>
           <span 
-            class="blue" 
-            v-gsap.from="{ autoAlpha: 0, y: 30, duration: 0.5, delay: 0.2, ease: 'power3.out' }">
+            class="blue">
             Rami James
           </span> 
-          <span 
-            v-gsap.from="{ autoAlpha: 0, y: 30, duration: 0.5, delay: 0.4, ease: 'power3.out' }">
+          <span >
             and I'm a 
           </span>
           <span 
-            class="yellow" 
-            v-gsap.from="{ autoAlpha: 0, y: 30, duration: 0.5, delay: 0.6, ease: 'power3.out' }">
+            class="yellow" >
             Product Designer
           </span>
         </h3>
         <p 
-          class="intro-text" 
-          v-gsap.from="{ autoAlpha: 0, y: 20, duration: 0.5, delay: 1.2, ease: 'power3.out' }">
+          class="intro-text" >
           I enjoy creating unique, user-friendly interfaces for both native and web applications across a range of platforms and use-cases.
         </p>
         <a 
           href="mailto:ramijames@gmail.com" 
-          class="button large" 
-          v-gsap.from="{ autoAlpha: 0, y: 20, duration: 0.5, delay: 1.2, ease: 'power3.out' }">
+          class="button large" >
           Say "Hello"
         </a>
       </section>
       <section 
-        class="links" 
-        v-gsap.from="{ autoAlpha: 0, y: 20, duration: 0.5, delay: 1.2, ease: 'power3.out' }">
+        class="links" >
         <a href="https://github.com/ramijames">
           Github
           <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +65,7 @@
       </section>
 
       <section class="three-scene">
-        <ThreeScene v-gsap.from="{ autoAlpha: 0, duration: .5, delay: 1.8, ease: 'power3.out' }"></ThreeScene> />
+        <ThreeScene></ThreeScene> />
       </section>
 
     </section>  
@@ -158,7 +151,11 @@
     pointer-events: all;
     z-index: 0;
     -webkit-mask-image: linear-gradient(transparent 5% , rgba(0, 0, 0, 0.571) 90%);
-      mask-image: linear-gradient(transparent 5% , rgba(0, 0, 0, 0.571) 90%);
+    mask-image: linear-gradient(transparent 5% , rgba(0, 0, 0, 0.571) 90%);
+    opacity: 0;
+    animation: fade 1s forwards;
+    transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
+    animation-delay: 1s;
   }
 
   .mega-hero {
@@ -192,6 +189,8 @@
       align-items: flex-start;
       justify-content: flex-start;
       gap: $spacing-sm;
+      opacity: 0;
+      animation: fade 1s ease-in forwards;
 
       @media screen and (max-width: 1000px) {
         font-size: 8dvw;
@@ -257,71 +256,6 @@
 
     }
 
-    .name {
-      z-index: 10;
-      color: $black;
-      text-wrap: nowrap;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      img {
-        width: 18dvw;
-        margin-bottom: $spacing-md;
-
-        @media screen and (max-width: 1600px) {
-          width: 20dvw;
-        }
-
-        @media screen and (max-width: 1000px) {
-          width: 40dvw;
-        }
-
-        @media screen and (max-width: 768px) {
-          width: 40dvw;
-          margin-bottom: $spacing-sm;
-        }
-      }
-
-      .rami {
-        font-size: 8dvw;
-        line-height: 100%;
-        font-weight: 500;
-
-        @media screen and (max-width: 768px) {
-          font-size: 12dvw;
-        }
-      }
-
-      .occupation {
-        font-size: 4dvw;
-        font-weight: 500;
-        font-style: italic;
-        font-family: $font-family-serif;
-        opacity: 0.2;
-      }
-
-      svg {
-        width: 18dvw;
-        margin-bottom: 1dvw;
-
-        path, circle {
-          fill: $yellow;
-        }
-      }
-
-      @media screen and (max-width: 1000px) {
-        font-size: 8dvw;
-        position: relative;
-        position: relative;
-        margin: 0 $spacing-md;
-        width: calc(100% - $spacing-md - $spacing-md);
-        padding: $spacing-sm 0;
-        justify-content: center;
-      }
-    }
-
     .links {
       z-index: 10;
       padding: $spacing-sm 0 0;
@@ -331,6 +265,9 @@
       display: flex;
       flex-direction: column;
       min-width: 160px;
+      animation: fade .4s forwards;
+      transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
+      animation-delay: 0s;
       
       a {
         color: rgba($black, 1);
