@@ -155,6 +155,7 @@ const products = [
       @media screen and (max-width: 768px){
         background-position: top right;
         padding: $spacing-md;
+        height: 480px;
       }
 
       &:before {
