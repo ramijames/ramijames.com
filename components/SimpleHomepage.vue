@@ -4,11 +4,41 @@
     <section class="mega-hero">
 
       <section class="explainer">
-        <h3>My name is <span class="blue">Rami James</span> and I'm a <span>Product Designer</span>.</h3>
-        <p class="intro-text">I'm a passionate Product Designer with a development background. I enjoy creating unique, user-friendly interfaces for both native and web applications across a range of platforms and use-cases.</p>
-        <a href="mailto:ramijames@gmail.com" class="button">Say "Hello"</a>
+        <h3>
+          <span 
+            v-gsap.from="{ opacity: 0, y: 30, duration: 0.5, ease: 'power3.out' }">
+            My name is 
+          </span>
+          <span 
+            class="blue" 
+            v-gsap.from="{ opacity: 0, y: 30, duration: 0.5, delay: 0.2, ease: 'power3.out' }">
+            Rami James
+          </span> 
+          <span 
+            v-gsap.from="{ opacity: 0, y: 30, duration: 0.5, delay: 0.4, ease: 'power3.out' }">
+            and I'm a 
+          </span>
+          <span 
+            class="yellow" 
+            v-gsap.from="{ opacity: 0, y: 30, duration: 0.5, delay: 0.6, ease: 'power3.out' }">
+            Product Designer
+          </span>
+        </h3>
+        <p 
+          class="intro-text" 
+          v-gsap.from="{ opacity: 0, y: 20, duration: 0.5, delay: 1.2, ease: 'power3.out' }">
+          I enjoy creating unique, user-friendly interfaces for both native and web applications across a range of platforms and use-cases.
+        </p>
+        <a 
+          href="mailto:ramijames@gmail.com" 
+          class="button large" 
+          v-gsap.from="{ opacity: 0, y: 20, duration: 0.5, delay: 1.4, ease: 'power3.out' }">
+          Say "Hello"
+        </a>
       </section>
-      <section class="links">
+      <section 
+        class="links" 
+        v-gsap.from="{ opacity: 0, y: 20, duration: 0.5, delay: 1.6, ease: 'power3.out' }">
         <a href="https://github.com/ramijames">
           Github
           <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +72,7 @@
       </section>
 
       <section class="three-scene">
-        <ThreeScene />
+        <ThreeScene v-gsap.from="{ opacity: 0, duration: 0.5, delay: 1.8, ease: 'power3.out' }"></ThreeScene> />
       </section>
 
     </section>  
@@ -50,8 +80,8 @@
   </main>
 
   <section class="homepage-content">
-    <Clients />
     <LatestWork />
+    <Clients />
     <!-- <FeaturedThoughts :featured-articles="featuredArticles" :articles="regularArticles" /> -->
     <Testimonials />
     <Footer />
@@ -60,8 +90,6 @@
 </template>
 
 <script setup>
-
-
 
 </script>
 
@@ -194,14 +222,24 @@
         margin: 0;
         font-weight: 400;
         font-size: 6dvw;
-        line-height: 100%;
+        line-height: 80%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1dvw;
+        margin-bottom: $spacing-sm;
+
+        span {
+          display: inline-block;
+        }
 
         span.blue {
           color: $blue;
         }
 
-        span {
-          color: $yellow;
+        span.yellow {
+          color: $yellow-dark;
         }
       }
 

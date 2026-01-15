@@ -181,8 +181,9 @@
   padding: $spacing-xl;
   background: $black;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1600px) {
     padding: $spacing-lg;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 
   @media screen and (max-width: 1000px) {
