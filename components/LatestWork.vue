@@ -10,6 +10,10 @@
           v-for="product in products" 
           :key="product.title" 
           :to="product.slug"
+          v-gsap.whenVisible.fromTo="[
+            { opacity: 0, scale: 0.8 }, 
+            { opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' }
+          ]"
         >
         <div class="primary-image" :style="{ backgroundImage: `url(${product.bg})`, backgroundColor: `${product.color}` }">
           <div class="info-title">{{ product.title }}</div>
