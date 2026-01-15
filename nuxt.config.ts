@@ -39,7 +39,8 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "nuxt-highcharts",
     "nuxt-gtag",
-    "@nuxt/fonts"
+    "@nuxt/fonts",
+    "v-gsap-nuxt"
   ],
   gtag: {
     id: 'G-N9MEGS1HSD'

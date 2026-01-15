@@ -2,7 +2,7 @@
   <main id="Hero">
     
     <section class="mega-hero">
-      
+
       <section class="explainer">
         <h3>My name is <span class="blue">Rami James</span> and I'm a <span>Product Designer</span>.</h3>
         <p class="intro-text">I'm a passionate Product Designer with a development background. I enjoy creating unique, user-friendly interfaces for both native and web applications across a range of platforms and use-cases.</p>
@@ -29,6 +29,12 @@
         </a>
         <a href="https://www.linkedin.com/in/rami-james/">
           LinkedIn
+          <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.71319 -6.09502e-05L11.1396 7.42639L3.7132 14.8528L-3.10162e-05 11.1396L3.7132 7.42639L-3.16422e-05 3.71317L3.71319 -6.09502e-05Z" fill="white"/>
+          </svg>
+        </a>
+        <a href="https://www.shadertoy.com/view/ldfczS">
+          Shadertoy Credit
           <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.71319 -6.09502e-05L11.1396 7.42639L3.7132 14.8528L-3.10162e-05 11.1396L3.7132 7.42639L-3.16422e-05 3.71317L3.71319 -6.09502e-05Z" fill="white"/>
           </svg>
@@ -282,7 +288,7 @@
       border-top: 1px solid rgba($black,0.2);
       display: flex;
       flex-direction: column;
-      min-width: 120px;
+      min-width: 160px;
       
       a {
         color: rgba($black, 1);
@@ -292,6 +298,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        text-wrap: nowrap;
 
         @media screen and (max-width: 1000px) {
           font-size: $font-size-lg;
