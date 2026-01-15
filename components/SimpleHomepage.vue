@@ -72,7 +72,7 @@
       </section>
 
       <section class="three-scene">
-        <ThreeScene v-gsap.from="{ opacity: 0, scale: 2.5, y:1000, x: 1000, duration: 1.6, delay: 1.8, ease: 'power3.out' }"></ThreeScene> />
+        <ThreeScene v-gsap.from="{ opacity: 0, duration: .5, delay: 1.8, ease: 'power3.out' }"></ThreeScene> />
       </section>
 
     </section>  
