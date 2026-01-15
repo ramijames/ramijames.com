@@ -267,6 +267,10 @@ onUnmounted(() => {
     padding: 0 $spacing-md;
     margin-top: 84px;
 
+    @media screen and (max-width: 768px){
+      min-height: 300px;
+    }
+
     .grid-background {
       position: absolute;
       left: 0;
