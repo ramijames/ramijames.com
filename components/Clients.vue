@@ -1,63 +1,25 @@
 <template>
-  
-  <!-- <div class="open-wrapper"> -->
-    <!-- <Open :hasLogo="false" /> -->
-
-    <div class="clients-container">
-      <div class="section-title">These great companies have been some of my favorite clients.</div>
-      <section class="clients" ref="clientsSection" :class="{ 'is-visible': isVisible }">
-        <img src="/clients/ibm.png" />
-        <img src="/clients/wpt.png" />
-        <img src="/clients/microsoft.png" />
-        <img src="/clients/nvidia.png" />
-        <img src="/clients/wix.png" />
-        <img src="/clients/ultra.png" />
-        <img src="/clients/equitick.png" />
-        <img src="/clients/zivav.png" />
-        <img src="/clients/microgaming.png" />
-        <img src="/clients/qmarkets.png" />
-        <img src="/clients/tonara.png" />
+  <section id="Clients">
+    <div class="clients-container w-consistent">
+      <div class="section-title"
+        v-gsap.whenVisible.from="{ opacity: 0, scale: 0.4, duration: 2.5, ease: 'power3.out' }"
+      >These great companies have been some of my favorite clients.</div>
+      <section class="clients" v-gsap.timeline.whenVisible>
+        <img src="/clients/ibm.png" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+        <img src="/clients/wpt.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+        <img src="/clients/microsoft.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+        <img src="/clients/nvidia.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+        <img src="/clients/wix.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+        <img src="/clients/ultra.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+        <img src="/clients/equitick.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+        <img src="/clients/zivav.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+        <img src="/clients/microgaming.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+        <img src="/clients/qmarkets.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+        <img src="/clients/tonara.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
       </section>
-      <!-- <a href="mailto:ramijames@gmail.com?subject=Set up a call" class="button blue large">Become a client</a>   -->
     </div>
-  <!-- </div> -->
+  </section>
 </template>
-
-<script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-
-const clientsSection = ref(null)
-const isVisible = ref(false)
-let observer = null
-
-onMounted(() => {
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !isVisible.value) {
-          isVisible.value = true
-          // Optional: disconnect observer after first trigger
-          // observer.disconnect()
-        }
-      })
-    },
-    {
-      threshold: 0.2, // Trigger when 20% of the element is visible
-      rootMargin: '0px' // Adjust this to trigger earlier/later
-    }
-  )
-
-  if (clientsSection.value) {
-    observer.observe(clientsSection.value)
-  }
-})
-
-onUnmounted(() => {
-  if (observer) {
-    observer.disconnect()
-  }
-})
-</script>
 
 <style lang="scss" scoped>
 
@@ -69,23 +31,23 @@ onUnmounted(() => {
   height: 100%;
 }
 
-.dark {
-
-  .clients-container {
-    background: #222;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
-  }
+#Clients {
+  background: $black;
+  padding: $spacing-xl 0;
 }
 
 .clients-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 60dvh;
-  background: $yellow;
+  grid-template-columns: 1fr;
+  padding: $spacing-xl 0;
+  align-items: center;
 
-  @media screen and (max-width: 1000px) {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 1200px) {
+    padding: $spacing-md;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: $spacing-sm;
   }
 
   .section-title {
@@ -93,14 +55,11 @@ onUnmounted(() => {
     font-weight: 400;
     line-height: 100%;
     text-wrap: balance;
-    opacity: 0.4;
-    padding: $spacing-md;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
-    display: flex;
-    flex-direction: column;
     text-align: center;
+    padding: $spacing-xl 0 ;
+    opacity: 0.4;
+    position: relative;
+    color: $white;
 
     @media screen and (max-width: 1000px) {
       font-size: 6dvw;
@@ -115,11 +74,10 @@ onUnmounted(() => {
   flex-direction: row;
   gap: $spacing-md;
   background: $black;
-  padding: 0 $spacing-xl;
+  padding: $spacing-xl 0;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  align-content: center;
 
   @media screen and (max-width: 1000px) {
     padding: $spacing-md;
@@ -127,60 +85,7 @@ onUnmounted(() => {
 
   img {
     height: 32px;
-    opacity: 0.4;
-    transition: 0.2s all ease-in-out;
     mix-blend-mode:luminosity;
-    opacity: 0;
-    // Animation removed from default state
-    animation: none;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  // Only apply animation when visible
-  &.is-visible {
-    img {
-      animation: fadeInDown 0.35s ease-in-out forwards;
-
-      &:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      &:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      &:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      &:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-      &:nth-child(5) {
-        animation-delay: 0.5s;
-      }
-      &:nth-child(6) {
-        animation-delay: 0.6s;
-      }
-      &:nth-child(7) {
-        animation-delay: 0.7s;
-      }
-      &:nth-child(8) {
-        animation-delay: 0.8s;
-      }
-      &:nth-child(9) {
-        animation-delay: 0.9s;
-      }
-      &:nth-child(10) {
-        animation-delay: 1.0s;
-      }
-      &:nth-child(11) {
-        animation-delay: 1.1s;
-      }
-      &:nth-child(12) {
-        animation-delay: 1.2s;
-      }
-    }
   }
 }
 </style>

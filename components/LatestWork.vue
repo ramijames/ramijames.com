@@ -1,7 +1,9 @@
 <template>
 
   <div class="work-container w-consistent">
-    <div class="section-title">I've worked on a lot of interesting products over the years.</div>
+    <div class="section-title"
+      v-gsap.whenVisible.from="{ opacity: 0, scale: 0.4, duration: 2.5, ease: 'power3.out' }"
+    >I've worked on a lot of interesting products over the years.</div>
     <section id="LatestWork">
       <nuxt-link
           :class="['project', 'w-full', product.class]"
@@ -95,6 +97,7 @@ const products = [
     text-align: center;
     padding: $spacing-xl 0;
     opacity: 0.4;
+    position: relative;
 
     @media screen and (max-width: 1000px) {
       font-size: 6dvw;

@@ -1,26 +1,10 @@
 <template>
-  <div class="testimonials-container">
-    <div class="section-title">Some people have said some really nice things about my work.</div>
-    <section id="Testimonials">
-      <div class="single-testimonial hide">
-        <div class="user-image">
-          <img src="/homepage/testimonials/jodi.png">
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial">Rami is a very professional, talented, serious and intricate designer. His attention to details is astounding and his design work is creative and concise.</div>
-          <div class="user-name">Jodi Benjamin</div>
-        </div>
-      </div>
-      <div class="single-testimonial hide">
-        <div class="user-image">
-          <img src="/homepage/testimonials/francine.png">
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial">You won't find many designers that come close to Rami in terms of talent, innovation, originality and implementation. Rami will take a concept and turn it into a full blown brand across all medium but his talent really shines on the web.</div>
-          <div class="user-name">Francine Haliva</div>
-        </div>
-      </div>
-      <div class="single-testimonial">
+  <div class="testimonials-container w-consistent">
+    <div class="section-title"
+      v-gsap.whenVisible.from="{ opacity: 0, scale: 0.4, duration: 2.5, ease: 'power3.out' }"
+    >Some people have said some really nice things about my work.</div>
+    <section id="Testimonials" v-gsap.timeline.whenVisible>
+      <div class="single-testimonial" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 0, ease: 'power3.out' }">
         <div class="user-image">
           <img src="/homepage/testimonials/dani.png">
         </div>
@@ -29,7 +13,7 @@
           <div class="user-name">Dani Koesterich</div>
         </div>
       </div>
-      <div class="single-testimonial hide">
+      <div class="single-testimonial hide" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 0.4, ease: 'power3.out' }">
         <div class="user-image">
           <img src="/homepage/testimonials/michael.png">
         </div>
@@ -38,7 +22,7 @@
           <div class="user-name">Michael Birnboim</div>
         </div>
       </div>
-      <div class="single-testimonial">
+      <div class="single-testimonial" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 0.8, ease: 'power3.out' }">
         <div class="user-image">
           <img src="/homepage/testimonials/tamar.png">
         </div>
@@ -47,7 +31,7 @@
           <div class="user-name">Tamar Schoppik</div>
         </div>
       </div>
-      <div class="single-testimonial hide">
+      <div class="single-testimonial hide" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 1.2, ease: 'power3.out' }">
         <div class="user-image">
           <img src="/homepage/testimonials/gabe.png">
         </div>
@@ -56,25 +40,7 @@
           <div class="user-name">Gabriel Ehrlich</div>
         </div>
       </div>
-      <div class="single-testimonial hide">
-        <div class="user-image">
-          <img src="/homepage/testimonials/julian.png">
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial">Working with Rami is fun, interesting and exciting – exactly the way creative design should be. Plus he’s always reliable, always 100% honest and always on time. Work with Rami and add some panache to your creative!</div>
-          <div class="user-name">Julian Bewley</div>
-        </div>
-      </div>
-      <div class="single-testimonial hide">
-        <div class="user-image">
-          <img src="/homepage/testimonials/gopal.png">
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial">Rami is a Swiss Army Knife in the truest sense. Any organisation would be blessed to have the likes of Rami in their ranks.</div>
-          <div class="user-name">Gopal Nair</div>
-        </div>
-      </div>
-      <div class="single-testimonial">
+      <div class="single-testimonial" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 1.6, ease: 'power3.out' }">
         <div class="user-image">
           <img src="/homepage/testimonials/lucas.png">
         </div>
@@ -83,7 +49,7 @@
           <div class="user-name">Lucas Haidar</div>
         </div>
       </div>
-      <div class="single-testimonial">
+      <div class="single-testimonial" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 2, ease: 'power3.out' }">
         <div class="user-image">
           <img src="/homepage/testimonials/nicolas.png">
         </div>
@@ -92,13 +58,49 @@
           <div class="user-name">Nicolas Bouillet</div>
         </div>
       </div>
-      <div class="single-testimonial hide">
+      <div class="single-testimonial hide" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 2.4, ease: 'power3.out' }">
         <div class="user-image">
           <img src="/homepage/testimonials/anna.png">
         </div>
         <div class="testimonial-card">
           <div class="testimonial">Any organization would be fortunate to have someone of Rami's caliber on their team, as he seamlessly blends technical prowess, strategic insight, and a true team player ethos.</div>
           <div class="user-name">Anna Török</div>
+        </div>
+      </div>
+      <div class="single-testimonial hide" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 2.8, ease: 'power3.out' }">
+        <div class="user-image">
+          <img src="/homepage/testimonials/gopal.png">
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial">Rami is a Swiss Army Knife in the truest sense. Any organisation would be blessed to have the likes of Rami in their ranks.</div>
+          <div class="user-name">Gopal Nair</div>
+        </div>
+      </div>
+      <div class="single-testimonial hide" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 3.2, ease: 'power3.out' }">
+        <div class="user-image">
+          <img src="/homepage/testimonials/jodi.png">
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial">Rami is a very professional, talented, serious and intricate designer. His attention to details is astounding and his design work is creative and concise.</div>
+          <div class="user-name">Jodi Benjamin</div>
+        </div>
+      </div>
+      <div class="single-testimonial hide" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 3.6, ease: 'power3.out' }">
+        <div class="user-image">
+          <img src="/homepage/testimonials/francine.png">
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial">You won't find many designers that come close to Rami in terms of talent, innovation, originality and implementation. Rami will take a concept and turn it into a full blown brand across all medium but his talent really shines on the web.</div>
+          <div class="user-name">Francine Haliva</div>
+        </div>
+      </div>
+      <div class="single-testimonial hide" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 4, ease: 'power3.out' }">
+        <div class="user-image">
+          <img src="/homepage/testimonials/julian.png">
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial">Working with Rami is fun, interesting and exciting – exactly the way creative design should be. Plus he’s always reliable, always 100% honest and always on time. Work with Rami and add some panache to your creative!</div>
+          <div class="user-name">Julian Bewley</div>
         </div>
       </div>
     </section>
@@ -111,16 +113,12 @@
 
 .dark {
 
-  .testimonials-container {
-    background: #222;
-  }
-
   #Testimonials {
-    color: $black;
-    background: $yellow;
+    color: $white;
+    background: $black;
 
     .single-testimonial {
-      color: $black;
+      color: $white;
 
       .user-image img {
         border: $border;
@@ -129,14 +127,14 @@
       .testimonial-card {
         .user-name {
           padding: 6px 10px 4px;
-          background: rgba($black, 1);
+          background: rgba($yellow, 1);
           line-height: 100%;
           border-radius: $br-sm;
           text-transform: uppercase;
           font-size: 10px;
           font-weight: bold;
           letter-spacing: 1px;
-          color: rgba($white, 1);
+          color: rgba($black, 1);
         }
       }
     }
@@ -145,26 +143,28 @@
 
 .testimonials-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: #ccc;
+  grid-template-columns: 1fr;
+  padding: $spacing-xl 0;
+  min-height: 100vh;
+  align-items: center;
 
-  @media screen and (max-width: 1000px) {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 1200px) {
+    padding: $spacing-md;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: $spacing-sm;
   }
 
   .section-title {
-    font-size: 2dvw;
+    font-size: 3dvw;
     font-weight: 400;
     line-height: 100%;
     text-wrap: balance;
-    opacity: 0.4;
-    padding: $spacing-xl $spacing-md;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
-    display: flex;
-    flex-direction: column;
     text-align: center;
+    padding: $spacing-xl 0;
+    opacity: 0.4;
+    position: relative;
 
     @media screen and (max-width: 1000px) {
       font-size: 6dvw;
@@ -179,7 +179,7 @@
   gap: $spacing-sm;
   font-family: $font-family-secondary;
   padding: $spacing-xl;
-  background: $black;
+  background: $white;
 
   @media screen and (max-width: 1600px) {
     padding: $spacing-lg;
@@ -200,7 +200,7 @@
     display: flex;
     flex-direction: row;
     gap: $spacing-sm;
-    color: $white;
+    color: $black;
 
     @media screen and (max-width: 1000px) {
       min-height: auto;

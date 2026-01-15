@@ -32,13 +32,13 @@
         <a 
           href="mailto:ramijames@gmail.com" 
           class="button large" 
-          v-gsap.from="{ opacity: 0, y: 20, duration: 0.5, delay: 1.4, ease: 'power3.out' }">
+          v-gsap.from="{ opacity: 0, y: 20, duration: 0.5, delay: 1.2, ease: 'power3.out' }">
           Say "Hello"
         </a>
       </section>
       <section 
         class="links" 
-        v-gsap.from="{ opacity: 0, y: 20, duration: 0.5, delay: 1.6, ease: 'power3.out' }">
+        v-gsap.from="{ opacity: 0, y: 20, duration: 0.5, delay: 1.2, ease: 'power3.out' }">
         <a href="https://github.com/ramijames">
           Github
           <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +72,7 @@
       </section>
 
       <section class="three-scene">
-        <ThreeScene v-gsap.from="{ opacity: 0, duration: 0.5, delay: 1.8, ease: 'power3.out' }"></ThreeScene> />
+        <ThreeScene v-gsap.from="{ opacity: 0, scale: 2.5, y:1000, x: 1000, duration: 1.6, delay: 1.8, ease: 'power3.out' }"></ThreeScene> />
       </section>
 
     </section>  
@@ -221,7 +221,7 @@
       h3 {
         margin: 0;
         font-weight: 400;
-        font-size: 6dvw;
+        font-size: 5.3dvw;
         line-height: 80%;
         position: relative;
         display: flex;
@@ -425,11 +425,12 @@
 }
 
 .dark .homepage-content {
-  background: $black;
+  background: linear-gradient(to bottom, #000000be, $black 300px);
 }
 
 .homepage-content {
-  background: $white;
+  background: linear-gradient(to bottom, #cccccc87, $white 300px);
+  backdrop-filter: blur(4px);
   position: absolute;
   z-index: 2;
   top: 100dvh;
