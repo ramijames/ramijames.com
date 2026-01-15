@@ -131,6 +131,11 @@ button,
     &.large {
       padding: $spacing-sm $spacing-md;
       font-size: 16px;
+
+      @media screen and (max-width: 768px) {
+        padding: 12px $spacing-sm 10px;
+        font-size: 11px;
+      }
     }
 }
 

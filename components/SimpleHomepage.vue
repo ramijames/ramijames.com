@@ -338,11 +338,6 @@
         align-items: center;
         text-wrap: nowrap;
 
-        @media screen and (max-width: 1000px) {
-          font-size: $font-size-lg;
-          font-weight: 400;
-        }
-
         svg {
           width: 6px;
 
