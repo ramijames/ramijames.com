@@ -230,6 +230,10 @@
         gap: 1dvw;
         margin-bottom: $spacing-sm;
 
+        @media screen and (max-width: 768px) {
+          font-size: 8dvw;
+        }
+
         span {
           display: inline-block;
         }
