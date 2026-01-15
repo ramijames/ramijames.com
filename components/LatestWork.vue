@@ -10,25 +10,28 @@
           v-for="product in products" 
           :key="product.title" 
           :to="product.slug"
-          :style="{ backgroundImage: `url(${product.bg})`, backgroundColor: `${product.color}` }"
         >
-        <img 
+        <!-- <div class="info-title">{{ product.title }}</div> -->
+        <div class="primary-image" :style="{ backgroundImage: `url(${product.bg})`, backgroundColor: `${product.color}` }">
+          <div class="info-title">{{ product.title }}</div>
+          <div class="info-description">{{ product.description }}</div>
+        </div>
+        <!-- <img 
           :src="product.logo" 
           alt="Logo" 
           class="logo" 
           :style="{ backgroundColor: `${product.color}` }"
-        />
+        /> -->
         <!-- <img :src="product.image" alt="Logo" class="preview" /> -->
-        <section :class="['info', product.class]">
-          <section class="info-content">
-            <div class="info-title">{{ product.title }}</div>
+        <!-- <section :class="['info', product.class]"> -->
+          <!-- <section class="info-content">
             <div class="info-description">{{ product.description }}</div>
-          </section>
-        </section>
-        <section class="thumbnails">
+          </section> -->
+        <!-- </section> -->
+        <!-- <section class="thumbnails">
           <img v-for="image in product.thumbnails" :src="image" />
-        </section>
-        <div class="button large">View {{ product.title }}</div>
+        </section> -->
+        <!-- <div class="button large">View {{ product.title }}</div> -->
       </nuxt-link>
       <nuxt-link class="button large blue" to="/products">View all products</nuxt-link>
     </section>
@@ -45,7 +48,7 @@ const products = [
                     image: '/products/scatter/scatter-thumb.png',
                     thumbnails: ['/products/scatter/scatter-thumb-1.png', '/products/scatter/scatter-thumb-2.png', '/products/scatter/scatter-thumb-3.png'],
                     logo: '/products/scatter/scatter-logo.png',
-                    bg: '/products/scatter/scatter-bg1.png',
+                    bg: '/products/scatter/scatter-shiny.png',
                     status: 'past',
                     slug: '/products/scatter/',
                     color: '#0899FE',
@@ -58,7 +61,7 @@ const products = [
                     image: '/products/doodledapp/doodledapp-thumb.png',
                     thumbnails: ['/products/doodledapp/doodledapp-thumb-1.png', '/products/doodledapp/doodledapp-thumb-2.png', '/products/doodledapp/doodledapp-thumb-3.png'],
                     logo: '/products/doodledapp/doodledapp-logo.svg',
-                    bg: '/homepage/hp-doodledapp.png',
+                    bg: '/products/doodledapp/doodledapp-shiny.png',
                     status: 'past',
                     slug: '/products/doodledapp/',
                     color: '#3E74FF',
@@ -136,115 +139,64 @@ const products = [
     position: relative;
     margin: 0;
     transition: all 0.3s ease-in-out;
-    padding: $spacing-xl $spacing-lg;
-    overflow: hidden;
-    border-radius: $br-md;
-    background: $black;
-    outline: 1px solid rgba($black, 0.1);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: flex-end;
-    gap: $spacing-sm;
 
-    @media screen and (max-width: 1200px){
-      padding: $spacing-lg $spacing-sm;
-    }
-
-    img.logo {
-        width: 100%;
-        max-width: 100px;
-        padding: 24px;
-        background: $black;
-        border-radius: $br-sm;
-        position: relative;
-        top: -5px;
-        z-index: 11;
-
-        @media screen and (max-width: 1024px){
-          max-width: 60px;
-          padding: 12px;
-        }
-      }
-
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba($black, .1);
-      backdrop-filter: blur(20px);
-      z-index: 1;
-      transition: all 0.3s ease;
-    }
-
-    .thumbnails {
-      display: flex;
-      flex-direction: row;
-      gap: $spacing-xs;
-      align-items: center;
-      justify-content: center;
+    .info-title {
+      font-size: $font-size-xl;
+      color: rgba($white, 1);
       position: relative;
-      z-index: 10;
-      transition: all 0.3s ease-in-out;
-
-      @media screen and (max-width: 1200px){
-        flex-direction: column;
-      }
-
-      img {
-        border-radius: $br-sm;
-        width: 100%;
-      }
+      z-index: 2;
     }
 
-    .info {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      opacity: 1;
-      transition: all 0.3s ease-in-out;
+    .primary-image {
+      border-radius: $br-md;
+      background: $black;
+      outline: 1px solid rgba($black, 0.1);
+      background-size: cover;
+      background-position: center;
+      height: 800px;
+      width: 100%;
       z-index: 1;
-      padding: 0 0 $spacing-md;
-      gap: $spacing-sm;
+      transition: all 0.4s ease;
+      padding: $spacing-lg;
+      overflow: hidden;
+      position: relative;
 
-      .info-content {
-
-        .info-title {
-          font-size: $font-size-lg;
-          color: $white;
-        }
-
-        .info-description {
-          font-size: $font-size-sm;
-          color: $white;
-        }
+      @media screen and (max-width: 768px){
+        background-position: center right;
       }
 
-    }
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($black, .5);
+        z-index: 1;
+        transition: all 0.2s ease;
+        -webkit-mask-image: linear-gradient(120deg, black 15% , transparent 100%);
+        mask-image: linear-gradient(120deg, black 15% , transparent 100%);
+      }
 
-    .button {
-      opacity: 0;
-      z-index:10;
+      .info-description {
+        font-size: $font-size-sm;
+        color: $white;
+        z-index: 2;
+        position: relative;
+      }
     }
 
     &:hover {
+      .primary-image {
 
-      &:before {
-        background: rgba($black, .02);
-      }
-      
-      .button {
-        opacity: 1;
+        &:before {
+          background: rgba($black, .1);
+        }
       }
     }
 
+    
   }
 }
 
