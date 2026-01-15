@@ -175,7 +175,7 @@
 
 #Testimonials {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   gap: $spacing-sm;
   font-family: $font-family-secondary;
   padding: $spacing-xl;
@@ -183,15 +183,16 @@
 
   @media screen and (max-width: 1600px) {
     padding: $spacing-lg;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 
   @media screen and (max-width: 1000px) {
     padding: $spacing-lg $spacing-md;
+    grid-template-columns: 1fr 1fr;
   }
 
   @media screen and (max-width: 768px) {
     padding: $spacing-md $spacing-sm;
+    grid-template-columns: 1fr;
   }
 
   .single-testimonial {

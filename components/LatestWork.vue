@@ -11,27 +11,10 @@
           :key="product.title" 
           :to="product.slug"
         >
-        <!-- <div class="info-title">{{ product.title }}</div> -->
         <div class="primary-image" :style="{ backgroundImage: `url(${product.bg})`, backgroundColor: `${product.color}` }">
           <div class="info-title">{{ product.title }}</div>
           <div class="info-description">{{ product.description }}</div>
         </div>
-        <!-- <img 
-          :src="product.logo" 
-          alt="Logo" 
-          class="logo" 
-          :style="{ backgroundColor: `${product.color}` }"
-        /> -->
-        <!-- <img :src="product.image" alt="Logo" class="preview" /> -->
-        <!-- <section :class="['info', product.class]"> -->
-          <!-- <section class="info-content">
-            <div class="info-description">{{ product.description }}</div>
-          </section> -->
-        <!-- </section> -->
-        <!-- <section class="thumbnails">
-          <img v-for="image in product.thumbnails" :src="image" />
-        </section> -->
-        <!-- <div class="button large">View {{ product.title }}</div> -->
       </nuxt-link>
       <nuxt-link class="button large blue" to="/products">View all products</nuxt-link>
     </section>
@@ -145,6 +128,10 @@ const products = [
       color: rgba($white, 1);
       position: relative;
       z-index: 2;
+
+      @media screen and (max-width: 768px){
+        text-align: center;
+      }
     }
 
     .primary-image {
@@ -162,7 +149,8 @@ const products = [
       position: relative;
 
       @media screen and (max-width: 768px){
-        background-position: center right;
+        background-position: top right;
+        padding: $spacing-md;
       }
 
       &:before {
@@ -184,6 +172,10 @@ const products = [
         color: $white;
         z-index: 2;
         position: relative;
+
+        @media screen and (max-width: 768px){
+          text-align: center;
+        }
       }
     }
 
