@@ -56,8 +56,6 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import './assets/variables';
-
 #Follow {
   position: fixed;
   top: 0;

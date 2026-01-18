@@ -17,8 +17,6 @@ const regularArticlesPostsExtras = sortedArticles.slice(2)
 </script>
 
 <style scoped lang="scss">
-@import '/assets/variables.scss';
-
 #PostsExtras {
   width: 100%;
 }

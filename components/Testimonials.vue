@@ -1,8 +1,25 @@
 <template>
   <div class="testimonials-wrapper" ref="wrapperRef">
     <div class="testimonials-container">
-      <div class="section-title">Oh, stop!</div>
       <div class="sticky-container">
+        <section id="Clients">
+          <div class="clients-container w-consistent">
+            <div class="section-title">I've been so lucky to have such great partners</div>
+            <section class="clients">
+              <img src="/clients/ibm.png" />
+              <img src="/clients/wpt.png" />
+              <img src="/clients/microsoft.png" />
+              <img src="/clients/nvidia.png" />
+              <img src="/clients/wix.png" />
+              <img src="/clients/ultra.png" />
+              <img src="/clients/equitick.png" />
+              <img src="/clients/zivav.png" />
+              <img src="/clients/microgaming.png" />
+              <img src="/clients/qmarkets.png" />
+              <img src="/clients/tonara.png" />
+            </section>
+          </div>
+        </section>
         <section id="Testimonials" ref="testimonialsRef" :style="{ transform: `translateX(${translateX}px)` }">
           <div class="single-testimonial">
             <div class="user-image">
@@ -151,38 +168,6 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
-.dark {
-
-  #Testimonials {
-    color: $white;
-
-    .single-testimonial {
-      color: $white;
-
-      .user-image img {
-        border: $border;
-      }
-
-      .testimonial-card {
-        .user-name {
-          padding: 6px 10px 4px;
-          background: rgba($yellow, 1);
-          line-height: 100%;
-          border-radius: $br-sm;
-          text-transform: uppercase;
-          font-size: 10px;
-          font-weight: bold;
-          letter-spacing: 1px;
-          color: rgba($black, 1);
-        }
-      }
-    }
-  }
-}
-
 .testimonials-wrapper {
   height: 300vh;
   position: relative;
@@ -196,6 +181,7 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  background: $black;
 
   .section-title {
     font-size: 3dvw;
@@ -217,6 +203,69 @@ onMounted(() => {
 .sticky-container {
   width: 100%;
   overflow: visible;
+
+  #Clients {
+    padding: 0;
+  }
+
+  .clients {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-md;
+    background: $black;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 1000px) {
+      padding: $spacing-md;
+    }
+
+    img {
+      height: 32px;
+      mix-blend-mode:luminosity;
+
+      @media screen and (max-height: 1000px) {
+        height: 20px;
+      }
+    }
+  }
+
+  .clients-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: $spacing-xl 0;
+    align-items: center;
+
+    @media screen and (max-width: 1200px) {
+      padding: $spacing-md;
+    }
+
+    @media screen and (max-height: 1000px) {
+      padding: $spacing-md;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: $spacing-sm;
+    }
+
+    .section-title {
+      font-size: 3dvw;
+      font-weight: 400;
+      line-height: 100%;
+      text-wrap: balance;
+      text-align: center;
+      padding: 0 0 $spacing-lg;
+      opacity: 0.4;
+      position: relative;
+      color: $white;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 6dvw;
+        padding: $spacing-md;
+      }
+    }
+  }
 }
 
 #Testimonials {
@@ -240,7 +289,20 @@ onMounted(() => {
     display: flex;
     flex-direction: row;
     gap: $spacing-sm;
-    color: $black;
+    color: $white;
+    max-width: 600px;
+
+    @media screen and (max-width: 1600px) {
+      width: 30vw;
+    }
+
+    @media screen and (max-width: 1200px) {
+      width: 40vw;
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: 60vw;
+    }
 
     @media screen and (max-width: 768px) {
       width: 90vw;
@@ -265,6 +327,10 @@ onMounted(() => {
       font-family: $font-family-main;
       line-height: 140%;
       opacity: 0.7;
+
+      @media screen and (max-height: 1000px) {
+        font-size: $font-size-md;
+      }
 
       .user-name {
         line-height: 100%;

@@ -1,6 +1,3 @@
-
-@import 'variables';
-
 /* Standard */
 
 * {
@@ -154,8 +151,6 @@ button,
 .mint { color:$mint }
 .red { color:$red }
 .purple { color:$purple }
-.grey { color: darken($white, 50%) }
-  .dark .grey { color: lighten($black, 50%) }
 
 a {
   color:$blue;

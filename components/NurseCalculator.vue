@@ -53,9 +53,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
 .nurse-calculator {
   display: flex;
   flex-direction: column;

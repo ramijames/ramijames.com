@@ -19,9 +19,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-@import './assets/variables';
-
 .actively-seeking {
   border-radius: $br-sm;
   background: $blue linear-gradient(40deg, $black 0%, $blue 50%);

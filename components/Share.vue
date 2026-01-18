@@ -40,9 +40,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-
 #share {
   display: flex;
   flex-direction: row;

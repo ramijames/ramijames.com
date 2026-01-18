@@ -54,10 +54,6 @@ const products = [
 </script>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-@import './assets/animation';
-
 .work-container {
   display: flex;
   flex-direction: column;

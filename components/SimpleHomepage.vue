@@ -28,7 +28,7 @@
 
   <section class="homepage-content">
     <LatestWork />
-    <Clients />
+    <!-- <Clients /> -->
     <!-- <FeaturedThoughts :featured-articles="featuredArticles" :articles="regularArticles" /> -->
     <Testimonials />
     <Footer />
@@ -41,10 +41,6 @@
 </script>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-@import './assets/animation';
-
 #Hero {
   overflow: hidden;
   width: 100%;

@@ -20,10 +20,6 @@
 </template>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-@import './assets/animation';
-
 .open-wrapper {
   position: relative;
   height: 100%;

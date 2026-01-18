@@ -59,9 +59,6 @@
 
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-
 #illustrations {
   margin: $spacing-xl auto;
   display: flex;

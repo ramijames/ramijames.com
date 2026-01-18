@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   runtimeConfig: {
-    resendApiKey: process.env.RESEND_API_KEY,
+    resendApiKey: '',
   },
   css: [
     '~/assets/main.scss',
@@ -45,6 +45,15 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "@nuxt/fonts"
   ],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "sass:map" as *; @use "~/assets/_variables.scss" as *;'
+        }
+      }
+    }
+  },
   gtag: {
     id: 'G-N9MEGS1HSD'
   },

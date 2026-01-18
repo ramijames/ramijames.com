@@ -28,8 +28,6 @@ const props = defineProps({
 </script>
 
 <style scoped lang="scss">
-@import './assets/variables';
-
 .single-project-header {
   background: linear-gradient(180deg, transparent 67%, rgba($blue, 0.05));
   border-bottom: $border;

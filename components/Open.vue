@@ -48,10 +48,6 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-@import './assets/animation';
-
 .open-sesame {
   width: 100%;
   height: 100%;

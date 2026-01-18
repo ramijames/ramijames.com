@@ -15,10 +15,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-@import './assets/animation';
-
 .page-header {
   width: 100%;
   position: relative;

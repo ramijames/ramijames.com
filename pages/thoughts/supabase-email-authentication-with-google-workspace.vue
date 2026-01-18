@@ -80,9 +80,6 @@
 </template>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
 #example {
   width: 100%;
   height: 600px;

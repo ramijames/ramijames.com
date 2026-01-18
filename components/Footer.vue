@@ -55,9 +55,6 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-
 .dark {
   footer {
     width: 100%;

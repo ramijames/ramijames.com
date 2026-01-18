@@ -75,9 +75,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
 .posts {
   display: flex;
   flex-direction: column;

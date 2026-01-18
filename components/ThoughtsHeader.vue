@@ -14,8 +14,6 @@ const props = defineProps({
 </script>
 
 <style scoped lang="scss">
-@import './assets/variables';
-
 .single-thought-header {
   background: linear-gradient(180deg, transparent 67%, rgba($blue, 0.05));
   border-bottom: $border;

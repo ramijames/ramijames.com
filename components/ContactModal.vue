@@ -167,8 +167,6 @@ watch(() => props.isOpen, (isOpen) => {
 </script>
 
 <style lang="scss" scoped>
-@import './assets/variables';
-
 .modal-backdrop {
   position: fixed;
   top: 0;

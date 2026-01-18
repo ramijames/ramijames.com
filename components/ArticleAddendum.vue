@@ -51,9 +51,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-
 .addendum {
   padding: $spacing-xl 0;
   border-top: 1px solid rgba($black,0.1);

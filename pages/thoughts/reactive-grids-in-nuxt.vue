@@ -468,9 +468,6 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
-
-@import '@/assets/_variables';
-
 #example {
   width: 100%;
   height: 800px;

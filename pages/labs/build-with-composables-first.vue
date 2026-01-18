@@ -45,9 +45,6 @@
 </template>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
 #composables {
   width: 100%;
   height: 600px;

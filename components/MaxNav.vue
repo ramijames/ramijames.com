@@ -154,10 +154,6 @@ const isHome = computed(() => {
 </script>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-@import './assets/animation';
-
 .max-nav {
   padding: $spacing-md;
   position: fixed;

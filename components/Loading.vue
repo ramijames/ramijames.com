@@ -11,9 +11,6 @@ const props = defineProps(['type'])
 </script>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
 #Loading {
   display: flex;
   flex-direction: column;

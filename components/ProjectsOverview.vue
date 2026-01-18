@@ -33,9 +33,6 @@
 </script>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-
 .dark {
   .projects-overview {
 

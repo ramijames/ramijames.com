@@ -7,9 +7,6 @@
 </template>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-
 .separator-main {
   padding-top:0;
   padding-bottom: 0;
@@ -29,7 +26,7 @@
 
 .dark .separator {
   path {
-    stroke: rgba(lighten($blue, 25%), 0.5);
+    stroke: rgba($black, 0.2);
   }
 }
 

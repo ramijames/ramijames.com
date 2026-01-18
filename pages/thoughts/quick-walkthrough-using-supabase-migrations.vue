@@ -116,9 +116,6 @@ supabase db push
 </template>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
 </style>
 
 <script setup>

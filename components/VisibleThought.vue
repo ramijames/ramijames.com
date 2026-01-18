@@ -17,9 +17,6 @@
 </template>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
 .dark {
   #VisibleThought {
 

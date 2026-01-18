@@ -55,9 +55,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s;
 }

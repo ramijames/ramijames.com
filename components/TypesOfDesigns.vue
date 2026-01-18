@@ -26,9 +26,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-
 #types-of-designs {
   display: flex;
   flex-direction: column;

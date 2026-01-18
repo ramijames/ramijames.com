@@ -36,9 +36,6 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-
 .theme-switcher-box {
   position: relative;
   cursor: pointer;

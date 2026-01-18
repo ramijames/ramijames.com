@@ -30,9 +30,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
 .animBox {
   position:absolute;
   right:0;
@@ -57,7 +54,7 @@ export default {
     @for $i from 0 through 48 {
       $hue: ($i - 1) * calc(360 / 48);
       $color: hsl($hue, 100%, 50%);
-      $mesh-colors: map-merge($mesh-colors, ($i: $color));
+      $mesh-colors: merge($mesh-colors, ($i: $color));
     }
 
     $i: 0;

@@ -31,9 +31,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-
 // .button {
 //   position:relative;
 //   display:flex;

@@ -9,9 +9,6 @@
 </template>
 
 <style lang="scss">
-
-@import './assets/variables';
-
 .default-layout {
   display: flex;
   flex-direction: row;

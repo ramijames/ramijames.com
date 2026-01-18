@@ -196,10 +196,6 @@ const formatDate = (dateString) => {
 </script>
 
 <style scoped lang="scss">
-
-@import './assets/variables';
-@import './assets/animation';
-
 // Loading skeleton styles
 .loading-skeleton {
   display: grid;

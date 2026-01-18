@@ -180,9 +180,6 @@ const products = [
 </script>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
 #Products {
   display: grid;
   grid-template-columns: 1fr 1fr;

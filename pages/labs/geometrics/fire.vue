@@ -5,9 +5,6 @@
 </template>
 
 <style lang="scss" scoped>
-
-@import './assets/variables';
-
 $apple-red: #FF1E49;
 $apple-blue: #2E53F9;
 
@@ -31,7 +28,7 @@ $apple-blue: #2E53F9;
   @for $i from 0 through 15 {
     $hue: ($i - 1) * calc(60 / 16);
     $color: hsl($hue, 20%, 50%);
-    $mesh-colors: map-merge($mesh-colors, ($i: $color));
+    $mesh-colors: merge($mesh-colors, ($i: $color));
   }
 
   $i: 0;
