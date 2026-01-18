@@ -180,11 +180,16 @@ watch(() => props.isOpen, (isOpen) => {
   justify-content: center;
   z-index: 10001;
   padding: $spacing-sm;
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+    min-height: 100vh;
+  }
 }
 
 .modal-content {
   background: $white;
-  border-radius: $br-md;
+  border-radius: $br-lg;
   padding: $spacing-lg;
   max-width: 800px;
   width: 100%;
@@ -192,7 +197,10 @@ watch(() => props.isOpen, (isOpen) => {
   color: $black;
 
   @media screen and (max-width: 768px) {
-    padding: $spacing-md;
+    padding: $spacing-md $spacing-md $spacing-xl $spacing-md;
+    border-radius: 0;
+    height: 100%;
+    overflow-y: auto;
   }
 
   h2 {
@@ -220,8 +228,8 @@ watch(() => props.isOpen, (isOpen) => {
     grid-template-columns: 1fr 1fr;
     gap: $spacing-md;
 
-    @media screen and (max-width: 600px) {
-      flex-direction: column;
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: 1fr;
     }
   }
 }

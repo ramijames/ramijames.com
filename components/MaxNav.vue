@@ -247,6 +247,7 @@ const isHome = computed(() => {
       right: 0px;
       height: 4px;
       background: rgba($black, 1);
+      border: 1.25px solid rgba($white, 1);
       border-radius: 2px;
       transform-origin: 26px 2px;
     }
