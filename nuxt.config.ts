@@ -1,9 +1,4 @@
 export default defineNuxtConfig({
-  nitro: {
-    externals: {
-      inline: ['shiki']
-    }
-  },
   runtimeConfig: {
     resendApiKey: '',
   },
