@@ -1,21 +1,19 @@
 <template>
   <section id="Clients">
     <div class="clients-container w-consistent">
-      <div class="section-title"
-        v-gsap.whenVisible.from="{ opacity: 0, scale: 0.4, duration: 2.5, ease: 'power3.out' }"
-      >These great companies have been some of my favorite clients.</div>
-      <section class="clients" v-gsap.timeline.whenVisible>
-        <img src="/clients/ibm.png" v-gsap.order-1.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
-        <img src="/clients/wpt.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
-        <img src="/clients/microsoft.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
-        <img src="/clients/nvidia.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
-        <img src="/clients/wix.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
-        <img src="/clients/ultra.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
-        <img src="/clients/equitick.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
-        <img src="/clients/zivav.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
-        <img src="/clients/microgaming.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
-        <img src="/clients/qmarkets.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
-        <img src="/clients/tonara.png" v-gsap.add.from="{ opacity: 0, scale: 0.4, delay: 0.2, ease: 'power3.out' }" />
+      <div class="section-title">These great companies have been some of my favorite clients.</div>
+      <section class="clients">
+        <img src="/clients/ibm.png" />
+        <img src="/clients/wpt.png" />
+        <img src="/clients/microsoft.png" />
+        <img src="/clients/nvidia.png" />
+        <img src="/clients/wix.png" />
+        <img src="/clients/ultra.png" />
+        <img src="/clients/equitick.png" />
+        <img src="/clients/zivav.png" />
+        <img src="/clients/microgaming.png" />
+        <img src="/clients/qmarkets.png" />
+        <img src="/clients/tonara.png" />
       </section>
     </div>
   </section>

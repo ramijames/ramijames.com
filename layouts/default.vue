@@ -1,7 +1,7 @@
 <template>
   <main class="default-layout">
     <section class="default-main">
-      <SimpleNav />
+      <MaxNav />
       <!-- <Follow /> -->
       <NuxtPage />
     </section>
@@ -21,10 +21,10 @@
 .dark {
   .default-main {
 
-    &:after {
-      background: linear-gradient(to bottom, rgba($black, 1), transparent);
-      opacity: 0.08;
-    }
+    // &:after {
+    //   background: linear-gradient(to bottom, rgba($black, 1), transparent);
+    //   opacity: 0.08;
+    // }
   }
 }
 
@@ -40,24 +40,24 @@
     padding-top: 0;
   }
 
-  &:after {
-    content:'';
-    width: 100dvw;
-    height: 200px;
-    position: fixed;
-    left: 0;
-    top: 84px;
-    z-index: 3;
-    background: linear-gradient(to bottom, rgba(#cccccc, 1), transparent);
-    backdrop-filter: blur(8px);
-    mask-image: linear-gradient(to top, transparent 0%, $black 90%);
-    pointer-events: none;
-    opacity: 0.2;
+  // &:after {
+  //   content:'';
+  //   width: 100dvw;
+  //   height: 200px;
+  //   position: fixed;
+  //   left: 0;
+  //   top: 84px;
+  //   z-index: 3;
+  //   background: linear-gradient(to bottom, rgba(#cccccc, 1), transparent);
+  //   backdrop-filter: blur(8px);
+  //   mask-image: linear-gradient(to top, transparent 0%, $black 90%);
+  //   pointer-events: none;
+  //   opacity: 0.2;
 
-    @media screen and (max-width: 1000px){
-      height: 100px;
-    }
-  }
+  //   @media screen and (max-width: 1000px){
+  //     height: 100px;
+  //   }
+  // }
 }
 
 </style>

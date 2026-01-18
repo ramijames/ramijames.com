@@ -1,27 +1,21 @@
 <template>
 
-  <div class="work-container w-consistent">
-    <div class="section-title"
-      v-gsap.whenVisible.from="{ opacity: 0, scale: 0.4, duration: 2.5, ease: 'power3.out' }"
-    >I've worked on a lot of interesting products over the years.</div>
-    <section id="LatestWork">
+  <div class="work-container">
+    <!-- <div class="section-title">I've worked on a lot of interesting products over the years.</div> -->
+    <section id="LatestWork" class="w-full">
       <nuxt-link
-          :class="['project', 'w-full', product.class]"
-          v-for="product in products" 
-          :key="product.title" 
+          :class="['project', product.class]"
+          v-for="product in products"
+          :key="product.title"
           :to="product.slug"
-          v-gsap.whenVisible.fromTo="[
-            { opacity: 0, scale: 0.8 }, 
-            { opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' }
-          ]"
         >
         <div class="primary-image" :style="{ backgroundImage: `url(${product.bg})`, backgroundColor: `${product.color}` }">
           <div class="info-title">{{ product.title }}</div>
           <div class="info-description">{{ product.description }}</div>
         </div>
       </nuxt-link>
-      <nuxt-link class="button large blue" to="/products">View all products</nuxt-link>
     </section>
+    <nuxt-link class="button large blue" to="/products">View all products</nuxt-link>
   </div>
 
 </template>
@@ -65,8 +59,9 @@ const products = [
 @import './assets/animation';
 
 .work-container {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
   padding: $spacing-xl 0;
   min-height: 100vh;
   align-items: center;
@@ -101,8 +96,8 @@ const products = [
   position: relative;
   margin: $spacing-md 0 0;
   display: flex;
-  flex-direction: column;
-  gap: $spacing-md;
+  flex-direction: row;
+  gap: $spacing-sm;
   align-items: center;
 
   @media screen and (max-width: 1400px) {

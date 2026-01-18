@@ -1,4 +1,7 @@
 export default defineNuxtConfig({
+  runtimeConfig: {
+    resendApiKey: process.env.RESEND_API_KEY,
+  },
   css: [
     '~/assets/main.scss',
     '~/assets/products.scss',
@@ -30,6 +33,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/google-fonts',
+    "nuxt-lenis",
     '@pinia/nuxt',
     '@nuxt/content',
     "nuxt-newsletter",
@@ -39,8 +43,7 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "nuxt-highcharts",
     "nuxt-gtag",
-    "@nuxt/fonts",
-    "v-gsap-nuxt"
+    "@nuxt/fonts"
   ],
   gtag: {
     id: 'G-N9MEGS1HSD'

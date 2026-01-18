@@ -1,11 +1,11 @@
 <template>
   <div class="theme-switcher-box" @click="toggleTheme">
+    <div class="label">{{ currentTheme }}</div>
     <div class="theme-switcher"
       :class="`${currentTheme}`"
     >
       <img :src="`/${currentTheme}.svg`" alt="theme icon" />
     </div>
-    <div class="label">{{ currentTheme }}</div>
   </div>
 </template>
 
@@ -48,7 +48,6 @@ onMounted(() => {
   display: flex;
   flex-direction: row-reverse;
   gap: 6px;
-  margin: 0 auto;
 
   span {
     background: $white-dark;
@@ -61,11 +60,11 @@ onMounted(() => {
   }
 
   .label {
-    color: rgba($black, 0.7);
-    font-family: $font-family-secondary;
+    color: rgba($white, 0.4);
+    font-family: $font-family-main;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 9px;
+    font-size: $font-size-xs;
     font-weight: 500;
   }
 
@@ -88,7 +87,7 @@ onMounted(() => {
     }
 
     &.light { 
-      background: $blue;
+      background: #534a4a;
 
       img {
         left: 2px;
@@ -97,7 +96,7 @@ onMounted(() => {
     }
 
     &.dark {
-      background: $white;
+      background: #ccc;
 
       img {
         left: 16px;
@@ -110,7 +109,7 @@ onMounted(() => {
 .dark .theme-switcher-box {
 
   .label {
-    color: rgba($white, 0.7);
+    color: rgba($black, 0.4);
   }
 }
 

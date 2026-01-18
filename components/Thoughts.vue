@@ -1,88 +1,113 @@
 <template>
-  
+
   <div class="thoughts-container w-consistent">
-    <!-- Featured Articles Section -->
-    <div v-if="props.featuredArticles && props.featuredArticles.length > 0" class="featured-section">
-      <div class="featured-grid">
-        <nuxt-link 
-          v-for="article in props.featuredArticles" 
-          :key="article.slug"
-          :to="`/thoughts/${article.slug}`" 
-          class="featured-card"
-        >
-          <div class="featured-content">
-            <div class="featured-text">
-              <span class="featured-label">Featured</span>
-              <h2 class="featured-title">{{ article.title }}</h2>
-              <p class="featured-date">{{ formatDate(article.date) }}</p>
+    <!-- Loading skeleton -->
+    <div v-if="!isReady" class="loading-skeleton">
+      <div class="skeleton-featured">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+      <div class="skeleton-filters"></div>
+      <div class="skeleton-grid">
+        <div class="skeleton-card small" v-for="n in 4" :key="n"></div>
+      </div>
+    </div>
+
+    <!-- Main content - only shown after hydration -->
+    <template v-else>
+      <!-- Featured Articles Section -->
+      <div v-if="featuredArticles && featuredArticles.length > 0" class="featured-section fade-in">
+        <div class="featured-grid">
+          <nuxt-link
+            v-for="article in featuredArticles"
+            :key="article.slug"
+            :to="`/thoughts/${article.slug}`"
+            class="featured-card"
+          >
+            <div class="featured-content">
+              <div class="featured-text">
+                <span class="featured-label">Featured</span>
+                <h2 class="featured-title">{{ article.title }}</h2>
+                <p class="featured-date">{{ formatDate(article.date) }}</p>
+              </div>
+              <img v-if="article.image" :key="article.image" :src="article.image" :alt="article.title" class="featured-image" />
             </div>
-            <img v-if="article.image" :src="article.image" :alt="article.title" class="featured-image" />
-          </div>
-        </nuxt-link>
+          </nuxt-link>
+        </div>
       </div>
-    </div>
 
-    <!-- Category Filter Pills -->
-    <div class="filter-container">
-      <button 
-        @click="selectedCategory = null"
-        :class="['filter-pill', { active: selectedCategory === null }]"
-      >
-        All
-      </button>
-      <button 
-        v-for="category in availableCategories" 
-        :key="category"
-        @click="selectedCategory = category"
-        :class="['filter-pill', { active: selectedCategory === category }]"
-      >
-        {{ category }}
-        <span class="count">{{ categorizedArticles[category].length }}</span>
-      </button>
-    </div>
-
-    <div class="search-container">
-      <input 
-        v-model="searchQuery" 
-        type="text" 
-        placeholder="Search articles by title"
-        class="search-input"
-      />
-    </div>
-
-    <div v-if="Object.keys(filteredArticles).length === 0" class="empty-state">
-      <div class="empty-state-content">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="empty-icon">
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="m21 21-4.35-4.35"></path>
-        </svg>
-        <h3>No articles found</h3>
-        <p>Try adjusting your search query or selected category</p>
+      <!-- Category Filter Pills -->
+      <div class="filter-container fade-in">
+        <button
+          @click="selectedCategory = null"
+          :class="['filter-pill', { active: selectedCategory === null }]"
+        >
+          All
+        </button>
+        <button
+          v-for="category in availableCategories"
+          :key="category"
+          @click="selectedCategory = category"
+          :class="['filter-pill', { active: selectedCategory === category }]"
+        >
+          {{ category }}
+          <span class="count">{{ categorizedArticles[category].length }}</span>
+        </button>
       </div>
-    </div>
 
-    <div v-for="(articles, category) in filteredArticles" :key="category" class="category-section">
-      <h3 class="category-title">{{ category }}</h3>
-      <div class="articles-grid">
-        <nuxt-link :to="`/thoughts/${article.slug}`" :key="article.slug" v-for="article in articles" class="article-card">
-          <div class="article-content">
-            <h3 class="article-title">{{ article.title }}</h3>
-            <p class="article-date">{{ formatDate(article.date) }}</p>
-            <img v-if="article.image" :src="article.image" :alt="article.title" class="article-image" />
-          </div>
-        </nuxt-link>
+      <div class="search-container fade-in">
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Search articles by title"
+          class="search-input"
+        />
       </div>
-    </div>
+
+      <div v-if="Object.keys(filteredArticles).length === 0" class="empty-state fade-in">
+        <div class="empty-state-content">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="empty-icon">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <h3>No articles found</h3>
+          <p>Try adjusting your search query or selected category</p>
+        </div>
+      </div>
+
+      <div v-for="(articles, category) in filteredArticles" :key="category" class="category-section fade-in">
+        <h3 class="category-title">{{ category }}</h3>
+        <div class="articles-grid">
+          <nuxt-link :to="`/thoughts/${article.slug}`" :key="article.slug" v-for="article in articles" class="article-card">
+            <div class="article-content">
+              <h3 class="article-title">{{ article.title }}</h3>
+              <p class="article-date">{{ formatDate(article.date) }}</p>
+              <img v-if="article.image" :key="article.image" :src="article.image" :alt="article.title" class="article-image" />
+            </div>
+          </nuxt-link>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 
-const props = defineProps({
-  featuredArticles: Array,
-  articles: Array
-});
+import articles from '~/assets/articles.json'
+
+// Loading state - wait for hydration to complete
+const isReady = ref(false)
+
+onMounted(() => {
+  isReady.value = true
+})
+
+// Get the two latest articles as featured
+const featuredArticles = computed(() => articles.slice(0, 2))
+
+// Get remaining articles (excluding the first two)
+const regularArticles = computed(() => articles.slice(2))
 
 const searchQuery = ref('');
 const selectedCategory = ref(null);
@@ -91,7 +116,7 @@ const selectedCategory = ref(null);
 const categorizedArticles = computed(() => {
   const categories = {};
   
-  props.articles?.forEach(article => {
+  articles?.forEach(article => {
     article.tags.forEach(tag => {
       // Capitalize first letter of tag for display
       const categoryName = tag.charAt(0).toUpperCase() + tag.slice(1);
@@ -175,7 +200,85 @@ const formatDate = (dateString) => {
 @import './assets/variables';
 @import './assets/animation';
 
+// Loading skeleton styles
+.loading-skeleton {
+  display: grid;
+  gap: $spacing-md;
+}
+
+.skeleton-featured {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-lg;
+  border-bottom: 1px solid rgba($black, 0.1);
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skeleton-card {
+  background: linear-gradient(90deg, rgba($black, 0.06) 25%, rgba($black, 0.1) 50%, rgba($black, 0.06) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: $br-sm;
+  min-height: 280px;
+
+  &.small {
+    min-height: 200px;
+  }
+}
+
+.skeleton-filters {
+  height: 36px;
+  width: 60%;
+  background: linear-gradient(90deg, rgba($black, 0.06) 25%, rgba($black, 0.1) 50%, rgba($black, 0.06) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: $br-sm;
+  margin-bottom: $spacing-sm;
+}
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-sm;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// Fade-in animation for content
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .dark {
+  .skeleton-card,
+  .skeleton-filters {
+    background: linear-gradient(90deg, rgba($white, 0.03) 25%, rgba($white, 0.08) 50%, rgba($white, 0.03) 75%);
+    background-size: 200% 100%;
+  }
+
 
   .featured-card {
     border: $border;
@@ -269,6 +372,7 @@ const formatDate = (dateString) => {
 
 .thoughts-container {
   display: grid;
+  min-height: 100vh;
 
   h2 {
     margin: 0;
