@@ -1,10 +1,45 @@
 <template>
   <nav :class="['max-nav', { hidden: isMenuHidden }]">
 
-    <nuxt-link to="/" class="logo-link">
-      <img :src="`/logo-light.svg`" alt="Rami James Logo" v-if="currentTheme == 'dark'" />
-      <img :src="`/logo-dark.svg`" alt="Rami James Logo" v-if="currentTheme == 'light'" />
-    </nuxt-link>
+    <section class="nav-left-section">
+      <!-- Products back button -->
+      <nuxt-link
+          class="go-back"
+          tabindex="0"
+          role="button"
+          v-if="isProductsSubPage"
+          to="/products"
+        >
+        <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="56" height="56" rx="5" stroke="white" stroke-width="2"/>
+          <path d="M28.4706 21.5294L21 29L29 37" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M22 29H38" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </nuxt-link>
+
+      <!-- Thoughts back button -->
+      <nuxt-link
+          class="go-back"
+          tabindex="0"
+          role="button"
+          v-if="isThoughtsSubPage"
+          to="/thoughts"
+        >
+        <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="56" height="56" rx="5" stroke="white" stroke-width="2"/>
+          <path d="M28.4706 21.5294L21 29L29 37" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M22 29H38" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </nuxt-link>
+
+      <!-- Home Logo -->
+      <nuxt-link to="/" class="logo-link">
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="12" width="56" height="56" rx="5" stroke="white" stroke-width="2"/>
+          <path d="M58.4366 37.5324C64.589 37.5324 70.8393 32.7122 72.397 26.7662C73.9547 20.8202 70.2299 16 64.0774 16C60.8389 16 56.9406 17.2481 53.6165 17.9876C48.9405 19.0279 45.2382 20.0175 42.9559 20.6796C41.9705 20.9654 41.1816 20.3134 41.424 19.3882L41.8657 17.7023C42.0919 16.8386 41.4165 16.2057 40.4947 16.4176L13.8693 22.5379C13.2217 22.6867 12.657 23.2159 12.4981 23.8225L12.3932 24.2229C12.2763 24.669 12.4158 25.0808 12.7585 25.3022C13.056 25.4942 13.47 25.5187 13.8782 25.3685L15.7421 24.6832C16.3837 24.4472 17.0092 24.623 17.2593 25.1094L17.3334 25.2534C17.4514 25.4828 17.4743 25.7618 17.3992 26.0485L7.80432 62.6742C7.57899 63.5344 8.24789 64.1665 9.16601 63.961L29.9215 59.313C30.5722 59.1672 31.1421 58.6362 31.3019 58.0263L39.878 25.2897C40.034 24.6941 40.5819 24.1717 41.2177 24.0127L50.9673 21.5744C51.5971 21.4169 52.142 21.6994 52.2488 22.2386C52.2595 22.2936 52.2465 22.3564 52.2069 22.4115C51.2482 23.743 50.523 25.2163 50.117 26.7662C48.5593 32.7122 52.2841 37.5324 58.4366 37.5324Z" stroke="white" stroke-width="2"/>
+        </svg>
+      </nuxt-link>
+    </section>
 
     <section class="nav-right-section">
       <button class="start-project" @click="openContactModal" v-show="!footerCtaVisible">Start Project</button>
@@ -13,7 +48,28 @@
         @click="toggleMenu"
         tabindex="0"
         role="button"
-      ></div>
+        v-if="!state.mobileMenuOpen"
+      >
+        <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-icon">
+          <rect x="1" y="1" width="56" height="56" rx="5" stroke="white" stroke-width="2"/>
+          <path d="M17 19H41" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M17 29H33" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M17 39H41" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div
+        class="menu-close"
+        @click="toggleMenu"
+        tabindex="0"
+        role="button"
+        v-else
+      >
+        <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="close-icon">
+          <rect x="1" y="1" width="56" height="56" rx="5" stroke="white" stroke-width="2"/>
+          <path d="M21 21L37.9706 37.9706" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M37.9707 21L21.0001 37.9706" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
     </section>
 
     <ContactModal :isOpen="isContactModalOpen" @close="closeContactModal" />
@@ -173,19 +229,63 @@ const isHome = computed(() => {
     padding: $spacing-sm;
   }
 
-  .logo-link {
-    display: block;
-    width: 80px;
-    margin: 0;
+  .nav-left-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-sm;
 
-    @media screen and (max-width: 1000px){
-      width: 60px;
+    .go-back {
+      display: block;
+      width: 58px;
+      height: 58px;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      svg {
+        width: 100%;
+        height: auto;
+        display: block;
+
+        rect {
+          transition: stroke 0.3s ease-in-out;
+          stroke: none;
+          fill: $white;
+        }
+
+        path {
+          transition: stroke 0.3s ease-in-out;
+          stroke: $black;
+        }
+      }
     }
 
-    img {
-      width: 100%;
-      height: auto;
+    .logo-link {
       display: block;
+      width: 80px;
+      margin: 0;
+
+      @media screen and (max-width: 1000px){
+        width: 60px;
+      }
+
+      svg {
+        width: 100%;
+        height: auto;
+        display: block;
+
+        rect {
+          fill: $white;
+          stroke: none;
+        }
+
+        path {
+          fill: $black;
+          stroke: none;
+        }
+      }
     }
   }
 
@@ -193,7 +293,7 @@ const isHome = computed(() => {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: $spacing-lg;
+    gap: $spacing-md;
 
     @media screen and (max-width: 1000px){
       transform: scale(0.8);
@@ -209,7 +309,9 @@ const isHome = computed(() => {
       text-decoration: none;
       background: white;
       border: none;
-      padding: calc($spacing-xs + 4px) $spacing-sm $spacing-xs $spacing-sm !important;
+      padding: 0 $spacing-sm !important;
+      height: 54px;
+      border-radius: 5px;
 
       @media screen and (max-width: 1000px){
         display: none;
@@ -237,54 +339,34 @@ const isHome = computed(() => {
     }
   }
 
-  .menu-switch {
-    width: 54px;
-    height: 54px;
+  .menu-switch,
+  .menu-close {
+    width: 56px;
+    height: 56px;
     cursor: pointer;
     position: relative;
 
-    &:after, &:before {
-      content: '';
-      position: absolute;
-      left: 0px;
-      right: 0px;
-      height: 4px;
-      background: rgba($black, 1);
-      border: 1.25px solid rgba($white, 1);
-      border-radius: 2px;
-      transform-origin: 26px 2px;
+    &:hover {
+      transform: scale(1.05);
     }
 
-    &:after {
-      bottom: 12px;
-    }
+    .menu-icon,
+    .close-icon {
+      width: 56px;
+      height: 56px;
+      display: block;
+      transition: transform 0.4s ease-in-out;
 
-    &:before {
-      top: 12px;
-    } 
+      rect {
+        fill: $white;
+        stroke: none;
+        transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+      }
 
-        &:hover:before {
-          top: 14px;
-        }
-
-        &:hover:after {
-          bottom: 14px;
-        }
-
-    &.open:after {
-      bottom: 22px;
-      transform: rotate(45deg);
-      background: white;
-      top: 26px;
-      right: 1px;
-    }
-
-    &.open:before {
-      top: 22px;
-      transform: rotate(-45deg);
-      background: white;
-      top: 26px;
-      left: 1px;
+      path {
+        stroke: $black;
+        transition: stroke 0.3s ease-in-out;
+      }
     }
     
   }
@@ -501,6 +583,37 @@ const isHome = computed(() => {
 
 .dark {
   .max-nav {
+
+    .nav-left-section {
+
+      .go-back {
+
+        svg {
+
+          rect {
+            fill: $black;
+          }
+
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+
+    .logo-link {
+      svg {
+        rect {
+          fill: $white;
+          stroke: none;
+        }
+
+        path {
+          stroke: $black;
+        }
+      }
+    }
+
     .nav-right-section {
       .start-project {
         color: rgba($white, 1);
@@ -516,17 +629,19 @@ const isHome = computed(() => {
       }
     }
 
-    .menu-switch {
-      &:after, &:before {
-        background: rgba($white, 1);
-      }
+    .menu-switch,
+    .menu-close {
+      
+      .menu-icon,
+      .close-icon {
+      
+        rect {
+          fill: $black !important;
+        }
 
-      &.open:after {
-        background: $black;
-      }
-
-      &.open:before {
-        background: $black;
+        path {
+          stroke: $white !important;
+        }
       }
       
     }
