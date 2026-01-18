@@ -33,6 +33,10 @@
       <hr>
 
       <p>We want you to know that our talent team personally reviews each application - we don’t use AI in the process. After carefully reviewing your application, we’re not able to move forward to the interview stage at this time.</p>
+
+      <hr>
+
+      <p>We truly appreciate the time you’ve taken to apply and your interest in being part of our mission.</p>
       <ArticleAddendum />
     </section>
   </main>

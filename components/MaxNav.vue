@@ -7,7 +7,7 @@
     </nuxt-link>
 
     <section class="nav-right-section">
-      <button class="start-project" @click="openContactModal">Start Project</button>
+      <button class="start-project" @click="openContactModal" v-show="!footerCtaVisible">Start Project</button>
       <div
         :class="['menu-switch', state.mobileMenuOpen ? 'open' : '' ]"
         @click="toggleMenu"
@@ -70,9 +70,12 @@ import { useRoute } from 'vue-router';
 import ThemeSwitcher from './ThemeSwitcher.vue';
 import ContactModal from './ContactModal.vue';
 import { useThemeStore } from '~/store/theme';
+import { useUIStore } from '~/store/ui';
 
 const themeStore = useThemeStore()
+const uiStore = useUIStore()
 const currentTheme = computed(() => themeStore.currentTheme)
+const footerCtaVisible = computed(() => uiStore.footerCtaVisible)
 
 const route = useRoute();
 

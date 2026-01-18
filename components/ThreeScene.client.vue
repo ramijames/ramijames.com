@@ -6,6 +6,13 @@
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import * as THREE from 'three'
 
+const props = defineProps({
+  forceDark: {
+    type: Boolean,
+    default: false
+  }
+})
+
 const container = ref(null)
 let scene, camera, renderer, mesh, material, geometry
 let animationId = null
@@ -245,13 +252,15 @@ onMounted(async () => {
   
   if (!checkDimensions()) return
 
-  // Check if dark mode is active
-  const isDarkMode = document.body.classList.contains('light')
-  console.log('Initial dark mode:', isDarkMode) // Debug log
+  // Check if we should use dark appearance
+  // forceDark = true means always use black background with inversion
+  // Otherwise, use dark threescene when site is in light mode
+  const useDarkAppearance = props.forceDark || document.body.classList.contains('light')
+  const shouldInvert = useDarkAppearance  // Invert when using dark appearance
 
   // Scene setup
   scene = new THREE.Scene()
-  scene.background = new THREE.Color(isDarkMode ? 0x000000 : 0xffffff)
+  scene.background = new THREE.Color(useDarkAppearance ? 0x000000 : 0xffffff)
 
   // Camera - positioned to view ocean from above at an angle
   camera = new THREE.PerspectiveCamera(
@@ -292,7 +301,7 @@ onMounted(async () => {
       uAnimationSpeed: { value: .85 }, // Slower for ocean
       uWaveScale: { value: 0.75 }, // Height of waves
       uWaveSpeed: { value: 1.3 }, // Speed of wave movement
-      uInvert: { value: isDarkMode ? 1.0 : 0.0 } // Invert colors for dark mode
+      uInvert: { value: shouldInvert ? 1.0 : 0.0 } // Invert colors when site is in light mode (not forceDark)
     },
     side: THREE.DoubleSide // Render both sides of the plane
   })
@@ -356,25 +365,29 @@ onMounted(async () => {
 
   window.addEventListener('resize', resizeHandler)
 
-  // Watch for dark mode changes
-  darkModeObserver = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.attributeName === 'class') {
-        const isDark = document.body.classList.contains('light')
-        if (material && material.uniforms) {
-          material.uniforms.uInvert.value = isDark ? 1.0 : 0.0
+  // Watch for dark mode changes (skip entirely if forceDark is true)
+  if (!props.forceDark) {
+    darkModeObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          const isLightSite = document.body.classList.contains('light')
+          if (material && material.uniforms) {
+            // When site is light, invert colors (dark threescene)
+            material.uniforms.uInvert.value = isLightSite ? 1.0 : 0.0
+          }
+          if (scene) {
+            // When site is light, use black background (dark threescene)
+            scene.background = new THREE.Color(isLightSite ? 0x000000 : 0xffffff)
+          }
         }
-        if (scene) {
-          scene.background = new THREE.Color(isDark ? 0x000000 : 0xffffff)
-        }
-      }
+      })
     })
-  })
 
-  darkModeObserver.observe(document.body, {
-    attributes: true,
-    attributeFilter: ['class']
-  })
+    darkModeObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    })
+  }
 
   // Animation loop
   const animate = () => {
@@ -391,6 +404,12 @@ onMounted(async () => {
   }
 
   animate()
+
+  // Force dark mode after everything is initialized if forceDark is true
+  if (props.forceDark && material && scene) {
+    scene.background = new THREE.Color(0x000000)
+    material.uniforms.uInvert.value = 0.0  // Invert for dark appearance
+  }
 })
 
 onUnmounted(() => {

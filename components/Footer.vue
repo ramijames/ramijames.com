@@ -1,5 +1,24 @@
 <template>
   <footer>
+    <section ref="ctaSection" class="footer-cta">
+      <ThreeScene :force-dark="true" class="cta-background" />
+      <div class="cta-content">
+        <svg viewBox="0 0 286 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M262 138V145C262 146.105 261.105 147 260 147H3C1.89543 147 1 146.105 1 145V138H262Z" stroke="white" stroke-width="1"/>
+          <path d="M151 138C151 139.105 150.105 140 149 140H114C112.895 140 112 139.105 112 138H151Z" stroke="white" stroke-width="1"/>
+          <path d="M39 1H225C228.866 1 232 4.13401 232 8V137H32V8C32 4.25486 34.9411 1.19633 38.6396 1.00879L39 1Z" stroke="white" stroke-width="1" />
+          <path d="M42 12H222C222.552 12 223 12.4477 223 13V124C223 124.552 222.552 125 222 125H42C41.4477 125 41 124.552 41 124V13C41 12.4477 41.4477 12 42 12Z" stroke="white" stroke-width="1" fill=" black" />
+          <circle cx="132" cy="6" r="1" stroke="white" stroke-width="1"/>
+          <rect x="243" y="36" width="42" height="91" rx="4" stroke="white" fill="black" stroke-width="1"/>
+          <rect x="259" y="39" width="10" height="3" rx="1.5" stroke="white" stroke-width="1"/>
+        </svg>
+
+        <h2>Let's work together</h2>
+        <h3>Have a project in mind? I'd love to hear about it.</h3>
+        <button class="start-project-btn" @click="openContactModal">Start Project</button>
+      </div>
+    </section>
+    <ContactModal :isOpen="isContactModalOpen" @close="closeContactModal" />
     <div class="footer-content w-full">
       <div class="footer-links">
         <section class="footer-social" v-if="currentTheme == 'dark'">
@@ -29,16 +48,31 @@
 
 <script setup>
 import { useThemeStore } from '~/store/theme'
-import { computed, onMounted, watch } from 'vue'
+import { useUIStore } from '~/store/ui'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
+import ContactModal from '~/components/ContactModal.vue'
 
 const themeStore = useThemeStore()
+const uiStore = useUIStore()
 const route = useRoute()
 
 const currentTheme = computed(() => themeStore.currentTheme)
 const isThoughtsSubPage = computed(() => route.path.startsWith('/thoughts/'))
 const notHome = computed(() => route.path !== '/')
+
+const ctaSection = ref(null)
+const isContactModalOpen = ref(false)
+let observer = null
+
+const openContactModal = () => {
+  isContactModalOpen.value = true
+}
+
+const closeContactModal = () => {
+  isContactModalOpen.value = false
+}
 
 onMounted(() => {
   watch(
@@ -51,44 +85,133 @@ onMounted(() => {
     },
     { immediate: true }
   )
+
+  // Set up intersection observer for CTA section
+  if (ctaSection.value) {
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          uiStore.setFooterCtaVisible(entry.isIntersecting)
+        })
+      },
+      { threshold: 0.3 }
+    )
+    observer.observe(ctaSection.value)
+  }
+})
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect()
+  }
 })
 </script>
 
 <style scoped lang="scss">
-.dark {
-  footer {
-    width: 100%;
-    font-family: $font-family-secondary;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    background: $black;
+.footer-cta {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: $black;
 
-    @media screen and (max-width: 768px){
-      align-items: center;
-      flex-direction: column;
-      border-bottom: none;
+  .cta-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(to top, black 45% , rgba($black, 0) 100%, rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to top, black 45% , rgba($black, 0) 100%, rgba(0, 0, 0, 0));
+
+    :deep(.threejs-container) {
+      height: 100%;
+    }
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+    padding: 0 $spacing-md;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: -400px;
+      left: -50;
+      width: 100%;
+      height: 200%;
+      background: linear-gradient(180deg, rgba($black, 0.6) 0%, rgba($black, 0.0) 100%);
+      z-index: -1;
+      filter: blur(380px);
     }
 
-    .footer-content {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0;
+    svg {
+      width: 240px;
+      height: auto;
+    }
 
-      @media screen and (max-width: 768px){
-        align-items: center;
-        flex-direction: column;
+    h2 {
+      font-family: $font-family-main;
+      font-size: clamp(2rem, 5vw, 4rem);
+      color: $white;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-family: $font-family-secondary;
+      margin: 0;
+      color: $white;
+    }
+
+    .start-project-btn {
+      font-family: $font-family-main;
+      font-size: $font-size-lg;
+      font-weight: 600;
+      color: $black;
+      background: $white;
+      border: none;
+      padding: $spacing-sm $spacing-lg;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        background: $black;
+        margin-top: 4px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        transform-origin: left;
+      }
+
+      &:hover {
+        color: rgba($black, 0.6);
+
+        &:after {
+          transform: scaleX(1);
+        }
       }
     }
+  }
+}
 
-    .copyright {
-      font-size: 11px;
-      opacity: 0.3;
-      padding: $spacing-sm;
-    }
+.dark {
+  footer {
+    background: $black;
 
     .footer-links {
       display: flex;
@@ -97,37 +220,10 @@ onMounted(() => {
       align-items: center;
       gap: $spacing-md;
       opacity: 0.7;
-      color: $yellow !important;
-      
-      @media screen and (max-width: 768px){
-        .link {
-          display: none;
-        }
-      }
-      
-      &:hover {
-        opacity: 1;
-      }
-
-      @media screen and (max-width: 1000px){
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: $spacing-sm;
-        opacity: 1;
-        width: 100%;
-      }
+      color: $white !important;
 
       a {
-        text-decoration: none;
-        font-size: $font-size-sm;
-        transition: all 0.5s ease-in-out;
-        font-size: 9px;
-        font-weight: 500;
-        color: $yellow !important;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: $spacing-sm 0;
+        color: $white !important;
 
         &:hover {
           color: rgba($white, 1);
@@ -169,10 +265,10 @@ footer {
   width: 100%;
   font-family: $font-family-secondary;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  background: $yellow;
+  background: $white;
 
   @media screen and (max-width: 1000px){
     align-items: center;
