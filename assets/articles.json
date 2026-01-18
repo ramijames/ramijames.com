@@ -1,5 +1,25 @@
 [
   {
+    "title": "WebGL Shaders with Three.js in Nuxt",
+    "date": "2026-01-18",
+    "slug": "webgl-shaders-with-threejs-in-nuxt",
+    "tags": [
+      "product & design"
+    ],
+    "summary": "Using WebGL shaders in a Nuxt project opens a wide field of possibilities for new effects and subtle visual enhancements.",
+    "image": "/articles/webgl.png"
+  },
+  {
+    "title": "Reactive Grids in Nuxt",
+    "date": "2026-01-18",
+    "slug": "reactive-grids-in-nuxt",
+    "tags": [
+      "product & design"
+    ],
+    "summary": "Build a reactive & responsive grid of SVG elements that respond to mouse movement.",
+    "image": "/articles/reactive-grid.png"
+  },
+  {
     "title": "On Creating Consistent Iconography",
     "date": "2026-01-01",
     "slug": "on-creating-consistent-iconography",

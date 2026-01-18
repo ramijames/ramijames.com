@@ -1,36 +1,48 @@
 <template>
-  
-  <div class="thoughts-container">
-    <div class="section-title">Featured Articles</div>
-    <!-- Featured Articles Section -->
-    <div v-if="props.featuredArticles && props.featuredArticles.length > 0" class="featured-section">
-      <div class="featured-grid">
-        <nuxt-link 
-          v-for="article in props.featuredArticles" 
-          :key="article.slug"
-          :to="`/thoughts/${article.slug}`" 
-          class="featured-card"
-        >
-          <div class="featured-content">
-            <img v-if="article.image" :src="article.image" :alt="article.title" class="featured-image" />
-            <div class="featured-text">
-              <h3 class="featured-title">{{ article.title }}</h3>
-              <p class="featured-date">{{ formatDate(article.date) }}</p>
-            </div>
-          </div>
-        </nuxt-link>
+
+  <div class="thoughts-container w-consistent">
+    <!-- Loading skeleton -->
+    <div v-if="!isReady" class="loading-skeleton">
+      <div class="skeleton-featured">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
       </div>
+    </div>
+
+    <!-- Main content - only shown after hydration -->
+    <div v-else-if="props.featuredArticles && props.featuredArticles.length > 0" class="featured-grid fade-in">
+      <nuxt-link
+        v-for="article in props.featuredArticles"
+        :key="article.slug"
+        :to="`/thoughts/${article.slug}`"
+        class="featured-card"
+      >
+        <div class="featured-content">
+          <img v-if="article.image" :key="article.image" :src="article.image" :alt="article.title" class="featured-image" />
+          <div class="featured-text">
+            <h3 class="featured-title">{{ article.title }}</h3>
+            <p class="featured-date">{{ formatDate(article.date) }}</p>
+          </div>
+        </div>
+      </nuxt-link>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 
 const props = defineProps({
   featuredArticles: Array,
   articles: Array
 });
+
+// Loading state - wait for hydration to complete
+const isReady = ref(false)
+
+onMounted(() => {
+  isReady.value = true
+})
 
 const searchQuery = ref('');
 const selectedCategory = ref(null);
@@ -123,13 +135,56 @@ const formatDate = (dateString) => {
 @import './assets/variables';
 @import './assets/animation';
 
-.thoughts-container {
+// Loading skeleton styles
+.loading-skeleton {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  gap: $spacing-md;
+}
 
-  @media screen and (max-width: 1000px) {
+.skeleton-featured {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-sm;
+
+  @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
   }
+}
+
+.skeleton-card {
+  background: linear-gradient(90deg, rgba($black, 0.06) 25%, rgba($black, 0.1) 50%, rgba($black, 0.06) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: $br-sm;
+  min-height: 280px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// Fade-in animation for content
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.thoughts-container {
 
   .section-title {
     font-size: 2dvw;
@@ -153,34 +208,6 @@ const formatDate = (dateString) => {
     }
   }
 }
-
-// .thoughts-container {
-//   display: grid;
-
-//   h2 {
-//     margin: 0 0 $spacing-md;
-//   }
-
-//   h3 {
-//     margin: 0;
-//     font-size: $font-size-lg;
-
-//     @media screen and (max-width: 768px) {
-//       font-size: $font-size-lg;
-//     }
-//   }
-
-//   h4 {
-//     color: rgba($black, 0.3);
-//     margin: 0;
-//   }
-
-//   hr {
-//     width: 100%;
-//     margin: $spacing-md 0;
-//   }
-
-// }
 
 .filter-container {
   display: flex;
@@ -209,7 +236,12 @@ const formatDate = (dateString) => {
 
 .dark {
   color: $white;
-  
+
+  .skeleton-card {
+    background: linear-gradient(90deg, rgba($white, 0.03) 25%, rgba($white, 0.08) 50%, rgba($white, 0.03) 75%);
+    background-size: 200% 100%;
+  }
+
   .featured-title {
     color: $yellow;
   }
@@ -222,7 +254,6 @@ const formatDate = (dateString) => {
 .featured-card {
   transition: all 0.3s ease;
   text-decoration: none;
-  overflow: hidden;
   min-height: 280px;
 }
 
@@ -236,7 +267,7 @@ const formatDate = (dateString) => {
   
 
   &:hover {
-    transform: translateY(-6px);
+    transform: scale(1.02);
     z-index:1;
   }
 

@@ -15,98 +15,9 @@
 
       <h3>Positioned Elements</h3>
       <p>I think the first step is to try and create a mesh gradient using a combination of four elements with blurs, which we can control their color dominace in a similar fashion to a mesh gradient.</p>
-      <div class="code-type">HTML</div>
-      <pre class="code">
-        <code v-pre>
-    &lt;div id="mesh-gradient" class="four-elements"&gt;
-      &lt;div class="element top-left"&gt;&lt;/div&gt;
-      &lt;div class="element top-right"&gt;&lt;/div&gt;
-      &lt;div class="element bottom-left"&gt;&lt;/div&gt;
-      &lt;div class="element bottom-right"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-        </code>
-      </pre>
+      <CodeBlock :code="htmlCode" lang="html" />
       
-      <div class="code-type">SCSS</div>
-      <pre class="code">
-        <code v-pre>
-    #mesh-gradient.four-elements {
-      width: 100%;
-      height: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      position: relative;
-      background: linear-gradient(180deg, $apple-red 20%, lighten($apple-red, 5%) 35%, $apple-blue 70%);
-
-      .element {
-        position: absolute;
-        border-radius: 100px;
-        filter: blur(200px);
-        transition: background 1s;
-      }
-
-      .top-left {
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 50%;
-        background: $apple-red;
-        opacity: 0;
-        animation: four-elements 10s linear infinite;
-        animation-delay: 0s;
-      }
-
-      .top-right {
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 50%;
-        background: $apple-red;
-        opacity: 0;
-        animation: four-elements 10s linear infinite;
-        animation-delay: -10s;
-      }
-
-      .bottom-left {
-        bottom: 0;
-        left: 0;
-        width: 50%;
-        height: 50%;
-        background: $apple-blue;
-        opacity: 0;
-        animation: four-elements 10s linear infinite;
-        animation-delay: 0;
-      }
-
-      .bottom-right {
-        bottom: 0;
-        right: 0;
-        width: 50%;
-        height: 50%;
-        background: $apple-blue;
-        opacity: 0;
-        animation: four-elements 10s linear infinite;
-        animation-delay: -12.5s;
-      }
-
-      @keyframes four-elements {
-        0% {
-          opacity:0;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(2);
-        }
-        100% {
-          opacity: 0;
-          transform: scale(1);
-        }
-      }
-    }
-        </code>
-      </pre>
+      <CodeBlock :code="scssCode1" lang="scss" />
       <p>What we're doing is:</p>
       <ul>
         <li>Setting a gradient background</li>
@@ -157,80 +68,7 @@
 
       <p>Here's the Sass that generated this.</p>
 
-      <div class="code-type">SCSS</div>
-      <pre class="code">
-        <code v-pre>
-    #mesh-gradient.sixteen-elements {
-      width: 100%;
-      height: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr ;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-      position: relative;
-
-      // generate a linear gradient from the $mesh-colors
-      background: linear-gradient(180deg, $orange 20%, $mint 50%, $purple 80%);
-
-      $mesh-colors: ();
-
-      // generate the colors with an HSL model
-      @for $i from 1 through 32 {
-        $hue: ($i - 1) * calc(360 / 32);
-        $color: hsl($hue, 100%, 50%);
-        $mesh-colors: map-merge($mesh-colors, ($i: $color));
-      }
-
-      $i: 1;
-      @each $name, $color in $mesh-colors {
-        $i: $i + 1;
-        .element:nth-child(#{$i}) {
-          background: $color;
-          animation-delay: -#{$i * 0.625}s;
-        }
-      }
-
-      .element {
-        border-radius: 100px;
-        animation: sixteen-elements 10s linear infinite;
-      }
-
-      &::after {
-        width: 100%;
-        height: 100%;
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: rgba(black, 0.01);
-        backdrop-filter: blur(20px);
-        z-index: 1;
-      }
-
-      &.no-blur {
-        
-        &::after {
-          display:none;
-        }
-
-      }
-
-      @keyframes sixteen-elements {
-        0% {
-          opacity:0;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(1.5);
-        }
-        100% {
-          opacity: 0;
-          transform: scale(1);
-        }
-      }
-    }
-    </code>
-      </pre>
+      <CodeBlock :code="scssCode2" lang="scss" />
 
       <h3>Conclusion</h3>
       <p>So, this is a fun little experiment that I think could be used in a lot of different ways. I think it would be cool to see this used in a more subtle way as a background for a site. I think it could also be used as a loading animation or a background for a hero section. I think the possibilities are endless.</p>
@@ -511,5 +349,158 @@ useSeoMeta({
   twitterImage: '/labs/gradient-mesh.png',
   twitterCard: 'summary_large_image'
 })
+
+// Code examples for the article
+const htmlCode = `<div id="mesh-gradient" class="four-elements">
+  <div class="element top-left"></div>
+  <div class="element top-right"></div>
+  <div class="element bottom-left"></div>
+  <div class="element bottom-right"></div>
+</div>`
+
+const scssCode1 = `#mesh-gradient.four-elements {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  position: relative;
+  background: linear-gradient(180deg, $apple-red 20%, lighten($apple-red, 5%) 35%, $apple-blue 70%);
+
+  .element {
+    position: absolute;
+    border-radius: 100px;
+    filter: blur(200px);
+    transition: background 1s;
+  }
+
+  .top-left {
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background: $apple-red;
+    opacity: 0;
+    animation: four-elements 10s linear infinite;
+    animation-delay: 0s;
+  }
+
+  .top-right {
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background: $apple-red;
+    opacity: 0;
+    animation: four-elements 10s linear infinite;
+    animation-delay: -10s;
+  }
+
+  .bottom-left {
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background: $apple-blue;
+    opacity: 0;
+    animation: four-elements 10s linear infinite;
+    animation-delay: 0;
+  }
+
+  .bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background: $apple-blue;
+    opacity: 0;
+    animation: four-elements 10s linear infinite;
+    animation-delay: -12.5s;
+  }
+
+  @keyframes four-elements {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(2);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+}`
+
+const scssCode2 = `#mesh-gradient.sixteen-elements {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  position: relative;
+
+  // generate a linear gradient from the $mesh-colors
+  background: linear-gradient(180deg, $orange 20%, $mint 50%, $purple 80%);
+
+  $mesh-colors: ();
+
+  // generate the colors with an HSL model
+  @for $i from 1 through 32 {
+    $hue: ($i - 1) * calc(360 / 32);
+    $color: hsl($hue, 100%, 50%);
+    $mesh-colors: map-merge($mesh-colors, ($i: $color));
+  }
+
+  $i: 1;
+  @each $name, $color in $mesh-colors {
+    $i: $i + 1;
+    .element:nth-child(#{$i}) {
+      background: $color;
+      animation-delay: -#{$i * 0.625}s;
+    }
+  }
+
+  .element {
+    border-radius: 100px;
+    animation: sixteen-elements 10s linear infinite;
+  }
+
+  &::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(black, 0.01);
+    backdrop-filter: blur(20px);
+    z-index: 1;
+  }
+
+  &.no-blur {
+    &::after {
+      display: none;
+    }
+  }
+
+  @keyframes sixteen-elements {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+}`
+
 
 </script>

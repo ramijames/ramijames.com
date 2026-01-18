@@ -21,6 +21,18 @@
       <hr>
 
       <p>Unfortunately, we have decided to move forward with other candidates at this time. </p>
+
+      <hr>
+
+      <p>We've been extremely fortunate to have a fantastic response from accomplished candidates such as yourself for this role. However, after careful consideration, we've made the decision to not move forward with the interview process at this time.</p>
+
+      <hr>
+
+      <p>Your resume is in our system for future opportunities, and we hope you'll keep an eye on our careers page. Best of luck with your job search!</p>
+
+      <hr>
+
+      <p>We want you to know that our talent team personally reviews each application - we don’t use AI in the process. After carefully reviewing your application, we’re not able to move forward to the interview stage at this time.</p>
       <ArticleAddendum />
     </section>
   </main>
