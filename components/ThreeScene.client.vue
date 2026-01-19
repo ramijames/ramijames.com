@@ -121,19 +121,27 @@ onMounted(async () => {
   waveGeometry.setAttribute('basePosition', new THREE.BufferAttribute(basePositions, 3))
   waveGeometry.setAttribute('opacity', new THREE.BufferAttribute(opacities, 1))
 
-  // Custom shader for dots with opacity
+  // Custom shader for dots with opacity and mouse interaction
+  const yellowColor = new THREE.Color(0xF8C802)
+
   waveMaterial = new THREE.ShaderMaterial({
     uniforms: {
       uTime: { value: 0 },
       uColor: { value: new THREE.Color(fgColor) },
-      uSize: { value: 4.0 * window.devicePixelRatio }
+      uYellow: { value: yellowColor },
+      uSize: { value: 4.0 * window.devicePixelRatio },
+      uMouse: { value: new THREE.Vector3(0, 0, -1000) },
+      uInfluenceRadius: { value: 20.0 }
     },
     vertexShader: `
       attribute float opacity;
       attribute vec3 basePosition;
       uniform float uTime;
       uniform float uSize;
+      uniform vec3 uMouse;
+      uniform float uInfluenceRadius;
       varying float vOpacity;
+      varying float vMouseInfluence;
 
       void main() {
         vOpacity = opacity;
@@ -147,16 +155,23 @@ onMounted(async () => {
 
         pos.y = wave1 + wave2 + wave3;
 
+        // Calculate mouse influence (distance on xz plane)
+        float mouseDist = length(pos.xz - uMouse.xz);
+        vMouseInfluence = 1.0 - smoothstep(0.0, uInfluenceRadius, mouseDist);
+
         vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
         gl_Position = projectionMatrix * mvPosition;
 
-        // Size attenuation based on distance
-        gl_PointSize = uSize * (15.0 / -mvPosition.z);
+        // Size: 5x at mouse, 1x at edge (attenuates outward)
+        float sizeMultiplier = 1.0 + vMouseInfluence * 4.0;
+        gl_PointSize = uSize * sizeMultiplier * (15.0 / -mvPosition.z);
       }
     `,
     fragmentShader: `
       uniform vec3 uColor;
+      uniform vec3 uYellow;
       varying float vOpacity;
+      varying float vMouseInfluence;
 
       void main() {
         // Circular dot
@@ -164,9 +179,12 @@ onMounted(async () => {
         float dist = length(center);
         if (dist > 0.5) discard;
 
+        // Blend color from base to yellow based on mouse influence
+        vec3 finalColor = mix(uColor, uYellow, vMouseInfluence);
+
         // Soft edge
         float alpha = smoothstep(0.5, 0.3, dist) * vOpacity;
-        gl_FragColor = vec4(uColor, alpha);
+        gl_FragColor = vec4(finalColor, alpha);
       }
     `,
     transparent: true,
@@ -178,6 +196,23 @@ onMounted(async () => {
 
   // Render once immediately
   renderer.render(scene, camera)
+
+  // Raycaster for mouse to world conversion
+  const raycaster = new THREE.Raycaster()
+  const mousePlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0)
+  const mouseWorldPos = new THREE.Vector3(0, 0, -1000)
+
+  // Mouse interaction
+  mouseHandler = (event) => {
+    const rect = container.value.getBoundingClientRect()
+    mouseTarget.x = ((event.clientX - rect.left) / rect.width) * 2 - 1
+    mouseTarget.y = -((event.clientY - rect.top) / rect.height) * 2 + 1
+
+    raycaster.setFromCamera(new THREE.Vector2(mouseTarget.x, mouseTarget.y), camera)
+    raycaster.ray.intersectPlane(mousePlane, mouseWorldPos)
+  }
+
+  container.value.addEventListener('mousemove', mouseHandler)
 
   // Handle resize
   resizeHandler = () => {
@@ -219,8 +254,13 @@ onMounted(async () => {
   const animate = () => {
     animationId = requestAnimationFrame(animate)
 
+    // Smooth mouse movement
+    mouseSmooth.x += (mouseWorldPos.x - mouseSmooth.x) * 0.15
+    mouseSmooth.y += (mouseWorldPos.z - mouseSmooth.y) * 0.15
+
     if (waveMaterial) {
       waveMaterial.uniforms.uTime.value += 0.016
+      waveMaterial.uniforms.uMouse.value.set(mouseSmooth.x, 0, mouseSmooth.y)
     }
 
     if (renderer && scene && camera) {
@@ -242,6 +282,10 @@ onMounted(async () => {
 onUnmounted(() => {
   if (resizeHandler) {
     window.removeEventListener('resize', resizeHandler)
+  }
+
+  if (container.value && mouseHandler) {
+    container.value.removeEventListener('mousemove', mouseHandler)
   }
 
   if (darkModeObserver) {
