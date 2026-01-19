@@ -9,6 +9,11 @@
 <script setup lang="ts">
 const route = useRoute()
 const { getLenis } = useLenis()
+const { initialize: initHotjar } = useHotjar()
+
+onMounted(() => {
+  initHotjar()
+})
 
 const LenisOptions = {
   smooth: true,

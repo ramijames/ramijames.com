@@ -37,6 +37,10 @@
       <hr>
 
       <p>We truly appreciate the time you’ve taken to apply and your interest in being part of our mission.</p>
+
+      <hr>
+
+      <p>After careful consideration, we have chosen to proceed with other candidates at this time. Please know that your interest in our company is valued, and we want to keep your resume and contact information on file in case a future opportunity arises that aligns with your skills and qualifications.</p>
       <ArticleAddendum />
     </section>
   </main>
