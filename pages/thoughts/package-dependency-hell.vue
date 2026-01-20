@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Package dependency hell" slug="/thoughts/package-dependency-hell" />
   <PageHeader title="Package dependency hell" />
   <main class="w-content page-top">
     <section class="content">

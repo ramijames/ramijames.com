@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="The Cost of Translation" slug="/thoughts/a-partner-not-a-vendor" />
   <PageHeader title="The Cost of Translation" tagline="How Product teams assist in product failure" />
   <main class="w-content page-top">
     <section class="content">

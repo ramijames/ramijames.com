@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Asking for help is a core developer skill" slug="/thoughts/asking-for-help-is-a-core-skill" />
   <PageHeader title="Asking for help is a core developer skill" />
   <main class="w-content page-top">
     <section class="content">

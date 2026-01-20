@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Quick Walkthrough on Using Supabase Migrations" slug="/thoughts/quick-walkthrough-using-supabase-migrations" />
   <PageHeader title="Quick Walkthrough on Using Supabase Migrations" />
   <main class="w-content page-top">
     <section class="content">

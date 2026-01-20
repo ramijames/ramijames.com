@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Peak software abuse" slug="/thoughts/peak-software-abuse" />
   <PageHeader title="Peak software abuse" />
   <main class="w-content page-top">
     <section class="content">

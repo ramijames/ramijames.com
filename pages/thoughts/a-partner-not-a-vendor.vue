@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="A Partner, Not a Vendor" slug="/thoughts/a-partner-not-a-vendor" />
   <PageHeader title="A Partner, Not a Vendor" />
   <main class="w-content page-top">
     <section class="content">

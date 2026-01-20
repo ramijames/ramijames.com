@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="On Creating Consistent Iconography" slug="/thoughts/on-creating-consistent-iconography" />
   <PageHeader title="On Creating Consistent Iconography" tagline="How a few simple rules can help your designs pop" />
   <main class="w-content page-top">
     <section class="content">

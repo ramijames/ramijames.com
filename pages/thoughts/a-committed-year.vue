@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="A Committed Year" slug="/thoughts/a-committed-year" />
   <PageHeader title="A Committed Year" />
   <main class="w-content page-top">
     <section class="content">

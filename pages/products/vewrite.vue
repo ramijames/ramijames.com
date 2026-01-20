@@ -1,7 +1,4 @@
 <template>
-
-  <ProjectsHeader project="vewrite" logo="ve-logo.svg" />
-
   <section class="w-project">
 
     <ProjectsOverview

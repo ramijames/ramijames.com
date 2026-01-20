@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Quantifying your documentation's success" slug="/thoughts/quantifying-your-documentations-success" />
   <PageHeader title="Quantifying your documentation's success" />
   <main class="w-content page-top">
     <section class="content">

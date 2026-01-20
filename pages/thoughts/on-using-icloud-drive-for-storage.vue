@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="On Using iCloud Drive for Storage" slug="/thoughts/on-using-icloud-drive-for-storage" />
   <PageHeader title="On Using iCloud Drive for Storage" />
   <main class="w-content page-top">
     <section class="content">

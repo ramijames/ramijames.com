@@ -1,5 +1,6 @@
 <template>
-  <Teleport to="body">
+  <ClientOnly>
+    <Teleport to="body">
     <Transition name="modal">
       <div v-if="isOpen" class="modal-backdrop" @click.self="closeModal">
         <div class="modal-content">
@@ -78,7 +79,8 @@
         </div>
       </div>
     </Transition>
-  </Teleport>
+    </Teleport>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">

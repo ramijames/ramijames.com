@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Neurodiversity as software incompatibility" slug="/thoughts/neurodiversity-as-software-incompatibility" />
   <PageHeader title="Neurodiversity as software incompatibility" />
   <main class="w-content page-top">
     <section class="content">

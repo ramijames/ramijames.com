@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Docs Deserve More Respect" slug="/thoughts/docs-deserve-more-respect" />
   <PageHeader title="Docs Deserve More Respect" />
   <main class="w-content page-top">
     <section class="content">

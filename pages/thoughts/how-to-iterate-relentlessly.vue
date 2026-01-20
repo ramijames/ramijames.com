@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Iterate relentlessly" slug="/thoughts/how-to-iterate-relentlessly" />
   <PageHeader title="Iterate relentlessly" />
   <main class="w-content page-top">
     <section class="content">

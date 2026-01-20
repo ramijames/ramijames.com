@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Use Verbose Comments" slug="/thoughts/use-verbose-comments" />
   <PageHeader title="Use Verbose Comments" />
   <main class="w-content page-top">
     <section class="content">

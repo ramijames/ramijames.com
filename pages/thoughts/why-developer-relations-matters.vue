@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Why Developer Relations Matters" slug="/thoughts/why-developer-relations-matters" />
   <PageHeader title="Why Developer Relations Matters" />
   <main class="w-content page-top">
     <section class="content">

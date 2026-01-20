@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Supabase email authentication with Google Workspace" slug="/thoughts/supabase-email-authentication-with-google-workspace" />
   <PageHeader title="Supabase email authentication with Google Workspace" />
   <main class="w-content page-top">
     <section class="content">

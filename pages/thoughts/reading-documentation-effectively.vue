@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Reading Documentation Effectively" slug="/thoughts/reading-documentation-effectively" />
   <PageHeader title="Reading Documentation Effectively" />
   <main class="w-content page-top">
     <section class="content">

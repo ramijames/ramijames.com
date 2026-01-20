@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Types of Interview Scams" slug="/thoughts/types-of-interview-scams" />
   <PageHeader title="Types of Interview Scams" />
   <main class="w-content page-top">
     <section class="content">

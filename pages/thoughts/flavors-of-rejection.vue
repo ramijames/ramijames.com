@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="Flavors of Rejection" slug="/thoughts/flavors-of-rejection" />
   <PageHeader title="Flavors of Rejection" />
   <main class="w-content page-top">
     <section class="content">

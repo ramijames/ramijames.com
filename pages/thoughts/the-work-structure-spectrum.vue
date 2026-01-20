@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="The Work Structure Spectrum" slug="/thoughts/the-work-structure-spectrum" />
   <PageHeader title="The Work Structure Spectrum" />
   <main class="w-content page-top">
     <section class="content">

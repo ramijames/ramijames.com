@@ -1,7 +1,9 @@
 <template>
   <footer>
     <section ref="ctaSection" class="footer-cta">
-      <ThreeScene :force-dark="true" class="cta-background" />
+      <ClientOnly>
+        <ThreeScene :force-dark="true" class="cta-background" />
+      </ClientOnly>
       <div class="cta-content">
         <svg viewBox="0 0 286 148" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M262 138V145C262 146.105 261.105 147 260 147H3C1.89543 147 1 146.105 1 145V138H262Z" stroke="white" stroke-width="1"/>
@@ -21,16 +23,19 @@
     <ContactModal :isOpen="isContactModalOpen" @close="closeContactModal" />
     <div class="footer-content w-full">
       <div class="footer-links">
-        <section class="footer-social" v-if="currentTheme == 'dark'">
-          <a href="https://github.com/ramijames"><img src="/github-dark.svg" alt="Github" /></a>
-          <a href="https://www.linkedin.com/in/rami-james/"><img src="/linkedin-dark.svg" alt="LinkedIn" /></a>
-          <a href="mailto:ramijames@gmail.com"><img src="/mail-dark.svg" alt="Send Rami an email" /></a>
-        </section>
-
-        <section class="footer-social" v-else>
-          <a href="https://github.com/ramijames"><img src="/github-light.svg" alt="Github" /></a>
-          <a href="https://www.linkedin.com/in/rami-james/"><img src="/linkedin-light.svg" alt="LinkedIn" /></a>
-          <a href="mailto:ramijames@gmail.com"><img src="/mail-light.svg" alt="Send Rami an email" /></a>
+        <section class="footer-social">
+          <a href="https://github.com/ramijames">
+            <img class="icon-dark" src="/github-dark.svg" alt="Github" />
+            <img class="icon-light" src="/github-light.svg" alt="Github" />
+          </a>
+          <a href="https://www.linkedin.com/in/rami-james/">
+            <img class="icon-dark" src="/linkedin-dark.svg" alt="LinkedIn" />
+            <img class="icon-light" src="/linkedin-light.svg" alt="LinkedIn" />
+          </a>
+          <a href="mailto:ramijames@gmail.com">
+            <img class="icon-dark" src="/mail-dark.svg" alt="Send Rami an email" />
+            <img class="icon-light" src="/mail-light.svg" alt="Send Rami an email" />
+          </a>
         </section>
         <!-- <nuxt-link class="link" href="/" v-if="notHome">Home</nuxt-link>
         <nuxt-link class="link" href="/thoughts">Thoughts</nuxt-link>
@@ -49,18 +54,11 @@
 <script setup>
 import { useThemeStore } from '~/store/theme'
 import { useUIStore } from '~/store/ui'
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
-import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import ContactModal from '~/components/ContactModal.vue'
 
 const themeStore = useThemeStore()
 const uiStore = useUIStore()
-const route = useRoute()
-
-const currentTheme = computed(() => themeStore.currentTheme)
-const isThoughtsSubPage = computed(() => route.path.startsWith('/thoughts/'))
-const notHome = computed(() => route.path !== '/')
 
 const ctaSection = ref(null)
 const isContactModalOpen = ref(false)
@@ -111,13 +109,13 @@ onUnmounted(() => {
 .footer-cta {
   position: relative;
   width: 100%;
-  height: 60vh;
   min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: $black;
+  padding: $spacing-xl 0;
 
   .cta-background {
     position: absolute;
@@ -142,7 +140,7 @@ onUnmounted(() => {
     flex-direction: column;
     align-items: center;
     gap: $spacing-md;
-    padding: 0 $spacing-md;
+    padding: $spacing-md;
 
     &:after {
       content: '';
@@ -157,7 +155,7 @@ onUnmounted(() => {
     }
 
     svg {
-      width: 240px;
+      width: 20vh;
       height: auto;
     }
 
@@ -166,13 +164,15 @@ onUnmounted(() => {
       font-size: clamp(2rem, 5vw, 4rem);
       color: $white;
       margin: 0;
-      line-height: 1.2;
+      text-shadow: 0 10px 20px rgba($black, 0.8);
     }
 
     h3 {
       font-family: $font-family-secondary;
       margin: 0;
       color: $white;
+      line-height: 1.2;
+      text-shadow: 0 10px 20px rgba($black, 0.8);
     }
 
     .start-project-btn {
@@ -257,6 +257,13 @@ onUnmounted(() => {
           width: 30px;
         }
       }
+    }
+
+    .icon-dark {
+      display: block;
+    }
+    .icon-light {
+      display: none;
     }
   }
 }
@@ -355,7 +362,7 @@ footer {
       border-bottom: 1px solid rgba($black, 0.2);
       width: 100%;
     }
-    
+
     &:hover {
       opacity: 1;
     }
@@ -365,6 +372,14 @@ footer {
         width: 30px;
       }
     }
+  }
+
+  // Theme-based icon visibility (light theme default)
+  .icon-dark {
+    display: none;
+  }
+  .icon-light {
+    display: block;
   }
 }
 

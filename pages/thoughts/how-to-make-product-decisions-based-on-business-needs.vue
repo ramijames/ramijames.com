@@ -1,5 +1,4 @@
 <template>
-  <ThoughtsHeader title="How to Make Product Decisions based on Business Needs" slug="/thoughts/how-to-make-product-decisions-based-on-business-needs" />
   <PageHeader title="How to Make Product Decisions based on Business Needs" />
   <main class="w-content page-top">
     <section class="content">
