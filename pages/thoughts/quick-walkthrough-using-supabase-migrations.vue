@@ -112,6 +112,7 @@ supabase db push
         <p>This should give you a quick start with creating and managing migrations using Supabase. Happy coding!</p>
     </section>
   </main>
+  <PostsExtras />
   <Footer />
 </template>
 
