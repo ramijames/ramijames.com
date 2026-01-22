@@ -40,7 +40,8 @@
     </section>
 
     <section class="nav-right-section">
-      <button class="start-project white" @click="openContactModal" v-show="!footerCtaVisible">Start Project</button>
+      <button class="start-project" @click="openContactModal" v-show="!footerCtaVisible">Start Project</button>
+      <ThemeSwitcher />
       <div
         :class="['menu-switch', state.mobileMenuOpen ? 'open' : '' ]"
         @click="toggleMenu"
@@ -106,10 +107,6 @@
             <a href="https://dribbble.com/ramijames">Dribbble</a>
             <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>
           </section>
-          <div class="theme-switcher">
-            <h3>Theme</h3>
-            <theme-switcher />
-          </div>
         </section>
       </section>
     </section>
@@ -296,7 +293,7 @@ const isHome = computed(() => {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: $spacing-md;
+    gap: $spacing-sm;
     background: $white;
     border-radius: $br-md;
     corner-shape: squircle(8%);
@@ -311,14 +308,6 @@ const isHome = computed(() => {
 
       @media screen and (max-width: 1000px){
         display: none;
-      }
-
-      &:hover {
-        color: rgba($black, 0.6);
-
-        &:after {
-          transform: scaleX(1);
-        }
       }
     }
   }
@@ -569,6 +558,7 @@ const isHome = computed(() => {
   .max-nav {
 
     .nav-left-section {
+      background: $black;
 
       .go-back {
 
@@ -593,12 +583,14 @@ const isHome = computed(() => {
         }
 
         path {
-          stroke: $black;
+          fill: $white;
         }
       }
     }
 
     .nav-right-section {
+      background: $black;
+
       .start-project {
         color: rgba($white, 1);
         background: $black;

@@ -1,6 +1,6 @@
 <template>
   <div class="theme-switcher-box" @click="toggleTheme">
-    <div class="label">{{ currentTheme }}</div>
+    <!-- <div class="label">{{ currentTheme }}</div> -->
     <div class="theme-switcher"
       :class="`${currentTheme}`"
     >
@@ -57,7 +57,7 @@ onMounted(() => {
   }
 
   .label {
-    color: rgba($white, 0.4);
+    color: rgba($black, 0.4);
     font-family: $font-family-main;
     text-transform: uppercase;
     letter-spacing: 1px;
