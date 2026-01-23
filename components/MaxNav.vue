@@ -207,16 +207,6 @@ const isHome = computed(() => {
 
 <style scoped lang="scss">
 .max-nav {
-  padding: $spacing-md;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
 
   @media screen and (max-width: 1000px){
     padding: $spacing-sm;
@@ -232,6 +222,10 @@ const isHome = computed(() => {
     border-radius: $br-md;
     corner-shape: squircle(8%);
     padding: 0 $spacing-sm;
+    position: fixed;
+    top: $spacing-sm;
+    left: $spacing-sm;
+    z-index: 100;
 
     .go-back {
       display: block;
@@ -298,6 +292,10 @@ const isHome = computed(() => {
     border-radius: $br-md;
     corner-shape: squircle(8%);
     padding: 0 $spacing-sm;
+    position: fixed;
+    top: $spacing-sm;
+    right: $spacing-sm;
+    z-index: 100;
 
     .start-project {
       font-family: $font-family-main;
