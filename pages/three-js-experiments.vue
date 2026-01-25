@@ -94,12 +94,15 @@
 </style>
 
 <script setup>
-import { ref, computed, markRaw } from 'vue'
+import { ref, computed, markRaw, watch } from 'vue'
 import EnvMap from '~/components/threejs/EnvMap.client.vue'
 import ThreeScene from '~/components/ThreeScene.client.vue'
 import DigitalOcean from '~/components/threejs/DigitalOcean.client.vue'
 import PerlinNoiseLines from '~/components/threejs/PerlinNoiseLines.client.vue'
 import Threedarray from '~/components/threejs/Threedarray.client.vue'
+
+const route = useRoute()
+const router = useRouter()
 
 // Use the viewer layout for this page
 definePageMeta({
@@ -140,7 +143,21 @@ const experiments = [
   }
 ]
 
-const selectedExperiment = ref(experiments[0].id)
+// Get initial experiment from URL query param, fallback to first experiment
+const getInitialExperiment = () => {
+  const queryExperiment = route.query.experiment
+  if (queryExperiment && experiments.find(e => e.id === queryExperiment)) {
+    return queryExperiment
+  }
+  return experiments[0].id
+}
+
+const selectedExperiment = ref(getInitialExperiment())
+
+// Update URL when experiment changes
+watch(selectedExperiment, (newExperiment) => {
+  router.replace({ query: { experiment: newExperiment } })
+})
 
 const currentExperiment = computed(() =>
   experiments.find(e => e.id === selectedExperiment.value)
