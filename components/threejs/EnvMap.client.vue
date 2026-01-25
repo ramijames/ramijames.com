@@ -66,6 +66,9 @@ const init = () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   renderer.toneMapping = THREE.ACESFilmicToneMapping
   renderer.toneMappingExposure = 1
+  renderer.shadowMap.enabled = true
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap
+
   container.value.appendChild(renderer.domElement)
   
   // Create gradient background using canvas texture
@@ -79,55 +82,27 @@ const init = () => {
   ctx.fillStyle = gradient
   ctx.fillRect(0, 0, 2, 256)
 
-  // const grid = new THREE.GridHelper(
-  //   10,   // size
-  //   100,   // divisions
-  //   0x888888, // center line color
-  //   0x444444  // grid color
-  // );
-
-  const gridMaterial = new THREE.ShaderMaterial({
-    uniforms: {
-      uColor: { value: new THREE.Color(0xcccccc) },
-      uBg: { value: new THREE.Color(0x000000) },
-      uScale: { value: 40.0 },
-      uLineWidth: { value: 0.03 }
-    },
-    vertexShader: `
-      varying vec2 vUv;
-      void main() {
-        vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-      }
-    `,
-    fragmentShader: `
-      varying vec2 vUv;
-      uniform vec3 uColor;
-      uniform vec3 uBg;
-      uniform float uScale;
-      uniform float uLineWidth;
-
-      float grid(vec2 uv) {
-        vec2 g = abs(fract(uv * uScale - 0.5) - 0.5);
-        vec2 line = step(g, vec2(uLineWidth));
-        return max(line.x, line.y);
-      }
-
-      void main() {
-        float g = grid(vUv);
-        vec3 color = mix(uBg, uColor, g);
-        gl_FragColor = vec4(color, 1.0);
-      }
-    `
-  });
-
   // Add a plane that has a mesh and no color
   const planeGeometry = new THREE.PlaneGeometry(10, 10)
-  // const planeMaterial = new THREE.MeshBasicMaterial({ color: 0x000000, side: THREE.DoubleSide, wireframe: true })
-  const planeMesh = new THREE.Mesh(planeGeometry, gridMaterial)
-  planeMesh.position.z = -5
-  planeMesh.rotation.x = -20
+  const planeMaterial = new THREE.MeshStandardMaterial({ color: 0xcccccc, side: THREE.DoubleSide, wireframe: false })
+  const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial)
+
+  // Make sure this can receive shadows
+  planeMesh.receiveShadow = true
+  planeMesh.position.y = -2
+  planeMesh.rotation.x = -Math.PI / 2
   scene.add(planeMesh)
+
+  // Add a light above the mesh that casts soft shadows
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+  directionalLight.position.set(5, 10, 7.5)
+  directionalLight.castShadow = true
+  directionalLight.shadow.mapSize.width = 1024
+  directionalLight.shadow.mapSize.height = 1024
+  directionalLight.shadow.camera.near = 0.5
+  directionalLight.shadow.camera.far = 50
+  directionalLight.castShadow = true
+  scene.add(directionalLight)
 
   const gradientTexture = new THREE.CanvasTexture(canvas)
   gradientTexture.magFilter = THREE.LinearFilter
@@ -148,6 +123,7 @@ const init = () => {
     roughness: 0.1
   })
   mesh = new THREE.Mesh(geometry, material)
+  mesh.castShadow = true
   scene.add(mesh)
 
   // Handle resize
@@ -202,7 +178,7 @@ onUnmounted(() => {
 .envmap-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .controls {

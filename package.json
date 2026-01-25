@@ -27,6 +27,7 @@
     "nuxt-newsletter": "^0.2.0",
     "pinia": "^2.1.7",
     "resend": "^6.7.0",
+    "simplex-noise": "^4.0.3",
     "three": "^0.182.0",
     "three-stdlib": "^2.36.1",
     "vue": "^3.4.21",
