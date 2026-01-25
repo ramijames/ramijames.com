@@ -100,6 +100,7 @@ import ThreeScene from '~/components/ThreeScene.client.vue'
 import DigitalOcean from '~/components/threejs/DigitalOcean.client.vue'
 import PerlinNoiseLines from '~/components/threejs/PerlinNoiseLines.client.vue'
 import Threedarray from '~/components/threejs/Threedarray.client.vue'
+import Mandelbulb from '~/components/threejs/Mandelbulb.client.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -140,6 +141,12 @@ const experiments = [
     label: '3d array',
     description: 'A 3d array of rounded cubes.',
     component: markRaw(Threedarray)
+  },
+  {
+    id: 'mandelbulb',
+    label: 'Mandelbulb',
+    description: 'A 3d fractal.',
+    component: markRaw(Mandelbulb)
   }
 ]
 
