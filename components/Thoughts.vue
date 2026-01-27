@@ -507,6 +507,7 @@ const formatDate = (dateString) => {
   cursor: pointer;
   transition: all 0.2s;
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: $spacing-xs;
   box-shadow: none;

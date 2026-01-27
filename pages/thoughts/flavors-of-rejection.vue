@@ -40,6 +40,10 @@
       <hr>
 
       <p>After careful consideration, we have chosen to proceed with other candidates at this time. Please know that your interest in our company is valued, and we want to keep your resume and contact information on file in case a future opportunity arises that aligns with your skills and qualifications.</p>
+
+      <hr>
+
+      <p>After careful consideration, we have decided not to move forward with your application for this position. We are committed to maintaining an honest and supportive recruitment process, while this opportunity wasn’t the right fit, we value your interest.</p>
       <ArticleAddendum />
     </section>
   </main>

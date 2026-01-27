@@ -1,46 +1,51 @@
 <template>
 
-  <div class="thoughts-container w-consistent">
-    <!-- Loading skeleton -->
-    <div v-if="!isReady" class="loading-skeleton">
-      <div class="skeleton-featured">
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
+  <section class="w-consistent">
+    <h2>Other Thoughts</h2>
+    <div class="thoughts-container">
+      <!-- Loading skeleton -->
+      <div v-if="!isReady" class="loading-skeleton">
+        <div class="skeleton-featured">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+      </div>
+
+      <!-- Main content - only shown after hydration -->
+      <div v-else-if="randomArticles.length > 0" class="featured-grid fade-in">
+        <nuxt-link
+          v-for="article in randomArticles"
+          :key="article.slug"
+          :to="`/thoughts/${article.slug}`"
+          class="featured-card"
+        >
+          <div class="featured-content">
+            <img v-if="article.image" :key="article.image" :src="article.image" :alt="article.title" class="featured-image" />
+            <div class="featured-text">
+              <h3 class="featured-title">{{ article.title }}</h3>
+            </div>
+          </div>
+        </nuxt-link>
       </div>
     </div>
-
-    <!-- Main content - only shown after hydration -->
-    <div v-else-if="props.featuredArticles && props.featuredArticles.length > 0" class="featured-grid fade-in">
-      <nuxt-link
-        v-for="article in props.featuredArticles"
-        :key="article.slug"
-        :to="`/thoughts/${article.slug}`"
-        class="featured-card"
-      >
-        <div class="featured-content">
-          <img v-if="article.image" :key="article.image" :src="article.image" :alt="article.title" class="featured-image" />
-          <div class="featured-text">
-            <h3 class="featured-title">{{ article.title }}</h3>
-            <p class="featured-date">{{ formatDate(article.date) }}</p>
-          </div>
-        </div>
-      </nuxt-link>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
 import { computed, ref, onMounted } from 'vue';
 
 const props = defineProps({
-  featuredArticles: Array,
   articles: Array
 });
 
 // Loading state - wait for hydration to complete
 const isReady = ref(false)
+const randomArticles = ref([])
 
 onMounted(() => {
+  // Pick 4 random articles on client to avoid SSR/hydration mismatch
+  const shuffled = [...(props.articles || [])].sort(() => Math.random() - 0.5)
+  randomArticles.value = shuffled.slice(0, 6)
   isReady.value = true
 })
 
@@ -139,8 +144,12 @@ const formatDate = (dateString) => {
 
 .skeleton-featured {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: $spacing-sm;
+
+  @media screen and (max-width: 1400px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -218,13 +227,13 @@ const formatDate = (dateString) => {
 
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: $spacing-sm;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
 
   @media screen and (max-width: 1400px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -239,7 +248,7 @@ const formatDate = (dateString) => {
   }
 
   .featured-title {
-    color: $yellow;
+    color: $white;
   }
 
   .featured-image {
@@ -256,7 +265,7 @@ const formatDate = (dateString) => {
 .featured-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100%;
   gap: $spacing-md;
   transition: all 0.3s ease;
@@ -284,13 +293,14 @@ const formatDate = (dateString) => {
 }
 
 .featured-title {
-  font-size: $font-size-xxl;
+  font-size: $font-size-md;
   color: $black;
-  line-height: 1;
+  line-height: 1.4;
   margin: 0;
+  text-align: center;
 
   @media screen and (max-width: 768px) {
-    font-size: $font-size-xl;
+    font-size: $font-size-lg;
   }
 }
 
@@ -306,7 +316,7 @@ const formatDate = (dateString) => {
   border-radius: $br-sm;
   border: 1px solid rgba($black, 0.2);
   object-fit: cover;
-  max-height: 300px;
+  max-height: 200px;
 }
 
 

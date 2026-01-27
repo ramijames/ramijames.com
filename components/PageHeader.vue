@@ -30,13 +30,14 @@ const props = defineProps({
 
   h3 {
     text-wrap: balance;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
     text-transform: initial;
     opacity: 0.4;
     font-weight: 500;
     padding: 0 $spacing-md;
     line-height: 110%;
+    max-width: 800px;
 
     @media screen and (max-width: 1180px) {
       max-width: 100%;

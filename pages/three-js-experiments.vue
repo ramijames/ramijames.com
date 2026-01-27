@@ -148,12 +148,6 @@ const experiments = [
     label: 'Mandelbulb',
     description: 'A 3d fractal.',
     component: markRaw(Mandelbulb)
-  },
-  {
-    id: 'sdf',
-    label: 'SDF',
-    description: 'SDF volume experiment.',
-    component: markRaw(SDF)
   }
 ]
 

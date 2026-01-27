@@ -202,7 +202,7 @@ h1 {
 h2 { 
   font-size: $font-size-xxl;
   line-height: $font-size-xxl;
-  margin-bottom: $spacing-xs;
+  margin-bottom: $spacing-md;
   font-weight: 500;
 
   @media screen and (max-width: 1000px) {
@@ -218,7 +218,7 @@ h2 {
 h3 { 
   font-size: $font-size-lg * 1.2; 
   line-height: 140%; 
-  margin-top: $spacing-md;
+  margin-top: $spacing-lg;
   margin-bottom: $spacing-sm;
   font-weight: 500;
 
@@ -228,13 +228,9 @@ h3 {
   }
 }
 
-.content h3 {
-  margin-top: $spacing-lg;
-}
-
 h4 { 
-  font-size: $font-size-md; 
-  line-height: 140%;  
+  font-size: $font-size-lg;
+  line-height: 110%;  
   margin: $spacing-md 0 $spacing-sm;
 
   .highlight {
@@ -259,11 +255,11 @@ h4 {
 }
 
 h5 { 
-  font-size: $font-size-md; 
+  font-size: $font-size-sm; 
+  font-weight: bold;
   line-height: $font-size-md * $multiplier; 
   font-family: $font-family-main;
-  margin-top: $spacing-md;
-  margin-bottom: $spacing-sm;
+  margin-bottom: $spacing-xs;
   line-height: $spacing-md;
 
   @media screen and (max-width: 1000px) {
@@ -355,8 +351,12 @@ small {
 
 ul,
 ol {
-  margin: $spacing-md;
+  margin: $spacing-sm;
   opacity:0.7;
+
+  li {
+    line-height: 160%;
+  }
 }
 
 .dark {
@@ -522,7 +522,7 @@ p > strong {
     padding-bottom: $spacing-md;
 
     img {
-      margin: $spacing-sm auto $spacing-md;
+      margin: $spacing-sm auto;
     }
 
     table {
@@ -1032,6 +1032,22 @@ img.in-article {
     max-width: 1200px;
 }
 
+.product-image {
+  display:flex;
+  flex-direction: column;
+  padding:1rem 0;
+  margin: 0 auto;
+  max-width: 1200px;
+
+  .caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-sm;
+    opacity: 0.5;
+  }
+}
+
 .product-images {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -1039,6 +1055,14 @@ img.in-article {
   padding:1rem 0;
   margin: 0 auto;
   max-width: 1200px;
+
+  .caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-sm;
+    opacity: 0.5;
+  }
 }
 
     .product-images.two-across {

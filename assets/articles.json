@@ -1,5 +1,15 @@
 [
   {
+    "title": "On Automating Image Compression",
+    "date": "2026-01-27",
+    "slug": "on-automating-image-compression",
+    "tags": [
+      "technical"
+    ],
+    "summary": "Ensure your users have the best experience while avoiding tedium yourself by using CLI and CI/CD tools to automate your process.",
+    "image": "/articles/automating-image-compression.png"
+  },
+  {
     "title": "WebGL Shaders with Three.js in Nuxt",
     "date": "2026-01-18",
     "slug": "webgl-shaders-with-threejs-in-nuxt",
