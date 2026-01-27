@@ -103,6 +103,7 @@ import Threedarray from '~/components/threejs/Threedarray.client.vue'
 import Mandelbulb from '~/components/threejs/Mandelbulb.client.vue'
 import SDF from '~/components/threejs/SDF.client.vue'
 import MeshGradient from '~/components/threejs/MeshGradient.client.vue'
+import GeometricTracking from '~/components/threejs/GeometricTracking.client.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -155,6 +156,12 @@ const experiments = [
     label: 'Mesh Gradient with Particles',
     description: 'An interactive mesh gradient with particle effects.',
     component: markRaw(MeshGradient)
+  },
+  {
+    id: 'geometric-tracking',
+    label: 'Geometric Tracking',
+    description: 'An interactive, coloful geomtric effect.',
+    component: markRaw(GeometricTracking)
   }
 ]
 

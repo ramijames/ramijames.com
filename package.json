@@ -22,7 +22,6 @@
     "nuxt": "^3.11.2",
     "nuxt-gtag": "^2.0.6",
     "nuxt-highcharts": "^3.1.1",
-    "nuxt-lenis": "^2.1.2",
     "nuxt-module-hotjar": "^1.2.6",
     "nuxt-newsletter": "^0.2.0",
     "pinia": "^2.1.7",

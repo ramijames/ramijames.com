@@ -113,8 +113,8 @@
   </nav>
 </template>
 
-<script setup>
-import { ref, reactive, computed, onMounted } from 'vue';
+<script setup lang="ts">
+import { ref, reactive, computed, onMounted, onBeforeUnmount } from 'vue';
 import { useRoute } from 'vue-router';
 import ThemeSwitcher from './ThemeSwitcher.vue';
 import ContactModal from './ContactModal.vue';
@@ -146,64 +146,41 @@ const closeContactModal = () => {
 
 let lastScrollY = 0;
 
-// Use Lenis scroll instead of window scroll
-onMounted(() => {
-  const { getLenis } = useLenis();
-  const lenis = getLenis();
-
-  if (lenis) {
-    lastScrollY = lenis.scroll; // Initialize with Lenis scroll position
-
-    lenis.on('scroll', ({ scroll }) => {
-      if (scroll > lastScrollY && scroll > 100) {
-        isMenuHidden.value = true; // Hide menu on scroll down
-      } else {
-        isMenuHidden.value = false; // Show menu on scroll up
-      }
-      lastScrollY = scroll;
-    });
+const handleScroll = () => {
+  const scroll = window.scrollY || window.pageYOffset;
+  if (scroll > lastScrollY && scroll > 100) {
+    isMenuHidden.value = true; // Hide menu on scroll down
+  } else {
+    isMenuHidden.value = false; // Show menu on scroll up
   }
+  lastScrollY = scroll;
+};
+
+onMounted(() => {
+  lastScrollY = window.scrollY || window.pageYOffset;
+  window.addEventListener('scroll', handleScroll, { passive: true });
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll);
 });
 
 const closeMenu = () => {
   state.mobileMenuOpen = false;
-  // document.body.style.overflow = 'auto';
 };
 
 const toggleMenu = () => {
   state.mobileMenuOpen = !state.mobileMenuOpen;
-  // if (state.mobileMenuOpen) {
-  //   document.body.style.overflow = 'hidden';
-  // } else {
-  //   document.body.style.overflow = 'auto';
-  // }
 };
 
-const isThoughtsSubPage = computed(() => {
-  return route.path.startsWith('/thoughts/');
-});
-
-const isProductsSubPage = computed(() => {
-  return route.path.startsWith('/products/');
-});
-
-const isProductsPage = computed(() => {
-  return route.path === '/products';
-});
-
-const isThoughtsPage = computed(() => {
-  return route.path === '/thoughts';
-});
-
-const isAboutPage = computed(() => {
-  return route.path === '/about';
-});
-
-const isHome = computed(() => {
-  return route.path === '/';
-});
-
+const isThoughtsSubPage = computed(() => route.path.startsWith('/thoughts/'));
+const isProductsSubPage = computed(() => route.path.startsWith('/products/'));
+const isProductsPage = computed(() => route.path === '/products');
+const isThoughtsPage = computed(() => route.path === '/thoughts');
+const isAboutPage = computed(() => route.path === '/about');
+const isHome = computed(() => route.path === '/');
 </script>
+
 
 <style scoped lang="scss">
 .max-nav {

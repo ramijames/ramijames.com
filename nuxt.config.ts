@@ -33,7 +33,6 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/google-fonts',
-    "nuxt-lenis",
     '@pinia/nuxt',
     '@nuxt/content',
     "nuxt-newsletter",

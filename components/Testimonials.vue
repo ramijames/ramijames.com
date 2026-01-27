@@ -127,45 +127,50 @@
 </template>
 
 <script setup lang="ts">
-const { getLenis } = useLenis()
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const wrapperRef = ref<HTMLElement | null>(null)
 const testimonialsRef = ref<HTMLElement | null>(null)
 const translateX = ref(0)
 
+const handleScroll = () => {
+  if (!wrapperRef.value || !testimonialsRef.value) return
+
+  const wrapper = wrapperRef.value
+  const testimonials = testimonialsRef.value
+  const wrapperTop = wrapper.offsetTop
+  const wrapperHeight = wrapper.offsetHeight
+  const viewportHeight = window.innerHeight
+
+  // Calculate scroll progress within the wrapper section
+  const scrollStart = wrapperTop - viewportHeight
+  const scrollEnd = wrapperTop + wrapperHeight - viewportHeight
+  const scrollRange = scrollEnd - scrollStart
+
+  const scroll = window.scrollY || window.pageYOffset
+
+  // Calculate progress (0 to 1)
+  let progress = (scroll - scrollStart) / scrollRange
+  progress = Math.max(0, Math.min(1, progress))
+
+  // Calculate how much to translate (testimonials width minus viewport)
+  const testimonialsWidth = testimonials.scrollWidth
+  const viewportWidth = window.innerWidth
+  const maxTranslate = testimonialsWidth - viewportWidth + 100 // extra padding
+
+  translateX.value = -progress * maxTranslate
+}
+
 onMounted(() => {
-  const lenis = getLenis()
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  handleScroll() // initialize on mount
+})
 
-  if (lenis) {
-    lenis.on('scroll', ({ scroll }: { scroll: number }) => {
-      if (!wrapperRef.value || !testimonialsRef.value) return
-
-      const wrapper = wrapperRef.value
-      const testimonials = testimonialsRef.value
-      const wrapperTop = wrapper.offsetTop
-      const wrapperHeight = wrapper.offsetHeight
-      const viewportHeight = window.innerHeight
-
-      // Calculate scroll progress within the wrapper section
-      const scrollStart = wrapperTop - viewportHeight
-      const scrollEnd = wrapperTop + wrapperHeight - viewportHeight
-      const scrollRange = scrollEnd - scrollStart
-
-      // Calculate progress (0 to 1)
-      let progress = (scroll - scrollStart) / scrollRange
-      progress = Math.max(0, Math.min(1, progress))
-
-      // Calculate how much to translate (testimonials width minus viewport)
-      const testimonialsWidth = testimonials.scrollWidth
-      const viewportWidth = window.innerWidth
-      const maxTranslate = testimonialsWidth - viewportWidth + 100 // extra padding
-
-      // Start from left (positive offset) and move to right (showing content from left to right)
-      translateX.value = -progress * maxTranslate
-    })
-  }
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
+
 
 <style lang="scss" scoped>
 .testimonials-wrapper {
