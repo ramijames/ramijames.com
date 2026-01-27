@@ -6,8 +6,8 @@
     <section class="content">
 
       <h2>Figma's png export defaults are too heavy</h2>
-      <p>This website is heavy. It's a personal portfolio of my work and shows big images because I want to show off a lot of detail in each piece. Over the years it's added up and some of the pages are not as fast as they should be. We're talking 100+ images that add up to well over 50MB total. It's not the end of the world, but it isn't great.</p>
-      <p>Part of the problem is that when you export images from Figma (my main design tool), the PNG compression that they use by default is not great. They give you two options pretty weak:</p>
+      <p>This website is heavy. It's a personal <nuxt-link to="/products">portfolio</nuxt-link> of my work and shows big images because I want to show off a lot of detail in each piece. Over the years it's added up and some of the pages are not as fast as they should be. We're talking 100+ images that add up to well over 50MB total. It's not the end of the world, but it isn't great.</p>
+      <p>Part of the problem is that when you export images from Figma (my main design tool), the PNG compression that they use by default is not great. Figma gives you two options:</p>
 
       <img src="/articles/compression/figma-png-export-options.png" />
 
