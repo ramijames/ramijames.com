@@ -220,8 +220,7 @@ const isHome = computed(() => {
     gap: 0;
     background: $white;
     border-radius: $br-md;
-    corner-shape: squircle(8%);
-    padding: 0 $spacing-sm;
+    padding: 0 0.35rem;
     position: fixed;
     top: $spacing-sm;
     left: $spacing-sm;
@@ -290,8 +289,7 @@ const isHome = computed(() => {
     gap: $spacing-sm;
     background: $white;
     border-radius: $br-md;
-    corner-shape: squircle(8%);
-    padding: 0 $spacing-sm;
+    padding: 0 0.35rem;
     position: fixed;
     top: $spacing-sm;
     right: $spacing-sm;
