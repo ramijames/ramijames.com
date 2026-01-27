@@ -102,6 +102,7 @@ import PerlinNoiseLines from '~/components/threejs/PerlinNoiseLines.client.vue'
 import Threedarray from '~/components/threejs/Threedarray.client.vue'
 import Mandelbulb from '~/components/threejs/Mandelbulb.client.vue'
 import SDF from '~/components/threejs/SDF.client.vue'
+import MeshGradient from '~/components/threejs/MeshGradient.client.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -148,6 +149,12 @@ const experiments = [
     label: 'Mandelbulb',
     description: 'A 3d fractal.',
     component: markRaw(Mandelbulb)
+  },
+  {
+    id: 'mesh-gradient',
+    label: 'Mesh Gradient with Particles',
+    description: 'An interactive mesh gradient with particle effects.',
+    component: markRaw(MeshGradient)
   }
 ]
 
