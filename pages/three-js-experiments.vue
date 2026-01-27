@@ -70,8 +70,8 @@
 
       &.active,
       &:hover {
-        background: $black;
-        color: $white;
+        background: rgba($black, 0.15);
+        color: $black;
         opacity: 1;
       }
     }
@@ -101,6 +101,7 @@ import DigitalOcean from '~/components/threejs/DigitalOcean.client.vue'
 import PerlinNoiseLines from '~/components/threejs/PerlinNoiseLines.client.vue'
 import Threedarray from '~/components/threejs/Threedarray.client.vue'
 import Mandelbulb from '~/components/threejs/Mandelbulb.client.vue'
+import SDF from '~/components/threejs/SDF.client.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -147,6 +148,12 @@ const experiments = [
     label: 'Mandelbulb',
     description: 'A 3d fractal.',
     component: markRaw(Mandelbulb)
+  },
+  {
+    id: 'sdf',
+    label: 'SDF',
+    description: 'SDF volume experiment.',
+    component: markRaw(SDF)
   }
 ]
 

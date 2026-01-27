@@ -6,7 +6,7 @@
   </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 html, body, #__nuxt, .viewer-layout {
   height: 100%;
