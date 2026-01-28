@@ -54,7 +54,7 @@ npm install --save-dev @types/three`" />
         <li>public/: This is where you will put your 3D models (.glb files) and textures.</li>
         </ul>
 
-        <p>You'll need a clean canvas to work on, so your default CSS can be something along the likes of:</p>
+        <p>You'll need a clean canvas to work on, so your default CSS can be something like:</p>
 
         <CodeBlock lang="css" :code="`/* Remove default spacing and hide scrollbars */
 body {

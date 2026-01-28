@@ -1,8 +1,7 @@
 <template>
 
-  <section class="w-consistent">
-    <h2>Other Thoughts</h2>
     <div class="thoughts-container">
+      <h2>Other Thoughts</h2>
       <!-- Loading skeleton -->
       <div v-if="!isReady" class="loading-skeleton">
         <div class="skeleton-featured">
@@ -28,7 +27,6 @@
         </nuxt-link>
       </div>
     </div>
-  </section>
 </template>
 
 <script setup>
@@ -190,6 +188,16 @@ const formatDate = (dateString) => {
 }
 
 .thoughts-container {
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1600px){
+    max-width: 1200px;
+  }
+
+  @media screen and (max-width: 1200px){
+    max-width: 100%;
+  }
 
   .section-title {
     font-size: 2dvw;
@@ -199,7 +207,7 @@ const formatDate = (dateString) => {
     position: sticky;
     top: $spacing-md;
     opacity: 0.4;
-    padding: $spacing-xl $spacing-md;
+    padding: $spacing-xl 0;
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
@@ -209,7 +217,7 @@ const formatDate = (dateString) => {
 
     @media screen and (max-width: 1000px) {
       font-size: 4dvw;
-      padding: $spacing-md;
+      padding: $spacing-md 0;
     }
   }
 }
@@ -228,7 +236,7 @@ const formatDate = (dateString) => {
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $spacing-lg;
+  gap: $spacing-md;
 
   @media screen and (max-width: 1400px) {
     grid-template-columns: repeat(2, 1fr);
