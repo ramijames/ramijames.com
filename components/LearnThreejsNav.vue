@@ -213,8 +213,9 @@ onMounted(() => {
 
     h3 {
       font-size: $font-size-md;
-      border-bottom: 1px solid $black;
       padding-bottom: $spacing-xs;
+      text-transform: uppercase;
+      font-weight: bold;
 
       &:first-of-type {
         margin-top: 0;
@@ -223,18 +224,40 @@ onMounted(() => {
 
     ol {
       font-size: $font-size-sm;
+      opacity: 1;
+      margin: $spacing-xs 0 $spacing-xs $spacing-sm;
 
       li {
         font-size: $font-size-sm;
+        opacity: 1;
+
+        a {
+          text-decoration: none;
+          width: 100%;
+          border-radius: $br-xs;
+        }
 
         ol {
           font-size: $font-size-sm;
+          opacity: 1;
+          margin: $spacing-sm 0 $spacing-sm $spacing-sm;
 
           li {
             font-size: $font-size-sm;
+            opacity: 1;
+
+            a {
+              text-decoration: none;
+              width: 100%;
+              border-radius: $br-xs;
+            }
           }
         }
       }
+    }
+
+    a.router-link-exact-active {
+      font-weight: bold;
     }
 
   }

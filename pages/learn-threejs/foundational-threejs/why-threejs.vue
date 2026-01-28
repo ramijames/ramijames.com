@@ -128,7 +128,13 @@
     </main>
   </section>
   
-  
+  <LearnThreejsBottomNav
+    prevLink="/learn-threejs"
+    prevText="Home"
+    nextLink="/learn-threejs/foundational-threejs/setting-up-your-dev-environment"
+    nextText="A modern dev environment"
+  />
+
   <Footer />
 </template>
 

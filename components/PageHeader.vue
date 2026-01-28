@@ -16,14 +16,6 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 
-.dark { 
-  .page-header {
-    h3 {
-      border-bottom: 1px solid rgba($white, 0.5);
-    }
- }
-}
-
 .page-header {
   width: 100%;
   position: relative;
@@ -46,7 +38,7 @@ const props = defineProps({
     opacity: 0.5;
     font-weight: 500;
     font-family: $font-family-serif;
-    padding: $spacing-lg $spacing-md calc($spacing-lg + $spacing-sm);
+    padding: $spacing-sm $spacing-md calc($spacing-lg + $spacing-sm);
     line-height: 140%;
     max-width: 800px;
     font-size: $font-size-xl;

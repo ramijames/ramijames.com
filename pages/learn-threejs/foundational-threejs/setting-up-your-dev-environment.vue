@@ -88,6 +88,13 @@ canvas {
       </main>
     </main>
   </section>
+
+  <LearnThreejsBottomNav
+    prevLink="/learn-threejs/foundational-threejs/why-threejs"
+    prevText="Why Three.js?"
+    nextLink="/learn-threejs/foundational-threejs/hello-cube"
+    nextText="Hello Cube"
+  />
   
   
   <Footer />
