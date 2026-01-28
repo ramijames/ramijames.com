@@ -35,9 +35,9 @@
           </ol>
         <li>The Scene Graph & Transformations</li>
           <ol type="I">
-            <li>Understanding relationships</li>
-            <li>Position, Rotation, and Scale</li>
-            <li>The Animation Loop</li>
+            <li><nuxt-link to="/learn-threejs/foundational-threejs/understanding-parent-child-relationships">Understanding relationships</nuxt-link></li>
+            <li><nuxt-link to="/learn-threejs/foundational-threejs/position-rotation-and-scale">Position, Rotation, and Scale</nuxt-link></li>
+            <li><nuxt-link to="/learn-threejs/foundational-threejs/the-animation-loop">The Animation Loop</nuxt-link></li>
           </ol>
       </ol>
 

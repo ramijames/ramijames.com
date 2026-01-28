@@ -1,7 +1,7 @@
 <template>
   <main class="bottom-nav w-consistent">
-    <nuxt-link class="button" :to="prevLink" v-if="prevLink">←&nbsp;&nbsp;&nbsp;{{ prevText }}</nuxt-link>
-    <nuxt-link class="button" :to="nextLink" v-if="nextLink">{{ nextText }}&nbsp;&nbsp;&nbsp;→</nuxt-link>
+    <nuxt-link class="button small" :to="prevLink" v-if="prevLink">←&nbsp;&nbsp;&nbsp;{{ prevText }}</nuxt-link>
+    <nuxt-link class="button small" :to="nextLink" v-if="nextLink">{{ nextText }}&nbsp;&nbsp;&nbsp;→</nuxt-link>
   </main>
 </template>
 
@@ -18,6 +18,12 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 
+.dark {
+  .bottom-nav {
+    border-top: 1px solid rgba($black, 0.2);
+  }
+}
+
 .bottom-nav {
   width: 100%;
   display: flex;
@@ -26,6 +32,18 @@ const props = defineProps({
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  border-top: 1px solid rgba($black, 0.2);
+  margin-top: $spacing-md;
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    flex-direction: column;
+    gap: $spacing-xs;
+
+    .button {
+      width: 100%;
+    }
+  }
 }
 
 </style>

@@ -2,6 +2,20 @@
   <nav :class="['max-nav', { hidden: isMenuHidden }]">
 
     <section class="nav-left-section">
+      <!-- LearnThreeJS back button -->
+      <nuxt-link
+          class="go-back"
+          tabindex="0"
+          role="button"
+          v-if="isLearnThreeJSSubPage"
+          to="/learn-threejs"
+        >
+        <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M28.4706 21.5294L21 29L29 37" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M22 29H38" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </nuxt-link>
+      
       <!-- Products back button -->
       <nuxt-link
           class="go-back"
@@ -173,6 +187,7 @@ const toggleMenu = () => {
   state.mobileMenuOpen = !state.mobileMenuOpen;
 };
 
+const isLearnThreeJSSubPage = computed(() => route.path.startsWith('/learn-threejs/'));
 const isThoughtsSubPage = computed(() => route.path.startsWith('/thoughts/'));
 const isProductsSubPage = computed(() => route.path.startsWith('/products/'));
 const isProductsPage = computed(() => route.path === '/products');

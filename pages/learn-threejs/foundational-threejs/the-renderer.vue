@@ -11,7 +11,7 @@
 
           <h2>Understanding the WebGLRenderer</h2>
 
-          <p>The renderer is what actually draws your 3D scene onto a 2D canvas. It takes your scene and camera, does all the complex math, and outputs pixels. Three.js provides several renderers, but <strong>WebGLRenderer</strong> is by far the most common - it uses your GPU for hardware-accelerated graphics.</p>
+          <p>The renderer is what actually draws your 3D scene onto a 2D canvas. It takes your scene and camera, does all the complex math, and outputs pixels. Honestly, it's like frickin' magic. Three.js provides several renderers, but <strong>WebGLRenderer</strong> is by far the most common - it uses your GPU for hardware-accelerated graphics.</p>
 
           <h3>Basic Setup</h3>
 
@@ -131,8 +131,8 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;`" />
   <LearnThreejsBottomNav
     prevLink="/learn-threejs/foundational-threejs/cameras"
     prevText="Cameras"
-    nextLink="/learn-threejs/foundational-threejs/geometries"
-    nextText="Geometries"
+    nextLink="/learn-threejs/foundational-threejs/understanding-parent-child-relationships"
+    nextText="Understanding relationships"
   />
   <Footer />
 </template>

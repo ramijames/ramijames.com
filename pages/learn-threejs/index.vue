@@ -7,11 +7,11 @@
   <main class="w-content page-top">
     <section class="content">
 
-      <!-- <img src="/learn-threejs/cover.png" alt="Learn Three.js Cover" /> -->
-
       <h2>About these notes</h2>
 
       <p>I've been working with Three.js for a while now and I thought that I'd take the time to share my notes on how things work under the hood. This isn't fully comprehensive, but will get you well on your way to building fun things that are both useful and visually appealing. If you find errors, missing content, or have ideas for how to improve this, <a href="mailto:ramijames@gmail.com">please reach out to me</a>.</p>
+
+      <p>You can think of this as the reference book that I wish that I'd had when I started.</p>
 
       <LearnThreejsNav :innerNav="false" />
 
