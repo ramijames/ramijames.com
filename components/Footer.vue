@@ -28,6 +28,7 @@
             <img class="icon-light" src="/mail-light.svg" alt="Send Rami an email" />
           </a>
         </section>
+        <nuxt-link class="link" href="/learn-threejs">Learn Three.js</nuxt-link>
         <nuxt-link class="link" href="/privacy-policy">Privacy</nuxt-link>
         <nuxt-link class="link" href="/terms-and-conditions">Terms</nuxt-link>
       </div>
