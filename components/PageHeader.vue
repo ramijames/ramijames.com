@@ -1,5 +1,5 @@
 <template>
-  <main class="page-header">
+  <main class="page-header w-consistent">
     <h1>{{ title }}</h1>
     <h3 v-if="tagline">{{ tagline }}</h3>
   </main>
@@ -17,7 +17,6 @@ const props = defineProps({
 <style lang="scss" scoped>
 
 .page-header {
-  width: 100%;
   position: relative;
   padding: $spacing-xl 0 $spacing-md;
   background-size: cover;
