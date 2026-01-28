@@ -4,7 +4,7 @@
     <LearnThreejsNav :innerNav="true" />
     <main>
 
-      <PageHeader title="The Scene" tagline="What exactly is the scene object and how does it work?" />
+      <PageHeader title="The Three.js Scene Object" tagline="What exactly is the scene object and how does it work?" />
 
       <main class="w-content page-top">
         <section class="content">
@@ -214,14 +214,14 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Hello Cube in Three.js',
-  ogTitle: 'Hello Cube in Three.js',
-  description: 'The bare minimum code needed to get your first Three.js scene up and running.',
-  ogDescription: 'The bare minimum code needed to get your first Three.js scene up and running.',
+  title: 'The Three.js Scene Object',
+  ogTitle: 'The Three.js Scene Object',
+  description: 'What exactly is the scene object and how does it work?',
+  ogDescription: 'What exactly is the scene object and how does it work?',
   ogImage: '/learn-threejs/cover.png',
   url: 'https://www.ramijames.com/thoughts/reactive-grids-in-nuxt',
-  twitterTitle: 'Hello Cube in Three.js',
-  twitterDescription: 'The bare minimum code needed to get your first Three.js scene up and running.',
+  twitterTitle: 'The Three.js Scene Object',
+  twitterDescription: 'What exactly is the scene object and how does it work?',
   twitterImage: '/learn-threejs/cover.png',
   twitterCard: 'summary_large_image'
 })

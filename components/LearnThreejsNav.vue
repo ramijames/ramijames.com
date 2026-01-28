@@ -30,8 +30,8 @@
         <li>Scene, Camera, Renderer</li>
           <ol type="I">
             <li><nuxt-link to="/learn-threejs/foundational-threejs/the-scene">The Scene</nuxt-link></li>
-            <li>Cameras</li>
-            <li>The Renderer</li>
+            <li><nuxt-link to="/learn-threejs/foundational-threejs/cameras">Cameras</nuxt-link></li>
+            <li><nuxt-link to="/learn-threejs/foundational-threejs/the-renderer">The Renderer</nuxt-link></li>
           </ol>
         <li>The Scene Graph & Transformations</li>
           <ol type="I">
