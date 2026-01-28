@@ -135,6 +135,11 @@ button,
         padding: 12px $spacing-sm 10px;
       }
     }
+
+    &.small {
+      padding: $spacing-xs $spacing-sm;
+      font-size: $font-size-sm;
+    }
 }
 
 @keyframes button_gradient_rotate{

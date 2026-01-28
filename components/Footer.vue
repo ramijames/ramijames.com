@@ -5,19 +5,10 @@
         <ThreeScene :force-dark="true" class="cta-background" />
       </ClientOnly>
       <div class="cta-content">
-        <svg viewBox="0 0 286 148" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M262 138V145C262 146.105 261.105 147 260 147H3C1.89543 147 1 146.105 1 145V138H262Z" stroke="white" stroke-width="1"/>
-          <path d="M151 138C151 139.105 150.105 140 149 140H114C112.895 140 112 139.105 112 138H151Z" stroke="white" stroke-width="1"/>
-          <path d="M39 1H225C228.866 1 232 4.13401 232 8V137H32V8C32 4.25486 34.9411 1.19633 38.6396 1.00879L39 1Z" stroke="white" stroke-width="1" />
-          <path d="M42 12H222C222.552 12 223 12.4477 223 13V124C223 124.552 222.552 125 222 125H42C41.4477 125 41 124.552 41 124V13C41 12.4477 41.4477 12 42 12Z" stroke="white" stroke-width="1" fill=" black" />
-          <circle cx="132" cy="6" r="1" stroke="white" stroke-width="1"/>
-          <rect x="243" y="36" width="42" height="91" rx="4" stroke="white" fill="black" stroke-width="1"/>
-          <rect x="259" y="39" width="10" height="3" rx="1.5" stroke="white" stroke-width="1"/>
-        </svg>
 
         <h2>Let's work together</h2>
-        <h3>Have a project in mind? I'd love to hear about it.</h3>
-        <button class="start-project-btn" @click="openContactModal">Start Project</button>
+        <h3>I'm always keen to connect with like-minded builders who are interested in pushing the envelope of what is possible in the product design space.</h3>
+        <button class="start-project-btn large" @click="openContactModal">Start Project</button>
       </div>
     </section>
     <ContactModal :isOpen="isContactModalOpen" @close="closeContactModal" />
@@ -116,6 +107,7 @@ onUnmounted(() => {
   overflow: hidden;
   background: $black;
   padding: $spacing-xl 0;
+  margin-top: $spacing-xl;
 
   .cta-background {
     position: absolute;
@@ -124,6 +116,7 @@ onUnmounted(() => {
     width: 100%;
     height: 100%;
     z-index: 0;
+    opacity: 0.5;
     -webkit-mask-image: linear-gradient(to top, black 45% , rgba($black, 0) 100%, rgba(0, 0, 0, 0));
     mask-image: linear-gradient(to top, black 45% , rgba($black, 0) 100%, rgba(0, 0, 0, 0));
 
@@ -161,7 +154,7 @@ onUnmounted(() => {
 
     h2 {
       font-family: $font-family-main;
-      font-size: clamp(2rem, 5vw, 4rem);
+      font-size: $font-size-xxl;
       color: $white;
       margin: 0;
       text-shadow: 0 10px 20px rgba($black, 0.8);
@@ -169,37 +162,27 @@ onUnmounted(() => {
 
     h3 {
       font-family: $font-family-secondary;
+      font-size: $font-size-lg;
+      font-weight: 300;
       margin: 0;
       color: $white;
+      opacity: .9;
       line-height: 1.2;
       text-shadow: 0 10px 20px rgba($black, 0.8);
+      max-width: 540px;
+      text-wrap: balance;
     }
 
     .start-project-btn {
       font-family: $font-family-main;
-      font-size: $font-size-lg;
       font-weight: 600;
       color: $black;
       background: $white;
       border: none;
-      padding: $spacing-sm $spacing-lg;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
 
-      &:after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 4px;
-        background: $black;
-        margin-top: 4px;
-        transform: scaleX(0);
-        transition: transform 0.3s ease-in-out;
-        transform-origin: left;
-      }
-
       &:hover {
-        color: rgba($black, 0.6);
 
         &:after {
           transform: scaleX(1);

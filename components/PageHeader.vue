@@ -15,6 +15,15 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+
+.dark { 
+  .page-header {
+    h3 {
+      border-bottom: 1px solid rgba($white, 0.5);
+    }
+ }
+}
+
 .page-header {
   width: 100%;
   position: relative;
@@ -26,6 +35,7 @@ const props = defineProps({
     margin: 0 0 $spacing-xs;
     line-height: 100%;
     text-align: center;
+    text-wrap: balance;
   }
 
   h3 {
@@ -33,11 +43,14 @@ const props = defineProps({
     margin: 0 auto;
     text-align: center;
     text-transform: initial;
-    opacity: 0.4;
+    opacity: 0.5;
     font-weight: 500;
-    padding: 0 $spacing-md;
-    line-height: 110%;
+    font-family: $font-family-serif;
+    padding: $spacing-lg $spacing-md calc($spacing-lg + $spacing-sm);
+    line-height: 140%;
     max-width: 800px;
+    font-size: $font-size-xl;
+    font-style: italic;
 
     @media screen and (max-width: 1180px) {
       max-width: 100%;

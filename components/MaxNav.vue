@@ -40,7 +40,7 @@
     </section>
 
     <section class="nav-right-section">
-      <button class="start-project" @click="openContactModal" v-show="!footerCtaVisible">Start Project</button>
+      <button class="start-project small" @click="openContactModal" v-show="!footerCtaVisible">Start Project</button>
       <ThemeSwitcher />
       <div
         :class="['menu-switch', state.mobileMenuOpen ? 'open' : '' ]"
@@ -263,7 +263,7 @@ const isHome = computed(() => route.path === '/');
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: $spacing-sm;
+    gap: 0;
     background: $white;
     border-radius: $br-md;
     padding: 0 0.35rem;
@@ -278,6 +278,7 @@ const isHome = computed(() => route.path === '/');
       transition: color 0.3s ease-in-out;
       text-decoration: none;
       border: none;
+      margin-right: $spacing-xs;
 
       @media screen and (max-width: 1000px){
         display: none;
