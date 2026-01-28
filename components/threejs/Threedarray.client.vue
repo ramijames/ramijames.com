@@ -3,10 +3,19 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import * as THREE from 'three'
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js'
 import { createNoise3D } from 'simplex-noise'
+
+const props = defineProps({
+  height: {
+    type: [Number, String],
+    default: 100
+  }
+})
+
+const containerHeight = computed(() => `${props.height}vh`)
 
 const container = ref(null)
 let scene, camera, renderer, cubeGroup, textureLoader
@@ -156,8 +165,11 @@ const cleanup = () => {
   }
 }
 
-onMounted(() => {
-  init()
+onMounted(async () => {
+  await nextTick()
+  if (container.value) {
+    init()
+  }
 })
 
 onUnmounted(() => {
@@ -168,7 +180,7 @@ onUnmounted(() => {
 <style scoped>
 .threejs-container {
   width: 100%;
-  height: 100vh;
+  height: v-bind(containerHeight);
   overflow: hidden;
   cursor: crosshair;
 }

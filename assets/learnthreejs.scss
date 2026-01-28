@@ -1,0 +1,16 @@
+.learnthreejs-layout {
+  display: flex;
+  flex-direction: row;
+
+  &.innerNav-open {
+    margin-left: 300px;
+
+     @media screen and (max-width: 1200px){
+      margin-left: 0;
+    }
+  }
+  
+  main {
+    width: 100%;
+  }
+}

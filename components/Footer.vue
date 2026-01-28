@@ -28,10 +28,6 @@
             <img class="icon-light" src="/mail-light.svg" alt="Send Rami an email" />
           </a>
         </section>
-        <!-- <nuxt-link class="link" href="/" v-if="notHome">Home</nuxt-link>
-        <nuxt-link class="link" href="/thoughts">Thoughts</nuxt-link>
-        <nuxt-link class="link" href="/products">Recent Work</nuxt-link>
-        <nuxt-link class="link" href="/about">About</nuxt-link> -->
         <nuxt-link class="link" href="/privacy-policy">Privacy</nuxt-link>
         <nuxt-link class="link" href="/terms-and-conditions">Terms</nuxt-link>
       </div>

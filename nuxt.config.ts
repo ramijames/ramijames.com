@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '~/assets/animation.scss',
     '~/assets/labs.scss',
     '~/assets/highcharts.scss',
+    '~/assets/learnthreejs.scss',
   ],
   devtools: { enabled: true },
   app: {
