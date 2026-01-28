@@ -290,7 +290,7 @@ useSeoMeta({
 <style scoped lang="scss">
 .scene-container {
   width: 100%;
-  height: 400px;
+  height: 600px;
   margin: 2rem 0;
   border-radius: 8px;
   overflow: hidden;

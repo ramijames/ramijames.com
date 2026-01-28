@@ -29,7 +29,7 @@
           </ol>
         <li>Scene, Camera, Renderer</li>
           <ol type="I">
-            <li>The Scene</li>
+            <li><nuxt-link to="/learn-threejs/foundational-threejs/the-scene">The Scene</nuxt-link></li>
             <li>Cameras</li>
             <li>The Renderer</li>
           </ol>
