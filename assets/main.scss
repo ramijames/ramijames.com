@@ -203,7 +203,7 @@ h1 {
   line-height: 120%;
 
   @media screen and (max-width: 1200px) {
-    font-size: $font-size-xxl;
+    font-size: calc($font-size-xxl * 1.4);
     line-height: 100%;
   }
 

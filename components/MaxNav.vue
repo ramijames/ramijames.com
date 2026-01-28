@@ -200,10 +200,6 @@ const isHome = computed(() => route.path === '/');
 <style scoped lang="scss">
 .max-nav {
 
-  @media screen and (max-width: 1000px){
-    padding: $spacing-sm;
-  }
-
   .nav-left-section {
     display: flex;
     flex-direction: row;

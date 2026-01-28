@@ -19,12 +19,11 @@ const props = defineProps({
 .page-header {
   width: 100%;
   position: relative;
-  margin-top: 84px;
-  padding: $spacing-xl 0 $spacing-lg;
+  padding: $spacing-xl 0 $spacing-md;
   background-size: cover;
 
   h1 {
-    margin: 0 0 $spacing-xs;
+    margin-bo: 0 $spacing-md $spacing-xs;
     line-height: 100%;
     text-align: center;
     text-wrap: balance;
@@ -38,7 +37,7 @@ const props = defineProps({
     opacity: 0.5;
     font-weight: 500;
     font-family: $font-family-serif;
-    padding: $spacing-sm $spacing-md calc($spacing-lg + $spacing-sm);
+    padding: $spacing-sm $spacing-md $spacing-md;
     line-height: 140%;
     max-width: 800px;
     font-size: $font-size-xl;
@@ -46,6 +45,7 @@ const props = defineProps({
 
     @media screen and (max-width: 1180px) {
       max-width: 100%;
+      font-size: $font-size-lg;
     }
   }
 
