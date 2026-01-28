@@ -28,6 +28,20 @@ body.dark {
   color: $white;
 }
 
+p code {
+  background: rgba($gray, 1);
+  padding: 0 6px;
+  border-radius: $br-xs;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.dark {
+  p code {
+    background: rgba($white, .2);
+  }
+}
+
 /* Button */
 
 @property --gradient_rotate {

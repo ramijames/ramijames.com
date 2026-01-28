@@ -122,7 +122,7 @@ onMounted(async () => {
   waveGeometry.setAttribute('opacity', new THREE.BufferAttribute(opacities, 1))
 
   // Custom shader for dots with opacity and mouse interaction
-  const yellowColor = new THREE.Color(0xF8C802)
+  const yellowColor = new THREE.Color(0xCCCCCC)
 
   waveMaterial = new THREE.ShaderMaterial({
     uniforms: {

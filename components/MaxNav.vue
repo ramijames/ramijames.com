@@ -327,7 +327,7 @@ const isHome = computed(() => route.path === '/');
     background: rgba($black, 1);
     transition: all 0.34s;
     transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
-    z-index: 2;
+    z-index: 99;
     overflow: hidden;
     clip-path: inset(0 0 100% 0);
 

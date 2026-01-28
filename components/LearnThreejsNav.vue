@@ -25,7 +25,7 @@
           <ol type="I">
             <li><nuxt-link to="/learn-threejs/foundational-threejs/why-threejs">Why Three.js?</nuxt-link></li>
             <li><nuxt-link to="/learn-threejs/foundational-threejs/setting-up-your-dev-environment">A modern dev environment</nuxt-link></li>
-            <li>"Hello Cube"</li>
+            <li><nuxt-link to="/learn-threejs/foundational-threejs/hello-cube">"Hello Cube"</nuxt-link></li>
           </ol>
         <li>Scene, Camera, Renderer</li>
           <ol type="I">
@@ -128,6 +128,17 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+
+.dark {
+  .learnthreejs {
+
+    &.innerNav {
+      background: rgba($black, 0.8);
+      border-right: 1px solid rgba($white, 0.2);
+    }
+
+  }
+}
 
 .learnthreejs {
 

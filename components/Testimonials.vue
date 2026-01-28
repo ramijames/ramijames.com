@@ -176,6 +176,7 @@ onBeforeUnmount(() => {
 .testimonials-wrapper {
   height: 300vh;
   position: relative;
+  margin-bottom: -8rem;
 }
 
 .testimonials-container {

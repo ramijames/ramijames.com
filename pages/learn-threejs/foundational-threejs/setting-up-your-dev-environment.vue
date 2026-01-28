@@ -1,5 +1,8 @@
 <template>
   
+  <section class="learnthreejs-layout">
+    <LearnThreejsNav :innerNav="true" />
+    <main>
   <PageHeader title="Setting up your dev environment to work with Three.js" tagline="It's easy to get started developing with Three.js in a modern way" />
 
   <main class="w-content page-top">
@@ -82,14 +85,23 @@ canvas {
     <p>You can click on the link in your terminal or manually open <a href="http://localhost:5173">http://localhost:5173</a> to get started.</p>
 
     </section>
-  </main>
+      </main>
+    </main>
+  </section>
+  
+  
   <Footer />
 </template>
 
 <script setup>
 
+// Use the learnthreejs layout for this page
+definePageMeta({
+  layout: 'learnthreejs'
+})
+
 useHead({
-  title: 'Learn Three.js'
+  title: 'Setting up your dev environment to work with Three.js'
 })
 
 useSeoMeta({

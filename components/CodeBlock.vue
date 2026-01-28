@@ -1,6 +1,17 @@
 <template>
   <div class="code-block">
-    <span v-if="lang" class="lang-badge">{{ lang }}</span>
+    <div class="code-block-header">
+      <span v-if="lang" class="lang-badge">{{ lang }}</span>
+      <button class="copy-btn" @click="copyCode" :title="copied ? 'Copied!' : 'Copy code'">
+        <svg v-if="!copied" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <svg v-else xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+    </div>
     <div v-if="highlighted" v-html="highlighted" class="shiki-wrapper"></div>
     <pre v-else class="code"><code>{{ code }}</code></pre>
   </div>
@@ -26,6 +37,17 @@ const props = defineProps({
 })
 
 const highlighted = ref('')
+const copied = ref(false)
+
+async function copyCode() {
+  try {
+    await navigator.clipboard.writeText(props.code.trim())
+    copied.value = true
+    setTimeout(() => { copied.value = false }, 2000)
+  } catch (e) {
+    console.warn('Copy failed:', e)
+  }
+}
 
 async function highlight() {
   try {
@@ -56,10 +78,17 @@ watch(() => [props.code, props.lang, props.theme], () => {
   overflow: hidden;
 }
 
-.lang-badge {
+.code-block-header {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+}
+
+.lang-badge {
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.7);
   padding: 0.25rem 0.5rem;
@@ -67,7 +96,24 @@ watch(() => [props.code, props.lang, props.theme], () => {
   font-size: 0.7rem;
   font-family: monospace;
   text-transform: uppercase;
-  z-index: 1;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 1);
 }
 
 .shiki-wrapper :deep(pre) {

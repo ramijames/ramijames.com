@@ -3,7 +3,7 @@
   <section class="learnthreejs-layout">
     <LearnThreejsNav :innerNav="true" />
     <main>
-      <PageHeader title="Learn Three.js" tagline="Want to make cool 3d stuff for the web? This is what you need to know." />
+      <PageHeader title="Why should you learn Three.js?" tagline="Want to make cool 3d stuff for the web? This is why you should and what you need to know." />
 
       <main class="w-content page-top">
         <section class="content">
@@ -198,18 +198,18 @@ definePageMeta({
 })
 
 useHead({
-  title: 'Learn Three.js'
+  title: 'Why should you learn Three.js?'
 })
 
 useSeoMeta({
-  title: 'Learn Three.js',
-  ogTitle: 'Learn Three.js',
-  description: 'Want to make cool 3d stuff for the web? This is what you need to know.',
-  ogDescription: 'Want to make cool 3d stuff for the web? This is what you need to know.',
+  title: 'Why should you learn Three.js?',
+  ogTitle: 'Why should you learn Three.js?',
+  description: 'Want to make cool 3d stuff for the web? This is why you should and what you need to know.',
+  ogDescription: 'Want to make cool 3d stuff for the web? This is why you should and what you need to know.',
   ogImage: '/learn-threejs/cover.png',
   url: 'https://www.ramijames.com/thoughts/reactive-grids-in-nuxt',
-  twitterTitle: 'Learn Three.js',
-  twitterDescription: 'Want to make cool 3d stuff for the web? This is what you need to know.',
+  twitterTitle: 'Why should you learn Three.js?',
+  twitterDescription: 'Want to make cool 3d stuff for the web? This is why you should and what you need to know.',
   twitterImage: '/learn-threejs/cover.png',
   twitterCard: 'summary_large_image'
 })
