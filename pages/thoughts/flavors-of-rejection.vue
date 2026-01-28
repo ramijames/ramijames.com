@@ -1,4 +1,9 @@
 <template>
+  <!-- Three.js falling leaves overlay -->
+  <div class="leaves-overlay">
+    <canvas ref="leavesCanvas"></canvas>
+  </div>
+
   <PageHeader title="Flavors of Rejection" tagline="Every new mail is hope, crushed." />
   <main class="w-content page-top">
     <div class="rejection-grid w-consistent">
@@ -59,6 +64,144 @@
 </template>
 
 <script setup>
+import * as THREE from 'three';
+
+const leavesCanvas = ref(null);
+let renderer = null;
+let animationId = null;
+
+onMounted(() => {
+  if (!leavesCanvas.value) return;
+
+  const scene = new THREE.Scene();
+
+  // Get full page dimensions
+  const sizes = {
+    width: window.innerWidth,
+    height: document.body.scrollHeight
+  };
+
+  const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
+  camera.position.z = 30;
+
+  renderer = new THREE.WebGLRenderer({
+    canvas: leavesCanvas.value,
+    alpha: true,
+    antialias: true
+  });
+  renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0x000000, 0);
+
+  // Create leaf geometry (simple elongated shape)
+  const createLeafGeometry = () => {
+    const shape = new THREE.Shape();
+    shape.moveTo(0, 0);
+    shape.quadraticCurveTo(0.3, 0.5, 0, 1);
+    shape.quadraticCurveTo(-0.3, 0.5, 0, 0);
+    return new THREE.ShapeGeometry(shape);
+  };
+
+  // Create leaves
+  const leaves = [];
+  const leafCount = 120;
+  const leafGeometry = createLeafGeometry();
+
+  for (let i = 0; i < leafCount; i++) {
+    // Varying shades of sad gray
+    const grayValue = 0.3 + Math.random() * 0.3;
+    const leafMaterial = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(grayValue, grayValue, grayValue * 0.55),
+      transparent: true,
+      opacity: 1 + Math.random() * 0.3,
+      side: THREE.DoubleSide
+    });
+
+    const leaf = new THREE.Mesh(leafGeometry, leafMaterial);
+
+    // Random starting positions spread across the scene
+    leaf.position.x = (Math.random() - 0.5) * 60;
+    leaf.position.y = Math.random() * 80 - 20;
+    leaf.position.z = (Math.random() - 0.5) * 20;
+
+    // Random initial rotation
+    leaf.rotation.x = Math.random() * Math.PI;
+    leaf.rotation.y = Math.random() * Math.PI;
+    leaf.rotation.z = Math.random() * Math.PI;
+
+    // Random scale for variety
+    const scale = 0.5 + Math.random() * 1;
+    leaf.scale.set(scale, scale, scale);
+
+    // Store animation properties
+    leaf.userData = {
+      fallSpeed: 0.02 + Math.random() * 0.03,
+      swaySpeed: 0.5 + Math.random() * 1,
+      swayAmount: 0.5 + Math.random() * 1,
+      rotationSpeed: {
+        x: (Math.random() - 0.5) * 0.02,
+        y: (Math.random() - 0.5) * 0.02,
+        z: (Math.random() - 0.5) * 0.01
+      },
+      initialX: leaf.position.x,
+      timeOffset: Math.random() * Math.PI * 2
+    };
+
+    scene.add(leaf);
+    leaves.push(leaf);
+  }
+
+  // Animation
+  let time = 0;
+  const tick = () => {
+    time += 0.01;
+
+    leaves.forEach(leaf => {
+      const { fallSpeed, swaySpeed, swayAmount, rotationSpeed, initialX, timeOffset } = leaf.userData;
+
+      // Fall down slowly
+      leaf.position.y -= fallSpeed;
+
+      // Gentle side-to-side sway
+      leaf.position.x = initialX + Math.sin(time * swaySpeed + timeOffset) * swayAmount;
+
+      // Slow rotation as it falls
+      leaf.rotation.x += rotationSpeed.x;
+      leaf.rotation.y += rotationSpeed.y;
+      leaf.rotation.z += rotationSpeed.z;
+
+      // Reset leaf when it falls below view
+      if (leaf.position.y < -50) {
+        leaf.position.y = 50;
+        leaf.position.x = (Math.random() - 0.5) * 60;
+        leaf.userData.initialX = leaf.position.x;
+      }
+    });
+
+    renderer.render(scene, camera);
+    animationId = requestAnimationFrame(tick);
+  };
+
+  tick();
+
+  // Handle resize
+  const handleResize = () => {
+    sizes.width = window.innerWidth;
+    sizes.height = document.body.scrollHeight;
+    camera.aspect = sizes.width / sizes.height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(sizes.width, sizes.height);
+  };
+
+  window.addEventListener('resize', handleResize);
+
+  // Cleanup
+  onUnmounted(() => {
+    window.removeEventListener('resize', handleResize);
+    if (animationId) cancelAnimationFrame(animationId);
+    if (renderer) renderer.dispose();
+  });
+});
 
 useHead({
   title: () => ``
@@ -80,6 +223,21 @@ useSeoMeta({
 </script>
 
 <style scoped lang="scss">
+
+.leaves-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
 
 .rejection-grid {
   display: grid;
