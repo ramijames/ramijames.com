@@ -190,6 +190,12 @@ const formatDate = (dateString) => {
 .thoughts-container {
   max-width: 1600px;
   margin: 0 auto;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease-in-out;
+
+  &:hover {
+    filter: grayscale(0%); 
+  }
 
   @media screen and (max-width: 1600px){
     max-width: 1200px;
@@ -267,7 +273,7 @@ const formatDate = (dateString) => {
 .featured-card {
   transition: all 0.3s ease;
   text-decoration: none;
-  min-height: 280px;
+  min-height: 80px;
 }
 
 .featured-content {
@@ -324,7 +330,7 @@ const formatDate = (dateString) => {
   border-radius: $br-sm;
   border: 1px solid rgba($black, 0.2);
   object-fit: cover;
-  max-height: 200px;
+  height: 300px;
 }
 
 
