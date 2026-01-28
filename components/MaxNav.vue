@@ -54,7 +54,13 @@
     </section>
 
     <section class="nav-right-section">
-      <button class="start-project small" @click="openContactModal" v-show="!footerCtaVisible">Start Project</button>
+      <button class="start-project" @click="openContactModal" v-show="!footerCtaVisible">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 12.9999H25" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M13 1V25" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Start Project
+      </button>
       <ThemeSwitcher />
       <div
         :class="['menu-switch', state.mobileMenuOpen ? 'open' : '' ]"
@@ -290,6 +296,17 @@ const isHome = computed(() => route.path === '/');
       text-decoration: none;
       border: none;
       margin-right: $spacing-xs;
+      background: $white;
+      color: $black;
+      display: flex;
+      flex-direction: row;
+      gap: $spacing-sm;
+
+      svg {
+        path {
+          stroke: $black;
+        }
+      }
 
       @media screen and (max-width: 1000px){
         display: none;
@@ -579,6 +596,12 @@ const isHome = computed(() => route.path === '/');
       .start-project {
         color: rgba($white, 1);
         background: $black;
+
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
 
         &:after {
           background: rgba($white, 1);
