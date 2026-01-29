@@ -98,21 +98,21 @@ onMounted(() => {
   }
 
   .threejs-nav {
-    &.innerNav {
 
-      a {
+    background: rgba($white, 0.1);
+
+    a {
+      color: $white;
+      
+      &.router-link-exact-active,
+      &:hover {
+        background: linear-gradient(to right, rgba($white, 0.1) 65%, rgba($white, 0.2));
+        opacity: 1;
+        font-weight: bold;
         color: $white;
-        
-        &.router-link-exact-active,
-        &:hover {
-          background: rgba($white, 0.1);
-          opacity: 1;
-          font-weight: bold;
-          color: $white;
-        }
       }
-
     }
+
   }
 }
 
@@ -170,9 +170,16 @@ onMounted(() => {
 }
 
 .threejs-nav {
-  padding: $spacing-sm;
+  padding: $spacing-md;
   margin: $spacing-lg 0;
   font-family: $font-family-main;
+  background: rgba($black, 0.1);
+  border-radius: $br-sm;
+
+  &.innerNav {
+    background: none;
+    padding: $spacing-sm;
+  }
 
   h3 {
 
@@ -189,46 +196,44 @@ onMounted(() => {
     display: none;
   }
 
-  &.innerNav {
 
-    h3 {
-      font-size: calc($font-size-md * 1.2);
-      padding-bottom: $spacing-xs;
-      margin: $spacing-md 0 $spacing-xs;
-      line-height: 100%;
+  h3 {
+    font-size: calc($font-size-md * 1.2);
+    padding-bottom: $spacing-xs;
+    margin: $spacing-md 0 $spacing-xs;
+    line-height: 100%;
 
-      &:first-of-type {
-        margin-top: 0;
-      }
+    &:first-of-type {
+      margin-top: 0;
     }
-
-    a {
-      font-size: $font-size-sm;
-      display: block;
-      text-decoration: none;
-      padding: $spacing-xxs $spacing-sm;
-      border-radius: $br-sm;
-      color: $black;
-      opacity: 0.6;
-      display: flex;
-      flex-direction: row;
-      gap: $spacing-sm;
-      align-content: center;
-      margin-bottom: 1px;
-
-      span {
-        align-self: center;
-      }
-      
-      &.router-link-exact-active,
-      &:hover {
-        background: rgba($black, 0.1);
-        opacity: 1;
-        font-weight: bold;
-      }
-    }
-
   }
+
+  a {
+    font-size: $font-size-sm;
+    display: block;
+    text-decoration: none;
+    padding: $spacing-xxs $spacing-sm;
+    border-radius: $br-sm;
+    color: $black;
+    opacity: 0.6;
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-sm;
+    align-content: center;
+    margin-bottom: 1px;
+
+    span {
+      align-self: center;
+    }
+    
+    &.router-link-exact-active,
+    &:hover {
+      background: linear-gradient(to right, rgba($black, 0.1) 65%, rgba($blue, 0.2));
+      opacity: 1;
+      font-weight: bold;
+    }
+  }
+
 }
 
 </style>
