@@ -11,7 +11,7 @@
 
           <h2>Built-in Geometries</h2>
 
-          <p>Three.js ships with a collection of ready-made geometries for common shapes. These are all subclasses of <code>BufferGeometry</code> — they generate the vertex positions, normals, and UVs for you so you don't have to build them by hand.</p>
+          <p>Three.js ships with a collection of ready-made geometries for common shapes that you can use to build your scenes with. These are all subclasses of <code>BufferGeometry</code>. This means that they generate the vertex positions, normals, and UVs for you so you don't have to build them by hand.</p>
 
           <h3>BoxGeometry</h3>
 
@@ -29,7 +29,7 @@ const detailed = new THREE.BoxGeometry(0.5, 2, 0.5, 1, 4, 1);`" />
 
           <h3>SphereGeometry</h3>
 
-          <p>A sphere defined by its radius. The <code>widthSegments</code> and <code>heightSegments</code> parameters control how smooth it looks — more segments means a rounder shape but more triangles for the GPU to process.</p>
+          <p>A sphere defined by its radius. The <code>widthSegments</code> and <code>heightSegments</code> parameters control how smooth it looks meaning that more segments create a rounder shape. This also means that more triangles are generated for the GPU to process.</p>
 
           <div class="scene-container">
             <canvas ref="sphereCanvas"></canvas>
@@ -49,7 +49,7 @@ const halfSphere = new THREE.SphereGeometry(1, 32, 32,
 
           <h3>CylinderGeometry and ConeGeometry</h3>
 
-          <p>Cylinders have a top and bottom radius — set the top radius to 0 and you get a cone. Three.js also provides <code>ConeGeometry</code> as a convenience. Both support an <code>openEnded</code> parameter to remove the caps.</p>
+          <p>Cylinders have a top and bottom radius and you can simply set the top radius to 0 and you get a cone. Three.js also provides <code>ConeGeometry</code> as a convenience. Both support an <code>openEnded</code> parameter to remove the caps.</p>
 
           <div class="scene-container">
             <canvas ref="cylinderCanvas"></canvas>
@@ -69,7 +69,7 @@ const tube = new THREE.CylinderGeometry(0.5, 0.5, 2, 32, 1, true);`" />
 
           <h3>TorusGeometry and TorusKnotGeometry</h3>
 
-          <p>A torus is a donut shape defined by its ring radius and tube thickness. A torus knot is a more complex shape where the tube winds around itself — great for testing materials and lighting.</p>
+          <p>A torus is a donut shape defined by its ring radius and tube thickness. A torus knot is a more complex shape where the tube winds around itself. This is great for testing materials and lighting, but I have to admit, not much else :).</p>
 
           <div class="scene-container">
             <canvas ref="torusCanvas"></canvas>
@@ -105,7 +105,7 @@ const ring = new THREE.RingGeometry(0.5, 1, 32);`" />
 
           <h3>Polyhedra</h3>
 
-          <p>Three.js includes the Platonic solids — geometries built from identical regular polygons. These are useful for low-poly aesthetics or as starting points for subdivision. Increasing the <code>detail</code> parameter subdivides each face, approaching a sphere.</p>
+          <p>Three.js includes the Platonic solids, which are geometries built from identical regular polygons. These are useful for low-poly aesthetics or as starting points for subdivision. Increasing the <code>detail</code> parameter subdivides each face, approaching a sphere.</p>
 
           <div class="scene-container">
             <canvas ref="polyCanvas"></canvas>
@@ -122,7 +122,7 @@ const subdividedIcosa = new THREE.IcosahedronGeometry(1, 2);`" />
 
           <h3>The Effect of Segments</h3>
 
-          <p>Every built-in geometry lets you control the number of <strong>segments</strong> — how many triangles make up the shape. More segments means smoother curves and better lighting at the cost of performance. Here's the same sphere at different segment counts:</p>
+          <p>Every built-in geometry lets you control the number of <strong>segments</strong>. At the end of the day, this adjusts how many triangles make up the shape. More segments means smoother curves and better lighting at the cost of performance. Here's the same sphere at different segment counts:</p>
 
           <div class="scene-container">
             <canvas ref="segmentsCanvas"></canvas>

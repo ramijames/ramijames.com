@@ -15,7 +15,7 @@
 
           <h3>ShapeGeometry</h3>
 
-          <p>A <code>Shape</code> defines a 2D outline using path commands similar to the HTML Canvas or SVG. <code>ShapeGeometry</code> then triangulates that outline into a flat mesh. This is the starting point for many custom shapes — and the input for <code>ExtrudeGeometry</code>.</p>
+          <p>A <code>Shape</code> defines a 2D outline using path commands similar to the HTML Canvas or SVG. <code>ShapeGeometry</code> then triangulates that outline into a flat mesh. This is the starting point for many custom shapes, and is the input for <code>ExtrudeGeometry</code>.</p>
 
           <div class="scene-container">
             <canvas ref="shapeCanvas"></canvas>
@@ -79,7 +79,7 @@ const alongPath = new THREE.ExtrudeGeometry(shape, {
 
           <h3>LatheGeometry</h3>
 
-          <p>A lathe spins a 2D profile around the Y axis to create a surface of revolution — perfect for vases, bottles, chess pieces, or anything with radial symmetry. You define the profile as an array of <code>Vector2</code> points.</p>
+          <p>A lathe spins a 2D profile around the Y axis to create a revolved surface that is perfect for vases, bottles, chess pieces, or anything with radial symmetry. You define the profile as an array of <code>Vector2</code> points and spin, spin, spin!</p>
 
           <div class="scene-container">
             <canvas ref="latheCanvas"></canvas>
@@ -105,7 +105,7 @@ const half = new THREE.LatheGeometry(points, 32, 0, Math.PI);`" />
 
           <h3>TubeGeometry</h3>
 
-          <p>Tubes generate a cylindrical mesh that follows a 3D curve. Provide any <code>Curve</code> object and Three.js will build the geometry along it. Great for pipes, wires, roller coasters, or any path-based shape.</p>
+          <p>Tubes generate a cylindrical mesh that follows a 3D curve. You can provide any <code>Curve</code> object and Three.js will build the geometry along it. Great for pipes, wires, roller coasters, or any path-based shape.</p>
 
           <div class="scene-container">
             <canvas ref="tubeCanvas"></canvas>
@@ -186,7 +186,7 @@ for (let i = 0; i < 100; i++) {
 const merged = mergeGeometries(geometries);
 const mesh = new THREE.Mesh(merged, material);`" />
 
-          <p>Merging is a one-time operation — you can't move individual pieces afterward. For objects that need independent transforms, use <code>InstancedMesh</code> instead.</p>
+          <p>Merging is a one-time operation so keep in mind that you can't move individual pieces afterward. For objects that need independent transforms, use <code>InstancedMesh</code> instead.</p>
 
     </section>
       </main>
@@ -196,8 +196,8 @@ const mesh = new THREE.Mesh(merged, material);`" />
   <LearnThreejsBottomNav
     prevLink="/learn-threejs/building-blocks/standard-primitives"
     prevText="Standard Primitives"
-    nextLink="/learn-threejs/building-blocks/procedural-terrain"
-    nextText="Procedural Terrain"
+    nextLink="/learn-threejs/building-blocks/instanced-mesh"
+    nextText="Instanced Mesh"
   />
   <Footer />
 </template>

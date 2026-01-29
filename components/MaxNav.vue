@@ -222,9 +222,14 @@ const isHome = computed(() => route.path === '/');
 
     .go-back {
       display: block;
-      width: 58px;
-      height: 58px;
+      width: 56px;
+      height: 56px;
       margin-left: -$spacing-sm;
+
+      @media screen and (max-width: 1000px) {
+        width: 44px;
+        height: 44px;
+      }
 
       &:hover {
         transform: scale(1.05);
@@ -250,9 +255,14 @@ const isHome = computed(() => route.path === '/');
 
     .logo-link {
       display: block;
-      width: 58px;
-      height: 58px;
+      width: 56px;
+      height: 56px;
       margin: 0;
+
+      @media screen and (max-width: 1000px) {
+        width: 44px;
+        height: 44px;
+      }
 
       @media screen and (max-width: 1000px){
         transform: scale(0.8);
@@ -321,6 +331,11 @@ const isHome = computed(() => route.path === '/');
     cursor: pointer;
     position: relative;
 
+    @media screen and (max-width: 1000px) {
+      width: 44px;
+      height: 44px;
+    }
+
     &:hover {
       transform: scale(1.05);
     }
@@ -331,6 +346,11 @@ const isHome = computed(() => route.path === '/');
       height: 56px;
       display: block;
       transition: transform 0.4s ease-in-out;
+
+      @media screen and (max-width: 1000px) {
+        width: 44px;
+        height: 44px;
+      }
 
       rect {
         fill: $white;

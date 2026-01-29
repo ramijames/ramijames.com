@@ -36,7 +36,7 @@ tick();`" />
 
           <h3>Antialiasing</h3>
 
-          <p>Antialiasing smooths out jagged edges on your geometry. Compare these two cubes - the left has no antialiasing, the right has it enabled:</p>
+          <p>Antialiasing smooths out jagged edges on your geometry. Compare these two cubes. The left has no antialiasing but the right has it enabled.</p>
 
           <div class="scene-row">
             <div class="scene-container half">
@@ -54,6 +54,10 @@ const renderer = new THREE.WebGLRenderer({
   canvas,
   antialias: true
 });`" />
+
+          <p>While smooth edges are usually the goal in 3D rendering, enabling antialiasing in Three.js isn't always a "set it and forget it" win. There are several technical and creative reasons why you might intentionally leave it turned off.</p>
+
+          <p>You might skip antialiasing to save performance on mobile devices or complex VR scenes where every millisecond of GPU time counts. It is also standard to disable it when using the EffectComposer, as post-processing stacks usually require specialized passes like FXAA or SMAA rather than the renderer's default setting. Finally, you might leave it off for stylistic reasons to achieve a sharp, "crunchy" retro or pixel-art aesthetic. Some of us out there still like that look and feel :)</p>
 
           <h3>Transparent Background</h3>
 
@@ -99,6 +103,10 @@ renderer.toneMapping = THREE.ACESFilmicToneMapping; // Industry standard
 // Exposure control (works with tone mapping)
 renderer.toneMappingExposure = 1.0;`" />
 
+          <p>You might disable tone mapping when your scene relies on specific hex colors or unlit materials that must appear exactly as defined without being shifted by exposure calculations. It is also common to leave it off if you are using a custom post-processing pipeline for color grading, where you prefer to manipulate the raw HDR data yourself.</p>
+          
+          <p>In projects that don't use high dynamic range (HDR) lighting, tone mapping can sometimes make the visuals appear dull or muddy rather than improving the contrast. Last but not least, disabling it is useful for UI elements and 2D overlays to ensure your interface doesn't change color as the camera moves through differently lit areas of the scene. That can be distracting and take the user out of the experience you are trying so hard to build.</p>
+
           <h3>Enabling Shadows</h3>
 
           <p>Shadow rendering is disabled by default for performance. You need to explicitly enable it:</p>
@@ -114,6 +122,8 @@ directionalLight.castShadow = true;
 mesh.castShadow = true;
 floor.receiveShadow = true;`" />
 
+          <p>We'll talk more about Shadows in a later article.</p>
+
           <h3>Output Color Space</h3>
 
           <p>For accurate color reproduction, especially with textures, set the output color space:</p>
@@ -121,9 +131,11 @@ floor.receiveShadow = true;`" />
           <CodeBlock lang="typescript" :code="`// Use sRGB for correct color display
 renderer.outputColorSpace = THREE.SRGBColorSpace;`" />
 
-          <p>This ensures colors match what you see in image editors and the web.</p>
+          <p>You use outputColorSpace to ensure the renderer correctly translates internal linear colors for standard displays, typically by setting it to SRGBColorSpace. It is essential for maintaining a "linear workflow," which prevents your scene from appearing washed out or overly dark when using standard lights and textures. You should enable it for nearly every modern project to ensure visual consistency with industry-standard assets like GLTF models. It is generally only bypassed if you are handling the final color encoding manually within a custom post-processing shader.</p>
 
-    </section>
+          <p>Basically, this ensures colors match what you see in image editors and the web. Turn it on.</p>
+
+        </section>
       </main>
     </main>
   </section>

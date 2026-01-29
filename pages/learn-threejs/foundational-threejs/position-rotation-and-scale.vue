@@ -87,6 +87,8 @@ mesh.quaternion.slerp(targetQuaternion, 0.1);
 mesh.lookAt(0, 0, 0);
 mesh.lookAt(targetMesh.position);`" />
 
+          <p>If you're new to Quaternions, I highly suggest <a href="https://www.youtube.com/watch?v=d4EgbgTm0Bg">this 3Blue1Brown video</a>.</p>
+
           <h3>Scale</h3>
 
           <p>Scale multiplies the size of an object along each axis. A scale of 1 is the original size, 2 is double, 0.5 is half.</p>
@@ -110,7 +112,7 @@ mesh.scale.multiplyScalar(2); // Double the current scale`" />
 
           <h3>Combining Transforms</h3>
 
-          <p>You can combine all three transforms on a single object. Internally, Three.js combines these into a <strong>transformation matrix</strong>:</p>
+          <p>You can combine all three transforms on a single object. Internally, Three.js combines these into a <strong>transformation matrix</strong> and saves you the headache of doing this manually, one by one.</p>
 
           <div class="scene-container">
             <canvas ref="combinedCanvas"></canvas>
@@ -134,7 +136,7 @@ console.log(mesh.matrix);`" />
 
           <h3>Helper Methods</h3>
 
-          <p>Three.js provides convenient methods for relative transforms:</p>
+          <p>Three.js provides convenient methods for relative transforms and when possible, you should use them.</p>
 
           <CodeBlock lang="typescript" :code="`// Translate relative to current position
 mesh.translateX(1);  // Move 1 unit along local X axis
@@ -158,7 +160,11 @@ camera.lookAt(scene.position);`" />
 
           <h3>Local vs World Space</h3>
 
-          <p>Remember that transforms are relative to the parent. To get or set world-space values:</p>
+          <p>Local space defines an object's position relative to its parent, meaning if you move a car, the steering wheel’s local coordinates remain unchanged. World space is the "big picture" view, representing an object's absolute location relative to the scene’s origin (0,0,0) regardless of its parentage.</p>
+            
+          <p>You typically use local space for internal motions like a character’s arm swinging, while world space is essential for global logic like physics and collision detection. Since Three.js defaults to local coordinates for its .position property, you must use methods like .getWorldPosition() to find an object's true location in the universe.</p>
+
+          <p>To get or set world-space values:</p>
 
           <CodeBlock lang="typescript" :code="`// Get world position (accounting for all parents)
 const worldPos = new THREE.Vector3();
@@ -185,8 +191,8 @@ const backToLocal = mesh.worldToLocal(worldPoint.clone());`" />
   <LearnThreejsBottomNav
     prevLink="/learn-threejs/foundational-threejs/understanding-parent-child-relationships"
     prevText="Parent-Child Relationships"
-    nextLink="/learn-threejs/foundational-threejs/geometries"
-    nextText="Geometries"
+    nextLink="/learn-threejs/foundational-threejs/the-animation-loop"
+    nextText="The Animation Loop"
   />
   <Footer />
 </template>

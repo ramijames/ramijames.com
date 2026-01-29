@@ -1,16 +1,7 @@
 <template>
-  <button v-if="innerNav && !uiStore.footerCtaVisible" class="nav-toggle" @click="isOpen = !isOpen">
+  <button v-if="innerNav" class="nav-toggle" @click="isOpen = !isOpen">
     <div v-if="isOpen">Hide Navigation</div>
     <div v-else>Show Navigation</div>
-    <svg v-if="!isOpen" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-icon">
-      <path d="M17 19H41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <path d="M17 29H33" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <path d="M17 39H41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-    <svg v-else viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="close-icon">
-      <path d="M21 21L37.9706 37.9706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <path d="M37.9707 21L21.0001 37.9706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
   </button>
 
   <nav :class="['learnthreejs', innerNav ? 'innerNav' : '', !isOpen ? 'hidden' : '']">
@@ -52,6 +43,7 @@
             <li><nuxt-link to="/learn-threejs/building-blocks/buffer-geometry">BufferGeometry</nuxt-link></li>
             <li><nuxt-link to="/learn-threejs/building-blocks/standard-primitives">Standard primitives</nuxt-link></li>
             <li><nuxt-link to="/learn-threejs/building-blocks/custom-geometries">Custom geometries and vertices</nuxt-link></li>
+            <li><nuxt-link to="/learn-threejs/building-blocks/instanced-mesh">Instanced Mesh</nuxt-link></li>
             <li><nuxt-link to="/learn-threejs/building-blocks/procedural-terrain">Procedural terrain</nuxt-link></li>
           </ol>
         <li>Materials and Textures</li>
@@ -168,7 +160,7 @@ onMounted(() => {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: $spacing-xxs;
   background: $black;
   border-radius: $br-sm;
@@ -183,6 +175,10 @@ onMounted(() => {
   bottom: $spacing-xs;
   width: 250px;
   z-index: 3;
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
+  }
 
   .menu-icon,
   .close-icon {

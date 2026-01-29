@@ -11,11 +11,11 @@
 
           <h2>How Animation Works in Three.js</h2>
 
-          <p>To create animation, you need to render your scene many times per second - typically 60 frames per second (60 FPS). Each frame, you update your objects slightly, then render. The browser provides <code>requestAnimationFrame</code> to make this smooth and efficient.</p>
+          <p>To create animation, you need to render your scene many times per second. Typically we're talking about 60 frames per second (60 FPS). Each frame, you update your objects slightly, then render. The browser provides <code>requestAnimationFrame</code> to make this smooth and efficient.</p>
 
           <h3>The Basic Animation Loop</h3>
 
-          <p>Here's the simplest animation loop structure:</p>
+          <p>Here's the simplest animation loop structure that I can think of:</p>
 
           <CodeBlock lang="typescript" :code="`// The tick function runs every frame
 function tick() {
@@ -32,26 +32,26 @@ function tick() {
 // Start the loop
 tick();`" />
 
-          <p><code>requestAnimationFrame</code> is smart - it pauses when the browser tab is hidden (saving CPU/GPU), and syncs with your monitor's refresh rate for smooth animation.</p>
+          <p><code>requestAnimationFrame</code> is smart. It pauses when the browser tab is hidden (to save CPU/GPU), and syncs with your monitor's refresh rate for smooth animation.</p>
 
           <div class="scene-container">
             <div class="stats" ref="statsRef1">Frame: 0</div>
             <canvas ref="basicCanvas"></canvas>
           </div>
 
-          <h3>The Problem with Fixed Increments</h3>
+          <h3>The problem with fixed increments</h3>
 
           <p>Adding a fixed amount each frame (like <code>rotation.y += 0.01</code>) has a problem: animation speed depends on frame rate. On a 120Hz monitor, your cube spins twice as fast as on a 60Hz monitor!</p>
 
-          <p>Watch the two cubes below - the left uses a fixed increment, the right uses <strong>delta time</strong>. They look the same here, but would differ on monitors with different refresh rates:</p>
+          <p>Watch the two cubes below. The left uses a fixed increment, and the right uses <strong>delta time</strong>. They look the same here, but would differ on monitors with different refresh rates:</p>
 
           <div class="scene-container">
             <canvas ref="deltaCanvas"></canvas>
           </div>
 
-          <h3>Using Delta Time</h3>
+          <h3>Using delta time</h3>
 
-          <p>The solution is to base animation on <strong>elapsed time</strong>, not frame count. <code>requestAnimationFrame</code> passes a timestamp you can use:</p>
+          <p>The solution is to base animation on <strong>elapsed time</strong> and not on frame count. <code>requestAnimationFrame</code> passes a timestamp you can use for this:</p>
 
           <CodeBlock lang="typescript" :code="`let previousTime = 0;
 
@@ -103,7 +103,7 @@ tick();`" />
             <canvas ref="clockCanvas"></canvas>
           </div>
 
-          <h3>Pausing and Resuming</h3>
+          <h3>Pausing and resuming</h3>
 
           <p>You might want to pause animation when the user switches tabs or clicks a pause button:</p>
 
@@ -158,7 +158,7 @@ renderer.setAnimationLoop(null);`" />
 
           <h3>Performance Tips</h3>
 
-          <p>Your animation loop runs 60+ times per second. Keep it lean:</p>
+          <p>Your animation loop runs 60+ times per second, so try to keep it lean:</p>
 
           <CodeBlock lang="typescript" :code="`// BAD - Creating objects every frame
 function tick() {
