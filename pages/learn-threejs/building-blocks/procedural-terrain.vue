@@ -17,9 +17,11 @@
 
           <p>The most basic terrain uses layered sine and cosine waves to displace vertex heights. This won't look realistic on its own, but it demonstrates the core technique — every terrain generator works the same way, just with better noise.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="basicCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Create a subdivided plane
 const geometry = new THREE.PlaneGeometry(10, 10, 128, 128);
@@ -44,9 +46,11 @@ geometry.computeVertexNormals();`" />
 
           <p>Real terrain uses <strong>coherent noise</strong> — random values that change smoothly. A simple approach is <strong>value noise</strong>: assign random values to a grid, then interpolate between them. Here's a basic 2D implementation:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="noiseCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Simple hash function for repeatable pseudo-random values
 function hash(x, y) {
@@ -87,9 +91,11 @@ function noise2D(x, y) {
 
           <p>A single layer of noise looks blobby. Real terrain has detail at every scale — large mountains, medium hills, small rocks. <strong>Fractal Brownian motion</strong> layers multiple octaves of noise at increasing frequency and decreasing amplitude:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="fbmCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`function fbm(x, y, octaves = 6) {
   let value = 0;
@@ -121,9 +127,11 @@ for (let i = 0; i < positions.count; i++) {
 
           <p>Flat-colored terrain looks artificial. A common technique is to assign <NuxtLink to="/learn-threejs/building-blocks/buffer-geometry">vertex colors</NuxtLink> based on height — deep blue for water, green for lowlands, brown for mountains, white for snow:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="colorCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Add a color attribute to the geometry
 const colors = new Float32Array(positions.count * 3);
@@ -160,9 +168,11 @@ const material = new THREE.MeshLambertMaterial({
 
           <p>Since the position attribute can be updated every frame, you can animate terrain in realtime. Adding a time offset to the noise input creates flowing, wave-like terrain — useful for water surfaces, alien landscapes, or visualizers.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="animCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`function updateTerrain(time) {
   const positions = geometry.attributes.position;
@@ -192,9 +202,11 @@ function tick() {
 
           <p>Standard fBm produces rolling hills. For sharper, more dramatic landscapes with ridges and valleys, you can use <strong>ridged noise</strong> — take the absolute value of the noise and invert it, then raise it to a power. The sharp creases where noise crosses zero become mountain ridges.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="ridgedCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`function ridgedNoise(x, y, octaves = 6) {
   let value = 0;

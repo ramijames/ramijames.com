@@ -17,9 +17,11 @@
 
           <p>A rectangular box defined by width, height, and depth. You can also control the number of segments on each face, which matters when you want to deform vertices or need smoother shading.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="boxCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// BoxGeometry(width, height, depth, widthSegments, heightSegments, depthSegments)
 const geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -31,9 +33,11 @@ const detailed = new THREE.BoxGeometry(0.5, 2, 0.5, 1, 4, 1);`" />
 
           <p>A sphere defined by its radius. The <code>widthSegments</code> and <code>heightSegments</code> parameters control how smooth it looks meaning that more segments create a rounder shape. This also means that more triangles are generated for the GPU to process.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="sphereCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// SphereGeometry(radius, widthSegments, heightSegments)
 const geometry = new THREE.SphereGeometry(1, 32, 32);
@@ -51,9 +55,11 @@ const halfSphere = new THREE.SphereGeometry(1, 32, 32,
 
           <p>Cylinders have a top and bottom radius and you can simply set the top radius to 0 and you get a cone. Three.js also provides <code>ConeGeometry</code> as a convenience. Both support an <code>openEnded</code> parameter to remove the caps.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="cylinderCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// CylinderGeometry(radiusTop, radiusBottom, height, radialSegments, heightSegments, openEnded)
 const cylinder = new THREE.CylinderGeometry(0.5, 0.5, 2, 32);
@@ -71,9 +77,11 @@ const tube = new THREE.CylinderGeometry(0.5, 0.5, 2, 32, 1, true);`" />
 
           <p>A torus is a donut shape defined by its ring radius and tube thickness. A torus knot is a more complex shape where the tube winds around itself. This is great for testing materials and lighting, but I have to admit, not much else :).</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="torusCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// TorusGeometry(radius, tubeRadius, radialSegments, tubularSegments)
 const torus = new THREE.TorusGeometry(1, 0.4, 16, 100);
@@ -90,9 +98,11 @@ const cinquefoil = new THREE.TorusKnotGeometry(1, 0.3, 100, 16, 2, 5);`" />
 
           <p>Flat 2D shapes are useful for floors, walls, UI elements, and particles. <code>PlaneGeometry</code> creates a rectangle, <code>CircleGeometry</code> a filled disc, and <code>RingGeometry</code> a flat annulus.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="flatCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// PlaneGeometry(width, height, widthSegments, heightSegments)
 const plane = new THREE.PlaneGeometry(2, 2);
@@ -107,9 +117,11 @@ const ring = new THREE.RingGeometry(0.5, 1, 32);`" />
 
           <p>Three.js includes the Platonic solids, which are geometries built from identical regular polygons. These are useful for low-poly aesthetics or as starting points for subdivision. Increasing the <code>detail</code> parameter subdivides each face, approaching a sphere.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="polyCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// All take (radius, detail) — detail 0 is the base shape
 const tetra = new THREE.TetrahedronGeometry(1, 0);   // 4 faces
@@ -124,9 +136,11 @@ const subdividedIcosa = new THREE.IcosahedronGeometry(1, 2);`" />
 
           <p>Every built-in geometry lets you control the number of <strong>segments</strong>. At the end of the day, this adjusts how many triangles make up the shape. More segments means smoother curves and better lighting at the cost of performance. Here's the same sphere at different segment counts:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="segmentsCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Low segments: visible facets, fewer triangles
 const low = new THREE.SphereGeometry(1, 4, 3);

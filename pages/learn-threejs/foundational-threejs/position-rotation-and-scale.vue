@@ -22,9 +22,11 @@
             <li><strong>Z</strong> - Forward/Back (positive = toward camera)</li>
           </ul>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="positionCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Set position properties individually
 mesh.position.x = 2;
@@ -49,9 +51,11 @@ const length = mesh.position.length();`" />
 
           <p>Rotation uses <strong>Euler angles</strong> by default, which are three values representing rotation around each axis, measured in <strong>radians</strong> (not degrees). A full rotation is <code>Math.PI * 2</code> (approximately 6.28). If you need a refresher on Radians, I highly suggest <a href="https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:radians/v/radian-and-degree-conversion-practice">this video on Khan Academy</a> for what they are and why we use them instead of Degrees.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="rotationCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Rotate around each axis (in radians)
 mesh.rotation.x = Math.PI / 4;  // 45 degrees
@@ -93,9 +97,11 @@ mesh.lookAt(targetMesh.position);`" />
 
           <p>Scale multiplies the size of an object along each axis. A scale of 1 is the original size, 2 is double, 0.5 is half.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="scaleCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Scale each axis independently
 mesh.scale.x = 2;   // Stretch horizontally
@@ -114,9 +120,11 @@ mesh.scale.multiplyScalar(2); // Double the current scale`" />
 
           <p>You can combine all three transforms on a single object. Internally, Three.js combines these into a <strong>transformation matrix</strong> and saves you the headache of doing this manually, one by one.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="combinedCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// All transforms together
 mesh.position.set(2, 0, 0);

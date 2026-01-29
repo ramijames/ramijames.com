@@ -17,9 +17,11 @@
 
           <p>A <code>Shape</code> defines a 2D outline using path commands similar to the HTML Canvas or SVG. <code>ShapeGeometry</code> then triangulates that outline into a flat mesh. This is the starting point for many custom shapes, and is the input for <code>ExtrudeGeometry</code>.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="shapeCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Create a 2D shape using path commands
 const heartShape = new THREE.Shape();
@@ -45,9 +47,11 @@ outerShape.holes.push(hole);`" />
 
           <p>Extrusion takes a 2D <code>Shape</code> and pushes it into 3D along the Z axis. You control the depth, bevel size, and bevel segments. This is how Three.js generates 3D text and logos.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="extrudeCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`const shape = new THREE.Shape();
 shape.moveTo(-1, -0.5);
@@ -81,9 +85,11 @@ const alongPath = new THREE.ExtrudeGeometry(shape, {
 
           <p>A lathe spins a 2D profile around the Y axis to create a revolved surface that is perfect for vases, bottles, chess pieces, or anything with radial symmetry. You define the profile as an array of <code>Vector2</code> points and spin, spin, spin!</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="latheCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Define the profile curve as Vector2 points (x = radius, y = height)
 const points = [
@@ -107,9 +113,11 @@ const half = new THREE.LatheGeometry(points, 32, 0, Math.PI);`" />
 
           <p>Tubes generate a cylindrical mesh that follows a 3D curve. You can provide any <code>Curve</code> object and Three.js will build the geometry along it. Great for pipes, wires, roller coasters, or any path-based shape.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="tubeCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Define a 3D curve
 const curve = new THREE.CatmullRomCurve3([
@@ -131,9 +139,11 @@ const closedTube = new THREE.TubeGeometry(loop, 64, 0.15, 16, true);`" />
 
           <p>Sometimes the fastest path to a custom shape is starting from a primitive and displacing its vertices. Since every geometry is a <NuxtLink to="/learn-threejs/building-blocks/buffer-geometry">BufferGeometry</NuxtLink>, you can access and modify the position attribute directly.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="displaceCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Start with a sphere
 const geometry = new THREE.SphereGeometry(1, 64, 32);
@@ -160,9 +170,11 @@ geometry.computeVertexNormals();`" />
 
           <p>When you have many static meshes using the same material, you can merge them into a single geometry to reduce draw calls. Three.js provides <code>mergeGeometries</code> from the <code>BufferGeometryUtils</code> addon for this.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="mergeCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 

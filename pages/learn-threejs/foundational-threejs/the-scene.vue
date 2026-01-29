@@ -15,9 +15,11 @@
 
           <p>You can think of your scene as the backdrop or background that you'll be building in front of. It will set the tone for what you're building. Here's our cube from the previous section, with it's background set to <code>0xBBBBBB</code>, a medium gray color.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="canvasRef" class="webgl-canvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>But, what if we want to spice this up a bit? We can set the background to another color, or even a gradient. We can add fog to give it some depth and atmosphere.</p>
 
@@ -55,9 +57,11 @@ directionalLight.position.set(2, 2, 2);
 scene.add(ambientLight);
 scene.add(directionalLight);`" />
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="canvasRefTwo" class="webgl-canvas-two"></canvas>
           </div>
+          </ClientOnly>
 
           <p>As you can see, with a little tweaking, you can add a lot of pizazz to your Three.js scene without much hassle.</p>
 

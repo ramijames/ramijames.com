@@ -52,9 +52,11 @@ mesh.instanceMatrix.needsUpdate = true;`" />
 
           <p>The scene below renders 400 cubes in a 20x20 grid using a single <code>InstancedMesh</code> — one draw call for the entire grid.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="basicGridCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`const gridSize = 20;
 const count = gridSize * gridSize;
@@ -106,9 +108,11 @@ mesh.instanceColor.needsUpdate = true;`" />
 
           <p>The scene below uses a gradient hue across the grid. Each cube has a unique color, but they're all still rendered in a single draw call.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="coloredFieldCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <h2>Animating instances</h2>
 
@@ -116,9 +120,11 @@ mesh.instanceColor.needsUpdate = true;`" />
 
           <p>The scene below animates a 30x30 grid of cubes in a sine wave. Each frame, every instance's Y position and rotation are recalculated based on its grid position and the current time.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="animatedWaveCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`const clock = new THREE.Clock();
 

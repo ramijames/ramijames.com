@@ -36,9 +36,11 @@ child.position.x = 2; // 2 units to the right of parent's center`" />
 
           <p>The key insight is that <strong>children inherit their parent's transformations</strong>. Look at the demo below where the small cubes are children of the larger cube. When the large cube (the parent) rotates, the children orbit around it while also spinning on their own axes.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="hierarchyCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Parent rotates
 parent.rotation.y += 0.01;
@@ -71,9 +73,11 @@ child.getWorldScale(worldScale);`" />
 
           <p><code>THREE.Group</code> is an empty container specifically designed for organizing objects. It's like an invisible parent that lets you transform multiple objects together.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="groupCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Create a group
 const group = new THREE.Group();
@@ -95,9 +99,11 @@ scene.add(group);`" />
 
           <p>Parent-child relationships make orbital systems trivial to implement. Each body orbits its parent without complex math. So, in our example solar system, the Sun is the parent of the planet, and the planet is the parent of the moon.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="solarCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Sun at center (added to scene)
 const sun = new THREE.Mesh(sunGeometry, sunMaterial);

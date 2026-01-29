@@ -19,9 +19,11 @@
 
           <p><code>MeshBasicMaterial</code> ignores all lights in the scene. It renders the mesh with a flat color, a texture, or vertex colors — nothing more. This makes it the fastest material and useful for UI elements, backgrounds, wireframes, or any object that shouldn't react to lighting.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="basicCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Flat color, no light interaction
 const material = new THREE.MeshBasicMaterial({
@@ -45,9 +47,11 @@ const glass = new THREE.MeshBasicMaterial({
 
           <p><code>MeshNormalMaterial</code> maps each face's normal direction to a color. Faces pointing along the X axis appear red/cyan, Y axis appears green/magenta, and Z axis appears blue/yellow. It doesn't need lights and is invaluable for debugging geometry — you can immediately see if normals are correct, faces are oriented properly, or vertices are shared.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="normalCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`const material = new THREE.MeshNormalMaterial();
 
@@ -60,9 +64,11 @@ const flat = new THREE.MeshNormalMaterial({
 
           <p><code>MeshLambertMaterial</code> is the simplest lit material. It uses <strong>Lambertian reflectance</strong>, which calculates lighting only at vertices and interpolates across faces. This creates a soft, matte look — good for clay, fabric, unpolished wood, or any surface that doesn't have a shine. It's significantly cheaper than Phong or Standard materials.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="lambertCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`const material = new THREE.MeshLambertMaterial({
   color: 0xcc8844
@@ -78,9 +84,11 @@ const glowing = new THREE.MeshLambertMaterial({
 
           <p><code>MeshPhongMaterial</code> adds <strong>specular highlights</strong> on top of Lambert's diffuse shading. The <code>shininess</code> property controls how tight the highlight is — low values create a broad, soft sheen (like rubber), high values create a tight, bright spot (like polished metal). The <code>specular</code> color controls the highlight's tint.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="phongCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Moderate shine (plastic-like)
 const plastic = new THREE.MeshPhongMaterial({
@@ -107,9 +115,11 @@ const rubber = new THREE.MeshPhongMaterial({
 
           <p><code>MeshStandardMaterial</code> is the workhorse PBR material. Instead of separate diffuse/specular/shininess controls, it uses two intuitive properties: <code>roughness</code> (0 = mirror, 1 = completely diffuse) and <code>metalness</code> (0 = dielectric like plastic, 1 = metal). This model produces more realistic results because it conserves energy — as a surface becomes more reflective, it scatters less light diffusely.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="standardCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Smooth metal
 const chrome = new THREE.MeshStandardMaterial({
@@ -138,9 +148,11 @@ const brushedMetal = new THREE.MeshStandardMaterial({
 
           <p><code>MeshPhysicalMaterial</code> extends Standard with additional properties for specialized effects: <code>clearcoat</code> (a second reflective layer, like car paint or lacquered wood), <code>transmission</code> (light passing through, for glass), <code>thickness</code> (how deep the transparent object is), <code>ior</code> (index of refraction), and <code>iridescence</code> (thin-film interference, like soap bubbles or oil slicks). It's the most expensive material but produces the most realistic results.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="physicalCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Glass sphere
 const glass = new THREE.MeshPhysicalMaterial({
@@ -174,9 +186,11 @@ const iridescent = new THREE.MeshPhysicalMaterial({
 
           <p><code>MeshToonMaterial</code> renders surfaces with discrete shading steps instead of smooth gradients, creating a cartoon or cel-shaded look. By default it uses a two-tone (light/shadow) gradient, but you can provide a custom <code>gradientMap</code> texture for more steps. It responds to lights like Lambert but quantizes the result.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="toonCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Default two-tone cel shading
 const toon = new THREE.MeshToonMaterial({
@@ -204,9 +218,11 @@ const threeTone = new THREE.MeshToonMaterial({
 
           <p>The best way to understand materials is to see them on the same geometry under the same lighting. The demo below places seven spheres in a row — one for each material type — lit by the same directional and ambient lights. Notice how each responds differently to the same light conditions.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="comparisonCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>From left to right: <strong>Basic</strong> (flat, unlit), <strong>Normal</strong> (debug colors), <strong>Lambert</strong> (soft matte), <strong>Phong</strong> (specular highlight), <strong>Standard</strong> (PBR roughness/metalness), <strong>Physical</strong> (clearcoat), <strong>Toon</strong> (cel-shaded steps).</p>
 

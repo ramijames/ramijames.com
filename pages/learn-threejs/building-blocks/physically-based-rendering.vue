@@ -19,9 +19,11 @@
 
           <p>The core principle of PBR is <strong>energy conservation</strong>: a surface can't reflect more light than it receives. When light hits a surface, it's either reflected (specular) or absorbed and re-emitted (diffuse). The more a surface reflects, the less it scatters diffusely. PBR materials enforce this automatically — you don't need to manually balance diffuse and specular like you do with Phong shading.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="energyCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>The row above shows spheres with increasing roughness from left to right. As roughness increases, specular reflections spread out and become dimmer, while diffuse shading becomes more prominent — but the total light energy stays constant.</p>
 
@@ -52,9 +54,11 @@ const rough = new THREE.MeshStandardMaterial({
 
           <p>Metals and dielectrics behave fundamentally differently. Metals absorb almost all refracted light, so they have no diffuse component — their color comes entirely from tinted reflections. Dielectrics reflect a small amount of white light at grazing angles (Fresnel effect) and scatter the rest as diffuse color.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="gridCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>The grid above maps roughness (left to right) against metalness (bottom to top). The bottom-left sphere is a smooth dielectric (like polished plastic). The top-right is a rough metal (like brushed steel). The top-left is a smooth metal (like chrome).</p>
 
@@ -83,9 +87,11 @@ const coated = new THREE.MeshStandardMaterial({
 
           <p>All surfaces become more reflective at <strong>grazing angles</strong> — look at a table from a steep angle and it reflects the room. This is the <strong>Fresnel effect</strong>, and PBR handles it automatically. For dielectrics, reflections are strongest at edges. For metals, the entire surface is reflective, but the color shifts at grazing angles.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="fresnelCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>The large sphere above uses a low roughness dielectric material. Notice how the edges appear brighter and more reflective than the center — that's the Fresnel effect in action. The flat plane behind it also shows Fresnel reflections at a shallow viewing angle.</p>
 
@@ -110,9 +116,11 @@ const copper = new THREE.MeshStandardMaterial({
 
           <p>PBR materials look flat without something to reflect. In the real world, objects reflect their surroundings. In Three.js, an <strong>environment map</strong> provides this ambient reflection and lighting. You can set it on individual materials or on the entire scene.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="envmapCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>The demo above shows the same set of spheres with a procedural environment map applied to the scene. Smooth metals now show clear reflections, and even rough surfaces pick up subtle ambient color from the environment.</p>
 
@@ -141,9 +149,11 @@ pmremGenerator.dispose();`" />
 
           <p>A <code>clearcoat</code> adds a second, independent reflective layer on top of the base material — like the lacquer on a car, the varnish on wood, or the glossy finish on a phone case. The clearcoat has its own roughness, separate from the base layer.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="clearcoatCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Car paint: rough base color + smooth clearcoat
 const carPaint = new THREE.MeshPhysicalMaterial({
@@ -167,9 +177,11 @@ const carbonFiber = new THREE.MeshPhysicalMaterial({
 
           <p><code>transmission</code> makes light pass through the material instead of being reflected or absorbed — essential for glass, water, crystals, and translucent plastics. Combined with <code>ior</code> (index of refraction) and <code>thickness</code>, you can control how much light bends and how deep the object appears.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="transmissionCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Clear glass
 const glass = new THREE.MeshPhysicalMaterial({
@@ -205,9 +217,11 @@ const water = new THREE.MeshPhysicalMaterial({
 
           <p><code>iridescence</code> simulates thin-film interference — the rainbow sheen on soap bubbles, oil slicks, beetle shells, and some coated metals. The effect shifts color based on viewing angle and is controlled by <code>iridescenceIOR</code> and an optional thickness range.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="iridescenceCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Soap bubble
 const bubble = new THREE.MeshPhysicalMaterial({
@@ -236,9 +250,11 @@ const oilSlick = new THREE.MeshPhysicalMaterial({
 
           <p><code>sheen</code> adds a soft glow at grazing angles, simulating fabrics like velvet, satin, or microfiber. Unlike specular highlights, sheen produces a broad, soft halo rather than a sharp reflection.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="sheenCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Velvet fabric
 const velvet = new THREE.MeshPhysicalMaterial({
@@ -264,9 +280,11 @@ const satin = new THREE.MeshPhysicalMaterial({
 
           <p>The final demo combines several PBR techniques in one scene — metals, dielectrics, glass, clearcoat, and iridescence — all lit by the same environment. This shows how PBR materials respond consistently to the same lighting, producing a coherent, believable scene.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="showcaseCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>From left to right: gold metal, glossy red clearcoat, clear glass, iridescent sphere, and velvet fabric — all using <code>MeshPhysicalMaterial</code> with different property combinations.</p>
 

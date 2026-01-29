@@ -17,9 +17,11 @@
 
           <p>This is the camera you'll use most often. It mimics how human eyes perceive the world - objects farther away appear smaller. This is called <em>perspective projection</em>.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="perspectiveCanvas" class="webgl-canvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// PerspectiveCamera(fov, aspect, near, far)
 const camera = new THREE.PerspectiveCamera(
@@ -42,9 +44,11 @@ scene.add(camera);`" />
 
           <p>An orthographic camera removes perspective distortion entirely. Objects remain the same size regardless of distance. This is useful for 2D games, UI elements, or isometric views.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="orthoCanvas" class="webgl-canvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// OrthographicCamera(left, right, top, bottom, near, far)
 const aspectRatio = sizes.width / sizes.height;

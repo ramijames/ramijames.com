@@ -34,10 +34,12 @@ tick();`" />
 
           <p><code>requestAnimationFrame</code> is smart. It pauses when the browser tab is hidden (to save CPU/GPU), and syncs with your monitor's refresh rate for smooth animation.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <div class="stats" ref="statsRef1">Frame: 0</div>
             <canvas ref="basicCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <h3>The problem with fixed increments</h3>
 
@@ -45,9 +47,11 @@ tick();`" />
 
           <p>Watch the two cubes below. The left uses a fixed increment, and the right uses <strong>delta time</strong>. They look the same here, but would differ on monitors with different refresh rates:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="deltaCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <h3>Using delta time</h3>
 
@@ -98,21 +102,25 @@ function tick() {
 
 tick();`" />
 
+          <ClientOnly>
           <div class="scene-container">
             <div class="stats" ref="statsRef2">Elapsed: 0.00s</div>
             <canvas ref="clockCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <h3>Pausing and resuming</h3>
 
           <p>You might want to pause animation when the user switches tabs or clicks a pause button:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <div class="controls">
               <button ref="pauseBtn" @click="togglePause">Pause</button>
             </div>
             <canvas ref="pauseCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`let animationId = null;
 let isPaused = false;

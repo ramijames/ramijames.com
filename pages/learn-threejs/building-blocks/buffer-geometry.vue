@@ -32,9 +32,11 @@
 
           <p>The simplest custom geometry is a single triangle. Not hard to visualize or to understand. You define three vertices (three points in space) and pass them as a position attribute:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="triangleCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Create a new empty geometry
 const geometry = new THREE.BufferGeometry();
@@ -63,9 +65,11 @@ const mesh = new THREE.Mesh(geometry, material);`" />
 
           <p>Real 3D shapes are built by combining hundreds or thousands of triangles into something more complex and meaningful. A common technique is the <strong>surface of revolution</strong> (or lathe). You define a 2D profile curve and spin it around an axis to generate a 3D shape. Here's a vase built this way, entirely from raw vertices and indices:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="teapotCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Define the vase profile (radius, height) pairs
 const profile = [
@@ -110,9 +114,11 @@ geometry.computeVertexNormals();`" />
 
           <p>When vertices are shared between triangles (like in a grid or cube), you're wasting memory by duplicating them. <strong>Indexed geometry</strong> solves this by defining vertices once and then referencing them by index:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="indexedCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`const geometry = new THREE.BufferGeometry();
 
@@ -141,9 +147,11 @@ geometry.computeVertexNormals(); // Auto-calculate normals for lighting`" />
 
           <p>You can assign a color to each vertex. The GPU interpolates between them across each triangle face, creating smooth gradients:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="colorCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`const geometry = new THREE.BufferGeometry();
 
@@ -173,9 +181,11 @@ const material = new THREE.MeshBasicMaterial({
 
           <p>You can update vertex data every frame for dynamic effects like waves or terrain deformation. The key is setting <code>needsUpdate = true</code> on the attribute after changing it:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="waveCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Create a flat grid of vertices
 const size = 10;

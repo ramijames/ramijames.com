@@ -19,9 +19,11 @@
 
           <p>The <strong>color map</strong> — also called <strong>albedo</strong> or <strong>diffuse map</strong> — defines the base color pattern of the surface. It tells the GPU "this part is brick red, this part is gray mortar." In PBR, the color map should contain <em>only</em> the raw surface color — no baked-in shadows, no lighting, no ambient occlusion. The lighting system handles all of that.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="colorMapCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>The left sphere uses a flat color. The right sphere uses a procedural color map — same geometry, same lighting, but the texture gives it a pattern. The map is applied to the <code>map</code> property.</p>
 
@@ -43,9 +45,11 @@ const material = new THREE.MeshStandardMaterial({
 
           <p>A "scratched metal" texture uses a roughness map where the scratches are white (rough, light scatters) and the polished metal between scratches is black (smooth, sharp reflections).</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="roughnessMapCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>The left sphere has uniform roughness. The right sphere uses a roughness map — notice how some areas reflect sharply while others scatter light diffusely, all on the same object.</p>
 
@@ -67,9 +71,11 @@ const material = new THREE.MeshStandardMaterial({
 
           <p>Why does this matter? Metals reflect light fundamentally differently — they tint the color of their reflections and have no diffuse component. Getting this map right is critical for realism.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="metalnessMapCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>The left sphere is uniformly metallic. The right sphere uses a metalness map — some regions behave as metal (tinted reflections, no diffuse) while others behave as dielectric (white reflections, colored diffuse).</p>
 
@@ -91,9 +97,11 @@ const material = new THREE.MeshStandardMaterial({
 
           <p>This lets you make a flat plane look like a rugged stone wall, or a smooth sphere look like a golf ball — all by changing how light interacts with the surface, not the actual geometry.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="normalMapCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>The left sphere is geometrically smooth with no normal map. The right sphere uses a procedural normal map — the geometry is identical, but the lighting creates the illusion of a textured surface. The <code>normalScale</code> vector controls the intensity of the effect.</p>
 
@@ -122,9 +130,11 @@ const material = new THREE.MeshStandardMaterial({
             <li><strong>Metalness Map</strong> — Entirely black, since stone isn't metal.</li>
           </ul>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="layeringCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>The demo above shows a sphere with all four maps applied simultaneously. The color map provides the pattern, the normal map adds surface detail, the roughness map creates variation in shininess, and the metalness map defines which regions are metallic. Together they produce a surface that looks far more complex than the underlying geometry.</p>
 
@@ -159,9 +169,11 @@ const material = new THREE.MeshStandardMaterial({
 
           <p>Normal maps and displacement maps solve the same problem — adding surface detail — but in fundamentally different ways. A <strong>normal map</strong> fakes the detail by changing how light calculates on a flat surface. A <strong>displacement map</strong> actually moves the vertices, creating real geometric changes. The trade-off: displacement requires a highly subdivided mesh (many vertices to move), while normal maps work on any geometry.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="displacementCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>Left: a smooth sphere with only a normal map — the silhouette is perfectly round, but the surface looks bumpy. Right: the same sphere with a displacement map — the silhouette itself is deformed, and the bumps are real geometry. Displacement is more convincing at edges and in silhouette, but costs more vertices.</p>
 
@@ -188,9 +200,11 @@ const geometry = new THREE.SphereGeometry(1, 128, 128);`" />
 
           <p>You can control how textures tile and offset using the texture's <code>repeat</code>, <code>offset</code>, and <code>wrapS</code>/<code>wrapT</code> properties:</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="uvCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>The demo above shows the same texture at different tiling scales. Increasing <code>repeat</code> tiles the pattern more densely across the surface.</p>
 

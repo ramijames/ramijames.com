@@ -17,9 +17,11 @@
 
           <h3>Your Hello Cube</h3>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="canvasRef" class="webgl-canvas"></canvas>
           </div>
+          </ClientOnly>
 
           <p>We'll be doing a few discrete things here.</p>
 

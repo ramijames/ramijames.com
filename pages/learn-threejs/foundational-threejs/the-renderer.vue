@@ -39,14 +39,18 @@ tick();`" />
           <p>Antialiasing smooths out jagged edges on your geometry. Compare these two cubes. The left has no antialiasing but the right has it enabled.</p>
 
           <div class="scene-row">
+            <ClientOnly>
             <div class="scene-container half">
               <span class="label">No Antialias</span>
               <canvas ref="noAntialiasCanvas"></canvas>
             </div>
+            </ClientOnly>
+            <ClientOnly>
             <div class="scene-container half">
               <span class="label">Antialias: true</span>
               <canvas ref="antialiasCanvas"></canvas>
             </div>
+            </ClientOnly>
           </div>
 
           <CodeBlock lang="typescript" :code="`// Enable antialiasing (slight performance cost)
@@ -63,10 +67,12 @@ const renderer = new THREE.WebGLRenderer({
 
           <p>By default, the renderer fills the canvas with a color. Setting <code>alpha: true</code> allows the canvas background to show through, which is useful for overlaying 3D on top of HTML content.</p>
 
+          <ClientOnly>
           <div class="scene-container transparent-demo">
             <section>Your awesome html goes here</section>
             <canvas ref="alphaCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Enable transparent background
 const renderer = new THREE.WebGLRenderer({
@@ -89,9 +95,11 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));`" />
 
           <p>Tone mapping controls how HDR (high dynamic range) colors are converted to what your screen can display. This is especially important when working with realistic lighting.</p>
 
+          <ClientOnly>
           <div class="scene-container">
             <canvas ref="toneMappingCanvas"></canvas>
           </div>
+          </ClientOnly>
 
           <CodeBlock lang="typescript" :code="`// Different tone mapping options
 renderer.toneMapping = THREE.NoToneMapping;      // Default, no conversion
