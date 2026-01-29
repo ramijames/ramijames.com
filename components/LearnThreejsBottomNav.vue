@@ -32,7 +32,8 @@ const props = defineProps({
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-top: 1px solid rgba($black, 0.2);
+  border: 1px solid rgba($black, 0.2);
+  padding: $spacing-sm;
   margin-top: $spacing-md;
 
   @media screen and (max-width: 768px) {
