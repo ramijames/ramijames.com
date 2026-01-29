@@ -25,7 +25,7 @@ const props = defineProps({
 }
 
 .bottom-nav {
-  width: 100%;
+  width: calc(100% - $spacing-md);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,8 +33,9 @@ const props = defineProps({
   overflow: hidden;
   text-overflow: ellipsis;
   border: 1px solid rgba($black, 0.2);
+  border-radius: $br-md;
   padding: $spacing-sm;
-  margin-top: $spacing-md;
+  margin: $spacing-sm auto;
 
   @media screen and (max-width: 768px) {
     justify-content: center;
