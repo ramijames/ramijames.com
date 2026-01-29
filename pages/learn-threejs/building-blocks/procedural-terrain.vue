@@ -373,7 +373,8 @@ function applyHeightColors(geometry, colorStops) {
   geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 }
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!basicCanvas.value || !noiseCanvas.value || !fbmCanvas.value || !colorCanvas.value || !animCanvas.value || !ridgedCanvas.value) return;
 
   const animations = [];

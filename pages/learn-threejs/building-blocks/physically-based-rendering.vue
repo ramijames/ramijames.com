@@ -371,7 +371,8 @@ const showcaseCanvas = ref(null);
 let renderers = [];
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!energyCanvas.value || !gridCanvas.value || !fresnelCanvas.value || !envmapCanvas.value || !clearcoatCanvas.value || !transmissionCanvas.value || !iridescenceCanvas.value || !sheenCanvas.value || !showcaseCanvas.value) return;
 
   const animations = [];

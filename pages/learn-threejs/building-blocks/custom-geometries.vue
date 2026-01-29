@@ -228,7 +228,8 @@ const mergeCanvas = ref(null);
 let renderers = [];
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!shapeCanvas.value || !extrudeCanvas.value || !latheCanvas.value || !tubeCanvas.value || !displaceCanvas.value || !mergeCanvas.value) return;
 
   const animations = [];

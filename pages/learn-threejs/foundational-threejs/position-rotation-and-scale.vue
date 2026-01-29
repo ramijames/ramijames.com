@@ -216,7 +216,8 @@ const combinedCanvas = ref(null);
 let renderers = [];
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!positionCanvas.value || !rotationCanvas.value || !scaleCanvas.value || !combinedCanvas.value) return;
 
   const animations = [];

@@ -525,7 +525,8 @@ function createCheckerTexture(size = 512, divisions = 8) {
   return texture;
 }
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!colorMapCanvas.value || !roughnessMapCanvas.value || !metalnessMapCanvas.value || !normalMapCanvas.value || !layeringCanvas.value || !displacementCanvas.value || !uvCanvas.value) return;
 
   const animations = [];

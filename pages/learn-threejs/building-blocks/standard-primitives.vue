@@ -182,7 +182,8 @@ const segmentsCanvas = ref(null);
 let renderers = [];
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!boxCanvas.value || !sphereCanvas.value || !cylinderCanvas.value || !torusCanvas.value || !flatCanvas.value || !polyCanvas.value || !segmentsCanvas.value) return;
 
   const animations = [];

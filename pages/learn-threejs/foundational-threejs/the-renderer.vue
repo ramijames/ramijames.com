@@ -168,7 +168,8 @@ const toneMappingCanvas = ref(null);
 let renderers = [];
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!noAntialiasCanvas.value || !antialiasCanvas.value || !alphaCanvas.value || !toneMappingCanvas.value) return;
 
   const scenes = [];

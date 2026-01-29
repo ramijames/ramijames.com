@@ -254,7 +254,8 @@ const togglePause = () => {
   }
 };
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!basicCanvas.value || !deltaCanvas.value || !clockCanvas.value || !pauseCanvas.value) return;
 
   const animations = [];

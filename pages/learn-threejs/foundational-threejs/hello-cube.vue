@@ -203,7 +203,8 @@ const canvasRef = ref(null);
 let renderer = null;
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!canvasRef.value) return;
 
   // Scene

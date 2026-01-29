@@ -280,7 +280,8 @@ const comparisonCanvas = ref(null);
 let renderers = [];
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!basicCanvas.value || !normalCanvas.value || !lambertCanvas.value || !phongCanvas.value || !standardCanvas.value || !physicalCanvas.value || !toonCanvas.value || !comparisonCanvas.value) return;
 
   const animations = [];

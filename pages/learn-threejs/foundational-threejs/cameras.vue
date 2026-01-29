@@ -104,7 +104,8 @@ let rendererPerspective = null;
 let rendererOrtho = null;
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!perspectiveCanvas.value || !orthoCanvas.value) return;
 
   // ===== SCENE ONE: PerspectiveCamera =====

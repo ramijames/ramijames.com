@@ -92,7 +92,8 @@ let renderer = null;
 let rendererTwo = null;
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!canvasRef.value || !canvasRefTwo.value) return;
 
   // ===== SCENE ONE: Solid color background =====

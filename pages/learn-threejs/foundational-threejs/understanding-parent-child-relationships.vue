@@ -195,7 +195,8 @@ const solarCanvas = ref(null);
 let renderers = [];
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!hierarchyCanvas.value || !groupCanvas.value || !solarCanvas.value) return;
 
   const animations = [];

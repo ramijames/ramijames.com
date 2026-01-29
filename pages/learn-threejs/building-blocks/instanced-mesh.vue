@@ -198,7 +198,8 @@ const animatedWaveCanvas = ref(null);
 let renderers = [];
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!basicGridCanvas.value || !coloredFieldCanvas.value || !animatedWaveCanvas.value) return;
 
   const animations = [];

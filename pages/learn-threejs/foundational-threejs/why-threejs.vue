@@ -148,7 +148,8 @@ import { ref, onMounted } from 'vue'
 
 const glCanvas = ref(null)
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   const canvas = glCanvas.value
   const gl = canvas.getContext('webgl')
   if (!gl) return

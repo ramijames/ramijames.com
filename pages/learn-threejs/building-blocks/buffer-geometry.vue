@@ -253,7 +253,8 @@ const waveCanvas = ref(null);
 let renderers = [];
 let animationId = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
   if (!triangleCanvas.value || !teapotCanvas.value || !indexedCanvas.value || !colorCanvas.value || !waveCanvas.value) return;
 
   const animations = [];
