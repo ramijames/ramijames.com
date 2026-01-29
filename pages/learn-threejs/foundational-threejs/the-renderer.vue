@@ -131,8 +131,8 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;`" />
   <LearnThreejsBottomNav
     prevLink="/learn-threejs/foundational-threejs/cameras"
     prevText="Cameras"
-    nextLink="/learn-threejs/foundational-threejs/understanding-parent-child-relationships"
-    nextText="Understanding relationships"
+    nextLink="/learn-threejs/foundational-threejs/the-scene-graph"
+    nextText="The Scene Graph"
   />
   <Footer />
 </template>

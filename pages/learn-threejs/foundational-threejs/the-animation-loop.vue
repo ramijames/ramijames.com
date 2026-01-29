@@ -218,8 +218,8 @@ function cleanup() {
   <LearnThreejsBottomNav
     prevLink="/learn-threejs/foundational-threejs/position-rotation-and-scale"
     prevText="Position, Rotation, Scale"
-    nextLink="/learn-threejs/foundational-threejs/geometries"
-    nextText="Geometries"
+    nextLink="/learn-threejs/building-blocks/buffer-geometry"
+    nextText="Buffer Geometry"
   />
   <Footer />
 </template>

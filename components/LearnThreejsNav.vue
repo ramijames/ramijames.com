@@ -27,14 +27,15 @@
             <li><nuxt-link to="/learn-threejs/foundational-threejs/setting-up-your-dev-environment">A modern dev environment</nuxt-link></li>
             <li><nuxt-link to="/learn-threejs/foundational-threejs/hello-cube">"Hello Cube"</nuxt-link></li>
           </ol>
-        <li>Scene, Camera, Renderer</li>
+        <li>Scene, Camera, and Renderer</li>
           <ol type="I">
             <li><nuxt-link to="/learn-threejs/foundational-threejs/the-scene">The Scene</nuxt-link></li>
             <li><nuxt-link to="/learn-threejs/foundational-threejs/cameras">Cameras</nuxt-link></li>
             <li><nuxt-link to="/learn-threejs/foundational-threejs/the-renderer">The Renderer</nuxt-link></li>
           </ol>
-        <li>The Scene Graph & Transformations</li>
+        <li>The Scene Graph and Transformations</li>
           <ol type="I">
+            <li><nuxt-link to="/learn-threejs/foundational-threejs/the-scene-graph">The Scene Graph</nuxt-link></li>
             <li><nuxt-link to="/learn-threejs/foundational-threejs/understanding-parent-child-relationships">Understanding relationships</nuxt-link></li>
             <li><nuxt-link to="/learn-threejs/foundational-threejs/position-rotation-and-scale">Position, Rotation, and Scale</nuxt-link></li>
             <li><nuxt-link to="/learn-threejs/foundational-threejs/the-animation-loop">The Animation Loop</nuxt-link></li>
@@ -46,19 +47,20 @@
       </h3>
 
       <ol type="I">
-        <li>Geometry – The Shape of Things</li>
+        <li>Geometry</li>
           <ol type="I">
-            <li>BufferGeometry</li>
-            <li>Standard primitives</li>
-            <li>Custom geometries and vertices</li>
+            <li><nuxt-link to="/learn-threejs/building-blocks/buffer-geometry">BufferGeometry</nuxt-link></li>
+            <li><nuxt-link to="/learn-threejs/building-blocks/standard-primitives">Standard primitives</nuxt-link></li>
+            <li><nuxt-link to="/learn-threejs/building-blocks/custom-geometries">Custom geometries and vertices</nuxt-link></li>
+            <li><nuxt-link to="/learn-threejs/building-blocks/procedural-terrain">Procedural terrain</nuxt-link></li>
           </ol>
-        <li>Materials & Textures</li>
+        <li>Materials and Textures</li>
           <ol type="I">
-            <li>The spectrum of materials</li>
-            <li>Physically Based Rendering</li>
-            <li>Mapping</li>
+            <li><nuxt-link to="/learn-threejs/building-blocks/the-spectrum-of-materials">The spectrum of materials</nuxt-link></li>
+            <li><nuxt-link to="/learn-threejs/building-blocks/physically-based-rendering">Physically Based Rendering</nuxt-link></li>
+            <li><nuxt-link to="/learn-threejs/building-blocks/advanced-mapping-concepts">Advanced Mapping Concepts</nuxt-link></li>
           </ol>
-        <li>Lighting the Scene</li>
+        <li>Lighting</li>
           <ol type="I">
             <li>Types of Lighting</li>
             <li>Shadows</li>

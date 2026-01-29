@@ -47,7 +47,7 @@ const length = mesh.position.length();`" />
 
           <h3>Rotation</h3>
 
-          <p>Rotation uses <strong>Euler angles</strong> by default - three values representing rotation around each axis, measured in <strong>radians</strong> (not degrees). A full rotation is <code>Math.PI * 2</code> (approximately 6.28).</p>
+          <p>Rotation uses <strong>Euler angles</strong> by default, which are three values representing rotation around each axis, measured in <strong>radians</strong> (not degrees). A full rotation is <code>Math.PI * 2</code> (approximately 6.28). If you need a refresher on Radians, I highly suggest <a href="https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:radians/v/radian-and-degree-conversion-practice">this video on Khan Academy</a> for what they are and why we use them instead of Degrees.</p>
 
           <div class="scene-container">
             <canvas ref="rotationCanvas"></canvas>

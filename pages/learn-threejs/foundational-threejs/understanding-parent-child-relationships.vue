@@ -34,7 +34,7 @@ child.position.x = 2; // 2 units to the right of parent's center`" />
 
           <h3>Transform Inheritance</h3>
 
-          <p>The key insight is that <strong>children inherit their parent's transformations</strong>. Watch the demo below - the small cubes are children of the larger cube. When the parent rotates, the children orbit around it while also spinning on their own axes:</p>
+          <p>The key insight is that <strong>children inherit their parent's transformations</strong>. Look at the demo below where the small cubes are children of the larger cube. When the large cube (the parent) rotates, the children orbit around it while also spinning on their own axes.</p>
 
           <div class="scene-container">
             <canvas ref="hierarchyCanvas"></canvas>
@@ -49,11 +49,11 @@ children.forEach(child => {
   child.rotation.x += 0.02;
 });`" />
 
-          <p>This is incredibly useful because you don't need to calculate complex orbital paths - you just rotate the parent and the children follow.</p>
+          <p>This is incredibly useful because you don't need to calculate complex rotations, insteaad you can just rotate the parent and the children follow.</p>
 
           <h3>Local vs World Coordinates</h3>
 
-          <p>When you set <code>child.position.x = 2</code>, that's in <strong>local space</strong> (relative to the parent). To get the actual position in the scene (world space), use:</p>
+          <p>When you set <code>child.position.x = 2</code>, that's in <strong>local space</strong> (relative to the parent). If you need to get the actual position in the scene (i.e. world space), you can use:</p>
 
           <CodeBlock lang="typescript" :code="`// Get world position
 const worldPosition = new THREE.Vector3();
@@ -69,7 +69,7 @@ child.getWorldScale(worldScale);`" />
 
           <h3>Using Groups</h3>
 
-          <p><code>THREE.Group</code> is an empty container specifically designed for organizing objects. It's like an invisible parent that lets you transform multiple objects together:</p>
+          <p><code>THREE.Group</code> is an empty container specifically designed for organizing objects. It's like an invisible parent that lets you transform multiple objects together.</p>
 
           <div class="scene-container">
             <canvas ref="groupCanvas"></canvas>
@@ -91,9 +91,9 @@ group.scale.set(1.5, 1.5, 1.5);
 // Add group to scene
 scene.add(group);`" />
 
-          <h3>Practical Example: A Solar System</h3>
+          <h3>Let's build a Solar System!</h3>
 
-          <p>Parent-child relationships make orbital systems trivial to implement. Each body orbits its parent without complex math:</p>
+          <p>Parent-child relationships make orbital systems trivial to implement. Each body orbits its parent without complex math. So, in our example solar system, the Sun is the parent of the planet, and the planet is the parent of the moon.</p>
 
           <div class="scene-container">
             <canvas ref="solarCanvas"></canvas>
@@ -126,7 +126,7 @@ function animate() {
 
           <h3>Removing Children</h3>
 
-          <p>You can remove objects from their parent and optionally add them elsewhere:</p>
+          <p>In more complex scenes, you'll find that you will need to either remove or move children from one parent, and optionally move them to another. You can remove objects from their parent and optionally add them elsewhere like this:</p>
 
           <CodeBlock lang="typescript" :code="`// Remove from parent
 parent.remove(child);
@@ -171,7 +171,7 @@ parent.children.forEach((child) => {
   </section>
 
   <LearnThreejsBottomNav
-    prevLink="/learn-threejs/foundational-threejs/the-renderer"
+    prevLink="/learn-threejs/foundational-threejs/the-scene-graph"
     prevText="The Renderer"
     nextLink="/learn-threejs/foundational-threejs/position-rotation-and-scale"
     nextText="Position, Rotation, and Scale"
