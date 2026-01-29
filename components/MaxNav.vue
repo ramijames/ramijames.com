@@ -224,7 +224,6 @@ const isHome = computed(() => route.path === '/');
       display: block;
       width: 56px;
       height: 56px;
-      margin-left: -$spacing-sm;
 
       @media screen and (max-width: 1000px) {
         width: 44px;

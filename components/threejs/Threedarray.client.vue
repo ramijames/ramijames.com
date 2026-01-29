@@ -1,5 +1,9 @@
 <template>
-  <div ref="container" class="threejs-container" />
+  <div ref="container" class="threejs-container">
+    <div v-if="isLoading" class="loader">
+      <div class="spinner" />
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -7,6 +11,10 @@ import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import * as THREE from 'three'
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js'
 import { createNoise3D } from 'simplex-noise'
+
+const isLoading = ref(true)
+let envMapLoaded = false
+let firstFrameRendered = false
 
 const props = defineProps({
   height: {
@@ -23,6 +31,12 @@ let animationId = null
 let cubes = []
 let noise3D = null
 let time = 0
+
+const checkLoadingState = () => {
+  if (firstFrameRendered && envMapLoaded) {
+    isLoading.value = false
+  }
+}
 
 const init = () => {
   // Initialize noise
@@ -53,10 +67,15 @@ const init = () => {
 
   // Load environment map
   textureLoader = new THREE.TextureLoader()
-  textureLoader.load('/envmaps/station-envmap.jpg', (texture) => {
-    texture.mapping = THREE.EquirectangularReflectionMapping
-    scene.environment = texture
-  })
+  textureLoader.load(
+    '/envmaps/station-envmap.jpg',
+    (texture) => {
+      texture.mapping = THREE.EquirectangularReflectionMapping
+      scene.environment = texture
+      envMapLoaded = true
+      checkLoadingState()
+    }
+  )
 
   // Create group to hold all cubes
   cubeGroup = new THREE.Group()
@@ -109,39 +128,40 @@ const init = () => {
 const animate = () => {
   animationId = requestAnimationFrame(animate)
 
-  // Increment time for noise animation
   time += 0.0008
 
-  // Noise parameters
   const noiseScale = 0.15
   const threshold = 0.25
 
-  // Update each cube's visibility based on 3D noise
   for (const cube of cubes) {
     const { x, y, z } = cube.userData.gridPos
-
-    // Sample 3D noise at cube position, offset by time to create movement
     const noiseValue = noise3D(
       x * noiseScale + time,
       y * noiseScale,
       z * noiseScale
     )
 
-    // Hide cube if noise value is below threshold
     if (noiseValue < threshold) {
       cube.scale.setScalar(0)
     } else {
-      // Smooth scale based on noise value
-      const scale = THREE.MathUtils.smoothstep(noiseValue, threshold, threshold + 0.3)
+      const scale = THREE.MathUtils.smoothstep(
+        noiseValue,
+        threshold,
+        threshold + 0.3
+      )
       cube.scale.setScalar(scale)
     }
   }
 
-  // Slowly rotate the entire group
   cubeGroup.rotation.y += 0.0015
-
   renderer.render(scene, camera)
+
+  if (!firstFrameRendered) {
+    firstFrameRendered = true
+    checkLoadingState()
+  }
 }
+
 
 const onResize = () => {
   if (!container.value) return
@@ -180,8 +200,35 @@ onUnmounted(() => {
 <style scoped>
 .threejs-container {
   width: 100%;
-  height: v-bind(containerHeight);
+  height: 40vh;
   overflow: hidden;
   cursor: crosshair;
 }
+
+.loader {
+  position: absolute;
+  inset: 0;
+  height: 40vh;
+  display: grid;
+  place-items: center;
+  background: rgba($black, 0.1);
+  backdrop-filter: blur(28px);
+  z-index: 10;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #ddd;
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 </style>
