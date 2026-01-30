@@ -3,16 +3,15 @@ import { useThemeStore } from '~/store/theme'
 export default defineNuxtPlugin(() => {
   const themeStore = useThemeStore()
 
-  // Hydrate saved theme from localStorage
+  // Hydrate saved theme from localStorage into the Pinia store.
+  // The body class is already set by the inline script in <head> (see app.vue),
+  // so we only need to sync the store here.
   const savedTheme = localStorage.getItem('theme')
   if (savedTheme && savedTheme !== themeStore.currentTheme) {
     themeStore.$patch({ theme: savedTheme })
   }
 
-  // Apply the initial theme class immediately on the client
-  document.body.classList.add(themeStore.currentTheme)
-
-  // Watch for changes and update the body class
+  // Keep the body class in sync when the user toggles the theme
   watch(
     () => themeStore.currentTheme,
     (newTheme, oldTheme) => {

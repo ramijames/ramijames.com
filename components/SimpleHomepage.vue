@@ -9,18 +9,6 @@
       <div class="reveal">
         <h1>Helping early stage & established businesses innovate their product experiences.</h1>
       </div>
-      <!-- <div class="sub-content"> -->
-        <!-- <div class="left">
-          <div class="reveal">
-            <p>My name is Rami James and I'm a Product Designer. I help clients like you create intuitive and engaging product experiences.</p>
-          </div>
-          <div class="reveal">
-            <a href="mailto:ramijames@gmail.com" class="button large black">
-              Let's Talk
-            </a>
-          </div>
-        </div> -->
-      <!-- </div> -->
     </section>
 
     
@@ -28,8 +16,6 @@
 
   <section class="homepage-content">
     <LatestWork />
-    <!-- <Clients /> -->
-    <!-- <FeaturedThoughts :featured-articles="featuredArticles" :articles="regularArticles" /> -->
     <Testimonials />
     <Footer />
   </section>
