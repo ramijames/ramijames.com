@@ -227,8 +227,8 @@ const isHome = computed(() => route.path === '/');
       height: 20px;
 
       @media screen and (max-width: 1000px) {
-        width: 44px;
-        height: 44px;
+        width: 20px;
+        height: 20px;
       }
 
       &:hover {
