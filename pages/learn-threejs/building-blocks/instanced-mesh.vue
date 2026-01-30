@@ -422,10 +422,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'InstancedMesh in Three.js'
 })

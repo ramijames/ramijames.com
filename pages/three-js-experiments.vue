@@ -1,8 +1,8 @@
 <template>
   <div class="experiments-page">
     <nav class="component-selector">
+      <div class="group-label">Experiments</div>
       <section class="selector-group">
-        <div class="group-label">Experiments</div>
         <div
           v-for="comp in experiments"
           :key="comp.id"
@@ -31,32 +31,44 @@
 
 .component-selector {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  gap: $spacing-sm;
   background: $white;
   flex-wrap: wrap;
-  width: 300px;
   background: $white;
   border-right: 1px solid rgba($black, 0.1);
+  position: fixed;
+  left: $spacing-sm;
+  bottom: $spacing-sm;
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: $br-sm;
+  z-index: 1;
+
+  .group-label {
+    font-size: $font-size-xs;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $black;
+    letter-spacing: 1px;
+    position: sticky;
+    padding: $spacing-xs;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba($white, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 2;
+  }
 
   .selector-group {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 2 * $spacing-xs);
-    margin: $spacing-xs;
+    width: 100%;
     padding: $spacing-xs;
     gap: $spacing-xxs;
-
-    .group-label {
-      font-size: $font-size-xs;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: $spacing-xs;
-      color: $black;
-      opacity: 0.5;
-      letter-spacing: 1px;
-    }
 
     .selector-label {
       font-size: $font-size-sm;
@@ -81,7 +93,11 @@
 .view {
   width: 100%;
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  top: 0;
+  bottom:0;
+  left:0;
+  right:0;
 
   &.white {
     background: $white;
@@ -107,11 +123,6 @@ import GeometricTracking from '~/components/threejs/GeometricTracking.client.vue
 
 const route = useRoute()
 const router = useRouter()
-
-// Use the viewer layout for this page
-definePageMeta({
-  layout: 'viewer'
-})
 
 // Add new experiments here
 const experiments = [

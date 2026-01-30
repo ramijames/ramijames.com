@@ -1009,10 +1009,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Physically-Based Rendering in Three.js'
 })

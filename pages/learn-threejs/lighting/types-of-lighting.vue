@@ -613,10 +613,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Types of Lighting in Three.js'
 })

@@ -102,11 +102,6 @@ canvas {
 
 <script setup>
 
-// Use the learnthreejs layout for this page
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Setting up your dev environment to work with Three.js'
 })

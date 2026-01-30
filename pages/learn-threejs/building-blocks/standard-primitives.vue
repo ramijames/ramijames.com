@@ -505,10 +505,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Standard Primitives in Three.js'
 })

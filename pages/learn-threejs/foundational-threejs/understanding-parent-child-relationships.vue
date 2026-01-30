@@ -399,10 +399,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Parent-Child Relationships in Three.js'
 })

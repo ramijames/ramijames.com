@@ -49,10 +49,6 @@ scene.add(car);  // The car (and its children) are now in the graph`" />
 
 <script setup>
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'The Renderer in Three.js'
 })

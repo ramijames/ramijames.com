@@ -204,11 +204,6 @@ onMounted(async () => {
   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
 })
 
-// Use the learnthreejs layout for this page
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Why should you learn Three.js?'
 })

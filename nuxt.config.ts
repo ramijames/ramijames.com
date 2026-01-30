@@ -7,10 +7,9 @@ export default defineNuxtConfig({
     '~/assets/products.scss',
     '~/assets/animation.scss',
     '~/assets/labs.scss',
-    '~/assets/highcharts.scss',
-    '~/assets/learnthreejs.scss',
+    '~/assets/highcharts.scss'
   ],
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   app: {
     head: {
       htmlAttrs: {

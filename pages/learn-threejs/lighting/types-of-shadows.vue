@@ -746,10 +746,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Types of Shadows in Three.js'
 })

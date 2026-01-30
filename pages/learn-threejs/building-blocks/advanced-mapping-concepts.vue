@@ -918,10 +918,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Advanced Mapping Concepts in Three.js'
 })

@@ -303,10 +303,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Transparency in Shadows in Three.js'
 })

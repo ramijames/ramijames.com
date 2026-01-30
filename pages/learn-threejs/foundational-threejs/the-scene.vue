@@ -209,11 +209,6 @@ onMounted(async () => {
   });
 });
 
-// Use the learnthreejs layout for this page
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Learn Three.js'
 })

@@ -381,10 +381,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Custom Shadow Materials in Three.js'
 })

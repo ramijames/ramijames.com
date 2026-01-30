@@ -453,10 +453,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Position, Rotation, and Scale in Three.js'
 })

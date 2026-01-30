@@ -625,10 +625,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Procedural Terrain in Three.js'
 })

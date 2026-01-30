@@ -449,10 +449,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'The Animation Loop in Three.js'
 })

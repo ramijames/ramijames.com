@@ -494,10 +494,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'Buffer Geometry in Three.js'
 })

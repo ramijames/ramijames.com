@@ -699,10 +699,6 @@ onMounted(async () => {
   });
 });
 
-definePageMeta({
-  layout: 'learnthreejs'
-})
-
 useHead({
   title: 'The Spectrum of Materials in Three.js'
 })
