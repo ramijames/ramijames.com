@@ -40,12 +40,10 @@
 </template>
 
 <script setup>
-import { useThemeStore } from '~/store/theme'
 import { useUIStore } from '~/store/ui'
-import { onMounted, onUnmounted, ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import ContactModal from '~/components/ContactModal.vue'
 
-const themeStore = useThemeStore()
 const uiStore = useUIStore()
 
 const ctaSection = ref(null)
@@ -61,17 +59,6 @@ const closeContactModal = () => {
 }
 
 onMounted(() => {
-  watch(
-    () => themeStore.currentTheme,
-    (newTheme, oldTheme) => {
-      if (typeof document !== 'undefined') {
-        document.body.classList.remove(`${oldTheme}`)
-        document.body.classList.add(`${newTheme}`)
-      }
-    },
-    { immediate: true }
-  )
-
   // Set up intersection observer for CTA section
   if (ctaSection.value) {
     observer = new IntersectionObserver(

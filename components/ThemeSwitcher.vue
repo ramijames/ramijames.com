@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { onMounted, watch, computed } from 'vue'
+import { computed } from 'vue'
 import { useThemeStore } from '~/store/theme'
 
 const themeStore = useThemeStore()
@@ -20,18 +20,6 @@ function toggleTheme() {
   themeStore.toggleTheme()
 }
 
-onMounted(() => {
-  watch(
-    () => themeStore.currentTheme,
-    (newTheme, oldTheme) => {
-      if (typeof document !== 'undefined') {
-        document.body.classList.remove(`${oldTheme}`)
-        document.body.classList.add(`${newTheme}`)
-      }
-    },
-    { immediate: true }
-  )
-})
 </script>
 
 <style scoped lang="scss">
