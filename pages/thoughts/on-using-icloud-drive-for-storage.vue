@@ -2,7 +2,7 @@
   <PageHeader title="On Using iCloud Drive for Storage" />
   <main class="w-content page-top">
     <section class="content">
-      <img src="/articles/time-machine.png" />
+      <img src="/articles/time-machine.png" alt="Time Machine backup" />
 
       <p>iCloud is a good way to replicate your files remotes so that, in the case of a catastrophe, you will not have complete data loss. It allows you to:</p>
       <ul>
@@ -36,14 +36,14 @@
       <p>There are really only a handful of settings here that are worth discussing.</p>
       <h4 id="-icloud-bar-">iCloud+ bar</h4>
 
-      <img src="/articles/icloud.png" />
+      <img src="/articles/icloud.png" alt="iCloud Drive" />
 
       <p>This shows you how much of your storage you’ve used. As you can see, there’s plenty of space here to grow. </p>
       <h4 id="-account-storage-and-the-manage-button-">Account Storage and the “Manage Button”</h4>
       <p>This gives you access to your iCloud plan. I’m using the 2tb plan because I don’t think that I’ll ever need to store more than that. It’s a ton of data. The things that are most important to me are my work files and my photos and those are all replicated onto iCloud.</p>
       <p>You can manage exactly what gets saved from here. Mostly, I think that the default settings are pretty solid, and I recommend that you leave those as is.</p>
 
-      <img src="/articles/account-storage.png" />
+      <img src="/articles/account-storage.png" alt="iCloud account storage" />
 
       <p>If you find that you need more space, there are bigger options.</p>
       <h4 id="-optimize-mac-storage-">Optimize Mac Storage</h4>
@@ -54,15 +54,15 @@
       <h3 id="-managing-files-in-icloud-drive-">Managing files in iCloud Drive</h3>
       <p>If you’ve decided to go with iCloud Drive, it’s simply a matter of going to the “iCloud Drive” folder that is mounted in Finder and opening that. Anything in here will be replicated remotely onto Apple’s servers.</p>
 
-      <img src="/articles/in-finder.png" />
+      <img src="/articles/in-finder.png" alt="iCloud Drive in Finder" />
 
       <p>If a file is local, it will simply show the file name. If it is remote, it will show a little cloud with a down arrow.</p>
 
-      <img src="/articles/download-now.png" />
+      <img src="/articles/download-now.png" alt="Download Now option" />
 
       <p>Files that show the little cloud icon no longer take up space on your computer.</p>
 
-      <img src="/articles/downloading.png" />
+      <img src="/articles/downloading.png" alt="Downloading from iCloud" />
 
       <h3>Conclusion</h3>
       <p>I hope that someone out there found this helpful. It was originally written for my father-in-law, who is a sweet man.</p>

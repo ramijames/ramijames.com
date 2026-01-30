@@ -3,17 +3,17 @@
     <div class="clients-container w-consistent">
       <div class="section-title">These great companies have been some of my favorite clients.</div>
       <section class="clients">
-        <img src="/clients/ibm.png" />
-        <img src="/clients/wpt.png" />
-        <img src="/clients/microsoft.png" />
-        <img src="/clients/nvidia.png" />
-        <img src="/clients/wix.png" />
-        <img src="/clients/ultra.png" />
-        <img src="/clients/equitick.png" />
-        <img src="/clients/zivav.png" />
-        <img src="/clients/microgaming.png" />
-        <img src="/clients/qmarkets.png" />
-        <img src="/clients/tonara.png" />
+        <img src="/clients/ibm.png" alt="IBM" />
+        <img src="/clients/wpt.png" alt="WPT" />
+        <img src="/clients/microsoft.png" alt="Microsoft" />
+        <img src="/clients/nvidia.png" alt="NVIDIA" />
+        <img src="/clients/wix.png" alt="Wix" />
+        <img src="/clients/ultra.png" alt="Ultra" />
+        <img src="/clients/equitick.png" alt="Equitick" />
+        <img src="/clients/zivav.png" alt="Zivav" />
+        <img src="/clients/microgaming.png" alt="Microgaming" />
+        <img src="/clients/qmarkets.png" alt="Qmarkets" />
+        <img src="/clients/tonara.png" alt="Tonara" />
       </section>
     </div>
   </section>

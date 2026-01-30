@@ -4,7 +4,7 @@
     <a v-for="social in socials" class="button small" 
        :key="social.name" 
        :href="social.url + encodeURIComponent('https://www.ramijames.com' + route)">
-      <img :src="'/' + social.icon + '.svg'" alt="social.name" />
+      <img :src="'/' + social.icon + '.svg'" :alt="social.name" />
     </a>
   </div>
 </template>

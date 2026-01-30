@@ -23,7 +23,6 @@
   flex-direction: column;
   width: 100%;
   position: relative;
-  position: relative;
   overflow: hidden;
 
   @media screen and (max-width: 1000px){

@@ -6,24 +6,24 @@
           <div class="clients-container w-consistent">
             <div class="section-title">I've been so lucky to have such great partners</div>
             <section class="clients">
-              <img src="/clients/ibm.png" />
-              <img src="/clients/wpt.png" />
-              <img src="/clients/microsoft.png" />
-              <img src="/clients/nvidia.png" />
-              <img src="/clients/wix.png" />
-              <img src="/clients/ultra.png" />
-              <img src="/clients/equitick.png" />
-              <img src="/clients/zivav.png" />
-              <img src="/clients/microgaming.png" />
-              <img src="/clients/qmarkets.png" />
-              <img src="/clients/tonara.png" />
+              <img src="/clients/ibm.png" alt="IBM" />
+              <img src="/clients/wpt.png" alt="WPT" />
+              <img src="/clients/microsoft.png" alt="Microsoft" />
+              <img src="/clients/nvidia.png" alt="NVIDIA" />
+              <img src="/clients/wix.png" alt="Wix" />
+              <img src="/clients/ultra.png" alt="Ultra" />
+              <img src="/clients/equitick.png" alt="Equitick" />
+              <img src="/clients/zivav.png" alt="Zivav" />
+              <img src="/clients/microgaming.png" alt="Microgaming" />
+              <img src="/clients/qmarkets.png" alt="Qmarkets" />
+              <img src="/clients/tonara.png" alt="Tonara" />
             </section>
           </div>
         </section>
         <section id="Testimonials" ref="testimonialsRef" :style="{ transform: `translateX(${translateX}px)` }">
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/dani.png">
+              <img src="/homepage/testimonials/dani.png" alt="Dani Koesterich">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">Rami is an excellent designer, and a pleasure to work with. His work exceeded my expectations, and his deliverables were always on time or ahead of schedule. I would recommend him to anyone seeking high quality web design from a professional, and look forward to working with Rami in the future.</div>
@@ -32,7 +32,7 @@
           </div>
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/michael.png">
+              <img src="/homepage/testimonials/michael.png" alt="Michael Birnboim">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">Rami is a very talented designer. He did a few UI projects for my company and we were very pleased. He is very easy to work with and the results were outstanding.</div>
@@ -41,7 +41,7 @@
           </div>
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/tamar.png">
+              <img src="/homepage/testimonials/tamar.png" alt="Tamar Schoppik">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">Rami is an extraordinary designer with an active imagination that translates directly into a unique and beautiful finished product. Alongside his attention to detail and keen understanding of designing for SEO and engagement, Rami is flexible and personable (two characteristics not often easy to find among talented designers).</div>
@@ -50,7 +50,7 @@
           </div>
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/gabe.png">
+              <img src="/homepage/testimonials/gabe.png" alt="Gabriel Ehrlich">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">Rami's work is beyond reproach. Always on time, extremely gifted and professional, working with Rami is a pleasure.</div>
@@ -59,7 +59,7 @@
           </div>
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/lucas.png">
+              <img src="/homepage/testimonials/lucas.png" alt="Lucas Haidar">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">Rami is a briliant mind that truly knows what delivering value means. I can't recommend him enough and I really hope to get to work with him again in the future.</div>
@@ -68,7 +68,7 @@
           </div>
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/nicolas.png">
+              <img src="/homepage/testimonials/nicolas.png" alt="Nicolas Bouillet">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">Rami boasts a diverse skill set that spans technical expertise, acute business acumen, effective communication skills, and even artistic talents. His versatility is incredibly useful, especially in product-driven companies.</div>
@@ -77,7 +77,7 @@
           </div>
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/anna.png">
+              <img src="/homepage/testimonials/anna.png" alt="Anna Török">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">Any organization would be fortunate to have someone of Rami's caliber on their team, as he seamlessly blends technical prowess, strategic insight, and a true team player ethos.</div>
@@ -86,7 +86,7 @@
           </div>
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/gopal.png">
+              <img src="/homepage/testimonials/gopal.png" alt="Gopal Nair">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">Rami is a Swiss Army Knife in the truest sense. Any organisation would be blessed to have the likes of Rami in their ranks.</div>
@@ -95,7 +95,7 @@
           </div>
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/jodi.png">
+              <img src="/homepage/testimonials/jodi.png" alt="Jodi Benjamin">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">Rami is a very professional, talented, serious and intricate designer. His attention to details is astounding and his design work is creative and concise.</div>
@@ -104,7 +104,7 @@
           </div>
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/francine.png">
+              <img src="/homepage/testimonials/francine.png" alt="Francine Haliva">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">You won't find many designers that come close to Rami in terms of talent, innovation, originality and implementation. Rami will take a concept and turn it into a full blown brand across all medium but his talent really shines on the web.</div>
@@ -113,7 +113,7 @@
           </div>
           <div class="single-testimonial">
             <div class="user-image">
-              <img src="/homepage/testimonials/julian.png">
+              <img src="/homepage/testimonials/julian.png" alt="Julian Bewley">
             </div>
             <div class="testimonial-card">
               <div class="testimonial">Working with Rami is fun, interesting and exciting – exactly the way creative design should be. Plus he's always reliable, always 100% honest and always on time. Work with Rami and add some panache to your creative!</div>

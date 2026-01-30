@@ -41,18 +41,18 @@
     </section>
 
     <section class="product-images">
-      <img src="/products/random-sandwich/protein-eggyolk.svg" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/vegetable-lettuce.svg" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/vegetable-white-onion.svg" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/cheese-cheddar.png" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/bread-rye-brown.svg" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/cheese-swiss.svg" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/protein-roastbeef.svg" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/vegetable-pickles.svg" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/cheese-american.png" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/bread-sourdough.svg" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/vegetable-tomato.svg" alt="" class="single-feature-image">
-      <img src="/products/random-sandwich/vegetable-red-onion.svg" alt="" class="single-feature-image">
+      <img src="/products/random-sandwich/protein-eggyolk.svg" alt="Egg yolk" class="single-feature-image">
+      <img src="/products/random-sandwich/vegetable-lettuce.svg" alt="Lettuce" class="single-feature-image">
+      <img src="/products/random-sandwich/vegetable-white-onion.svg" alt="White onion" class="single-feature-image">
+      <img src="/products/random-sandwich/cheese-cheddar.png" alt="Cheddar cheese" class="single-feature-image">
+      <img src="/products/random-sandwich/bread-rye-brown.svg" alt="Rye bread" class="single-feature-image">
+      <img src="/products/random-sandwich/cheese-swiss.svg" alt="Swiss cheese" class="single-feature-image">
+      <img src="/products/random-sandwich/protein-roastbeef.svg" alt="Roast beef" class="single-feature-image">
+      <img src="/products/random-sandwich/vegetable-pickles.svg" alt="Pickles" class="single-feature-image">
+      <img src="/products/random-sandwich/cheese-american.png" alt="American cheese" class="single-feature-image">
+      <img src="/products/random-sandwich/bread-sourdough.svg" alt="Sourdough bread" class="single-feature-image">
+      <img src="/products/random-sandwich/vegetable-tomato.svg" alt="Tomato" class="single-feature-image">
+      <img src="/products/random-sandwich/vegetable-red-onion.svg" alt="Red onion" class="single-feature-image">
     </section>
 
       <hr>

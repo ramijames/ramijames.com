@@ -2,7 +2,7 @@
   <PageHeader title="Types of Interview Scams" />
   <main class="w-content page-top">
     <section class="content">
-      <img src="/articles/types-of-interview-scams.png">
+      <img src="/articles/types-of-interview-scams.png" alt="Types of interview scams">
       <p>I think scams are a genuinely interesting phenomenon and I have a personal catalogue in Google Docs where I take notes of the ones that I come across personally. It keeps me amused.</p>
       <p>I’ve been actively looking for a job for a couple of months now. After spending so many years working in crypto, I have a fine sense for scams (bleh). Unfortunately, that fine sense has also been honed through being dumb enough to be compromised by one of the more sophisticated ones, which I go into detail about towards the end of this piece. If that’s what you’re after, you should skip to that.</p>
 
@@ -13,7 +13,7 @@
       <h3 id="whatsapp-number-request-scam">WhatsApp Number Request Scam</h3>
       <h4 id="the-scam">The Scam</h4>
       <p>I was lucky enough to be contacted by a whole slew of fake accounts like the inimitable Emma portrayed below.</p>
-      <p><img src="/articles/interview-scam-emma.png"></p>
+      <p><img src="/articles/interview-scam-emma.png" alt="Example of a scam interview message"></p>
       <p>The goal of these types of scams is to gain access to your phone number, either for further spam or scams, or to hijack your WhatsApp account entirely. </p>
       <p>In the US WhatsApp is not very dominant, but in many places like the Middle East and Asia, it is the primary mode of communication. </p>
       <p>Losing access to your WhatsApp account can be very dangerous as through it you can be impersonated, meaning that your direct contacts are also in danger. </p>
@@ -49,10 +49,10 @@
       <p><em>Narrator, “It was, in fact, a problem&quot;.</em></p>
       <p>An hour or so later, the build link arrived and I tried to install it. I got the typical unsigned bundle warning that Windows throws and I didn’t think much of it. I’ve been dealing with preliminary builds long enough to know that it’s often one of the last things that a team does before a product goes live.</p>
       <p>I compulsively take notes and screenshots when I’m working, and I kept the entire process. Inline are screenshots from the day the scam happened, cropped to remove backgrounds with sensitive data.</p>
-      <p><img src="/articles/interview-scam-windows.png"></p>
+      <p><img src="/articles/interview-scam-windows.png" alt="Scam interview on Windows"></p>
       <p>I ran it anyway.</p>
       <p>The install process took a few minutes, and then got stuck.</p>
-      <p><img src="/articles/interview-scam-mystisland.png"></p>
+      <p><img src="/articles/interview-scam-mystisland.png" alt="Mystisland scam interview"></p>
       <p>I ran it a few times and then sent a DM back to the lady. She never responded.</p>
       <p>I dropped into the Discord and tried to get some support, and was duly booted from the server.</p>
       <p>Something felt wrong and I couldn’t shake the feeling that I had just made a mistake.</p>

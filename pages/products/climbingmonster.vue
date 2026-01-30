@@ -22,9 +22,9 @@
             <div class="discuss-images">
               <img src="/products/climbingmonster/mobile-flow.png" alt="Climbing Monster mobile app for iOS" class="single-product-image">
               <section class="product-images three-across">
-                <img src="/products/climbingmonster/cm-createsession-welcome.png" alt="" class="single-product-image">
-                <img src="/products/climbingmonster/cm-createsession-calendar.png" alt="" class="single-product-image">
-                <img src="/products/climbingmonster/cm-createsession-current.png" alt="" class="single-product-image">
+                <img src="/products/climbingmonster/cm-createsession-welcome.png" alt="Climbing Monster create session welcome screen" class="single-product-image">
+                <img src="/products/climbingmonster/cm-createsession-calendar.png" alt="Climbing Monster calendar view" class="single-product-image">
+                <img src="/products/climbingmonster/cm-createsession-current.png" alt="Climbing Monster current session" class="single-product-image">
               </section>
             </div>
           </section>

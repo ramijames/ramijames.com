@@ -20,8 +20,6 @@
   width: 100%;
   position: relative;
 
-  position: relative;
-
   @media screen and (max-width: 1000px){
     padding-top: 0;
   }

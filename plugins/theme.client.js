@@ -3,6 +3,12 @@ import { useThemeStore } from '~/store/theme'
 export default defineNuxtPlugin(() => {
   const themeStore = useThemeStore()
 
+  // Hydrate saved theme from localStorage
+  const savedTheme = localStorage.getItem('theme')
+  if (savedTheme && savedTheme !== themeStore.currentTheme) {
+    themeStore.$patch({ theme: savedTheme })
+  }
+
   // Apply the initial theme class immediately on the client
   document.body.classList.add(themeStore.currentTheme)
 

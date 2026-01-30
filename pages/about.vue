@@ -6,7 +6,7 @@
     <section class="about-container w-consistent">
 
       <section class="who-am-i">
-        <img src="/dude.png">
+        <img src="/dude.png" alt="Rami James">
         <h3>My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://github.com/ramijames">Github</a> and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h3>
       </section>
 

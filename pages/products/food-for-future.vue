@@ -21,13 +21,13 @@
             </div>
             <div class="discuss-images">
               <section class="product-images three-across">
-                <img src="/products/food-for-future/fff-global-short.png" alt="" class="single-product-image">
-                <img src="/products/food-for-future/fff-farms-explore.png" alt="" class="single-product-image">
-                <img src="/products/food-for-future/fff-farms-single.png" alt="" class="single-product-image">
+                <img src="/products/food-for-future/fff-global-short.png" alt="Food for Future global view" class="single-product-image">
+                <img src="/products/food-for-future/fff-farms-explore.png" alt="Food for Future farms explorer" class="single-product-image">
+                <img src="/products/food-for-future/fff-farms-single.png" alt="Food for Future single farm" class="single-product-image">
               </section>
               <section class="product-images two-across">
-                <img src="/products/food-for-future/fff-field-single.png" alt="" class="single-product-image">
-                <img src="/products/food-for-future/fff-menu-open.png" alt="" class="single-product-image">
+                <img src="/products/food-for-future/fff-field-single.png" alt="Food for Future field details" class="single-product-image">
+                <img src="/products/food-for-future/fff-menu-open.png" alt="Food for Future navigation menu" class="single-product-image">
               </section>
             </div>
           </section>

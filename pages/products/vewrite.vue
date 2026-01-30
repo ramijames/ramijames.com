@@ -10,11 +10,11 @@
       services="test"
     />
 
-    <img src="/products/vewrite/ve-homepage.png" alt="" class="single-product-image">
+    <img src="/products/vewrite/ve-homepage.png" alt="Vewrite homepage" class="single-product-image">
     <hr>
-    <img src="/products/vewrite/ve-projects.png" alt="" class="single-product-image">
-    <img src="/products/vewrite/ve-workflowcreation.png" alt="" class="single-product-image">
-    <img src="/products/vewrite/ve-deliverable.png" alt="" class="single-product-image">
+    <img src="/products/vewrite/ve-projects.png" alt="Vewrite projects view" class="single-product-image">
+    <img src="/products/vewrite/ve-workflowcreation.png" alt="Vewrite workflow creation" class="single-product-image">
+    <img src="/products/vewrite/ve-deliverable.png" alt="Vewrite deliverable view" class="single-product-image">
     <hr>
     <img src="/products/vewrite/ve-brand.png" alt="Vewrite Brand" class="single-product-image">
     <img src="/products/vewrite/ve-palette.png" alt="Vewrite Brand" class="single-product-image">
