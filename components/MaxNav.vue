@@ -10,9 +10,9 @@
           v-if="isLearnThreeJSSubPage"
           to="/learn-threejs"
         >
-        <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M28.4706 21.5294L21 29L29 37" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <path d="M22 29H38" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.8847 1.00001L1.41409 8.47067L9.41406 16.4706" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2.41406 8.47064H18.4141" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </nuxt-link>
       
@@ -24,9 +24,9 @@
           v-if="isProductsSubPage"
           to="/products"
         >
-        <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M28.4706 21.5294L21 29L29 37" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <path d="M22 29H38" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.8847 1.00001L1.41409 8.47067L9.41406 16.4706" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2.41406 8.47064H18.4141" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </nuxt-link>
 
@@ -38,9 +38,9 @@
           v-if="isThoughtsSubPage"
           to="/thoughts"
         >
-        <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M28.4706 21.5294L21 29L29 37" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <path d="M22 29H38" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.8847 1.00001L1.41409 8.47067L9.41406 16.4706" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2.41406 8.47064H18.4141" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </nuxt-link>
 
@@ -212,7 +212,7 @@ const isHome = computed(() => route.path === '/');
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 0;
+    gap: $spacing-sm;
     background: $white;
     border-radius: $br-md;
     padding: 0 0.35rem;
@@ -223,8 +223,8 @@ const isHome = computed(() => route.path === '/');
 
     .go-back {
       display: block;
-      width: 56px;
-      height: 56px;
+      width: 20px;
+      height: 20px;
 
       @media screen and (max-width: 1000px) {
         width: 44px;

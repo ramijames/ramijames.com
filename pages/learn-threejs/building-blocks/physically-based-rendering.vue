@@ -11,13 +11,13 @@
 
           <h2>What is PBR?</h2>
 
-          <p><strong>Physically-based rendering</strong> (PBR) is a shading approach that models how light actually behaves in the real world. Instead of artistic knobs like "shininess" and "specular color," PBR uses measurable physical properties — roughness, metalness, and index of refraction — to produce materials that look correct under any lighting condition.</p>
+          <p><strong>Physically-based rendering</strong> (PBR) is a shading approach that models how light actually behaves in the real world. Instead of artistic knobs like "shininess" and "specular color," PBR uses measurable physical properties, roughness, metalness, and index of refraction, to produce materials that look correct under any lighting condition.</p>
 
           <p>Three.js provides two PBR materials: <NuxtLink to="/learn-threejs/building-blocks/the-spectrum-of-materials">MeshStandardMaterial</NuxtLink> (the everyday workhorse) and <code>MeshPhysicalMaterial</code> (an extended version with advanced features). This article digs deeper into how PBR works and how to get the most out of it.</p>
 
           <h3>Energy Conservation</h3>
 
-          <p>The core principle of PBR is <strong>energy conservation</strong>: a surface can't reflect more light than it receives. When light hits a surface, it's either reflected (specular) or absorbed and re-emitted (diffuse). The more a surface reflects, the less it scatters diffusely. PBR materials enforce this automatically — you don't need to manually balance diffuse and specular like you do with Phong shading.</p>
+          <p>The core principle of PBR is <strong>energy conservation</strong>: a surface can't reflect more light than it receives. When light hits a surface, it's either reflected (specular) or absorbed and re-emitted (diffuse). The more a surface reflects, the less it scatters diffusely. PBR materials enforce this automatically, in that you don't need to manually balance diffuse and specular like you do with Phong shading.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -25,7 +25,7 @@
           </div>
           </ClientOnly>
 
-          <p>The row above shows spheres with increasing roughness from left to right. As roughness increases, specular reflections spread out and become dimmer, while diffuse shading becomes more prominent — but the total light energy stays constant.</p>
+          <p>The row above shows spheres with increasing roughness from left to right. As roughness increases, specular reflections spread out and become dimmer, while diffuse shading becomes more prominent, but the total light energy stays constant.</p>
 
           <CodeBlock lang="typescript" :code="`// Energy conservation happens automatically in PBR
 // As roughness increases, specular gets broader and dimmer
@@ -48,11 +48,11 @@ const rough = new THREE.MeshStandardMaterial({
           <p>PBR in Three.js uses the <strong>metallic-roughness</strong> workflow, defined by two parameters:</p>
 
           <ul>
-            <li><code>roughness</code> (0–1) — How smooth or rough the microsurface is. 0 is a perfect mirror; 1 is completely diffuse.</li>
-            <li><code>metalness</code> (0–1) — Whether the material is a dielectric (0, like plastic, wood, skin) or a metal (1, like gold, steel, copper).</li>
+            <li><code>roughness</code> (0–1): How smooth or rough the microsurface is. 0 is a perfect mirror; 1 is completely diffuse.</li>
+            <li><code>metalness</code> (0–1): Whether the material is a dielectric (0, like plastic, wood, skin) or a metal (1, like gold, steel, copper).</li>
           </ul>
 
-          <p>Metals and dielectrics behave fundamentally differently. Metals absorb almost all refracted light, so they have no diffuse component — their color comes entirely from tinted reflections. Dielectrics reflect a small amount of white light at grazing angles (Fresnel effect) and scatter the rest as diffuse color.</p>
+          <p>Metals and dielectrics behave fundamentally differently. Metals absorb almost all refracted light, so they have no diffuse component. Their color comes entirely from tinted reflections. Dielectrics reflect a small amount of white light at grazing angles (Fresnel effect) and scatter the rest as diffuse color.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -85,7 +85,7 @@ const coated = new THREE.MeshStandardMaterial({
 
           <h3>The Fresnel Effect</h3>
 
-          <p>All surfaces become more reflective at <strong>grazing angles</strong> — look at a table from a steep angle and it reflects the room. This is the <strong>Fresnel effect</strong>, and PBR handles it automatically. For dielectrics, reflections are strongest at edges. For metals, the entire surface is reflective, but the color shifts at grazing angles.</p>
+          <p>All surfaces become more reflective at <strong>grazing angles</strong>. Look at a table from a steep angle and it reflects the room. This is the <strong>Fresnel effect</strong>, and PBR handles it automatically. For dielectrics, reflections are strongest at edges. For metals, the entire surface is reflective, but the color shifts at grazing angles.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -93,9 +93,9 @@ const coated = new THREE.MeshStandardMaterial({
           </div>
           </ClientOnly>
 
-          <p>The large sphere above uses a low roughness dielectric material. Notice how the edges appear brighter and more reflective than the center — that's the Fresnel effect in action. The flat plane behind it also shows Fresnel reflections at a shallow viewing angle.</p>
+          <p>The large sphere above uses a low roughness dielectric material. Notice how the edges appear brighter and more reflective than the center. That's the Fresnel effect in action! The flat plane behind it also shows Fresnel reflections at a shallow viewing angle.</p>
 
-          <CodeBlock lang="typescript" :code="`// Fresnel is automatic in PBR — no special setup needed
+          <CodeBlock lang="typescript" :code="`// Fresnel is automatic in PBR, no special setup needed
 // It's most visible on smooth dielectric surfaces
 
 const glossyPlastic = new THREE.MeshStandardMaterial({
@@ -141,13 +141,13 @@ material.envMapIntensity = 1.0; // Scale the reflection strength
 
 pmremGenerator.dispose();`" />
 
-          <h3>MeshPhysicalMaterial — Beyond Standard PBR</h3>
+          <h3>MeshPhysicalMaterial: Beyond Standard PBR</h3>
 
           <p><code>MeshPhysicalMaterial</code> extends the standard metallic-roughness model with several advanced features. Each adds realism at a GPU cost, so use them selectively.</p>
 
           <h3>Clearcoat</h3>
 
-          <p>A <code>clearcoat</code> adds a second, independent reflective layer on top of the base material — like the lacquer on a car, the varnish on wood, or the glossy finish on a phone case. The clearcoat has its own roughness, separate from the base layer.</p>
+          <p>A <code>clearcoat</code> adds a second, independent reflective layer on top of the base material. Just like the lacquer on a car, the varnish on wood, or the glossy finish on a phone case. The clearcoat has its own roughness, separate from the base layer.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -175,7 +175,7 @@ const carbonFiber = new THREE.MeshPhysicalMaterial({
 
           <h3>Transmission and Refraction</h3>
 
-          <p><code>transmission</code> makes light pass through the material instead of being reflected or absorbed — essential for glass, water, crystals, and translucent plastics. Combined with <code>ior</code> (index of refraction) and <code>thickness</code>, you can control how much light bends and how deep the object appears.</p>
+          <p><code>transmission</code> makes light pass through the material instead of being reflected or absorbed which is essential for glass, water, crystals, and translucent plastics. Combined with <code>ior</code> (index of refraction) and <code>thickness</code>, you can control how much light bends and how deep the object appears.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -215,7 +215,7 @@ const water = new THREE.MeshPhysicalMaterial({
 
           <h3>Iridescence</h3>
 
-          <p><code>iridescence</code> simulates thin-film interference — the rainbow sheen on soap bubbles, oil slicks, beetle shells, and some coated metals. The effect shifts color based on viewing angle and is controlled by <code>iridescenceIOR</code> and an optional thickness range.</p>
+          <p><code>iridescence</code> simulates thin-film interference. You know, like the rainbow sheen on soap bubbles, oil slicks, beetle shells, etc. The effect shifts color based on viewing angle and is controlled by <code>iridescenceIOR</code> and an optional thickness range.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -278,7 +278,7 @@ const satin = new THREE.MeshPhysicalMaterial({
 
           <h3>Putting It All Together</h3>
 
-          <p>The final demo combines several PBR techniques in one scene — metals, dielectrics, glass, clearcoat, and iridescence — all lit by the same environment. This shows how PBR materials respond consistently to the same lighting, producing a coherent, believable scene.</p>
+          <p>The final demo combines several PBR techniques in one scene: metals, dielectrics, glass, clearcoat, and iridescence. They are all lit by the same environment. This shows how PBR materials respond consistently to the same lighting, producing a coherent, believable scene.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -286,7 +286,7 @@ const satin = new THREE.MeshPhysicalMaterial({
           </div>
           </ClientOnly>
 
-          <p>From left to right: gold metal, glossy red clearcoat, clear glass, iridescent sphere, and velvet fabric — all using <code>MeshPhysicalMaterial</code> with different property combinations.</p>
+          <p>From left to right: gold metal, glossy red clearcoat, clear glass, iridescent sphere, and velvet fabric. All of these are using <code>MeshPhysicalMaterial</code> with different property combinations.</p>
 
           <CodeBlock lang="typescript" :code="`// Gold metal
 const gold = new THREE.MeshPhysicalMaterial({
@@ -438,7 +438,7 @@ onMounted(async () => {
 
   const sphereGeom = new THREE.SphereGeometry(1, 64, 64);
 
-  // ===== SCENE 1: Energy conservation — roughness row =====
+  // ===== SCENE 1: Energy conservation, roughness row =====
   const scene1 = createScene(0x111122);
   addLights(scene1);
 
@@ -878,7 +878,7 @@ onMounted(async () => {
     ren8.render(scene8, cam8);
   });
 
-  // ===== SCENE 9: Showcase — all PBR features =====
+  // ===== SCENE 9: Showcase, all PBR features =====
   const scene9 = createScene(0x0a0a18);
   addLights(scene9);
 
@@ -1020,12 +1020,12 @@ useHead({
 useSeoMeta({
   title: 'Physically-Based Rendering in Three.js',
   ogTitle: 'Physically-Based Rendering in Three.js',
-  description: 'Deep dive into PBR in Three.js — energy conservation, roughness-metalness workflow, Fresnel effect, environment maps, clearcoat, transmission, iridescence, and sheen.',
-  ogDescription: 'Deep dive into PBR in Three.js — energy conservation, roughness-metalness workflow, Fresnel effect, environment maps, clearcoat, transmission, iridescence, and sheen.',
+  description: 'Deep dive into PBR in Three.js, energy conservation, roughness-metalness workflow, Fresnel effect, environment maps, clearcoat, transmission, iridescence, and sheen.',
+  ogDescription: 'Deep dive into PBR in Three.js, energy conservation, roughness-metalness workflow, Fresnel effect, environment maps, clearcoat, transmission, iridescence, and sheen.',
   ogImage: '/learn-threejs/cover.png',
   url: 'https://www.ramijames.com/learn-threejs/building-blocks/physically-based-rendering',
   twitterTitle: 'Physically-Based Rendering in Three.js',
-  twitterDescription: 'Deep dive into PBR in Three.js — energy conservation, roughness-metalness workflow, Fresnel effect, environment maps, clearcoat, transmission, iridescence, and sheen.',
+  twitterDescription: 'Deep dive into PBR in Three.js, energy conservation, roughness-metalness workflow, Fresnel effect, environment maps, clearcoat, transmission, iridescence, and sheen.',
   twitterImage: '/learn-threejs/cover.png',
   twitterCard: 'summary_large_image'
 })

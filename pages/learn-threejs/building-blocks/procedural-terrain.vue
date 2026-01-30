@@ -15,7 +15,7 @@
 
           <h3>A Simple Heightmap</h3>
 
-          <p>The most basic terrain uses layered sine and cosine waves to displace vertex heights. This won't look realistic on its own, but it demonstrates the core technique — every terrain generator works the same way, just with better noise.</p>
+          <p>The most basic terrain uses layered sine and cosine waves to displace vertex heights. This won't look realistic on its own, but it demonstrates the core technique. Every terrain generator works more or less the same way, just with better noise and more detail.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -44,7 +44,7 @@ geometry.computeVertexNormals();`" />
 
           <h3>Value Noise</h3>
 
-          <p>Real terrain uses <strong>coherent noise</strong> — random values that change smoothly. A simple approach is <strong>value noise</strong>: assign random values to a grid, then interpolate between them. Here's a basic 2D implementation:</p>
+          <p>Real terrain uses <strong>coherent noise</strong>: random values that change smoothly. A simple approach is <strong>value noise</strong>: assign random values to a grid, then interpolate between them. Here's a basic 2D implementation:</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -89,7 +89,7 @@ function noise2D(x, y) {
 
           <h3>Fractal Brownian Motion (fBm)</h3>
 
-          <p>A single layer of noise looks blobby. Real terrain has detail at every scale — large mountains, medium hills, small rocks. <strong>Fractal Brownian motion</strong> layers multiple octaves of noise at increasing frequency and decreasing amplitude:</p>
+          <p>A single layer of noise looks blobby. Real terrain has detail at every scale, i.e. large mountains, medium hills, small rocks. <strong>Fractal Brownian motion</strong> layers multiple octaves of noise at increasing frequency and decreasing amplitude:</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -125,7 +125,7 @@ for (let i = 0; i < positions.count; i++) {
 
           <h3>Coloring by Height</h3>
 
-          <p>Flat-colored terrain looks artificial. A common technique is to assign <NuxtLink to="/learn-threejs/building-blocks/buffer-geometry">vertex colors</NuxtLink> based on height — deep blue for water, green for lowlands, brown for mountains, white for snow:</p>
+          <p>Flat-colored terrain looks artificial. A common technique is to assign <NuxtLink to="/learn-threejs/building-blocks/buffer-geometry">vertex colors</NuxtLink> based on height. Deep blue for water, green for lowlands, brown for mountains, white for snow:</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -166,7 +166,7 @@ const material = new THREE.MeshLambertMaterial({
 
           <h3>Animated Terrain</h3>
 
-          <p>Since the position attribute can be updated every frame, you can animate terrain in realtime. Adding a time offset to the noise input creates flowing, wave-like terrain — useful for water surfaces, alien landscapes, or visualizers.</p>
+          <p>Since the position attribute can be updated every frame, you can animate terrain in realtime. Adding a time offset to the noise input creates flowing, wave-like terrain that is useful for water surfaces, alien landscapes, or visualizers.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -200,7 +200,7 @@ function tick() {
 
           <h3>Terrain with Ridged Noise</h3>
 
-          <p>Standard fBm produces rolling hills. For sharper, more dramatic landscapes with ridges and valleys, you can use <strong>ridged noise</strong> — take the absolute value of the noise and invert it, then raise it to a power. The sharp creases where noise crosses zero become mountain ridges.</p>
+          <p>Standard fBm produces rolling hills. For sharper, more dramatic landscapes with ridges and valleys, you can use <strong>ridged noise</strong>, take the absolute value of the noise and invert it, then raise it to a power. The sharp creases where noise crosses zero become mountain ridges.</p>
 
           <ClientOnly>
           <div class="scene-container">

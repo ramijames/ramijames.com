@@ -11,13 +11,13 @@
 
           <h2>The Anatomy of a PBR Material</h2>
 
-          <p>In the <NuxtLink to="/learn-threejs/building-blocks/physically-based-rendering">previous article</NuxtLink>, we used single values for roughness, metalness, and color — the entire surface had the same properties. Real objects aren't uniform. A rusted iron bar is shiny where the metal is exposed and rough where rust has formed. A wooden floor is smooth where it's polished and matte where it's scuffed.</p>
+          <p>In the <NuxtLink to="/learn-threejs/building-blocks/physically-based-rendering">previous article</NuxtLink>, we used single values for roughness, metalness, and color. The entire surface had the same properties. Real objects aren't uniform. A rusted iron bar is shiny where the metal is exposed and rough where rust has formed. A wooden floor is smooth where it's polished and matte where it's scuffed.</p>
 
-          <p>To create this kind of variation, PBR materials use <strong>texture maps</strong> — 2D images that control a specific property at every point on the surface. Each pixel in the map corresponds to a point on the mesh, and its value overrides the scalar property. Four primary maps form the foundation of any realistic PBR material.</p>
+          <p>To create this kind of variation, PBR materials use <strong>texture maps</strong>. These are 2D images that control a specific property at every point on the surface. Each pixel in the map corresponds to a point on the mesh, and its value overrides the scalar property. Four primary maps form the foundation of any realistic PBR material.</p>
 
           <h3>1. Color Map (Albedo / Diffuse)</h3>
 
-          <p>The <strong>color map</strong> — also called <strong>albedo</strong> or <strong>diffuse map</strong> — defines the base color pattern of the surface. It tells the GPU "this part is brick red, this part is gray mortar." In PBR, the color map should contain <em>only</em> the raw surface color — no baked-in shadows, no lighting, no ambient occlusion. The lighting system handles all of that.</p>
+          <p>The <strong>color map</strong>, also called <strong>albedo</strong> or <strong>diffuse map</strong>, defines the base color pattern of the surface. It tells the GPU "this part is brick red, this part is gray mortar." In PBR, the color map should contain <em>only</em> the raw surface color. This means no baked-in shadows, no lighting, no ambient occlusion. The lighting system handles all of that.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -25,7 +25,7 @@
           </div>
           </ClientOnly>
 
-          <p>The left sphere uses a flat color. The right sphere uses a procedural color map — same geometry, same lighting, but the texture gives it a pattern. The map is applied to the <code>map</code> property.</p>
+          <p>The left sphere uses a flat color. The right sphere uses a procedural color map. It's the same geometry, same lighting, but the texture gives it a pattern. The map is applied to the <code>map</code> property.</p>
 
           <CodeBlock lang="typescript" :code="`// Load a color (albedo) texture
 const textureLoader = new THREE.TextureLoader();
@@ -36,12 +36,12 @@ const material = new THREE.MeshStandardMaterial({
 });
 
 // Pro tip: your color map should NEVER contain
-// baked shadows — the PBR lighting handles that.
+// baked shadows. The PBR lighting handles that.
 // Keep it as the pure, flat surface color.`" />
 
           <h3>2. Roughness Map</h3>
 
-          <p>The <strong>roughness map</strong> is a grayscale image that controls how rough or smooth each point on the surface is. White pixels (1.0) mean fully rough — light scatters in all directions, like chalk or matte paint. Black pixels (0.0) mean perfectly smooth — light reflects crisply, like a mirror. Gray values are in between.</p>
+          <p>The <strong>roughness map</strong> is a grayscale image that controls how rough or smooth each point on the surface is. White pixels (1.0) mean fully rough, i.e. light scatters in all directions, like chalk or matte paint. Black pixels (0.0) mean perfectly smooth. Light reflects crisply, like a mirror. Gray values are in between.</p>
 
           <p>A "scratched metal" texture uses a roughness map where the scratches are white (rough, light scatters) and the polished metal between scratches is black (smooth, sharp reflections).</p>
 
@@ -51,7 +51,7 @@ const material = new THREE.MeshStandardMaterial({
           </div>
           </ClientOnly>
 
-          <p>The left sphere has uniform roughness. The right sphere uses a roughness map — notice how some areas reflect sharply while others scatter light diffusely, all on the same object.</p>
+          <p>The left sphere has uniform roughness. The right sphere uses a roughness map. Notice how some areas reflect sharply while others scatter light diffusely, all on the same object.</p>
 
           <CodeBlock lang="typescript" :code="`const roughnessMap = textureLoader.load('/textures/brick_roughness.jpg');
 
@@ -67,9 +67,9 @@ const material = new THREE.MeshStandardMaterial({
 
           <h3>3. Metalness Map</h3>
 
-          <p>The <strong>metalness map</strong> tells Three.js which parts of the object are metal and which are dielectric (plastic, wood, stone). This is usually a high-contrast image — a gold ring on a wooden table would have white (metal) for the ring and black (non-metal) for the wood. In-between values are rare in physically accurate materials since real surfaces are either metal or not.</p>
+          <p>The <strong>metalness map</strong> tells Three.js which parts of the object are metal and which are dielectric (plastic, wood, stone). This is usually a high-contrast image like a gold ring on a wooden table would have white (metal) for the ring and black (non-metal) for the wood. In-between values are rare in physically accurate materials since real surfaces are either metal or not.</p>
 
-          <p>Why does this matter? Metals reflect light fundamentally differently — they tint the color of their reflections and have no diffuse component. Getting this map right is critical for realism.</p>
+          <p>Why does this matter? Metals reflect light fundamentally differently. They tint the color of their reflections and have no diffuse component. Getting this map right is critical for realism.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -77,7 +77,7 @@ const material = new THREE.MeshStandardMaterial({
           </div>
           </ClientOnly>
 
-          <p>The left sphere is uniformly metallic. The right sphere uses a metalness map — some regions behave as metal (tinted reflections, no diffuse) while others behave as dielectric (white reflections, colored diffuse).</p>
+          <p>The left sphere is uniformly metallic. The right sphere uses a metalness map, with some regions behave as metal (tinted reflections, no diffuse) while others behave as dielectric (white reflections, colored diffuse).</p>
 
           <CodeBlock lang="typescript" :code="`const metalnessMap = textureLoader.load('/textures/rust_metalness.jpg');
 
@@ -93,9 +93,9 @@ const material = new THREE.MeshStandardMaterial({
 
           <h3>4. Normal Map (The Illusion of Detail)</h3>
 
-          <p>The <strong>normal map</strong> is the most powerful map in the toolkit. It's the strange-looking purple and blue image that tricks the lighting into thinking the surface has bumps, dents, cracks, and grooves — without adding a single extra vertex. Each pixel encodes a direction (the surface normal at that point), and the shader uses it to calculate how light bounces off that pixel.</p>
+          <p>The <strong>normal map</strong> is the most powerful map in the toolkit. It's the strange-looking purple and blue image that tricks the lighting into thinking the surface has bumps, dents, cracks, and grooves without adding a single extra vertex. Each pixel encodes a direction (the surface normal at that point), and the shader uses it to calculate how light bounces off that pixel.</p>
 
-          <p>This lets you make a flat plane look like a rugged stone wall, or a smooth sphere look like a golf ball — all by changing how light interacts with the surface, not the actual geometry.</p>
+          <p>This lets you make a flat plane look like a rugged stone wall, or a smooth sphere look like a golf ball, all by changing how light interacts with the surface, not the actual geometry.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -103,7 +103,7 @@ const material = new THREE.MeshStandardMaterial({
           </div>
           </ClientOnly>
 
-          <p>The left sphere is geometrically smooth with no normal map. The right sphere uses a procedural normal map — the geometry is identical, but the lighting creates the illusion of a textured surface. The <code>normalScale</code> vector controls the intensity of the effect.</p>
+          <p>The left sphere is geometrically smooth with no normal map. The right sphere uses a procedural normal map. The geometry is identical, but the lighting creates the illusion of a textured surface. The <code>normalScale</code> vector controls the intensity of the effect.</p>
 
           <CodeBlock lang="typescript" :code="`const normalMap = textureLoader.load('/textures/brick_normal.jpg');
 
@@ -124,10 +124,10 @@ const material = new THREE.MeshStandardMaterial({
           <p>These four maps work together to build a complete material. Each map controls one independent aspect of the surface, and the shader combines them per-pixel to produce the final result. For example, to create a realistic wet cobblestone street:</p>
 
           <ul>
-            <li><strong>Color Map</strong> — The gray stone texture with mortar lines between blocks.</li>
-            <li><strong>Normal Map</strong> — Creates the bumps between and across the stones without extra geometry.</li>
-            <li><strong>Roughness Map</strong> — Puddles are black (perfectly smooth, mirror-like reflections) and dry stone is white (rough, scattered light).</li>
-            <li><strong>Metalness Map</strong> — Entirely black, since stone isn't metal.</li>
+            <li><strong>Color Map</strong>: The gray stone texture with mortar lines between blocks.</li>
+            <li><strong>Normal Map</strong>: Creates the bumps between and across the stones without extra geometry.</li>
+            <li><strong>Roughness Map</strong>: Puddles are black (perfectly smooth, mirror-like reflections) and dry stone is white (rough, scattered light).</li>
+            <li><strong>Metalness Map</strong>: Entirely black, since stone isn't metal.</li>
           </ul>
 
           <ClientOnly>
@@ -158,16 +158,16 @@ const material = new THREE.MeshStandardMaterial({
           <p>Beyond the four primary maps, Three.js supports several more that add further realism:</p>
 
           <ul>
-            <li><code>aoMap</code> — <strong>Ambient Occlusion</strong>: darkens crevices and corners where ambient light can't reach. Requires a second UV set (<code>uv2</code>).</li>
-            <li><code>displacementMap</code> — Actually moves vertices based on a heightmap, creating real geometry changes (unlike normal maps which only fake it). Requires a high-poly mesh to work well.</li>
-            <li><code>emissiveMap</code> — Controls which parts of the surface glow. Combined with the <code>emissive</code> color.</li>
-            <li><code>alphaMap</code> — Controls transparency per-pixel. Requires <code>transparent: true</code> on the material.</li>
-            <li><code>envMap</code> — An environment map for reflections, as covered in the <NuxtLink to="/learn-threejs/building-blocks/physically-based-rendering">PBR article</NuxtLink>.</li>
+            <li><code>aoMap</code>: <strong>Ambient Occlusion</strong>: darkens crevices and corners where ambient light can't reach. Requires a second UV set (<code>uv2</code>).</li>
+            <li><code>displacementMap</code>: Actually moves vertices based on a heightmap, creating real geometry changes (unlike normal maps which only fake it). Requires a high-poly mesh to work well.</li>
+            <li><code>emissiveMap</code>: Controls which parts of the surface glow. Combined with the <code>emissive</code> color.</li>
+            <li><code>alphaMap</code>: Controls transparency per-pixel. Requires <code>transparent: true</code> on the material.</li>
+            <li><code>envMap</code>: An environment map for reflections, as covered in the <NuxtLink to="/learn-threejs/building-blocks/physically-based-rendering">PBR article</NuxtLink>.</li>
           </ul>
 
           <h3>Displacement vs Normal Maps</h3>
 
-          <p>Normal maps and displacement maps solve the same problem — adding surface detail — but in fundamentally different ways. A <strong>normal map</strong> fakes the detail by changing how light calculates on a flat surface. A <strong>displacement map</strong> actually moves the vertices, creating real geometric changes. The trade-off: displacement requires a highly subdivided mesh (many vertices to move), while normal maps work on any geometry.</p>
+          <p>Normal maps and displacement maps solve the same problem, adding surface detail, but in fundamentally different ways. A <strong>normal map</strong> fakes the detail by changing how light calculates on a flat surface. A <strong>displacement map</strong> actually moves the vertices, creating real geometric changes. The trade-off: displacement requires a highly subdivided mesh (many vertices to move), while normal maps work on any geometry.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -175,15 +175,15 @@ const material = new THREE.MeshStandardMaterial({
           </div>
           </ClientOnly>
 
-          <p>Left: a smooth sphere with only a normal map — the silhouette is perfectly round, but the surface looks bumpy. Right: the same sphere with a displacement map — the silhouette itself is deformed, and the bumps are real geometry. Displacement is more convincing at edges and in silhouette, but costs more vertices.</p>
+          <p>Left: a smooth sphere with only a normal map. The silhouette is perfectly round, but the surface looks bumpy. Right: the same sphere with a displacement map. The silhouette itself is deformed, and the bumps are real geometry. Displacement is more convincing at edges and in silhouette, but costs more vertices.</p>
 
-          <CodeBlock lang="typescript" :code="`// Normal map only — fake bumps, smooth silhouette
+          <CodeBlock lang="typescript" :code="`// Normal map only, fake bumps, smooth silhouette
 const normalOnly = new THREE.MeshStandardMaterial({
   normalMap: normalMap,
   normalScale: new THREE.Vector2(1.5, 1.5)
 });
 
-// Displacement map — real geometry deformation
+// Displacement map, real geometry deformation
 const displaced = new THREE.MeshStandardMaterial({
   displacementMap: heightMap,
   displacementScale: 0.3,  // How far vertices move
@@ -196,7 +196,7 @@ const geometry = new THREE.SphereGeometry(1, 128, 128);`" />
 
           <h3>UV Mapping and Texture Coordinates</h3>
 
-          <p>For texture maps to work, every vertex in a mesh needs <strong>UV coordinates</strong> — a 2D position (u, v) that maps it to a point on the texture image. All built-in Three.js geometries come with UVs pre-computed. For custom <NuxtLink to="/learn-threejs/building-blocks/buffer-geometry">BufferGeometry</NuxtLink>, you need to set the <code>uv</code> attribute yourself.</p>
+          <p>For texture maps to work, every vertex in a mesh needs <strong>UV coordinates</strong>, a 2D position (u, v) that maps it to a point on the texture image. All built-in Three.js geometries come with UVs pre-computed. For custom <NuxtLink to="/learn-threejs/building-blocks/buffer-geometry">BufferGeometry</NuxtLink>, you need to set the <code>uv</code> attribute yourself.</p>
 
           <p>You can control how textures tile and offset using the texture's <code>repeat</code>, <code>offset</code>, and <code>wrapS</code>/<code>wrapT</code> properties:</p>
 
@@ -235,8 +235,8 @@ geometry.setAttribute('uv',
   <LearnThreejsBottomNav
     prevLink="/learn-threejs/building-blocks/physically-based-rendering"
     prevText="Physically Based Rendering"
-    nextLink="/learn-threejs/building-blocks"
-    nextText="Building Blocks"
+    nextLink="/learn-threejs/lighting/types-of-lighting"
+    nextText="Types of Lighting"
   />
   <Footer />
 </template>

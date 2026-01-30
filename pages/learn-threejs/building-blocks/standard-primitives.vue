@@ -123,7 +123,7 @@ const ring = new THREE.RingGeometry(0.5, 1, 32);`" />
           </div>
           </ClientOnly>
 
-          <CodeBlock lang="typescript" :code="`// All take (radius, detail) — detail 0 is the base shape
+          <CodeBlock lang="typescript" :code="`// All take (radius, detail), detail 0 is the base shape
 const tetra = new THREE.TetrahedronGeometry(1, 0);   // 4 faces
 const octa = new THREE.OctahedronGeometry(1, 0);     // 8 faces
 const dodeca = new THREE.DodecahedronGeometry(1, 0);  // 12 faces

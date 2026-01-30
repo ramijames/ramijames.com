@@ -15,9 +15,9 @@
 
           <p>Every material in Three.js extends the base <code>Material</code> class and shares common properties like <code>opacity</code>, <code>transparent</code>, <code>side</code>, and <code>wireframe</code>. The differences are in how they compute the color of each pixel.</p>
 
-          <h3>MeshBasicMaterial — No Lighting</h3>
+          <h3>MeshBasicMaterial: No Lighting</h3>
 
-          <p><code>MeshBasicMaterial</code> ignores all lights in the scene. It renders the mesh with a flat color, a texture, or vertex colors — nothing more. This makes it the fastest material and useful for UI elements, backgrounds, wireframes, or any object that shouldn't react to lighting.</p>
+          <p><code>MeshBasicMaterial</code> ignores all lights in the scene. It renders the mesh with a flat color, a texture, or vertex colors. Nothing more. This makes it the fastest material and useful for UI elements, backgrounds, wireframes, or any object that shouldn't react to lighting.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -43,9 +43,9 @@ const glass = new THREE.MeshBasicMaterial({
   opacity: 0.5
 });`" />
 
-          <h3>MeshNormalMaterial — Debugging and Visualization</h3>
+          <h3>MeshNormalMaterial: Debugging and Visualization</h3>
 
-          <p><code>MeshNormalMaterial</code> maps each face's normal direction to a color. Faces pointing along the X axis appear red/cyan, Y axis appears green/magenta, and Z axis appears blue/yellow. It doesn't need lights and is invaluable for debugging geometry — you can immediately see if normals are correct, faces are oriented properly, or vertices are shared.</p>
+          <p><code>MeshNormalMaterial</code> maps each face's normal direction to a color. Faces pointing along the X axis appear red/cyan, Y axis appears green/magenta, and Z axis appears blue/yellow. It doesn't need lights and is invaluable for debugging geometry. You can immediately see if normals are correct, faces are oriented properly, or vertices are shared.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -60,9 +60,9 @@ const flat = new THREE.MeshNormalMaterial({
   flatShading: true
 });`" />
 
-          <h3>MeshLambertMaterial — Matte Surfaces</h3>
+          <h3>MeshLambertMaterial: Matte Surfaces</h3>
 
-          <p><code>MeshLambertMaterial</code> is the simplest lit material. It uses <strong>Lambertian reflectance</strong>, which calculates lighting only at vertices and interpolates across faces. This creates a soft, matte look — good for clay, fabric, unpolished wood, or any surface that doesn't have a shine. It's significantly cheaper than Phong or Standard materials.</p>
+          <p><code>MeshLambertMaterial</code> is the simplest lit material. It uses <strong>Lambertian reflectance</strong>, which calculates lighting only at vertices and interpolates across faces. This creates a soft, matte look, which is good for clay, fabric, unpolished wood, or any surface that doesn't have a shine. It's significantly cheaper than Phong or Standard materials.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -80,9 +80,9 @@ const glowing = new THREE.MeshLambertMaterial({
   emissive: 0x331100
 });`" />
 
-          <h3>MeshPhongMaterial — Shiny Surfaces</h3>
+          <h3>MeshPhongMaterial: Shiny Surfaces</h3>
 
-          <p><code>MeshPhongMaterial</code> adds <strong>specular highlights</strong> on top of Lambert's diffuse shading. The <code>shininess</code> property controls how tight the highlight is — low values create a broad, soft sheen (like rubber), high values create a tight, bright spot (like polished metal). The <code>specular</code> color controls the highlight's tint.</p>
+          <p><code>MeshPhongMaterial</code> adds <strong>specular highlights</strong> on top of Lambert's diffuse shading. The <code>shininess</code> property controls how tight the highlight is. Low values create a broad, soft sheen (like rubber), high values create a tight, bright spot (like polished metal). The <code>specular</code> color controls the highlight's tint.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -111,9 +111,9 @@ const rubber = new THREE.MeshPhongMaterial({
   specular: 0x111111
 });`" />
 
-          <h3>MeshStandardMaterial — Physically-Based Rendering</h3>
+          <h3>MeshStandardMaterial: Physically-Based Rendering</h3>
 
-          <p><code>MeshStandardMaterial</code> is the workhorse PBR material. Instead of separate diffuse/specular/shininess controls, it uses two intuitive properties: <code>roughness</code> (0 = mirror, 1 = completely diffuse) and <code>metalness</code> (0 = dielectric like plastic, 1 = metal). This model produces more realistic results because it conserves energy — as a surface becomes more reflective, it scatters less light diffusely.</p>
+          <p><code>MeshStandardMaterial</code> is the workhorse PBR material. Instead of separate diffuse/specular/shininess controls, it uses two intuitive properties: <code>roughness</code> (0 = mirror, 1 = completely diffuse) and <code>metalness</code> (0 = dielectric like plastic, 1 = metal). This model produces more realistic results because it conserves energy. As a surface becomes more reflective, it scatters less light diffusely.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -144,7 +144,7 @@ const brushedMetal = new THREE.MeshStandardMaterial({
 
           <p>The demo above shows a grid of spheres with roughness increasing left-to-right and metalness increasing bottom-to-top. Notice how smooth metals reflect the environment crisply, while rough dielectrics scatter light softly.</p>
 
-          <h3>MeshPhysicalMaterial — Advanced PBR</h3>
+          <h3>MeshPhysicalMaterial: Advanced PBR</h3>
 
           <p><code>MeshPhysicalMaterial</code> extends Standard with additional properties for specialized effects: <code>clearcoat</code> (a second reflective layer, like car paint or lacquered wood), <code>transmission</code> (light passing through, for glass), <code>thickness</code> (how deep the transparent object is), <code>ior</code> (index of refraction), and <code>iridescence</code> (thin-film interference, like soap bubbles or oil slicks). It's the most expensive material but produces the most realistic results.</p>
 
@@ -182,7 +182,7 @@ const iridescent = new THREE.MeshPhysicalMaterial({
   iridescenceIOR: 1.3
 });`" />
 
-          <h3>MeshToonMaterial — Cel Shading</h3>
+          <h3>MeshToonMaterial: Cel Shading</h3>
 
           <p><code>MeshToonMaterial</code> renders surfaces with discrete shading steps instead of smooth gradients, creating a cartoon or cel-shaded look. By default it uses a two-tone (light/shadow) gradient, but you can provide a custom <code>gradientMap</code> texture for more steps. It responds to lights like Lambert but quantizes the result.</p>
 
@@ -216,7 +216,7 @@ const threeTone = new THREE.MeshToonMaterial({
 
           <h3>Comparing Materials Side by Side</h3>
 
-          <p>The best way to understand materials is to see them on the same geometry under the same lighting. The demo below places seven spheres in a row — one for each material type — lit by the same directional and ambient lights. Notice how each responds differently to the same light conditions.</p>
+          <p>The best way to understand materials is to see them on the same geometry under the same lighting. The demo below places seven spheres in a row, one for each material type, lit by the same directional and ambient lights. Notice how each responds differently to the same light conditions.</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -231,24 +231,24 @@ const threeTone = new THREE.MeshToonMaterial({
           <p>All materials share a set of properties inherited from the base <code>Material</code> class:</p>
 
           <ul>
-            <li><code>transparent</code> / <code>opacity</code> — Enable transparency and set how see-through the surface is (0 = invisible, 1 = fully opaque).</li>
-            <li><code>side</code> — Which faces to render: <code>THREE.FrontSide</code> (default), <code>THREE.BackSide</code>, or <code>THREE.DoubleSide</code>.</li>
-            <li><code>wireframe</code> — Render only the edges of each triangle.</li>
-            <li><code>flatShading</code> — Use face normals instead of vertex normals, making each triangle visually distinct.</li>
-            <li><code>vertexColors</code> — Use per-vertex colors from the geometry's <code>color</code> attribute instead of (or multiplied with) the material color.</li>
-            <li><code>depthWrite</code> / <code>depthTest</code> — Control whether the material writes to and reads from the depth buffer. Useful for overlays and particle effects.</li>
+            <li><code>transparent</code> / <code>opacity</code>: Enable transparency and set how see-through the surface is (0 = invisible, 1 = fully opaque).</li>
+            <li><code>side</code>: Which faces to render: <code>THREE.FrontSide</code> (default), <code>THREE.BackSide</code>, or <code>THREE.DoubleSide</code>.</li>
+            <li><code>wireframe</code>: Render only the edges of each triangle.</li>
+            <li><code>flatShading</code>: Use face normals instead of vertex normals, making each triangle visually distinct.</li>
+            <li><code>vertexColors</code>: Use per-vertex colors from the geometry's <code>color</code> attribute instead of (or multiplied with) the material color.</li>
+            <li><code>depthWrite</code> / <code>depthTest</code>: Control whether the material writes to and reads from the depth buffer. Useful for overlays and particle effects.</li>
           </ul>
 
           <h3>Which Material Should You Use?</h3>
 
           <ul>
-            <li><strong>MeshBasicMaterial</strong> — When you don't need lighting: UI, skyboxes, wireframes, flat-shaded stylized art.</li>
-            <li><strong>MeshNormalMaterial</strong> — Debugging geometry, visualizing normals, quick prototyping.</li>
-            <li><strong>MeshLambertMaterial</strong> — Performance-sensitive scenes with many objects that only need basic diffuse lighting.</li>
-            <li><strong>MeshPhongMaterial</strong> — When you need specular highlights but don't need full PBR realism.</li>
-            <li><strong>MeshStandardMaterial</strong> — The default choice for most 3D scenes. Good balance of realism and performance.</li>
-            <li><strong>MeshPhysicalMaterial</strong> — When you need glass, clearcoat, iridescence, or other advanced effects.</li>
-            <li><strong>MeshToonMaterial</strong> — Stylized, cartoon, or anime-inspired visuals.</li>
+            <li><strong>MeshBasicMaterial</strong>: When you don't need lighting: UI, skyboxes, wireframes, flat-shaded stylized art.</li>
+            <li><strong>MeshNormalMaterial</strong>: Debugging geometry, visualizing normals, quick prototyping.</li>
+            <li><strong>MeshLambertMaterial</strong>: Performance-sensitive scenes with many objects that only need basic diffuse lighting.</li>
+            <li><strong>MeshPhongMaterial</strong>: When you need specular highlights but don't need full PBR realism.</li>
+            <li><strong>MeshStandardMaterial</strong>: The default choice for most 3D scenes. Good balance of realism and performance.</li>
+            <li><strong>MeshPhysicalMaterial</strong>: When you need glass, clearcoat, iridescence, or other advanced effects.</li>
+            <li><strong>MeshToonMaterial</strong>: Stylized, cartoon, or anime-inspired visuals.</li>
           </ul>
 
     </section>
@@ -422,7 +422,7 @@ onMounted(async () => {
     ren3.render(scene3, cam3);
   });
 
-  // ===== SCENE 4: MeshPhongMaterial — shininess comparison =====
+  // ===== SCENE 4: MeshPhongMaterial, shininess comparison =====
   const scene4 = createScene(0x111122);
   addLights(scene4);
 
@@ -462,7 +462,7 @@ onMounted(async () => {
     ren4.render(scene4, cam4);
   });
 
-  // ===== SCENE 5: MeshStandardMaterial — roughness/metalness grid =====
+  // ===== SCENE 5: MeshStandardMaterial, roughness/metalness grid =====
   const scene5 = createScene(0x111122);
   addLights(scene5);
 
@@ -710,12 +710,12 @@ useHead({
 useSeoMeta({
   title: 'The Spectrum of Materials in Three.js',
   ogTitle: 'The Spectrum of Materials in Three.js',
-  description: 'Explore every Three.js material from MeshBasicMaterial to MeshPhysicalMaterial — understand lighting models, PBR properties, and when to use each one.',
-  ogDescription: 'Explore every Three.js material from MeshBasicMaterial to MeshPhysicalMaterial — understand lighting models, PBR properties, and when to use each one.',
+  description: 'Explore every Three.js material from MeshBasicMaterial to MeshPhysicalMaterial: understand lighting models, PBR properties, and when to use each one.',
+  ogDescription: 'Explore every Three.js material from MeshBasicMaterial to MeshPhysicalMaterial: understand lighting models, PBR properties, and when to use each one.',
   ogImage: '/learn-threejs/cover.png',
   url: 'https://www.ramijames.com/learn-threejs/building-blocks/the-spectrum-of-materials',
   twitterTitle: 'The Spectrum of Materials in Three.js',
-  twitterDescription: 'Explore every Three.js material from MeshBasicMaterial to MeshPhysicalMaterial — understand lighting models, PBR properties, and when to use each one.',
+  twitterDescription: 'Explore every Three.js material from MeshBasicMaterial to MeshPhysicalMaterial: understand lighting models, PBR properties, and when to use each one.',
   twitterImage: '/learn-threejs/cover.png',
   twitterCard: 'summary_large_image'
 })

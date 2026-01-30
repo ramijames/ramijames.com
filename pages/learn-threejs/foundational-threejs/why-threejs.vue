@@ -83,7 +83,7 @@
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);`" />
 
-          <p>And this is the result — an orange square rendered by the GPU:</p>
+          <p>And this is the result, an orange square rendered by the GPU:</p>
 
           <ClientOnly>
           <canvas ref="glCanvas" width="640" height="480" class="webgl-demo"></canvas>

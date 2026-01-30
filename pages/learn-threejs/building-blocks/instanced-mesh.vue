@@ -50,7 +50,7 @@ mesh.instanceMatrix.needsUpdate = true;`" />
 
           <h3>A grid of cubes</h3>
 
-          <p>The scene below renders 400 cubes in a 20x20 grid using a single <code>InstancedMesh</code> — one draw call for the entire grid.</p>
+          <p>The scene below renders 400 cubes in a 20x20 grid using a single <code>InstancedMesh</code>. There is just one draw call for the entire grid!</p>
 
           <ClientOnly>
           <div class="scene-container">
