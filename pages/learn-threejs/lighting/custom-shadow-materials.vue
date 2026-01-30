@@ -105,7 +105,7 @@ mesh.customDistanceMaterial = new THREE.MeshDistanceMaterial({
   <LearnThreejsBottomNav
     prevLink="/learn-threejs/lighting/transparency-in-shadows"
     prevText="Transparency in Shadows"
-    nextLink="/learn-threejs/lighting/"
+    nextLink=""
     nextText=""
   />
   <Footer />
