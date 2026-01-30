@@ -197,10 +197,10 @@ onUnmounted(() => {
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .threejs-container {
   width: 100%;
-  height: 40vh;
+  height: v-bind(containerHeight);
   overflow: hidden;
   cursor: crosshair;
 }
@@ -208,7 +208,7 @@ onUnmounted(() => {
 .loader {
   position: absolute;
   inset: 0;
-  height: 40vh;
+  height: v-bind(containerHeight);
   display: grid;
   place-items: center;
   background: rgba($black, 0.1);

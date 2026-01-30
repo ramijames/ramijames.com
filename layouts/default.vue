@@ -12,7 +12,7 @@ import { useRoute } from 'vue-router';
 const route = useRoute();
 const isOpen = useState('learnthreejs-nav-open', () => true)
 
-const isLearnThreeJSSubPage = computed(() => route.path.startsWith('/learn-threejs/'));
+const isLearnThreeJSSubPage = computed(() => route.path.startsWith('/learn-threejs/') && route.path !== '/learn-threejs/');
 </script>
 
 <style lang="scss">
