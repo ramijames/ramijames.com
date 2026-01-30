@@ -8,14 +8,10 @@
 
 <style lang="scss" scoped>
 
-html, body, #__nuxt, .viewer-layout {
+.viewer-layout {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-}
-
-.viewer-layout {
   display: flex;
   flex-direction: row;
   min-height: 100vh;

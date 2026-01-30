@@ -33,7 +33,6 @@ export default defineNuxtConfig({
     dirs: ['~/components'],
   },
   modules: [
-    '@nuxtjs/google-fonts',
     '@pinia/nuxt',
     '@nuxt/content',
     "nuxt-newsletter",
@@ -68,15 +67,6 @@ export default defineNuxtConfig({
     audienceId: process.env.MAILCHIMP_AUDIENCE_ID,      
     component: true     
     }  
-  },
-  googleFonts: {
-    families: {
-      'Libre Baskerville': [400, 500, 600, 700],
-      'Roboto Sans': [400, 600, 700, 900],
-      'Poppins': [400, 500, 600, 700, 800, 900],
-    },
-    preconnect: true,
-    preload: true,
   },
   routeRules: {
     '/thoughts/on-ethical-pricing': { redirect: '/thoughts/how-to-make-product-decisions-based-on-business-needs' },

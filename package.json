@@ -33,7 +33,6 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@nuxtjs/google-fonts": "^3.2.0",
     "nuxt-calendly": "^0.1.18",
     "sass": "^1.75.0"
   }
