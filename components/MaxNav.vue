@@ -215,7 +215,8 @@ const isHome = computed(() => route.path === '/');
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: rgba($white, 1);
+  background: linear-gradient(to bottom, rgba($white, 1), rgba($white, 0.2));
+  backdrop-filter: blur(10px);
   padding: $spacing-xs;
 
   .nav-left-section {
@@ -609,7 +610,7 @@ const isHome = computed(() => route.path === '/');
 
 .dark {
   .max-nav {
-    background: $black;
+    background: linear-gradient(to bottom, rgba($black, 1), rgba($black, 0.2));
 
     .nav-left-section {
 
