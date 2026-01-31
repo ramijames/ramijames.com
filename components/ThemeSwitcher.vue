@@ -52,13 +52,13 @@ function toggleTheme() {
   gap: 6px;
 
   svg {
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
     transition: all 0.24s ease-in-out;
 
     @media screen and (max-width: 1000px) {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
     }
     
     circle {

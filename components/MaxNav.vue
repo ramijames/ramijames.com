@@ -54,7 +54,7 @@
     </section>
 
     <section class="nav-right-section">
-      <button class="start-project" @click="openContactModal" v-show="!footerCtaVisible">
+      <button class="start-project small" @click="openContactModal" v-show="!footerCtaVisible">
         <svg width="30" height="32" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 6C1 3.23858 3.23858 1 6 1H24C26.7614 1 29 3.23858 29 6V20C29 22.7614 26.7614 25 24 25H9.5L2.63571 30.6529C1.98334 31.1902 1 30.7261 1 29.881V25V6Z" stroke="white" stroke-width="2"/>
         </svg>
@@ -206,6 +206,17 @@ const isHome = computed(() => route.path === '/');
 
 <style scoped lang="scss">
 .max-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba($white, 1);
+  padding: $spacing-xs;
 
   .nav-left-section {
     display: flex;
@@ -213,13 +224,7 @@ const isHome = computed(() => route.path === '/');
     align-items: center;
     justify-content: center;
     gap: $spacing-sm;
-    background: $white;
-    border-radius: $br-md;
     padding: 0 0.35rem;
-    position: fixed;
-    top: $spacing-sm;
-    left: $spacing-sm;
-    z-index: 100;
 
     .go-back {
       display: block;
@@ -255,13 +260,13 @@ const isHome = computed(() => route.path === '/');
 
     .logo-link {
       display: block;
-      width: 56px;
-      height: 56px;
+      width: 44px;
+      height: 44px;
       margin: 0;
 
       @media screen and (max-width: 1000px) {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
       }
 
       @media screen and (max-width: 1000px){
@@ -291,13 +296,7 @@ const isHome = computed(() => route.path === '/');
     flex-direction: row;
     align-items: center;
     gap: 0;
-    background: $white;
-    border-radius: $br-md;
     padding: 0 0.35rem;
-    position: fixed;
-    top: $spacing-sm;
-    right: $spacing-sm;
-    z-index: 100;
 
     .start-project {
       font-family: $font-family-main;
@@ -306,16 +305,17 @@ const isHome = computed(() => route.path === '/');
       text-decoration: none;
       border: none;
       margin-right: $spacing-xs;
-      background: $white;
-      color: $black;
       display: flex;
       flex-direction: row;
-      gap: $spacing-sm;
+      gap: $spacing-xs;
 
       svg {
+        width: 20px;
+        height: 20px;
+
         path {
-          stroke: $black;
-          fill: $black;
+          stroke: $white;
+          fill: $white;
         }
       }
 
@@ -327,14 +327,14 @@ const isHome = computed(() => route.path === '/');
 
   .menu-switch,
   .menu-close {
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
     position: relative;
 
     @media screen and (max-width: 1000px) {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
     }
 
     &:hover {
@@ -343,14 +343,14 @@ const isHome = computed(() => route.path === '/');
 
     .menu-icon,
     .close-icon {
-      width: 56px;
-      height: 56px;
+      width: 44px;
+      height: 44px;
       display: block;
       transition: transform 0.4s ease-in-out;
 
       @media screen and (max-width: 1000px) {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
       }
 
       rect {
@@ -369,16 +369,21 @@ const isHome = computed(() => route.path === '/');
 
   .menu-shade {
     position: fixed;
-    top: 0;
+    top: 62px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 62px);
     background: rgba($black, 1);
     transition: all 0.34s;
     transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
     z-index: 99;
     overflow: hidden;
     clip-path: inset(0 0 100% 0);
+
+    @media screen and (max-width: 1000px){
+      height: calc(100% - 58px);
+      top: 58px;
+    }
 
     &:after {
       content: '';
@@ -437,6 +442,10 @@ const isHome = computed(() => route.path === '/');
         height: 100%;
         width: 100%;
 
+        @media screen and (max-width: 1000px){
+          padding: $spacing-md $spacing-md 0;
+        }
+
         .start-project-mobile {
           display: none;
 
@@ -447,10 +456,6 @@ const isHome = computed(() => route.path === '/');
             opacity: 0;
             animation-delay: .4s !important;
           }
-        }
-
-        @media screen and (max-width: 1000px){
-          padding: 5rem $spacing-lg 0;
         }
 
         .nav-link {
@@ -507,19 +512,24 @@ const isHome = computed(() => route.path === '/');
         line-height: 150%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
         gap: $spacing-md;
 
         @media screen and (max-width: 1000px){
-          gap: $spacing-sm;
+          gap: $spacing-md;
+          padding-left: $spacing-md;
+          flex-direction: row;
+          justify-content: flex-start;
         }
 
         h3 {
           font-size: $font-size-xl;
           color: $white;
-          margin-bottom: $spacing-md;
+          margin: 0 0 $spacing-md;
 
           @media screen and (max-width: 1000px){
-            font-size: $font-size-lg;
+            font-size: $font-size-md;
             margin: 0 0 $spacing-sm 0;
           }
         }
@@ -529,7 +539,7 @@ const isHome = computed(() => route.path === '/');
           font-size: $font-size-lg;
 
           @media screen and (max-width: 1000px){
-            font-size: $font-size-md;
+            font-size: $font-size-sm;
             margin: 0 0 $spacing-xs 0;
           }
         }
@@ -537,6 +547,18 @@ const isHome = computed(() => route.path === '/');
         .contact-info {
           animation-delay: .5s !important;
           opacity: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+
+          @media screen and (max-width: 1000px){
+            width: 50%;
+          }
+
+          a {
+            color: rgba($white, 1);
+          }
         }
 
         .links {
@@ -544,6 +566,14 @@ const isHome = computed(() => route.path === '/');
           flex-direction: column;
           animation-delay: .6s !important;
           opacity: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+
+          @media screen and (max-width: 1000px){
+            width: 50%;
+          }
 
           a {
             color: rgba($white, 0.6);
@@ -553,7 +583,7 @@ const isHome = computed(() => route.path === '/');
             font-size: $font-size-lg;
 
             @media screen and (max-width: 1000px){
-              font-size: $font-size-md;
+              font-size: $font-size-sm;
               margin: 0 0 $spacing-xs 0;
             }
 
@@ -579,9 +609,9 @@ const isHome = computed(() => route.path === '/');
 
 .dark {
   .max-nav {
+    background: $black;
 
     .nav-left-section {
-      background: $black;
 
       .go-back {
 
@@ -612,25 +642,20 @@ const isHome = computed(() => route.path === '/');
     }
 
     .nav-right-section {
-      background: $black;
 
       .start-project {
-        color: rgba($white, 1);
-        background: $black;
+        color: rgba($black, 1);
+        background: $white;
 
         svg {
           path {
-            stroke: $white;
-            fill:  $white;
+            stroke: $black;
+            fill:  $black;
           }
         }
 
         &:after {
           background: rgba($white, 1);
-        }
-
-        &:hover {
-          color: rgba($white, 0.6);
         }
       }
     }
@@ -662,6 +687,16 @@ const isHome = computed(() => route.path === '/');
       .shade-content {
 
         .nav-links {
+
+          .start-project-mobile {
+
+            @media screen and (max-width: 1000px){
+              background: $black;
+              color: $white;
+            }
+          
+          }
+
 
           .nav-link {
             color: $black;
