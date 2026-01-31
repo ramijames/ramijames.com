@@ -373,7 +373,6 @@ const isHome = computed(() => route.path === '/');
     top: 62px;
     left: 0;
     width: 100%;
-    height: calc(100% - 62px);
     background: rgba($black, 1);
     transition: all 0.34s;
     transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
