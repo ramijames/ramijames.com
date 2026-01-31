@@ -380,7 +380,8 @@ const isHome = computed(() => route.path === '/');
     top: 62px;
     left: 0;
     width: 100%;
-    background: rgba($black, 1);
+    background: rgba($black, .9);
+    backdrop-filter: blur(30px);
     transition: all 0.34s;
     transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
     z-index: 99;
@@ -388,8 +389,8 @@ const isHome = computed(() => route.path === '/');
     clip-path: inset(0 0 100% 0);
 
     @media screen and (max-width: 1000px){
-      height: calc(100% - 58px);
       top: 58px;
+      padding: 0 0 $spacing-md;
     }
 
     &:after {
@@ -685,7 +686,7 @@ const isHome = computed(() => route.path === '/');
     }
 
     .menu-shade {
-      background: rgba($white, 1);
+      background: rgba($white, .9);
 
       &:after {
         background: rgba($black, .15);
