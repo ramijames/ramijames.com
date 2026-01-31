@@ -58,8 +58,6 @@
         <svg width="30" height="32" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 6C1 3.23858 3.23858 1 6 1H24C26.7614 1 29 3.23858 29 6V20C29 22.7614 26.7614 25 24 25H9.5L2.63571 30.6529C1.98334 31.1902 1 30.7261 1 29.881V25V6Z" stroke="white" stroke-width="2"/>
         </svg>
-
-
         Start Project
       </button>
       <ThemeSwitcher />
@@ -210,6 +208,7 @@ const isHome = computed(() => route.path === '/');
   top: 0;
   left: 0;
   width: 100%;
+  box-sizing: border-box;
   z-index: 100;
   display: flex;
   flex-direction: row;
@@ -218,6 +217,11 @@ const isHome = computed(() => route.path === '/');
   background: linear-gradient(to bottom, rgba($white, 1), rgba($white, 0.2));
   backdrop-filter: blur(10px);
   padding: $spacing-xs;
+  animation: fadeInDown 0.4s ease-in-out forwards;
+  transition: all 0.34s;
+  transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
+
+  
 
   .nav-left-section {
     display: flex;
@@ -298,6 +302,9 @@ const isHome = computed(() => route.path === '/');
     align-items: center;
     gap: 0;
     padding: 0 0.35rem;
+    align-self: flex-end;
+    position: absolute;
+    right: 0;
 
     .start-project {
       font-family: $font-family-main;

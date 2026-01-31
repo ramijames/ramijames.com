@@ -1,9 +1,12 @@
 import type { RouterConfig } from '@nuxt/schema'
+import { useNuxtApp } from '#app'
 
 export default <RouterConfig>{
   scrollBehavior(to, from, savedPosition) {
+    const nuxtApp = useNuxtApp()
+
     return new Promise((resolve) => {
-      setTimeout(() => {
+      nuxtApp.hooks.hookOnce('page:finish', () => {
         if (savedPosition) {
           resolve(savedPosition)
         } else if (to.hash) {
@@ -11,7 +14,7 @@ export default <RouterConfig>{
         } else {
           resolve({ top: 0 })
         }
-      }, 0)
+      })
     })
   }
 }
