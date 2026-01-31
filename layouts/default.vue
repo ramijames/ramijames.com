@@ -22,7 +22,6 @@ const isLearnThreeJSSubPage = computed(() => route.path.startsWith('/learn-three
   min-height: 100vh;
   transition: all 0.4s;
   transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
-  width: 100%;
 
   &.innerNav-open {
     margin-left: 400px;
