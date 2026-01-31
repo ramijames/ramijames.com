@@ -8,69 +8,41 @@
     <section :class="['threejs-nav', innerNav ? 'innerNav' : '', innerNav && !isOpen ? 'collapsed' : '']">
       <div :class="['nav-content', innerNav && !isOpen ? 'hidden' : '']">
 
-        <h3 :class="{ collapsible: innerNav, active: innerNav && activeSection === 'foundational-threejs' }" @click="innerNav && toggleSection('foundational-threejs')">Foundational Three.js</h3>
+        <input
+          v-model="searchQuery"
+          type="text"
+          class="nav-search"
+          placeholder="Search"
+        />
 
-        <div :class="['section-links', { collapsed: innerNav && activeSection !== 'foundational-threejs' }]">
-          <nuxt-link to="/learn-threejs/foundational-threejs/why-threejs"><Difficulty value="easy" /><span>Why Three.js?</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/foundational-threejs/setting-up-your-dev-environment"><Difficulty value="easy" /><span>A modern dev environment</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/foundational-threejs/hello-cube"><Difficulty value="easy" /><span>"Hello Cube"</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/foundational-threejs/the-scene"><Difficulty value="easy" /><span>The Scene</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/foundational-threejs/cameras"><Difficulty value="easy" /><span>Cameras</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/foundational-threejs/the-renderer"><Difficulty value="easy" /><span>The Renderer</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/foundational-threejs/the-scene-graph"><Difficulty value="easy" /><span>The Scene Graph</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/foundational-threejs/understanding-parent-child-relationships"><Difficulty value="easy" /><span>Understanding relationships</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/foundational-threejs/position-rotation-and-scale"><Difficulty value="easy" /><span>Position, Rotation, and Scale</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/foundational-threejs/the-animation-loop"><Difficulty value="easy" /><span>The Animation Loop</span></nuxt-link>
-        </div>
-
-        <h3 :class="{ collapsible: innerNav, active: innerNav && activeSection === 'building-blocks' }" @click="innerNav && toggleSection('building-blocks')">The Building Blocks</h3>
-
-        <div :class="['section-links', { collapsed: innerNav && activeSection !== 'building-blocks' }]">
-          <nuxt-link to="/learn-threejs/building-blocks/buffer-geometry"><Difficulty value="easy" /><span>BufferGeometry</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/building-blocks/standard-primitives"><Difficulty value="easy" /><span>Standard primitives</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/building-blocks/custom-geometries"><Difficulty value="easy" /><span>Custom geometries and vertices</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/building-blocks/instanced-mesh"><Difficulty value="easy" /><span>Instanced Mesh</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/building-blocks/procedural-terrain"><Difficulty value="easy" /><span>Procedural terrain</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/building-blocks/the-spectrum-of-materials"><Difficulty value="easy" /><span>The spectrum of materials</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/building-blocks/physically-based-rendering"><Difficulty value="easy" /><span>Physically Based Rendering</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/building-blocks/advanced-mapping-concepts"><Difficulty value="intermediate" /><span>Advanced Mapping Concepts</span></nuxt-link>
-        </div>
-
-        <h3 :class="{ collapsible: innerNav, active: innerNav && activeSection === 'lighting' }" @click="innerNav && toggleSection('lighting')">Lighting</h3>
-
-        <div :class="['section-links', { collapsed: innerNav && activeSection !== 'lighting' }]">
-          <nuxt-link to="/learn-threejs/lighting/types-of-lighting"><Difficulty value="intermediate" /><span>Types of Lighting</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/lighting/types-of-shadows"><Difficulty value="intermediate" /><span>Types of Shadows</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/lighting/transparency-in-shadows"><Difficulty value="intermediate" /><span>Transparency in Shadows</span></nuxt-link>
-          <nuxt-link to="/learn-threejs/lighting/custom-shadow-materials"><Difficulty value="intermediate" /><span>Custom Shadow Materials</span></nuxt-link>
-        </div>
-
+        <template v-for="section in filteredSections" :key="section.title">
+          <h3>{{ section.title }}</h3>
+          <div class="section-links">
+            <nuxt-link v-for="link in section.links" :key="link.to" :to="link.to">
+              <Difficulty :value="link.difficulty" /><span>{{ link.label }}</span>
+            </nuxt-link>
+          </div>
+        </template>
+      
           <!--
-          <nuxt-link to="/learn-threejs/building-blocks/"><Difficulty value="intermediate" /><span>Environment Maps</span></nuxt-link>
-
-        <h3>Working with Assets</h3>
-
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Asset standards</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Using GLTFLoader</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Traversing models</span></nuxt-link>
 
       <h3>Interaction & Raycasting</h3>
 
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Clicking on 3D objects</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Hover states and UI overlays</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Basic 3D physics integrations</span></nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="easy" /><span>Clicking on 3D objects</span></nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="easy" /><span>Hover states and UI overlays</span></nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="easy" /><span>Basic 3D physics integrations</span></nuxt-link>
 
       <h3>Advanced Visuals</h3>
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Introduction to GLSL</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>ShaderMaterial vs. RawShaderMaterial</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Prodedural Shaders</span></nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="advanced" /><span>Introduction to GLSL</span></nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="advanced" /><span>ShaderMaterial vs. RawShaderMaterial</span></nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="advanced" /><span>Prodedural Shaders</span></nuxt-link>
 
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Using Points for stars, rain, and fire</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>EffectComposer: Adding Bloom, Depth of Field, and Film Grain</span></nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="advanced" /><span>Using Points for stars, rain, and fire</span></nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="advanced" /><span>EffectComposer: Adding Bloom, Depth of Field, and Film Grain</span></nuxt-link>
 
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Monitoring performance</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Draw calls, InstancedMesh, and Texture compression</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><span>Preventing memory leaks<</span>/nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="advanced" /><span>Monitoring performance</span></nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="advanced" /><span>Draw calls, InstancedMesh, and Texture compression</span></nuxt-link>
+          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="advanced" /><span>Preventing memory leaks<</span>/nuxt-link>
           -->
       </div>
     </section>
@@ -78,35 +50,79 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
 import { useUIStore } from '~/store/ui'
 
 const props = defineProps({
   innerNav: Boolean
 })
 
-const route = useRoute()
 const uiStore = useUIStore()
 
 const isOpen = useState('learnthreejs-nav-open', () => true)
+const searchQuery = ref('')
 
-const sectionFromRoute = (path: string): string => {
-  const segments = path.split('/')
-  // Route pattern: /learn-threejs/{section}/{article}
-  if (segments.length >= 3) {
-    return segments[2] // 'foundational-threejs', 'building-blocks', or 'lighting'
+const sections = [
+  {
+    title: 'Foundational Three.js',
+    links: [
+      { to: '/learn-threejs/foundational-threejs/why-threejs', label: 'Why Three.js?', difficulty: 'easy' },
+      { to: '/learn-threejs/foundational-threejs/setting-up-your-dev-environment', label: 'A modern dev environment', difficulty: 'easy' },
+      { to: '/learn-threejs/foundational-threejs/hello-cube', label: '"Hello Cube"', difficulty: 'easy' },
+      { to: '/learn-threejs/foundational-threejs/the-scene', label: 'The Scene', difficulty: 'easy' },
+      { to: '/learn-threejs/foundational-threejs/cameras', label: 'Cameras', difficulty: 'easy' },
+      { to: '/learn-threejs/foundational-threejs/the-renderer', label: 'The Renderer', difficulty: 'easy' },
+      { to: '/learn-threejs/foundational-threejs/the-scene-graph', label: 'The Scene Graph', difficulty: 'easy' },
+      { to: '/learn-threejs/foundational-threejs/understanding-parent-child-relationships', label: 'Understanding relationships', difficulty: 'easy' },
+      { to: '/learn-threejs/foundational-threejs/position-rotation-and-scale', label: 'Position, Rotation, and Scale', difficulty: 'easy' },
+      { to: '/learn-threejs/foundational-threejs/the-animation-loop', label: 'The Animation Loop', difficulty: 'easy' },
+    ]
+  },
+  {
+    title: 'The Building Blocks',
+    links: [
+      { to: '/learn-threejs/building-blocks/buffer-geometry', label: 'BufferGeometry', difficulty: 'easy' },
+      { to: '/learn-threejs/building-blocks/standard-primitives', label: 'Standard primitives', difficulty: 'easy' },
+      { to: '/learn-threejs/building-blocks/custom-geometries', label: 'Custom geometries and vertices', difficulty: 'easy' },
+      { to: '/learn-threejs/building-blocks/instanced-mesh', label: 'Instanced Mesh', difficulty: 'easy' },
+      { to: '/learn-threejs/building-blocks/procedural-terrain', label: 'Procedural terrain', difficulty: 'easy' },
+      { to: '/learn-threejs/building-blocks/the-spectrum-of-materials', label: 'The spectrum of materials', difficulty: 'easy' },
+      { to: '/learn-threejs/building-blocks/physically-based-rendering', label: 'Physically Based Rendering', difficulty: 'easy' },
+      { to: '/learn-threejs/building-blocks/advanced-mapping-concepts', label: 'Advanced Mapping Concepts', difficulty: 'intermediate' },
+    ]
+  },
+  {
+    title: 'Lighting',
+    links: [
+      { to: '/learn-threejs/lighting/types-of-lighting', label: 'Types of Lighting', difficulty: 'intermediate' },
+      { to: '/learn-threejs/lighting/types-of-shadows', label: 'Types of Shadows', difficulty: 'intermediate' },
+      { to: '/learn-threejs/lighting/transparency-in-shadows', label: 'Transparency in Shadows', difficulty: 'intermediate' },
+      { to: '/learn-threejs/lighting/custom-shadow-materials', label: 'Custom Shadow Materials', difficulty: 'intermediate' },
+      { to: '/learn-threejs/lighting/environment-maps', label: 'Environment Maps', difficulty: 'intermediate' },
+    ]
+  },
+  {
+    title: 'Working with Assets',
+    links: [
+      { to: '/learn-threejs/assets/asset-standards', label: 'Asset standards', difficulty: 'easy' },
+      { to: '/learn-threejs/assets/loading-assets', label: 'Loading assets', difficulty: 'intermediate' },
+      { to: '/learn-threejs/assets/working-with-loaded-models', label: 'Working with loaded models', difficulty: 'intermediate' },
+      { to: '/learn-threejs/assets/common-loading-errors', label: 'Common loading errors', difficulty: 'intermediate' },
+      { to: '/learn-threejs/assets/traversing-loaded-models', label: 'Traversing loaded models', difficulty: 'intermediate' },
+    ]
   }
-  return ''
-}
+]
 
-const activeSection = ref(sectionFromRoute(route.path))
+const filteredSections = computed(() => {
+  const query = searchQuery.value.toLowerCase().trim()
+  if (!query) return sections
 
-const toggleSection = (section: string) => {
-  activeSection.value = activeSection.value === section ? '' : section
-}
-
-watch(() => route.path, (newPath) => {
-  activeSection.value = sectionFromRoute(newPath)
+  return sections
+    .map(section => ({
+      ...section,
+      links: section.links.filter(link => link.label.toLowerCase().includes(query))
+    }))
+    .filter(section => section.links.length > 0)
 })
 
 onMounted(() => {
@@ -144,14 +160,6 @@ onMounted(() => {
       }
     }
 
-    h3.collapsible {
-      color: rgba($white, 0.5);
-
-      &:hover,
-      &.active {
-        color: $white;
-      }
-    }
 
   }
 }
@@ -209,6 +217,32 @@ onMounted(() => {
   }
 }
 
+.nav-search {
+  width: 100%;
+  padding: $spacing-xs $spacing-sm;
+  margin-bottom: $spacing-sm;
+  border: 1px solid rgba($black, 0.2);
+  border-radius: $br-sm;
+  font-family: $font-family-main;
+  font-size: $font-size-sm;
+  outline: none;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: rgba($black, 0.4);
+  }
+
+  .dark & {
+    background: rgba($white, 0.1);
+    border-color: rgba($white, 0.2);
+    color: $white;
+
+    &:focus {
+      border-color: rgba($white, 0.4);
+    }
+  }
+}
+
 .threejs-nav {
   padding: $spacing-md;
   margin: $spacing-lg 0;
@@ -232,8 +266,20 @@ onMounted(() => {
     display: none;
   }
 
-  .nav-content.hidden {
-    display: none;
+  .nav-content {
+   
+    input {
+      width: 100%;
+      padding: $spacing-xs $spacing-sm;
+
+      &:focus {
+        border-color: rgba($black, 0.4);
+      }
+    }
+    
+    &.hidden {
+      display: none;
+    }
   }
 
 
@@ -247,24 +293,8 @@ onMounted(() => {
       margin-top: 0;
     }
 
-    &.collapsible {
-      cursor: pointer;
-      user-select: none;
-      color: rgba($black, 0.4);
-      transition: color 0.2s ease;
-
-      &:hover,
-      &.active {
-        color: $black;
-      }
-    }
   }
 
-  .section-links {
-    &.collapsed {
-      display: none;
-    }
-  }
 
   a {
     font-size: $font-size-sm;

@@ -56,7 +56,7 @@ plane.customDepthMaterial = customDepth;`" />
 
           <p>Here's a gotcha that catches people: <code>customDepthMaterial</code> only works for <strong>directional lights and spot lights</strong>. Point lights use a completely different shadow rendering pipeline based on cube maps, and they need <code>customDistanceMaterial</code> instead.</p>
 
-          <p>If you set <code>customDepthMaterial</code> on a mesh but your shadows come from a point light, the custom material will be silently ignored. No warning, no error. Your shadows will just look wrong and you'll spend an hour wondering why.</p>
+          <p>If you set <code>customDepthMaterial</code> on a mesh but your shadows come from a point light, the custom material will be silently ignored. No warning, no error. Your shadows will just look wrong and you'll spend an hour wondering why. Ask me how I know!</p>
 
           <ClientOnly>
           <div class="scene-container">
@@ -288,7 +288,7 @@ onMounted(async () => {
   // won't inherit it, only the customDepthMaterial carries it,
   // and point lights ignore customDepthMaterial entirely.
   const depthOnlyMat = new THREE.MeshStandardMaterial({
-    color: 0xcc8844,
+    color: 0xffffff,
     alphaMap: checkerTex,
     transparent: true,
     side: THREE.DoubleSide
@@ -306,7 +306,7 @@ onMounted(async () => {
 
   // Right: customDistanceMaterial, point light respects it
   const distanceMat = new THREE.MeshStandardMaterial({
-    color: 0xcc8844,
+    color: 0xffffff,
     alphaMap: checkerTex,
     transparent: true,
     alphaTest: 0.5,
@@ -339,7 +339,7 @@ onMounted(async () => {
   ptMarker.position.copy(pointLight.position);
   scene2.add(ptMarker);
 
-  scene2.add(new THREE.AmbientLight(0x404060, 0.15));
+  scene2.add(new THREE.AmbientLight(0xffffff, 0.45));
 
   const { camera: cam2, renderer: ren2, container: con2, sizes: sz2 } = createRendererPair(distanceMatCanvas.value);
   cam2.position.set(0, 3, 9);
