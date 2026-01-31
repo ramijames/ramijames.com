@@ -179,6 +179,7 @@ export default {
     img {
       max-width: 400px;
       border-radius: $br-sm;
+      mix-blend-mode: luminosity;
     }
   }
 
