@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Neurodiversity as software incompatibility" />
+  <PageHeader title="Neurodiversity as software incompatibility" tagline="My days are taken up by thinking about two things: my kids and software. With neurodiverse kids, I think that they way we interact with them is akin to an API without documentation." />
   <main class="w-content page-top">
     <section class="content">
 

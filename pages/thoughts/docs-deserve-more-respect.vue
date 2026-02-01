@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Docs Deserve More Respect" />
+  <PageHeader title="Docs Deserve More Respect" tagline="A plea for more respect for documentation and technical writing in the software development industry." />
   <main class="w-content page-top">
     <section class="content">
 

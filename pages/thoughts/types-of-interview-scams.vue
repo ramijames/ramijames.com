@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Types of Interview Scams" />
+  <PageHeader title="Types of Interview Scams" tagline="A guide to common job interview scams and how to defend against them." />
   <main class="w-content page-top">
     <section class="content">
       <img src="/articles/types-of-interview-scams.png" alt="Types of interview scams">
@@ -76,6 +76,7 @@
       <ArticleAddendum />
     </section>
   </main>
+  <PostsExtras />
   <Footer />
 </template>
 
@@ -86,14 +87,14 @@ useHead({
 })
 
 useSeoMeta({
-  title: '',
-  ogTitle: '',
-  description: '',
-  ogDescription: '',
+  title: 'Types of Interview Scams',
+  ogTitle: 'Types of Interview Scams',
+  description: 'A guide to common job interview scams and how to defend against them.',
+  ogDescription: 'A guide to common job interview scams and how to defend against them.',
   ogImage: '',
   url: 'https://www.ramijames.com/thoughts/',
-  twitterTitle: '',
-  twitterDescription: '',
+  twitterTitle: 'Types of Interview Scams',
+  twitterDescription: 'A guide to common job interview scams and how to defend against them.',
   twitterImage: '',
   twitterCard: '',
 })

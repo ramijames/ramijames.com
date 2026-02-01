@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="The Work Structure Spectrum" />
+  <PageHeader title="The Work Structure Spectrum" tagline="A personal essay about team management and development processes." />
   <main class="w-content page-top">
     <section class="content">
 
@@ -58,14 +58,14 @@ useHead({
 })
 
 useSeoMeta({
-  title: '',
-  ogTitle: '',
-  description: '',
-  ogDescription: '',
+  title: 'The Work Structure Spectrum',
+  ogTitle: 'The Work Structure Spectrum',
+  description: 'A personal essay about team management and development processes.',
+  ogDescription: 'A personal essay about team management and development processes.',
   ogImage: '',
   url: 'https://www.ramijames.com/thoughts/',
-  twitterTitle: '',
-  twitterDescription: '',
+  twitterTitle: 'The Work Structure Spectrum',
+  twitterDescription: 'A personal essay about team management and development processes.',
   twitterImage: '',
   twitterCard: '',
 })

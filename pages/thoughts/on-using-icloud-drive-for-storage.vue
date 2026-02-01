@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="On Using iCloud Drive for Storage" />
+  <PageHeader title="On Using iCloud Drive for Storage" tagline="iCloud is a good way to replicate your files remotes so that, in the case of a catastrophe, you will not have complete data loss. For Mac users it has great integration and I recommend using it." />
   <main class="w-content page-top">
     <section class="content">
       <img src="/articles/time-machine.png" alt="Time Machine backup" />
@@ -69,6 +69,7 @@
       <ArticleAddendum />
     </section>
   </main>
+  <PostsExtras />
   <Footer />
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="How to Make Product Decisions based on Business Needs" />
+  <PageHeader title="How to Make Product Decisions based on Business Needs" tagline="On putting ethical concerns at the center of your design process." />
   <main class="w-content page-top">
     <section class="content">
 
@@ -127,6 +127,7 @@
     </section>
   </main>
   
+  <PostsExtras />
   <Footer />
 </template>
 

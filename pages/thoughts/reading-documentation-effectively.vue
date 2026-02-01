@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Reading Documentation Effectively" />
+  <PageHeader title="Reading Documentation Effectively" tagline="Reading documentation is a skill that can be learned. Let's talk about how to do it effectively so that you retain the most knowledge in the shortest amount of time." />
   <main class="w-content page-top">
     <section class="content">
 

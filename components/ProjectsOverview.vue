@@ -1,7 +1,7 @@
 <template>
   
   <PageHeader :title="title" :tagline="tagline" />
-  <section class="projects-overview">
+  <section class="projects-overview w-consistent">
     <section class="projects-content">
       <div class="project-column">
         <h4>Overview</h4>
@@ -37,6 +37,7 @@
   .projects-overview {
 
     .projects-content {
+      background: rgba($white, 0.1);
 
       .project-column {
 
@@ -59,9 +60,6 @@
   justify-content: center;
   text-align: center;
   padding-top: $spacing-xl;
-  gap: $spacing-md;
-  border-radius: $br-sm;
-  margin: $spacing-md;
 
   @media screen and (max-width: 1000px) {
     margin: $spacing-sm;
@@ -72,12 +70,19 @@
     display: flex;
     flex-direction: column;
     gap: $spacing-md;
-    margin-bottom: $spacing-lg;
+    border-radius: $br-sm;
+    background: $black;
+    width: 100%;
+    padding: $spacing-xl $spacing-lg;
+    color: $white;
+
+
 
     .project-column {
       display: grid;
       grid-template-columns: 1fr 10fr;
       align-items: flex-start;
+      text-align: left;
       gap: $spacing-md;
       width: 100%;
 
@@ -116,14 +121,14 @@
 
         .single-service {
           padding: 6px 10px 4px;
-          background: $black;
+          background: $white;
           line-height: 100%;
           border-radius: $br-sm;
           text-transform: uppercase;
           font-size: 10px;
           font-weight: bold;
           letter-spacing: 1px;
-          color: $white;
+          color: $black;
         }
       }
     }

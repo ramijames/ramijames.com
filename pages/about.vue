@@ -7,10 +7,19 @@
 
       <section class="who-am-i">
         <img src="/dude.png" alt="Rami James">
-        <h3>My name is Rami James. I design products and implement front-ends in Vue and Nuxt. You can find me on <a href="https://github.com/ramijames">Github</a> and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</h3>
+        <h3>Who am I?</h3>
+        <p>My name is Rami James. I'm a deeply experienced product designer focused on creating unique and interesting interfaces. I prefer to implement modern front-ends in Vue and Nuxt, but have used a wide range of technologies like Drupal, Wordpress, and Ruby on Rails in the past. You can find me on <a href="https://github.com/ramijames">Github</a> and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</p>
+
+        <h3>My Process</h3>
+        <p>Great design isn't born from a single spark of inspiration. Instead, I believe that it's built through rapid cycles of making, measuring, and refining. I work in tight iterations, putting real ideas in front of real people as early as possible, because the fastest way to learn what works is to ship something and watch what happens.</p>
+
+        <p><strong>Every design decision should be grounded in evidence.</strong> I partner closely with stakeholders to define the metrics that matter, so that we can let data guide us toward the right choices together. Design intuition opens the door but a shared understanding of the numbers tells us whether to walk through it.</p>
+
+        <p>I pay close attention to where the industry is headed, but I'm not interested in chasing trends for their own sake. Good design borrows selectively and adapts intentionally. My core goal is to do work that feels contemporary without being derivative. For me, design should be rooted in clear thinking, not in whatever aesthetic happens to be popular this quarter.</p>
       </section>
 
       <section class="resume">
+        <h3>Resume</h3>
         <section class="jobs">  
           <section class="single-job">
             <p class="job-title">Rami James Design</p>
@@ -22,7 +31,7 @@
               </li>
             </ul>
           </section>
-          <section class="single-job">
+          <!-- <section class="single-job">
             <p class="job-title">Vewrite</p>
             <p class="job-duration">2024 - 2025</p>
             <p class="job-subtitle">Founder</p>
@@ -31,7 +40,7 @@
                 {{ description }}
               </li>
             </ul>
-          </section>
+          </section> -->
           <section class="single-job">
             <p class="job-title">Ultra</p>
             <p class="job-duration">2020 - 2023</p>
@@ -143,66 +152,53 @@ export default {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  perspective: 100rem;
 }
 
 .about-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 100%;
+  gap: $spacing-lg;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 0 $spacing-lg;
 
-  @media screen and (max-width: 1000px) {
+
+  @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr;
+    gap: $spacing-md;
   }
 
   .who-am-i {
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
+    gap: $spacing-sm;
     height: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
     text-wrap: balance;
-
-    @media screen and (max-width: 1400px) {
-      padding: $spacing-lg;
-    }
-
-    @media screen and (max-width: 1000px) {
-      padding: $spacing-md;
-    }
-
-    @media screen and (max-width: 768px) {
-      padding: $spacing-lg $spacing-sm;
-    }
     
     img {
       max-width: 400px;
       border-radius: $br-sm;
-      mix-blend-mode: luminosity;
+      margin-bottom: $spacing-md;
     }
   }
 
   .resume {
     padding: $spacing-xl;
-    border: 1px solid rgba($black, 0.2);
-    border-radius: $br-sm;
-    box-shadow: $big-shadow;
     display: flex;
     flex-direction: column;
-    gap: $spacing-lg;
     height: 100%;
     justify-content: space-between;
-    margin: $spacing-lg;
+    background: $black;
+    color: $white;
+    border-radius: $br-sm;
 
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: 1600px) {
       padding: $spacing-lg;
-    }
-
-    @media screen and (max-width: 1000px) {
-      padding: $spacing-md;
-      margin: 0;
-      border: 0;
     }
 
     @media screen and (max-width: 768px) {
@@ -215,7 +211,10 @@ export default {
   }
 
   h3 {
-    margin: 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
 
     @media screen and (max-width: 768px) {
       font-size: $font-size-lg;
@@ -262,12 +261,13 @@ export default {
     }
 
         .job-title {
+          opacity: 0.5;
+          font-size: $font-size-lg;
           font-family: $font-family-main;
-          font-size: $font-size-xl;
         }
 
         .job-subtitle {
-          font-size: $font-size-md;
+          font-size: $font-size-sm;
         }
 
         .job-duration {
@@ -286,6 +286,8 @@ export default {
         .job-descriptions li {
           margin-bottom: $spacing-xs;
           line-height: 140%;
+          font-size: $font-size-xs;
+          opacity: 0.6;
         }
 
 #ServicesGrid {

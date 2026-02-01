@@ -26,7 +26,6 @@
           >
             <div class="featured-content">
               <div class="featured-text">
-                <span class="featured-label">Featured</span>
                 <h2 class="featured-title">{{ article.title }}</h2>
                 <p class="featured-date">{{ formatDate(article.date) }}</p>
               </div>
@@ -275,24 +274,7 @@ const formatDate = (dateString) => {
     background-size: 200% 100%;
   }
 
-
-  .featured-card {
-    border: $border;
-    border-radius: $br-sm;
-    background: rgba($blue, 0.1);
-
-    &:hover {
-      background: rgba($blue, 0.2);
-      border-color: rgba($blue, 0.5);
-      box-shadow: 0 8px 24px rgba($blue, 0.2);
-    }
-  }
-
-  .featured-label {
-    color: rgba($blue, 0.8);
-  }
-
-  .featured-title {
+  .featured-title, .featured-date {
     color: $white;
   }
 
@@ -301,18 +283,16 @@ const formatDate = (dateString) => {
   }
 
   .filter-pill {
-    border: $border;
-    background: rgba($blue, 0.05);
     color: rgba($white, 0.7);
 
     &:hover {
-      background: rgba($blue, 0.1);
-      border-color: rgba($blue, 0.3);
+      background: rgba($white, 1);
+      color: rgba($black, 1);
     }
 
     &.active {
-      background: rgba($blue, 0.3);
-      border-color: rgba($blue, 0.5);
+      background: rgba($white, 1);
+      color: rgba($black, 1);
     }
 
     .count {
@@ -348,8 +328,8 @@ const formatDate = (dateString) => {
   }
 
   .article-card {
-    border: $border;
-    background: rgba($blue, 0.05);
+    background: rgba($white, 1);
+    color: $black;
   }
 
   .article-card:hover {
@@ -408,7 +388,6 @@ const formatDate = (dateString) => {
 .featured-section {
   margin-bottom: $spacing-lg;
   padding-bottom: $spacing-lg;
-  border-bottom: 1px solid rgba($black, 0.2);
 }
 
 .featured-grid {
@@ -422,9 +401,6 @@ const formatDate = (dateString) => {
 }
 
 .featured-card {
-  border: 1px solid rgba($black, 0.2);
-  border-radius: $br-sm;
-  background: rgba($blue, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
   overflow: hidden;
@@ -432,19 +408,16 @@ const formatDate = (dateString) => {
 
   &:hover {
     transform: translateY(-6px);
-    background: rgba($blue, 0.2);
-    border-color: rgba($blue, 0.5);
-    box-shadow: 0 8px 24px rgba($blue, 0.2);
   }
 }
 
 .featured-content {
-  padding: $spacing-lg;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   gap: $spacing-md;
+  color: $black;
 }
 
 .featured-text {
@@ -456,14 +429,10 @@ const formatDate = (dateString) => {
 .featured-label {
   font-family: $font-family-secondary;
   font-size: $font-size-xs;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: rgba($blue, 0.8);
-  font-weight: 600;
 }
 
 .featured-title {
-  font-size: $font-size-xxl;
+  font-size: $font-size-lg;
   line-height: 1;
   margin: 0;
   color: $black;
@@ -482,10 +451,10 @@ const formatDate = (dateString) => {
 .featured-image {
   width: 100%;
   height: auto;
-  border-radius: $br-xs;
+  border-radius: $br-sm;
   border: 1px solid rgba($black, 0.2);
   object-fit: cover;
-  max-height: 200px;
+  max-height: 400px;
 }
 
 .filter-container {
@@ -501,9 +470,9 @@ const formatDate = (dateString) => {
 
 .filter-pill {
   padding: 6px $spacing-xs 4px;
-  border: 1px solid rgba($black, 0.2);
+  border: 1px solid rgba($black, 0);
   border-radius: $br-sm;
-  background: rgba($blue, 0.05);
+  background: rgba($black, 0.05);
   cursor: pointer;
   transition: all 0.2s;
   display: flex;
@@ -515,7 +484,8 @@ const formatDate = (dateString) => {
   font-family: $font-family-secondary;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 11px;
+  font-size: 9px;
+  font-weight: 600;
 
   @media screen and (max-width: 768px) {
     letter-spacing: initial;
@@ -523,17 +493,19 @@ const formatDate = (dateString) => {
   }
 
   &:hover {
-    background: rgba($blue, 0.1);
-    border-color: rgba($blue, 0.3);
+    background: rgba($black, 1);
+    border-color: rgba($black, 1);
+    color: $white;
   }
 
   &.active {
-    background: rgba($blue, 0.3);
-    border-color: rgba($blue, 0.5);
+    background: rgba($black, 1);
+    border-color: rgba($black, 1);
+    color: $white;
   }
 
   .count {
-    font-size: $font-size-xs;
+    font-size: 9px;
     background: rgba($black, 0.1);
     padding: 3px 5px;
     border-radius: 9999px;
@@ -551,11 +523,11 @@ const formatDate = (dateString) => {
 
 .search-input {
   width: 100%;
-  padding: $spacing-sm $spacing-md;
-  font-size: $font-size-md;
+  padding: $spacing-xs;
+  font-size: $font-size-xs;
   border: 1px solid rgba($black, 0.2);
   border-radius: $br-sm;
-  background: rgba($blue, 0.05);
+  background: rgba($black, 0.05);
   transition: all 0.2s;
 
   &::placeholder {
@@ -628,12 +600,12 @@ const formatDate = (dateString) => {
   text-decoration: none;
   border: 1px solid rgba($black, 0.2);
   min-height: 200px;
-  background: rgba($blue, 0.05);
+  background: $black;
+  color: $white;
 }
 
 .article-card:hover {
   transform: translateY(-4px);
-  background: rgba($blue, 0.2);
 }
 
 .article-content {
@@ -652,7 +624,7 @@ const formatDate = (dateString) => {
   right: $spacing-sm;
   bottom: $spacing-sm;
   border-radius: $br-xs;
-  border: 1px solid rgba($black, 0.2);
+  border: 1px solid rgba($white, 0.2);
 }
 
 .article-title {
@@ -663,7 +635,7 @@ const formatDate = (dateString) => {
 
 .article-date {
   font-size: $font-size-xs;
-  color: rgba($black, 0.4);
+  color: rgba($white, 0.6);
   margin: 0;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="A Partner, Not a Vendor" />
+  <PageHeader title="A Partner, Not a Vendor" tagline="A detailed breakdown of why long-term product and design engagements are preferrable for companies over short-term freelance gigs" />
   <main class="w-content page-top">
     <section class="content">
 
@@ -57,6 +57,7 @@
       <ArticleAddendum />
     </section>
   </main>
+  <PostsExtras />
   <Footer />
 </template>
 

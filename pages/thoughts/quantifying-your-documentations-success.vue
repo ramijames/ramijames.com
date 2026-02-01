@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Quantifying your documentation's success" />
+  <PageHeader title="Quantifying your documentation's success" tagline="The primary challenge faced by technical writers often boils down to how to evaluate the effectiveness of what you write. You build some documentation and you think it is great. How do you know if you are right? How do you prove it to upper management? How do you really, really know?" />
   <main class="w-content page-top">
     <section class="content">
 

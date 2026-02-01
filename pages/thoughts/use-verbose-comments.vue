@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Use Verbose Comments" />
+  <PageHeader title="Use Verbose Comments" tagline="The idea that code should be entirely self-explanatory is a utopian fantasy. Comments provide context, explain intent, and offer guidance to future developers—including your future self."/>
   <main class="w-content page-top">
     <section class="content">
 

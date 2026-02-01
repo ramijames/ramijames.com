@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Supabase email authentication with Google Workspace" />
+  <PageHeader title="Supabase email authentication with Google Workspace" tagline="How to get Supabase working with Google Workspace" />
   <main class="w-content page-top">
     <section class="content">
 
@@ -113,14 +113,14 @@ useHead({
 })
 
 useSeoMeta({
-  title: '',
-  ogTitle: '',
-  description: '',
-  ogDescription: '',
+  title: 'Supabase email authentication with Google Workspace',
+  ogTitle: 'Supabase email authentication with Google Workspace',
+  description: 'How to get Supabase working with Google Workspace',
+  ogDescription: 'How to get Supabase working with Google Workspace',
   ogImage: '',
   url: 'https://www.ramijames.com/thoughts/',
-  twitterTitle: '',
-  twitterDescription: '',
+  twitterTitle: 'Supabase email authentication with Google Workspace',
+  twitterDescription: 'How to get Supabase working with Google Workspace',
   twitterImage: '',
   twitterCard: '',
 })

@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Package dependency hell" />
+  <PageHeader title="Package dependency hell" tagline="Intentionally or otherwise, I've been blowing up my life since last summer. It’s been less than ideal. We'll get to why in a second, but first, let's talk about everyone's favorite awful programming language and the impact of package managers, their packages, and the endless toil they create." />
   <main class="w-content page-top">
     <section class="content">
 
@@ -37,6 +37,7 @@
     </section>
   </main>
   
+  <PostsExtras />
   <Footer />
 </template>
 

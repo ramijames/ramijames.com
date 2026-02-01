@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="A Committed Year" />
+  <PageHeader title="A Committed Year" tagline="A year ago, I committed to writing a bit of code every day. It's been a wild ride. Let's talk about what I've learned" />
   <main class="w-content page-top">
     <section class="content">
 
@@ -76,6 +76,7 @@
     </section>
   </main>
   
+  <PostsExtras />
   <Footer />
 </template>
 

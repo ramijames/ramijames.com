@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Peak software abuse" />
+  <PageHeader title="Peak software abuse" tagline="My thoughts on how software gets worse because of profit incentives, and how the core reason NFTs are a failure is that they are used badly by the businesses that use them." />
   <main class="w-content page-top">
     <section class="content">
       <img src="/articles/peak-software-abuse.png" alt="Peak software abuse">

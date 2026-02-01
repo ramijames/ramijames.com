@@ -3,7 +3,7 @@
   <main class="w-content page-top">
     <section class="content">
 
-      <img src="/articles/iterate-relentlessly.png" alt="Iterate relentlessly" />
+      <img src="/articles/iterate-relentlessly.png" alt="Iterate relentlessly" tagline="It is immensely hard to get traction for your product, and that is often because you have built the wrong thing and nobody wants to use that. Here is a better process." />
 
       <p>How do you get your product to market and ensure that it matches a market need? This is the problem that every founder, every team, and every company of every size encounters when they attempt to develop a product.</p>
       <p>If you’re building a product, you likely have some vision for what it is and you need some plan for how to get it into the user&#39;s hands. You must also be aware of the fact that your product doesn’t exist in a vacuum. At the end of the day your product’s success is entirely dependent on whether or not you’ll find users, partners, and a market for it. Typically this is called Product-Market fit. I’m not a huge fan of that terminology because it insinuates that you and your team are somehow not an integrated part of the market, but are adjacent to it. But, what can you do? That’s what it is called.</p>

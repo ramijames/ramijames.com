@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Quick Walkthrough on Using Supabase Migrations" />
+  <PageHeader title="Quick Walkthrough on Using Supabase Migrations" tagline="Migrations are the traditional way to manage the structure of your database. Supabase has a great way to manage migrations and we'll see how to use them in this article." />
   <main class="w-content page-top">
     <section class="content">
 
