@@ -53,8 +53,8 @@ model.traverse((child) => {
   <LearnThreejsBottomNav
     prevLink="/learn-threejs/assets/common-loading-errors"
     prevText="Common loading errors"
-    nextLink=""
-    nextText=""
+    nextLink="/learn-threejs/interaction/raycasting-and-mouse-events"
+    nextText="Raycasting and Mouse Events"
   />
   <Footer />
 </template>

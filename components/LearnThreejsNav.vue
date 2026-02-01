@@ -51,17 +51,10 @@
 
 <script lang="ts" setup>
 import { onMounted, computed } from 'vue'
-import { useUIStore } from '~/store/ui'
 
 const props = defineProps({
-  innerNav: Boolean,
-  section: {
-    type: String,
-    default: ''
-  }
+  innerNav: Boolean
 })
-
-const uiStore = useUIStore()
 
 const isOpen = useState('learnthreejs-nav-open', () => true)
 const searchQuery = ref('')
@@ -114,19 +107,22 @@ const sections = [
       { to: '/learn-threejs/assets/common-loading-errors', label: 'Common loading errors', difficulty: 'intermediate' },
       { to: '/learn-threejs/assets/traversing-loaded-models', label: 'Traversing loaded models', difficulty: 'intermediate' },
     ]
+  },
+  {
+    title: 'Interaction',
+    links: [
+      { to: '/learn-threejs/interaction/raycasting-and-mouse-events', label: 'Raycasting and Mouse Events', difficulty: 'intermediate' },
+      { to: '/learn-threejs/interaction/interaction-managers-and-libraries', label: 'Interaction Managers and Libraries', difficulty: 'intermediate' },
+      { to: '/learn-threejs/interaction/drag-drop-and-transform', label: 'Drag, Drop, and Transform', difficulty: 'intermediate' },
+    ]
   }
 ]
 
-const activeSections = computed(() => {
-  if (!props.section) return sections
-  return sections.filter(s => s.title === props.section)
-})
-
 const filteredSections = computed(() => {
   const query = searchQuery.value.toLowerCase().trim()
-  if (!query) return activeSections.value
+  if (!query) return sections
 
-  return activeSections.value
+  return sections
     .map(section => ({
       ...section,
       links: section.links.filter(link => link.label.toLowerCase().includes(query))

@@ -76,5 +76,6 @@ export default defineNuxtConfig({
     '/learn-threejs/building-blocks': { redirect: '/learn-threejs/' },
     '/learn-threejs/foundational-threejs': { redirect: '/learn-threejs/' },
     '/learn-threejs/lighting': { redirect: '/learn-threejs/' },
+    '/learn-threejs/interaction': { redirect: '/learn-threejs/' },
   },
 })
