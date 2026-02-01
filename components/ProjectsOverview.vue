@@ -60,6 +60,7 @@
   justify-content: center;
   text-align: center;
   padding-top: $spacing-xl;
+  width: auto;
 
   @media screen and (max-width: 1000px) {
     margin: $spacing-sm;
@@ -75,6 +76,11 @@
     width: 100%;
     padding: $spacing-xl $spacing-lg;
     color: $white;
+
+    @media screen and (max-width: 1000px) {
+      padding: $spacing-sm $spacing-md;
+      width: calc(100% - $spacing-md);
+    }
 
 
 

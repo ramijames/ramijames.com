@@ -58,7 +58,7 @@
         <svg width="30" height="32" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 6C1 3.23858 3.23858 1 6 1H24C26.7614 1 29 3.23858 29 6V20C29 22.7614 26.7614 25 24 25H9.5L2.63571 30.6529C1.98334 31.1902 1 30.7261 1 29.881V25V6Z" stroke="white" stroke-width="2"/>
         </svg>
-        Start Project
+        Create Product
       </button>
       <ThemeSwitcher />
       <div

@@ -194,14 +194,16 @@ const products = [
       display: grid;
     }
   }
+  
+  @media screen and (max-width: 1180px){
+    grid-template-columns: 1fr 1fr;
+  }
 
   @media screen and (max-width: 1000px) {
     margin: $spacing-sm;
     width: calc(100% - $spacing-md);
-  }
-  
-  @media screen and (max-width: 1180px){
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+
   }
   
   @media screen and (max-width: 768px){
@@ -225,7 +227,7 @@ const products = [
     border-radius: $br-sm;
 
     @media screen and (max-width: 1024px){
-      height: 200px;
+      height: 300px;
     }
 
     .preview {

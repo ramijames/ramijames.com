@@ -141,7 +141,8 @@ export default {
 .dark {
   #About {
     .resume {
-      border: $border;
+      background: $white;
+      color: $black;
     }
   }
 }
@@ -168,6 +169,7 @@ export default {
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr;
     gap: $spacing-md;
+    padding: 0 $spacing-md;
   }
 
   .who-am-i {
@@ -181,9 +183,14 @@ export default {
     text-wrap: balance;
     
     img {
-      max-width: 400px;
+      width: 50%;
       border-radius: $br-sm;
       margin-bottom: $spacing-md;
+
+      @media screen and (max-width: 1000px) {
+        width: 65%;
+        margin: $spacing-md auto;
+      }
     }
   }
 
@@ -280,14 +287,13 @@ export default {
           margin-top: 0;
           margin-bottom: $spacing-sm;
           line-height: 140%;
-          opacity: 0.6;
         }
 
         .job-descriptions li {
           margin-bottom: $spacing-xs;
           line-height: 140%;
           font-size: $font-size-xs;
-          opacity: 0.6;
+          opacity: 0.7;
         }
 
 #ServicesGrid {
