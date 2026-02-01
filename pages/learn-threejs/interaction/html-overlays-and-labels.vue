@@ -13,9 +13,9 @@
 
           <p>Three.js renders to a <code>&lt;canvas&gt;</code>. Everything inside it, from text or icons to tooltips, is pixels. You can't select canvas text, you can't style it with CSS, and screen readers can't see it. For many UI needs (labels, health bars, tooltips, debug info), plain HTML is better. The challenge is making that HTML follow a point in 3D space as the camera moves.</p>
 
-          <p>There are two approaches. You can use Three.js's built-in <code>CSS2DRenderer</code> and <code>CSS3DRenderer</code>, which manage DOM elements for you. Or you can do the math yourself with <code>Vector3.project()</code> and position elements manually. Both are useful in different situations.</p>
+          <p>There are two approaches. You can use Three.js's built-in <code>CSS2DRenderer</code> and <code>CSS3DRenderer</code>, which manage DOM elements for you. Or you can do the math yourself with <code>Vector3.project()</code> and position elements manually. Each are useful in different situations, so let's try taking a look at all of them one by one.</p>
 
-          <h2>CSS2DRenderer: labels that face the screen</h2>
+          <h2>CSS2DRenderer</h2>
 
           <p><code>CSS2DRenderer</code> creates a transparent DOM layer on top of your WebGL canvas. You wrap any HTML element in a <code>CSS2DObject</code>, add it to a 3D object in your scene, and the renderer keeps the HTML positioned correctly as the camera moves. The HTML always faces the screen, meaning that it doesn't rotate with the object. This is what you want for labels, tooltips, and HUD-style elements.</p>
 
@@ -87,7 +87,46 @@ div.innerHTML = '<strong>Iron Ore</strong><br><span>Tier 2 Resource</span>';
 //   transition: opacity 0.2s;
 // }`" />
 
-          <h2>Screen-space projection: doing it yourself</h2>
+          <h2>CSS3DRenderer</h2>
+
+          <p>While CSS2DRenderer keeps labels facing the screen, <code>CSS3DRenderer</code> transforms HTML elements to match 3D orientation. The elements rotate, scale with perspective, and can be occluded (with some effort). Think of it as embedding a webpage into your 3D scene. It's just like a monitor screen or a billboard that exists as a physical object in the world.</p>
+
+          <p>The panels below are HTML elements positioned in 3D space using CSS3DRenderer. Unlike CSS2DRenderer labels, they scale with perspective and exist as surfaces in the scene:</p>
+
+          <ClientOnly>
+          <div class="scene-container" ref="css3dContainer">
+            <canvas ref="css3dCanvas"></canvas>
+          </div>
+          </ClientOnly>
+
+          <CodeBlock lang="typescript" :code="`import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
+
+const css3dRenderer = new CSS3DRenderer();
+css3dRenderer.setSize(window.innerWidth, window.innerHeight);
+css3dRenderer.domElement.style.position = 'absolute';
+css3dRenderer.domElement.style.top = '0';
+document.body.appendChild(css3dRenderer.domElement);
+
+// Create an HTML element that will exist in 3D space
+const panel = document.createElement('div');
+panel.style.width = '200px';
+panel.style.height = '120px';
+panel.style.background = 'rgba(0, 40, 80, 0.9)';
+panel.style.color = 'white';
+panel.style.padding = '16px';
+panel.style.borderRadius = '8px';
+panel.style.fontSize = '14px';
+panel.innerHTML = '<h3>Status Panel</h3><p>Health: 100%</p>';
+
+// Wrap in CSS3DObject, which gives it a 3D transform
+const panelObject = new CSS3DObject(panel);
+panelObject.position.set(0, 1.5, 0);
+panelObject.scale.set(0.01, 0.01, 0.01); // scale down to scene units
+scene.add(panelObject);`" />
+
+          <p>The <code>scale</code> is important. CSS3DObject maps pixel dimensions to world units. A 200px-wide div would be 200 units wide in your scene without scaling. Setting the scale to <code>0.01</code> makes it 2 units wide, which is a reasonable size relative to typical meshes.</p>
+
+          <h2>Manual positioning</h2>
 
           <p>Sometimes you don't want the overhead of CSS2DRenderer, or you need more control over when and how labels appear. The manual approach uses <code>Vector3.project()</code> to convert a 3D world position into 2D screen coordinates, then positions a regular DOM element at those coordinates.</p>
 
@@ -143,45 +182,6 @@ function animate() {
             <li><strong>CSS2DRenderer</strong> is simpler for most cases. It handles the projection math, parent-child relationships, and updates automatically. Use it when you have labels that should always follow their objects.</li>
             <li><strong>Manual projection</strong> is better when you need conditional visibility (show a label only on hover), custom positioning logic (offset based on screen edge proximity), or when you want to avoid adding another renderer to your loop. It's also useful when the label isn't tied to a single object but to an arbitrary world position.</li>
           </ul>
-
-          <h2>CSS3DRenderer: HTML that lives in 3D space</h2>
-
-          <p>While CSS2DRenderer keeps labels facing the screen, <code>CSS3DRenderer</code> transforms HTML elements to match 3D orientation. The elements rotate, scale with perspective, and can be occluded (with some effort). Think of it as embedding a webpage into your 3D scene. It's just like a monitor screen or a billboard that exists as a physical object in the world.</p>
-
-          <p>The panels below are HTML elements positioned in 3D space using CSS3DRenderer. Unlike CSS2DRenderer labels, they scale with perspective and exist as surfaces in the scene:</p>
-
-          <ClientOnly>
-          <div class="scene-container" ref="css3dContainer">
-            <canvas ref="css3dCanvas"></canvas>
-          </div>
-          </ClientOnly>
-
-          <CodeBlock lang="typescript" :code="`import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
-
-const css3dRenderer = new CSS3DRenderer();
-css3dRenderer.setSize(window.innerWidth, window.innerHeight);
-css3dRenderer.domElement.style.position = 'absolute';
-css3dRenderer.domElement.style.top = '0';
-document.body.appendChild(css3dRenderer.domElement);
-
-// Create an HTML element that will exist in 3D space
-const panel = document.createElement('div');
-panel.style.width = '200px';
-panel.style.height = '120px';
-panel.style.background = 'rgba(0, 40, 80, 0.9)';
-panel.style.color = 'white';
-panel.style.padding = '16px';
-panel.style.borderRadius = '8px';
-panel.style.fontSize = '14px';
-panel.innerHTML = '<h3>Status Panel</h3><p>Health: 100%</p>';
-
-// Wrap in CSS3DObject, which gives it a 3D transform
-const panelObject = new CSS3DObject(panel);
-panelObject.position.set(0, 1.5, 0);
-panelObject.scale.set(0.01, 0.01, 0.01); // scale down to scene units
-scene.add(panelObject);`" />
-
-          <p>The <code>scale</code> is important. CSS3DObject maps pixel dimensions to world units. A 200px-wide div would be 200 units wide in your scene without scaling. Setting the scale to <code>0.01</code> makes it 2 units wide, which is a reasonable size relative to typical meshes.</p>
 
           <h3>CSS2D vs CSS3D: when to use which</h3>
 
