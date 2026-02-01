@@ -114,6 +114,7 @@ const sections = [
       { to: '/learn-threejs/interaction/raycasting-and-mouse-events', label: 'Raycasting and Mouse Events', difficulty: 'intermediate' },
       { to: '/learn-threejs/interaction/interaction-managers-and-libraries', label: 'Interaction Managers and Libraries', difficulty: 'intermediate' },
       { to: '/learn-threejs/interaction/drag-drop-and-transform', label: 'Drag, Drop, and Transform', difficulty: 'intermediate' },
+      { to: '/learn-threejs/interaction/html-overlays-and-labels', label: 'HTML Overlays and Labels', difficulty: 'intermediate' },
     ]
   }
 ]

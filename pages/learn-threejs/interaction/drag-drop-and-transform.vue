@@ -251,6 +251,8 @@ controls.addEventListener('dragging-changed', (event) => {
   <LearnThreejsBottomNav
     prevLink="/learn-threejs/interaction/interaction-managers-and-libraries"
     prevText="Interaction Managers and Libraries"
+    nextLink="/learn-threejs/interaction/html-overlays-and-labels"
+    nextText="HTML Overlays and Labels"
   />
   <Footer />
 </template>
