@@ -1,7 +1,6 @@
 <template>
   <PageHeader title="Thoughts" tagline="On Life, Management, Product & Design, and Development" />
   <Thoughts />
-  <PostsExtras />
   <Footer />
 </template>
 
