@@ -72,5 +72,9 @@ export default defineNuxtConfig({
     '/labs/css-mesh-gradients': { redirect: '/thoughts/css-mesh-gradients' },
     '/labs/supabase-email-authentication-with-google-workspace': { redirect: '/thoughts/supabase-email-authentication-with-google-workspace' },
     '/illustrations': { redirect: '/products/illustrations' },
+    '/learn-threejs/assets': { redirect: '/learn-threejs/' },
+    '/learn-threejs/building-blocks': { redirect: '/learn-threejs/' },
+    '/learn-threejs/foundational-threejs': { redirect: '/learn-threejs/' },
+    '/learn-threejs/lighting': { redirect: '/learn-threejs/' },
   },
 })

@@ -54,7 +54,11 @@ import { onMounted, computed } from 'vue'
 import { useUIStore } from '~/store/ui'
 
 const props = defineProps({
-  innerNav: Boolean
+  innerNav: Boolean,
+  section: {
+    type: String,
+    default: ''
+  }
 })
 
 const uiStore = useUIStore()
@@ -113,11 +117,16 @@ const sections = [
   }
 ]
 
+const activeSections = computed(() => {
+  if (!props.section) return sections
+  return sections.filter(s => s.title === props.section)
+})
+
 const filteredSections = computed(() => {
   const query = searchQuery.value.toLowerCase().trim()
-  if (!query) return sections
+  if (!query) return activeSections.value
 
-  return sections
+  return activeSections.value
     .map(section => ({
       ...section,
       links: section.links.filter(link => link.label.toLowerCase().includes(query))
