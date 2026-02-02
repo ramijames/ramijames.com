@@ -56,6 +56,14 @@
         <p>Unfortunately, the opportunity for which you were under consideration is no longer open.</p>
       </div>
 
+      <div class="rejection-card card-wide">
+        <p>After carefully reviewing the many applications we received, we regret to inform you that we won’t be moving forward with your application to the next stage of our hiring process at this time. We truly appreciate the skills and experience you bring to the table, and thank you for considering us as part of your career journey.</p>
+      </div>
+
+      <div class="rejection-card text-large">
+        <p>Unfortunately, the Product Designer opportunity for which you were under consideration is no longer open.</p>
+      </div>
+
     </div>
     <PostsExtras />
   </main>
@@ -243,7 +251,7 @@ useSeoMeta({
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: $spacing-md;
-  padding: $spacing-sm 0;
+  padding: $spacing-sm $spacing-md;
 }
 
 .rejection-card {
@@ -251,7 +259,7 @@ useSeoMeta({
   padding: $spacing-md;
   display: flex;
   align-items: center;
-  background-color: rgba($black, 0.85);
+  background-color: rgba($black, 1);
 
   p {
     margin: 0;
