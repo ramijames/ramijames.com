@@ -4,7 +4,7 @@
     <canvas ref="leavesCanvas"></canvas>
   </div>
 
-  <PageHeader title="Flavors of Rejection" tagline="Every new mail is hope, crushed." />
+  <PageHeader title="Flavors of Rejection" tagline="A fine selection of the variety of rejection responses from companies that I've received." />
   <main class="w-content page-top">
     <div class="rejection-grid w-consistent">
 
@@ -54,6 +54,22 @@
 
       <div class="rejection-card card-wide text-large">
         <p>Unfortunately, the opportunity for which you were under consideration is no longer open.</p>
+      </div>
+
+      <div class="rejection-card text-large">
+      <p>We are excited that you are excited about what we are doing! We received many qualified applicants and have decided to move ahead with other candidates who we feel are a better match for this particular position.</p>
+      </div>
+
+      <div class="rejection-card card-tall">
+      <p>We really appreciate your interest and time to get to know us. Best of luck with your current job search, and please keep in touch!</p>
+      </div>
+
+      <div class="rejection-card text-small">
+      <p>We have read your CV with great pleasure and believe you have a strong candidate profile. I checked your resume directly for this position as well as for other positions we are responsible for. Unfortunately, we currently cannot offer a position matching your background.</p>
+      </div>
+
+      <div class="rejection-card card-wide">
+      <p>Unfortunately we’re putting this vacancy on hold for a while. We apologize for any inconvenience this may cause you.</p>
       </div>
 
       <div class="rejection-card card-wide">
@@ -112,7 +128,7 @@ onMounted(() => {
 
   // Create leaves
   const leaves = [];
-  const leafCount = 120;
+  const leafCount = 1200;
   const leafGeometry = createLeafGeometry();
 
   for (let i = 0; i < leafCount; i++) {
@@ -138,12 +154,12 @@ onMounted(() => {
     leaf.rotation.z = Math.random() * Math.PI;
 
     // Random scale for variety
-    const scale = 0.5 + Math.random() * 1;
+    const scale = 0.25 + Math.random() * 1;
     leaf.scale.set(scale, scale, scale);
 
     // Store animation properties
     leaf.userData = {
-      fallSpeed: 0.02 + Math.random() * 0.03,
+      fallSpeed: 0.01 + Math.random() * 0.013,
       swaySpeed: 0.5 + Math.random() * 1,
       swayAmount: 0.5 + Math.random() * 1,
       rotationSpeed: {
@@ -218,12 +234,12 @@ useHead({
 useSeoMeta({
   title: 'Flavors of Rejection',
   ogTitle: 'Flavors of Rejection',
-  description: "A collection of rejection responses from companies.",
-  ogDescription: "A collection of rejection responses from companies.",
+  description: "A fine selection of the variety of rejection responses from companies that I've received.",
+  ogDescription: "A fine selection of the variety of rejection responses from companies that I've received.",
   ogImage: "/articles/flavors-of-rejection.png",
   url: 'https://www.ramijames.com/thoughts/flavors-of-rejection',
   twitterTitle: 'Flavors of Rejection',
-  twitterDescription: "A collection of rejection responses from companies.",
+  twitterDescription: "A fine selection of the variety of rejection responses from companies that I've received.",
   twitterImage: "/articles/flavors-of-rejection.png",
   twitterCard: 'summary_large_image',
 })
@@ -259,13 +275,97 @@ useSeoMeta({
   padding: $spacing-md;
   display: flex;
   align-items: center;
-  background-color: rgba($black, 1);
+  background-color: rgba($black, 0.15);
+  animation: 1.45s fadeInDown forwards ease-in-out;
+  opacity: 0;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  &:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  &:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+
+  &:nth-child(7) {
+    animation-delay: 0.7s;
+  }
+  
+  &:nth-child(8) {
+    animation-delay: 0.8s;
+  }
+
+  &:nth-child(9) {
+    animation-delay: 0.9s;
+  }
+
+  &:nth-child(10) {
+    animation-delay: 1s;
+  }
+
+  &:nth-child(11) {
+    animation-delay: 1.1s;
+  }
+
+  &:nth-child(12) {
+    animation-delay: 1.2s;
+  }
+
+  &:nth-child(13) {
+    animation-delay: 1.3s;
+  }
+
+  &:nth-child(14) {
+    animation-delay: 1.4s;
+  }
+
+  &:nth-child(15) {
+    animation-delay: 1.5s;
+  }
+
+  &:nth-child(16) {
+    animation-delay: 1.6s;
+  }
+
+    &:nth-child(17) {
+    animation-delay: 1.7s;
+  }
+
+  &:nth-child(18) {
+    animation-delay: 1.8s;
+  }
+
+  &:nth-child(19) {
+    animation-delay: 1.9s;
+  }
+
+  &:nth-child(20) {
+    animation-delay: 2s;
+  }
+
+
 
   p {
     margin: 0;
     font-family: $font-family-serif;
     line-height: $multiplier;
-    color: $white;
+    color: $black;
   }
 }
 
