@@ -47,44 +47,34 @@ void main() {
 
           <p>Here are your essential shaping functions:</p>
 
-          <div class="function-grid">
-            <div class="function-card">
-              <h4>sin() and cos()</h4>
-              <p>Your best friends for anything that repeats, pulses, or waves. Output ranges from -1.0 to 1.0.</p>
-              <CodeBlock lang="glsl" :code="`// Pulsing value between 0 and 1
+          <h4>sin() and cos()</h4>
+          <p>Your best friends for anything that repeats, pulses, or waves. Output ranges from -1.0 to 1.0.</p>
+          <CodeBlock lang="glsl" :code="`// Pulsing value between 0 and 1
 float pulse = 0.5 + 0.5 * sin(uTime);
 
 // Horizontal waves
 float wave = sin(vUv.x * 10.0 + uTime);`" />
-            </div>
 
-            <div class="function-card">
-              <h4>step(edge, value)</h4>
-              <p>Returns 0.0 if value is below the edge, 1.0 if above. It's a hard cut with no transition.</p>
-              <CodeBlock lang="glsl" :code="`// Hard split at the middle
+          <h4>step(edge, value)</h4>
+          <p>Returns 0.0 if value is below the edge, 1.0 if above. It's a hard cut with no transition.</p>
+          <CodeBlock lang="glsl" :code="`// Hard split at the middle
 float mask = step(0.5, vUv.x);
 // Left half = 0.0 (black)
 // Right half = 1.0 (white)`" />
-            </div>
 
-            <div class="function-card">
-              <h4>smoothstep(edge1, edge2, value)</h4>
-              <p>Creates a smooth gradient between two points. This is how you make soft glows or anti-aliased edges.</p>
-              <CodeBlock lang="glsl" :code="`// Smooth transition from 0.4 to 0.6
+          <h4>smoothstep(edge1, edge2, value)</h4>
+          <p>Creates a smooth gradient between two points. This is how you make soft glows or anti-aliased edges.</p>
+          <CodeBlock lang="glsl" :code="`// Smooth transition from 0.4 to 0.6
 float soft = smoothstep(0.4, 0.6, vUv.x);
 // Below 0.4 = 0.0
 // Above 0.6 = 1.0
 // Between = smooth curve`" />
-            </div>
 
-            <div class="function-card">
-              <h4>fract(value)</h4>
-              <p>Returns only the decimal part. This is the secret to tiling where you turn one square into a grid of many.</p>
-              <CodeBlock lang="glsl" :code="`// Create a 10x10 grid
+          <h4>fract(value)</h4>
+          <p>Returns only the decimal part. This is the secret to tiling where you turn one square into a grid of many.</p>
+          <CodeBlock lang="glsl" :code="`// Create a 10x10 grid
 vec2 grid = fract(vUv * 10.0);
 // Each cell now has its own 0.0-1.0 range`" />
-            </div>
-          </div>
 
           <h3>3: The distance field mental model</h3>
 
@@ -505,29 +495,6 @@ blockquote {
   padding: $spacing-md;
   margin: $spacing-md 0;
   border-left: 2px solid $blue;
-}
-
-.function-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: $spacing-sm;
-  margin: $spacing-md 0;
-}
-
-.function-card {
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 1.5rem;
-
-  h4 {
-    margin: 0 0 0.5rem 0;
-    font-family: monospace;
-  }
-
-  p {
-    margin: 0 0 1rem 0;
-  }
 }
 
 .checklist {

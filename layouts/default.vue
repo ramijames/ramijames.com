@@ -25,6 +25,10 @@ const isLearnThreeJSSubPage = computed(() => route.path.startsWith('/learn-three
 
   &.innerNav-open {
     margin-left: 400px;
+
+    @media screen and (max-width: 1000px){
+      margin: 0;
+    }
   }
 }
 
@@ -33,10 +37,6 @@ const isLearnThreeJSSubPage = computed(() => route.path.startsWith('/learn-three
   flex-direction: column;
   width: 100%;
   position: relative;
-
-  @media screen and (max-width: 1000px){
-    padding-top: 0;
-  }
 }
 
 </style>

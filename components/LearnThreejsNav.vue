@@ -1,19 +1,26 @@
 <template>
-  <button v-if="innerNav" class="nav-toggle" @click="isOpen = !isOpen">
-    <div v-if="isOpen">Hide Navigation</div>
-    <div v-else>Show Navigation</div>
-  </button>
+
+  <button v-if="innerNav && !isOpen" class="nav-toggle-show button small white" @click="isOpen = true">Show nav</button>
 
   <nav :class="['learnthreejs', innerNav ? 'innerNav' : '', !isOpen ? 'hidden' : '']">
+
+    <section class="nav-widget">
+      <button v-if="innerNav && isOpen" class="nav-toggle button small" @click="isOpen = !isOpen">
+        Hide
+      </button>
+
+      <input
+        v-model="searchQuery"
+        type="text"
+        class="nav-search"
+        placeholder="Search"
+      />
+    </section>
+
     <section :class="['threejs-nav', innerNav ? 'innerNav' : '', innerNav && !isOpen ? 'collapsed' : '']">
       <div :class="['nav-content', innerNav && !isOpen ? 'hidden' : '']">
 
-        <input
-          v-model="searchQuery"
-          type="text"
-          class="nav-search"
-          placeholder="Search"
-        />
+        
 
         <template v-for="section in filteredSections" :key="section.title">
           <h3>{{ section.title }}</h3>
@@ -176,16 +183,18 @@ onMounted(() => {
 
   &.innerNav {
     width: 400px;
-    overflow: auto;
-    height: 100vh;
     background: rgba($white, 0.8);
     backdrop-filter: blur(28px);
     z-index:2;
     position: fixed;
     left: 0;
-    top: 0;
+    top: 62px;
     bottom: 0;
     border-right: 1px solid rgba($black, 0.2);
+
+    @media screen and (max-width: 768px) {
+      top: 58px;
+    }
   }
 
   &.hidden {
@@ -194,29 +203,36 @@ onMounted(() => {
   }
 }
 
+.nav-widget {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-xs;
+  z-index: 2;
+  backdrop-filter: blur(28px);
+  gap: $spacing-xs;
+
+}
+
+.nav-toggle-show {
+  position: fixed;
+  top: calc($spacing-xs + 62px);
+  left: $spacing-xs;
+  height: 34px;
+  z-index: 2;
+
+}
+
+
 .nav-toggle {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: $spacing-xxs;
-  background: $black;
-  border-radius: $br-sm;
-  padding: $spacing-xs $spacing-sm;
-  font-family: $font-family-main;
-  font-size: $font-size-sm;
   cursor: pointer;
-  margin-bottom: $spacing-xs;
-  color: white;
-  position: fixed;
-  left: $spacing-sm;
-  bottom: $spacing-xs;
-  border: 1px solid rgba($white, 0.2);
-  z-index: 3;
-
-  @media screen and (max-width: 768px) {
-    width: 200px;
-  }
+  height: 34px;
 
   .menu-icon,
   .close-icon {
@@ -228,13 +244,13 @@ onMounted(() => {
 .nav-search {
   width: 100%;
   padding: $spacing-xs $spacing-sm;
-  margin-bottom: $spacing-sm;
   border: 1px solid rgba($black, 0.2);
   border-radius: $br-sm;
   font-family: $font-family-main;
   font-size: $font-size-sm;
   outline: none;
   box-sizing: border-box;
+  height: 34px;
 
   &:focus {
     border-color: rgba($black, 0.4);
@@ -253,10 +269,11 @@ onMounted(() => {
 
 .threejs-nav {
   padding: $spacing-md;
-  margin: $spacing-lg 0;
   font-family: $font-family-main;
   border: 1px solid rgba($black, 0.1);
   border-radius: $br-sm;
+  overflow-y: auto;
+  height: calc(100% - 52px);
 
   &.innerNav {
     border: none;
