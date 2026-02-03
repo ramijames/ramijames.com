@@ -176,48 +176,6 @@ function animate() {
 
           <p>The <code>z</code> component after projection tells you whether the point is in front of or behind the camera. If it's greater than 1, the point is behind the camera and you should hide the label. Without this check, labels would appear mirrored on the opposite side of the screen when objects go behind the camera.</p>
 
-          <h3>When to use manual projection vs CSS2DRenderer</h3>
-
-          <ul>
-            <li><strong>CSS2DRenderer</strong> is simpler for most cases. It handles the projection math, parent-child relationships, and updates automatically. Use it when you have labels that should always follow their objects.</li>
-            <li><strong>Manual projection</strong> is better when you need conditional visibility (show a label only on hover), custom positioning logic (offset based on screen edge proximity), or when you want to avoid adding another renderer to your loop. It's also useful when the label isn't tied to a single object but to an arbitrary world position.</li>
-          </ul>
-
-          <h3>CSS2D vs CSS3D: when to use which</h3>
-
-          <ul>
-            <li><strong>CSS2DRenderer</strong>: Labels, tooltips, name tags, health bars. Anything that should always be readable and face the screen. The elements are rendered at a fixed screen size regardless of distance.</li>
-            <li><strong>CSS3DRenderer</strong>: In-world displays, information panels, embedded iframes, VR-style interfaces. Anything that should feel like it exists as a physical surface in the scene. The elements scale with perspective and rotate with their parent objects.</li>
-          </ul>
-
-          <h3>Limitations</h3>
-
-          <p>Both renderers have limitations worth knowing about:</p>
-
-          <ul>
-            <li>CSS elements can't be occluded by 3D geometry. A label behind a wall will still show through. You can mitigate this by checking visibility with raycasting and hiding elements that aren't in line-of-sight.</li>
-            <li>Performance drops with many elements. Each is a real DOM node. Dozens are fine; hundreds may not be.</li>
-            <li>CSS3DRenderer can't render in the same pass as WebGLRenderer. Remember that they're totally separate layers. This means CSS3D elements always appear on top of or behind the WebGL canvas, not truly mixed into the scene.</li>
-          </ul>
-
-          <CodeBlock lang="typescript" :code="`// Occlusion check: hide labels that are behind other objects
-function updateLabelVisibility(mesh, label, camera, scene) {
-  const direction = new THREE.Vector3();
-  direction.subVectors(mesh.position, camera.position).normalize();
-
-  const raycaster = new THREE.Raycaster(camera.position, direction);
-  const intersects = raycaster.intersectObjects(scene.children, true);
-
-  if (intersects.length > 0 && intersects[0].object !== mesh) {
-    // Something is between the camera and the mesh
-    label.element.style.opacity = '0';
-  } else {
-    label.element.style.opacity = '1';
-  }
-}`" />
-
-          <p>This raycasting approach isn't free. You're doing an intersection test per label per frame (expensive!) but for a moderate number of labels it works well and prevents the jarring effect of seeing labels through walls.</p>
-
         </section>
       </main>
     </main>
@@ -226,6 +184,8 @@ function updateLabelVisibility(mesh, label, camera, scene) {
   <LearnThreejsBottomNav
     prevLink="/learn-threejs/interaction/drag-drop-and-transform"
     prevText="Drag, Drop, and Transform"
+    nextLink="/learn-threejs/interaction/"
+    nextText=""
   />
   <Footer />
 </template>

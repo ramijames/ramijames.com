@@ -1,7 +1,7 @@
 <template>
   <div class="difficulty-wrapper">
     <div :class="['dot lit']"></div>
-    <div :class="['dot', value == 'intermediate' ? 'lit' : '']"></div>
+    <div :class="['dot', value == 'intermediate' || 'advanced' ? 'lit' : '']"></div>
     <div :class="['dot', value == 'advanced' ? 'lit' : '']"></div>
   </div>
 </template>
@@ -30,16 +30,16 @@ const props = defineProps({
 }
 
 .difficulty-wrapper {
-  padding: $spacing-xs 0;
+  padding: 4px 0;
   display: flex;
   flex-direction: row;
   gap: 3px;
 
   .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 3px;
-    background: rgba($black, 0.2);
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba($black, 0.3);
 
     &.lit {
       background: rgba($black, 1);

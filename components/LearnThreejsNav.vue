@@ -26,12 +26,6 @@
       
           <!--
 
-      <h3>Interaction & Raycasting</h3>
-
-          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="easy" /><span>Clicking on 3D objects</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="easy" /><span>Hover states and UI overlays</span></nuxt-link>
-          <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="easy" /><span>Basic 3D physics integrations</span></nuxt-link>
-
       <h3>Advanced Visuals</h3>
           <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="advanced" /><span>Introduction to GLSL</span></nuxt-link>
           <nuxt-link to=""><Difficulty value="intermediate" /><Difficulty value="advanced" /><span>ShaderMaterial vs. RawShaderMaterial</span></nuxt-link>
@@ -115,6 +109,14 @@ const sections = [
       { to: '/learn-threejs/interaction/interaction-managers-and-libraries', label: 'Interaction Managers and Libraries', difficulty: 'intermediate' },
       { to: '/learn-threejs/interaction/drag-drop-and-transform', label: 'Drag, Drop, and Transform', difficulty: 'intermediate' },
       { to: '/learn-threejs/interaction/html-overlays-and-labels', label: 'HTML Overlays and Labels', difficulty: 'intermediate' },
+    ]
+  },
+  {
+    title: 'Shaders',
+    links: [
+      { to: '/learn-threejs/shaders/introduction-to-shaders', label: 'Introduction to Shaders', difficulty: 'advanced' },
+      { to: '/learn-threejs/shaders/how-to-think-about-creating-shaders', label: 'How to think about creating shaders', difficulty: 'advanced' },
+      { to: '/learn-threejs/shaders/your-first-shader', label: 'Your first shader', difficulty: 'advanced' },
     ]
   }
 ]
@@ -304,17 +306,19 @@ onMounted(() => {
 
   a {
     font-size: $font-size-sm;
+    font-family: $font-family-secondary;
     display: block;
     text-decoration: none;
-    padding: $spacing-xxs $spacing-sm;
+    padding: 5px $spacing-xs;
     border-radius: $br-sm;
     color: $black;
     opacity: 0.6;
     display: flex;
     flex-direction: row;
-    gap: $spacing-sm;
+    gap: $spacing-xs;
     align-content: center;
     margin-bottom: 1px;
+    transition: all 0.26s ease-in-out;
 
     span {
       align-self: center;
@@ -324,7 +328,6 @@ onMounted(() => {
     &:hover {
       background: linear-gradient(to right, rgba($black, 0.1) 65%, rgba($blue, 0.2));
       opacity: 1;
-      font-weight: bold;
     }
   }
 
