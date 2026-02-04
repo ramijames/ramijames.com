@@ -120,19 +120,15 @@ onUnmounted(() => {
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: contain; /* Prevents the "bounce" that triggers chrome hiding/showing */
 }
 
 .snap-section {
-  min-height: 100dvh;
+  min-height: 100dvh; /* Use min-height so content isn't cut off */
   width: 100vw;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  overflow: hidden;
-
-  @media screen and (max-width: 768px) {
-    height: 80vh;
-  }
+  position: relative;
 }
 
 .testimonials-section {
@@ -150,7 +146,7 @@ onUnmounted(() => {
 #ServiceProductDesign {
   overflow: hidden;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   z-index: 0;
 
@@ -173,7 +169,6 @@ onUnmounted(() => {
 
     @media screen and (max-width: 768px) {
       width: 100vw;
-      height: 100vh;
     }
   }
 }

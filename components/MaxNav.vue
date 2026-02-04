@@ -222,7 +222,9 @@ const isHome = computed(() => route.path === '/');
   transition: all 0.34s;
   transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
 
-  
+  @media screen and (max-width: 1000px){
+    width: 100%;
+  }
 
   .nav-left-section {
     display: flex;
