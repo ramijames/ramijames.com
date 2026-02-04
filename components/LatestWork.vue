@@ -57,24 +57,27 @@ const products = [
 
 <style lang="scss" scoped>
 .work-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 100%;
+  display: flex; /* Changed to flex for better height distribution */
+  flex-direction: column;
+  height: 100dvh; /* Match the snap-section exactly */
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
   padding: $spacing-xl;
   background: $white;
   position: relative;
   z-index: 1;
+  box-sizing: border-box; /* Ensures padding is included in the 100dvh calculation */
+  overflow: hidden;
 
   @media screen and (max-width: 1000px) {
     padding: $spacing-md;
-    gap: 0;
+    /* Account for iOS safe area (bottom home bar) */
+    padding-bottom: calc($spacing-md + env(safe-area-inset-bottom));
+    gap: $spacing-xs;
   }
 }
 
 .work-header {
+  flex-shrink: 0; /* Prevents header from squishing */
   height: 100px;
   display: flex;
   align-items: center;
@@ -86,7 +89,7 @@ const products = [
     align-items: flex-start;
     justify-content: center;
     gap: $spacing-xs;
-    margin-bottom: -62px;
+    margin-bottom: 0; /* Removed negative margin which causes alignment issues */
   }
 
   .button {
@@ -96,14 +99,8 @@ const products = [
   }
 
   .work-header-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-
     h2 {
       color: $black;
-      opacity: 1;
       margin: 0;
     }
   }
@@ -114,12 +111,11 @@ const products = [
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  flex: 1;
-  height: calc(100dvh - ($spacing-xl * 2) - 100px);
+  flex: 1; /* Automatically takes up remaining space in .work-container */
+  min-height: 0; /* Fixes flex child overflow in some browsers */
 
   @media screen and (max-width: 1000px) {
     flex-direction: column;
-    height: auto;
   }
 
   .project {
@@ -131,12 +127,11 @@ const products = [
     overflow: hidden;
 
     @media screen and (max-width: 1000px) {
-      height: 50%;
+      flex: 1; /* Divides available space equally between projects */
     }
 
     &:nth-child(1) {
       border-radius: $br-sm 0 0 $br-sm;
-
       @media screen and (max-width: 1000px) {
         border-radius: $br-sm $br-sm 0 0;
       }
@@ -144,98 +139,49 @@ const products = [
 
     &:nth-child(2) {
       border-radius: 0 $br-sm $br-sm 0;
-
       @media screen and (max-width: 1000px) {
         border-radius: 0 0 $br-sm $br-sm;
       }
     }
 
-    .info-title {
-      font-size: $font-size-xl;
-      color: rgba($white, 1);
-      position: relative;
-      z-index: 2;
-
-      @media screen and (max-width: 768px){
-        text-align: center;
-      }
-    }
-
     .primary-image {
       background: $black;
-      outline: 1px solid rgba($black, 0.1);
       background-size: cover;
       background-position: center;
       height: 100%;
       width: 100%;
-      z-index: 1;
-      transition: all 0.4s ease;
       padding: $spacing-md;
-      overflow: hidden;
-      position: relative;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-end;
-
+      box-sizing: border-box;
 
       @media screen and (max-width: 768px){
-        background-position: top right;
-        padding: $spacing-md;
-        min-height: 200px;
+        background-position: center; /* Better centering for vertical mobile view */
       }
 
       &:before {
         content: '';
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background: rgba($black, .5);
         z-index: 1;
-        transition: all 0.2s ease;
         -webkit-mask-image: linear-gradient(120deg, black 15% , transparent 100%);
         mask-image: linear-gradient(120deg, black 15% , transparent 100%);
       }
 
-      .info-description {
-        font-size: $font-size-sm;
-        color: $white;
-        z-index: 2;
+      .info-title, .info-description {
         position: relative;
-
-        @media screen and (max-width: 768px){
-          text-align: center;
-        }
-      }
-    }
-
-    &:hover {
-      .primary-image {
-        &:before {
-          background: rgba($black, .1);
-        }
+        z-index: 2;
+        color: $white;
       }
     }
   }
 }
 
 .dark {
-  .work-container {
-    background: $black;
-  }
-
-  .work-header {
-    .work-header-text {
-      h2, p {
-        color: $white;
-      }
-    }
-
-    .view-all {
-      color: $white;
-    }
-  }
+  .work-container { background: $black; }
+  .work-header .work-header-text h2 { color: $white; }
 }
 </style>
