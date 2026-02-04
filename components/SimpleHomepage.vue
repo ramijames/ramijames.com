@@ -287,6 +287,18 @@ onUnmounted(() => {
       color: $white;
       text-shadow: .1cqw .2cqw 0px rgba($black, 1);
     }
+
+    svg {
+      path {
+        stroke: $white;
+      }
+
+      rect {
+        stroke: none;
+        fill: rgba($black, .4);
+        backdrop-filter: blur(128px);
+      }
+    }
   }
     
 }

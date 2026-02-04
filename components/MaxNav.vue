@@ -192,7 +192,7 @@ const toggleMenu = () => {
   state.mobileMenuOpen = !state.mobileMenuOpen;
 };
 
-const isLearnThreeJSSubPage = computed(() => route.path.startsWith('/learn-threejs/'));
+const isLearnThreeJSSubPage = computed(() => route.path.startsWith('/learn-threejs/') && route.path !== '/learn-threejs/');
 const isThoughtsSubPage = computed(() => route.path.startsWith('/thoughts/'));
 const isProductsSubPage = computed(() => route.path.startsWith('/products/'));
 const isProductsPage = computed(() => route.path === '/products');
