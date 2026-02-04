@@ -118,7 +118,7 @@ onUnmounted(() => {
 }
 
 .snap-section {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -160,6 +160,11 @@ onUnmounted(() => {
     animation: fade 1s forwards;
     transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
     animation-delay: 1s;
+
+    @media screen and (max-width: 768px) {
+      width: 100vw;
+      height: 100vh;
+    }
   }
 }
 
