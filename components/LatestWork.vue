@@ -115,11 +115,11 @@ const products = [
   flex-direction: row;
   align-items: stretch;
   flex: 1;
-  height: calc(100vh - $spacing-xl - $spacing-xl - 100px);
+  height: calc(100dvh - ($spacing-xl * 2) - 100px);
 
   @media screen and (max-width: 1000px) {
     flex-direction: column;
-    height: 100%;
+    height: auto;
   }
 
   .project {

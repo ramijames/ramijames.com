@@ -256,7 +256,6 @@ onUnmounted(() => {
     text-wrap: balance;
     width: 80vw;
     max-width: 400px;
-    opacity: 0.5;
 
     @media screen and (max-width: 1000px) {
       font-size: $font-size-md;
