@@ -115,15 +115,16 @@ onUnmounted(() => {
 }
 
 .snap-container {
-  height: 100vh;
+  height: 100dvh;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
 }
 
 .snap-section {
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100vw;
   scroll-snap-align: start;
   scroll-snap-stop: always;
