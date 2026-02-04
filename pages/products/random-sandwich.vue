@@ -74,20 +74,24 @@
 
 import { onMounted, onUnmounted, ref } from 'vue';
 
-let image = ref(null);
+const image = ref(null);
+let handleScroll = null;
 
 onMounted(() => {
-  const handleScroll = () => {
+  handleScroll = () => {
+    if (!image.value) return;
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     const rotationAngle = Math.max(0, 20 - scrollPosition / 20);
     image.value.style.transform = `rotate3d(1, 0, 0, ${rotationAngle}deg)`;
   };
 
   window.addEventListener('scroll', handleScroll);
-  
-  onUnmounted(() => {
+});
+
+onUnmounted(() => {
+  if (handleScroll) {
     window.removeEventListener('scroll', handleScroll);
-  });
+  }
 });
 
 </script>

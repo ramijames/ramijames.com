@@ -12,6 +12,7 @@ export default defineNuxtPlugin(() => {
   }
 
   // Keep the body class in sync when the user toggles the theme
+  // immediate: true ensures the class is applied on initial load/navigation
   watch(
     () => themeStore.currentTheme,
     (newTheme, oldTheme) => {
@@ -19,6 +20,7 @@ export default defineNuxtPlugin(() => {
         document.body.classList.remove(oldTheme)
       }
       document.body.classList.add(newTheme)
-    }
+    },
+    { immediate: true }
   )
 })
