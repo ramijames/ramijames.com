@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist"
+  publish = ".output/public"
   node_bundler = "esbuild"
 
 [build.environment]

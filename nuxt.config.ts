@@ -1,4 +1,10 @@
 export default defineNuxtConfig({
+  nitro: {
+    preset: 'netlify'
+  },
+  features: {
+    inlineStyles: true
+  },
   runtimeConfig: {
     resendApiKey: '',
   },
@@ -50,6 +56,9 @@ export default defineNuxtConfig({
           additionalData: '@use "sass:map" as *; @use "~/assets/_variables.scss" as *;'
         }
       }
+    },
+    build: {
+      cssCodeSplit: false
     }
   },
   gtag: {
