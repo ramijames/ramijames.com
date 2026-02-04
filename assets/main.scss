@@ -1246,14 +1246,3 @@ img.in-article {
       width: 100%;
       padding:1rem;
     }
-
-/* Page transitions */
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.2s ease-in-out;
-}
-
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-}

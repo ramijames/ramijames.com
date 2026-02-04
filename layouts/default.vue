@@ -2,7 +2,7 @@
   <main :class="['default-layout', isOpen && isLearnThreeJSSubPage ? 'innerNav-open' : '']" class="default-layout">
     <section class="default-main">
       <MaxNav />
-      <NuxtPage />
+      <slot />
     </section>
   </main>
 </template>
