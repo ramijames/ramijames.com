@@ -38,7 +38,7 @@
       </section>
     </section>
 
-    <section id="ServiceProductDesign" class="snap-section">
+    <section id="ServiceDesignSystems" class="snap-section">
       <section class="content-blast">
         <div class="reveal">
           <h2><span>And By Building Rock Solid Design Systems.</span></h2>
@@ -143,7 +143,11 @@ onUnmounted(() => {
 }
 
 #Hero,
-#ServiceProductDesign {
+#ServiceProductDesign,
+#ServiceUXStrategy,
+#ServiceDesignSystems,
+.testimonials-section,
+.footer-section {
   overflow: hidden;
   width: 100%;
   height: 100dvh;
