@@ -108,6 +108,9 @@ onUnmounted(() => {
   border-radius: 2px;
   mix-blend-mode: difference;
   background: $white;
+
+  @media screen and (max-width: 768px) {
+    display: none;
 }
 .snap-container {
   height: 100vh;
@@ -123,6 +126,10 @@ onUnmounted(() => {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    height: 80vh;
+  }
 }
 
 .testimonials-section {
