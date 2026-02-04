@@ -1,8 +1,12 @@
 <template>
-
   <div class="work-container">
-    <!-- <div class="section-title">I've worked on a lot of interesting products over the years.</div> -->
-    <section id="LatestWork" class="w-full">
+    <section class="work-header">
+      <section class="work-header-text">
+        <h2>See My Latest Work</h2>
+      </section>
+      <nuxt-link class="button small white" to="/products">View all products</nuxt-link>
+    </section>
+    <section id="LatestWork">
       <nuxt-link
           :class="['project', product.class]"
           v-for="product in products"
@@ -15,9 +19,7 @@
         </div>
       </nuxt-link>
     </section>
-    <nuxt-link class="button large blue" to="/products">View all products</nuxt-link>
   </div>
-
 </template>
 
 <script setup>
@@ -55,68 +57,98 @@ const products = [
 
 <style lang="scss" scoped>
 .work-container {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-lg;
-  padding: $spacing-xl 0;
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100%;
+  width: 100%;
   align-items: center;
+  justify-content: space-between;
+  padding: $spacing-xl;
+  background: $white;
+  position: relative;
+  z-index: 1;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     padding: $spacing-md;
+    gap: 0;
+  }
+}
+
+.work-header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1000px) {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: $spacing-xs;
+    margin-bottom: -62px;
   }
 
-  @media screen and (max-width: 768px) {
-    padding: $spacing-sm;
-  }
-
-  .section-title {
-    font-size: 3dvw;
-    font-weight: 400;
-    line-height: 100%;
-    text-wrap: balance;
-    text-align: center;
-    padding: $spacing-xl 0;
-    opacity: 0.4;
-    position: relative;
-
+  .button {
     @media screen and (max-width: 1000px) {
-      font-size: 6dvw;
-      padding: $spacing-md;
+      display: none;
+    }
+  }
+
+  .work-header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    h2 {
+      color: $black;
+      opacity: 1;
+      margin: 0;
     }
   }
 }
 
 #LatestWork {
   width: 100%;
-  position: relative;
-  margin: $spacing-md 0 0;
   display: flex;
   flex-direction: row;
-  gap: $spacing-sm;
-  align-items: center;
-
-  @media screen and (max-width: 1400px) {
-    width: 100%;
-    margin: $spacing-sm 0;
-  }
+  align-items: stretch;
+  flex: 1;
+  height: calc(100vh - $spacing-xl - $spacing-xl - 100px);
 
   @media screen and (max-width: 1000px) {
     flex-direction: column;
-    gap: $spacing-sm;
-    margin-bottom: $spacing-xl;
-  }
-  
-  @media screen and (max-width: 768px){
-    padding: 0;
+    height: 100%;
   }
 
   .project {
     width: 100%;
+    height: 100%;
     text-decoration: none;
     position: relative;
-    margin: 0;
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
+
+    @media screen and (max-width: 1000px) {
+      height: 50%;
+    }
+
+    &:nth-child(1) {
+      border-radius: $br-sm 0 0 $br-sm;
+
+      @media screen and (max-width: 1000px) {
+        border-radius: $br-sm $br-sm 0 0;
+      }
+    }
+
+    &:nth-child(2) {
+      border-radius: 0 $br-sm $br-sm 0;
+
+      @media screen and (max-width: 1000px) {
+        border-radius: 0 0 $br-sm $br-sm;
+      }
+    }
 
     .info-title {
       font-size: $font-size-xl;
@@ -130,23 +162,27 @@ const products = [
     }
 
     .primary-image {
-      border-radius: $br-md;
       background: $black;
       outline: 1px solid rgba($black, 0.1);
       background-size: cover;
       background-position: center;
-      height: 800px;
+      height: 100%;
       width: 100%;
       z-index: 1;
       transition: all 0.4s ease;
-      padding: $spacing-lg;
+      padding: $spacing-md;
       overflow: hidden;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+
 
       @media screen and (max-width: 768px){
         background-position: top right;
         padding: $spacing-md;
-        height: 480px;
+        min-height: 200px;
       }
 
       &:before {
@@ -177,15 +213,29 @@ const products = [
 
     &:hover {
       .primary-image {
-
         &:before {
           background: rgba($black, .1);
         }
       }
     }
-
-    
   }
 }
 
+.dark {
+  .work-container {
+    background: $black;
+  }
+
+  .work-header {
+    .work-header-text {
+      h2, p {
+        color: $white;
+      }
+    }
+
+    .view-all {
+      color: $white;
+    }
+  }
+}
 </style>

@@ -112,7 +112,7 @@
 <script setup>
 import { ref, computed, markRaw, watch } from 'vue'
 import EnvMap from '~/components/threejs/EnvMap.client.vue'
-import ThreeScene from '~/components/ThreeScene.client.vue'
+import WavingDots from '~/components/threejs/WavingDots.client.vue'
 import DigitalOcean from '~/components/threejs/DigitalOcean.client.vue'
 import PerlinNoiseLines from '~/components/threejs/PerlinNoiseLines.client.vue'
 import Threedarray from '~/components/threejs/Threedarray.client.vue'
@@ -120,6 +120,7 @@ import Mandelbulb from '~/components/threejs/Mandelbulb.client.vue'
 import SDF from '~/components/threejs/SDF.client.vue'
 import MeshGradient from '~/components/threejs/MeshGradient.client.vue'
 import GeometricTracking from '~/components/threejs/GeometricTracking.client.vue'
+import TheBlob from '~/components/ThreeScene.client.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -136,7 +137,7 @@ const experiments = [
     id: 'dot-matrix-wave',
     label: 'Dot Matrix Wave',
     description: 'A wave of dots that move in a matrix pattern.',
-    component: markRaw(ThreeScene)
+    component: markRaw(WavingDots)
   },
   {
     id: 'digital-ocean',
@@ -173,6 +174,12 @@ const experiments = [
     label: 'Geometric Tracking',
     description: 'An interactive, coloful geomtric effect.',
     component: markRaw(GeometricTracking)
+  },
+  {
+    id: 'the-blob',
+    label: 'The Blob',
+    description: 'A huge, colorful blob',
+    component: markRaw(TheBlob)
   }
 ]
 

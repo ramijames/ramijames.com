@@ -109,6 +109,7 @@ button,
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    transition: 0.18s ease-in-out;
     
     &.blue {
       background: rgba($black, 0);
@@ -138,7 +139,7 @@ button,
     &:hover {
         background: $black;
         color: $white;
-        transform: scale(1.05);
+        transform: scale(1.025);
     }
 
     &.large {
@@ -182,7 +183,7 @@ a {
 
 h1, h2, h3, h4 {
   font-family: $font-family-main;
-  font-weight: 500;
+  font-weight: bold;
   margin: 0;
   padding: 0;
 }
@@ -222,7 +223,6 @@ h2 {
   font-size: $font-size-xxl;
   line-height: $font-size-xxl;
   margin-bottom: $spacing-md;
-  font-weight: 500;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-xl;
@@ -239,7 +239,6 @@ h3 {
   line-height: 140%; 
   margin-top: $spacing-lg;
   margin-bottom: $spacing-sm;
-  font-weight: 500;
 
   @media screen and (max-width: 1000px) {
     font-size: $font-size-lg;
