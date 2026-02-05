@@ -2,16 +2,16 @@
   <div ref="containerRef" class="testimonials-container">
     <section id="Clients">
       <div :class="['clients', { visible: isVisible }]">
-        <img src="/clients/ibm.png" alt="IBM" />
-        <img src="/clients/wpt.png" alt="WPT" />
-        <img src="/clients/microsoft.png" alt="Microsoft" />
-        <img src="/clients/nvidia.png" alt="NVIDIA" />
-        <img src="/clients/wix.png" alt="Wix" />
-        <img src="/clients/ultra.png" alt="Ultra" />
-        <img src="/clients/zivav.png" alt="Zivav" />
-        <img src="/clients/microgaming.png" alt="Microgaming" />
-        <img src="/clients/qmarkets.png" alt="Qmarkets" />
-        <img src="/clients/tonara.png" alt="Tonara" />
+        <div><img src="/clients/ibm.png" alt="IBM" /></div>
+        <div><img src="/clients/wpt.png" alt="WPT" /></div>
+        <div><img src="/clients/microsoft.png" alt="Microsoft" /></div>
+        <div><img src="/clients/nvidia.png" alt="NVIDIA" /></div>
+        <div><img src="/clients/wix.png" alt="Wix" /></div>
+        <div><img src="/clients/ultra.png" alt="Ultra" /></div>
+        <div><img src="/clients/zivav.png" alt="Zivav" /></div>
+        <div><img src="/clients/microgaming.png" alt="Microgaming" /></div>
+        <div><img src="/clients/qmarkets.png" alt="Qmarkets" /></div>
+        <div><img src="/clients/tonara.png" alt="Tonara" /></div>
       </div>
     </section>
   </div>
@@ -78,26 +78,43 @@ onUnmounted(() => {
   border-radius: $br-sm;
   align-items: center;
   justify-content: center;
+  filter: invert(1);
 
+  @media screen and (max-width: 1600px) {
+    padding: $spacing-md;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
   @media screen and (max-width: 1000px) {
     padding: $spacing-md;
     grid-template-columns: 1fr 1fr;
   }
 
-  img {
-    min-height: 34px;
+  div {
     background: $black;
-    padding: $spacing-xs;
+    max-height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     border-radius: $br-sm;
-    align-self: center;
-    justify-self: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding: $spacing-lg 0;
 
-    @media screen and (max-height: 1000px) {
-      height: 18px;
+    img {
+      height: 44px;
+      padding: $spacing-xs;
+      align-self: center;
+      justify-self: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      mix-blend-mode: luminosity;
+
+      @media screen and (max-height: 1000px) {
+        height: 18px;
+      }
     }
+
   }
 
   &.visible img {
@@ -132,11 +149,15 @@ onUnmounted(() => {
   }
 
   .clients {
-    opacity: 0.5;
+    div {
+      background: $white;
 
-    img {
-      filter: invert(1);
+      img {
+        filter: invert(1);
+      }
     }
+
+    
   }
 }
 </style>

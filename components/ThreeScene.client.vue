@@ -33,7 +33,7 @@ const sectionConfigs = [
     color2: new THREE.Color(0xf472b6), // Pink
     color3: new THREE.Color(0xa78bfa), // Lavender
     color4: new THREE.Color(0xfbbf24), // Amber
-    distortion: .6,
+    distortion: .3,
     noiseScale: .2,
     noiseSpeed: 0.01,
     animSpeed: 0.01
@@ -44,7 +44,7 @@ const sectionConfigs = [
     color2: new THREE.Color(0x0ea5e9), // Sky blue
     color3: new THREE.Color(0x3b82f6), // Blue
     color4: new THREE.Color(0x8b5cf6), // Violet
-    distortion: .7,
+    distortion: .4,
     noiseScale: .2,
     noiseSpeed: 0.01,
     animSpeed: 0.01
@@ -55,8 +55,8 @@ const sectionConfigs = [
     color2: new THREE.Color(0xef4444), // Red
     color3: new THREE.Color(0xfbbf24), // Amber
     color4: new THREE.Color(0xf472b6), // Pink
-    distortion: .6,
-    noiseScale: .2,
+    distortion: .1,
+    noiseScale: .3,
     noiseSpeed: 0.01,
     animSpeed: 0.01
   },
@@ -66,7 +66,7 @@ const sectionConfigs = [
     color2: new THREE.Color(0x14b8a6), // Teal
     color3: new THREE.Color(0x06b6d4), // Cyan
     color4: new THREE.Color(0x84cc16), // Lime
-    distortion: .8,
+    distortion: .6,
     noiseScale: .2,
     noiseSpeed: 0.01,
     animSpeed: 0.01

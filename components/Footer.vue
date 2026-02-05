@@ -212,13 +212,13 @@ footer {
       transition: all 0.5s ease-in-out;
       font-size: 9px;
       font-weight: 500;
-      color: rgba($white, 1);
+      color: rgba($white, .5);
       text-transform: uppercase;
       letter-spacing: 1px;
       padding: $spacing-sm 0;
 
       &:hover {
-        color: rgba($black, 1);
+        color: rgba($white, 1);
       }
 
     }

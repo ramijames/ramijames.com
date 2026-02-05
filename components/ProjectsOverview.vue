@@ -37,15 +37,15 @@
   .projects-overview {
 
     .projects-content {
-      background: rgba($white, 0.1);
+      background: rgba($white, 0);
 
       .project-column {
 
         .services {
 
           .single-service {
-            background: rgba($white, 1);
-            color: rgba($black, 1);
+            background: rgba($black, 1);
+            color: rgba($white, 1);
           }
         }
       }
@@ -59,8 +59,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: $spacing-xl;
-  width: auto;
+  margin: 0 auto;
 
   @media screen and (max-width: 1000px) {
     margin: $spacing-sm;
@@ -72,10 +71,7 @@
     flex-direction: column;
     gap: $spacing-md;
     border-radius: $br-sm;
-    background: $black;
-    width: 100%;
-    padding: $spacing-xl $spacing-lg;
-    color: $white;
+    padding: $spacing-md 0;
 
     @media screen and (max-width: 1000px) {
       padding: $spacing-sm $spacing-md;
@@ -127,14 +123,14 @@
 
         .single-service {
           padding: 6px 10px 4px;
-          background: $white;
+          background: $black;
           line-height: 100%;
           border-radius: $br-sm;
           text-transform: uppercase;
           font-size: 10px;
           font-weight: bold;
           letter-spacing: 1px;
-          color: $black;
+          color: $white;
         }
       }
     }

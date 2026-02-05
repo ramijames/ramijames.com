@@ -69,7 +69,7 @@ const products = [
   overflow: hidden;
 
   @media screen and (max-width: 1000px) {
-    padding: $spacing-md;
+    padding: calc($spacing-md + 58px) $spacing-md $spacing-md $spacing-md;
     /* Account for iOS safe area (bottom home bar) */
     padding-bottom: calc($spacing-md + env(safe-area-inset-bottom));
     gap: $spacing-xs;
@@ -171,10 +171,18 @@ const products = [
         mask-image: linear-gradient(120deg, black 15% , transparent 100%);
       }
 
-      .info-title, .info-description {
+      .info-title {
         position: relative;
         z-index: 2;
         color: $white;
+        font-size: $font-size-md;
+      }
+      
+      .info-description {
+        position: relative;
+        z-index: 2;
+        color: $white;
+        font-size: $font-size-xs;
       }
     }
   }

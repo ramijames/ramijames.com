@@ -117,12 +117,12 @@ const formatDate = (dateString) => {
   }
 
   .article-card {
-    background: rgba($white, 1);
-    color: $black;
+    background: rgba($white, .1);
+    color: $white;
   }
 
   .article-card:hover {
-    background: rgba($blue, 0.2);
+    background: rgba($white, 0.2);
   }
 
   .article-image {
