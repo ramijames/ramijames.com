@@ -269,9 +269,7 @@ onUnmounted(() => {
     }
 
     rect {
-      stroke: none;
-      fill: rgba($white, .4);
-      backdrop-filter: blur(128px);
+      stroke: $black;
     }
   }
 }
