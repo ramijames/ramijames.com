@@ -50,9 +50,6 @@ export default defineNuxtConfig({
           additionalData: '@use "sass:map" as *; @use "~/assets/_variables.scss" as *;'
         }
       }
-    },
-    build: {
-      cssCodeSplit: false
     }
   },
   gtag: {
