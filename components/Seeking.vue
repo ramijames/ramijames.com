@@ -6,16 +6,7 @@
   </section>
 </template>
 
-<script>
-
-import Button from './Button.vue'
-
-export default {
-    components: {
-        Button
-    }
-}
-
+<script setup>
 </script>
 
 <style lang="scss">

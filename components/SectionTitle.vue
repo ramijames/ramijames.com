@@ -5,25 +5,21 @@
   </div>
 </template>
 
-<script>
-
-export default {
-  props: {
-    title: {
-      type: String,
-      required: true
-    },
-    subtitle: {
-      type: String,
-      required: true
-    },
-    centered: {
-      type: Boolean,
-      default: false
-    }
+<script setup>
+defineProps({
+  title: {
+    type: String,
+    required: true
+  },
+  subtitle: {
+    type: String,
+    required: true
+  },
+  centered: {
+    type: Boolean,
+    default: false
   }
-}
-
+})
 </script>
 
 <style scoped lang="scss">

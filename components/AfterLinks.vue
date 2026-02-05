@@ -31,27 +31,22 @@
   </transition>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-export default {
-  data() {
-    return {
-      atBottom: false,
-    };
-  },
-  methods: {
-    checkScroll() {
-      this.atBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
-    },
-  },
-  mounted() {
-    window.addEventListener('scroll', this.checkScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.checkScroll);
-  },
-};
+const atBottom = ref(false)
 
+function checkScroll() {
+  atBottom.value = (window.innerHeight + window.scrollY) >= document.body.offsetHeight
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', checkScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', checkScroll)
+})
 </script>
 
 <style scoped lang="scss">

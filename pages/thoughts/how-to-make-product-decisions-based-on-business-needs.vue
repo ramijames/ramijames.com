@@ -131,134 +131,73 @@
   <Footer />
 </template>
 
-<script>
-
-export default {
-  data() {
-    return {
-      accessibility: { enabled: false }, // disable accessibility warning
-      nursesWeightingOptions: {
-        chart: {
-          type: 'scatter'
-        },
-        title: {
-          text: 'Higher Nurse Quotient = Higher Pay'
-        },
-        xAxis: {
-          title: {
-            text: 'Nurse Quotient'
-          }
-        },
-        yAxis: {
-          title: {
-            text: 'Pay'
-          },
-          gridLineWidth: 0,
-          plotBands: [
-          {
-            from: 0,
-            to: 65, // Adjust this to the maximum pay rate
-            color: 'rgba(255, 0, 0, 0.1)', // Color of the plot band
-            label: {
-              text: 'Profitable for CBH',
-              style: {
-                color: '#606060'
-              }
-            }
-          },
-          {
-            from: 65, // Start of the plot band
-            to: 100, // End of the plot band
-            color: 'rgba(0, 255, 0, 0.1)', // Color of the plot band
-            label: {
-              text: 'Not Profitable for CBH',
-              style: {
-                color: '#606060'
-              }
-            }
-          },
-          
-        ]
-        },
-        series: [
-        {
-          name: 'Nurses',
-          data: [
-            // calculated quotient, pay in usd, completed shifts, not completed shifts, scheduled shifts
-            [5.4, 54, 0, 0, 0], 
-            [4.0, 40, 0, 0, 0],
-            [3.9, 39, 0, 0, 0],
-            [7.0, 70, 0, 0, 0],
-            [7.1, 71, 0, 0, 0],
-            [6.2, 62, 0, 0, 0],
-            [3.8, 38, 0, 0, 0],
-            [5.2, 52, 0, 0, 0],
-            [5.9, 59, 0, 0, 0],
-            [9.1, 90, 0, 0, 0],
-          ]
-        }
-      ]
+<script setup>
+const nursesWeightingOptions = {
+  chart: { type: 'scatter' },
+  title: { text: 'Higher Nurse Quotient = Higher Pay' },
+  xAxis: { title: { text: 'Nurse Quotient' } },
+  yAxis: {
+    title: { text: 'Pay' },
+    gridLineWidth: 0,
+    plotBands: [
+      {
+        from: 0,
+        to: 65,
+        color: 'rgba(255, 0, 0, 0.1)',
+        label: { text: 'Profitable for CBH', style: { color: '#606060' } }
       },
-      bellCurvesOptions: {
-        chart: {
-          type: 'areaspline'
-        },
-        title: {
-          text: 'The Profit Spread'
-        },
-        xAxis: {
-          categories: Array.from({length: 11}, (_, i) => i),
-          plotBands: [{
-            from: 65, // best case pay for nurses
-            to: 71.5, // best case cost for facilities
-            color: '#006AB422',
-            label: {
-              text: 'CBH Profit Zone',
-              style: {
-                color: '#006AB4',
-                fontWeight: 'bold',
-                fontSize: '18px',
-                top: '10px'
-              }
-            }
-          }]
-        },
-        yAxis: {
-          title: {
-            text: 'Likelihood a nurse works at this rate'
-          }
-        },
-        series: [
-          {
-            name: 'Acceptable pay for nurses',
-            data: Array.from({length: 101}, // total length of the line
-                  (_, i) => Math.exp(-Math.pow(i - 65, 2) / 200)), // Average wages between $35 and $95
-            fillColor: 'rgba(172, 227, 245, 0.4)'
-          }, 
-          {
-            name: 'Acceptable cost for facilities',
-            data: Array.from({length: 101}, // total length of the line
-                  (_, i) => Math.exp(-Math.pow(i - 71.5, 2) / 200)), // Average wages between $35 and $95
-            fillColor: 'rgba(254, 190, 112, 0.4)'
-          }
-        ]
+      {
+        from: 65,
+        to: 100,
+        color: 'rgba(0, 255, 0, 0.1)',
+        label: { text: 'Not Profitable for CBH', style: { color: '#606060' } }
       }
+    ]
+  },
+  series: [{
+    name: 'Nurses',
+    data: [
+      [5.4, 54, 0, 0, 0],
+      [4.0, 40, 0, 0, 0],
+      [3.9, 39, 0, 0, 0],
+      [7.0, 70, 0, 0, 0],
+      [7.1, 71, 0, 0, 0],
+      [6.2, 62, 0, 0, 0],
+      [3.8, 38, 0, 0, 0],
+      [5.2, 52, 0, 0, 0],
+      [5.9, 59, 0, 0, 0],
+      [9.1, 90, 0, 0, 0],
+    ]
+  }]
+}
+
+const bellCurvesOptions = {
+  chart: { type: 'areaspline' },
+  title: { text: 'The Profit Spread' },
+  xAxis: {
+    categories: Array.from({ length: 11 }, (_, i) => i),
+    plotBands: [{
+      from: 65,
+      to: 71.5,
+      color: '#006AB422',
+      label: {
+        text: 'CBH Profit Zone',
+        style: { color: '#006AB4', fontWeight: 'bold', fontSize: '18px', top: '10px' }
+      }
+    }]
+  },
+  yAxis: { title: { text: 'Likelihood a nurse works at this rate' } },
+  series: [
+    {
+      name: 'Acceptable pay for nurses',
+      data: Array.from({ length: 101 }, (_, i) => Math.exp(-Math.pow(i - 65, 2) / 200)),
+      fillColor: 'rgba(172, 227, 245, 0.4)'
+    },
+    {
+      name: 'Acceptable cost for facilities',
+      data: Array.from({ length: 101 }, (_, i) => Math.exp(-Math.pow(i - 71.5, 2) / 200)),
+      fillColor: 'rgba(254, 190, 112, 0.4)'
     }
-  },
-  computed: {
-    nurseQuotient() {
-      const X = 100; // Define the number of completed shifts needed to reach a quotient of 1
-      if (this.completedShifts === 0) return 0;
-      let quotient = this.completedShifts / X;
-      quotient -= Math.min(this.uncompletedShifts * 0.025);
-      quotient += Math.min(0.1, this.upcomingShifts * 0.025);
-      return Math.max(0, Math.min(quotient, 1));
-    },
-    recommendedPay() {
-      const minPay = 35;
-      const maxPay = 95;
-      return Math.sqrt(this.nurseQuotient) * (maxPay - minPay) + minPay;
-    },
-  },
+  ]
 }
 </script>

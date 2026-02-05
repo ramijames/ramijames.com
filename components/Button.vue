@@ -4,30 +4,25 @@
   </nuxt-link>
 </template>
 
-<script>
-
-export default {
-  name: 'Button',
-  props: {
-    type: {
-      type: String,
-      default: 'button'
-    },
-    size: {
-      type: String,
-      default: 'default'
-    },
-    text: {
-      type: String,
-      default: 'Button'
-    },
-    link: {
-      type: String,
-      default: ''
-    }
+<script setup>
+defineProps({
+  type: {
+    type: String,
+    default: 'button'
+  },
+  size: {
+    type: String,
+    default: 'default'
+  },
+  text: {
+    type: String,
+    default: 'Button'
+  },
+  link: {
+    type: String,
+    default: ''
   }
-}
-
+})
 </script>
 
 <style scoped lang="scss">

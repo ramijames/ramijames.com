@@ -9,34 +9,26 @@
   </div>
 </template>
 
-<script>
+<script setup>
+const props = defineProps({
+  route: String,
+  topic: String
+})
 
-export default {
-  name: 'Share',
-  props: {
-    route: String,
-    topic: String
+const socials = [
+  {
+    name: 'LinkedIn',
+    icon: 'linkedin-dark',
+    url: 'https://www.linkedin.com/feed/?shareActive=true&text=',
+    message: 'Check out this article by @ramijames on'
   },
-  data() {
-    return {
-      socials: [
-        {
-          name: 'LinkedIn',
-          icon: 'linkedin-dark',
-          url: 'https://www.linkedin.com/feed/?shareActive=true&text=',
-          message: 'Check out this article by @ramijames on'
-        },
-        {
-          name: 'Email',
-          icon: 'mail-dark',
-          url: 'mailto:?body=',
-          message: 'Check out this article by Rami James on'
-        }
-      ]
-    }
-  },
-}
-
+  {
+    name: 'Email',
+    icon: 'mail-dark',
+    url: 'mailto:?body=',
+    message: 'Check out this article by Rami James on'
+  }
+]
 </script>
 
 <style scoped lang="scss">

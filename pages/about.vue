@@ -20,7 +20,7 @@
 
       <section class="resume">
         <h3>Resume</h3>
-        <section class="jobs">  
+        <section class="jobs">
           <section class="single-job">
             <p class="job-title">Rami James Design</p>
             <p class="job-duration">2005 - Present</p>
@@ -86,55 +86,48 @@
   <Footer />
 </template>
 
-<script>
-import Button from '/components/Button';
+<script setup>
+const contractor = [
+  'Worked with multiple teams to produce beautiful, usable, and accessible interfaces for web and mobile',
+  'Provided key insights to small teams as they develop their product strategy, vision, user experiences, and designs',
+  'Helped fine-tune product processes in companies as they experience growing pains',
+  'Implemented front-end interfaces in a variety of modern frameworks'
+]
 
-export default {
-  data() {
-    return {
-      contractor :[
-        'Worked with multiple teams to produce beautiful, usable, and accessible interfaces for web and mobile',
-        'Provided key insights to small teams as they develop their product strategy, vision, user experiences, and designs',
-        'Helped fine-tune product processes in companies as they experience growing pains',
-        'Implemented front-end interfaces in a variety of modern frameworks'
-      ],
-      vewrite :[
-        'Building a project management tool for developer relations, technical writing teams, and writers',
-        'Designing and implementing the product',
-        'Building a community of writers and project managers',
-        'Writing documentation and tutorials for the product',
-        'Building a marketing website for the product',
-        'Team lead for a small team of developers, writers, and marketers'
-      ],
-      ultraDevReldescriptions: [
-        'Grew the developer pool from zero to dozens of active developers',
-        'Established Ultra’s documentation platform product website. Built its roadmap, wrote docs, and produced video tutorials ',
-        'Successfully ran a Developer Hackathon with a $30K prize pool ',
-        'Produced a successful tech-focused podcast with thousands of listeners'
-      ],
-      ultraTechdescriptions: [
-        'Scaled (3 to 10 developers) and lead the technical team that launched Ultra’s gaming-focused networks',
-        'Used an agile approach to solve production issues across multiple teams',
-        'Produced roadmaps, product plans, and technical requirements using JIRA and Product Board'
-      ],
-      scatterProductdescriptions: [
-        'Provided a clear vision for our startup while defining the product strategy and driving innovation',
-        'Launched multiple versions of the popular Scatter wallet and scaled to 250K DAU',
-        'Produced wireframes, prototypes, designs, marketing materials, websites, and documentation hubs for the community',
-        'Directly interfaced with both developers and retail users to understand their needs'
-      ],
-      qmarketsdescription: [
-        'Overhauled the user experience of an established enterprise product. Modernized the user experience to support mobile devices while making it easier to access, input, and manage key data and workflows',
-        'Lead the update to the user experience and visual design of the core products of Qmarkets',
-        'Worked closely with the R&D group where I facilitated the implementation of enterprise software used by tens of thousands of people across many large enterprises such as Lufthansa and Ford. Work was primarily in Drupal/PHP/CSS'
-      ],
-    }
-  },
-  components: {
-    Button
-  }
-}
+const vewrite = [
+  'Building a project management tool for developer relations, technical writing teams, and writers',
+  'Designing and implementing the product',
+  'Building a community of writers and project managers',
+  'Writing documentation and tutorials for the product',
+  'Building a marketing website for the product',
+  'Team lead for a small team of developers, writers, and marketers'
+]
 
+const ultraDevReldescriptions = [
+  'Grew the developer pool from zero to dozens of active developers',
+  "Established Ultra\u2019s documentation platform product website. Built its roadmap, wrote docs, and produced video tutorials",
+  'Successfully ran a Developer Hackathon with a $30K prize pool',
+  'Produced a successful tech-focused podcast with thousands of listeners'
+]
+
+const ultraTechdescriptions = [
+  "Scaled (3 to 10 developers) and lead the technical team that launched Ultra\u2019s gaming-focused networks",
+  'Used an agile approach to solve production issues across multiple teams',
+  'Produced roadmaps, product plans, and technical requirements using JIRA and Product Board'
+]
+
+const scatterProductdescriptions = [
+  'Provided a clear vision for our startup while defining the product strategy and driving innovation',
+  'Launched multiple versions of the popular Scatter wallet and scaled to 250K DAU',
+  'Produced wireframes, prototypes, designs, marketing materials, websites, and documentation hubs for the community',
+  'Directly interfaced with both developers and retail users to understand their needs'
+]
+
+const qmarketsdescription = [
+  'Overhauled the user experience of an established enterprise product. Modernized the user experience to support mobile devices while making it easier to access, input, and manage key data and workflows',
+  'Lead the update to the user experience and visual design of the core products of Qmarkets',
+  'Worked closely with the R&D group where I facilitated the implementation of enterprise software used by tens of thousands of people across many large enterprises such as Lufthansa and Ford. Work was primarily in Drupal/PHP/CSS'
+]
 </script>
 
 <style scoped lang="scss">
@@ -181,7 +174,7 @@ export default {
     align-items: flex-start;
     text-align: left;
     text-wrap: balance;
-    
+
     img {
       width: 50%;
       border-radius: $br-sm;

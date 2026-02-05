@@ -12,21 +12,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    numberOfElements: {
-      type: Number,
-      required: false,
-      default: 16
-    },
-    animationStyle: {
-      type: String,
-      required: false,
-      default: 'defaultWoosh'
-    }
+<script setup>
+defineProps({
+  numberOfElements: {
+    type: Number,
+    default: 16
+  },
+  animationStyle: {
+    type: String,
+    default: 'defaultWoosh'
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>

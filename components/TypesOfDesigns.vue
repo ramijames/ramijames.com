@@ -2,27 +2,7 @@
   <MergedProjects />
 </template>
 
-<script>
-import { useThemeStore } from '~/store/theme'
-import { computed } from 'vue';
-
-export default {
-  setup() {
-    const themeStore = useThemeStore();
-
-    return {
-      currentTheme: computed(() => themeStore.currentTheme),
-    }
-  },
-  components: {
-
-  },
-  computed: {
-    notHome() {
-      return this.$route.path !== '/';
-    }
-  },
-}
+<script setup>
 </script>
 
 <style scoped lang="scss">

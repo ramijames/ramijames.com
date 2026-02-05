@@ -25,31 +25,27 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      completedShifts: 0,
-      uncompletedShifts: 0,
-      upcomingShifts: 0,
-    };
-  },
-  computed: {
-    nurseQuotient() {
-      const X = 100; // Define the number of completed shifts needed to reach a quotient of 1
-      if (this.completedShifts === 0) return 0;
-      let quotient = this.completedShifts / X;
-      quotient -= Math.min(this.uncompletedShifts * 0.025);
-      quotient += Math.min(0.1, this.upcomingShifts * 0.025);
-      return Math.max(0, Math.min(quotient, 1));
-    },
-    recommendedPay() {
-      const minPay = 35;
-      const maxPay = 95;
-      return Math.sqrt(this.nurseQuotient) * (maxPay - minPay) + minPay;
-    },
-  },
-};
+<script setup>
+import { ref, computed } from 'vue'
+
+const completedShifts = ref(0)
+const uncompletedShifts = ref(0)
+const upcomingShifts = ref(0)
+
+const nurseQuotient = computed(() => {
+  const X = 100
+  if (completedShifts.value === 0) return 0
+  let quotient = completedShifts.value / X
+  quotient -= Math.min(uncompletedShifts.value * 0.025)
+  quotient += Math.min(0.1, upcomingShifts.value * 0.025)
+  return Math.max(0, Math.min(quotient, 1))
+})
+
+const recommendedPay = computed(() => {
+  const minPay = 35
+  const maxPay = 95
+  return Math.sqrt(nurseQuotient.value) * (maxPay - minPay) + minPay
+})
 </script>
 
 <style lang="scss" scoped>

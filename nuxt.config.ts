@@ -1,10 +1,4 @@
 export default defineNuxtConfig({
-  nitro: {
-    preset: 'netlify'
-  },
-  features: {
-    inlineStyles: true
-  },
   runtimeConfig: {
     resendApiKey: '',
   },
