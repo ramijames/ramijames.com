@@ -1,5 +1,12 @@
 <template>
-  <div ref="container" class="threejs-container" />
+  <div ref="container" class="threejs-container">
+    <div v-if="isLoading" class="loading-indicator">
+      <div class="loading-bar">
+        <div class="loading-progress" :style="{ width: loadingProgress + '%' }" />
+      </div>
+      <span class="loading-text">{{ Math.round(loadingProgress) }}%</span>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -14,11 +21,15 @@ const props = defineProps({
 })
 
 const container = ref(null)
+const isLoading = ref(true)
+const loadingProgress = ref(0)
+
 let scene, camera, renderer
 let animationId = null
 let resizeHandler = null
 let blob = null
 let blobMaterial = null
+let envMapTexture = null
 let clock = new THREE.Clock()
 
 // Smoothed current values for transitions (will be initialized on first frame)
@@ -29,7 +40,7 @@ const transitionDuration = 2.0 // seconds for smooth transitions
 const sectionConfigs = [
   {
     // Hero - Soft purple/pink gradient
-    color1: new THREE.Color(0xc084fc), // Light purple
+    color1: new THREE.Color(0x000000), // Black
     color2: new THREE.Color(0xf472b6), // Pink
     color3: new THREE.Color(0xa78bfa), // Lavender
     color4: new THREE.Color(0xfbbf24), // Amber
@@ -40,7 +51,7 @@ const sectionConfigs = [
   },
   {
     // Product Design - Ocean blues
-    color1: new THREE.Color(0x06b6d4), // Cyan
+    color1: new THREE.Color(0xf472b6), // Pink
     color2: new THREE.Color(0x0ea5e9), // Sky blue
     color3: new THREE.Color(0x3b82f6), // Blue
     color4: new THREE.Color(0x8b5cf6), // Violet
@@ -51,9 +62,9 @@ const sectionConfigs = [
   },
   {
     // UX Strategy - Sunset warm
-    color1: new THREE.Color(0xf97316), // Orange
+    color1: new THREE.Color(0x000000), // Black
     color2: new THREE.Color(0xef4444), // Red
-    color3: new THREE.Color(0xfbbf24), // Amber
+    color3: new THREE.Color(0xCCCCCC), // Amber
     color4: new THREE.Color(0xf472b6), // Pink
     distortion: .1,
     noiseScale: .3,
@@ -64,7 +75,7 @@ const sectionConfigs = [
     // Design Systems - Forest greens
     color1: new THREE.Color(0x10b981), // Emerald
     color2: new THREE.Color(0x14b8a6), // Teal
-    color3: new THREE.Color(0x06b6d4), // Cyan
+    color3: new THREE.Color(0xfbbf24), // Amber
     color4: new THREE.Color(0x84cc16), // Lime
     distortion: .6,
     noiseScale: .2,
@@ -179,6 +190,27 @@ onMounted(async () => {
   renderer.setClearColor(0x000000, 0)
   container.value.appendChild(renderer.domElement)
 
+  // Loading manager for progress tracking
+  const loadingManager = new THREE.LoadingManager()
+  const loadStartTime = Date.now()
+  const minLoadingTime = 800 // minimum ms to show loading indicator
+
+  loadingManager.onProgress = (_url, loaded, total) => {
+    loadingProgress.value = (loaded / total) * 100
+  }
+  loadingManager.onLoad = () => {
+    const elapsed = Date.now() - loadStartTime
+    const remaining = Math.max(0, minLoadingTime - elapsed)
+    setTimeout(() => {
+      isLoading.value = false
+    }, remaining)
+  }
+
+  // Load environment map
+  const textureLoader = new THREE.TextureLoader(loadingManager)
+  envMapTexture = textureLoader.load('/envmaps/station-envmap.jpg')
+  envMapTexture.mapping = THREE.EquirectangularReflectionMapping
+
   // High-poly smooth sphere for blob base
   const geometry = new THREE.SphereGeometry(1.5, 128, 128)
 
@@ -194,7 +226,9 @@ onMounted(async () => {
       uNoiseScale: { value: 1.2 },
       uNoiseSpeed: { value: 0.3 },
       uDistortion: { value: 0.4 },
-      uAnimSpeed: { value: 1.0 }
+      uAnimSpeed: { value: 1.0 },
+      uEnvMap: { value: envMapTexture },
+      uEnvMapIntensity: { value: 0.05 }
     },
     vertexShader: `
       uniform float uTime;
@@ -361,11 +395,20 @@ onMounted(async () => {
       uniform vec3 uColor2;
       uniform vec3 uColor3;
       uniform vec3 uColor4;
+      uniform sampler2D uEnvMap;
+      uniform float uEnvMapIntensity;
 
       varying vec3 vNormal;
       varying vec3 vPosition;
       varying vec3 vWorldPosition;
       varying float vDisplacement;
+
+      // Convert reflection direction to equirectangular UV
+      vec2 envMapEquirect(vec3 dir) {
+        float phi = atan(dir.z, dir.x);
+        float theta = asin(clamp(dir.y, -1.0, 1.0));
+        return vec2(phi / (2.0 * 3.14159265) + 0.5, theta / 3.14159265 + 0.5);
+      }
 
       void main() {
         float animTime = uTime * uAnimSpeed;
@@ -448,6 +491,12 @@ onMounted(async () => {
         // Sparkle effect at extreme edges
         float sparkle = pow(fresnelSharp, 3.0) * sin(animTime * 8.0 + vPosition.x * 20.0) * 0.5 + 0.5;
         finalColor += vec3(1.0) * sparkle * 0.1;
+
+        // Environment map reflection
+        vec3 reflectDir = reflect(-viewDirection, vNormal);
+        vec2 envUV = envMapEquirect(reflectDir);
+        vec3 envColor = texture2D(uEnvMap, envUV).rgb;
+        finalColor = mix(finalColor, finalColor * envColor + envColor * fresnelSoft * 0.3, uEnvMapIntensity);
 
         // Output with fresnel-based transparency
         float alpha = 0.85 + fresnelSoft * 0.15;
@@ -574,6 +623,9 @@ onUnmounted(() => {
   if (blob) {
     blob.geometry.dispose()
   }
+  if (envMapTexture) {
+    envMapTexture.dispose()
+  }
   if (blobMaterial) {
     blobMaterial.dispose()
   }
@@ -588,5 +640,42 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  position: relative;
+}
+
+.loading-indicator {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+
+.loading-bar {
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loading-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #c084fc, #f472b6);
+  border-radius: 2px;
+  transition: width 0.1s ease-out;
+}
+
+.loading-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: monospace;
+  min-width: 32px;
 }
 </style>

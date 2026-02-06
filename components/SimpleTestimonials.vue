@@ -83,6 +83,7 @@ onUnmounted(() => {
   @media screen and (max-width: 1600px) {
     padding: $spacing-md;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: $spacing-xs;
   }
   
   @media screen and (max-width: 1000px) {
@@ -92,13 +93,11 @@ onUnmounted(() => {
 
   div {
     background: $black;
-    max-height: 44px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     border-radius: $br-sm;
-    padding: $spacing-lg 0;
 
     img {
       height: 44px;
@@ -109,10 +108,6 @@ onUnmounted(() => {
       transform: translateY(20px);
       transition: opacity 0.5s ease, transform 0.5s ease;
       mix-blend-mode: luminosity;
-
-      @media screen and (max-height: 1000px) {
-        height: 18px;
-      }
     }
 
   }
