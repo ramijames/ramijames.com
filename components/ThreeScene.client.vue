@@ -56,9 +56,9 @@ const sectionConfigs = [
     color3: new THREE.Color(0x3b82f6), // Blue
     color4: new THREE.Color(0x8b5cf6), // Violet
     distortion: .4,
-    noiseScale: .2,
+    noiseScale: .1,
     noiseSpeed: 0.01,
-    animSpeed: 0.01
+    animSpeed: 0.1
   },
   {
     // UX Strategy - Sunset warm
