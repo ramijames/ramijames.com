@@ -80,6 +80,10 @@
         <p>Unfortunately, the Product Designer opportunity for which you were under consideration is no longer open.</p>
       </div>
 
+      <div class="rejection-card text-small">
+        <p>Our team takes time to thoughtfully review each applicant's resume, background, and experience to ensure alignment with our business needs - your application is reviewed by a person, not an algorithm! Although we found your background impressive, it doesn't quite align with our immediate needs for this particular role.</p>
+      </div>
+
     </div>
     <PostsExtras />
   </main>
