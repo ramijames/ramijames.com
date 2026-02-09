@@ -393,6 +393,16 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  animation: pulse-glow 3s ease-in-out infinite;
+  transition: all 0.24s ease-in-out;
+
+  &:hover {
+    animation-play-state: paused;
+    width: 64px;
+    height: 64px;
+    background: #5887ff;
+  }
 
   .center-plus-text {
     position: absolute;
@@ -464,5 +474,19 @@ onUnmounted(() => {
   background: #c084fc;
   border: 2px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 8px rgba(62, 116, 255, 0.3),
+      0 0 16px rgba(62, 116, 255, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(62, 116, 255, 0.35),
+      0 0 70px rgba(62, 116, 255, 0.15),
+      0 0 40px 60px rgba(107, 149, 255, 0.15);
+  }
 }
 </style>
