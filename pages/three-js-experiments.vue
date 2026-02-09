@@ -121,12 +121,19 @@ import SDF from '~/components/threejs/SDF.client.vue'
 import MeshGradient from '~/components/threejs/MeshGradient.client.vue'
 import GeometricTracking from '~/components/threejs/GeometricTracking.client.vue'
 import TheBlob from '~/components/ThreeScene.client.vue'
+import Doodle from '~/components/threejs/Doodle.client.vue'
 
 const route = useRoute()
 const router = useRouter()
 
 // Add new experiments here
 const experiments = [
+{
+    id: 'doodle',
+    label: 'Doodle',
+    description: 'A plasma blob that you can control with SVG shapes.',
+    component: markRaw(Doodle)
+  },  
   {
     id: 'envmap',
     label: 'Environment Map',
