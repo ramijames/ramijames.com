@@ -19,8 +19,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import * as THREE from 'three'
+import { useThemeStore } from '~/store/theme'
 
 const props = defineProps({
   scrollProgress: {
@@ -28,6 +29,8 @@ const props = defineProps({
     default: 0
   }
 })
+
+const themeStore = useThemeStore()
 
 const container = ref(null)
 const progress = ref(0)
@@ -39,6 +42,8 @@ let mouseMoveHandler = null
 let mouseLeaveHandler = null
 let clock = new THREE.Clock()
 let squaresMesh = null
+let bgGlowMesh = null
+let bgGlowMat = null
 
 const NUM_SQUARES = 3200
 
@@ -66,11 +71,86 @@ onMounted(async () => {
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
   renderer.setSize(el.clientWidth, el.clientHeight)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-  renderer.setClearColor(0x101114, 1)
+  const isDark = themeStore.currentTheme === 'dark'
+  const bgColor = new THREE.Color(isDark ? 0x101114 : 0xFFFFFF)
+  renderer.setClearColor(bgColor, 1)
   el.appendChild(renderer.domElement)
 
-  // Circle of tiny squares — radius is 50% of visible height
+  // Background glow plane with perlin noise
   const visibleHeight = 2 * Math.tan(THREE.MathUtils.degToRad(50 / 2)) * 6
+  const visibleWidthBg = visibleHeight * (el.clientWidth / el.clientHeight)
+  const bgGeo = new THREE.PlaneGeometry(visibleWidthBg * 1.2, visibleHeight * 1.2)
+  bgGlowMat = new THREE.ShaderMaterial({
+    uniforms: {
+      uTime: { value: 0 },
+      uBgColor: { value: bgColor.clone() },
+      uGlowColor: { value: new THREE.Color(0x3E74FF) }
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      uniform float uTime;
+      uniform vec3 uBgColor;
+      uniform vec3 uGlowColor;
+      varying vec2 vUv;
+
+      // Classic Perlin 2D noise (Ashima Arts)
+      vec3 mod289(vec3 x) { return x - floor(x * (1.0/289.0)) * 289.0; }
+      vec2 mod289(vec2 x) { return x - floor(x * (1.0/289.0)) * 289.0; }
+      vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+      float snoise(vec2 v) {
+        const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+                           -0.577350269189626, 0.024390243902439);
+        vec2 i = floor(v + dot(v, C.yy));
+        vec2 x0 = v - i + dot(i, C.xx);
+        vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+        vec4 x12 = x0.xyxy + C.xxzz;
+        x12.xy -= i1;
+        i = mod289(i);
+        vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0))
+                                      + i.x + vec3(0.0, i1.x, 1.0));
+        vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+                                 dot(x12.zw,x12.zw)), 0.0);
+        m = m*m; m = m*m;
+        vec3 x = 2.0 * fract(p * C.www) - 1.0;
+        vec3 h = abs(x) - 0.5;
+        vec3 ox = floor(x + 0.5);
+        vec3 a0 = x - ox;
+        m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
+        vec3 g;
+        g.x = a0.x * x0.x + h.x * x0.y;
+        g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+        return 130.0 * dot(m, g);
+      }
+
+      void main() {
+        vec2 pos = (vUv - 0.5) * 3.0;
+        float n = snoise(pos + uTime * 0.04) * 0.5 + 0.5;
+        n += snoise(pos * 2.0 - uTime * 0.02) * 0.25;
+        n *= 0.5;
+
+        // Radial fade — stronger in center, fading to edges
+        float dist = length(vUv - 0.5) * 2.0;
+        float radial = 1.0 - smoothstep(0.0, 1.0, dist);
+
+        float glow = n * radial * 0.48;
+        vec3 color = mix(uBgColor, uGlowColor, glow);
+        gl_FragColor = vec4(color, 1.0);
+      }
+    `,
+    depthWrite: false
+  })
+  bgGlowMesh = new THREE.Mesh(bgGeo, bgGlowMat)
+  bgGlowMesh.position.z = -1
+  scene.add(bgGlowMesh)
+
+  // Circle of tiny squares — radius is 50% of visible height
   const circleRadius = visibleHeight * 0.25
 
   const squareSize = 0.01
@@ -82,9 +162,10 @@ onMounted(async () => {
 
   const baseColor = new THREE.Color(0x3E74FF)
   const instanceColor = new THREE.Color()
+  const baseBrightness = new Float32Array(NUM_SQUARES)
   for (let i = 0; i < NUM_SQUARES; i++) {
-    const brightness = 1 + (Math.random() - 0.5) * 5
-    instanceColor.copy(baseColor).multiplyScalar(brightness)
+    baseBrightness[i] = 1 + (Math.random() - 0.5) * 5
+    instanceColor.copy(baseColor).multiplyScalar(baseBrightness[i])
     squaresMesh.setColorAt(i, instanceColor)
   }
   squaresMesh.instanceColor.needsUpdate = true
@@ -119,6 +200,19 @@ onMounted(async () => {
   const nudgeX = new Float32Array(NUM_SQUARES)
   const nudgeY = new Float32Array(NUM_SQUARES)
 
+  // ~5% of squares randomly fade to white
+  const sparklePhase = new Float32Array(NUM_SQUARES)
+  const sparkleSpeed = new Float32Array(NUM_SQUARES)
+  const isSparkle = new Uint8Array(NUM_SQUARES)
+  const whiteColor = new THREE.Color(0xFFFFFF)
+  for (let i = 0; i < NUM_SQUARES; i++) {
+    if (Math.random() < 0.05) {
+      isSparkle[i] = 1
+      sparklePhase[i] = Math.random() * Math.PI * 2
+      sparkleSpeed[i] = 0.3 + Math.random() * 0.7
+    }
+  }
+
   scene.add(squaresMesh)
 
   const visibleWidth = visibleHeight * (el.clientWidth / el.clientHeight)
@@ -152,6 +246,12 @@ onMounted(async () => {
   }
   window.addEventListener('resize', resizeHandler)
 
+  watch(() => themeStore.currentTheme, (theme) => {
+    const newBg = new THREE.Color(theme === 'dark' ? 0x101114 : 0xFFFFFF)
+    renderer.setClearColor(newBg, 1)
+    bgGlowMat.uniforms.uBgColor.value.copy(newBg)
+  })
+
   let currentDisperse = 0
 
   const animate = () => {
@@ -162,8 +262,17 @@ onMounted(async () => {
     currentDisperse += (targetDisperse - currentDisperse) * 0.05
 
     const mouseRadius = 0.6
+    const glowRadius = 1.25
+    const glowBoost = 25.0
     const nudgeStrength = 0.03
     const nudgeDecay = 0.9
+    let colorsChanged = false
+
+    // Pulse of light traveling from outside (0) to inside (1)
+    const pulseSpeed = 0.22
+    const pulseWidth = 0.08
+    const pulseBoost = 12.0
+    const pulsePos = (t * pulseSpeed) % 1.0
 
     for (let i = 0; i < NUM_SQUARES; i++) {
       const r = circleRadius + radialOffsets[i] + Math.sin(t * floatSpeeds[i] + floatPhases[i]) * floatAmplitudes[i]
@@ -179,15 +288,24 @@ onMounted(async () => {
       const px = baseX + dx
       const py = baseY + dy
 
-      // Mouse repulsion
+      // Mouse repulsion + glow
+      let glow = 0
       if (mouseActive) {
-        const distX = px + nudgeX[i] - mouseWorld.x
-        const distY = py + nudgeY[i] - mouseWorld.y
+        const finalX = px + nudgeX[i]
+        const finalY = py + nudgeY[i]
+        const distX = finalX - mouseWorld.x
+        const distY = finalY - mouseWorld.y
         const dist = Math.sqrt(distX * distX + distY * distY)
+
         if (dist < mouseRadius && dist > 0.001) {
           const force = (1 - dist / mouseRadius) * nudgeStrength
           nudgeX[i] += (distX / dist) * force
           nudgeY[i] += (distY / dist) * force
+        }
+
+        if (dist < glowRadius) {
+          const t2 = 1 - dist / glowRadius
+          glow = t2 * t2 * glowBoost
         }
       }
 
@@ -195,14 +313,32 @@ onMounted(async () => {
       nudgeX[i] *= nudgeDecay
       nudgeY[i] *= nudgeDecay
 
+      // Spiral pulse — distance along spiral from this particle to pulse front
+      const spiralPos = i / NUM_SQUARES
+      let pulseDist = Math.abs(spiralPos - pulsePos)
+      if (pulseDist > 0.5) pulseDist = 1.0 - pulseDist
+      const pulse = pulseDist < pulseWidth ? (1.0 - pulseDist / pulseWidth) * pulseBoost : 0
+
+      // Update color with glow + sparkle + pulse
+      const brightness = baseBrightness[i] + glow + pulse
+      instanceColor.copy(baseColor).multiplyScalar(brightness)
+      if (isSparkle[i]) {
+        const s = Math.sin(t * sparkleSpeed[i] + sparklePhase[i]) * 2.5
+        instanceColor.lerp(whiteColor, s)
+      }
+      squaresMesh.setColorAt(i, instanceColor)
+      colorsChanged = true
+
       dummy.position.set(px + nudgeX[i], py + nudgeY[i], 0)
       dummy.scale.setScalar(1)
       dummy.updateMatrix()
       squaresMesh.setMatrixAt(i, dummy.matrix)
     }
     squaresMesh.instanceMatrix.needsUpdate = true
+    if (colorsChanged) squaresMesh.instanceColor.needsUpdate = true
 
     squareMat.opacity = 1 - currentDisperse * 0.5
+    bgGlowMat.uniforms.uTime.value = t
 
     renderer.render(scene, camera)
   }
@@ -215,6 +351,10 @@ onUnmounted(() => {
   if (container.value && mouseMoveHandler) {
     container.value.removeEventListener('mousemove', mouseMoveHandler)
     container.value.removeEventListener('mouseleave', mouseLeaveHandler)
+  }
+  if (bgGlowMesh) {
+    bgGlowMesh.geometry.dispose()
+    bgGlowMat.dispose()
   }
   if (squaresMesh) {
     squaresMesh.geometry.dispose()
@@ -230,6 +370,14 @@ onUnmounted(() => {
   height: 100%;
   overflow: hidden;
   position: relative;
+}
+
+.dark {
+  .center-dot {
+    .center-plus-text {
+      color: $white;
+    }
+  }
 }
 
 .center-dot {
@@ -248,7 +396,7 @@ onUnmounted(() => {
 
   .center-plus-text {
     position: absolute;
-    color: $white;
+    color: $black;
     bottom: -30px;
     font-size: $font-size-xs;
     width: 100vw;
