@@ -53,93 +53,49 @@ inherits: false;
 .dark {
   button,
   .button {
-      color: $black;
-      background: rgba($white,0.9);
-      border: 1px solid rgba($white, 0.2);
+      color: $white;
+      background: rgba($white, 0.0);
+      border: 1px solid rgba($white, 0.15);
 
       svg path {
         fill: $white;
-      }
-      
-      &.blue {
-        background: transparent;
-        border: 1px solid rgba($white, 0.2);
-        box-shadow: none;
-        color: $white;
-      }
-
-      &.primary {
-        color: $white;
-
-        &:hover {
-          border: $border-hover;
-        }
-      }
-
-      &:hover {
-          background: $white;
-          color: $black;
-          transform: scale(1.05);
-      }
-
-      &.large {
-        padding: $spacing-sm $spacing-md;
-        font-size: 16px;
+        stroke: $white;
       }
   }
 }
 
 button,
 .button {
-    color: $white;
-    background: rgba($black,0.9);
-    backdrop-filter: blur(4px);
-    border-radius: $br-sm;
-    border: 1px solid rgba($black, 0.2);
-    text-align: center;
-    text-decoration: none;
-    padding: 12px $spacing-sm 10px;
-    cursor: pointer;
-    font-size: $font-size-md;
-    margin:0;
-    font-weight: normal;
-    font-family: $font-family-main;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    display: inline-flex;
     align-items: center;
-    overflow: hidden;
-    transition: 0.18s ease-in-out;
-    
-    &.blue {
-      background: rgba($black, 0);
-      box-shadow: none;
-      color: $black;
-    }
-
-    &.white {
-      background: rgba($white, 1);
-      box-shadow: none;
-      color: $black;
-
-      &:hover {
-        background: $white;
-        color: $black;
-      }
-    }
-
-    &.primary {
-      color: $white;
-
-      &:hover {
-        border: $border-hover;
-      }
-    }
+    gap: $spacing-xs;
+    padding: $spacing-xs $spacing-md;
+    font-family: $font-family-main;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $white;
+    background: rgba($black, 1);
+    border: 1px solid rgba($black, 1);
+    border-radius: $br-xl;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
 
     &:hover {
-        background: $black;
-        color: $white;
-        transform: scale(1.025);
+      transform: scale(1.05);
+
+      svg {
+        transform: scale(1.2);
+      }
+    }
+
+    svg {
+      transition: transform 0.3s ease;
+
+      path {
+        stroke: $white;
+        fill: $white;
+      }
     }
 
     &.large {
@@ -151,9 +107,25 @@ button,
       }
     }
 
+    &.dark {
+      color: $white;
+      background: rgba($white, 0.0);
+      border: 1px solid rgba($white, 0.15);
+
+      svg path {
+        fill: $white;
+        stroke: $white;
+      }
+    }
+
     &.small {
       padding: $spacing-xs $spacing-sm;
       font-size: $font-size-sm;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
     }
 }
 

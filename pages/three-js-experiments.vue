@@ -122,16 +122,23 @@ import MeshGradient from '~/components/threejs/MeshGradient.client.vue'
 import GeometricTracking from '~/components/threejs/GeometricTracking.client.vue'
 import TheBlob from '~/components/ThreeScene.client.vue'
 import Doodle from '~/components/threejs/Doodle.client.vue'
+import DoodleShapes from '~/components/threejs/DoodleShapes.client.vue'
 
 const route = useRoute()
 const router = useRouter()
 
 // Add new experiments here
 const experiments = [
-{
+  {
+    id: 'doodle-shapes',
+    label: 'DoodleShapes',
+    description: 'Glowy squares that you can control with SVG shapes.',
+    component: markRaw(DoodleShapes)
+  },
+  {
     id: 'doodle',
     label: 'Doodle',
-    description: 'A plasma blob that you can control with SVG shapes.',
+    description: 'A spiral made from glowy squares.',
     component: markRaw(Doodle)
   },  
   {

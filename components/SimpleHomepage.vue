@@ -51,6 +51,10 @@
       <LatestWork />
     </section>
 
+    <section class="snap-section threejs-promo-section">
+      <ThreeJsPromo />
+    </section>
+
     <section class="snap-section testimonials-section">
       <SimpleTestimonials />
     </section>
@@ -136,6 +140,11 @@ onUnmounted(() => {
   z-index: 2;
 }
 
+.threejs-promo-section {
+  position: relative;
+  z-index: 2;
+}
+
 .footer-section {
   height: auto;
   min-height: 100vh;
@@ -147,6 +156,7 @@ onUnmounted(() => {
 #ServiceUXStrategy,
 #ServiceDesignSystems,
 .testimonials-section,
+.threejs-promo-section,
 .footer-section {
   overflow: hidden;
   width: 100%;
