@@ -16,10 +16,21 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js'
 
 const container = ref(null)
-let renderer, composer, camera, clock
+let renderer, composer, camera, clock, scene
 let trailMaterials = []
 let animationId = null
 let cameraAngle = 0
+
+// Particle system
+const PARTICLE_COUNT = 200
+let particleGeo, particlePositions, particleVelocities, particleLifetimes, particleSizes, particleColorAttrs
+const mouseNDC = new THREE.Vector2()
+let isMouseOver = false
+const trailColorOptions = [
+  new THREE.Color('#ffffff'),
+  new THREE.Color('#FF77DB'),
+  new THREE.Color('#F7D775')
+]
 
 const CONFIG = {
   cameraSpeed: 0.08,
@@ -69,10 +80,36 @@ const DitherShader = {
       float radius = maxRadius * brightness;
 
       float dot = step(dist, radius);
-      gl_FragColor = vec4(vec3(dot), 1.0);
+      gl_FragColor = vec4(texColor.rgb * dot, 1.0);
     }
   `
 }
+
+const particleVertexShader = `
+  attribute float aLife;
+  attribute float aSize;
+  attribute vec3 aColor;
+  varying float vLife;
+  varying vec3 vColor;
+  void main() {
+    vLife = aLife;
+    vColor = aColor;
+    vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+    gl_PointSize = aSize * (200.0 / -mvPosition.z);
+    gl_Position = projectionMatrix * mvPosition;
+  }
+`
+
+const particleFragmentShader = `
+  varying float vLife;
+  varying vec3 vColor;
+  void main() {
+    float dist = length(gl_PointCoord - vec2(0.5));
+    if (dist > 0.5) discard;
+    float alpha = smoothstep(0.5, 0.1, dist) * vLife;
+    gl_FragColor = vec4(vColor * 1.5, alpha);
+  }
+`
 
 const fragmentShaderTrail = `
   uniform float uTime;
@@ -110,7 +147,7 @@ const init = () => {
   const w = container.value.clientWidth
   const h = container.value.clientHeight
 
-  const scene = new THREE.Scene()
+  scene = new THREE.Scene()
   scene.fog = new THREE.FogExp2(0x424242, 5.82)
 
   camera = new THREE.PerspectiveCamera(90, w / h, 0.01, 100)
@@ -131,7 +168,7 @@ const init = () => {
   const bloomPass = new UnrealBloomPass(new THREE.Vector2(w, h), 1.5, 0.4, 0.85)
   bloomPass.threshold = 0.01
   bloomPass.strength = CONFIG.bloomStrength
-  bloomPass.radius = 0.26
+  bloomPass.radius = 0.8
 
   composer = new EffectComposer(renderer)
   composer.addPass(renderPass)
@@ -139,16 +176,22 @@ const init = () => {
   composer.addPass(new ShaderPass(DitherShader))
 
   // Plasma trail lines
+  const trailColors = [
+    new THREE.Color('#ffffff'),
+    new THREE.Color('#FF77DB'),
+    new THREE.Color('#F7D775')
+  ]
   trailMaterials = []
   for (let i = 0; i < 80; i++) {
     const laneRadius = 7.5 + Math.random() * 5.0
     const geo = new THREE.TorusGeometry(laneRadius, CONFIG.lineThickness, 6, 120)
+    const color = trailColors[Math.floor(Math.random() * trailColors.length)]
     const mat = new THREE.ShaderMaterial({
       vertexShader: vertexShaderTrail,
       fragmentShader: fragmentShaderTrail,
       uniforms: {
         uTime: { value: 0 },
-        uColor: { value: new THREE.Color(CONFIG.plasmaColor) },
+        uColor: { value: color },
         uSpeed: { value: 0.1 + Math.random() * 0.3 },
         uSpeedMult: { value: CONFIG.speedMult },
         uLength: { value: 0.1 + Math.random() * 0.2 },
@@ -167,9 +210,53 @@ const init = () => {
     trailMaterials.push(mat)
   }
 
+  // Particle system
+  particlePositions = new Float32Array(PARTICLE_COUNT * 3)
+  particleVelocities = new Float32Array(PARTICLE_COUNT * 3)
+  particleLifetimes = new Float32Array(PARTICLE_COUNT)
+  particleSizes = new Float32Array(PARTICLE_COUNT)
+  particleColorAttrs = new Float32Array(PARTICLE_COUNT * 3)
+
+  particleGeo = new THREE.BufferGeometry()
+  particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3))
+  particleGeo.setAttribute('aLife', new THREE.BufferAttribute(particleLifetimes, 1))
+  particleGeo.setAttribute('aSize', new THREE.BufferAttribute(particleSizes, 1))
+  particleGeo.setAttribute('aColor', new THREE.BufferAttribute(particleColorAttrs, 3))
+
+  const particleMat = new THREE.ShaderMaterial({
+    vertexShader: particleVertexShader,
+    fragmentShader: particleFragmentShader,
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  })
+
+  const particles = new THREE.Points(particleGeo, particleMat)
+  particles.frustumCulled = false
+  scene.add(particles)
+
+  // Mouse tracking — listen on window so overlaid elements don't block events
+  const onMouseMove = (e) => {
+    if (!container.value) return
+    const rect = container.value.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+      mouseNDC.x = (x / rect.width) * 2 - 1
+      mouseNDC.y = -(y / rect.height) * 2 + 1
+      isMouseOver = true
+    } else {
+      isMouseOver = false
+    }
+  }
+  window.addEventListener('mousemove', onMouseMove)
+
   clock = new THREE.Clock()
   window.addEventListener('resize', onResize)
   animate()
+
+  // Store listener for cleanup
+  container.value._mouseMove = onMouseMove
 }
 
 const animate = () => {
@@ -196,6 +283,54 @@ const animate = () => {
     mat.uniforms.uTime.value = elapsedTime
   })
 
+  // Spawn particles at mouse position
+  if (isMouseOver && particleGeo) {
+    const vec = new THREE.Vector3(mouseNDC.x, mouseNDC.y, 0.5)
+    vec.unproject(camera)
+    const dir = vec.sub(camera.position).normalize()
+    const spawnPos = camera.position.clone().add(dir.multiplyScalar(5))
+
+    for (let s = 0; s < 3; s++) {
+      // Find a dead particle slot
+      let idx = -1
+      for (let j = 0; j < PARTICLE_COUNT; j++) {
+        if (particleLifetimes[j] <= 0) { idx = j; break }
+      }
+      if (idx === -1) continue
+
+      const i3 = idx * 3
+      particlePositions[i3] = spawnPos.x + (Math.random() - 0.5) * 0.3
+      particlePositions[i3 + 1] = spawnPos.y + (Math.random() - 0.5) * 0.3
+      particlePositions[i3 + 2] = spawnPos.z + (Math.random() - 0.5) * 0.3
+      particleVelocities[i3] = (Math.random() - 0.5) * 0.8
+      particleVelocities[i3 + 1] = (Math.random() - 0.5) * 0.8
+      particleVelocities[i3 + 2] = (Math.random() - 0.5) * 0.8
+      particleLifetimes[idx] = 1.0
+      particleSizes[idx] = 0.1 + Math.random() * .5
+      const col = trailColorOptions[Math.floor(Math.random() * trailColorOptions.length)]
+      particleColorAttrs[i3 + 2] = col.r
+      particleColorAttrs[i3 + 1] = col.g
+      particleColorAttrs[i3 + 2] = col.b
+    }
+  }
+
+  // Update living particles
+  if (particleGeo) {
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      if (particleLifetimes[i] <= 0) continue
+      particleLifetimes[i] -= delta * 0.8
+      if (particleLifetimes[i] <= 0) { particleLifetimes[i] = 0; continue }
+      const i3 = i * 3
+      particlePositions[i3] += particleVelocities[i3] * delta
+      particlePositions[i3 + 1] += particleVelocities[i3 + 1] * delta
+      particlePositions[i3 + 2] += particleVelocities[i3 + 2] * delta
+    }
+    particleGeo.attributes.position.needsUpdate = true
+    particleGeo.attributes.aLife.needsUpdate = true
+    particleGeo.attributes.aSize.needsUpdate = true
+    particleGeo.attributes.aColor.needsUpdate = true
+  }
+
   composer.render()
 }
 
@@ -212,6 +347,10 @@ const onResize = () => {
 const cleanup = () => {
   if (animationId) cancelAnimationFrame(animationId)
   window.removeEventListener('resize', onResize)
+  if (container.value && container.value._mouseMove) {
+    window.removeEventListener('mousemove', container.value._mouseMove)
+  }
+  if (particleGeo) particleGeo.dispose()
   if (renderer) {
     renderer.dispose()
     if (container.value && renderer.domElement) {

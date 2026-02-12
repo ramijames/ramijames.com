@@ -65,6 +65,7 @@
   z-index: 0;
   -webkit-mask-image: linear-gradient(-20deg, black 45% , transparent 80%);
   mask-image: linear-gradient(-20deg, black 45% , transparent 80%);
+  pointer-events: all;
 
   :deep(.threejs-container) {
     height: 100% !important;
