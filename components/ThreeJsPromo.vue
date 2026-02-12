@@ -6,7 +6,7 @@
     <section id="PromoCards">
       <div>
         <h2>Three.js Playground</h2>
-        <p>As the modern web moves more into the 3d realm, it's been my pleasure to explore it in-depth.</p>
+        <p>As the modern web moves more into the 3d realm, it's been my pleasure to explore it in-depth. Hopefully, some of what I've learned can be helpful for you, too.</p>
       </div>
       <section class="links">
         <nuxt-link class="promo-card" to="/learn-threejs">
@@ -88,9 +88,17 @@
     flex-direction: column;
   }
 
-  h2 {
+  h2, p {
     color: $white;
     text-shadow: 0 10px 10px black;
+    margin:0;
+  }
+
+  p {
+    opacity: 0.65;
+    margin-top: $spacing-xs;
+    max-width: 600px;
+    text-wrap: balance;
   }
 
   .promo-card {
