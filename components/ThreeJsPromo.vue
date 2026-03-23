@@ -5,32 +5,46 @@
     </div>
     <section id="PromoCards">
       <div>
-        <h2>Three.js Playground</h2>
-        <p>As the modern web moves more into the 3d realm, it's been my pleasure to explore it in-depth. Hopefully, some of what I've learned can be helpful for you, too.</p>
+        <h2>Learn</h2>
+        <p>Notes and tutorials on the technologies I find most interesting — written for developers who want to build real things.</p>
       </div>
       <section class="links">
-        <nuxt-link class="promo-card" to="/learn-threejs">
-          <div>
-            <div class="card-title">Learn Three.js</div>
-            <div class="card-description">Step-by-step tutorials to master 3D on the web</div>
-          </div>
-          <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.5294 1.00001L18 8.47067L10 16.4706" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <path d="M17 8.47064H1" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-
-        </nuxt-link>
-        <nuxt-link class="promo-card" to="/three-js-experiments">
-          <div>
-            <div class="card-title">Three.js Experiments</div>
-            <div class="card-description">Interactive demos exploring particles, fractals, and more</div>
-          </div>
-          <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.5294 1.00001L18 8.47067L10 16.4706" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <path d="M17 8.47064H1" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-
-        </nuxt-link>
+        <div class="link-group">
+          <div class="link-group-title">Three.js</div>
+          <nuxt-link class="promo-card" to="/learn-threejs">
+            <div>
+              <div class="card-title">Learn Three.js</div>
+              <div class="card-description">Step-by-step tutorials to master 3D on the web</div>
+            </div>
+            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.5294 1.00001L18 8.47067L10 16.4706" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M17 8.47064H1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </nuxt-link>
+          <nuxt-link class="promo-card" to="/three-js-experiments">
+            <div>
+              <div class="card-title">Three.js Experiments</div>
+              <div class="card-description">Interactive demos exploring particles, fractals, and more</div>
+            </div>
+            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.5294 1.00001L18 8.47067L10 16.4706" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M17 8.47064H1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </nuxt-link>
+        </div>
+        <div class="link-group">
+          <div class="link-group-title">Solidity</div>
+          <nuxt-link class="promo-card" to="/learn-solidity">
+            <div>
+              <div class="card-title">Learn Solidity</div>
+              <div class="card-description">Smart contracts, DeFi patterns, and on-chain development</div>
+            </div>
+            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.5294 1.00001L18 8.47067L10 16.4706" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M17 8.47064H1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </nuxt-link>
+        </div>
       </section>
     </section>
   </div>
@@ -50,7 +64,7 @@
   z-index: 1;
   box-sizing: border-box;
   overflow: hidden;
-  background: linear-gradient(-20deg, $gray-dark 15% , $black 100%);
+  background: $black;
 
   @media screen and (max-width: 1000px) {
     padding: calc($spacing-md + 58px) $spacing-md $spacing-md $spacing-md;
@@ -63,8 +77,8 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  -webkit-mask-image: linear-gradient(-20deg, black 45% , transparent 80%);
-  mask-image: linear-gradient(-20deg, black 45% , transparent 80%);
+  -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 70%);
+  mask-image: linear-gradient(to bottom, black 20%, transparent 70%);
   pointer-events: all;
 
   :deep(.threejs-container) {
@@ -85,8 +99,27 @@
   
   .links {
     display: flex;
-    gap: $spacing-xs;
+    gap: $spacing-md;
+    flex-direction: row;
+
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+  }
+
+  .link-group {
+    display: flex;
     flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  .link-group-title {
+    color: rgba($white, 0.4);
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
   }
 
   h2, p {

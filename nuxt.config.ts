@@ -31,6 +31,9 @@ export default defineNuxtConfig({
     global: true,
     dirs: ['~/components'],
   },
+  site: {
+    url: 'https://www.ramijames.com',
+  },
   modules: [
     '@pinia/nuxt',
     '@nuxt/content',
@@ -78,6 +81,12 @@ export default defineNuxtConfig({
     '/learn-threejs/lighting': { redirect: '/learn-threejs/' },
     '/learn-threejs/interaction': { redirect: '/learn-threejs/' },
     '/learn-threejs/shaders': { redirect: '/learn-threejs/' },
+    '/learn-solidity/foundational-solidity': { redirect: '/learn-solidity/' },
+    '/learn-solidity/building-blocks': { redirect: '/learn-solidity/' },
+    '/learn-solidity/working-with-ether': { redirect: '/learn-solidity/' },
+    '/learn-solidity/security': { redirect: '/learn-solidity/' },
+    '/learn-solidity/defi-patterns': { redirect: '/learn-solidity/' },
+    '/learn-solidity/production': { redirect: '/learn-solidity/' },
     '/design-process': { redirect: '/' },
   },
 })

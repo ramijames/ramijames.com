@@ -1,5 +1,5 @@
 <template>
-  <main :class="['default-layout', isOpen && isLearnThreeJSSubPage ? 'innerNav-open' : '']" class="default-layout">
+  <main :class="['default-layout', isNavOpen && isLearnSubPage ? 'innerNav-open' : '']" class="default-layout">
     <section class="default-main">
       <MaxNav />
       <slot />
@@ -10,9 +10,16 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
 const route = useRoute();
-const isOpen = useState('learnthreejs-nav-open', () => true)
+const threejsOpen = useState('learnthreejs-nav-open', () => true)
+const solidityOpen = useState('learnsolidity-nav-open', () => true)
 
-const isLearnThreeJSSubPage = computed(() => route.path.startsWith('/learn-threejs/') && route.path !== '/learn-threejs/');
+const isLearnSubPage = computed(() => /^\/learn-[^/]+\/.+/.test(route.path))
+
+const isNavOpen = computed(() => {
+  if (route.path.startsWith('/learn-threejs/')) return threejsOpen.value
+  if (route.path.startsWith('/learn-solidity/')) return solidityOpen.value
+  return false
+})
 </script>
 
 <style lang="scss">
