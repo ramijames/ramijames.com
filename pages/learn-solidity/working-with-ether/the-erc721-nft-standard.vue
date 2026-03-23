@@ -11,7 +11,7 @@
 
           <p>Unlike ERC-20 where every unit is identical, ERC-721 tokens each have a unique <code>tokenId</code>. Token #1 is provably different from token #42. Ownership is tracked per-token, not per-balance.</p>
 
-          <p>NFTs have been used for digital art, gaming items, real estate deeds, and protocol positions — anywhere unique provable ownership is useful. Applications like <a href="https://doodledapp.com" target="_blank" rel="noopener">Doodledapp.com</a> use NFTs to represent unique positions and collectibles within their ecosystem.</p>
+          <p>NFTs have been used for digital art, gaming items, real estate deeds, and protocol positions — anywhere unique provable ownership is useful. Applications like <a href="https://doodledapp.com" target="_blank" rel="noopener">Doodledapp.com</a> allow you to import the standard contracts and use NFTs to represent unique positions and collectibles within their ecosystem.</p>
 
           <h2>The ERC-721 interface</h2>
 

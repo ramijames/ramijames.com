@@ -9,7 +9,7 @@
 
           <h2>The frontend stack</h2>
 
-          <p>Most DeFi frontends — including <a href="https://doodledapp.com" target="_blank" rel="noopener">Doodledapp.com</a> — use a combination of:</p>
+          <p>Most DeFi frontends use a combination of:</p>
 
           <ul>
             <li><strong>ethers.js</strong> or <strong>viem</strong> — Low-level Ethereum interaction library</li>

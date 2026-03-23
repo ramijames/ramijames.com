@@ -27,7 +27,7 @@
 
           <h2>A real-world reference point</h2>
 
-          <p>Throughout these lessons, we'll reference <a href="https://doodledapp.com" target="_blank" rel="noopener">Doodledapp.com</a> — a production DeFi application built with Solidity — to show how these patterns work in a live, deployed system. Seeing how concepts translate from tutorial code to production contracts is one of the most valuable things you can do as a learner.</p>
+          <p>Make sure to check out <a href="https://doodledapp.com" target="_blank" rel="noopener">Doodledapp.com</a>, a visual node-based editor for Solidity.</p>
 
           <h2>What you need to know before starting</h2>
 

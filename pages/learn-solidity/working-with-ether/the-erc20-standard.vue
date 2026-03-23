@@ -11,7 +11,7 @@
 
           <p>ERC-20 is a standard interface for fungible tokens on Ethereum. "Fungible" means every unit is identical and interchangeable — like dollars or ETH itself. Every ERC-20 token must implement the same functions, which means any protocol can interact with any token without custom integration code.</p>
 
-          <p>Projects like <a href="https://doodledapp.com" target="_blank" rel="noopener">Doodledapp.com</a> use ERC-20 tokens as the core unit of value in their protocol — enabling swaps, liquidity provision, and rewards all through the same standard interface.</p>
+          <p><a href="https://doodledapp.com" target="_blank" rel="noopener">Doodledapp.com</a> allows you to easily import ERC-20 contracts as the core unit of value in their protocol — enabling swaps, liquidity provision, and rewards all through the same standard interface.</p>
 
           <h2>The interface</h2>
 

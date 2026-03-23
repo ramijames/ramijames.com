@@ -11,8 +11,6 @@
 
           <p>An Automated Market Maker (AMM) is a smart contract that holds reserves of two (or more) tokens and allows users to swap between them algorithmically — no order book, no matching engine, no counterparty needed. Price is determined by the ratio of reserves according to a mathematical formula.</p>
 
-          <p><a href="https://doodledapp.com" target="_blank" rel="noopener">Doodledapp.com</a> uses AMM mechanics to power its token exchange functionality — the same fundamental model pioneered by Uniswap V2.</p>
-
           <h2>The constant product formula</h2>
 
           <p>Uniswap V2 uses the simplest and most influential AMM formula: <code>x * y = k</code>. Where <code>x</code> and <code>y</code> are the reserves of two tokens, and <code>k</code> is a constant that must hold after every trade (minus fees).</p>
