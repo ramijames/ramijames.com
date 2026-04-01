@@ -16,11 +16,19 @@ useHead({
       innerHTML: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.body.classList.add('dark')}else{document.body.classList.add('light')}}catch(e){document.body.classList.add('light')}})()`,
       tagPosition: 'bodyOpen',
     },
+    {
+      src: 'https://cdn.sessionsight.com/sessionsight.js',
+    },
+    {
+      innerHTML: `SessionSight.init({ publicApiKey: 'sessionsight_pub_e99abaa0a5c1e53befa7452f318ee7c8328dd26447db3c59', propertyId: '62343e00-b9fd-49a0-b1f2-e2f68ea3984e' });`,
+    },
   ],
 })
 
 onMounted(() => {
   initHotjar()
 })
+
+
 
 </script>
