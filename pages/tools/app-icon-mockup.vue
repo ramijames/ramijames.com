@@ -202,6 +202,73 @@
 
   </main>
 
+  <section class="seo-content general-main">
+    <div class="seo-inner">
+      <h2>Free App Icon Mockup &amp; Generator</h2>
+      <p>
+        Designing an app icon is one of the most important steps in launching a mobile app. Your
+        icon is the first thing users see on the App Store or Google Play — and on their home
+        screen every single day. This free <strong>app icon mockup</strong> tool lets you upload
+        any image, instantly preview it as a realistic iOS or Android icon, and export a
+        developer-ready ZIP with every required size.
+      </p>
+
+      <h3>iOS App Icon Preview</h3>
+      <p>
+        Apple has strict requirements for <strong>iOS app icons</strong>. Every iPhone app needs
+        icons at multiple resolutions — from 20pt notification icons all the way up to the
+        1024×1024 App Store marketing image. This <strong>app icon preview</strong> tool renders
+        your icon inside a pixel-accurate iPhone mockup with a Dynamic Island, status bar, and
+        realistic home screen grid so you can judge how it looks in context before you ship.
+        When you export, you get a complete Xcode-ready <code>AppIcon.appiconset</code> folder
+        with a <code>Contents.json</code> that maps every size automatically — just drag it into
+        Assets.xcassets and you're done.
+      </p>
+
+      <h3>Android App Icon Generator</h3>
+      <p>
+        Android requires icons at six densities: mdpi (48px), hdpi (72px), xhdpi (96px), xxhdpi
+        (144px), xxxhdpi (192px), and a 512px image for the Google Play listing. This
+        <strong>icon generator</strong> handles all of them in one click. The export mirrors the
+        standard <code>mipmap-*</code> folder structure you'd find in any Android Studio project,
+        so dropping the files into <code>app/src/main/res/</code> works without any renaming.
+      </p>
+
+      <h3>Why Use an App Icon Mockup Tool?</h3>
+      <p>
+        An <strong>app icon generator</strong> saves hours of manual resizing in Photoshop or
+        Figma. Instead of exporting a dozen assets by hand, you upload once and get every
+        platform size in a single ZIP. The live mockup preview is just as valuable — it's hard
+        to judge contrast, legibility, and corner-radius feel from a flat canvas. Seeing your
+        icon on a simulated home screen, next to realistic placeholder icons and against a
+        customizable wallpaper color, reveals problems that flat previews miss.
+      </p>
+
+      <h3>What Makes a Good App Icon?</h3>
+      <ul>
+        <li><strong>Simple and bold.</strong> Icons are tiny. Intricate detail disappears at 60px. Opt for a single strong shape or letterform.</li>
+        <li><strong>Distinctive silhouette.</strong> Your icon should be recognizable even in grayscale or at notification size.</li>
+        <li><strong>No text (usually).</strong> A one or two-letter monogram can work, but full words rarely read at small sizes.</li>
+        <li><strong>Consistent with your brand.</strong> Color, style, and weight should match your app's visual identity.</li>
+        <li><strong>Square source art.</strong> Both iOS and Android crop icons from a square. Start with a 1024×1024 PNG for the best results.</li>
+      </ul>
+
+      <h3>How to Use This App Icon Mockup Tool</h3>
+      <ol>
+        <li>Drag and drop your icon image — or click to browse. PNG, JPG, SVG, and WebP are all supported.</li>
+        <li>Type your app name to see it labelled under the icon in the home screen grid.</li>
+        <li>Pick a wallpaper color to test your icon against different backgrounds.</li>
+        <li>Check the iOS and Android previews side by side.</li>
+        <li>Click <strong>Export Icons ZIP</strong> to download a ZIP with all platform sizes, ready to drop into Xcode or Android Studio.</li>
+      </ol>
+
+      <p>
+        Everything runs in your browser — no file is ever uploaded to a server. Your artwork stays
+        private, and there's no account, watermark, or usage limit.
+      </p>
+    </div>
+  </section>
+
   <Footer />
 </template>
 
@@ -622,6 +689,65 @@ button:disabled {
 }
 
 .spin { animation: spin 0.9s linear infinite; }
+
+/* ─────────────────────────────────────────
+   SEO content
+───────────────────────────────────────── */
+
+.seo-content {
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
+}
+
+.seo-inner {
+  max-width: 720px;
+
+  h2 {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    margin: 0 0 $spacing-md;
+  }
+
+  h3 {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    margin: $spacing-lg 0 $spacing-xs;
+  }
+
+  p {
+    font-size: $font-size-sm;
+    line-height: 1.7;
+    color: rgba($black, 0.75);
+    margin: 0 0 $spacing-sm;
+  }
+
+  ul, ol {
+    font-size: $font-size-sm;
+    line-height: 1.7;
+    color: rgba($black, 0.75);
+    padding-left: $spacing-lg;
+    margin: 0 0 $spacing-sm;
+
+    li { margin-bottom: $spacing-xs; }
+  }
+
+  code {
+    font-family: monospace;
+    font-size: 0.9em;
+    background: rgba($black, 0.06);
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+}
+
+.dark .seo-inner {
+  p, ul, ol { color: rgba($white, 0.7); }
+
+  code {
+    background: rgba($white, 0.1);
+    color: $white;
+  }
+}
 
 /* ─────────────────────────────────────────
    Mockups section
