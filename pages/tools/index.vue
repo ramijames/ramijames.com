@@ -71,7 +71,7 @@ const tools = [
   }
 }
 
-:global(.dark) .tool-card {
+.dark .tool-card {
   color: $white;
   background: rgba($white, 0.04);
   border-color: rgba($white, 0.12);

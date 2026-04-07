@@ -107,6 +107,9 @@
           <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']" v-if="!isThoughtsPage" @click="toggleMenu">
             <span>Thoughts</span>
           </nuxt-link>
+          <nuxt-link to="/tools" :class="['nav-link', isToolsPage ? 'router-link-active' : '']" v-if="!isToolsPage" @click="toggleMenu">
+            <span>Tools</span>
+          </nuxt-link>
           <nuxt-link to="/about" class="nav-link" v-if="!isAboutPage" @click="toggleMenu">
             <span>About</span>
           </nuxt-link>
@@ -201,6 +204,7 @@ const isProductsSubPage = computed(() => route.path.startsWith('/products/'));
 const isProductsPage = computed(() => route.path === '/products');
 const isThoughtsPage = computed(() => route.path === '/thoughts');
 const isAboutPage = computed(() => route.path === '/about');
+const isToolsPage = computed(() => route.path === '/tools');
 const isHome = computed(() => route.path === '/');
 </script>
 

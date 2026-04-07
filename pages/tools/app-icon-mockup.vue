@@ -1077,7 +1077,7 @@ button:disabled {
 
 .android-grid-icon {
   // Android adaptive icon squircle — slightly more circular than iOS
-  border-radius: 28%;
+  border-radius: 100%;
 }
 
 .grid-icon-img {
@@ -1097,7 +1097,6 @@ button:disabled {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.45);
   background: rgba(255, 255, 255, 0.08);
-  border: 1.5px dashed rgba(255, 255, 255, 0.3);
 }
 
 .grid-icon-name {
