@@ -88,5 +88,6 @@ export default defineNuxtConfig({
     '/learn-solidity/defi-patterns': { redirect: '/learn-solidity/' },
     '/learn-solidity/production': { redirect: '/learn-solidity/' },
     '/design-process': { redirect: '/' },
+    '/app-icon-mockup': { redirect: '/tools/app-icon-mockup' },
   },
 })
