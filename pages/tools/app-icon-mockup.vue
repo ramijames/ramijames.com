@@ -59,25 +59,13 @@
           />
         </div>
 
-        <div class="export-area">
-          <button
-            class="export-btn"
-            @click="exportIcons"
-            :disabled="!iconDataUrl || isExporting"
-            :title="!iconDataUrl ? 'Upload an icon first' : ''"
-          >
-            <svg v-if="!isExporting" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
-              <path d="M7.5 1v9M4.5 7l3 3 3-3M1.5 11v1.5a1 1 0 001 1h10a1 1 0 001-1V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <svg v-else width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true" class="spin">
-              <circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-opacity="0.25" stroke-width="1.5"/>
-              <path d="M7.5 1.5a6 6 0 016 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <span>{{ isExporting ? 'Exporting…' : 'Export Icons ZIP' }}</span>
-          </button>
-          <p class="export-hint">iOS (Xcode) + Android (Studio) ready</p>
-          <p v-if="exportError" class="upload-error" role="alert">{{ exportError }}</p>
+        <div class="field-group">
+          <label class="field-label">Wallpaper Color</label>
+          <label class="color-swatch-large" :style="{ background: bgColor }" title="Choose wallpaper color">
+            <input type="color" v-model="bgColor" class="color-hidden-input" />
+          </label>
         </div>
+
       </div>
     </div>
 
@@ -86,24 +74,14 @@
 
       <!-- iOS -->
       <div class="mockup-column">
-        <div class="mockup-controls">
-          <span class="mockup-platform-label">iOS</span>
-          <div class="color-group">
-            <label class="color-swatch" :style="{ background: iosBg1 }" title="Top wallpaper color">
-              <input type="color" v-model="iosBg1" class="color-hidden-input" />
-            </label>
-            <label class="color-swatch" :style="{ background: iosBg2 }" title="Bottom wallpaper color">
-              <input type="color" v-model="iosBg2" class="color-hidden-input" />
-            </label>
-          </div>
-        </div>
+        <p class="mockup-platform-label">iOS</p>
 
         <div class="phone-frame-wrapper">
           <div class="ios-phone-body">
             <div class="ios-dynamic-island">
               <div class="di-camera"></div>
             </div>
-            <div class="phone-screen ios-screen" :style="wallpaperStyle(iosBg1, iosBg2)">
+            <div class="phone-screen ios-screen" :style="{ background: bgColor }">
               <div class="status-bar">
                 <span class="status-time">9:41</span>
                 <div class="status-icons">
@@ -146,22 +124,12 @@
 
       <!-- Android -->
       <div class="mockup-column">
-        <div class="mockup-controls">
-          <span class="mockup-platform-label">Android</span>
-          <div class="color-group">
-            <label class="color-swatch" :style="{ background: androidBg1 }" title="Top wallpaper color">
-              <input type="color" v-model="androidBg1" class="color-hidden-input" />
-            </label>
-            <label class="color-swatch" :style="{ background: androidBg2 }" title="Bottom wallpaper color">
-              <input type="color" v-model="androidBg2" class="color-hidden-input" />
-            </label>
-          </div>
-        </div>
+        <p class="mockup-platform-label">Android</p>
 
         <div class="phone-frame-wrapper">
           <div class="android-phone-body">
             <div class="android-punch-hole"></div>
-            <div class="phone-screen android-screen" :style="wallpaperStyle(androidBg1, androidBg2)">
+            <div class="phone-screen android-screen" :style="{ background: bgColor }">
               <div class="status-bar">
                 <span class="status-time">9:41</span>
                 <div class="status-icons">
@@ -210,6 +178,28 @@
 
     </section>
 
+    <!-- Export -->
+    <section class="export-icons">
+      <div class="export-area">
+        <button
+          class="button export-trigger"
+          @click="exportIcons"
+          :disabled="!iconDataUrl || isExporting"
+        >
+          <svg v-if="!isExporting" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+            <path d="M7.5 1v9M4.5 7l3 3 3-3M1.5 11v1.5a1 1 0 001 1h10a1 1 0 001-1V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg v-else width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true" class="spin">
+            <circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-opacity="0.25" stroke-width="1.5"/>
+            <path d="M7.5 1.5a6 6 0 016 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>{{ isExporting ? 'Exporting…' : 'Export Icons ZIP' }}</span>
+        </button>
+        <p class="export-hint">iOS (Xcode) + Android (Studio) ready</p>
+        <p v-if="exportError" class="upload-error" role="alert">{{ exportError }}</p>
+      </div>
+    </section>
+
   </main>
 
   <Footer />
@@ -233,10 +223,7 @@ const exportError = ref('')
 const fileInputRef = ref(null)
 const isExporting = ref(false)
 
-const iosBg1 = ref('#1e3a5f')
-const iosBg2 = ref('#1a1060')
-const androidBg1 = ref('#1b3a2f')
-const androidBg2 = ref('#1b2a3f')
+const bgColor = ref('#1e3a5f')
 
 // ─── Icon grid ────────────────────────────────────────────────────────────────
 
@@ -253,10 +240,6 @@ const gridCells = computed(() =>
     color: placeholderColors[i > 0 ? (i - 1) % placeholderColors.length : 0],
   }))
 )
-
-function wallpaperStyle(c1, c2) {
-  return { background: `linear-gradient(160deg, ${c1} 0%, ${c2} 100%)` }
-}
 
 // ─── Upload ───────────────────────────────────────────────────────────────────
 
@@ -429,7 +412,7 @@ async function exportIcons() {
 
 .controls-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: $spacing-md;
   align-items: flex-start;
   width: 100%;
@@ -454,6 +437,7 @@ async function exportIcons() {
   cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease;
   background: rgba($white-dark, 0.6);
+  width: 100%;
 
   &:hover, &:focus-visible {
     border-color: $blue;
@@ -470,12 +454,20 @@ async function exportIcons() {
   }
 }
 
-:global(.dark) .upload-zone {
-  border-color: rgba($white, 0.2);
-  background: rgba($white, 0.04);
-  &:hover, &:focus-visible, &.is-dragging {
-    border-color: $blue-light;
-    background: rgba($blue-light, 0.06);
+.dark .upload-zone {
+  border-color: rgba($white, 0.25);
+  background: rgba($white, 0.05);
+
+  &:hover, &:focus-visible {
+    border-color: $white;
+    background: rgba($white, 0.12);
+  }
+  &.is-dragging {
+    border-color: $white;
+    background: rgba($white, 0.14);
+  }
+  &.has-image {
+    border-color: rgba($white, 0.15);
   }
 }
 
@@ -500,20 +492,19 @@ async function exportIcons() {
   img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
 
-.upload-placeholder { color: $gray-dark; }
+.upload-placeholder { color: rgba($black, 0.45); }
 
 .upload-text {
   font-size: $font-size-xs;
-  color: $gray-dark;
+  color: rgba($black, 0.6);
   margin: 0;
   u { color: $blue; }
 }
 
 .upload-subtext {
   font-size: 11px;
-  opacity: 0.4;
   margin: 0;
-  color: $gray-dark;
+  color: rgba($black, 0.35);
 }
 
 .upload-error {
@@ -523,6 +514,13 @@ async function exportIcons() {
   font-weight: 600;
 }
 
+.dark .upload-placeholder { color: rgba($white, 0.45); }
+.dark .upload-text {
+  color: rgba($white, 0.6);
+  u { color: $blue-light; }
+}
+.dark .upload-subtext { color: rgba($white, 0.35); }
+
 /* ─────────────────────────────────────────
    Right controls
 ───────────────────────────────────────── */
@@ -530,77 +528,94 @@ async function exportIcons() {
 .right-controls {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  gap: $spacing-sm;
-  justify-content: center;
-  min-height: 160px;
+  flex-direction: row;
+  gap: $spacing-md;
+  justify-content: space-between;
+  width: 100%;
+  padding: $spacing-md ;
+  border: 1px solid rgba($black, 0.1);
+  background: rgba($black, 0.01);
+  border-radius: $br-md;
+}
+
+.dark .right-controls {
+  border-color: rgba($white, 0.25);
+  background: rgba($white, 0.05);
 }
 
 .field-group {
   display: flex;
   flex-direction: column;
   gap: $spacing-xxs;
+  width: 100%;
 }
 
 .field-label {
   font-size: $font-size-xs;
   font-weight: 600;
-  opacity: 0.55;
-  color: $black;
+  color: rgba($black, 0.6);
 }
 
-:global(.dark) .field-label { color: $white; }
+.dark .field-label {
+  color: $white;
+  opacity: 1;
+}
 
 .field-input {
   padding: $spacing-xs $spacing-sm;
   border-radius: $br-sm;
-  border: 1px solid rgba($black, 0.15);
+  border: 1px solid rgba($black, 0.2);
   font-family: $font-family-main;
   font-size: $font-size-sm;
-  background: transparent;
+  background: $white;
   color: $black;
-  max-width: 280px;
+  width: 100%;
   &:focus-visible { border-color: $blue; outline: none; }
 }
 
-:global(.dark) .field-input {
-  border-color: rgba($white, 0.2);
+.dark .field-input {
+  border-color: rgba($white, 0.3);
   color: $white;
-  &:focus-visible { border-color: $blue-light; }
+  background: rgba($white, 0.1);
+  &:focus-visible { border-color: rgba($white, 0.6); outline: none; }
+}
+
+.export-icons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .export-area {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  align-items: flex-start;
+  gap: $spacing-xs;
+  align-items: center;
 }
 
-.export-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: $spacing-xs;
-  padding: $spacing-xs $spacing-sm;
-  border-radius: $br-sm;
-  border: none;
-  background: $blue;
-  color: $white;
-  font-family: $font-family-main;
-  font-size: $font-size-sm;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.2s;
+// Disabled state — the global button style has no disabled handling
+button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
 
-  &:hover:not(:disabled) { opacity: 0.85; }
-  &:disabled { opacity: 0.35; cursor: not-allowed; }
+// Inverted dark mode: white button + black text
+// Needs higher specificity than the global `.dark .button` rule
+.dark .export-trigger {
+  background: $white;
+  color: $black;
+  border-color: $white;
+
+  svg path { fill: none; stroke: $black; }
 }
 
 .export-hint {
   font-size: 11px;
-  opacity: 0.4;
   margin: 0;
-  color: $gray-dark;
+  color: rgba($black, 0.4);
 }
+
+.dark .export-hint { color: rgba($white, 0.4); }
 
 @keyframes spin {
   to { transform: rotate(360deg); }
@@ -619,6 +634,10 @@ async function exportIcons() {
   justify-content: center;
   align-items: flex-start;
   width: 100%;
+  padding: $spacing-md ;
+  border: 1px solid rgba($black, 0.1);
+  background: rgba($black, 0.01);
+  border-radius: $br-md;
 
   @media screen and (max-width: 640px) {
     flex-direction: column;
@@ -627,16 +646,14 @@ async function exportIcons() {
   }
 }
 
+.dark .mockups-wrapper {
+  border-color: rgba($white, 0.25);
+  background: rgba($white, 0.05);
+}
+
 .mockup-column {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: $spacing-sm;
-}
-
-.mockup-controls {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   gap: $spacing-sm;
 }
@@ -650,16 +667,11 @@ async function exportIcons() {
   margin: 0;
 }
 
-.color-group {
-  display: flex;
-  gap: 6px;
-}
-
-.color-swatch {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 2px solid rgba($white, 0.5);
+.color-swatch-large {
+  width: 100%;
+  height: 36px;
+  border-radius: $br-sm;
+  border: 1px solid rgba($black, 0.15);
   cursor: pointer;
   display: block;
   position: relative;
@@ -667,7 +679,11 @@ async function exportIcons() {
   box-shadow: $main-shadow;
   transition: transform 0.15s;
 
-  &:hover { transform: scale(1.2); }
+  &:hover { transform: scale(1.05); }
+}
+
+.dark .color-swatch-large {
+  border-color: rgba($white, 0.2);
 }
 
 .color-hidden-input {
@@ -694,6 +710,7 @@ async function exportIcons() {
 
 .ios-phone-body {
   width: 270px;
+  height: 576px;
   background: #1c1c1e;
   border-radius: 46px;
   border: 1.5px solid rgba(255, 255, 255, 0.22);
@@ -786,6 +803,7 @@ async function exportIcons() {
 
 .android-phone-body {
   width: 270px;
+  height: 576px;
   background: #1c1c1e;
   border-radius: 34px;
   border: 1.5px solid rgba(255, 255, 255, 0.16);
@@ -927,13 +945,13 @@ async function exportIcons() {
 }
 
 .ios-grid-icon {
-  // Apple's precise squircle formula: radius = (10/57) × size ≈ 17.544%
-  border-radius: 17.544%;
+  // CSS approximation of Apple's superellipse (squircle) icon mask
+  border-radius: 24%;
 }
 
 .android-grid-icon {
-  // Android squircle approximation
-  border-radius: 22%;
+  // Android adaptive icon squircle — slightly more circular than iOS
+  border-radius: 28%;
 }
 
 .grid-icon-img {
