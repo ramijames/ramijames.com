@@ -20,7 +20,7 @@ useHead({
       src: 'https://cdn.sessionsight.com/sessionsight.js',
     },
     {
-      innerHTML: `SessionSight.init({ publicApiKey: 'sessionsight_pub_e99abaa0a5c1e53befa7452f318ee7c8328dd26447db3c59', propertyId: '62343e00-b9fd-49a0-b1f2-e2f68ea3984e' });`,
+      innerHTML: `SessionSight.init({ publicApiKey: 'sessionsight_pub_dev_000000000000000000000000000000000000000000000000', propertyId: '8acad566-6851-4a52-a4d5-fd8850decb86' });`,
     },
   ],
 })
