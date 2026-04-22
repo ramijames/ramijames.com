@@ -211,6 +211,17 @@ const isHome = computed(() => route.path === '/');
 
 <style scoped lang="scss">
 .max-nav {
+  /* Invert the nav's appearance compared to the page theme:
+     - Light mode (body.light): the nav renders its base light styles, then
+       filter:invert(1) flips them, so the bar looks dark (dark bg + white
+       strokes).
+     - Dark mode (body.dark): the `.dark {}` block below gives the nav a
+       dark appearance; filter:invert(1) flips that to look light.
+     Because ContactModal teleports to <body> it sits outside this filter
+     and is unaffected; the mobile .menu-shade is re-inverted below so its
+     contents stay legible. */
+  filter: invert(1);
+
   position: fixed;
   top: 0;
   left: 0;
@@ -359,6 +370,10 @@ const isHome = computed(() => route.path === '/');
   }
 
   .menu-shade {
+    /* Counteract the parent's filter:invert(1) so the mobile menu panel
+       renders its own intended colors. */
+    filter: invert(1);
+
     position: fixed;
     top: 62px;
     left: 0;

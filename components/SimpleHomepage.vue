@@ -43,6 +43,13 @@
           />
         </span>
       </h1>
+
+      <span class="scroll-hint" aria-hidden="true">
+        <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="20" height="32" rx="10" stroke="currentColor" stroke-width="1.5"/>
+          <circle class="scroll-hint-wheel" cx="11" cy="9" r="2" fill="currentColor"/>
+        </svg>
+      </span>
     </section>
 
     <!-- 2. Work -->
@@ -88,7 +95,37 @@
 </template>
 
 <script setup>
+import { onMounted, onBeforeUnmount } from 'vue'
 import articles from '~/assets/articles.json'
+
+/*
+ * Fade the hero content (headline, eyebrow, scroll hint) out as the user
+ * scrolls past the first screen. Progress runs from 0 at the very top to 1
+ * by the time ~60% of the viewport has scrolled past. We expose the result
+ * as a CSS custom property so the paint is driven by compositor-friendly
+ * opacity/transform, no layout thrash per scroll event.
+ */
+let handleScroll = null
+
+onMounted(() => {
+  if (typeof window === 'undefined') return
+  const root = document.documentElement
+  handleScroll = () => {
+    const distance = window.innerHeight * 0.6
+    const y = window.scrollY || 0
+    const progress = Math.min(1, Math.max(0, y / distance))
+    root.style.setProperty('--hero-fade', String(1 - progress))
+  }
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  handleScroll()
+})
+
+onBeforeUnmount(() => {
+  if (handleScroll) window.removeEventListener('scroll', handleScroll)
+  if (typeof document !== 'undefined') {
+    document.documentElement.style.removeProperty('--hero-fade')
+  }
+})
 </script>
 
 <style lang="scss">
@@ -133,6 +170,48 @@ import articles from '~/assets/articles.json'
   flex-direction: column;
   justify-content: space-between;
   color: var(--fg);
+
+  /* Fade the hero content as the user scrolls (see --hero-fade set by the
+     SimpleHomepage scroll handler). Falls back to fully visible when the
+     variable isn't set yet, e.g. during SSR. */
+  .intro-headline {
+    opacity: var(--hero-fade, 1);
+    transform: translate3d(0, calc((1 - var(--hero-fade, 1)) * -20px), 0);
+    will-change: opacity, transform;
+  }
+
+  /* Eyebrow and scroll-hint drive their initial fade-in through the
+     registered --hero-appear custom property, so we can multiply that by
+     --hero-fade here without the load animation locking opacity at 1. */
+  .intro-eyebrow,
+  .scroll-hint {
+    opacity: calc(var(--hero-appear, 1) * var(--hero-fade, 1));
+    transform: translate3d(0, calc((1 - var(--hero-fade, 1)) * -20px), 0);
+    will-change: opacity, transform;
+  }
+
+  /* Hero text is purely visual — don't let it intercept clicks or hover on
+     the scroll-hint / underlying layers. */
+  .intro-headline,
+  .intro-eyebrow {
+    pointer-events: none;
+  }
+}
+
+/*
+ * Registered custom property for the per-element "load in" factor (0 → 1).
+ * We animate this instead of opacity directly so the scroll-driven fade
+ * (driven by --hero-fade) can be multiplied in, rather than being clobbered
+ * by the load animation holding opacity at 1 via animation-fill-mode.
+ */
+@property --hero-appear {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes hero-appear-in {
+  to { --hero-appear: 1; }
 }
 
 .intro-eyebrow {
@@ -140,8 +219,8 @@ import articles from '~/assets/articles.json'
   font-size: $font-size-sm;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0;
-  animation: fade 0.8s forwards 0.3s;
+  --hero-appear: 0;
+  animation: hero-appear-in 0.8s ease forwards 0.3s;
 }
 
 .intro-headline {
@@ -151,8 +230,10 @@ import articles from '~/assets/articles.json'
   font-weight: 500;
   /* Font-size responds to BOTH viewport width and height so the two-line
      headline always fits the hero on short/widescreen monitors (e.g.
-     1920×720) where a purely vw-based size would overflow. */
-  font-size: min(clamp(3rem, 11vw, 13rem), 22vh);
+     1920×720) where a purely vw-based size would overflow. The vw bound
+     is sized so the longer line ("quiet force multiplier.") fits on a
+     single line at typical desktop widths. */
+  font-size: min(clamp(2.75rem, 7.5vw, 9.5rem), 18vh);
   line-height: 1.02;
   letter-spacing: -0.03em;
   color: var(--fg);
@@ -174,7 +255,7 @@ import articles from '~/assets/articles.json'
 }
 
 .intro-line-2 {
-  padding-left: clamp($spacing-md, 14vw, 20rem);
+  padding-left: clamp($spacing-md, 8vw, 10rem);
   display: flex;
   flex-wrap: wrap;
   gap: 0 0.35em;
@@ -191,6 +272,37 @@ import articles from '~/assets/articles.json'
   font-weight: 400;
   letter-spacing: -0.01em;
   display: inline-flex;
+}
+
+/* ---------- Scroll hint ---------- */
+
+.scroll-hint {
+  position: absolute;
+  right: clamp($spacing-md, 4vw, $spacing-xl);
+  bottom: clamp($spacing-md, 4vh, $spacing-xl);
+  color: var(--fg);
+  --hero-appear: 0;
+  animation: hero-appear-in 0.8s ease forwards 1.8s;
+
+  svg {
+    display: block;
+  }
+}
+
+.scroll-hint-wheel {
+  transform-origin: center;
+  animation: scroll-hint-bob 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scroll-hint-bob {
+  0%   { transform: translateY(0);    opacity: 1; }
+  60%  { transform: translateY(8px);  opacity: 0; }
+  61%  { transform: translateY(0);    opacity: 0; }
+  100% { transform: translateY(0);    opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint-wheel { animation: none; }
 }
 
 /* ---------- Section frame ---------- */
@@ -326,27 +438,27 @@ import articles from '~/assets/articles.json'
     display: none;
   }
 
-  /* Override FeaturedThoughts' default dark card so it blends with the theme. */
+  /* Inverted thought cards: in light mode the cards are dark, in dark mode
+     they're light. We use --fg-rgb for the bg so it flips with theme. */
   .article-card {
-    background: rgb(var(--bg-rgb) / 0.92) !important;
-    color: var(--fg) !important;
+    background: rgb(var(--fg-rgb) / 0.92) !important;
+    color: var(--bg) !important;
     backdrop-filter: blur(14px) saturate(1.1);
     -webkit-backdrop-filter: blur(14px) saturate(1.1);
     border: 1px solid var(--border-faint) !important;
-    transition: transform 0.25s ease, background 0.25s ease;
   }
 
   .article-card:hover {
-    background: rgb(var(--bg-rgb) / 0.97) !important;
+    background: rgb(var(--fg-rgb) / 0.97) !important;
   }
 
   .article-title,
   .article-date {
-    color: var(--fg) !important;
+    color: var(--bg) !important;
   }
 
   .article-date {
-    opacity: 0.55;
+    opacity: 0.6;
   }
 }
 

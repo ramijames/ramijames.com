@@ -6,6 +6,9 @@
         :key="item.title"
         :to="item.slug"
         class="row"
+        :class="{ 'is-visible': visible[i] }"
+        :ref="(el) => setRowRef(el, i)"
+        :style="{ '--row-index': i }"
       >
         <span class="row-index">{{ String(i + 1).padStart(2, '0') }}</span>
         <span class="row-title">{{ item.title }}</span>
@@ -17,6 +20,8 @@
 </template>
 
 <script setup>
+import { reactive, onMounted, onBeforeUnmount, nextTick } from 'vue'
+
 const items = [
   {
     title: 'Learn Three.js',
@@ -34,6 +39,42 @@ const items = [
     slug: '/learn-solidity',
   },
 ]
+
+const visible = reactive(items.map(() => false))
+const rowRefs = []
+let observer = null
+
+const setRowRef = (el, i) => {
+  if (el && el.$el) el = el.$el
+  rowRefs[i] = el || null
+}
+
+onMounted(async () => {
+  await nextTick()
+  if (typeof IntersectionObserver === 'undefined') {
+    visible.forEach((_, i) => (visible[i] = true))
+    return
+  }
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        const i = rowRefs.indexOf(entry.target)
+        if (i !== -1) {
+          visible[i] = true
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+  )
+  rowRefs.forEach((el) => el && observer.observe(el))
+})
+
+onBeforeUnmount(() => {
+  if (observer) observer.disconnect()
+  observer = null
+})
 </script>
 
 <style lang="scss" scoped>
@@ -60,7 +101,21 @@ const items = [
   border-bottom: 1px solid var(--border-faint, rgba(0, 0, 0, 0.18));
   color: inherit;
   text-decoration: none;
-  transition: padding-inline-start 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* Scroll-in reveal — each row fades + slides up when it enters the
+     viewport, staggered by its index via --row-index. */
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    padding-inline-start 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: calc(var(--row-index, 0) * 60ms);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 
   &:hover,
   &:focus-visible {
@@ -113,6 +168,14 @@ const items = [
   justify-self: end;
   font-size: $font-size-xl;
   transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row {
+    opacity: 1;
+    transform: none;
+    transition: padding-inline-start 0.4s ease;
+  }
 }
 
 @media screen and (max-width: 900px) {
