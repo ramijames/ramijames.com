@@ -215,14 +215,13 @@ const isHome = computed(() => route.path === '/');
   top: 0;
   left: 0;
   right: 0;
-  width: calc(100% - 15px);
+  width: 100%;
   box-sizing: border-box;
   z-index: 100;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to bottom, rgba($white, .8), rgba($white, 0.7));
   backdrop-filter: blur(40px);
   padding: $spacing-xs;
   animation: fadeInDown 0.4s ease-in-out forwards;
@@ -601,7 +600,6 @@ const isHome = computed(() => route.path === '/');
 
 .dark {
   .max-nav {
-    background: linear-gradient(to bottom, rgba($black, 1), rgba($black, 0.2));
 
     .nav-left-section {
 

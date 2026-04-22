@@ -1,311 +1,376 @@
 <template>
-  <section class="scroll-progress" :style="{ height:  `${scrollProgress * 90 }vh` }"></section>
-  <div ref="snapContainer" class="snap-container">
-    <main id="Hero" class="snap-section">
-      <section class="three-scene">
-        <ThreeScene :scroll-progress="scrollProgress" />
-      </section>
+  <div class="homepage">
 
-      <section class="content-blast">
-        <div class="reveal">
-          <h1><span>Helping early stage & established businesses bring their products into focus</span></h1>
-          <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 29L29 37L37 29" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <path d="M29 37L29 21" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <rect x="1" y="1" width="56" height="56" rx="5" stroke="white" stroke-width="2"/>
-          </svg>
-
-
-        </div>
-      </section>
-    </main>
-
-    <section id="ServiceProductDesign" class="snap-section">
-      <section class="content-blast">
-        <div class="reveal">
-          <h2><span>Through Thoughtful Product Design,</span></h2>
-          <p>[ I design interfaces that convert. From wireframes to pixel-perfect screens, I craft experiences that drive engagement and help your product stand out. ]</p>
-        </div>
-      </section>
+    <!-- 1. Intro -->
+    <section class="intro">
+      <span class="intro-eyebrow">RAMI JAMES &mdash; 2026</span>
+      <h1 class="intro-headline">
+        <WordReveal
+          tag="span"
+          class="intro-line intro-line-1"
+          text="Designer, strategist,"
+          trigger="mount"
+          :delay="600"
+          :stagger="140"
+          :duration="950"
+        />
+        <span class="intro-line intro-line-2">
+          <WordReveal
+            tag="span"
+            text="quiet"
+            trigger="mount"
+            :delay="900"
+            :stagger="140"
+            :duration="950"
+          />
+          <span class="serif-word">
+            <WordReveal
+              tag="span"
+              text="force"
+              trigger="mount"
+              :delay="1050"
+              :stagger="140"
+              :duration="950"
+            />
+          </span>
+          <WordReveal
+            tag="span"
+            text="multiplier."
+            trigger="mount"
+            :delay="1200"
+            :stagger="140"
+            :duration="950"
+          />
+        </span>
+      </h1>
     </section>
 
-    <section id="ServiceUXStrategy" class="snap-section">
-      <section class="content-blast">
-        <div class="reveal">
-          <h2><span>Unique UX Strategy,</span></h2>
-          <p>[ Research-driven strategy that uncovers what your users actually need. I map journeys, validate assumptions, and create blueprints that reduce costly pivots. ]</p>
-        </div>
-      </section>
+    <!-- 2. Work -->
+    <section class="section mono-scope section-work">
+      <span class="rail-label">01 / WORK</span>
+      <div class="section-head section-head-left">
+        <WordReveal tag="h2" text="Products I've shipped." :stagger="80" />
+      </div>
+      <WorkIndex />
     </section>
 
-    <section id="ServiceDesignSystems" class="snap-section">
-      <section class="content-blast">
-        <div class="reveal">
-          <h2><span>And By Building Rock Solid Design Systems.</span></h2>
-          <p>[ Scalable component libraries and design tokens that keep your team aligned. Ship faster with consistent UI that developers can implement without guesswork. ]</p>
-        </div>
-      </section>
+    <!-- 3. Thoughts -->
+    <section class="section mono-scope section-thoughts">
+      <span class="rail-label">02 / THOUGHTS</span>
+      <div class="section-head section-head-right">
+        <WordReveal tag="h2" text="Things I'm thinking about." :stagger="80" />
+        <nuxt-link to="/thoughts" class="section-cta">See all thoughts <span aria-hidden="true">&rarr;</span></nuxt-link>
+      </div>
+      <FeaturedThoughts :articles="articles" />
     </section>
 
-    <section class="snap-section">
-      <LatestWork />
+    <!-- 4. Companies -->
+    <section class="section mono-scope section-companies">
+      <span class="rail-label">03 / TRUST</span>
+      <div class="section-head section-head-center">
+        <WordReveal tag="h3" text="My work, in their words" :stagger="80" />
+      </div>
+      <HomepageTestimonials />
     </section>
 
-    <section class="snap-section threejs-promo-section">
-      <ThreeJsPromo />
+    <!-- 5. Learn -->
+    <section class="section mono-scope section-learn">
+      <span class="rail-label">04 / TEACH</span>
+      <div class="section-head section-head-left">
+        <WordReveal tag="h2" text="Learn with me." :stagger="80" />
+      </div>
+      <LearnIndex />
     </section>
 
-    <section class="snap-section testimonials-section">
-      <SimpleTestimonials />
-    </section>
-
-    <section class="snap-section footer-section">
-      <Footer />
-    </section>
+    <!-- 6. Footer -->
+    <Footer />
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
-
-const scrollProgress = ref(0)
-const snapContainer = ref(null)
-
-const handleScroll = () => {
-  if (!snapContainer.value) return
-
-  const scrollTop = snapContainer.value.scrollTop
-  const scrollHeight = snapContainer.value.scrollHeight
-  const clientHeight = snapContainer.value.clientHeight
-  const maxScroll = scrollHeight - clientHeight
-
-  // Calculate progress: 0 at top, 1 at bottom of all content
-  const progress = maxScroll > 0 ? scrollTop / maxScroll : 0
-  scrollProgress.value = progress
-  console.log('scroll:', scrollTop, 'max:', maxScroll, 'progress:', progress.toFixed(3))
-}
-
-onMounted(async () => {
-  await nextTick()
-  console.log('snapContainer ref:', snapContainer.value)
-  if (snapContainer.value) {
-    snapContainer.value.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
-  }
-})
-
-onUnmounted(() => {
-  if (snapContainer.value) {
-    snapContainer.value.removeEventListener('scroll', handleScroll)
-  }
-})
+import articles from '~/assets/articles.json'
 </script>
 
-<style lang="scss" scoped>
-
-.scroll-progress {
-  position: fixed;
-  z-index: 10000;
-  top: 62px;
-  left: $spacing-sm;
-  width: 2px;
-  border-radius: 2px;
-  mix-blend-mode: difference;
-  background: $white;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
-
-.snap-container {
-  height: 100dvh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  overscroll-behavior-y: contain; /* Prevents the "bounce" that triggers chrome hiding/showing */
-}
-
-.snap-section {
-  min-height: 100dvh; /* Use min-height so content isn't cut off */
-  width: 100vw;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+<style lang="scss">
+.homepage {
   position: relative;
+  z-index: 1;
+  color: var(--fg);
 }
 
-.testimonials-section {
+/*
+ * Force the theme foreground on every text element inside .homepage.
+ * Guards against any leftover $white/$black hardcodes from global styles
+ * or child components bleeding through. The `:where(...)` keeps specificity
+ * at zero for the inner list so child rules can still override when they
+ * intentionally want a different color.
+ */
+.homepage :where(h1, h2, h3, h4, h5, h6, p, span, a, li, blockquote, button),
+.homepage .intro-headline,
+.homepage .intro-eyebrow,
+.homepage .rail-label,
+.homepage .word-reveal,
+.homepage .word,
+.homepage .word-inner,
+.homepage .serif-word {
+  color: var(--fg);
+}
+
+/* ---------- Intro ---------- */
+
+.intro {
   position: relative;
-  z-index: 2;
-}
-
-.threejs-promo-section {
-  position: relative;
-  z-index: 2;
-}
-
-.footer-section {
-  height: auto;
-  min-height: 100vh;
-  scroll-snap-align: start;
-}
-
-#Hero,
-#ServiceProductDesign,
-#ServiceUXStrategy,
-#ServiceDesignSystems,
-.testimonials-section,
-.threejs-promo-section,
-.footer-section {
-  overflow: hidden;
-  width: 100%;
-  height: 100dvh;
-  position: relative;
-  z-index: 0;
-
-  @media screen and (max-width: 768px) {
-    position: relative;
-  }
-
-  .three-scene {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: calc(100vw - 15px);
-    height: 100dvh;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0;
-    animation: fade 1s forwards;
-    transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
-    animation-delay: 1s;
-
-    @media screen and (max-width: 768px) {
-      width: 100vw;
-    }
-  }
-}
-
-.content-blast {
-  position: relative;
+  min-height: 100dvh;
+  /* top padding clears the fixed nav (~60px + breathing room).
+     bottom padding is modest so the headline always fits within the
+     viewport on short/widescreen monitors — content still sits in the
+     lower half because of justify-content: space-between. */
+  padding-top: clamp(5rem, 10vh, 8rem);
+  padding-right: clamp($spacing-md, 6vw, $spacing-xl);
+  padding-left: clamp($spacing-md, 6vw, $spacing-xl);
+  padding-bottom: clamp(2rem, 6vh, 5rem);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  z-index: 1;
-  padding: $spacing-xl;
-  pointer-events: none;
-  height: calc(100% - 62px);
-  margin:62px auto 0;
-  align-self: center;
-  gap: $spacing-sm;
-  max-width: 100%;
-  container-type: inline-size;
-  
-  @media screen and (max-width: 1200px) {
-    padding: $spacing-lg $spacing-md $spacing-lg $spacing-lg;
+  justify-content: space-between;
+  color: var(--fg);
+}
+
+.intro-eyebrow {
+  display: inline-block;
+  font-size: $font-size-sm;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fade 0.8s forwards 0.3s;
+}
+
+.intro-headline {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-main, sans-serif;
+  font-weight: 500;
+  /* Font-size responds to BOTH viewport width and height so the two-line
+     headline always fits the hero on short/widescreen monitors (e.g.
+     1920×720) where a purely vw-based size would overflow. */
+  font-size: min(clamp(3rem, 11vw, 13rem), 22vh);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.04em;
+}
+
+/* Tighten per-word line-height inside the hero so the two headline lines
+   stack compactly and don't overflow. WordReveal.vue's scoped rule sets
+   this to 1.15 for descender safety — negative clip-path insets already
+   protect descenders, so we can pull this back to 1.05 inside the hero. */
+.intro-headline .word {
+  line-height: 1.05;
+}
+
+.intro-line {
+  display: block;
+}
+
+.intro-line-2 {
+  padding-left: clamp($spacing-md, 14vw, 20rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.35em;
+  align-items: baseline;
+
+  @media screen and (max-width: 700px) {
+    padding-left: clamp($spacing-sm, 8vw, $spacing-lg);
   }
+}
 
-  @media screen and (max-width: 768px) {
-    padding: $spacing-md $spacing-sm $spacing-md $spacing-md;
-  }
+.serif-word {
+  font-family: $font-family-serif, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+}
 
+/* ---------- Section frame ---------- */
 
-  .reveal {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    height: 100%;
-  }
+.section {
+  position: relative;
+  padding-block: clamp(8rem, 18vh, 16rem);
+  padding-inline: clamp($spacing-md, 6vw, $spacing-xl);
+}
 
+.section-head {
+  margin-bottom: clamp($spacing-lg, 8vh, $spacing-xl);
 
-  h1 {
-    line-height: 110%;
+  h2, h3 {
     margin: 0;
-    text-align: left;
-    font-family: $font-family-main;
-    text-wrap: balance;
-    max-width: 50vw;
-    font-size: 4cqw;
-
-    @media screen and (max-width: 1000px) {
-      font-size: 8cqw;
-      max-width: 80%;
-    }
-
-    @media screen and (max-height: 900px) {
-      font-size: $font-size-xxl;
-      max-width: 80%;
-    }
+    padding: 0;
+    font-family: $font-family-main, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    color: var(--fg);
   }
 
   h2 {
-    line-height: 120%;
-    margin: 0 0 $spacing-sm 0;
-    text-align: left;
-    font-family: $font-family-main;
-    text-wrap: balance;
-    width: 80vw;
-    max-width: 600px;
-    font-size: 3cqw;
-
-    @media screen and (max-width: 1000px) {
-      font-size: $font-size-xl;
-      max-width: 80%;
-    }
+    font-size: clamp(3rem, 7vw, 8rem);
   }
 
-  p {
-    font-size: $font-size-lg;
-    line-height: 140%;
-    margin: 0;
-    text-align: left;
-    font-family: $font-family-main;
-    text-wrap: balance;
-    width: 80vw;
-    max-width: 400px;
-
-    @media screen and (max-width: 1000px) {
-      font-size: $font-size-md;
-      width: 80%;
-    }
-  }
-
-  svg {
-    path {
-      stroke: $black;
-    }
-
-    rect {
-      stroke: $black;
-    }
+  h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 }
 
-.dark {
-  #Hero {
-    background: $black;
+.section-head-left { text-align: left; }
+.section-head-right {
+  text-align: right;
+
+  h2 {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: clamp(2rem, 5.5vw, 7rem);
+  }
+}
+.section-head-center { text-align: center; }
+
+/* CTA button sitting under/after the section heading */
+.section-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: $spacing-md;
+  padding: 0.6em 1.1em;
+  font-family: $font-family-main, sans-serif;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--fg);
+  border: 1px solid var(--border-faint);
+  border-radius: $br-xl;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    border-color: var(--fg);
+
+    span[aria-hidden] {
+      transform: translateX(0.3em);
+    }
   }
 
-  .content-blast {
-
-    h1, h2 {
-      color: $white;
-      text-shadow: .1cqw .2cqw 0px rgba($black, 1);
-    }
-
-    svg {
-      path {
-        stroke: $white;
-      }
-
-      rect {
-        stroke: $white;
-      }
-    }
+  span[aria-hidden] {
+    transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
-    
+}
+
+.rail-label {
+  position: absolute;
+  top: clamp(3rem, 8vh, 6rem);
+  left: clamp($spacing-sm, 2vw, $spacing-md);
+  font-size: $font-size-xs;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: var(--fg);
+
+  @media screen and (max-width: 900px) {
+    writing-mode: horizontal-tb;
+    transform: none;
+    position: relative;
+    top: auto;
+    left: auto;
+    display: block;
+    margin-bottom: $spacing-md;
+  }
+}
+
+/* ---------- Mono scope: tint child components toward the current theme ---------- */
+
+.mono-scope {
+  color: var(--fg);
+
+  h1, h2, h3, h4, h5, h6, p, a, span, li, button, blockquote {
+    color: inherit;
+  }
+
+  img {
+    filter: grayscale(1) contrast(1.05);
+  }
+
+  .project,
+  .vertical-project,
+  [class*="card"],
+  [class*="panel"] {
+    background: transparent;
+  }
+
+  * {
+    border-color: var(--border-faint);
+  }
+}
+
+/* ---------- Thoughts: 0.92 opaque cards + backdrop blur ---------- */
+
+.section-thoughts {
+  /* Hide FeaturedThoughts' built-in h2 — our WordReveal heading covers it. */
+  .thoughts-container > h2 {
+    display: none;
+  }
+
+  /* Override FeaturedThoughts' default dark card so it blends with the theme. */
+  .article-card {
+    background: rgb(var(--bg-rgb) / 0.92) !important;
+    color: var(--fg) !important;
+    backdrop-filter: blur(14px) saturate(1.1);
+    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+    border: 1px solid var(--border-faint) !important;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .article-card:hover {
+    background: rgb(var(--bg-rgb) / 0.97) !important;
+  }
+
+  .article-title,
+  .article-date {
+    color: var(--fg) !important;
+  }
+
+  .article-date {
+    opacity: 0.55;
+  }
+}
+
+/* ---------- Companies section ---------- */
+
+.section-companies {
+  text-align: left;
+
+  .section-head {
+    margin-bottom: clamp($spacing-xl, 12vh, 12rem);
+  }
+}
+
+/* ---------- Hide "Let's work together" on homepage only ---------- */
+
+.homepage footer .footer-cta {
+  display: none;
+}
+
+/* ---------- Responsive intro ---------- */
+
+@media screen and (max-width: 700px) {
+  .intro-headline {
+    font-size: clamp(3rem, 14vw, 5.5rem);
+  }
 }
 </style>

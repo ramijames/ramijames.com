@@ -80,7 +80,10 @@ const DitherShader = {
       float radius = maxRadius * brightness;
 
       float dot = step(dist, radius);
-      gl_FragColor = vec4(texColor.rgb * dot, 1.0);
+      // Preserve alpha so the canvas stays transparent where no particles are
+      // drawn. Using the dot mask as the alpha factor keeps the halftone
+      // dots solid and leaves the gaps fully transparent.
+      gl_FragColor = vec4(texColor.rgb * dot, dot);
     }
   `
 }
@@ -148,11 +151,19 @@ const init = () => {
   const h = container.value.clientHeight
 
   scene = new THREE.Scene()
+  // Leave scene.background as null (default) so the canvas stays transparent.
+  // Fog still tints particle depth subtly.
+  scene.background = null
   scene.fog = new THREE.FogExp2(0x424242, 5.82)
 
   camera = new THREE.PerspectiveCamera(90, w / h, 0.01, 100)
 
-  renderer = new THREE.WebGLRenderer({ antialias: true })
+  renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: true,
+    premultipliedAlpha: false,
+  })
+  renderer.setClearColor(0x000000, 0)
   renderer.setSize(w, h)
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.toneMapping = THREE.NoToneMapping
@@ -163,14 +174,22 @@ const init = () => {
 
   scene.add(new THREE.AmbientLight(0x000000))
 
-  // Post processing
+  // Post processing — use an RGBA render target so the composer pipeline
+  // preserves the alpha channel instead of clearing to opaque black.
+  const composerTarget = new THREE.WebGLRenderTarget(w, h, {
+    format: THREE.RGBAFormat,
+    type: THREE.HalfFloatType,
+    stencilBuffer: false,
+  })
+
   const renderPass = new RenderPass(scene, camera)
+  renderPass.clearAlpha = 0
   const bloomPass = new UnrealBloomPass(new THREE.Vector2(w, h), 1.5, 0.4, 0.85)
   bloomPass.threshold = 0.01
   bloomPass.strength = CONFIG.bloomStrength
   bloomPass.radius = 0.8
 
-  composer = new EffectComposer(renderer)
+  composer = new EffectComposer(renderer, composerTarget)
   composer.addPass(renderPass)
   composer.addPass(bloomPass)
   composer.addPass(new ShaderPass(DitherShader))

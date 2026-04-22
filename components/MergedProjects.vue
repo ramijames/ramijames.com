@@ -36,6 +36,7 @@
 <script setup>
 
 import { useRoute } from 'vue-router';
+import { products } from '~/utils/products';
 const route = useRoute();
 
 const props = defineProps({
@@ -53,129 +54,6 @@ onMounted(() => {
   matchingProject.value = products.filter(product => product.slug == route.path)
   loading.value = false;
 })
-
-const products = [
-                  // {
-                  //   title: 'Vewrite',
-                  //   description: 'Open-source project management for content creators',
-                  //   image: '/products/vewrite/ve-thumb.png',
-                  //   logo: '/products/vewrite/ve-logo.svg',
-                  //   bg: '/homepage/hp-vewrite.png',
-                  //   status: 'past',
-                  //   slug: '/products/vewrite/',
-                  //   color: '#0D1E38',
-                  //   class: 'vewrite',
-                  //   type: 'Product Case Study'
-                  // }, 
-                  {
-                    title: 'Scatter',
-                    description: 'Open-source web3 wallet',
-                    image: '/products/scatter/scatter-thumb.png',
-                    logo: '/products/scatter/scatter-logo.png',
-                    bg: '/homepage/hp-scatter.png',
-                    status: 'past',
-                    slug: '/products/scatter/',
-                    color: '#0899FE',
-                    class: 'scatter',
-                    type: 'Product Case Study'
-                  },  
-                  {
-                    title: 'Ultra',
-                    description: 'Tokenized gaming platform',
-                    image: '/products/ultra/ultra-prime-thumb.png',
-                    logo: '/products/ultra/ultra-logo.svg',
-                    bg: '/homepage/hp-ultra.png',
-                    status: 'past',
-                    slug: '/products/ultra/',
-                    color: '#2E2667',
-                    class: 'ultra',
-                    type: 'Product Case Study'
-                  },  
-                  {
-                    title: 'Doodledapp',
-                    description: 'No-code smart contract builder',
-                    image: '/products/doodledapp/doodledapp-thumb.png',
-                    logo: '/products/doodledapp/doodledapp-logo.svg',
-                    bg: '/homepage/hp-doodledapp.png',
-                    status: 'past',
-                    slug: '/products/doodledapp/',
-                    color: '#3E74FF',
-                    class: 'doodledapp',
-                    type: 'Product Case Study'
-                  },
-                  {
-                    title: 'Climbing Monster',
-                    description: 'Training application for rock climbers',
-                    image: '/products/climbingmonster/cm-mobile-example.png',
-                    logo: '/products/climbingmonster/climbingmonster-logo.png',
-                    bg: '/homepage/hp-climbingmonster.png',
-                    status: 'past',
-                    slug: '/products/climbingmonster/',
-                    color: '#990000',
-                    class: 'climbingmonster',
-                    type: 'Product Case Study'
-                  },
-                  {
-                    title: 'Food For Future',
-                    description: 'Decentralized data for funding farmers',
-                    image: '/products/food-for-future/fff-thumb.png',
-                    logo: '/products/food-for-future/fff-logo.svg',
-                    bg: '/homepage/hp-fff.png',
-                    status: 'past',
-                    slug: '/products/food-for-future/',
-                    color: '#9446BD',
-                    class: 'foodforfuture',
-                    type: 'Product Case Study'
-                  },
-                  {
-                    title: 'Telos OBE',
-                    description: 'Open source block explorer',
-                    image: '/products/telos/telos-thumb.png',
-                    logo: '/products/telos/telos-logo.png',
-                    bg: '/homepage/hp-telos.png',
-                    status: 'past',
-                    slug: '/products/telos-obe/',
-                    color: '#571AFF',
-                    class: 'telos',
-                    type: 'Product Case Study'
-                  },
-                  {
-                    title: 'TouchSpin',
-                    description: 'iGaming on your iPad',
-                    image: '/products/telos/telos-thumb.png',
-                    logo: '/products/touchspin/touchspin-logo.svg',
-                    bg: '/products/touchspin/touchspin-bg.png',
-                    status: 'past',
-                    slug: '/products/touchspin/',
-                    color: '#17265F',
-                    class: 'touchspin',
-                    type: 'Product Case Study'
-                  },
-                  {
-                    title: 'Tonara',
-                    description: 'Interactive sheet music',
-                    image: '/products/telos/telos-thumb.png',
-                    logo: '/products/tonara/tonara-logo.png',
-                    bg: '/products/tonara/tonara-bg.png',
-                    status: 'past',
-                    slug: '/products/tonara/',
-                    color: '#4B6FFF',
-                    class: 'tonara',
-                    type: 'Product Case Study'
-                  },
-                  {
-                    title: 'Qmarkets',
-                    description: 'Stop Wasting Time on Innovation Without Impact',
-                    image: '/products/telos/telos-thumb.png',
-                    logo: '/products/qmarkets/qmarkets-logo.svg',
-                    bg: '/products/qmarkets/qmarkets-bg.png',
-                    status: 'past',
-                    slug: '/products/qmarkets/',
-                    color: '#182043',
-                    class: 'qmarkets',
-                    type: 'Product Case Study'
-                  }      
-                ];
 
 </script>
 
