@@ -5,9 +5,6 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute()
-const { initialize: initHotjar } = useHotjar()
-
 // Inline script that runs before paint to set the theme class on <body>.
 // This prevents a flash of unstyled/wrong-themed content during hydration.
 useHead({
@@ -24,11 +21,4 @@ useHead({
     },
   ],
 })
-
-onMounted(() => {
-  initHotjar()
-})
-
-
-
 </script>

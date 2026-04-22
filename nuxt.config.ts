@@ -40,7 +40,6 @@ export default defineNuxtConfig({
     "nuxt-newsletter",
     "nuxt-calendly",
     "@nuxtjs/sitemap",
-    "nuxt-module-hotjar",
     "@nuxtjs/robots",
     "nuxt-highcharts",
     "nuxt-gtag",
@@ -57,10 +56,6 @@ export default defineNuxtConfig({
   },
   gtag: {
     id: 'G-N9MEGS1HSD'
-  },
-  hotjar: {
-    hotjarId: 5004344,
-    scriptVersion: 6,
   },
   newsletter: {    
     mailchimp: {      
