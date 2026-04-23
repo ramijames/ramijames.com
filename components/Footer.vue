@@ -5,7 +5,7 @@
 
         <h2>Let's work together</h2>
         <p>I'm always keen to connect with like-minded builders who are interested in pushing the envelope of what is possible in the product design space.</p>
-        <button class="start-project-btn large" @click="openContactModal">Create Product</button>
+        <button class="start-project-btn large" @click="openContactModal">Work with me</button>
       </div>
     </section>
     <ContactModal :isOpen="isContactModalOpen" @close="closeContactModal" />

@@ -9,6 +9,8 @@
 // Altered from https://codepen.io/sabosugi/full/jErebjR
 
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+
+const emit = defineEmits(['ready'])
 import * as THREE from 'three'
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
@@ -274,6 +276,11 @@ const init = () => {
   window.addEventListener('resize', onResize)
   animate()
 
+  // Wait one extra frame so the first real composer pass has landed on
+  // screen before we tell the host to fade us in. Without this the fade
+  // can start against a blank canvas.
+  requestAnimationFrame(() => requestAnimationFrame(() => emit('ready')))
+
   // Store listener for cleanup
   container.value._mouseMove = onMouseMove
 }
@@ -394,7 +401,11 @@ onUnmounted(() => cleanup())
 
 .threejs-container {
   width: 100%;
-  height: 100vh;
+  /* Fill the parent instead of 100vh — on mobile, 100vh is the
+     URL-bar-expanded viewport height, which is taller than the visible
+     area and causes the canvas to extend past the fixed-positioned
+     .three-bg wrapper. 100% keeps it matched to the wrapper. */
+  height: 100%;
   overflow: hidden;
 }
 </style>

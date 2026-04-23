@@ -198,6 +198,9 @@ body.dark .quote-logo {
     .quote-body {
       margin-left: 0;
       margin-right: 0;
+      /* 80% of the desktop clamp (was 2rem / 4.5vw / 4.25rem) so the
+         testimonial quotes breathe on narrow viewports. */
+      font-size: clamp(1.6rem, 3.6vw, 3.4rem);
     }
   }
 }

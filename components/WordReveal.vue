@@ -83,12 +83,12 @@ onBeforeUnmount(() => {
  */
 @keyframes word-reveal-mask {
   0% {
-    clip-path: inset(-0.2em calc(100% + 0.25em) -0.2em -0.15em);
+    clip-path: inset(-0.2em calc(100% + 0.35em) -0.2em -0.35em);
     opacity: 0;
     transform: skewX(14deg) scale(0.92);
   }
   100% {
-    clip-path: inset(-0.2em -0.25em -0.2em -0.15em);
+    clip-path: inset(-0.2em -0.35em -0.2em -0.35em);
     opacity: 1;
     transform: skewX(0) scale(1);
   }
@@ -101,16 +101,19 @@ onBeforeUnmount(() => {
     display: inline-block;
     white-space: nowrap;
     /* Give inline box enough room for descenders + italic overshoot
-       even when parent uses tight line-height. */
+       even when parent uses tight line-height. Italics in Libre
+       Baskerville swing below the baseline on the left (e.g. the stem of
+       'f') so we add a small padding-inline-start to keep strokes inside
+       the clip region. */
     line-height: 1.15;
     padding-block: 0.08em;
-    padding-inline-end: 0.05em;
+    padding-inline: 0.1em 0.05em;
   }
 
   .word-inner {
     display: inline-block;
     will-change: transform, clip-path, opacity;
-    clip-path: inset(-0.2em calc(100% + 0.25em) -0.2em -0.15em);
+    clip-path: inset(-0.2em calc(100% + 0.35em) -0.2em -0.35em);
     opacity: 0;
     transform: skewX(14deg) scale(0.92);
   }
@@ -128,7 +131,7 @@ onBeforeUnmount(() => {
 
   @media (prefers-reduced-motion: reduce) {
     .word-inner {
-      clip-path: inset(-0.2em -0.25em -0.2em -0.15em);
+      clip-path: inset(-0.2em -0.35em -0.2em -0.35em);
       opacity: 1;
       transform: none;
     }

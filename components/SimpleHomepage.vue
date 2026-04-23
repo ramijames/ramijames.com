@@ -56,7 +56,7 @@
     <section class="section mono-scope section-work">
       <span class="rail-label">01 / WORK</span>
       <div class="section-head section-head-left">
-        <WordReveal tag="h2" text="Products I've shipped." :stagger="80" />
+        <WordReveal tag="h2" text="Products I've helped ship." :stagger="80" />
       </div>
       <WorkIndex />
     </section>
@@ -338,6 +338,11 @@ onBeforeUnmount(() => {
 }
 
 .section-head-left { text-align: left; }
+
+/* "Products I've helped ship." — 15% smaller than the default section h2. */
+.section-work .section-head h2 {
+  font-size: clamp(2.55rem, 5.95vw, 6.8rem);
+}
 .section-head-right {
   text-align: right;
 
@@ -483,6 +488,56 @@ onBeforeUnmount(() => {
 @media screen and (max-width: 700px) {
   .intro-headline {
     font-size: clamp(3rem, 14vw, 5.5rem);
+  }
+}
+
+/* ---------- Mobile: uniform 20px outer padding ---------- */
+
+@media screen and (max-width: 700px) {
+  .homepage .intro,
+  .homepage .section {
+    padding-inline: 20px;
+  }
+
+  /* Editorial rows (Work, Learn): strip their own inline padding so the
+     row content aligns to the 20px section padding rather than adding
+     another $spacing-md inside it. */
+  .homepage .work-index .row,
+  .homepage .learn-index .row {
+    padding-inline: 0;
+  }
+
+  /* Section heads — scale all of them down ~20% on mobile. The desktop
+     h2 is clamp(3rem, 7vw, 8rem); 0.8× gives clamp(2.4rem, 5.6vw, 6.4rem).
+     h3 likewise scales from clamp(1.5rem, 2.5vw, 2.25rem). */
+  .homepage .section-head h2 {
+    font-size: clamp(2.4rem, 5.6vw, 6.4rem);
+  }
+
+  .homepage .section-head h3 {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+  }
+
+  /* Section heading on the Thoughts strip fits on one line at desktop
+     widths via white-space: nowrap — on mobile let it wrap naturally so
+     it doesn't overflow the 20px gutter. The right-aligned h2 had its
+     own desktop clamp (clamp(2rem, 5.5vw, 7rem)); apply the same 20%
+     reduction here. */
+  .homepage .section-head-right h2 {
+    white-space: normal;
+    font-size: clamp(1.6rem, 4.4vw, 5.6rem);
+  }
+
+  .homepage .scroll-hint {
+    right: 20px;
+  }
+
+  /* FeaturedThoughts' container uses the shared .w-consistent utility which
+     adds its own padding at every breakpoint. On mobile, strip it so the
+     articles grid aligns to the 20px section gutter rather than indenting
+     further. */
+  .homepage .section-thoughts .w-consistent {
+    padding: 0;
   }
 }
 </style>
