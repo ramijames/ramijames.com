@@ -27,8 +27,6 @@ const isNavOpen = computed(() => {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
-  transition: all 0.4s;
-  transition-timing-function: cubic-bezier(0.355, 0.965, 0.670, 0.970);
 
   &.innerNav-open {
     margin-left: 400px;
@@ -45,5 +43,4 @@ const isNavOpen = computed(() => {
   width: 100%;
   position: relative;
 }
-
 </style>

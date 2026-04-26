@@ -45,6 +45,12 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "@nuxt/fonts"
   ],
+  fonts: {
+    families: [
+      { name: 'Noto Serif', provider: 'google', weights: [100, 200, 300, 400, 500, 600, 700, 800, 900] },
+      { name: 'Libre Baskerville', provider: 'google', weights: [400, 700] },
+    ],
+  },
   vite: {
     css: {
       preprocessorOptions: {

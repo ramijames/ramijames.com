@@ -3,69 +3,28 @@
 
     <!-- 1. Intro -->
     <section class="intro">
-      <span class="intro-eyebrow">RAMI JAMES &mdash; 2026</span>
-      <h1 class="intro-headline">
-        <WordReveal
-          tag="span"
-          class="intro-line intro-line-1"
-          text="Designer, strategist,"
-          trigger="mount"
-          :delay="600"
-          :stagger="140"
-          :duration="950"
-        />
-        <span class="intro-line intro-line-2">
-          <WordReveal
-            tag="span"
-            text="quiet"
-            trigger="mount"
-            :delay="900"
-            :stagger="140"
-            :duration="950"
-          />
-          <span class="serif-word">
-            <WordReveal
-              tag="span"
-              text="force"
-              trigger="mount"
-              :delay="1050"
-              :stagger="140"
-              :duration="950"
-            />
-          </span>
-          <WordReveal
-            tag="span"
-            text="multiplier."
-            trigger="mount"
-            :delay="1200"
-            :stagger="140"
-            :duration="950"
-          />
-        </span>
-      </h1>
-
-      <span class="scroll-hint" aria-hidden="true">
-        <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="20" height="32" rx="10" stroke="currentColor" stroke-width="1.5"/>
-          <circle class="scroll-hint-wheel" cx="11" cy="9" r="2" fill="currentColor"/>
-        </svg>
-      </span>
+      <h1 class="intro-headline">I'm a <span
+        class="hover-word"
+        @mouseenter="showPopover('strategic', $event)"
+        @mouseleave="hidePopover"
+        @mousemove="movePopover"
+      >strategic</span> designer with a <span
+        class="hover-word"
+        @mouseenter="showPopover('technical', $event)"
+        @mouseleave="hidePopover"
+        @mousemove="movePopover"
+      >technical</span> mindset.</h1>
     </section>
 
     <!-- 2. Work -->
     <section class="section mono-scope section-work">
-      <span class="rail-label">01 / WORK</span>
-      <div class="section-head section-head-left">
-        <WordReveal tag="h2" text="Products I've helped ship." :stagger="80" />
-      </div>
       <WorkIndex />
     </section>
 
     <!-- 3. Thoughts -->
     <section class="section mono-scope section-thoughts">
-      <span class="rail-label">02 / THOUGHTS</span>
       <div class="section-head section-head-right">
-        <WordReveal tag="h2" text="Things I'm thinking about." :stagger="80" />
+        <h2>Things I'm thinking about.</h2>
         <nuxt-link to="/thoughts" class="section-cta">See all thoughts <span aria-hidden="true">&rarr;</span></nuxt-link>
       </div>
       <FeaturedThoughts :articles="articles" />
@@ -73,59 +32,81 @@
 
     <!-- 4. Companies -->
     <section class="section mono-scope section-companies">
-      <span class="rail-label">03 / TRUST</span>
       <div class="section-head section-head-center">
-        <WordReveal tag="h3" text="My work, in their words" :stagger="80" />
+        <h3>My work, in their words</h3>
       </div>
       <HomepageTestimonials />
     </section>
 
     <!-- 5. Learn -->
     <section class="section mono-scope section-learn">
-      <span class="rail-label">04 / TEACH</span>
       <div class="section-head section-head-left">
-        <WordReveal tag="h2" text="Learn with me." :stagger="80" />
+        <h2>Learn with me.</h2>
       </div>
       <LearnIndex />
     </section>
 
     <!-- 6. Footer -->
     <Footer />
+
+    <div
+      v-if="activePopover"
+      :key="activePopover"
+      class="word-popover"
+      :style="{ top: popoverY + 'px', left: popoverX + 'px' }"
+    >
+      <svg class="popover-border" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <rect class="popover-border-rect" fill="none" stroke="white" stroke-width="2" pathLength="100"/>
+      </svg>
+      <div class="popover-content">
+        <div v-for="(line, lineIdx) in popoverWords[activePopover]" :key="lineIdx" class="popover-line">
+          <span
+            v-for="(word, wordIdx) in line"
+            :key="wordIdx"
+            class="popover-word"
+            :style="{ '--word-index': lineIdx * line.length + wordIdx }"
+          >{{ word }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount } from 'vue'
+import { ref } from 'vue'
 import articles from '~/assets/articles.json'
 
-/*
- * Fade the hero content (headline, eyebrow, scroll hint) out as the user
- * scrolls past the first screen. Progress runs from 0 at the very top to 1
- * by the time ~60% of the viewport has scrolled past. We expose the result
- * as a CSS custom property so the paint is driven by compositor-friendly
- * opacity/transform, no layout thrash per scroll event.
- */
-let handleScroll = null
+const activePopover = ref(null)
+const popoverX = ref(0)
+const popoverY = ref(0)
 
-onMounted(() => {
-  if (typeof window === 'undefined') return
-  const root = document.documentElement
-  handleScroll = () => {
-    const distance = window.innerHeight * 0.6
-    const y = window.scrollY || 0
-    const progress = Math.min(1, Math.max(0, y / distance))
-    root.style.setProperty('--hero-fade', String(1 - progress))
-  }
-  window.addEventListener('scroll', handleScroll, { passive: true })
-  handleScroll()
-})
+const popoverWords = {
+  strategic: [
+    ['See', 'the', 'whole', 'board.'],
+    ['Name', 'the', 'real', 'game.'],
+    ['Place', 'the', 'smaller', 'bet.'],
+    ['Walk', 'the', 'longer', 'road.'],
+  ],
+  technical: [
+    ['Build', 'the', 'unfamiliar', 'shape.'],
+    ['Wire', 'unlikely', 'things', 'together.'],
+    ['Ship', 'before', "it's", 'too', 'late.'],
+  ],
+}
 
-onBeforeUnmount(() => {
-  if (handleScroll) window.removeEventListener('scroll', handleScroll)
-  if (typeof document !== 'undefined') {
-    document.documentElement.style.removeProperty('--hero-fade')
-  }
-})
+function showPopover(name, e) {
+  activePopover.value = name
+  movePopover(e)
+}
+
+function hidePopover() {
+  activePopover.value = null
+}
+
+function movePopover(e) {
+  popoverX.value = e.clientX + 16
+  popoverY.value = e.clientY + 16
+}
 </script>
 
 <style lang="scss">
@@ -133,176 +114,118 @@ onBeforeUnmount(() => {
   position: relative;
   z-index: 1;
   color: var(--fg);
+  font-weight: 300;
 }
 
-/*
- * Force the theme foreground on every text element inside .homepage.
- * Guards against any leftover $white/$black hardcodes from global styles
- * or child components bleeding through. The `:where(...)` keeps specificity
- * at zero for the inner list so child rules can still override when they
- * intentionally want a different color.
- */
-.homepage :where(h1, h2, h3, h4, h5, h6, p, span, a, li, blockquote, button),
+.homepage :where(h1, h2, h3, h4, h5, h6, p, span, a, li, blockquote, button, div),
 .homepage .intro-headline,
-.homepage .intro-eyebrow,
-.homepage .rail-label,
-.homepage .word-reveal,
-.homepage .word,
-.homepage .word-inner,
 .homepage .serif-word {
   color: var(--fg);
+  font-weight: 300;
 }
 
 /* ---------- Intro ---------- */
 
 .intro {
   position: relative;
-  min-height: 100dvh;
-  /* top padding clears the fixed nav (~60px + breathing room).
-     bottom padding is modest so the headline always fits within the
-     viewport on short/widescreen monitors — content still sits in the
-     lower half because of justify-content: space-between. */
-  padding-top: clamp(5rem, 10vh, 8rem);
-  padding-right: clamp($spacing-md, 6vw, $spacing-xl);
-  padding-left: clamp($spacing-md, 6vw, $spacing-xl);
-  padding-bottom: clamp(2rem, 6vh, 5rem);
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 180px;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  text-align: center;
   color: var(--fg);
-
-  /* Fade the hero content as the user scrolls (see --hero-fade set by the
-     SimpleHomepage scroll handler). Falls back to fully visible when the
-     variable isn't set yet, e.g. during SSR. */
-  .intro-headline {
-    opacity: var(--hero-fade, 1);
-    transform: translate3d(0, calc((1 - var(--hero-fade, 1)) * -20px), 0);
-    will-change: opacity, transform;
-  }
-
-  /* Eyebrow and scroll-hint drive their initial fade-in through the
-     registered --hero-appear custom property, so we can multiply that by
-     --hero-fade here without the load animation locking opacity at 1. */
-  .intro-eyebrow,
-  .scroll-hint {
-    opacity: calc(var(--hero-appear, 1) * var(--hero-fade, 1));
-    transform: translate3d(0, calc((1 - var(--hero-fade, 1)) * -20px), 0);
-    will-change: opacity, transform;
-  }
-
-  /* Hero text is purely visual — don't let it intercept clicks or hover on
-     the scroll-hint / underlying layers. */
-  .intro-headline,
-  .intro-eyebrow {
-    pointer-events: none;
-  }
-}
-
-/*
- * Registered custom property for the per-element "load in" factor (0 → 1).
- * We animate this instead of opacity directly so the scroll-driven fade
- * (driven by --hero-fade) can be multiplied in, rather than being clobbered
- * by the load animation holding opacity at 1 via animation-fill-mode.
- */
-@property --hero-appear {
-  syntax: '<number>';
-  inherits: false;
-  initial-value: 0;
-}
-
-@keyframes hero-appear-in {
-  to { --hero-appear: 1; }
-}
-
-.intro-eyebrow {
-  display: inline-block;
-  font-size: $font-size-sm;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  --hero-appear: 0;
-  animation: hero-appear-in 0.8s ease forwards 0.3s;
 }
 
 .intro-headline {
   margin: 0;
   padding: 0;
   font-family: $font-family-main, sans-serif;
-  font-weight: 500;
-  /* Font-size responds to BOTH viewport width and height so the two-line
-     headline always fits the hero on short/widescreen monitors (e.g.
-     1920×720) where a purely vw-based size would overflow. The vw bound
-     is sized so the longer line ("quiet force multiplier.") fits on a
-     single line at typical desktop widths. */
-  font-size: min(clamp(2.75rem, 7.5vw, 9.5rem), 18vh);
-  line-height: 1.02;
+  font-weight: 300;
+  font-size: calc(8.31579px + 4.94737vw);
+  line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--fg);
+  gap: 0.04em;
+  width: 100%;
+  max-width: 720px;
+  text-wrap: balance;
+
+  .hover-word {
+    text-decoration: underline;
+    text-underline-offset: 0.08em;
+    text-decoration-thickness: 1px;
+    cursor: help;
+  }
+}
+
+.word-popover {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  min-width: 160px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  font-family: $font-family-secondary, sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: $white;
+  white-space: nowrap;
+}
+
+.popover-border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.popover-border-rect {
+  width: 100%;
+  height: 100%;
+  rx: 20px;
+  ry: 20px;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  vector-effect: non-scaling-stroke;
+  animation: popover-trace 0.7s ease forwards;
+}
+
+.popover-content {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.04em;
+  gap: 8px;
 }
 
-/* Tighten per-word line-height inside the hero so the two headline lines
-   stack compactly and don't overflow. WordReveal.vue's scoped rule sets
-   this to 1.15 for descender safety — negative clip-path insets already
-   protect descenders, so we can pull this back to 1.05 inside the hero. */
-.intro-headline .word {
-  line-height: 1.05;
-}
-
-.intro-line {
-  display: block;
-}
-
-.intro-line-2 {
-  padding-left: clamp($spacing-md, 8vw, 10rem);
+.popover-line {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0 0.35em;
-  align-items: baseline;
-
-  @media screen and (max-width: 700px) {
-    padding-left: clamp($spacing-sm, 8vw, $spacing-lg);
-  }
+  gap: 0.3em;
 }
 
-.serif-word {
-  font-family: $font-family-serif, serif;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  display: inline-flex;
+.popover-word {
+  font-weight: 300;
+  opacity: 0;
+  animation: popover-word-in 0.25s ease forwards;
+  animation-delay: calc(0.7s + var(--word-index, 0) * 0.06s);
 }
 
-/* ---------- Scroll hint ---------- */
-
-.scroll-hint {
-  position: absolute;
-  right: clamp($spacing-md, 4vw, $spacing-xl);
-  bottom: clamp($spacing-md, 4vh, $spacing-xl);
-  color: var(--fg);
-  --hero-appear: 0;
-  animation: hero-appear-in 0.8s ease forwards 1.8s;
-
-  svg {
-    display: block;
-  }
+@keyframes popover-trace {
+  to { stroke-dashoffset: 0; }
 }
 
-.scroll-hint-wheel {
-  transform-origin: center;
-  animation: scroll-hint-bob 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-}
-
-@keyframes scroll-hint-bob {
-  0%   { transform: translateY(0);    opacity: 1; }
-  60%  { transform: translateY(8px);  opacity: 0; }
-  61%  { transform: translateY(0);    opacity: 0; }
-  100% { transform: translateY(0);    opacity: 1; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .scroll-hint-wheel { animation: none; }
+@keyframes popover-word-in {
+  to { opacity: 1; }
 }
 
 /* ---------- Section frame ---------- */
@@ -320,7 +243,7 @@ onBeforeUnmount(() => {
     margin: 0;
     padding: 0;
     font-family: $font-family-main, sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: -0.02em;
     line-height: 1.02;
     color: var(--fg);
@@ -339,7 +262,6 @@ onBeforeUnmount(() => {
 
 .section-head-left { text-align: left; }
 
-/* "Products I've helped ship." — 15% smaller than the default section h2. */
 .section-work .section-head h2 {
   font-size: clamp(2.55rem, 5.95vw, 6.8rem);
 }
@@ -354,7 +276,6 @@ onBeforeUnmount(() => {
 }
 .section-head-center { text-align: center; }
 
-/* CTA button sitting under/after the section heading */
 .section-cta {
   display: inline-flex;
   align-items: center;
@@ -363,50 +284,18 @@ onBeforeUnmount(() => {
   padding: 0.6em 1.1em;
   font-family: $font-family-main, sans-serif;
   font-size: $font-size-sm;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--fg);
   border: 1px solid var(--border-faint);
   border-radius: $br-xl;
-  transition: border-color 0.25s ease, transform 0.25s ease;
 
   &:hover,
   &:focus-visible {
     outline: none;
     border-color: var(--fg);
-
-    span[aria-hidden] {
-      transform: translateX(0.3em);
-    }
-  }
-
-  span[aria-hidden] {
-    transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
-}
-
-.rail-label {
-  position: absolute;
-  top: clamp(3rem, 8vh, 6rem);
-  left: clamp($spacing-sm, 2vw, $spacing-md);
-  font-size: $font-size-xs;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  opacity: 0.55;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  color: var(--fg);
-
-  @media screen and (max-width: 900px) {
-    writing-mode: horizontal-tb;
-    transform: none;
-    position: relative;
-    top: auto;
-    left: auto;
-    display: block;
-    margin-bottom: $spacing-md;
   }
 }
 
@@ -435,16 +324,13 @@ onBeforeUnmount(() => {
   }
 }
 
-/* ---------- Thoughts: 0.92 opaque cards + backdrop blur ---------- */
+/* ---------- Thoughts ---------- */
 
 .section-thoughts {
-  /* Hide FeaturedThoughts' built-in h2 — our WordReveal heading covers it. */
   .thoughts-container > h2 {
     display: none;
   }
 
-  /* Inverted thought cards: in light mode the cards are dark, in dark mode
-     they're light. We use --fg-rgb for the bg so it flips with theme. */
   .article-card {
     background: rgb(var(--fg-rgb) / 0.92) !important;
     color: var(--bg) !important;
@@ -483,14 +369,6 @@ onBeforeUnmount(() => {
   display: none;
 }
 
-/* ---------- Responsive intro ---------- */
-
-@media screen and (max-width: 700px) {
-  .intro-headline {
-    font-size: clamp(3rem, 14vw, 5.5rem);
-  }
-}
-
 /* ---------- Mobile: uniform 20px outer padding ---------- */
 
 @media screen and (max-width: 700px) {
@@ -499,17 +377,11 @@ onBeforeUnmount(() => {
     padding-inline: 20px;
   }
 
-  /* Editorial rows (Work, Learn): strip their own inline padding so the
-     row content aligns to the 20px section padding rather than adding
-     another $spacing-md inside it. */
   .homepage .work-index .row,
   .homepage .learn-index .row {
     padding-inline: 0;
   }
 
-  /* Section heads — scale all of them down ~20% on mobile. The desktop
-     h2 is clamp(3rem, 7vw, 8rem); 0.8× gives clamp(2.4rem, 5.6vw, 6.4rem).
-     h3 likewise scales from clamp(1.5rem, 2.5vw, 2.25rem). */
   .homepage .section-head h2 {
     font-size: clamp(2.4rem, 5.6vw, 6.4rem);
   }
@@ -518,24 +390,11 @@ onBeforeUnmount(() => {
     font-size: clamp(1.2rem, 2vw, 1.8rem);
   }
 
-  /* Section heading on the Thoughts strip fits on one line at desktop
-     widths via white-space: nowrap — on mobile let it wrap naturally so
-     it doesn't overflow the 20px gutter. The right-aligned h2 had its
-     own desktop clamp (clamp(2rem, 5.5vw, 7rem)); apply the same 20%
-     reduction here. */
   .homepage .section-head-right h2 {
     white-space: normal;
     font-size: clamp(1.6rem, 4.4vw, 5.6rem);
   }
 
-  .homepage .scroll-hint {
-    right: 20px;
-  }
-
-  /* FeaturedThoughts' container uses the shared .w-consistent utility which
-     adds its own padding at every breakpoint. On mobile, strip it so the
-     articles grid aligns to the 20px section gutter rather than indenting
-     further. */
   .homepage .section-thoughts .w-consistent {
     padding: 0;
   }

@@ -146,8 +146,8 @@ body.dark .quote-logo {
   margin: 0;
   padding: 0;
   font-family: $font-family-serif, serif;
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 300;
+  font-style: normal;
   font-size: clamp(2rem, 4.5vw, 4.25rem);
   line-height: 1.08;
   letter-spacing: -0.015em;
@@ -168,7 +168,7 @@ body.dark .quote-logo {
 
 .quote-metric {
   font-family: $font-family-main, sans-serif;
-  font-weight: 500;
+  font-weight: 300;
   font-size: clamp(1.25rem, 1.8vw, 1.75rem);
   letter-spacing: -0.01em;
 }

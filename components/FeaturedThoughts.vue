@@ -2,23 +2,18 @@
 
     <div class="thoughts-container w-consistent">
       <h2>Other Thoughts</h2>
-      <!-- Loading skeleton -->
       <div v-if="!isReady" class="loading-skeleton">
         <div class="skeleton-grid">
           <div class="skeleton-card" v-for="n in 6" :key="n"></div>
         </div>
       </div>
 
-      <!-- Main content - only shown after hydration -->
       <div v-else-if="randomArticles.length > 0" class="articles-grid">
         <nuxt-link
-          v-for="(article, i) in randomArticles"
+          v-for="article in randomArticles"
           :key="article.slug"
           :to="`/thoughts/${article.slug}`"
           class="article-card"
-          :class="{ 'is-visible': cardVisible[i] }"
-          :ref="(el) => setCardRef(el, i)"
-          :style="{ '--card-index': i }"
         >
           <div class="article-content">
             <h3 class="article-title">{{ article.title }}</h3>
@@ -31,59 +26,21 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, onBeforeUnmount, nextTick } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const props = defineProps({
   articles: Array
 });
 
-// Loading state - wait for hydration to complete
 const isReady = ref(false)
 const randomArticles = ref([])
-const cardVisible = reactive([])
-const cardRefs = []
-let observer = null
 
-const setCardRef = (el, i) => {
-  if (el && el.$el) el = el.$el
-  cardRefs[i] = el || null
-}
-
-onMounted(async () => {
-  // Pick 6 random articles on client to avoid SSR/hydration mismatch
+onMounted(() => {
   const shuffled = [...(props.articles || [])].sort(() => Math.random() - 0.5)
   randomArticles.value = shuffled.slice(0, 8)
-  cardVisible.splice(0, cardVisible.length, ...shuffled.slice(0, 8).map(() => false))
   isReady.value = true
-
-  // Wait for the grid to mount, then observe each card as it enters view.
-  await nextTick()
-  if (typeof IntersectionObserver === 'undefined') {
-    cardVisible.forEach((_, i) => (cardVisible[i] = true))
-    return
-  }
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return
-        const i = cardRefs.indexOf(entry.target)
-        if (i !== -1) {
-          cardVisible[i] = true
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
-  )
-  cardRefs.forEach((el) => el && observer.observe(el))
 })
 
-onBeforeUnmount(() => {
-  if (observer) observer.disconnect()
-  observer = null
-})
-
-// Format date helper
 const formatDate = (dateString) => {
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', {
@@ -95,7 +52,6 @@ const formatDate = (dateString) => {
 </script>
 
 <style scoped lang="scss">
-// Loading skeleton styles
 .loading-skeleton {
   display: grid;
   gap: $spacing-md;
@@ -108,25 +64,10 @@ const formatDate = (dateString) => {
 }
 
 .skeleton-card {
-  background: linear-gradient(90deg, rgba($black, 0.06) 25%, rgba($black, 0.1) 50%, rgba($black, 0.06) 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
+  background: rgba($black, 0.06);
   border-radius: $br-sm;
   min-height: 200px;
 }
-
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-// Scroll-in reveal for individual article cards. Each card fades + slides
-// up when it enters the viewport, staggered by its grid index via
-// --card-index. Replaces the old all-at-once .fade-in grid animation.
 
 .thoughts-container {
 
@@ -138,8 +79,7 @@ const formatDate = (dateString) => {
 
 .dark {
   .skeleton-card {
-    background: linear-gradient(90deg, rgba($white, 0.03) 25%, rgba($white, 0.08) 50%, rgba($white, 0.03) 75%);
-    background-size: 200% 100%;
+    background: rgba($white, 0.06);
   }
 
   .article-card {
@@ -174,31 +114,6 @@ const formatDate = (dateString) => {
   min-height: 200px;
   background: $black;
   color: $white;
-
-  /* Scroll-in reveal (see IntersectionObserver in <script>). */
-  opacity: 0;
-  transform: translate3d(0, 24px, 0);
-  transition:
-    opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1),
-    background 0.25s ease;
-  transition-delay: calc(var(--card-index, 0) * 55ms);
-
-  &.is-visible {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-
-  &:hover {
-    transform: translate3d(0, -4px, 0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .article-card {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 .article-content {

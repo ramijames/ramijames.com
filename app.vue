@@ -10,7 +10,7 @@
 useHead({
   script: [
     {
-      innerHTML: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.body.classList.add('dark')}else{document.body.classList.add('light')}}catch(e){document.body.classList.add('light')}})()`,
+      innerHTML: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.body.classList.add('light')}else{document.body.classList.add('dark')}}catch(e){document.body.classList.add('dark')}})()`,
       tagPosition: 'bodyOpen',
     },
     {

@@ -208,10 +208,8 @@ footer {
 
     a {
       text-decoration: none;
-      font-size: $font-size-sm;
-      transition: all 0.5s ease-in-out;
       font-size: 9px;
-      font-weight: 500;
+      font-weight: 300;
       color: rgba($white, .5);
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -229,7 +227,6 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     gap: $spacing-md;
-    transition: opacity 0.5s ease-in-out;
     border-right: 1px solid rgba($white, 0.2);
     padding-right: $spacing-md;
 
