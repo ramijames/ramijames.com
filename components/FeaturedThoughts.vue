@@ -1,6 +1,6 @@
 <template>
 
-    <div class="thoughts-container w-consistent">
+    <div class="thoughts-container">
       <h2>Other Thoughts</h2>
       <div v-if="!isReady" class="loading-skeleton">
         <div class="skeleton-grid">
@@ -15,6 +15,9 @@
           :to="`/thoughts/${article.slug}`"
           class="article-card"
         >
+          <svg class="article-card-border" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <rect class="article-card-border-rect" fill="none" stroke="currentColor" stroke-width="2" pathLength="100"/>
+          </svg>
           <div class="article-content">
             <h3 class="article-title">{{ article.title }}</h3>
             <p class="article-date">{{ formatDate(article.date) }}</p>
@@ -66,7 +69,7 @@ const formatDate = (dateString) => {
 .skeleton-card {
   background: rgba($black, 0.06);
   border-radius: $br-sm;
-  min-height: 200px;
+  min-height: 300px;
 }
 
 .thoughts-container {
@@ -107,13 +110,49 @@ const formatDate = (dateString) => {
 }
 
 .article-card {
-  overflow: hidden;
+  position: relative;
+  overflow: visible;
   border-radius: $br-sm;
   text-decoration: none;
   border: 1px solid rgba($black, 0.2);
-  min-height: 200px;
+  min-height: 300px;
   background: $black;
   color: $white;
+
+  &:hover {
+    .article-card-border {
+      opacity: 1;
+
+      .article-card-border-rect {
+        animation: article-card-trace 0.5s ease forwards;
+      }
+    }
+  }
+}
+
+.article-card-border {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  pointer-events: none;
+  overflow: visible;
+  opacity: 0;
+}
+
+.article-card-border-rect {
+  width: 100%;
+  height: 100%;
+  rx: $br-sm;
+  ry: $br-sm;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  vector-effect: non-scaling-stroke;
+}
+
+@keyframes article-card-trace {
+  to { stroke-dashoffset: 0; }
 }
 
 .article-content {
@@ -136,8 +175,8 @@ const formatDate = (dateString) => {
 }
 
 .article-title {
-  font-size: $font-size-lg;
-  line-height: $font-size-lg + 4px;
+  font-size: calc(var(--h1-size) * 0.45);
+  line-height: 1.1;
   margin: 0;
 }
 

@@ -62,10 +62,8 @@
                 </select>
               </div>
             </div>
-            <button type="submit" class="submit-button" :disabled="isSubmitting">
-              <span v-if="!isSubmitting">Send</span>
-              <span v-else>Sending...</span>
-            </button>
+            <Button type="submit" variant="solid" :disabled="isSubmitting" :text="isSubmitting ? 'Sending...' : 'Send'" />
+
           </form>
 
           <Transition name="fade">

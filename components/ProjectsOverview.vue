@@ -44,8 +44,8 @@
         .services {
 
           .single-service {
-            background: rgba($black, 1);
-            color: rgba($white, 1);
+            background: rgba($white, 1);
+            color: rgba($black, 1);
           }
         }
       }

@@ -121,16 +121,11 @@ const testimonials = [
   max-width: 6rem;
   object-fit: contain;
   opacity: 0.95;
-  /* Light mode: invert source art (which ships white-for-dark-bg) so the
-     logo reads as dark on light. Dark mode: force-white fill. */
-  filter: invert(1);
+  filter: grayscale(100%) invert(100%);
 }
 
-/* Vue scoped styles still let descendant-selectors from un-scoped ancestors
-   like `body` match, because the scoped attribute is appended to the
-   rightmost compound selector only. */
-body.dark .quote-logo {
-  filter: brightness(0) invert(1);
+.dark .quote-logo {
+  filter: grayscale(100%) invert(0%);
 }
 
 .quote-index {
@@ -148,8 +143,8 @@ body.dark .quote-logo {
   font-family: $font-family-serif, serif;
   font-weight: 300;
   font-style: normal;
-  font-size: clamp(2rem, 4.5vw, 4.25rem);
-  line-height: 1.08;
+  font-size: calc(var(--h1-size) * 0.45);
+  line-height: 1.1;
   letter-spacing: -0.015em;
   max-width: 22ch;
   color: inherit;
@@ -198,9 +193,6 @@ body.dark .quote-logo {
     .quote-body {
       margin-left: 0;
       margin-right: 0;
-      /* 80% of the desktop clamp (was 2rem / 4.5vw / 4.25rem) so the
-         testimonial quotes breathe on narrow viewports. */
-      font-size: clamp(1.6rem, 3.6vw, 3.4rem);
     }
   }
 }

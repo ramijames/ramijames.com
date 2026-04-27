@@ -19,7 +19,7 @@
 html,
 body {
   background: var(--bg);
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 </style>

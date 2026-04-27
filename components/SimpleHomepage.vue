@@ -17,35 +17,44 @@
     </section>
 
     <!-- 2. Work -->
-    <section class="section mono-scope section-work">
-      <WorkIndex />
+    <section class="section section-work">
+      <Portfolio limit="highlights" />
     </section>
 
     <!-- 3. Thoughts -->
-    <section class="section mono-scope section-thoughts">
-      <div class="section-head section-head-right">
-        <h2>Things I'm thinking about.</h2>
+    <section class="section section-railed section-thoughts">
+      <div class="section-rail">
+        <span class="section-rail-title">Things I'm thinking about</span>
+        <span class="section-rail-explainer">Short pieces on design, technology, and how I work.</span>
       </div>
-      <FeaturedThoughts :articles="articles" />
-      <div class="section-cta-row">
-        <nuxt-link to="/thoughts" class="section-cta">See all thoughts <span aria-hidden="true">&rarr;</span></nuxt-link>
+      <div class="section-body">
+        <FeaturedThoughts :articles="articles" />
+        <div class="section-cta-row">
+          <Button to="/thoughts" arrow text="See all thoughts" />
+        </div>
       </div>
     </section>
 
     <!-- 4. Companies -->
-    <section class="section mono-scope section-companies">
-      <div class="section-head section-head-center">
-        <h3>My work, in their words</h3>
+    <section class="section section-railed section-companies">
+      <div class="section-rail">
+        <span class="section-rail-title">My work, in their words</span>
+        <span class="section-rail-explainer">Notes from the people and teams I've shipped with.</span>
       </div>
-      <HomepageTestimonials />
+      <div class="section-body">
+        <HomepageTestimonials />
+      </div>
     </section>
 
     <!-- 5. Learn -->
-    <section class="section mono-scope section-learn">
-      <div class="section-head section-head-left">
-        <h2>Learn with me.</h2>
+    <section class="section section-railed section-learn">
+      <div class="section-rail">
+        <span class="section-rail-title">Learn with me</span>
+        <span class="section-rail-explainer">Tutorials and experiments in 3D, smart contracts, and design.</span>
       </div>
-      <LearnIndex />
+      <div class="section-body">
+        <LearnIndex />
+      </div>
     </section>
 
     <!-- 6. Footer -->
@@ -152,6 +161,7 @@ function movePopover(e) {
   font-size: calc(8.31579px + 4.94737vw);
   line-height: 1.1;
   letter-spacing: -0.03em;
+  text-align: center;
   color: var(--fg);
   gap: 0.04em;
   width: 100%;
@@ -159,11 +169,16 @@ function movePopover(e) {
   text-wrap: balance;
 
   .hover-word {
-    text-decoration: underline;
+    text-decoration: underline dashed $black;
     text-underline-offset: 0.08em;
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: 2px;
     cursor: help;
   }
+}
+
+.dark .intro-headline .hover-word {
+  text-decoration: underline dashed $white;
+  text-decoration-thickness: 2px;
 }
 
 .word-popover {
@@ -198,7 +213,7 @@ function movePopover(e) {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
   vector-effect: non-scaling-stroke;
-  animation: popover-trace 0.7s ease forwards;
+  animation: popover-trace 0.35s ease forwards;
 }
 
 .popover-content {
@@ -216,8 +231,8 @@ function movePopover(e) {
 .popover-word {
   font-weight: 300;
   opacity: 0;
-  animation: popover-word-in 0.25s ease forwards;
-  animation-delay: calc(0.7s + var(--word-index, 0) * 0.06s);
+  animation: popover-word-in 0.18s ease forwards;
+  animation-delay: calc(0.3s + var(--word-index, 0) * 0.03s);
 }
 
 @keyframes popover-trace {
@@ -257,33 +272,48 @@ function movePopover(e) {
 }
 .section-head-center { text-align: center; }
 
+.section-railed {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+  border-top: 1px solid rgb(var(--fg-rgb) / 0.15);
+  padding-top: clamp($spacing-md, 4vh, $spacing-lg);
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+}
+
+.section-rail {
+  position: sticky;
+  top: 40px;
+  align-self: start;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--fg);
+  text-align: left;
+}
+
+.section-rail-title {
+  font-weight: 700;
+}
+
+.section-rail-explainer {
+  font-weight: 400;
+  margin-left: 0.4em;
+  opacity: 0.75;
+}
+
+.section-body {
+  min-width: 0;
+}
+
 .section-cta-row {
   display: flex;
   justify-content: center;
   margin-top: $spacing-lg;
-}
-
-.section-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  margin-top: $spacing-md;
-  padding: 0.6em 1.1em;
-  font-family: $font-family-main, sans-serif;
-  font-size: $font-size-sm;
-  font-weight: 300;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--fg);
-  border: 1px solid var(--border-faint);
-  border-radius: $br-xl;
-
-  &:hover,
-  &:focus-visible {
-    outline: none;
-    border-color: var(--fg);
-  }
 }
 
 /* ---------- Mono scope: tint child components toward the current theme ---------- */
@@ -319,20 +349,14 @@ function movePopover(e) {
   }
 
   .article-card {
-    background: rgb(var(--fg-rgb) / 0.92) !important;
-    color: var(--bg) !important;
-    backdrop-filter: blur(14px) saturate(1.1);
-    -webkit-backdrop-filter: blur(14px) saturate(1.1);
-    border: 1px solid var(--border-faint) !important;
-  }
-
-  .article-card:hover {
-    background: rgb(var(--fg-rgb) / 0.97) !important;
+    background: var(--bg) !important;
+    color: var(--fg) !important;
+    border: 1px solid rgb(var(--fg-rgb) / 0.15) !important;
   }
 
   .article-title,
   .article-date {
-    color: var(--bg) !important;
+    color: var(--fg) !important;
   }
 
   .article-date {

@@ -2,15 +2,13 @@
   <section class="learn-index">
     <div class="rows">
       <nuxt-link
-        v-for="(item, i) in items"
+        v-for="item in items"
         :key="item.title"
         :to="item.slug"
         class="row"
       >
-        <span class="row-index">{{ String(i + 1).padStart(2, '0') }}</span>
         <span class="row-title">{{ item.title }}</span>
         <span class="row-desc">{{ item.description }}</span>
-        <span class="row-arrow" aria-hidden="true">&rarr;</span>
       </nuxt-link>
     </div>
   </section>
@@ -45,26 +43,24 @@ const items = [
 .rows {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--border-faint, rgba(0, 0, 0, 0.18));
 }
 
 .row {
   position: relative;
   display: grid;
-  grid-template-columns: 4rem 1fr auto 2.5rem;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: $spacing-md;
   padding-block: clamp($spacing-md, 3vh, $spacing-lg);
-  padding-inline: $spacing-md;
+  padding-inline: 0;
   min-height: clamp(6rem, 12vh, 10rem);
-  border-bottom: 1px solid var(--border-faint, rgba(0, 0, 0, 0.18));
   color: inherit;
   text-decoration: none;
-}
+  transition: padding-inline 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 
-.row-index {
-  font-size: $font-size-lg;
-  opacity: 0.55;
+  &:hover {
+    padding-inline: $spacing-md;
+  }
 }
 
 .row-title {
@@ -79,33 +75,24 @@ const items = [
   justify-self: end;
   max-width: 24ch;
   text-align: right;
+  font-family: 'Roboto', sans-serif;
   font-size: $font-size-sm;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   opacity: 0.65;
-}
-
-.row-arrow {
-  justify-self: end;
-  font-size: $font-size-xl;
 }
 
 @media screen and (max-width: 900px) {
   .row {
-    grid-template-columns: 2.5rem 1fr;
+    grid-template-columns: 1fr;
     grid-auto-rows: auto;
     row-gap: $spacing-xxs;
   }
 
   .row-desc {
-    grid-column: 2;
     justify-self: start;
     text-align: left;
     max-width: 100%;
-  }
-
-  .row-arrow {
-    display: none;
   }
 }
 </style>

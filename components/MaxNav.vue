@@ -80,8 +80,9 @@
       </div>
     </section>
 
-    <ContactModal :isOpen="isContactModalOpen" @close="closeContactModal" />
   </nav>
+
+  <ContactModal :isOpen="isContactModalOpen" @close="closeContactModal" />
 
   <section
     :class="['menu-shade', state.mobileMenuOpen ? 'open' : '' ]"
@@ -203,7 +204,6 @@ const isHome = computed(() => route.path === '/');
   top: 0;
   left: 0;
   right: 0;
-  width: 100dvw;
   box-sizing: border-box;
   z-index: 100;
   display: flex;
@@ -223,19 +223,24 @@ const isHome = computed(() => route.path === '/');
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: $spacing-sm;
-    padding: 0 0.35rem;
+    gap: $spacing-xxs;
 
     .logo-link {
-      display: block;
-      width: 44px;
-      height: 44px;
-      color: $black;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--fg);
+      color: var(--bg);
+      border: 1px solid rgb(var(--fg-rgb) / 0.15);
+      border-radius: 50%;
       transition: transform 0.24s ease-in-out;
 
       @media screen and (max-width: 1000px) {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
       }
 
       &:hover {
@@ -243,8 +248,8 @@ const isHome = computed(() => route.path === '/');
       }
 
       svg {
-        width: 100%;
-        height: auto;
+        width: 75%;
+        height: 75%;
         display: block;
 
         path {
@@ -255,15 +260,20 @@ const isHome = computed(() => route.path === '/');
     }
 
     .go-back {
-      display: block;
-      width: 20px;
-      height: 20px;
-      color: $black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--fg);
+      color: var(--bg);
+      border: 1px solid rgb(var(--fg-rgb) / 0.15);
+      border-radius: 50%;
       transition: transform 0.24s ease-in-out;
 
       @media screen and (max-width: 1000px) {
-        width: 20px;
-        height: 20px;
+        width: 44px;
+        height: 44px;
       }
 
       &:hover {
@@ -271,9 +281,15 @@ const isHome = computed(() => route.path === '/');
       }
 
       svg {
-        width: 100%;
+        width: 40%;
         height: auto;
         display: block;
+
+        path {
+          fill: $black;
+          stroke: $white;
+          stroke-width: 2;
+        }
       }
     }
   }
@@ -284,25 +300,32 @@ const isHome = computed(() => route.path === '/');
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    gap: $spacing-xs;
-    padding: 0 0.35rem;
+    gap: $spacing-xxs;
 
     .nav-theme-switcher {
       color: inherit;
     }
   }
 
+
   .menu-switch,
   .menu-close {
-    width: 44px;
-    height: 44px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--fg);
+    color: var(--bg);
+    border: 1px solid rgb(var(--fg-rgb) / 0.15);
+    border-radius: 50%;
     transition: transform 0.24s ease-in-out;
 
     @media screen and (max-width: 1000px) {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
     }
 
     &:hover {
@@ -311,15 +334,10 @@ const isHome = computed(() => route.path === '/');
 
     .menu-icon,
     .close-icon {
-      width: 44px;
-      height: 44px;
+      width: 100%;
+      height: 100%;
       display: block;
       transition: transform 0.4s ease-in-out;
-
-      @media screen and (max-width: 1000px) {
-        width: 40px;
-        height: 40px;
-      }
     }
   }
 
@@ -330,9 +348,27 @@ const isHome = computed(() => route.path === '/');
     color: $white;
 
     .nav-left-section {
-      .logo-link,
+      .logo-link {
+        background: var(--fg);
+        color: var(--bg);
+
+        svg {
+          path {
+            fill: currentColor;
+            stroke: none;
+          }
+        }
+      }
+
       .go-back {
         color: $white;
+
+        svg {
+          path {
+            fill: $white;
+            stroke: $black;
+          }
+        }
       }
     }
   }
@@ -344,7 +380,7 @@ const isHome = computed(() => route.path === '/');
   left: 0;
   width: 100%;
   height: 100dvh;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 99;
@@ -377,7 +413,7 @@ const isHome = computed(() => route.path === '/');
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: $spacing-xl;
+    gap: $spacing-lg;
     height: 100%;
 
     @media screen and (max-width: 1000px){
@@ -519,7 +555,7 @@ const isHome = computed(() => route.path === '/');
 }
 
 .dark .menu-shade {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.8);
   color: $white;
 
   .shade-content {

@@ -1,94 +1,93 @@
 <template>
-  <nuxt-link class="button" :class="type, size" :to="link">
-    {{ text }}
+  <nuxt-link v-if="to" :to="to" class="cta" :class="variant">
+    <slot>{{ text }}</slot>
+    <span v-if="arrow" class="cta-arrow" aria-hidden="true">&rarr;</span>
   </nuxt-link>
+  <a v-else-if="href" :href="href" class="cta" :class="variant">
+    <slot>{{ text }}</slot>
+    <span v-if="arrow" class="cta-arrow" aria-hidden="true">&rarr;</span>
+  </a>
+  <button v-else :type="type" :disabled="disabled" class="cta" :class="variant" @click="$emit('click', $event)">
+    <slot>{{ text }}</slot>
+    <span v-if="arrow" class="cta-arrow" aria-hidden="true">&rarr;</span>
+  </button>
 </template>
 
 <script setup>
 defineProps({
-  type: {
-    type: String,
-    default: 'button'
-  },
-  size: {
-    type: String,
-    default: 'default'
-  },
-  text: {
-    type: String,
-    default: 'Button'
-  },
-  link: {
-    type: String,
-    default: ''
-  }
+  to: { type: String, default: null },
+  href: { type: String, default: null },
+  text: { type: String, default: '' },
+  arrow: { type: Boolean, default: false },
+  variant: { type: String, default: 'outline' },
+  type: { type: String, default: 'button' },
+  disabled: { type: Boolean, default: false },
 })
+defineEmits(['click'])
 </script>
 
 <style scoped lang="scss">
-// .button {
-//   position:relative;
-//   display:flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   cursor:pointer;
-//   z-index: 0;
-//   transition: all 0.3s ease-in-out;
-//   text-decoration: none;
-//   overflow: hidden;
-//   padding: $spacing-sm $spacing-md;
-//   color: $white;
-//   font-family: $font-family-main, sans-serif;
-//   font-weight: 600;
-//   font-size: $font-size-md;
-//   white-space:nowrap;
-//   text-decoration: none;
-//   background: transparent;
-//   border: 1px solid $white;
-//   border-radius: 0;
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.7em 1.3em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--fg);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
-//   &:hover {
-//     background: $blue-dark;
-//     color: $white;
-//   }
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    background: var(--fg);
+    color: var(--bg);
+  }
 
-//   @media screen and (max-width: 768px){
-//     padding: $spacing-xs $spacing-sm;
-//     font-size: $font-size-md;
-//   }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
-//   &.small {
-//     padding: $spacing-xs $spacing-sm!important;
-//     font-size: $font-size-sm;
-//     font-weight: 600;
+  &.solid {
+    background: var(--fg);
+    color: var(--bg);
 
-//     @media screen and (max-width: 768px){
-//       padding: $spacing-sm;
-//     }
+    &:hover,
+    &:focus-visible {
+      background: transparent;
+      color: var(--fg);
+    }
+  }
 
-//     &:hover {
-//       background: $teal-dark;
-//       color: $white;
-//     }
-//   }
+  &.subtle {
+    border-color: var(--border-faint);
 
-//   &.text {
-//     padding: $spacing-xs $spacing-sm!important;
-//     font-size: $font-size-sm;
-//     font-weight: 600;
-//     background: transparent;
-//     border-color: transparent;
+    &:hover,
+    &:focus-visible {
+      border-color: var(--fg);
+      background: transparent;
+      color: var(--fg);
+    }
+  }
+}
 
-//     @media screen and (max-width: 768px){
-//       padding: $spacing-sm;
-//     }
+.cta-arrow {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
 
-//     &:hover {
-//       background: $teal-dark;
-//       color: $white;
-//     }
-//   }
-// }
-
+.cta:hover .cta-arrow,
+.cta:focus-visible .cta-arrow {
+  transform: translateX(0.25em);
+}
 </style>

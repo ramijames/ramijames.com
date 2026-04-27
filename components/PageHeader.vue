@@ -103,13 +103,15 @@ const breadcrumbs = computed(() => {
     align-items: center;
     gap: $spacing-xxs;
     margin-bottom: $spacing-sm;
-    font-size: $font-size-sm;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
 
     a {
       text-decoration: none;
       opacity: 0.5;
       color: $black;
-      font-size: $font-size-xs;
+      font-family: 'Roboto', sans-serif;
+      font-size: 17px;
 
 
       &:last-child {

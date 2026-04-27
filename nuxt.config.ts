@@ -48,7 +48,7 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: 'Noto Serif', provider: 'google', weights: [100, 200, 300, 400, 500, 600, 700, 800, 900] },
-      { name: 'Libre Baskerville', provider: 'google', weights: [400, 700] },
+      { name: 'Roboto', provider: 'google', weights: [300, 400, 500, 600, 700] },
     ],
   },
   vite: {
