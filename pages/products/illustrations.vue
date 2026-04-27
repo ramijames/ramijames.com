@@ -5,55 +5,60 @@
   </section>
   <section id="illustrations" class="w-content">
     <div class="single-illustration">
-      <img src="/illustrations/hummingbird.png" alt="Personal Brand Hummingbird Illustration" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/illustrations/hummingbird.png" alt="Personal Brand Hummingbird Illustration" />
       <div class="info">
         <p>Personal Brand + Icons</p>
         <p class="date">2024</p>
       </div>
     </div>
     <div class="single-illustration">
-      <img src="/illustrations/dumdrops.png" alt="Dumdrops" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/illustrations/dumdrops.png" alt="Dumdrops" />
       <div class="info">
         <p>Dumdrops</p>
         <p class="date">2022</p>
       </div>
     </div>
     <div class="single-illustration">
-      <img src="/illustrations/scatter.png" alt="Scatter Illustration Work" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/illustrations/scatter.png" alt="Scatter Illustration Work" />
       <div class="info">
         <p><nuxt-link to="/products/scatter">Scatter</nuxt-link></p>
         <p class="date">2019</p>
       </div>
     </div>
     <div class="single-illustration">
-      <img src="/illustrations/personal.png" alt="Personal Illustration" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/illustrations/personal.png" alt="Personal Illustration" />
       <div class="info">
         <p>Personal Illustration</p>
         <p class="date">2014</p>
       </div>
     </div>
     <div class="single-illustration">
-      <img src="/illustrations/statshorizon.png" alt="Stats Horizon" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/illustrations/statshorizon.png" alt="Stats Horizon" />
       <div class="info">
         <p>Stats Horizon</p>
         <p class="date">2010</p>
       </div>
     </div>
     <div class="single-illustration">
-      <img src="/illustrations/pigs.png" alt="Yooya" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/illustrations/pigs.png" alt="Yooya" />
       <div class="info">
         <p>Pigs</p>
         <p class="date">2013</p>
       </div>
     </div>
     <div class="single-illustration">
-      <img src="/illustrations/yooya.png" alt="Yooya" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/illustrations/yooya.png" alt="Yooya" />
       <div class="info">
         <p>Yooya</p>
         <p class="date">2004</p>
       </div>
     </div>
   </section>
+  <section class="more-products w-consistent">
+    <h3>More products</h3>
+    <Portfolio random="3" />
+  </section>
+
   <Footer />
 </template>
 

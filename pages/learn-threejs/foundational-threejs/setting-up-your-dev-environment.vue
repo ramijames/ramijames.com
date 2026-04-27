@@ -80,7 +80,7 @@ canvas {
 
     <p>Vite will run and drop you a link to your new dev environment. You should be good to go.</p>
 
-    <img src="/public/learn-threejs/vite-running.png" alt="Succesfully running Vite" />
+    <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/public/learn-threejs/vite-running.png" alt="Succesfully running Vite" />
 
     <p>You can click on the link in your terminal or manually open <a href="http://localhost:5173">http://localhost:5173</a> to get started.</p>
 

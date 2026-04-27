@@ -4,13 +4,28 @@
       <li
         v-for="p in items"
         :key="p.slug"
-        :class="['portfolio-item', `is-${p.size}`]"
+        :class="['portfolio-item', `is-${random ? 'small' : p.size}`]"
       >
         <nuxt-link :to="p.slug" class="portfolio-card">
           <div class="portfolio-image-wrap">
             <div class="portfolio-media">
-              <img :src="p.images.default" :alt="p.title" class="portfolio-img portfolio-img-default" />
-              <img :src="p.images.hover" :alt="''" aria-hidden="true" class="portfolio-img portfolio-img-hover" />
+              <NuxtImg
+                :src="p.images.default"
+                :alt="p.title"
+                class="portfolio-img portfolio-img-default"
+                sizes="sm:100vw md:67vw lg:50vw"
+                loading="lazy"
+                format="webp"
+              />
+              <NuxtImg
+                :src="p.images.hover"
+                :alt="''"
+                aria-hidden="true"
+                class="portfolio-img portfolio-img-hover"
+                sizes="sm:100vw md:67vw lg:50vw"
+                loading="lazy"
+                format="webp"
+              />
             </div>
             <svg class="portfolio-border" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
               <rect class="portfolio-border-rect" fill="none" stroke="currentColor" stroke-width="2" pathLength="100"/>
@@ -31,7 +46,8 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import { products } from '~/utils/products'
 
 const props = defineProps({
@@ -39,6 +55,10 @@ const props = defineProps({
     type: String,
     default: 'all',
     validator: (v) => ['all', 'highlights'].includes(v),
+  },
+  random: {
+    type: [Number, String],
+    default: null,
   },
 })
 
@@ -56,7 +76,27 @@ const homepageSlugs = [
   '/products/tonara/',
 ]
 
+const route = useRoute()
+
+// Re-shuffle on client mount so SSR + hydration agree (server renders
+// products in source order, client picks random after mount).
+const randomSeed = ref(0)
+onMounted(() => {
+  randomSeed.value = Math.random()
+})
+
 const items = computed(() => {
+  if (props.random) {
+    const count = Number(props.random)
+    const currentPath = route.path.replace(/\/?$/, '/')
+    const pool = products.filter((p) => p.slug !== currentPath && p.slug !== route.path)
+    if (!randomSeed.value) {
+      // SSR / pre-mount: just return the first N so output is stable
+      return pool.slice(0, count)
+    }
+    const shuffled = [...pool].sort(() => Math.random() - 0.5)
+    return shuffled.slice(0, count)
+  }
   if (props.limit === 'highlights') {
     return homepageSlugs
       .map((slug) => products.find((p) => p.slug === slug))

@@ -7,7 +7,7 @@
       :class="`quote-${i % 2 === 0 ? 'left' : 'right'}`"
     >
       <header class="quote-head">
-        <img :src="t.logo" :alt="t.company" class="quote-logo" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" :src="t.logo" :alt="t.company" class="quote-logo" />
         <span class="quote-index">{{ String(i + 1).padStart(2, '0') }} / {{ String(testimonials.length).padStart(2, '0') }}</span>
       </header>
 

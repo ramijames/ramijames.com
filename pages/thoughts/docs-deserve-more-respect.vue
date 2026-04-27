@@ -7,7 +7,7 @@
       <p>We needed docs.</p>
       <p>We had some hoops that users had to jump through, and we needed a way to document what they were, what the edge cases were, and how to diagnose and fix all of that stuff. It needed to be nicely packaged, cleanly formatted, and accessible to users who installed our helper application. I found the Robohelp application, which is used for creating standard help applications on Windows, and added a help file to our install.</p>
       <p>During our QA process we would identify the issues, document what we thought was salient, and organize it into the help file that was bundled with the device. I was 19 at the time, and I had zero experience with this stuff, and it was an immensely naive process. But, it just felt like the right thing to do for our users, and my manager didn't explicitly tell me not to.</p>
-      <p><img src="/articles/docs-deserve-respect.png" alt="Docs deserve more respect"></p>
+      <p><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/docs-deserve-respect.png" alt="Docs deserve more respect" /></p>
       <p>It's been 24 years, and since then I've done documentation for a bunch of projects. The scale has grown, and the way that I look at those types of projects has substantially changed.</p>
       <p>I have some thoughts about what makes for good docs and I'd love to share them with you if you're interested.</p>
       <h3 id="core-concepts">Core Concepts</h3>

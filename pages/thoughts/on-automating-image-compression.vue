@@ -9,17 +9,17 @@
       <p>This website is heavy. It's a personal <nuxt-link to="/products">portfolio</nuxt-link> of my work and shows big images because I want to show off a lot of detail in each piece. Over the years it's added up and some of the pages are not as fast as they should be. We're talking 100+ images that add up to well over 50MB total. It's not the end of the world, but it isn't great.</p>
       <p>Part of the problem is that when you export images from Figma (my main design tool), the PNG compression that they use by default is not great. Figma gives you two options:</p>
 
-      <img src="/articles/compression/figma-png-export-options.png" alt="Figma PNG export options" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/compression/figma-png-export-options.png" alt="Figma PNG export options" />
 
     </section>
 
     <section class="product-images two-across">
       <div>
-        <img src="/articles/compression/test1.png" alt="Exported from Figma using 'Detailed'" class="single-product-image">
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/compression/test1.png" alt="Exported from Figma using 'Detailed'" class="single-product-image" />
         <p class="caption">Exported from Figma using 'Detailed' - 214,951 bytes</p>
       </div>
       <div>
-        <img src="/articles/compression/test2.png" alt="Exported from Figma using 'Basic'" class="single-product-image">
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/compression/test2.png" alt="Exported from Figma using 'Basic'" class="single-product-image" />
         <p class="caption">Exported from Figma using 'Basic' - 208,587 bytes</p>
       </div>
     </section>
@@ -50,7 +50,7 @@
         <li>Are not GUI tools which means no manual exporting required</li>
       </ul>
 
-      <img src="/articles/compression/test1.png" alt="Exported from Figma using 'Detailed'" class="single-product-image">
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/compression/test1.png" alt="Exported from Figma using 'Detailed'" class="single-product-image" />
 
       <p>Compressed using pngquant - 59,449 bytes</p>
 

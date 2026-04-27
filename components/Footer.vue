@@ -13,13 +13,13 @@
       <div class="footer-links">
         <section class="footer-social">
           <a href="https://github.com/ramijames">
-            <img class="icon" src="/github-dark.svg" alt="Github" />
+            <NuxtImg class="icon" src="/github-dark.svg" alt="Github" />
           </a>
           <a href="https://www.linkedin.com/in/rami-james/">
-            <img class="icon" src="/linkedin-dark.svg" alt="LinkedIn" />
+            <NuxtImg class="icon" src="/linkedin-dark.svg" alt="LinkedIn" />
           </a>
           <a href="mailto:ramijames@gmail.com">
-            <img class="icon" src="/mail-dark.svg" alt="Send Rami an email" />
+            <NuxtImg class="icon" src="/mail-dark.svg" alt="Send Rami an email" />
           </a>
         </section>
         <nuxt-link class="link" href="/learn-threejs">Learn Three.js</nuxt-link>

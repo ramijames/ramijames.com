@@ -29,7 +29,7 @@
         />
         <div class="upload-inner">
           <div class="upload-preview" v-if="iconDataUrl">
-            <img :src="iconDataUrl" alt="Icon preview" />
+            <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" :src="iconDataUrl" alt="Icon preview" />
           </div>
           <div v-else class="upload-placeholder">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
@@ -110,7 +110,7 @@
                     :class="{ 'user-icon': cell.isUser }"
                     :style="!cell.isUser ? { background: cell.color } : {}"
                   >
-                    <img v-if="cell.isUser && iconDataUrl" :src="iconDataUrl" class="grid-icon-img" alt="" />
+                    <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" v-if="cell.isUser && iconDataUrl" :src="iconDataUrl" class="grid-icon-img" alt="" />
                     <span v-else-if="cell.isUser" class="upload-indicator">+</span>
                   </div>
                   <span v-if="cell.isUser" class="grid-icon-name">{{ appName || 'My App' }}</span>
@@ -158,7 +158,7 @@
                     :class="{ 'user-icon': cell.isUser }"
                     :style="!cell.isUser ? { background: cell.color } : {}"
                   >
-                    <img v-if="cell.isUser && iconDataUrl" :src="iconDataUrl" class="grid-icon-img" alt="" />
+                    <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" v-if="cell.isUser && iconDataUrl" :src="iconDataUrl" class="grid-icon-img" alt="" />
                     <span v-else-if="cell.isUser" class="upload-indicator">+</span>
                   </div>
                   <span v-if="cell.isUser" class="grid-icon-name">{{ appName || 'My App' }}</span>

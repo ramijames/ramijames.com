@@ -21,12 +21,12 @@
             </div>
             <div class="discuss-images">
               <section class="product-images two-across">
-                <img src="/products/qmarkets/qm-wireframe1.png" alt="qmarkets" class="single-product-image">
-                <img src="/products/qmarkets/qm-wireframe2.png" alt="qmarkets" class="single-product-image">
+                <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/qmarkets/qm-wireframe1.png" alt="qmarkets" class="single-product-image" />
+                <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/qmarkets/qm-wireframe2.png" alt="qmarkets" class="single-product-image" />
               </section>
               <section class="product-images two-across">
-                <img src="/products/qmarkets/qm-wireframe3.png" alt="qmarkets" class="single-product-image">
-                <img src="/products/qmarkets/qm-wireframe4.png" alt="qmarkets" class="single-product-image">
+                <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/qmarkets/qm-wireframe3.png" alt="qmarkets" class="single-product-image" />
+                <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/qmarkets/qm-wireframe4.png" alt="qmarkets" class="single-product-image" />
               </section>
             </div>
           </section>
@@ -37,8 +37,8 @@
               <p>Before we could get down to the nitty gritty details of implementation, we had to establish a consistent design baseline. We created and used a design system for all of Qmarket's products, including typograph, user interface inputs, buttons, and dropdowns. I also created a set of unique icons which were used across the system.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/qmarkets/design-system.webp" alt="qmarkets" class="single-product-image">
-              <img src="/products/qmarkets/custom-icons.webp" alt="qmarkets" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/qmarkets/design-system.webp" alt="qmarkets" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/qmarkets/custom-icons.webp" alt="qmarkets" class="single-product-image" />
             </div>
           </section>
 
@@ -48,9 +48,9 @@
               <p>Once the core user-experience was iterated on and polished, we deployed to dozens of enterprise clients, each boasting their own white-label skin.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/qmarkets/qm-nike.jpg" alt="qmarkets for nike" class="single-product-image">
-              <img src="/products/qmarkets/qm-ford.jpg" alt="qmarkets for ford" class="single-product-image">
-              <img src="/products/qmarkets/qm-kaufland.jpg" alt="qmarkets for kaufland" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/qmarkets/qm-nike.jpg" alt="qmarkets for nike" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/qmarkets/qm-ford.jpg" alt="qmarkets for ford" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/qmarkets/qm-kaufland.jpg" alt="qmarkets for kaufland" class="single-product-image" />
             </div>
           </section>
 
@@ -59,9 +59,10 @@
     </div>
   
   </main>
-
-  <MergedProjectsHeader />
-  <MergedProjects />
+  <section class="more-products w-consistent">
+    <h3>More products</h3>
+    <Portfolio random="3" />
+  </section>
   <Footer />
 
 </template>

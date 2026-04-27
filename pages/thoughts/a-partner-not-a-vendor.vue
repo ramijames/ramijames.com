@@ -3,7 +3,7 @@
   <main class="w-content page-top">
     <section class="content">
 
-      <img src="/articles/partner-not-vendor.png" alt="A Partner, Not a Vendor" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/partner-not-vendor.png" alt="A Partner, Not a Vendor" />
 
       <p>Most experienced teams have worked with designers or product professionals before. It doesn’t always go well, for a myriad of reasons. I believe that what makes users love a product stems from a consistent vision born from a partner who is there for the long haul.</p>
 

@@ -3,7 +3,7 @@
   <main class="w-content page-top">
     <section class="content">
 
-      <img src="/articles/consistent-iconography.png" alt="On Creating Consistent Iconography" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/consistent-iconography.png" alt="On Creating Consistent Iconography" />
 
       <h2>The importance of iconography</h2>
 
@@ -33,15 +33,15 @@
 
       <p>Let's take a look at a current design and what it is doing wrong.</p>
 
-      <img src="/articles/icon-in-situ.png" alt="How things look before" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/icon-in-situ.png" alt="How things look before" />
 
       <p>The icons one the left and the arrows on the right are four different styles. They do not use the same stroke weight or style, do not have the same level of complexity, nor are they all consistent in being strokes. One is filled.</p>
 
-      <img src="/articles/icon-upgrade.png" alt="Icon upgrade" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/icon-upgrade.png" alt="Icon upgrade" />
       
       <p>Thirty minutes of illustration yields a much more consistent and pleasing set. These now have a consistent style and size.</p>
 
-      <img src="/articles/iconography-things-to-consider.png" alt="Things to consider Iconography" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/iconography-things-to-consider.png" alt="Things to consider Iconography" />
 
       <h2>On matching a brand</h2>
 
@@ -55,9 +55,9 @@
 
       <p>Below I'm going to add a few images of brands that I've worked on and icons that I've developed for them.</p>
 
-      <img src="/articles/scatter-icons.png" alt="Scatter Icons" />
-      <img src="/articles/doodledapp-icons.png" alt="Doodledapp Icons" />
-      <img src="/articles/fff-icons.png" alt="Food for Future Icons" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/scatter-icons.png" alt="Scatter Icons" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/doodledapp-icons.png" alt="Doodledapp Icons" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/fff-icons.png" alt="Food for Future Icons" />
 
       <h2>Five rules for creating good iconography</h2>
 

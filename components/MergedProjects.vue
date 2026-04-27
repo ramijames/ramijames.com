@@ -10,7 +10,7 @@
         :style="{ backgroundColor: product.color }"
       >
       <section :class="['info', product.class]">
-        <img :src="product.logo" alt="Logo" class="logo" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" :src="product.logo" alt="Logo" class="logo" />
       </section>
       <section class="bg" :style="{ backgroundImage: 'url(' + product.bg + ')' }"></section>
     </nuxt-link>

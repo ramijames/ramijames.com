@@ -2,7 +2,7 @@
   <PageHeader title="Peak software abuse" tagline="My thoughts on how software gets worse because of profit incentives, and how the core reason NFTs are a failure is that they are used badly by the businesses that use them." />
   <main class="w-content page-top">
     <section class="content">
-      <img src="/articles/peak-software-abuse.png" alt="Peak software abuse">
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/peak-software-abuse.png" alt="Peak software abuse" />
       <p>I&#39;ve been working in web3 since late 2017. I’ve seen some awful shit. Before that, I worked in startups for many years. I saw a lot of awful shit there, too. Decades of working in building software, and it all just blurs together after a while.</p>
       <p>When I came into the blockchain space, I was utterly naive about what it was. I thought that I was entering a new, better ecosystem and that it was my opportunity to take my talents in product design and development and use them to make the world a better place. I wanted to build things people could use to free themselves from established financial institutions like banks and credit card companies abusing them. What I ended up seeing instead was a lot of powerful and shady alternatives that abused people in even worse ways.</p>
       

@@ -20,8 +20,8 @@
               <p>The core challenge with the Telos open block explorer design was that it was chock full of features. My previous experience with Scatter made me uniquely qualified to understand the hierarchy and feature sets that were required to make this design really shine.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/telos/telos-obe-home.png" alt="Telos OBE Home" class="single-product-image">
-              <img src="/products/telos/telos-obe-various.png" alt="Telos OBE Various Screens" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/telos/telos-obe-home.png" alt="Telos OBE Home" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/telos/telos-obe-various.png" alt="Telos OBE Various Screens" class="single-product-image" />
             </div>
           </section>
 
@@ -31,7 +31,7 @@
               <p>An interested side-effect of designing the block explorer meant that we were able to implement many features for the first time for mobile users.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/telos/telos-mobile.png" alt="Telos OBE Home" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/telos/telos-mobile.png" alt="Telos OBE Home" class="single-product-image" />
             </div>
           </section>
 
@@ -41,9 +41,10 @@
     </div>
   
   </main>
-
-  <MergedProjectsHeader />
-  <MergedProjects />
+  <section class="more-products w-consistent">
+    <h3>More products</h3>
+    <Portfolio random="3" />
+  </section>
   <Footer />
 
 </template>

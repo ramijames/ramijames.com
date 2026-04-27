@@ -3,17 +3,17 @@
     <div class="clients-container w-consistent">
       <div class="section-title">These great companies have been some of my favorite clients.</div>
       <section class="clients">
-        <img src="/clients/ibm.png" alt="IBM" />
-        <img src="/clients/wpt.png" alt="WPT" />
-        <img src="/clients/microsoft.png" alt="Microsoft" />
-        <img src="/clients/nvidia.png" alt="NVIDIA" />
-        <img src="/clients/wix.png" alt="Wix" />
-        <img src="/clients/ultra.png" alt="Ultra" />
-        <img src="/clients/equitick.png" alt="Equitick" />
-        <img src="/clients/zivav.png" alt="Zivav" />
-        <img src="/clients/microgaming.png" alt="Microgaming" />
-        <img src="/clients/qmarkets.png" alt="Qmarkets" />
-        <img src="/clients/tonara.png" alt="Tonara" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/ibm.png" alt="IBM" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/wpt.png" alt="WPT" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/microsoft.png" alt="Microsoft" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/nvidia.png" alt="NVIDIA" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/wix.png" alt="Wix" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/ultra.png" alt="Ultra" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/equitick.png" alt="Equitick" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/zivav.png" alt="Zivav" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/microgaming.png" alt="Microgaming" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/qmarkets.png" alt="Qmarkets" />
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/tonara.png" alt="Tonara" />
       </section>
     </div>
   </section>

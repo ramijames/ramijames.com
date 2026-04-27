@@ -1,7 +1,7 @@
 <template>
   <main class="product-main">
     <section class="product-content">
-      <img src="/products/random-sandwich/random-sandwich-logo-white.png" alt="Random Sandwich Logo" class="product-logo invert">
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/random-sandwich/random-sandwich-logo-white.png" alt="Random Sandwich Logo" class="product-logo invert" />
       <h1 class="hyper-bold">Random Sandwich</h1>
       <h4 class="centered">Create surprisingly delicious things</h4>
       <div class="main-product-image sammitch" ref="image">
@@ -41,18 +41,18 @@
     </section>
 
     <section class="product-images">
-      <img src="/products/random-sandwich/protein-eggyolk.svg" alt="Egg yolk" class="single-feature-image">
-      <img src="/products/random-sandwich/vegetable-lettuce.svg" alt="Lettuce" class="single-feature-image">
-      <img src="/products/random-sandwich/vegetable-white-onion.svg" alt="White onion" class="single-feature-image">
-      <img src="/products/random-sandwich/cheese-cheddar.png" alt="Cheddar cheese" class="single-feature-image">
-      <img src="/products/random-sandwich/bread-rye-brown.svg" alt="Rye bread" class="single-feature-image">
-      <img src="/products/random-sandwich/cheese-swiss.svg" alt="Swiss cheese" class="single-feature-image">
-      <img src="/products/random-sandwich/protein-roastbeef.svg" alt="Roast beef" class="single-feature-image">
-      <img src="/products/random-sandwich/vegetable-pickles.svg" alt="Pickles" class="single-feature-image">
-      <img src="/products/random-sandwich/cheese-american.png" alt="American cheese" class="single-feature-image">
-      <img src="/products/random-sandwich/bread-sourdough.svg" alt="Sourdough bread" class="single-feature-image">
-      <img src="/products/random-sandwich/vegetable-tomato.svg" alt="Tomato" class="single-feature-image">
-      <img src="/products/random-sandwich/vegetable-red-onion.svg" alt="Red onion" class="single-feature-image">
+      <NuxtImg src="/products/random-sandwich/protein-eggyolk.svg" alt="Egg yolk" class="single-feature-image" />
+      <NuxtImg src="/products/random-sandwich/vegetable-lettuce.svg" alt="Lettuce" class="single-feature-image" />
+      <NuxtImg src="/products/random-sandwich/vegetable-white-onion.svg" alt="White onion" class="single-feature-image" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/random-sandwich/cheese-cheddar.png" alt="Cheddar cheese" class="single-feature-image" />
+      <NuxtImg src="/products/random-sandwich/bread-rye-brown.svg" alt="Rye bread" class="single-feature-image" />
+      <NuxtImg src="/products/random-sandwich/cheese-swiss.svg" alt="Swiss cheese" class="single-feature-image" />
+      <NuxtImg src="/products/random-sandwich/protein-roastbeef.svg" alt="Roast beef" class="single-feature-image" />
+      <NuxtImg src="/products/random-sandwich/vegetable-pickles.svg" alt="Pickles" class="single-feature-image" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/random-sandwich/cheese-american.png" alt="American cheese" class="single-feature-image" />
+      <NuxtImg src="/products/random-sandwich/bread-sourdough.svg" alt="Sourdough bread" class="single-feature-image" />
+      <NuxtImg src="/products/random-sandwich/vegetable-tomato.svg" alt="Tomato" class="single-feature-image" />
+      <NuxtImg src="/products/random-sandwich/vegetable-red-onion.svg" alt="Red onion" class="single-feature-image" />
     </section>
 
       <hr>
@@ -62,11 +62,16 @@
       <p class="centered">The interface design is intended to be dead simple and mobile friendly.</p>
     </section>
     <section class="product-images">
-      <img src="/products/random-sandwich/random-sandwich-register.png" alt="Random Sandwich Register" class="single-product-image">
-      <img src="/products/random-sandwich/random-sandwich-home.png" alt="Random Sandwich Home" class="single-product-image">
-      <img src="/products/random-sandwich/random-sandwich-login.png" alt="Random Sandwich Login" class="single-product-image">
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/random-sandwich/random-sandwich-register.png" alt="Random Sandwich Register" class="single-product-image" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/random-sandwich/random-sandwich-home.png" alt="Random Sandwich Home" class="single-product-image" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/random-sandwich/random-sandwich-login.png" alt="Random Sandwich Login" class="single-product-image" />
     </section>
   </main>
+  <section class="more-products w-consistent">
+    <h3>More products</h3>
+    <Portfolio random="3" />
+  </section>
+
   <Footer />
 </template>
 

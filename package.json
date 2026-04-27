@@ -33,6 +33,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@nuxt/image": "^2.0.0",
     "nuxt-calendly": "^0.1.18",
     "sass": "^1.75.0"
   }

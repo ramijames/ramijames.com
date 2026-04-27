@@ -20,11 +20,11 @@
               <p>The core challenge with Tonara was innovating an easy to use, pleasant, and fun new interface for digital sheet music.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/tonara/tonara-ipad.png" alt="Tonara" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/tonara/tonara-ipad.png" alt="Tonara" class="single-product-image" />
               <section class="product-images three-across">
-                <img src="/products/tonara/screen1.png" alt="Tonara" class="single-product-image">
-                <img src="/products/tonara/screen2.png" alt="Tonara" class="single-product-image">
-                <img src="/products/tonara/screen3.png" alt="Tonara" class="single-product-image">
+                <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/tonara/screen1.png" alt="Tonara" class="single-product-image" />
+                <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/tonara/screen2.png" alt="Tonara" class="single-product-image" />
+                <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/tonara/screen3.png" alt="Tonara" class="single-product-image" />
               </section>
             </div>
           </section>
@@ -35,7 +35,7 @@
               <p>I created the Tonara brand, including the logo and the palette.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/tonara/tonara-brand.png" alt="Tonara" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/tonara/tonara-brand.png" alt="Tonara" class="single-product-image" />
             </div>
           </section>
 
@@ -45,8 +45,8 @@
               <p>I helped design and implement Tonara's initial marketing website.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/tonara/website.png" alt="Tonara" class="single-product-image">
-              <img src="/products/tonara/website2.png" alt="Tonara" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/tonara/website.png" alt="Tonara" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/tonara/website2.png" alt="Tonara" class="single-product-image" />
             </div>
           </section>
 
@@ -55,9 +55,10 @@
     </div>
   
   </main>
-
-  <MergedProjectsHeader />
-  <MergedProjects />
+  <section class="more-products w-consistent">
+    <h3>More products</h3>
+    <Portfolio random="3" />
+  </section>
   <Footer />
 
 </template>

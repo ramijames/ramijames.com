@@ -2,16 +2,16 @@
   <div ref="containerRef" class="testimonials-container">
     <section id="Clients">
       <div :class="['clients', { visible: isVisible }]">
-        <div><img src="/clients/ibm.png" alt="IBM" /></div>
-        <div><img src="/clients/wpt.png" alt="WPT" /></div>
-        <div><img src="/clients/microsoft.png" alt="Microsoft" /></div>
-        <div><img src="/clients/nvidia.png" alt="NVIDIA" /></div>
-        <div><img src="/clients/wix.png" alt="Wix" /></div>
-        <div><img src="/clients/ultra.png" alt="Ultra" /></div>
-        <div><img src="/clients/zivav.png" alt="Zivav" /></div>
-        <div><img src="/clients/microgaming.png" alt="Microgaming" /></div>
-        <div><img src="/clients/qmarkets.png" alt="Qmarkets" /></div>
-        <div><img src="/clients/tonara.png" alt="Tonara" /></div>
+        <div><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/ibm.png" alt="IBM" /></div>
+        <div><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/wpt.png" alt="WPT" /></div>
+        <div><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/microsoft.png" alt="Microsoft" /></div>
+        <div><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/nvidia.png" alt="NVIDIA" /></div>
+        <div><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/wix.png" alt="Wix" /></div>
+        <div><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/ultra.png" alt="Ultra" /></div>
+        <div><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/zivav.png" alt="Zivav" /></div>
+        <div><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/microgaming.png" alt="Microgaming" /></div>
+        <div><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/qmarkets.png" alt="Qmarkets" /></div>
+        <div><NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/clients/tonara.png" alt="Tonara" /></div>
       </div>
     </section>
   </div>

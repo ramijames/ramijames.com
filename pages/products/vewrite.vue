@@ -10,18 +10,19 @@
       services="test"
     />
 
-    <img src="/products/vewrite/ve-homepage.png" alt="Vewrite homepage" class="single-product-image">
+    <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/vewrite/ve-homepage.png" alt="Vewrite homepage" class="single-product-image" />
     <hr>
-    <img src="/products/vewrite/ve-projects.png" alt="Vewrite projects view" class="single-product-image">
-    <img src="/products/vewrite/ve-workflowcreation.png" alt="Vewrite workflow creation" class="single-product-image">
-    <img src="/products/vewrite/ve-deliverable.png" alt="Vewrite deliverable view" class="single-product-image">
+    <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/vewrite/ve-projects.png" alt="Vewrite projects view" class="single-product-image" />
+    <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/vewrite/ve-workflowcreation.png" alt="Vewrite workflow creation" class="single-product-image" />
+    <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/vewrite/ve-deliverable.png" alt="Vewrite deliverable view" class="single-product-image" />
     <hr>
-    <img src="/products/vewrite/ve-brand.png" alt="Vewrite Brand" class="single-product-image">
-    <img src="/products/vewrite/ve-palette.png" alt="Vewrite Brand" class="single-product-image">
+    <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/vewrite/ve-brand.png" alt="Vewrite Brand" class="single-product-image" />
+    <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/vewrite/ve-palette.png" alt="Vewrite Brand" class="single-product-image" />
   </section>
-
-  <MergedProjectsHeader />
-  <MergedProjects />
+  <section class="more-products w-consistent">
+    <h3>More products</h3>
+    <Portfolio random="3" />
+  </section>
   <Footer />
 </template>
 

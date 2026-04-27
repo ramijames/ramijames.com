@@ -3,7 +3,7 @@
   <main class="w-content page-top">
     <section class="content">
 
-      <img src="/articles/neurodiversity.png" alt="Neurodiversity as software incompatibility">
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/neurodiversity.png" alt="Neurodiversity as software incompatibility" />
       
       <p>If you’ve been following the stuff that I write about, you’ll know that my family and I recently fled the difficult situation in Israel. We were in the far north of the country and were terrified that things were going to escalate with Hezbollah. We left in November of 2023 and have been trying to find our way in the world since then.</p>
       <p>Temporarily we’ve found ourselves in the US, although where we’ll end up long-term is still up in the air. My wife wants to go back to Israel, I want us to stay far away.</p>

@@ -20,12 +20,12 @@
               <p>The core challenge with Touchspin was creating a clean layout that was mobile friendly.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/touchspin/image1.png" alt="TouchSpin" class="single-product-image">
-              <img src="/products/touchspin/image2.png" alt="TouchSpin" class="single-product-image">
-              <img src="/products/touchspin/image3.png" alt="TouchSpin" class="single-product-image">
-              <img src="/products/touchspin/image4.png" alt="TouchSpin" class="single-product-image">
-              <img src="/products/touchspin/image5.png" alt="TouchSpin" class="single-product-image">
-              <img src="/products/touchspin/image6.jpg" alt="TouchSpin" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/touchspin/image1.png" alt="TouchSpin" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/touchspin/image2.png" alt="TouchSpin" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/touchspin/image3.png" alt="TouchSpin" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/touchspin/image4.png" alt="TouchSpin" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/touchspin/image5.png" alt="TouchSpin" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/touchspin/image6.jpg" alt="TouchSpin" class="single-product-image" />
             </div>
           </section>
 
@@ -34,9 +34,10 @@
     </div>
   
   </main>
-
-  <MergedProjectsHeader />
-  <MergedProjects />
+  <section class="more-products w-consistent">
+    <h3>More products</h3>
+    <Portfolio random="3" />
+  </section>
   <Footer />
 
 </template>

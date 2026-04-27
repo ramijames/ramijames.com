@@ -6,7 +6,7 @@
     <section class="about-container w-consistent">
 
       <section class="who-am-i">
-        <img src="/dude.png" alt="Rami James">
+        <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/dude.png" alt="Rami James" />
         <h3>Who am I?</h3>
         <p>My name is Rami James. I'm a deeply experienced product designer focused on creating unique and interesting interfaces. I prefer to implement modern front-ends in Vue and Nuxt, but have used a wide range of technologies like Drupal, Wordpress, and Ruby on Rails in the past. You can find me on <a href="https://github.com/ramijames">Github</a> and <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>.</p>
 

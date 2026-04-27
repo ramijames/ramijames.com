@@ -29,7 +29,7 @@
                 <h2 class="featured-title">{{ article.title }}</h2>
                 <p class="featured-date">{{ formatDate(article.date) }}</p>
               </div>
-              <img v-if="article.image" :key="article.image" :src="article.image" :alt="article.title" class="featured-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" v-if="article.image" :key="article.image" :src="article.image" :alt="article.title" class="featured-image" />
             </div>
           </nuxt-link>
         </div>
@@ -81,7 +81,7 @@
             <div class="article-content">
               <h3 class="article-title">{{ article.title }}</h3>
               <p class="article-date">{{ formatDate(article.date) }}</p>
-              <img v-if="article.image" :key="article.image" :src="article.image" :alt="article.title" class="article-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" v-if="article.image" :key="article.image" :src="article.image" :alt="article.title" class="article-image" />
             </div>
           </nuxt-link>
         </div>

@@ -43,8 +43,22 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "nuxt-highcharts",
     "nuxt-gtag",
-    "@nuxt/fonts"
+    "@nuxt/fonts",
+    "@nuxt/image",
   ],
+  image: {
+    format: ['avif', 'webp', 'png', 'jpg'],
+    quality: 80,
+    densities: [1, 2],
+    screens: {
+      xs: 360,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1600,
+      xxl: 1920,
+    },
+  },
   fonts: {
     families: [
       { name: 'Noto Serif', provider: 'google', weights: [100, 200, 300, 400, 500, 600, 700, 800, 900] },

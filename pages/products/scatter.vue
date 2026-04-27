@@ -20,8 +20,8 @@
               <p>Our primary product, with a peak active user base of 250k. We iterated over many versions that culminated in our "Scatter Simple" brand.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/scatter/scatter-simple.png" alt="Scatter In Progress" class="single-product-image">
-              <img src="/products/scatter/inside_desktop.png" alt="Scatter In Progress" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/scatter/scatter-simple.png" alt="Scatter In Progress" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/scatter/inside_desktop.png" alt="Scatter In Progress" class="single-product-image" />
             </div>
           </section>
 
@@ -31,8 +31,8 @@
               <p>A big part of my job was trying to simplify the difficult technical concepts into something that was easy for every day, non-technical users to understand.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/scatter/scatter-in-progress.png" alt="Scatter In Progress" class="single-product-image">
-              <img src="/products/scatter/better-on-boarding.png" alt="Scatter improves its on-boarding" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/scatter/scatter-in-progress.png" alt="Scatter In Progress" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/scatter/better-on-boarding.png" alt="Scatter improves its on-boarding" class="single-product-image" />
             </div>
           </section>
 
@@ -42,7 +42,7 @@
               <p>I was tasked with bringing our popular Desktop experience to mobile. There were many UX and design compromises that needed to happen to bring this to fruition.</p>
             </div>
             <div class="discuss-images">
-              <img src="/products/scatter/scatter-mobile.png" alt="Scatter In Progress" class="single-product-image">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/scatter/scatter-mobile.png" alt="Scatter In Progress" class="single-product-image" />
             </div>
           </section>
 
@@ -52,9 +52,10 @@
       </div>
     
     </main>
-
-  <MergedProjectsHeader />
-  <MergedProjects />
+  <section class="more-products w-consistent">
+    <h3>More products</h3>
+    <Portfolio random="3" />
+  </section>
   <Footer />
 
 </template>

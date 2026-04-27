@@ -21,7 +21,16 @@
           <div class="article-content">
             <h3 class="article-title">{{ article.title }}</h3>
             <p class="article-date">{{ formatDate(article.date) }}</p>
-            <img v-if="article.image" :key="article.image" :src="article.image" :alt="article.title" class="article-image" />
+            <NuxtImg
+              v-if="article.image"
+              :key="article.image"
+              :src="article.image"
+              :alt="article.title"
+              class="article-image"
+              width="80"
+              loading="lazy"
+              format="webp"
+            />
           </div>
         </nuxt-link>
       </div>

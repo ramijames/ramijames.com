@@ -32,7 +32,7 @@
 
       <p>For the Google account, you'll be managing the account settings via the Google Security section of your account. After you've signed in, you can access this from the dropdown that is in the top-right on a Google-related page (like Gmail, etc.), then "Manage your Google Account", and finally the Security tab on the left nav bar.</p>
 
-      <img src="/labs/google-security.png" alt="Google Security" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/labs/google-security.png" alt="Google Security" />
 
       <p>You'll need to have a few things set up:</p>
 
@@ -48,7 +48,7 @@
 
       <p>Lastly, you'll need to generate an app password. For whatever strange reason, this option is no longer exposed for me, but is available via the search bar. Type in "app password" in the search bar if you can't find it in the security panel.</p>
 
-      <img src="/labs/app-password.png" alt="Google App Password Generator" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/labs/app-password.png" alt="Google App Password Generator" />
 
       <p>Once you click on the app passwords option in the search bar, you'll be asked to reauthenticate, and then passed on to the generation section. Simply give it a name, and copy the password somewhere locally. You'll need this for Supabase.</p>
 
@@ -67,7 +67,7 @@
         <li>Generated google app password</li>
       </ul>
 
-      <img src="/labs/supabase-setup.png" alt="Supabase SMTP Auth Setup" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/labs/supabase-setup.png" alt="Supabase SMTP Auth Setup" />
 
       <p>Fill in the fields, and you should be good to go. You can test the connection by sending a test email from the Supabase dashboard.</p>
 

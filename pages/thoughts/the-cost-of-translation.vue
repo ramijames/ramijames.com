@@ -3,7 +3,7 @@
   <main class="w-content page-top">
     <section class="content">
 
-      <img src="/articles/the-cost-of-translation.png" alt="The Cost of Translation" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/the-cost-of-translation.png" alt="The Cost of Translation" />
 
       <h2>Introduction</h2>
 
@@ -43,7 +43,7 @@
         Modern Agile groups tend to have many layers of translation because there are many different people that are involved. There’s a kind of insane set of meetings that tends to happen where each set of people, according to their position in the company’s hierarchy, gets together and tries to define what will be in the product, how it will work, how it will be implemented, etc.
       </p>
 
-      <img src="/articles/typical.png" alt="The typical agile nonsense" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/typical.png" alt="The typical agile nonsense" />
 
       <p>
         As you can imagine (or have unfortunately experienced), this doesn’t work very well in practice. Each step through the chain is basically playing the children’s game of telephone. Misunderstanding, reinterpretation, and incompetence lead to the original intent of the stakeholder being diluted and/or mangled along the way. The structure of meetings that is required to make this “work” is a type of inflicted insanity: too many of them that have to run on a regular basis as a way to keep a team in sync. It's a huge waste of manpower and screams inefficiency.
@@ -117,7 +117,7 @@
 
       <p>Instead of a set of PMs/POs dictating feature sets, I think that they should be cut out entirely. In their stead, I think we should be creating a working team of Product Designer and Product Engineer who directly interface with the stakeholders to be the negotiating group who gets the specs, interprets them, creates a plan, creates a product proposal, and finally actually does the implementation (either themselves or with their respective teams). In effect, what I’m proposing is for those who are actually doing the work to be the real owners of the product instead of just being the tools of the layer above them in the organization’s hierarchy.</p>
 
-      <img src="/articles/product-focus.png" alt="The new hotness" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/product-focus.png" alt="The new hotness" />
 
       <p>Let’s rework the table from above with this new construct in mind.</p>
 

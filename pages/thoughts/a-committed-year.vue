@@ -3,7 +3,7 @@
   <main class="w-content page-top">
     <section class="content">
 
-      <img src="/articles/a-committed-year.png" alt="A Committed Year" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/a-committed-year.png" alt="A Committed Year" />
 
       <h2>A year of daily practice</h2>
 
@@ -13,7 +13,7 @@
 
       <p>So, a year ago, I committed to <a href="https://github.com/ramijames">writing a bit of code every day and publishing to Github</a>. A daily practice for my mind with the hope that, in time, I could grant myself a deep enough understanding of how computers work to build something that I'm really proud of. I made it through the year and I wanted to share with you some of my insights.</p>
 
-      <img src="/articles/one-year-of-github.png" alt="One Year" />
+      <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/articles/one-year-of-github.png" alt="One Year" />
 
       <p>My longest stretch was 20 weeks. Being consistent and steady in the beginning was easier, but there were definitely days where I just committed any old bullshit just to say that I did. In retrospect, I'm not super proud of this, but we were going through a lot of personal hardship at the time and morale was pretty low. In total, I only missed 5 days over the course of the past year. These came down to a bout of COVID that knocked me out in August and a few flights back and forth across the Atlantic that made committing code consistently impossible.</p>
       
