@@ -171,7 +171,7 @@ a {
 }
 
 :root {
-  --h1-size: calc(8.31579px + 4.94737vw);
+  --h1-size: clamp(42px, calc(8.31579px + 4.94737vw), 130px);
 }
 
 h1, h2, h3, h4, h5, h6 {

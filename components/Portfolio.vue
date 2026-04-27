@@ -163,7 +163,7 @@ const items = computed(() => {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 40px;
 
   @media (max-width: 1000px) {
@@ -179,6 +179,7 @@ const items = computed(() => {
 .portfolio-item {
   margin: 0;
   padding: 0;
+  min-width: 0;
 
   &.is-small {
     grid-column: span 4;

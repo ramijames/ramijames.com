@@ -445,8 +445,9 @@ const isHome = computed(() => route.path === '/');
     height: 100%;
 
     @media screen and (max-width: 1000px){
-      padding: $spacing-md;
-      gap: $spacing-lg;
+      padding: $spacing-xl $spacing-md $spacing-md;
+      gap: $spacing-md;
+      justify-content: flex-start;
     }
 
     .nav-links {
@@ -505,7 +506,8 @@ const isHome = computed(() => route.path === '/');
       max-width: 800px;
 
       @media screen and (max-width: 1000px){
-        gap: $spacing-lg;
+        gap: $spacing-md;
+        line-height: 1.2;
       }
 
       h3 {
@@ -515,7 +517,8 @@ const isHome = computed(() => route.path === '/');
 
         @media screen and (max-width: 1000px){
           font-size: $font-size-md;
-          margin: 0 0 $spacing-sm 0;
+          margin: 0 0 $spacing-xs 0;
+          line-height: 1.1;
         }
       }
 
@@ -525,7 +528,8 @@ const isHome = computed(() => route.path === '/');
 
         @media screen and (max-width: 1000px){
           font-size: $font-size-sm;
-          margin: 0 0 $spacing-xs 0;
+          margin: 0 0 2px 0;
+          line-height: 1.2;
         }
       }
 
@@ -569,7 +573,8 @@ const isHome = computed(() => route.path === '/');
 
           @media screen and (max-width: 1000px){
             font-size: $font-size-sm;
-            margin: 0 0 $spacing-xs 0;
+            margin: 0 0 2px 0;
+            line-height: 1.2;
           }
 
           &:hover {

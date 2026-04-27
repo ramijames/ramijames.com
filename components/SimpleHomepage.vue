@@ -332,6 +332,11 @@ onBeforeUnmount(() => {
   line-height: 1.4;
   color: var(--fg);
   text-align: left;
+
+  @media screen and (max-width: 900px) {
+    position: static;
+    top: auto;
+  }
 }
 
 .section-rail-title {
