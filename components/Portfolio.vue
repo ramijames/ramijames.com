@@ -46,7 +46,7 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted } from 'vue'
+import { computed, ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { products } from '~/utils/products'
 
@@ -81,8 +81,54 @@ const route = useRoute()
 // Re-shuffle on client mount so SSR + hydration agree (server renders
 // products in source order, client picks random after mount).
 const randomSeed = ref(0)
+
+// Parallax scroll handler: moves images upward as the page scrolls.
+let rafId = null
+let cards = []
+const PARALLAX_RANGE = 15 // percent
+
+function updateParallax() {
+  const vh = window.innerHeight
+  for (const card of cards) {
+    const rect = card.el.getBoundingClientRect()
+    const center = rect.top + rect.height / 2
+    // progress: -1 when card center at bottom of viewport, +1 at top, 0 at middle
+    const progress = (center - vh / 2) / (vh / 2 + rect.height / 2)
+    const clamped = Math.max(-1, Math.min(1, progress))
+    const offset = -clamped * PARALLAX_RANGE
+    for (const img of card.imgs) {
+      img.style.translate = `0 ${offset}%`
+    }
+  }
+  rafId = null
+}
+
+function onScrollOrResize() {
+  if (rafId == null) rafId = requestAnimationFrame(updateParallax)
+}
+
+async function collectCards() {
+  await nextTick()
+  cards = Array.from(document.querySelectorAll('.portfolio-image-wrap')).map((el) => ({
+    el,
+    imgs: Array.from(el.querySelectorAll('.portfolio-img')),
+  }))
+  updateParallax()
+}
+
 onMounted(() => {
   randomSeed.value = Math.random()
+  if (typeof window !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    collectCards()
+    window.addEventListener('scroll', onScrollOrResize, { passive: true })
+    window.addEventListener('resize', onScrollOrResize)
+  }
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScrollOrResize)
+  window.removeEventListener('resize', onScrollOrResize)
+  if (rafId != null) cancelAnimationFrame(rafId)
 })
 
 const items = computed(() => {
@@ -200,12 +246,21 @@ const items = computed(() => {
 
 .portfolio-img {
   position: absolute;
-  inset: 0;
+  inset: -15% 0;
   width: 100%;
-  height: 100%;
+  height: 130%;
   object-fit: cover;
-  transition: transform 1.2s ease, opacity 0.4s ease;
+  transition: transform 1.2s ease, opacity 0.4s ease, translate 0.05s linear;
   filter: none !important;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-img {
+    inset: 0;
+    height: 100%;
+    translate: 0 !important;
+  }
 }
 
 .portfolio-img-hover {
