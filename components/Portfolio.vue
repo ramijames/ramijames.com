@@ -172,6 +172,8 @@ const items = computed(() => {
   border-radius: 20px;
   overflow: hidden;
   isolation: isolate;
+  box-shadow: inset 0 0 0 0 transparent;
+  transition: box-shadow 0.25s ease;
 
   .is-large & {
     height: clamp(360px, 36vw, 620px);
@@ -211,6 +213,10 @@ const items = computed(() => {
 }
 
 .portfolio-card:hover {
+  .portfolio-image-wrap {
+    box-shadow: inset 0 0 0 4px var(--bg);
+  }
+
   .portfolio-img-default {
     opacity: 0;
     transform: scale(1.04);
@@ -240,7 +246,7 @@ const items = computed(() => {
   overflow: visible;
   opacity: 0;
   z-index: 3;
-  color: $white;
+  color: var(--fg);
 }
 
 .portfolio-border-rect {

@@ -20,6 +20,7 @@
               <p>The core challenge with Doodledapp was how to present programming concepts as something that anybody could pick up and learn. We leant hard on the visual concepts that were developer by the team that created Blueprints for Unreal Engine, and developed our own unique style and visual concepts.</p>
             </div>
             <div class="discuss-images">
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/doodledapp/dd-eol-app.png" alt="Doodledapp App" class="single-product-image" />
               <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/doodledapp/flow.png" alt="Early Doodledapp" class="single-product-image" />
               <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/doodledapp/example-function.png" alt="Early Doodledapp" class="single-product-image" />
             </div>
@@ -43,6 +44,11 @@
               <p>As part of our attempt to break into the wider web3 market, I designed, implemented, and deployed a slick, responsive marketing website for Doodledapp.</p>
             </div>
             <div class="discuss-images">
+              <!-- EOL -->
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/doodledapp/dd-eol-homepage.png" alt="Doodledapp Website" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/doodledapp/dd-eol-tool.png" alt="Doodledapp Tool" class="single-product-image" />
+              <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/doodledapp/dd-eol-features.png" alt="Doodledapp Features" class="single-product-image" />
+              <!-- Original -->
               <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/doodledapp/doodledapp-website.png" alt="Doodledapp Website" class="single-product-image" />
               <NuxtImg sizes="sm:100vw md:80vw lg:1000px" loading="lazy" src="/products/doodledapp/good-stuff.png" alt="Doodledapp Website" class="single-product-image" />
             </div>

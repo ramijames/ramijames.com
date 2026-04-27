@@ -2,9 +2,9 @@ export const products = [
   {
     title: 'Scatter',
     description: 'Open-source web3 wallet',
-    image: '/products/scatter/scatter-thumb.png',
+    image: '/products/scatter/scatter-shiny.png',
     images: {
-      default: '/products/scatter/scatter-thumb.png',
+      default: '/products/scatter/scatter-shiny.png',
       hover: '/products/scatter/scatter-mobile.png',
     },
     logo: '/products/scatter/scatter-logo.png',
@@ -19,9 +19,9 @@ export const products = [
   {
     title: 'Ultra',
     description: 'Tokenized gaming platform',
-    image: '/products/ultra/ultra-prime-thumb.png',
+    image: '/products/ultra/build-on-ultra.png',
     images: {
-      default: '/products/ultra/ultra-prime-thumb.png',
+      default: '/products/ultra/build-on-ultra.png',
       hover: '/products/ultra/ultra-prime-1.png',
     },
     logo: '/products/ultra/ultra-logo.svg',
@@ -36,10 +36,10 @@ export const products = [
   {
     title: 'Doodledapp',
     description: 'No-code smart contract builder',
-    image: '/products/doodledapp/doodledapp-thumb.png',
+    image: '/products/doodledapp/doodledapp-shiny.png',
     images: {
-      default: '/products/doodledapp/doodledapp-thumb.png',
-      hover: '/products/doodledapp/doodledapp-website.png',
+      default: '/products/doodledapp/doodledapp-shiny.png',
+      hover: '/products/doodledapp/dd-eol-app.png',
     },
     logo: '/products/doodledapp/doodledapp-logo.svg',
     bg: '/homepage/hp-doodledapp.png',
@@ -53,9 +53,9 @@ export const products = [
   {
     title: 'Climbing Monster',
     description: 'Training application for rock climbers',
-    image: '/products/climbingmonster/cm-mobile-example.png',
+    image: '/products/climbingmonster/climbingmonster-new.png',
     images: {
-      default: '/products/climbingmonster/climbingmonster-website-show.png',
+      default: '/products/climbingmonster/climbingmonster-new.png',
       hover: '/products/climbingmonster/cm-brand.png',
     },
     logo: '/products/climbingmonster/climbingmonster-logo.png',
@@ -70,10 +70,10 @@ export const products = [
   {
     title: 'Food For Future',
     description: 'Decentralized data for funding farmers',
-    image: '/products/food-for-future/fff-thumb.png',
+    image: '/products/food-for-future/fff-show.png',
     images: {
-      default: '/products/food-for-future/fff-display-one.png',
-      hover: '/products/food-for-future/fff-farms-explore.png',
+      default: '/products/food-for-future/fff-show.png',
+      hover: '/products/food-for-future/fff-brand.png',
     },
     logo: '/products/food-for-future/fff-logo.svg',
     bg: '/homepage/hp-fff.png',
