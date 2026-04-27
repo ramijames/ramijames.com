@@ -1,5 +1,5 @@
 <template>
-  <section id="PostsExtras">
+  <section id="PostsExtras" class="w-consistent">
     <FeaturedThoughts :articles="allArticles" />
   </section>
 </template>

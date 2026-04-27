@@ -93,23 +93,6 @@ const formatDate = (dateString) => {
   .skeleton-card {
     background: rgba($white, 0.06);
   }
-
-  .article-card {
-    background: rgba($white, .1);
-    color: $white;
-  }
-
-  .article-card:hover {
-    background: rgba($white, 0.2);
-  }
-
-  .article-image {
-    border: $border;
-  }
-
-  .article-date {
-    color: rgba($white, 0.3);
-  }
 }
 
 .articles-grid {
@@ -123,10 +106,10 @@ const formatDate = (dateString) => {
   overflow: visible;
   border-radius: $br-sm;
   text-decoration: none;
-  border: 1px solid rgba($black, 0.2);
+  border: 1px solid rgb(var(--fg-rgb) / 0.15);
   min-height: 300px;
-  background: $black;
-  color: $white;
+  background: var(--bg);
+  color: var(--fg);
 
   &:hover {
     .article-card-border {
@@ -180,18 +163,19 @@ const formatDate = (dateString) => {
   right: $spacing-sm;
   bottom: $spacing-sm;
   border-radius: $br-xs;
-  border: 1px solid rgba($white, 0.2);
+  border: 1px solid rgb(var(--fg-rgb) / 0.15);
 }
 
 .article-title {
   font-size: calc(var(--h1-size) * 0.45);
   line-height: 1.1;
   margin: 0;
+  color: var(--fg);
 }
 
 .article-date {
   font-size: $font-size-xs;
-  color: rgba($white, 0.6);
+  color: rgb(var(--fg-rgb) / 0.6);
   margin: 0;
 }
 </style>
