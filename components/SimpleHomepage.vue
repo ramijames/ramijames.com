@@ -25,9 +25,11 @@
     <section class="section mono-scope section-thoughts">
       <div class="section-head section-head-right">
         <h2>Things I'm thinking about.</h2>
-        <nuxt-link to="/thoughts" class="section-cta">See all thoughts <span aria-hidden="true">&rarr;</span></nuxt-link>
       </div>
       <FeaturedThoughts :articles="articles" />
+      <div class="section-cta-row">
+        <nuxt-link to="/thoughts" class="section-cta">See all thoughts <span aria-hidden="true">&rarr;</span></nuxt-link>
+      </div>
     </section>
 
     <!-- 4. Companies -->
@@ -56,7 +58,7 @@
       :style="{ top: popoverY + 'px', left: popoverX + 'px' }"
     >
       <svg class="popover-border" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <rect class="popover-border-rect" fill="none" stroke="white" stroke-width="2" pathLength="100"/>
+        <rect class="popover-border-rect" fill="none" stroke="currentColor" stroke-width="2" pathLength="100"/>
       </svg>
       <div class="popover-content">
         <div v-for="(line, lineIdx) in popoverWords[activePopover]" :key="lineIdx" class="popover-line">
@@ -171,13 +173,11 @@ function movePopover(e) {
   min-width: 160px;
   padding: 40px;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: var(--bg);
   font-family: $font-family-secondary, sans-serif;
   font-size: 17px;
   font-weight: 300;
-  color: $white;
+  color: var(--fg);
   white-space: nowrap;
 }
 
@@ -242,39 +242,26 @@ function movePopover(e) {
   h2, h3 {
     margin: 0;
     padding: 0;
-    font-family: $font-family-main, sans-serif;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.02;
     color: var(--fg);
-  }
-
-  h2 {
-    font-size: clamp(3rem, 7vw, 8rem);
-  }
-
-  h3 {
-    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
   }
 }
 
 .section-head-left { text-align: left; }
 
-.section-work .section-head h2 {
-  font-size: clamp(2.55rem, 5.95vw, 6.8rem);
-}
 .section-head-right {
   text-align: right;
 
   h2 {
     display: inline-block;
-    white-space: nowrap;
-    font-size: clamp(2rem, 5.5vw, 7rem);
   }
 }
 .section-head-center { text-align: center; }
+
+.section-cta-row {
+  display: flex;
+  justify-content: center;
+  margin-top: $spacing-lg;
+}
 
 .section-cta {
   display: inline-flex;
@@ -380,19 +367,6 @@ function movePopover(e) {
   .homepage .work-index .row,
   .homepage .learn-index .row {
     padding-inline: 0;
-  }
-
-  .homepage .section-head h2 {
-    font-size: clamp(2.4rem, 5.6vw, 6.4rem);
-  }
-
-  .homepage .section-head h3 {
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-  }
-
-  .homepage .section-head-right h2 {
-    white-space: normal;
-    font-size: clamp(1.6rem, 4.4vw, 5.6rem);
   }
 
   .homepage .section-thoughts .w-consistent {

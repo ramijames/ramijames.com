@@ -16,7 +16,7 @@
           v-if="learnParent"
           :to="learnParent"
         >
-        <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8.8847 1.00001L1.41409 8.47067L9.41406 16.4706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <path d="M2.41406 8.47064H18.4141" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
@@ -30,7 +30,7 @@
           v-if="isProductsSubPage"
           to="/products"
         >
-        <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8.8847 1.00001L1.41409 8.47067L9.41406 16.4706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <path d="M2.41406 8.47064H18.4141" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
@@ -44,7 +44,7 @@
           v-if="isThoughtsSubPage"
           to="/thoughts"
         >
-        <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8.8847 1.00001L1.41409 8.47067L9.41406 16.4706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <path d="M2.41406 8.47064H18.4141" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
@@ -60,7 +60,7 @@
         role="button"
         v-if="!state.mobileMenuOpen"
       >
-        <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-icon">
+        <svg width="44" height="44" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-icon">
           <path d="M17 19H41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <path d="M17 29H33" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <path d="M17 39H41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -73,7 +73,7 @@
         role="button"
         v-else
       >
-        <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="close-icon">
+        <svg width="44" height="44" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="close-icon">
           <path d="M21 21L37.9706 37.9706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <path d="M37.9707 21L21.0001 37.9706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
@@ -81,46 +81,46 @@
     </section>
 
     <ContactModal :isOpen="isContactModalOpen" @close="closeContactModal" />
+  </nav>
 
-    <section
-      :class="['menu-shade', state.mobileMenuOpen ? 'open' : '' ]"
-    >
-      <section class="shade-content">
-        <div class="nav-links">
-          <nuxt-link to="/" class="nav-link" v-if="!isHome" @click="toggleMenu">
-            <span>Home</span>
-          </nuxt-link>
-          <nuxt-link to="/products" :class="['nav-link', isProductsPage ? 'router-link-active' : '']" v-if="!isProductsPage" @click="toggleMenu">
-            <span>Products</span>
-          </nuxt-link>
-          <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']" v-if="!isThoughtsPage" @click="toggleMenu">
-            <span>Thoughts</span>
-          </nuxt-link>
-          <nuxt-link to="/tools" :class="['nav-link', isToolsPage ? 'router-link-active' : '']" v-if="!isToolsPage" @click="toggleMenu">
-            <span>Tools</span>
-          </nuxt-link>
-          <nuxt-link to="/about" class="nav-link" v-if="!isAboutPage" @click="toggleMenu">
-            <span>About</span>
-          </nuxt-link>
-        </div>
+  <section
+    :class="['menu-shade', state.mobileMenuOpen ? 'open' : '' ]"
+  >
+    <section class="shade-content">
+      <div class="nav-links">
+        <nuxt-link to="/" class="nav-link" v-if="!isHome" @click="toggleMenu">
+          <span>Home</span>
+        </nuxt-link>
+        <nuxt-link to="/products" :class="['nav-link', isProductsPage ? 'router-link-active' : '']" v-if="!isProductsPage" @click="toggleMenu">
+          <span>Products</span>
+        </nuxt-link>
+        <nuxt-link to="/thoughts" :class="['nav-link', isThoughtsSubPage ? 'router-link-active' : '']" v-if="!isThoughtsPage" @click="toggleMenu">
+          <span>Thoughts</span>
+        </nuxt-link>
+        <nuxt-link to="/tools" :class="['nav-link', isToolsPage ? 'router-link-active' : '']" v-if="!isToolsPage" @click="toggleMenu">
+          <span>Tools</span>
+        </nuxt-link>
+        <nuxt-link to="/about" class="nav-link" v-if="!isAboutPage" @click="toggleMenu">
+          <span>About</span>
+        </nuxt-link>
+      </div>
 
-        <section class="shade-info" >
-          <section class="contact-info">
-            <h3>Contact</h3>
-            <p><a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a></p>
-            <p>IL +972 58 4192939</p>
-            <p>US +1 508 360 7982</p>
-          </section>
-          <section class="links">
-            <h3>External</h3>
-            <a href="https://github.com/ramijames">Github</a>
-            <a href="https://dribbble.com/ramijames">Dribbble</a>
-            <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>
-          </section>
+      <section class="shade-info" >
+        <section class="contact-info">
+          <h3>Contact</h3>
+          <p><a href="mailto:ramijames@gmail.com">ramijames@gmail.com</a></p>
+          <p>IL +972 58 4192939</p>
+          <p>US +1 508 360 7982</p>
+        </section>
+        <section class="links">
+          <h3>External</h3>
+          <a href="https://github.com/ramijames">Github</a>
+          <a href="https://dribbble.com/ramijames">Dribbble</a>
+          <a href="https://www.linkedin.com/in/rami-james/">LinkedIn</a>
         </section>
       </section>
     </section>
-  </nav>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -203,7 +203,7 @@ const isHome = computed(() => route.path === '/');
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 100dvw;
   box-sizing: border-box;
   z-index: 100;
   display: flex;
@@ -283,7 +283,7 @@ const isHome = computed(() => route.path === '/');
     z-index: 100;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     gap: $spacing-xs;
     padding: 0 0.35rem;
 
@@ -323,185 +323,6 @@ const isHome = computed(() => route.path === '/');
     }
   }
 
-  .menu-shade {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(12px);
-    z-index: 99;
-    overflow: hidden;
-    color: $black;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
-
-    @media screen and (max-width: 1000px){
-      padding: 0 0 $spacing-md;
-    }
-
-    &.open {
-      opacity: 1;
-      visibility: visible;
-      transition: opacity 0.4s ease, visibility 0s linear 0s;
-
-      .shade-content .nav-links .nav-link,
-      .shade-content .shade-info .contact-info,
-      .shade-content .shade-info .links {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .shade-content {
-      padding: $spacing-xl;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      gap: $spacing-xl;
-      height: 100%;
-
-      @media screen and (max-width: 1000px){
-        padding: $spacing-md;
-        gap: $spacing-lg;
-      }
-
-      .nav-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        width: 100%;
-
-        .nav-link {
-          font-family: $font-family-main, sans-serif;
-          font-size: calc(8.31579px + 4.94737vw);
-          font-weight: 300;
-          letter-spacing: -0.03em;
-          line-height: 1.2;
-          text-align: left;
-          color: $black;
-          text-decoration: none;
-          width: 100%;
-          opacity: 0;
-          transform: translateY(12px);
-          transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease-in-out;
-
-          &:nth-child(1) { transition-delay: 0.1s; }
-          &:nth-child(2) { transition-delay: 0.2s; }
-          &:nth-child(3) { transition-delay: 0.3s; }
-          &:nth-child(4) { transition-delay: 0.4s; }
-          &:nth-child(5) { transition-delay: 0.5s; }
-
-          &.router-link-active span {
-            text-decoration: underline;
-            text-underline-offset: 8px;
-          }
-
-          span {
-            transition: color 0.3s ease-in-out;
-          }
-
-          &:hover span {
-            color: rgba($black, 0.7);
-          }
-        }
-      }
-
-      .shade-info {
-        color: rgba($black, 0.6);
-        font-size: $font-size-sm;
-        line-height: 150%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: $spacing-xl;
-        width: 100%;
-        max-width: 800px;
-
-        @media screen and (max-width: 1000px){
-          gap: $spacing-lg;
-        }
-
-        h3 {
-          font-size: $font-size-xl;
-          color: $black;
-          margin: 0 0 $spacing-md;
-
-          @media screen and (max-width: 1000px){
-            font-size: $font-size-md;
-            margin: 0 0 $spacing-sm 0;
-          }
-        }
-
-        p {
-          margin: 0 0 $spacing-sm 0;
-          font-size: $font-size-lg;
-
-          @media screen and (max-width: 1000px){
-            font-size: $font-size-sm;
-            margin: 0 0 $spacing-xs 0;
-          }
-        }
-
-        .contact-info {
-          opacity: 0;
-          transform: translateY(12px);
-          transition: opacity 0.4s ease 0.5s, transform 0.4s ease 0.5s;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-
-          @media screen and (max-width: 1000px){
-            width: 50%;
-          }
-
-          a {
-            color: $black;
-          }
-        }
-
-        .links {
-          opacity: 0;
-          transform: translateY(12px);
-          transition: opacity 0.4s ease 0.6s, transform 0.4s ease 0.6s;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-
-          @media screen and (max-width: 1000px){
-            width: 50%;
-          }
-
-          a {
-            color: rgba($black, 0.6);
-            text-decoration: none;
-            margin: 0 0 $spacing-sm 0;
-            font-size: $font-size-lg;
-            transition: color 0.3s ease-in-out;
-
-            @media screen and (max-width: 1000px){
-              font-size: $font-size-sm;
-              margin: 0 0 $spacing-xs 0;
-            }
-
-            &:hover {
-              color: rgba($black, 0.9);
-            }
-          }
-        }
-
-      }
-    }
-  }
 }
 
 .dark {
@@ -514,48 +335,228 @@ const isHome = computed(() => route.path === '/');
         color: $white;
       }
     }
+  }
+}
 
-    .menu-shade {
-      background: rgba(0, 0, 0, 0.2);
-      color: $white;
+.menu-shade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 99;
+  overflow: hidden;
+  color: $black;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0s linear 0.4s;
 
-      .shade-content {
+  @media screen and (max-width: 1000px){
+    padding: 0 0 $spacing-md;
+  }
 
-        .nav-links {
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0s linear 0s;
 
-          .nav-link {
-            color: $white;
+    .shade-content .nav-links .nav-link,
+    .shade-content .shade-info .contact-info,
+    .shade-content .shade-info .links {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-            &:hover span {
-              color: rgba($white, 0.7);
-            }
-          }
+  .shade-content {
+    padding: $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: $spacing-xl;
+    height: 100%;
+
+    @media screen and (max-width: 1000px){
+      padding: $spacing-md;
+      gap: $spacing-lg;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+
+      .nav-link {
+        font-family: $font-family-main, sans-serif;
+        font-size: calc(8.31579px + 4.94737vw);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1.2;
+        text-align: left;
+        color: $black;
+        text-decoration: none;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease-in-out;
+
+        &:nth-child(1) { transition-delay: 0.1s; }
+        &:nth-child(2) { transition-delay: 0.2s; }
+        &:nth-child(3) { transition-delay: 0.3s; }
+        &:nth-child(4) { transition-delay: 0.4s; }
+        &:nth-child(5) { transition-delay: 0.5s; }
+
+        &.router-link-active span {
+          text-decoration: underline;
+          text-underline-offset: 8px;
         }
 
-        .shade-info {
-          color: rgba($white, 0.6);
+        span {
+          transition: color 0.3s ease-in-out;
+        }
 
-          h3 {
-            color: $white;
-          }
-
-          .contact-info a {
-            color: $white;
-          }
-
-          .links {
-
-            a {
-              color: rgba($white, 0.6);
-
-              &:hover {
-                color: rgba($white, 0.9);
-              }
-            }
-          }
-
+        &:hover span {
+          color: rgba($black, 0.7);
         }
       }
+    }
+
+    .shade-info {
+      color: rgba($black, 0.6);
+      font-size: $font-size-sm;
+      line-height: 150%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: $spacing-xl;
+      width: 100%;
+      max-width: 800px;
+
+      @media screen and (max-width: 1000px){
+        gap: $spacing-lg;
+      }
+
+      h3 {
+        font-size: $font-size-xl;
+        color: $black;
+        margin: 0 0 $spacing-md;
+
+        @media screen and (max-width: 1000px){
+          font-size: $font-size-md;
+          margin: 0 0 $spacing-sm 0;
+        }
+      }
+
+      p {
+        margin: 0 0 $spacing-sm 0;
+        font-size: $font-size-lg;
+
+        @media screen and (max-width: 1000px){
+          font-size: $font-size-sm;
+          margin: 0 0 $spacing-xs 0;
+        }
+      }
+
+      .contact-info {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.4s ease 0.5s, transform 0.4s ease 0.5s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        @media screen and (max-width: 1000px){
+          width: 50%;
+        }
+
+        a {
+          color: $black;
+        }
+      }
+
+      .links {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.4s ease 0.6s, transform 0.4s ease 0.6s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        @media screen and (max-width: 1000px){
+          width: 50%;
+        }
+
+        a {
+          color: rgba($black, 0.6);
+          text-decoration: none;
+          margin: 0 0 $spacing-sm 0;
+          font-size: $font-size-lg;
+          transition: color 0.3s ease-in-out;
+
+          @media screen and (max-width: 1000px){
+            font-size: $font-size-sm;
+            margin: 0 0 $spacing-xs 0;
+          }
+
+          &:hover {
+            color: rgba($black, 0.9);
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.dark .menu-shade {
+  background: rgba(0, 0, 0, 0.2);
+  color: $white;
+
+  .shade-content {
+
+    .nav-links {
+
+      .nav-link {
+        color: $white;
+
+        &:hover span {
+          color: rgba($white, 0.7);
+        }
+      }
+    }
+
+    .shade-info {
+      color: rgba($white, 0.6);
+
+      h3 {
+        color: $white;
+      }
+
+      .contact-info a {
+        color: $white;
+      }
+
+      .links {
+
+        a {
+          color: rgba($white, 0.6);
+
+          &:hover {
+            color: rgba($white, 0.9);
+          }
+        }
+      }
+
     }
   }
 }

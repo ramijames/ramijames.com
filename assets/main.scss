@@ -8,24 +8,41 @@
 }
 
 html {
-  background: $white;
+  background: $black;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
   padding: 0;
   font-family: $font-family-main, sans-serif;
+  background: $black;
+  color: $white;
+  --fg: #{$white};
+  --bg: #{$black};
+  --fg-rgb: 255 255 255;
+  --bg-rgb: 3 3 3;
+  --border-faint: rgb(255 255 255 / 0.18);
 }
 
-body,
 body.light {
-  color: $black;
   background: $white;
+  color: $black;
+  --fg: #{$black};
+  --bg: #{$white};
+  --fg-rgb: 3 3 3;
+  --bg-rgb: 255 255 255;
+  --border-faint: rgb(3 3 3 / 0.15);
 }
 
 body.dark {
-  background-color: $black;
+  background: $black;
   color: $white;
+  --fg: #{$white};
+  --bg: #{$black};
+  --fg-rgb: 255 255 255;
+  --bg-rgb: 3 3 3;
+  --border-faint: rgb(255 255 255 / 0.18);
 }
 
 p code {
@@ -153,33 +170,64 @@ a {
   color: $blue-light;
 }
 
-h1, h2, h3, h4 {
-  font-family: $font-family-main;
-  font-weight: bold;
+:root {
+  --h1-size: calc(8.31579px + 4.94737vw);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-main, serif;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-align: center;
   margin: 0;
   padding: 0;
 }
 
-h5, h6 {
-  font-family: $font-family-secondary;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
+h1 {
+  font-size: var(--h1-size);
 }
 
-h1 { 
-  font-size: $font-size-max;
-  line-height: $font-size-max; 
-  margin-top: 0;
-  margin-bottom: 0;
-  padding:0.5rem 0;
-  line-height: 120%;
+h2 {
+  font-size: calc(var(--h1-size) * 0.8);
+  margin-bottom: $spacing-md;
+}
 
-  @media screen and (max-width: 1200px) {
-    font-size: calc($font-size-xxl * 1.4);
-    line-height: 100%;
+.content h2 {
+  margin: $spacing-lg auto $spacing-md;
+}
+
+h3 {
+  font-size: calc(var(--h1-size) * 0.65);
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-sm;
+}
+
+h4 {
+  font-size: calc(var(--h1-size) * 0.5);
+  margin: $spacing-md 0 $spacing-sm;
+
+  .highlight {
+    color: $red-dark;
   }
+}
 
+.article-extras .section-title h1 {
+  text-align: center;
+}
+
+.article-extras .section-title h4 {
+  margin-top: 0;
+  opacity: 0.5;
+}
+
+h5 {
+  font-size: calc(var(--h1-size) * 0.4);
+  margin-bottom: $spacing-xs;
+}
+
+h6 {
+  font-size: calc(var(--h1-size) * 0.35);
 }
 
 @keyframes fadeIn {
@@ -188,73 +236,6 @@ h1 {
   }
   100% {
     opacity: 1;
-  }
-}
-
-h2 { 
-  font-size: $font-size-xxl;
-  line-height: $font-size-xxl;
-  margin-bottom: $spacing-md;
-
-  @media screen and (max-width: 1000px) {
-    font-size: $font-size-xl;
-  }
-
-}
-
-.content h2 {
-  margin: $spacing-lg auto $spacing-md;
-}
-
-h3 { 
-  font-size: $font-size-lg * 1.2; 
-  line-height: 140%; 
-  margin-top: $spacing-lg;
-  margin-bottom: $spacing-sm;
-
-  @media screen and (max-width: 1000px) {
-    font-size: $font-size-lg;
-    line-height: $font-size-lg * $multiplier;
-  }
-}
-
-h4 { 
-  font-size: $font-size-lg;
-  line-height: 110%;  
-  margin: $spacing-md 0 $spacing-sm;
-
-  .highlight {
-    color: $red-dark;
-  }
-
-  @media screen and (max-width: 1000px) {
-    font-size: $font-size-md; 
-    line-height: $font-size-md * $multiplier;
-  }
-}
-
-.article-extras .section-title h1 {
-  text-align: center;
-  line-height: 120%;
-}
-
-.article-extras .section-title h4 {
-  margin-top: 0;
-  font-size: $font-size-md;
-  opacity: 0.5;
-}
-
-h5 { 
-  font-size: $font-size-sm; 
-  font-weight: bold;
-  line-height: $font-size-md * $multiplier; 
-  font-family: $font-family-main;
-  margin-bottom: $spacing-xs;
-  line-height: $spacing-md;
-
-  @media screen and (max-width: 1000px) {
-    font-size: $font-size-xs;
-    line-height: $font-size-sm * $multiplier;
   }
 }
 

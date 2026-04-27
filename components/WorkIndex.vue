@@ -7,6 +7,9 @@
         :to="product.slug"
         class="row"
       >
+        <svg class="row-border" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <rect class="row-border-rect" fill="none" stroke="currentColor" stroke-width="2" pathLength="100"/>
+        </svg>
         <span class="row-index">{{ String(i + 1).padStart(2, '0') }}</span>
         <span class="row-title">{{ product.title }}</span>
         <span class="row-desc">{{ product.description }}</span>
@@ -24,12 +27,14 @@ import { products } from '~/utils/products'
 .work-index {
   position: relative;
   width: 100%;
+  overflow: visible;
 }
 
 .rows {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--border-faint, rgba(0, 0, 0, 0.18));
+  gap: 4px;
+  overflow: visible;
 }
 
 .row {
@@ -41,9 +46,43 @@ import { products } from '~/utils/products'
   padding-block: clamp($spacing-md, 3vh, $spacing-lg);
   padding-inline: $spacing-md;
   min-height: clamp(6rem, 12vh, 10rem);
-  border-bottom: 1px solid var(--border-faint, rgba(0, 0, 0, 0.18));
   color: inherit;
   text-decoration: none;
+  border-radius: 8px;
+  overflow: visible;
+}
+
+.row-border {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 6px);
+  pointer-events: none;
+  overflow: visible;
+  opacity: 0;
+}
+
+.row-border-rect {
+  width: calc(100% - 2px);
+  height: 100%;
+  rx: 8px;
+  ry: 8px;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  vector-effect: non-scaling-stroke;
+}
+
+.row:hover .row-border {
+  opacity: 1;
+
+  .row-border-rect {
+    animation: row-trace 0.5s ease forwards;
+  }
+}
+
+@keyframes row-trace {
+  to { stroke-dashoffset: 0; }
 }
 
 .row-index {
