@@ -3,7 +3,7 @@
 
     <!-- 1. Intro -->
     <section class="intro">
-      <h1 class="intro-headline">I'm a <span
+      <h1 ref="heroEl" class="intro-headline">I'm a <span
         class="hover-word"
         @mouseenter="showPopover('strategic', $event)"
         @mouseleave="hidePopover"
@@ -84,12 +84,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import articles from '~/assets/articles.json'
 
 const activePopover = ref(null)
 const popoverX = ref(0)
 const popoverY = ref(0)
+const heroEl = ref(null)
 
 const popoverWords = {
   strategic: [
@@ -118,6 +119,43 @@ function movePopover(e) {
   popoverX.value = e.clientX + 16
   popoverY.value = e.clientY + 16
 }
+
+// Hero scroll-fade: as the user scrolls down past the first viewport, the
+// hero h1 fades to opacity 0 and its line-height tightens.
+let heroRaf = null
+const HERO_LINE_HEIGHT_FROM = 1.1
+const HERO_LINE_HEIGHT_TO = 0.7
+
+function updateHero() {
+  if (!heroEl.value) {
+    heroRaf = null
+    return
+  }
+  const y = window.scrollY || 0
+  const distance = window.innerHeight * 0.6
+  const progress = Math.min(1, Math.max(0, y / distance))
+  heroEl.value.style.opacity = String(1 - progress)
+  heroEl.value.style.lineHeight = String(
+    HERO_LINE_HEIGHT_FROM + (HERO_LINE_HEIGHT_TO - HERO_LINE_HEIGHT_FROM) * progress
+  )
+  heroRaf = null
+}
+
+function onHeroScroll() {
+  if (heroRaf == null) heroRaf = requestAnimationFrame(updateHero)
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', onHeroScroll, { passive: true })
+  window.addEventListener('resize', onHeroScroll)
+  updateHero()
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onHeroScroll)
+  window.removeEventListener('resize', onHeroScroll)
+  if (heroRaf != null) cancelAnimationFrame(heroRaf)
+})
 </script>
 
 <style lang="scss">

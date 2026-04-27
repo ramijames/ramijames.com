@@ -53,6 +53,8 @@
 
     <section class="nav-right-section">
       <ThemeSwitcher v-if="state.mobileMenuOpen" class="nav-theme-switcher" />
+      <nuxt-link v-if="!state.mobileMenuOpen" to="/about" class="nav-link-text">About</nuxt-link>
+      <a v-if="!state.mobileMenuOpen" href="mailto:ramijames@gmail.com" class="nav-link-text">Contact</a>
       <div
         :class="['menu-switch', state.mobileMenuOpen ? 'open' : '' ]"
         @click="toggleMenu"
@@ -299,11 +301,37 @@ const isHome = computed(() => route.path === '/');
     z-index: 100;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     gap: $spacing-xxs;
 
     .nav-theme-switcher {
       color: inherit;
+    }
+
+    .nav-link-text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--fg);
+      text-decoration: none;
+      padding: 0.55em 0.9em;
+      border-radius: 999px;
+      transition: background 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        outline: none;
+        background: rgb(var(--fg-rgb) / 0.08);
+      }
+
+      &:last-of-type {
+        margin-right: $spacing-sm;
+      }
+
+      @media screen and (max-width: 700px) {
+        display: none;
+      }
     }
   }
 
