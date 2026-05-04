@@ -14,12 +14,6 @@ useHead({
       innerHTML: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.body.classList.add('light')}else{document.body.classList.add('dark')}}catch(e){document.body.classList.add('dark')}})()`,
       tagPosition: 'bodyOpen',
     },
-    {
-      src: 'https://cdn.sessionsight.com/sessionsight.js',
-    },
-    {
-      innerHTML: `SessionSight.init({ publicApiKey: 'sessionsight_pub_8136f66932c17adbb135f49183dbdc493504cf8047dd5087', propertyId: 'd0d692b5-6f1a-4149-962d-45d5f5deaf77' });`,
-    },
   ],
 })
 </script>

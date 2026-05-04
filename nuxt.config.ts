@@ -25,6 +25,13 @@ export default defineNuxtConfig({
         { name: 'author', content: 'Rami James' },
         { name: 'description', content: 'My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.' }
       ],
+      script: [
+        {
+          innerHTML: `(function sessionsight(w,i,n,s){var q=w._ssq=[],p=P=>new Proxy(function(){},{get:(_,k)=>k=='then'||typeof k=='symbol'?void 0:p(P.concat(k)),apply:(_,__,a)=>new Promise((rs,rj)=>q.push({p:P,a,rs,rj}))});w.SessionSight=p([]);var e=i.createElement('script');e.async=1;e.src=n;i.head.appendChild(e);w.SessionSight.init(s);})(window,document,'https://cdn.sessionsight.com/sessionsight.js',{publicApiKey:'sessionsight_pub_64cce878885dfb3db50fa3c35b97fb3c57dd6a53082bd6088d8d98f6660ebfed',propertyId:'a66ffc71-e122-489c-877e-c821391a80ee'});`,
+          tagPosition: 'head',
+          type: 'text/javascript'
+        }
+      ],
     }
   },
   components: {
