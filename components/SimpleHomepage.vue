@@ -104,7 +104,7 @@ const eyebrowWords = 'Innovation in developer tooling'.split(' ')
 
 // Full-screen sticky stacking cards — every project on the site, minus a few
 // that are hidden for now.
-const HIDDEN_PROJECTS = ['/products/sprawl/', '/products/sessionsight/']
+const HIDDEN_PROJECTS = ['/products/sprawl/', '/products/sessionsight/', '/products/miserably-unemployed/']
 const stackCards = products
   .filter((p) => !HIDDEN_PROJECTS.includes(p.slug))
   .map((p) => ({

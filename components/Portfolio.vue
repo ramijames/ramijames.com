@@ -81,6 +81,9 @@ const homepageSlugs = [
   '/products/qmarkets/',
 ]
 
+// Projects hidden from all listings for now.
+const HIDDEN_SLUGS = ['/products/sprawl/', '/products/sessionsight/', '/products/miserably-unemployed/']
+
 const route = useRoute()
 
 // Re-shuffle on client mount so SSR + hydration agree (server renders
@@ -140,7 +143,7 @@ const items = computed(() => {
   if (props.random) {
     const count = Number(props.random)
     const currentPath = route.path.replace(/\/?$/, '/')
-    const pool = products.filter((p) => p.slug !== currentPath && p.slug !== route.path)
+    const pool = products.filter((p) => !HIDDEN_SLUGS.includes(p.slug) && p.slug !== currentPath && p.slug !== route.path)
     if (!randomSeed.value) {
       // SSR / pre-mount: just return the first N so output is stable
       return pool.slice(0, count)
@@ -150,10 +153,11 @@ const items = computed(() => {
   }
   if (props.limit === 'highlights') {
     return homepageSlugs
+      .filter((slug) => !HIDDEN_SLUGS.includes(slug))
       .map((slug) => products.find((p) => p.slug === slug))
       .filter(Boolean)
   }
-  return products
+  return products.filter((p) => !HIDDEN_SLUGS.includes(p.slug))
 })
 </script>
 
