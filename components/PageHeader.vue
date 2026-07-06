@@ -54,6 +54,19 @@ function measureCharCenters() {
   });
 }
 
+// Pin each letter's advance width to its heaviest-weight size so the cursor
+// spotlight never changes widths — otherwise the title re-wraps and jumps.
+function lockCharWidths() {
+  if (!charEls.length) return;
+  for (const el of charEls) { el.style.width = ''; el.style.fontWeight = String(WEIGHT_MAX); }
+  const widths = charEls.map((el) => el.getBoundingClientRect().width);
+  charEls.forEach((el, i) => {
+    el.style.width = `${widths[i]}px`;
+    el.style.fontWeight = String(WEIGHT_REST);
+  });
+  measureCharCenters();
+}
+
 function applyWeights() {
   weightRaf = null;
   for (let i = 0; i < charEls.length; i++) {
@@ -90,6 +103,10 @@ function onScroll() {
   }
 }
 
+function onResize() {
+  lockCharWidths();
+}
+
 onMounted(() => {
   charEls = titleEl.value ? Array.from(titleEl.value.querySelectorAll('.hl-char:not(.hl-char--fixed)')) : [];
   if (headerEl.value) {
@@ -97,8 +114,12 @@ onMounted(() => {
     headerEl.value.addEventListener('pointermove', onPointerMove);
     headerEl.value.addEventListener('pointerleave', resetWeights);
   }
-  window.addEventListener('resize', measureCharCenters);
+  window.addEventListener('resize', onResize);
   window.addEventListener('scroll', onScroll, { passive: true });
+  // Lock widths once the variable font's real metrics are available.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(lockCharWidths);
+  else lockCharWidths();
+  lockCharWidths();
 });
 
 onBeforeUnmount(() => {
@@ -109,7 +130,7 @@ onBeforeUnmount(() => {
     headerEl.value.removeEventListener('pointermove', onPointerMove);
     headerEl.value.removeEventListener('pointerleave', resetWeights);
   }
-  window.removeEventListener('resize', measureCharCenters);
+  window.removeEventListener('resize', onResize);
   window.removeEventListener('scroll', onScroll);
 });
 
@@ -173,6 +194,7 @@ onBeforeUnmount(() => {
   /* Per-letter spans whose weight is driven from the cursor distance (JS). */
   .hl-char {
     display: inline-block;
+    text-align: center;
     font-weight: 400;
     transition: font-weight 0.2s ease;
     will-change: font-weight;

@@ -1,7 +1,16 @@
 <template>
 
-  <!-- The inner sidebar has been replaced by the top-bar "Learn" dropdown; only
-       the full index-page nav (innerNav = false) still renders. -->
+  <!-- Inner (per-lesson) pages: just a Home button above the header. The old
+       sidebar was replaced by the top-bar "Learn" dropdown. -->
+  <nuxt-link v-if="innerNav" to="/" class="learn-home">
+    <svg width="18" height="16" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M8.8847 1L1.4141 8.4707L9.4141 16.4707" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M2.4141 8.4706H18.4141" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span>Home</span>
+  </nuxt-link>
+
+  <!-- Full index-page nav (innerNav = false). -->
   <nav v-if="!innerNav" :class="['learnthreejs', !isOpen ? 'hidden' : '']">
 
     <section class="nav-widget">
@@ -68,6 +77,29 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+
+.learn-home {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  /* Clear the fixed header (its height is published as --nav-h by MaxNav). */
+  margin: calc(var(--nav-h, 70px) + #{$spacing-md}) 0 0 $spacing-md;
+  padding: 0.6em 1.2em;
+  border: 1px solid rgb(var(--fg-rgb) / 0.2);
+  border-radius: 999px;
+  color: var(--fg);
+  text-decoration: none;
+  font-family: $font-family-main, sans-serif;
+  font-size: 15.75px;
+  line-height: 1;
+  transition: background 0.2s ease;
+
+  svg { display: block; }
+
+  &:hover {
+    background: rgb(var(--fg-rgb) / 0.06);
+  }
+}
 
 .dark {
   .learnthreejs {
