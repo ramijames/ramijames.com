@@ -1,5 +1,5 @@
 <template>
-  <main :class="['default-layout', isNavOpen && isLearnSubPage ? 'innerNav-open' : '']" class="default-layout">
+  <main class="default-layout">
     <section class="default-main">
       <MaxNav />
       <slot />

@@ -75,7 +75,7 @@ const items = [
   justify-self: end;
   max-width: 24ch;
   text-align: right;
-  font-family: 'Roboto', sans-serif;
+  font-family: $font-family-main, sans-serif;
   font-size: $font-size-sm;
   letter-spacing: 0;
   text-transform: none;

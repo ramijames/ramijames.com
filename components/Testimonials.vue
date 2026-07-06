@@ -229,7 +229,7 @@ onMounted(() => {
   display: flex;
   flex-direction: row;
   gap: $spacing-md;
-  font-family: $font-family-secondary;
+  font-family: $font-family-main;
   will-change: transform;
   padding: $spacing-md $spacing-xl;
   transition: transform 0.1s ease-out;

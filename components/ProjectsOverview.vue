@@ -1,6 +1,6 @@
 <template>
   
-  <PageHeader :title="title" :tagline="tagline" />
+  <CaseStudyHero :title="title" :tagline="tagline" />
   <section class="projects-overview w-consistent">
     <section class="projects-content">
       <div class="project-column">

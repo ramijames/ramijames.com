@@ -32,7 +32,7 @@ defineEmits(['click'])
   align-items: center;
   gap: 0.5em;
   padding: 0.7em 1.3em;
-  font-family: 'Roboto', sans-serif;
+  font-family: $font-family-main, sans-serif;
   font-size: 17px;
   font-weight: 600;
   line-height: 1;

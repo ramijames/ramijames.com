@@ -167,10 +167,12 @@ const formatDate = (dateString) => {
 }
 
 .article-title {
-  font-size: calc(var(--h1-size) * 0.45);
-  line-height: 1.1;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.15;
   margin: 0;
   color: var(--fg);
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 .article-date {

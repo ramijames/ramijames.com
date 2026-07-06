@@ -129,7 +129,7 @@ const testimonials = [
 }
 
 .quote-index {
-  font-family: $font-family-serif, serif;
+  font-family: $font-family-main, serif;
   font-style: italic;
   font-size: $font-size-sm;
   letter-spacing: 0.15em;
@@ -140,7 +140,7 @@ const testimonials = [
 .quote-body {
   margin: 0;
   padding: 0;
-  font-family: $font-family-serif, serif;
+  font-family: $font-family-main, serif;
   font-weight: 300;
   font-style: normal;
   font-size: calc(var(--h1-size) * 0.45);

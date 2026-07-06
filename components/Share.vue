@@ -42,7 +42,7 @@ const socials = [
   span {
     font-size: $font-size-sm;
     margin-right: $spacing-xs;
-    font-family: $font-family-secondary;
+    font-family: $font-family-main;
 
     @media screen and (max-width: 1000px) {
       display: none;

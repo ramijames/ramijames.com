@@ -32,6 +32,7 @@
             </svg>
           </div>
           <div class="portfolio-meta">
+            <span v-if="showYear && p.year" class="portfolio-year">{{ p.year }}</span>
             <span class="portfolio-title">{{ p.title }}</span>
             <span class="portfolio-desc">{{ p.description }}</span>
           </div>
@@ -60,6 +61,10 @@ const props = defineProps({
     type: [Number, String],
     default: null,
   },
+  showYear: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 // Curated 7-item homepage order producing the row pattern:
@@ -67,13 +72,13 @@ const props = defineProps({
 // row 2: small, small, small
 // row 3: large, small
 const homepageSlugs = [
+  '/products/sprawl/',
+  '/products/sessionsight/',
+  '/products/miserably-unemployed/',
+  '/products/doodledapp/',
   '/products/ultra/',
   '/products/scatter/',
-  '/products/climbingmonster/',
-  '/products/food-for-future/',
-  '/products/telos-obe/',
-  '/products/doodledapp/',
-  '/products/tonara/',
+  '/products/qmarkets/',
 ]
 
 const route = useRoute()
@@ -321,7 +326,7 @@ const items = computed(() => {
 
 .portfolio-meta {
   margin-top: $spacing-sm;
-  font-family: 'Roboto', sans-serif;
+  font-family: $font-family-main, sans-serif;
   font-size: 17px;
   font-weight: 400;
   line-height: 1.3;
@@ -330,6 +335,14 @@ const items = computed(() => {
   overflow: hidden;
   text-overflow: ellipsis;
   color: var(--fg);
+}
+
+.portfolio-year {
+  font-weight: 400;
+  margin-right: 0.6em;
+  color: var(--fg);
+  opacity: 0.5;
+  font-variant-numeric: tabular-nums;
 }
 
 .portfolio-title {

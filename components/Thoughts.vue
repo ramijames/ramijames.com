@@ -427,7 +427,7 @@ const formatDate = (dateString) => {
 }
 
 .featured-label {
-  font-family: $font-family-secondary;
+  font-family: $font-family-main;
   font-size: $font-size-xs;
 }
 
@@ -481,7 +481,7 @@ const formatDate = (dateString) => {
   gap: $spacing-xs;
   box-shadow: none;
   color: rgba($black, 0.7);
-  font-family: $font-family-secondary;
+  font-family: $font-family-main;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 9px;

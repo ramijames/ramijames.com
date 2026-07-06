@@ -490,7 +490,7 @@ useSeoMeta({
 
 blockquote {
   font-size: $font-size-lg;
-  font-family: $font-family-serif;
+  font-family: $font-family-main;
   font-style: italic;
   padding: $spacing-md;
   margin: $spacing-md 0;

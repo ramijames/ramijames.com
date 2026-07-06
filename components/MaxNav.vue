@@ -1,86 +1,80 @@
 <template>
-  <nav :class="['max-nav', { hidden: isMenuHidden }]">
+  <nav ref="navEl" :class="['max-nav', { hidden: isMenuHidden }]">
 
-    <section class="nav-left-section">
-      <nuxt-link to="/" class="logo-link" aria-label="Home">
-        <svg width="44" height="44" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M41.6492 27.2521C46.0072 27.2521 50.4345 23.8378 51.5379 19.626C52.6412 15.4143 50.0028 12 45.6448 12C43.3509 12 40.5896 12.8841 38.235 13.4079C34.9228 14.1448 32.3003 14.8457 30.6837 15.3147C29.9858 15.5171 29.427 15.0553 29.5987 14.4L29.9115 13.2058C30.0718 12.594 29.5934 12.1457 28.9404 12.2958L10.0807 16.631C9.62206 16.7364 9.22203 17.1113 9.10947 17.5409L9.03517 17.8245C8.95239 18.1405 9.05119 18.4322 9.29392 18.589C9.50465 18.725 9.7979 18.7424 10.0871 18.636L11.4073 18.1506C11.8618 17.9835 12.3048 18.1079 12.482 18.4525L12.5345 18.5545C12.618 18.717 12.6343 18.9146 12.5811 19.1177L5.78471 45.0609C5.62511 45.6702 6.09891 46.1179 6.74924 45.9724L21.451 42.68C21.912 42.5768 22.3157 42.2006 22.4288 41.7686L28.5036 18.5802C28.6141 18.1583 29.0022 17.7883 29.4526 17.6757L36.3585 15.9485C36.8046 15.837 37.1905 16.0371 37.2662 16.419C37.2738 16.458 37.2646 16.5025 37.2365 16.5415C36.5574 17.4846 36.0438 18.5282 35.7562 19.626C34.6529 23.8378 37.2913 27.2521 41.6492 27.2521Z" fill="currentColor"/>
-        </svg>
+    <div class="nav-left">
+      <nuxt-link to="/" class="brand" aria-label="Home">
+        <img src="/logo-light.svg" alt="Rami James" class="brand-logo brand-logo--light" />
+        <img src="/logo-dark.svg" alt="Rami James" class="brand-logo brand-logo--dark" />
       </nuxt-link>
+    </div>
 
-      <!-- Learn section back button -->
-      <nuxt-link
-          class="go-back"
-          tabindex="0"
-          role="button"
-          v-if="learnParent"
-          :to="learnParent"
-        >
-        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.8847 1.00001L1.41409 8.47067L9.41406 16.4706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2.41406 8.47064H18.4141" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </nuxt-link>
+    <div class="nav-center">
+      <nuxt-link to="/products" class="nav-item">Work</nuxt-link>
+      <nuxt-link to="/thoughts" class="nav-item">Thoughts</nuxt-link>
 
-      <!-- Products back button -->
-      <nuxt-link
-          class="go-back"
-          tabindex="0"
-          role="button"
-          v-if="isProductsSubPage"
-          to="/products"
-        >
-        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.8847 1.00001L1.41409 8.47067L9.41406 16.4706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2.41406 8.47064H18.4141" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </nuxt-link>
-
-      <!-- Thoughts back button -->
-      <nuxt-link
-          class="go-back"
-          tabindex="0"
-          role="button"
-          v-if="isThoughtsSubPage"
-          to="/thoughts"
-        >
-        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.8847 1.00001L1.41409 8.47067L9.41406 16.4706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2.41406 8.47064H18.4141" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </nuxt-link>
-    </section>
-
-    <section class="nav-right-section">
-      <ThemeSwitcher v-if="state.mobileMenuOpen" class="nav-theme-switcher" />
-      <nuxt-link v-if="!state.mobileMenuOpen" to="/about" class="nav-link-text">About</nuxt-link>
-      <a v-if="!state.mobileMenuOpen" href="mailto:ramijames@gmail.com" class="nav-link-text">Contact</a>
       <div
-        :class="['menu-switch', state.mobileMenuOpen ? 'open' : '' ]"
-        @click="toggleMenu"
-        tabindex="0"
-        role="button"
-        v-if="!state.mobileMenuOpen"
+        class="nav-dropdown"
+        @mouseenter="learnOpen = true"
+        @mouseleave="learnOpen = false"
       >
-        <svg width="44" height="44" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-icon">
+        <span :class="['nav-item', 'nav-dropdown-trigger', { open: learnOpen }]" tabindex="0">
+          Learn
+          <svg class="nav-caret" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+
+        <div class="mega-menu" v-show="learnOpen">
+          <nuxt-link to="/learn-threejs" class="mega-item" @click="learnOpen = false">
+            <span class="mega-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L21 7V17L12 22L3 17V7L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M3 7L12 12L21 7M12 12V22" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="mega-text">
+              <span class="mega-title">Learn Three.js</span>
+              <span class="mega-desc">Learn 3D graphics and WebGL on the web.</span>
+            </span>
+          </nuxt-link>
+
+          <nuxt-link to="/learn-solidity" class="mega-item" @click="learnOpen = false">
+            <span class="mega-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 3H15L19 7V21H6V3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M14 3V8H19M9 13H16M9 17H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="mega-text">
+              <span class="mega-title">Learn Solidity</span>
+              <span class="mega-desc">Smart contracts, tokens, and Web3.</span>
+            </span>
+          </nuxt-link>
+        </div>
+      </div>
+
+      <nuxt-link to="/tools" class="nav-item">Tools</nuxt-link>
+      <nuxt-link to="/about" class="nav-item">About</nuxt-link>
+    </div>
+
+    <div class="nav-right">
+      <button class="nav-contact" @click="openContactModal">Start discussion</button>
+      <button
+        :class="['menu-toggle', { open: state.mobileMenuOpen }]"
+        @click="toggleMenu"
+        aria-label="Menu"
+      >
+        <svg v-if="!state.mobileMenuOpen" width="24" height="24" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17 19H41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <path d="M17 29H33" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <path d="M17 39H41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-      </div>
-      <div
-        class="menu-close"
-        @click="toggleMenu"
-        tabindex="0"
-        role="button"
-        v-else
-      >
-        <svg width="44" height="44" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="close-icon">
+        <svg v-else width="24" height="24" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M21 21L37.9706 37.9706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <path d="M37.9707 21L21.0001 37.9706" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-      </div>
-    </section>
+      </button>
+    </div>
 
   </nav>
 
@@ -102,6 +96,12 @@
         </nuxt-link>
         <nuxt-link to="/tools" :class="['nav-link', isToolsPage ? 'router-link-active' : '']" v-if="!isToolsPage" @click="toggleMenu">
           <span>Tools</span>
+        </nuxt-link>
+        <nuxt-link to="/learn-threejs" class="nav-link" @click="toggleMenu">
+          <span>Learn Three.js</span>
+        </nuxt-link>
+        <nuxt-link to="/learn-solidity" class="nav-link" @click="toggleMenu">
+          <span>Learn Solidity</span>
         </nuxt-link>
         <nuxt-link to="/about" class="nav-link" v-if="!isAboutPage" @click="toggleMenu">
           <span>About</span>
@@ -147,6 +147,15 @@ const state = reactive({
 
 const isMenuHidden = ref(false);
 const isContactModalOpen = ref(false);
+const navEl = ref(null);
+const learnOpen = ref(false);
+
+// Expose the header height globally so page heros / the card-morph can sit below
+// it instead of scrolling under it.
+const setNavHeight = () => {
+  if (!navEl.value) return;
+  document.documentElement.style.setProperty('--nav-h', navEl.value.getBoundingClientRect().height + 'px');
+};
 
 const openContactModal = () => {
   closeMenu();
@@ -172,10 +181,13 @@ const handleScroll = () => {
 onMounted(() => {
   lastScrollY = window.scrollY || window.pageYOffset;
   window.addEventListener('scroll', handleScroll, { passive: true });
+  setNavHeight();
+  window.addEventListener('resize', setNavHeight);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('resize', setNavHeight);
 });
 
 const closeMenu = () => {
@@ -208,199 +220,240 @@ const isHome = computed(() => route.path === '/');
   right: 0;
   box-sizing: border-box;
   z-index: 100;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  padding: $spacing-xs;
-  color: $black;
+  gap: $spacing-md;
+  padding: $spacing-sm $spacing-lg;
+  color: var(--fg);
+  background: var(--bg);
   animation: fadeInDown 0.4s ease-in-out forwards;
   transition: transform 0.34s cubic-bezier(0.355, 0.965, 0.670, 0.970),
               opacity 0.34s cubic-bezier(0.355, 0.965, 0.670, 0.970);
 
-  .nav-left-section {
-    position: relative;
-    z-index: 100;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: $spacing-xxs;
-
-    .logo-link {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      background: var(--fg);
-      color: var(--bg);
-      border: 1px solid rgb(var(--fg-rgb) / 0.15);
-      border-radius: 50%;
-      transition: transform 0.24s ease-in-out;
-
-      @media screen and (max-width: 1000px) {
-        width: 44px;
-        height: 44px;
-      }
-
-      &:hover {
-        transform: scale(1.05);
-      }
-
-      svg {
-        width: 75%;
-        height: 75%;
-        display: block;
-
-        path {
-          fill: currentColor;
-          stroke: none;
-        }
-      }
-    }
-
-    .go-back {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      background: var(--fg);
-      color: var(--bg);
-      border: 1px solid rgb(var(--fg-rgb) / 0.15);
-      border-radius: 50%;
-      transition: transform 0.24s ease-in-out;
-
-      @media screen and (max-width: 1000px) {
-        width: 44px;
-        height: 44px;
-      }
-
-      &:hover {
-        transform: scale(1.05);
-      }
-
-      svg {
-        width: 40%;
-        height: auto;
-        display: block;
-
-        path {
-          fill: $black;
-          stroke: $white;
-          stroke-width: 2;
-        }
-      }
-    }
+  /* Center links hide here, so drop to two columns (logo | menu) — otherwise the
+     menu toggle auto-places into the empty middle column and looks centered. */
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr auto;
+    padding-inline: $spacing-sm;
   }
 
-  .nav-right-section {
-    position: relative;
-    z-index: 100;
+  .nav-left {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: $spacing-xxs;
+    justify-self: start;
+  }
 
-    .nav-theme-switcher {
-      color: inherit;
-    }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
 
-    .nav-link-text {
-      font-family: 'Roboto', sans-serif;
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 1;
-      color: var(--fg);
-      text-decoration: none;
-      padding: 0.55em 0.9em;
-      border-radius: 999px;
-      transition: background 0.2s ease;
+    &:hover { opacity: 0.7; }
 
-      &:hover,
-      &:focus-visible {
-        outline: none;
-        background: rgb(var(--fg-rgb) / 0.08);
-      }
-
-      &:last-of-type {
-        margin-right: $spacing-sm;
-      }
+    .brand-logo {
+      display: block;
+      height: 44px;
+      width: auto;
 
       @media screen and (max-width: 700px) {
-        display: none;
+        height: 36px;
       }
+    }
+
+    /* Dark logo on the dark theme, light logo on the light theme. */
+    .brand-logo--light { display: none; }
+  }
+
+  .nav-center {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: $spacing-md;
+
+    @media screen and (max-width: 900px) {
+      display: none;
     }
   }
 
+  .nav-item {
+    font-family: $font-family-main, sans-serif;
+    font-size: 15.75px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--fg);
+    text-decoration: none;
+    padding: 0.5em 0.2em;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
 
-  .menu-switch,
-  .menu-close {
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
+    &:hover,
+    &:focus-visible,
+    &.router-link-active { opacity: 1; outline: none; }
+  }
+
+  /* Learn dropdown + mega-menu. */
+  .nav-dropdown {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: var(--fg);
-    color: var(--bg);
-    border: 1px solid rgb(var(--fg-rgb) / 0.15);
-    border-radius: 50%;
-    transition: transform 0.24s ease-in-out;
+  }
 
-    @media screen and (max-width: 1000px) {
-      width: 44px;
-      height: 44px;
+  .nav-dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .nav-caret {
+      transition: transform 0.2s ease;
     }
+
+    &.open {
+      opacity: 1;
+      .nav-caret { transform: rotate(180deg); }
+    }
+  }
+
+  .mega-menu {
+    position: absolute;
+    top: calc(100% + 0.9rem);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 120;
+    width: min(90vw, 560px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xs;
+    padding: $spacing-sm;
+    border-radius: 20px;
+    background: var(--bg);
+    border: 1px solid rgb(var(--fg-rgb) / 0.12);
+    box-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.5);
+
+    /* Transparent bridge over the gap so the hover doesn't drop on the way down. */
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      height: 1rem;
+    }
+
+    @media screen and (max-width: 640px) {
+      grid-template-columns: 1fr;
+      width: min(92vw, 360px);
+    }
+  }
+
+  .mega-item {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-sm;
+    padding: $spacing-sm;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+
+    &:hover { background: rgb(var(--fg-rgb) / 0.06); }
+  }
+
+  .mega-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid rgb(var(--fg-rgb) / 0.15);
+    color: var(--fg);
+  }
+
+  .mega-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+  }
+
+  .mega-title {
+    font-family: $font-family-main, sans-serif;
+    font-size: 15.75px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--fg);
+  }
+
+  .mega-desc {
+    font-family: $font-family-main, sans-serif;
+    font-size: 13.5px;
+    line-height: 1.35;
+    color: var(--fg);
+    opacity: 0.55;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: $spacing-sm;
+  }
+
+  .nav-contact {
+    font-family: $font-family-main, sans-serif;
+    font-size: 15.75px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--bg);
+    background: var(--fg);
+    border: none;
+    border-radius: 999px;
+    padding: 0.7em 1.3em;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
-    .menu-icon,
-    .close-icon {
-      width: 100%;
-      height: 100%;
-      display: block;
-      transition: transform 0.4s ease-in-out;
+    @media screen and (max-width: 900px) {
+      display: none;
     }
   }
 
-}
+  .menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    background: none;
+    border: none;
+    color: var(--fg);
+    cursor: pointer;
+    font-family: $font-family-main, sans-serif;
+    font-size: 15.75px;
+    font-weight: 400;
+    padding: 0.4em 0;
 
-.dark {
-  .max-nav {
-    color: $white;
+    svg { display: none; }
 
-    .nav-left-section {
-      .logo-link {
-        background: var(--fg);
-        color: var(--bg);
+    &::after { content: 'Menu'; }
+    &.open::after { content: 'Close'; }
 
-        svg {
-          path {
-            fill: currentColor;
-            stroke: none;
-          }
-        }
-      }
-
-      .go-back {
-        color: $white;
-
-        svg {
-          path {
-            fill: $white;
-            stroke: $black;
-          }
-        }
-      }
+    @media screen and (max-width: 900px) {
+      display: inline-flex;
     }
   }
 }
+
+/* Light theme: swap to the light logo. */
+.light .max-nav .brand-logo--dark { display: none; }
+.light .max-nav .brand-logo--light { display: block; }
 
 .menu-shade {
   position: fixed;
@@ -471,11 +524,14 @@ const isHome = computed(() => route.path === '/');
         transform: translateY(12px);
         transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease-in-out;
 
-        &:nth-child(1) { transition-delay: 0.1s; }
-        &:nth-child(2) { transition-delay: 0.2s; }
-        &:nth-child(3) { transition-delay: 0.3s; }
-        &:nth-child(4) { transition-delay: 0.4s; }
-        &:nth-child(5) { transition-delay: 0.5s; }
+        &:nth-child(1) { transition-delay: 0.08s; }
+        &:nth-child(2) { transition-delay: 0.14s; }
+        &:nth-child(3) { transition-delay: 0.2s; }
+        &:nth-child(4) { transition-delay: 0.26s; }
+        &:nth-child(5) { transition-delay: 0.32s; }
+        &:nth-child(6) { transition-delay: 0.38s; }
+        &:nth-child(7) { transition-delay: 0.44s; }
+        &:nth-child(8) { transition-delay: 0.5s; }
 
         &.router-link-active span {
           text-decoration: underline;

@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="Product Case Studies" tagline="Some of my favorite work over the years" />
+  <PageHeader title="Work" tagline="Some of my favorite work over the years" />
   <section class="products-page">
     <Portfolio />
   </section>

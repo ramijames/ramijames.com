@@ -1,4 +1,61 @@
 export const products = [
+  // TODO(rami): replace placeholder description / year / images once assets exist.
+  {
+    title: 'Sprawl',
+    description: 'Canvas-based developer environment for macOS',
+    image: '/products/placeholder.svg',
+    images: {
+      default: '/products/placeholder.svg',
+      hover: '/products/placeholder.svg',
+    },
+    logo: '',
+    bg: '',
+    status: 'current',
+    slug: '/products/sprawl/',
+    color: '#6C5CE7',
+    class: 'sprawl',
+    type: 'Product Case Study',
+    size: 'large',
+    year: '2025',
+  },
+  // TODO(rami): replace placeholder description / year / images once assets exist.
+  {
+    title: 'SessionSight',
+    description: 'All-in-one growth and product analytics platform',
+    image: '/products/placeholder.svg',
+    images: {
+      default: '/products/placeholder.svg',
+      hover: '/products/placeholder.svg',
+    },
+    logo: '',
+    bg: '',
+    status: 'current',
+    slug: '/products/sessionsight/',
+    color: '#0FB9B1',
+    class: 'sessionsight',
+    type: 'Product Case Study',
+    size: 'small',
+    year: '2024',
+  },
+  // TODO(rami): replace placeholder description / year / images once assets exist.
+  {
+    title: 'Miserably Unemployed',
+    description: 'Job-hunt SaaS for laid-off knowledge workers',
+    image: '/products/placeholder.svg',
+    images: {
+      default: '/products/placeholder.svg',
+      hover: '/products/placeholder.svg',
+    },
+    logo: '',
+    bg: '',
+    status: 'past',
+    slug: '/products/miserably-unemployed/',
+    color: '#E17055',
+    class: 'miserably-unemployed',
+    type: 'Product Case Study',
+    size: 'small',
+    year: '2023',
+  },
   {
     title: 'Scatter',
     description: 'Open-source web3 wallet',
@@ -15,6 +72,7 @@ export const products = [
     class: 'scatter',
     type: 'Product Case Study',
     size: 'large',
+    year: '2018',
   },
   {
     title: 'Ultra',
@@ -32,6 +90,7 @@ export const products = [
     class: 'ultra',
     type: 'Product Case Study',
     size: 'small',
+    year: '2020',
   },
   {
     title: 'Doodledapp',
@@ -48,7 +107,8 @@ export const products = [
     color: '#3E74FF',
     class: 'doodledapp',
     type: 'Product Case Study',
-    size: 'large',
+    size: 'small',
+    year: '2021',
   },
   {
     title: 'Climbing Monster',
@@ -151,5 +211,6 @@ export const products = [
     class: 'qmarkets',
     type: 'Product Case Study',
     size: 'small',
+    year: '2015',
   },
 ]

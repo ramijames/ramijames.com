@@ -367,7 +367,7 @@ useSeoMeta({
 
   p {
     margin: 0;
-    font-family: $font-family-serif;
+    font-family: $font-family-main;
     line-height: $multiplier;
     color: $black;
   }

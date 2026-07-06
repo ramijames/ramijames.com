@@ -25,6 +25,15 @@ export default defineNuxtConfig({
         { name: 'author', content: 'Rami James' },
         { name: 'description', content: 'My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.' }
       ],
+      // Critical inline styles so the page never paints as fully unstyled HTML
+      // before the main stylesheet loads (prevents the flash on load). The
+      // theme class (.dark/.light) is set on <body> by the inline script in app.vue.
+      style: [
+        {
+          innerHTML: `*{box-sizing:border-box}html{background:#161616}body{margin:0;padding:0;background:#161616;color:#fff;font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}body.light{background:#FAF6FB;color:#030303}`,
+          tagPosition: 'head',
+        },
+      ],
       script: [
         {
           innerHTML: `(function sessionsight(w,i,n,s){var q=w._ssq=[],p=P=>new Proxy(function(){},{get:(_,k)=>k=='then'||typeof k=='symbol'?void 0:p(P.concat(k)),apply:(_,__,a)=>new Promise((rs,rj)=>q.push({p:P,a,rs,rj}))});w.SessionSight=p([]);var e=i.createElement('script');e.async=1;e.src=n;i.head.appendChild(e);w.SessionSight.init(s);})(window,document,'https://cdn.sessionsight.com/sessionsight.js',{publicApiKey:'sessionsight_pub_64cce878885dfb3db50fa3c35b97fb3c57dd6a53082bd6088d8d98f6660ebfed',propertyId:'a66ffc71-e122-489c-877e-c821391a80ee'});`,
@@ -68,8 +77,9 @@ export default defineNuxtConfig({
   },
   fonts: {
     families: [
-      { name: 'Noto Serif', provider: 'google', weights: [100, 200, 300, 400, 500, 600, 700, 800, 900] },
-      { name: 'Roboto', provider: 'google', weights: [300, 400, 500, 600, 700] },
+      // Load Inter as a variable font (continuous 100–900 weight axis) so any
+      // weight or weight-transition renders smoothly.
+      { name: 'Inter', provider: 'google', weights: ['100 900'] },
     ],
   },
   vite: {

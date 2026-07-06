@@ -140,7 +140,7 @@ onUnmounted(() => {
 
 footer {
   width: 100%;
-  font-family: $font-family-secondary;
+  font-family: $font-family-main;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

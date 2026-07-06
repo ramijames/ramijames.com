@@ -1,14 +1,10 @@
 <template>
 
-  <button v-if="innerNav && !isOpen" class="nav-toggle-show button small white" @click="isOpen = true">Show nav</button>
-
-  <nav :class="['learnthreejs', innerNav ? 'innerNav' : '', !isOpen ? 'hidden' : '']">
+  <!-- The inner sidebar has been replaced by the top-bar "Learn" dropdown; only
+       the full index-page nav (innerNav = false) still renders. -->
+  <nav v-if="!innerNav" :class="['learnthreejs', !isOpen ? 'hidden' : '']">
 
     <section class="nav-widget">
-      <button v-if="innerNav && isOpen" class="nav-toggle button small" @click="isOpen = !isOpen">
-        Hide
-      </button>
-
       <input
         v-model="searchQuery"
         type="text"
@@ -17,8 +13,8 @@
       />
     </section>
 
-    <section :class="['threejs-nav', innerNav ? 'innerNav' : '', innerNav && !isOpen ? 'collapsed' : '']">
-      <div :class="['nav-content', innerNav && !isOpen ? 'hidden' : '']">
+    <section class="threejs-nav">
+      <div class="nav-content">
 
         <template v-for="section in filteredSections" :key="section.title">
           <h3>{{ section.title }}</h3>
@@ -247,7 +243,7 @@ onMounted(() => {
 
   a {
     font-size: $font-size-sm;
-    font-family: $font-family-secondary;
+    font-family: $font-family-main;
     display: block;
     text-decoration: none;
     padding: 5px $spacing-xs;
