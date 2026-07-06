@@ -102,14 +102,18 @@ const headlineWords = 'Simplicity in complexity'.split(' ')
 // Eyebrow words for the masked word-by-word reveal (after the headline fades).
 const eyebrowWords = 'Innovation in developer tooling'.split(' ')
 
-// Full-screen sticky stacking cards — every project on the site.
-const stackCards = products.map((p) => ({
-  title: p.title,
-  description: p.description,
-  cta: 'View case study',
-  to: p.slug,
-  image: p.images?.default || p.image,
-}))
+// Full-screen sticky stacking cards — every project on the site, minus a few
+// that are hidden for now.
+const HIDDEN_PROJECTS = ['/products/sprawl/', '/products/sessionsight/']
+const stackCards = products
+  .filter((p) => !HIDDEN_PROJECTS.includes(p.slug))
+  .map((p) => ({
+    title: p.title,
+    description: p.description,
+    cta: 'View case study',
+    to: p.slug,
+    image: p.images?.default || p.image,
+  }))
 
 // Only letters get the cursor-driven weight spotlight; symbols (the heart) and
 // its variation selector stay at a fixed weight.
