@@ -21,6 +21,9 @@ export default defineNuxtConfig({
         siteName: 'ramijames.com'
       },
       charset: 'utf-8',
+      link: [
+        { rel: 'alternate', type: 'application/rss+xml', title: 'Rami James — Thoughts', href: '/rss.xml' }
+      ],
       meta: [
         { name: 'author', content: 'Rami James' },
         { name: 'description', content: 'My name is Rami James, and I work as a user-interface, user-experience, interaction, and design professional.' }
@@ -103,6 +106,7 @@ export default defineNuxtConfig({
     }  
   },
   routeRules: {
+    '/rss.xml': { prerender: true },
     '/thoughts/on-ethical-pricing': { redirect: '/thoughts/how-to-make-product-decisions-based-on-business-needs' },
     '/labs/css-mesh-gradients': { redirect: '/thoughts/css-mesh-gradients' },
     '/labs/supabase-email-authentication-with-google-workspace': { redirect: '/thoughts/supabase-email-authentication-with-google-workspace' },
