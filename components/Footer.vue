@@ -25,6 +25,7 @@
         <nuxt-link class="link" href="/learn-threejs">Learn Three.js</nuxt-link>
         <nuxt-link class="link" href="/privacy-policy">Privacy</nuxt-link>
         <nuxt-link class="link" href="/terms-and-conditions">Terms</nuxt-link>
+        <a class="link" href="https://iheartrss.com">I &hearts; RSS</a>
       </div>
       <section class="copyright">
         <span>&copy; Rami James 2003-2025</span>
