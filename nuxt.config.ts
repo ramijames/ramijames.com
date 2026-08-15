@@ -1,7 +1,4 @@
 export default defineNuxtConfig({
-  runtimeConfig: {
-    resendApiKey: '',
-  },
   css: [
     '~/assets/main.scss',
     '~/assets/products.scss',

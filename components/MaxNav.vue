@@ -58,7 +58,7 @@
     </div>
 
     <div class="nav-right">
-      <button class="nav-contact" @click="openContactModal">Start discussion</button>
+      <a class="nav-contact" :href="contactMailto" @click="closeMenu">Start discussion</a>
       <button
         :class="['menu-toggle', { open: state.mobileMenuOpen }]"
         @click="toggleMenu"
@@ -78,7 +78,6 @@
 
   </nav>
 
-  <ContactModal :isOpen="isContactModalOpen" @close="closeContactModal" />
 
   <section
     :class="['menu-shade', state.mobileMenuOpen ? 'open' : '' ]"
@@ -130,7 +129,7 @@
 import { ref, reactive, computed, onMounted, onBeforeUnmount } from 'vue';
 import { useRoute } from 'vue-router';
 import ThemeSwitcher from './ThemeSwitcher.vue';
-import ContactModal from './ContactModal.vue';
+import { contactMailto } from '~/utils/contact';
 import { useThemeStore } from '~/store/theme';
 import { useUIStore } from '~/store/ui';
 
@@ -146,7 +145,6 @@ const state = reactive({
 });
 
 const isMenuHidden = ref(false);
-const isContactModalOpen = ref(false);
 const navEl = ref(null);
 const learnOpen = ref(false);
 
@@ -155,15 +153,6 @@ const learnOpen = ref(false);
 const setNavHeight = () => {
   if (!navEl.value) return;
   document.documentElement.style.setProperty('--nav-h', navEl.value.getBoundingClientRect().height + 'px');
-};
-
-const openContactModal = () => {
-  closeMenu();
-  isContactModalOpen.value = true;
-};
-
-const closeContactModal = () => {
-  isContactModalOpen.value = false;
 };
 
 let lastScrollY = 0;
@@ -413,6 +402,7 @@ const isHome = computed(() => route.path === '/');
     border: none;
     border-radius: 999px;
     padding: 0.7em 1.3em;
+    text-decoration: none;
     cursor: pointer;
     white-space: nowrap;
     transition: transform 0.2s ease, opacity 0.2s ease;

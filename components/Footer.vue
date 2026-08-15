@@ -5,10 +5,9 @@
 
         <h2>Let's work together</h2>
         <p>I'm always keen to connect with like-minded builders who are interested in pushing the envelope of what is possible in the product design space.</p>
-        <Button text="Work with me" @click="openContactModal" />
+        <Button text="Work with me" :href="contactMailto" />
       </div>
     </section>
-    <ContactModal :isOpen="isContactModalOpen" @close="closeContactModal" />
     <div class="footer-content w-full">
       <div class="footer-links">
         <section class="footer-social">
@@ -37,21 +36,12 @@
 <script setup>
 import { useUIStore } from '~/store/ui'
 import { onMounted, onUnmounted, ref } from 'vue'
-import ContactModal from '~/components/ContactModal.vue'
+import { contactMailto } from '~/utils/contact'
 
 const uiStore = useUIStore()
 
 const ctaSection = ref(null)
-const isContactModalOpen = ref(false)
 let observer = null
-
-const openContactModal = () => {
-  isContactModalOpen.value = true
-}
-
-const closeContactModal = () => {
-  isContactModalOpen.value = false
-}
 
 onMounted(() => {
   // Set up intersection observer for CTA section
